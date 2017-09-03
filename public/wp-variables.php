@@ -3,7 +3,6 @@
 #defined('WP_CACHE') or define('WP_CACHE', true);
 
 define('APP_PATH', dirname(__FILE__));
-define('BT_FRAMEWORK_ROOT', APP_PATH . '/wp-content/mu-plugins/bt-framework');
 
 //require_once(__DIR__ . '/../vendor/autoload.php');
 
