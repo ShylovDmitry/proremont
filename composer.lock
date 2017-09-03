@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7cb8194cce70772afcfffdefdaea6d73",
-    "content-hash": "a5ec2c53a89f4ff9a121e7e51eb258ee",
+    "hash": "f9f6fd6d66ce89286454c3daf918143a",
+    "content-hash": "66fa81abf923379e86d3e0ab57a9e665",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2049,6 +2049,26 @@
                 "wordpress"
             ],
             "time": "2016-10-25 15:14:00"
+        },
+        {
+            "name": "wpackagist-plugin/adrotate",
+            "version": "4.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/adrotate/",
+                "reference": "tags/4.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/adrotate.4.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/adrotate/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",

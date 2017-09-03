@@ -30,11 +30,9 @@
             ?>
 
             <?php endif; ?>
+        </div>
 
-        </div>
-        <div class="col col-300">
-            Банери
-        </div>
+        <?php get_sidebar('banner-right'); ?>
     </div>
 </div>
 

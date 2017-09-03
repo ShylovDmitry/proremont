@@ -23,7 +23,8 @@
     "wpackagist-plugin/contact-form-7": "4.9",
     "wpackagist-plugin/ewww-image-optimizer": "3.6.1",
     "wpackagist-plugin/wordpress-seo": "5.3.3",
-    "wpackagist-plugin/query-monitor": "2.13.4"
+    "wpackagist-plugin/query-monitor": "2.13.4",
+    "wpackagist-plugin/adrotate": "4.6.1"
   },
   "extra": {
     "installer-paths": {

@@ -1,0 +1,38 @@
+<?php get_header(); ?>
+
+<?php get_template_part('breadcrumb'); ?>
+
+<div class="container colored-box py-3">
+    <div class="row">
+        <div class="col">
+        <?php if (have_posts()): ?>
+
+            <?php while (have_posts()): the_post(); ?>
+                <div class="media">
+                    <img class="d-flex mr-3" src="http://via.placeholder.com/100" alt="" width="100" />
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3"><?php the_field('master_region'); ?></li>
+                            <li><strong><?php the_field('master_type'); ?>.</strong> Досвід 10 років.</li>
+                            <li>Телефон: <a href="#"><?php the_field('master_tel'); ?></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+            <?php endwhile; ?>
+
+            <?php get_template_part('pagination'); ?>
+        <?php else: ?>
+            <i>Перевірте цей розділ пізнійше. Скоро ми додамо майстрів і компанії.</i>
+        <?php endif; ?>
+
+        </div>
+
+        <?php get_sidebar('banner-right'); ?>
+    </div>
+</div>
+
+<?php get_footer(); ?>

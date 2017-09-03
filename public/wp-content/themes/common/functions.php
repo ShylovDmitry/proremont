@@ -8,7 +8,7 @@ register_nav_menus(array(
 
 register_post_type('master', array(
     'labels' => array(
-        'name' => __('Mastera'),
+        'name' => __('Masters'),
         'singular_name' => __('Master'),
         'add_new_item' => __('Add New Master'),
         'edit_item' => __('Edit Master'),
@@ -23,12 +23,12 @@ register_post_type('master', array(
     ),
 ));
 
-register_post_type('magazin', array(
+register_post_type('shop', array(
     'labels' => array(
-        'name' => __('Magazin'),
-        'singular_name' => __('Magazin'),
-        'add_new_item' => __('Add New Magazin'),
-        'edit_item' => __('Edit Magazin'),
+        'name' => __('Shops'),
+        'singular_name' => __('Shop'),
+        'add_new_item' => __('Add New Shop'),
+        'edit_item' => __('Edit Shop'),
     ),
     'public' => true,
     'supports' => array(
@@ -40,14 +40,27 @@ register_post_type('magazin', array(
     ),
 ));
 
-register_taxonomy('katalog', array( 'master', 'magazin' ), array(
+register_taxonomy('catalog_master', 'master', array(
     'labels' => array(
-        'name' => __('Katalog'),
-        'singular_name' => __('Katalog'),
-        'add_new_item' => __('Add New Katalog'),
-        'edit_item' => __('Edit Katalog'),
+        'name' => __('Catalog'),
+        'singular_name' => __('Catalog'),
+        'add_new_item' => __('Add New Catalog'),
+        'edit_item' => __('Edit Catalog'),
     ),
     'hierarchical' => true,
+    'rewrite' => array( 'hierarchical' => true, ),
+    'public' => true,
+));
+
+register_taxonomy('catalog_shop', 'shop', array(
+    'labels' => array(
+        'name' => __('Catalog'),
+        'singular_name' => __('Catalog'),
+        'add_new_item' => __('Add New Catalog'),
+        'edit_item' => __('Edit Catalog'),
+    ),
+    'hierarchical' => true,
+    'rewrite' => array( 'hierarchical' => true, ),
     'public' => true,
 ));
 
@@ -111,3 +124,54 @@ add_filter('wp_nav_menu_objects', function($sorted_menu_items, $args) {
 
     return $sorted_menu_items;
 }, 10, 2);
+
+
+add_filter('wpseo_breadcrumb_links', function($crumbs) {
+    $last = end($crumbs);
+
+    $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
+    $breadcrumb_catalog_master = array(
+        'text' => get_the_title($catalog_master_page),
+        'url' => get_permalink($catalog_master_page),
+        'allow_html' => true,
+    );
+
+    $catalog_shop_page = get_page_by_template_name('template-catalog_shop.php');
+    $breadcrumb_catalog_shop = array(
+        'text' => get_the_title($catalog_shop_page),
+        'url' => get_permalink($catalog_shop_page),
+        'allow_html' => true,
+    );
+
+    if (isset($last, $last['id']) && $last['id']) {
+        $post_type = get_post_type($last['id']);
+
+        if ($post_type == 'master') {
+            array_splice($crumbs, 1, 0, array($breadcrumb_catalog_master));
+        } elseif ($post_type == 'shop') {
+            array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
+        } else {
+        }
+    }
+
+    if (isset($last, $last['term'], $last['term']->taxonomy) && $last['term']->taxonomy == $catalog_master_page->post_name) {
+        array_splice($crumbs, 1, 0, array($breadcrumb_catalog_master));
+    }
+
+    if (isset($last, $last['term'], $last['term']->taxonomy) && $last['term']->taxonomy == $catalog_shop_page->post_name) {
+        array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
+    }
+
+    return $crumbs;
+});
+
+function get_page_by_template_name($name) {
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => 1,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $name,
+    );
+    $pages = get_posts($args);
+    return $pages[0];
+}
