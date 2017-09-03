@@ -1,0 +1,11 @@
+{
+  "name": "Remont",
+  "description": "Remont Website",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remont"
+  },
+  "devDependencies": {
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "remont",
+  "description": "",
+  "version": "1.0",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "artifact",
+      "url": "composer-artifacts/"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "johnpbloch/wordpress": "4.8.1",
+    "composer/installers": "~1.0",
+    "wp-cli/wp-cli" : "~0.22",
+    "psy/psysh" : "~0.6",
+    "advanced-custom-fields-pro": "5.5.3",
+    "wpackagist-plugin/contact-form-7": "4.9",
+    "wpackagist-plugin/ewww-image-optimizer": "3.6.1",
+    "wpackagist-plugin/wordpress-seo": "5.3.3",
+    "wpackagist-plugin/query-monitor": "2.13.4"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": {
+      "johnpbloch/wordpress-core": "public/wp"
+    }
+  }
+}

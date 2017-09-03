@@ -1,0 +1,20 @@
+/*
+Theme Name: Common
+Version: 1.0
+*/
+
+body {
+    background: #eee;
+    color: #474747;
+    font-size: 87.5%;
+}
+
+.colored-box {
+    background: white;
+}
+
+.col-300 {
+    -ms-flex: 0 0 300px;
+    flex: 0 0 300px;
+    max-width: 300px;
+}

@@ -1,0 +1,126 @@
+{
+    "key": "group_59ab2dda3203c",
+    "title": "Frontpage",
+    "fields": [
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_59ab2e329e8f6",
+                    "label": "\u0422\u041e\u041f \u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a",
+                    "name": "frontpage_top_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "sub_fields": [
+                        {
+                            "post_type": [
+                                "master"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "id",
+                            "ui": 1,
+                            "key": "field_59ab2f464eb7c",
+                            "label": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440",
+                            "name": "frontpage_top_item_id",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        },
+                        {
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "default_value": "",
+                            "delay": 0,
+                            "key": "field_59ab2e979e8f8",
+                            "label": "\u041e\u043f\u0438\u0441",
+                            "name": "frontpage_top_item_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            }
+                        }
+                    ],
+                    "min": 0,
+                    "max": 0,
+                    "layout": "row",
+                    "button_label": "",
+                    "collapsed": "",
+                    "key": "field_59ab2e529e8f7",
+                    "label": "\u041f\u043e\u0437\u0438\u0446\u0456\u044f",
+                    "name": "frontpage_top_items",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "collapsed": "",
+            "key": "field_59ab2def9e8f5",
+            "label": "\u0422\u041e\u041f\u0438",
+            "name": "frontpage_tops",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-top-lviv"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1504391945
+}

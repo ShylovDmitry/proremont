@@ -1,1 +1,9 @@
 .idea
+/public/wp-content/db.php
+
+
+/vendor/
+/public/wp/
+
+/public/wp-content/plugins/
+!/public/wp-content/plugins/.gitkeep
