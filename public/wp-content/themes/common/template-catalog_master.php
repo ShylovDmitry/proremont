@@ -33,7 +33,7 @@
             ?>
             <div class="row">
             <?php foreach ($sub_catalogs as $sub_pos => $sub_catalog): ?>
-                <div class="col-4"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a></div>
+                <div class="col-4"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a> (<?php echo $sub_catalog->count; ?>)</div>
                 <?php if (($sub_pos+1) % 3 == 0): ?><div class="w-100"></div><?php endif; ?>
             <?php endforeach; ?>
             </div>

@@ -1,5 +1,24 @@
 <?php
 
+add_filter('request', function($query_vars) {
+    if (isset($_GET['change_city'])) {
+        $term = get_term($_GET['change_city']);
+
+        $p = parse_url($_SERVER['REQUEST_URI']);
+        parse_str($p['query'], $q);
+        unset($q['change_city']);
+
+        $url = sprintf('%s%s',
+            str_replace('/' . $query_vars['city'] . '/', '/' . $term->slug . '/', $p['path']),
+            empty($q) ? '' : '?' . http_build_query($q)
+        );
+        wp_redirect($url);
+        exit;
+    }
+
+    return $query_vars;
+});
+
 register_nav_menus(array(
     'header_main' => 'Header Main',
     'footer_main' => 'Footer Main',
@@ -40,6 +59,17 @@ register_post_type('shop', array(
     ),
 ));
 
+register_taxonomy('location', 'master', array(
+    'labels' => array(
+        'name' => __('Location'),
+        'singular_name' => __('Location'),
+        'add_new_item' => __('Add New Location'),
+        'edit_item' => __('Edit Location'),
+    ),
+    'hierarchical' => true,
+    'public' => true,
+));
+
 register_taxonomy('catalog_master', 'master', array(
     'labels' => array(
         'name' => __('Catalog'),
@@ -48,7 +78,7 @@ register_taxonomy('catalog_master', 'master', array(
         'edit_item' => __('Edit Catalog'),
     ),
     'hierarchical' => true,
-    'rewrite' => array( 'hierarchical' => true, ),
+    'rewrite' => array('slug' => 'catalog_master/%city%', 'hierarchical' => true,),
     'public' => true,
 ));
 
@@ -175,3 +205,73 @@ function get_page_by_template_name($name) {
     $pages = get_posts($args);
     return $pages[0];
 }
+
+add_action('pre_get_posts', function($query) {
+    if (is_admin() ||  !$query->is_main_query()) {
+        return;
+    }
+
+    $filter = isset($_GET['filter']) && is_array($_GET['filter']) && !empty($_GET['filter']) ? $_GET['filter'] : null;
+    if (!$filter) {
+        return;
+    }
+
+
+    if (!empty($filter['master_type'])) {
+        $query->set('meta_query', array(
+            array(
+                'key' => 'master_type',
+                'value' => $filter['master_type'],
+            )
+        ));
+    }
+});
+
+add_action('pre_get_posts', function($query) {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    if (!$query->is_tax('catalog_master')) {
+        return;
+    }
+
+    $term = pror_get_city_object();
+    if (!$term) {
+        return;
+    }
+
+    $query->set('tax_query', array(
+        array (
+            'taxonomy' => 'location',
+            'field' => 'slug',
+            'terms' => $term->slug,
+        )
+    ));
+});
+
+function pror_get_city_object() {
+    $city = get_query_var('city');
+    $term = get_term_by('slug', $city, 'location');
+    if ($term) {
+        return $term;
+    }
+
+    $default_city = 'lvov';
+    return get_term_by('slug', $default_city, 'location');
+}
+
+
+add_filter('term_link', function($post_link, $id = 0) {
+    $term = pror_get_city_object();
+    if ($term) {
+        $post_link = str_replace('%city%', $term->slug, $post_link);
+    }
+
+    return $post_link;
+});
+
+
+add_action('init', function() {
+    add_rewrite_tag('%city%', '([^&]+)');
+});

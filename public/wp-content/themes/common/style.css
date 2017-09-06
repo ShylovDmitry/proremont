@@ -4,9 +4,10 @@ Version: 1.0
 */
 
 body {
-    background: #eee;
+    background: #e9ecef;
     color: #474747;
     font-size: 87.5%;
+    font-weight: 300;
 }
 
 .colored-box {
@@ -17,4 +18,16 @@ body {
     -ms-flex: 0 0 330px;
     flex: 0 0 330px;
     max-width: 330px;
+}
+
+.frontpage-title h1 {
+    font-weight: 100;
+}
+
+.frontpage-title h1 strong {
+    font-weight: 900;
+}
+
+.frontpage-title .lead {
+    font-weight: 200;
 }

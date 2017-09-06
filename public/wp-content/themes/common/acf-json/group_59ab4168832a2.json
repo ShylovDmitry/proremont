@@ -9,7 +9,7 @@
             "prepend": "",
             "append": "",
             "key": "field_59ab41700f046",
-            "label": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
+            "label": "Telephone",
             "name": "master_tel",
             "type": "text",
             "instructions": "",
@@ -24,42 +24,17 @@
         {
             "layout": "horizontal",
             "choices": {
-                "\u041b\u044c\u0432\u043e\u0432": "\u041b\u044c\u0432\u043e\u0432",
-                "\u041a\u0438\u0457\u0432": "\u041a\u0438\u0457\u0432",
-                "\u041e\u0434\u0435\u0441\u0430": "\u041e\u0434\u0435\u0441\u0430"
-            },
-            "default_value": [],
-            "allow_custom": 0,
-            "save_custom": 0,
-            "toggle": 0,
-            "return_format": "value",
-            "key": "field_59ab41950f047",
-            "label": "\u0420\u0435\u0433\u0456\u043e\u043d",
-            "name": "master_region",
-            "type": "checkbox",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "layout": "horizontal",
-            "choices": {
-                "\u041c\u0430\u0439\u0441\u0442\u0435\u0440": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440",
-                "\u0411\u0440\u0438\u0433\u0430\u0434\u0438\u0440": "\u0411\u0440\u0438\u0433\u0430\u0434\u0438\u0440",
-                "\u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f": "\u041a\u043e\u043c\u043f\u0430\u043d\u0456\u044f"
+                "master": "\u041c\u0430\u0441\u0442\u0435\u0440",
+                "br\u0456gada": "\u0411\u0440\u0438\u0433\u0430\u0434\u0430",
+                "kompania": "\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f"
             },
             "default_value": "",
             "other_choice": 0,
             "save_other_choice": 0,
             "allow_null": 0,
-            "return_format": "value",
+            "return_format": "label",
             "key": "field_59ab420b0f048",
-            "label": "\u0422\u0438\u043f",
+            "label": "Type",
             "name": "master_type",
             "type": "radio",
             "instructions": "",
@@ -89,5 +64,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504396617
+    "modified": 1504701956
 }

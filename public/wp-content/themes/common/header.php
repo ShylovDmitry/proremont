@@ -24,9 +24,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <form class="form-inline my-2 my-lg-0 ml-5 mr-auto">
                 <div class="input-group">
-                    <input type="text" size="40" class="form-control form-control-sm" placeholder="Ремонт санвузла" aria-label="Ремонт санвузла">
+                    <input type="text" size="40" class="form-control form-control-sm" placeholder="Ремонт санузла">
                     <span class="input-group-btn">
-                        <button class="btn btn-sm btn-outline-success" type="button">Пошук</button>
+                        <button class="btn btn-sm btn-outline-success" type="button">Поиск</button>
                     </span>
                 </div>
             </form>

@@ -1,26 +1,29 @@
 <?php get_header(); ?>
 
-<h1 class="text-center my-5">Зробити файний ремонт</h1>
-
+<div class="jumbotron jumbotron-fluid pt-5 pb-5">
+    <div class="container text-center frontpage-title">
+        <h1 class="display-3">Все <strong>про ремонт</strong> тут</h1>
+        <p class="lead mt-3">Тут ви найдете всю необходимую информацию для создания своего уютного уголока.</p>
+    </div>
+</div>
 
 <?php $tops = get_field( 'frontpage_tops', 'option' ); ?>
 <div class="container colored-box py-3">
-    <div class="row">
-        <div class="col-12 mx-auto mt-3">
-            <ul class="list-inline list-unstyled text-center mb-0">
-                <li class="list-inline-item">Вибери своє місто:</li>
-                <li class="list-inline-item"><a href="#">Київ</a></li>
-                <li class="list-inline-item"><a href="#">Львів</a></li>
-                <li class="list-inline-item"><a href="#">Одеса</a></li>
-            </ul>
-        </div>
-        <div class="col-2 mx-auto mb-3">
-            <hr />
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-12 mx-auto mt-3">-->
+<!--            <ul class="list-inline list-unstyled text-center mb-0">-->
+<!--                <li class="list-inline-item">Вибери своє місто:</li>-->
+<!--                <li class="list-inline-item"><a href="#">Київ</a></li>-->
+<!--                <li class="list-inline-item"><a href="#">Львів</a></li>-->
+<!--                <li class="list-inline-item"><a href="#">Одеса</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="col-2 mx-auto mb-3">-->
+<!--            <hr />-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="row">
-
     <?php foreach ($tops as $pos => $top) : ?>
         <div class="col-6">
             <h4 class="text-center"><?php echo $top['frontpage_top_title']; ?></h4>
@@ -34,7 +37,7 @@
                         <img class="d-flex mr-3" src="http://via.placeholder.com/64" alt="" width="64" />
                     </a>
                     <div class="media-body">
-                        <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($item) ); ?>"><?php echo $item->post_title; ?></a></h5>
+                        <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($item) ); ?>"><?php the_field('master_type', $item); ?> - <?php echo get_the_title($item); ?></a></h5>
                         <?php echo $top_item['frontpage_top_item_text']; ?>
                     </div>
                 </li>
