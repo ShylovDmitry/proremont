@@ -11,7 +11,7 @@
             ?>
             <h1><?php single_term_title() ?> - <?php echo $city_name; ?></h1>
 
-            <?php get_template_part('searchbox'); ?>
+            <?php get_template_part('master-search-form'); ?>
 
             <?php if (have_posts()): ?>
 
@@ -19,11 +19,14 @@
                     <div class="media">
                         <img class="d-flex mr-3" src="http://via.placeholder.com/100" alt="" width="100" />
                         <div class="media-body">
-                            <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_field('master_type'); ?> - <?php the_title(); ?></a></h5>
+                            <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_field('master_type'); ?> - <?php the_title(); ?></a>
+                                <?php if(get_field('master_is_confirmed')): ?>
+                                    <small><span class="oi oi-circle-check ml-2 text-secondary" data-toggle="tooltip" title="Документи мастера подтверджени <br />Телефон подтвержден"></span></small>
+                                <?php endif; ?>
+                            </h5>
 
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-3"><?php the_terms(null, 'location'); ?></li>
-                                <li>Досвід 10 років.</li>
                                 <li>Телефон: <a href="#"><?php the_field('master_tel'); ?></a></li>
                             </ul>
                         </div>

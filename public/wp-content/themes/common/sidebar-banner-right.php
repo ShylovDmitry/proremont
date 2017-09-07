@@ -1,7 +1,7 @@
 <div class="col col-300">
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/300x450"></a>
+    <?php echo pror_adrotate_group_by_name('sidebar_1'); ?>
 
     <br /><br />
 
-    <a href="https://placeholder.com"><img src="http://via.placeholder.com/300x450"></a>
+    <?php echo pror_adrotate_group_by_name('sidebar_2'); ?>
 </div>

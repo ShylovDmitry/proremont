@@ -1,4 +1,4 @@
-<form class="mb-4">
+<form class="mb-4 p-3 bg-light border border-secondary">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Локация</label>
         <div class="col-sm-10">
@@ -40,8 +40,8 @@
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-8 text-right">
+    <div class="form-group mb-0">
+        <div class="text-right">
             <button type="submit" class="btn btn-primary">Поиск</button>
         </div>
     </div>

@@ -9,12 +9,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css">
+    <link href="<?php echo get_template_directory_uri(); ?>/css/open-iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
+    <link href="<?php echo get_template_directory_uri(); ?>/css/slick-lightbox.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/common.css">
+
     <?php wp_head(); ?>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url('/'); ?>">ProRemont.UA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,3 +46,11 @@
         </div>
     </div>
 </nav>
+
+<div class="container mb-1">
+    <div class="row">
+        <div class="col">
+            <?php echo pror_adrotate_group_by_name('leaderboard'); ?>
+        </div>
+    </div>
+</div>

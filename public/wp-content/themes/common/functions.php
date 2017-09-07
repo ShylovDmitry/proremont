@@ -275,3 +275,17 @@ add_filter('term_link', function($post_link, $id = 0) {
 add_action('init', function() {
     add_rewrite_tag('%city%', '([^&]+)');
 });
+
+function pror_adrotate_group_by_name($name) {
+    global $wpdb;
+
+    $group_id = $wpdb->get_var("SELECT id FROM `{$wpdb->prefix}adrotate_groups` WHERE `name` = '{$name}';");
+    if (!$group_id) {
+        return '';
+    }
+
+    $group_output = adrotate_group($group_id);
+    $group_output = str_replace("g g-", "g g-{$name} g-", $group_output);
+    return $group_output;
+
+}

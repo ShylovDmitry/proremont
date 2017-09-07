@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f9f6fd6d66ce89286454c3daf918143a",
-    "content-hash": "66fa81abf923379e86d3e0ab57a9e665",
+    "hash": "d11d499ea3081f52b1823b5d9b1e5a57",
+    "content-hash": "b188476c52f8d1ee2f002c9e00bee187",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2052,15 +2052,15 @@
         },
         {
             "name": "wpackagist-plugin/adrotate",
-            "version": "4.6.1",
+            "version": "4.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/adrotate/",
-                "reference": "tags/4.6.1"
+                "reference": "tags/4.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/adrotate.4.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/adrotate.4.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2132,15 +2132,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.3.3",
+            "version": "5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.3.3"
+                "reference": "tags/5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.3.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2149,6 +2149,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-review",
+            "version": "4.0.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-review/",
+                "reference": "tags/4.0.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-review.4.0.10.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-review/"
         }
     ],
     "packages-dev": [],

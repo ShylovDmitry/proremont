@@ -24,6 +24,24 @@
             <?php the_content(); ?>
 
             <?php
+            $images = get_field('master_gallery');
+            $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+
+            if( $images ): ?>
+                <div class="master-gallery-wrapper">
+                <div class="master-gallery">
+                    <?php foreach( $images as $image ): ?>
+                        <div>
+                            <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
+                                <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                </div>
+            <?php endif; ?>
+
+            <?php
                 if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;

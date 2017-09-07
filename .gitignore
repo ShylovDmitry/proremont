@@ -7,3 +7,6 @@
 
 /public/wp-content/plugins/
 !/public/wp-content/plugins/.gitkeep
+
+/public/wp-content/uploads/
+!/public/wp-content/uploads/.gitkeep
