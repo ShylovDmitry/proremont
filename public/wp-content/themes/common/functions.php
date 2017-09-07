@@ -42,22 +42,22 @@ register_post_type('master', array(
     ),
 ));
 
-register_post_type('shop', array(
-    'labels' => array(
-        'name' => __('Shops'),
-        'singular_name' => __('Shop'),
-        'add_new_item' => __('Add New Shop'),
-        'edit_item' => __('Edit Shop'),
-    ),
-    'public' => true,
-    'supports' => array(
-        'title',
-        'excerpt',
-        'editor',
-        'comments',
-        'revisions',
-    ),
-));
+//register_post_type('shop', array(
+//    'labels' => array(
+//        'name' => __('Shops'),
+//        'singular_name' => __('Shop'),
+//        'add_new_item' => __('Add New Shop'),
+//        'edit_item' => __('Edit Shop'),
+//    ),
+//    'public' => true,
+//    'supports' => array(
+//        'title',
+//        'excerpt',
+//        'editor',
+//        'comments',
+//        'revisions',
+//    ),
+//));
 
 register_taxonomy('location', 'master', array(
     'labels' => array(
@@ -82,17 +82,17 @@ register_taxonomy('catalog_master', 'master', array(
     'public' => true,
 ));
 
-register_taxonomy('catalog_shop', 'shop', array(
-    'labels' => array(
-        'name' => __('Catalog'),
-        'singular_name' => __('Catalog'),
-        'add_new_item' => __('Add New Catalog'),
-        'edit_item' => __('Edit Catalog'),
-    ),
-    'hierarchical' => true,
-    'rewrite' => array( 'hierarchical' => true, ),
-    'public' => true,
-));
+//register_taxonomy('catalog_shop', 'shop', array(
+//    'labels' => array(
+//        'name' => __('Catalog'),
+//        'singular_name' => __('Catalog'),
+//        'add_new_item' => __('Add New Catalog'),
+//        'edit_item' => __('Edit Catalog'),
+//    ),
+//    'hierarchical' => true,
+//    'rewrite' => array( 'hierarchical' => true, ),
+//    'public' => true,
+//));
 
 
 if( function_exists('acf_add_options_page') ) {
@@ -166,20 +166,20 @@ add_filter('wpseo_breadcrumb_links', function($crumbs) {
         'allow_html' => true,
     );
 
-    $catalog_shop_page = get_page_by_template_name('template-catalog_shop.php');
-    $breadcrumb_catalog_shop = array(
-        'text' => get_the_title($catalog_shop_page),
-        'url' => get_permalink($catalog_shop_page),
-        'allow_html' => true,
-    );
+//    $catalog_shop_page = get_page_by_template_name('template-catalog_shop.php');
+//    $breadcrumb_catalog_shop = array(
+//        'text' => get_the_title($catalog_shop_page),
+//        'url' => get_permalink($catalog_shop_page),
+//        'allow_html' => true,
+//    );
 
     if (isset($last, $last['id']) && $last['id']) {
         $post_type = get_post_type($last['id']);
 
         if ($post_type == 'master') {
             array_splice($crumbs, 1, 0, array($breadcrumb_catalog_master));
-        } elseif ($post_type == 'shop') {
-            array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
+//        } elseif ($post_type == 'shop') {
+//            array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
         } else {
         }
     }
@@ -188,9 +188,9 @@ add_filter('wpseo_breadcrumb_links', function($crumbs) {
         array_splice($crumbs, 1, 0, array($breadcrumb_catalog_master));
     }
 
-    if (isset($last, $last['term'], $last['term']->taxonomy) && $last['term']->taxonomy == $catalog_shop_page->post_name) {
-        array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
-    }
+//    if (isset($last, $last['term'], $last['term']->taxonomy) && $last['term']->taxonomy == $catalog_shop_page->post_name) {
+//        array_splice($crumbs, 1, 0, array($breadcrumb_catalog_shop));
+//    }
 
     return $crumbs;
 });

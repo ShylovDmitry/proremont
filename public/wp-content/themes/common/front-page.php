@@ -88,29 +88,29 @@
     </div>
 
 
-    <?php $catalog_shop_page = get_page_by_template_name('template-catalog_shop.php'); ?>
-    <hr class="my-5"/>
-    <div class="row">
-        <div class="col-12">
-            <h3 class="text-center mb-4"><a href="<?php echo esc_url( get_permalink($catalog_shop_page) ); ?>"><?php echo get_the_title($catalog_shop_page) ?></a></h3>
-        </div>
-        <div class="col-12">
-            <?php
-            $main_catalogs = get_terms(array(
-                'parent' => 0,
-                'hierarchical' => false,
-                'taxonomy' => 'catalog_shop',
-                'hide_empty' => false,
-            ));
-            ?>
-
-            <ul class="list-unstyled list-inline text-center">
-            <?php foreach ($main_catalogs as $pos => $main_catalog): ?>
-                <li class="list-inline-item mx-3"><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a> (<?php echo $main_catalog->count; ?>)</li>
-            <?php endforeach; ?>
-            </ul>
-        </div>
-    </div>
+<!--    --><?php //$catalog_shop_page = get_page_by_template_name('template-catalog_shop.php'); ?>
+<!--    <hr class="my-5"/>-->
+<!--    <div class="row">-->
+<!--        <div class="col-12">-->
+<!--            <h3 class="text-center mb-4"><a href="--><?php //echo esc_url( get_permalink($catalog_shop_page) ); ?><!--">--><?php //echo get_the_title($catalog_shop_page) ?><!--</a></h3>-->
+<!--        </div>-->
+<!--        <div class="col-12">-->
+<!--            --><?php
+//            $main_catalogs = get_terms(array(
+//                'parent' => 0,
+//                'hierarchical' => false,
+//                'taxonomy' => 'catalog_shop',
+//                'hide_empty' => false,
+//            ));
+//            ?>
+<!---->
+<!--            <ul class="list-unstyled list-inline text-center">-->
+<!--            --><?php //foreach ($main_catalogs as $pos => $main_catalog): ?>
+<!--                <li class="list-inline-item mx-3"><a href="--><?php //echo esc_url( get_term_link($main_catalog) ); ?><!--">--><?php //echo $main_catalog->name; ?><!--</a> (--><?php //echo $main_catalog->count; ?><!--)</li>-->
+<!--            --><?php //endforeach; ?>
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 <?php get_footer(); ?>
