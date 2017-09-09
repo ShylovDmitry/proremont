@@ -20,13 +20,16 @@
     "wp-cli/wp-cli" : "~0.22",
     "psy/psysh" : "~0.6",
     "advanced-custom-fields-pro": "5.5.3",
+    "wp-all-import-pro": "4.4.9",
+    "wp-all-export-pro": "1.4.7",
     "wpackagist-plugin/contact-form-7": "4.9",
     "wpackagist-plugin/ewww-image-optimizer": "3.6.1",
     "wpackagist-plugin/wordpress-seo": "5.4",
-    "wpackagist-plugin/query-monitor": "2.13.4",
+    "wpackagist-plugin/query-monitor": "2.14.0",
     "wpackagist-plugin/adrotate": "4.6.2",
     "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
     "wpackagist-plugin/wp-review": "4.0.10"
+
   },
   "extra": {
     "installer-paths": {
