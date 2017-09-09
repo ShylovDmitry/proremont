@@ -28,7 +28,8 @@
     "wpackagist-plugin/query-monitor": "2.14.0",
     "wpackagist-plugin/adrotate": "4.6.2",
     "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
-    "wpackagist-plugin/wp-review": "4.0.10"
+    "wpackagist-plugin/wp-review": "4.0.10",
+    "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5"
 
   },
   "extra": {

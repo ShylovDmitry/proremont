@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a68036ad3f0e36925bc72a7ffadb9c0f",
-    "content-hash": "958430766b67c5ddc24af43c8df5b092",
+    "hash": "a49feba4e95372b5256f3bfa0ac1a918",
+    "content-hash": "7802f3a1cfe3b56d6851a9c96f862056",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2211,6 +2211,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-review/"
+        },
+        {
+            "name": "wpackagist-plugin/yoast-seo-settings-xml-csv-import",
+            "version": "1.1.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/yoast-seo-settings-xml-csv-import/",
+                "reference": "tags/1.1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/yoast-seo-settings-xml-csv-import.1.1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/yoast-seo-settings-xml-csv-import/"
         }
     ],
     "packages-dev": [],
