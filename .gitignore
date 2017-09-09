@@ -5,6 +5,8 @@
 /vendor/
 /public/wp/
 
+/public/wp-content/ewww/
+
 /public/wp-content/plugins/
 !/public/wp-content/plugins/.gitkeep
 

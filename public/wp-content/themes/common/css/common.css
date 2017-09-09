@@ -42,3 +42,8 @@ body {
 .master-gallery .slick-slide {
     padding: 0 5px;
 }
+
+.master-gallery .slick-slide img {
+    height: 200px;
+    width: auto;
+}

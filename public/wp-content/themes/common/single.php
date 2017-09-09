@@ -25,7 +25,6 @@
 
             <?php
             $images = get_field('master_gallery');
-            $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
             if( $images ): ?>
                 <div class="master-gallery-wrapper">
@@ -33,7 +32,7 @@
                     <?php foreach( $images as $image ): ?>
                         <div>
                             <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
-                                <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+                                <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
                             </a>
                         </div>
                     <?php endforeach; ?>

@@ -1,5 +1,7 @@
 <?php
 
+add_image_size('pror-medium', 300, 300, true);
+
 add_filter('request', function($query_vars) {
     if (isset($_GET['change_city'])) {
         $term = get_term($_GET['change_city']);
