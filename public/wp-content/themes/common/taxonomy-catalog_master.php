@@ -5,10 +5,7 @@
 <div class="container colored-box py-3">
     <div class="row">
         <div class="col">
-            <?php
-                $section = pror_get_section();
-            ?>
-            <h1><?php single_term_title() ?> - <?php echo $section['name']; ?></h1>
+            <h1><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
 
             <?php get_template_part('master-search-form'); ?>
 

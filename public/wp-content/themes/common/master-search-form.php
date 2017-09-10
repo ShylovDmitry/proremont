@@ -5,12 +5,15 @@
 
             <select class="form-control" name="change_section">
                 <?php
-                    $selected_section = pror_get_section();
-                    $selected_section_slug = $selected_section ? $selected_section['slug'] : '';
+                    $selected_section_id = pror_get_section()->term_id;
+                    $sections = get_terms(array(
+                        'taxonomy' => 'section',
+                        'hide_empty' => false,
+                    ));
                 ?>
-                <?php foreach (get_field('website_sections', 'option') as $section) : ?>
-                    <option value="<?php echo $section['slug']; ?>"<?php if ($selected_section_slug == $section['slug']): ?> selected="selected"<?php endif; ?>>
-                        <?php echo $section['name']; ?>
+                <?php foreach ($sections as $section) : ?>
+                    <option value="<?php echo $section->slug; ?>"<?php if ($selected_section_id == $section->term_id): ?> selected="selected"<?php endif; ?>>
+                        <?php echo $section->name; ?>
                     </option>
                 <?php endforeach; ?>
             </select>

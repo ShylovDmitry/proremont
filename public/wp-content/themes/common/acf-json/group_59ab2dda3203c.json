@@ -5,15 +5,18 @@
         {
             "sub_fields": [
                 {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "taxonomy": "section",
+                    "field_type": "checkbox",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "return_format": "id",
+                    "add_term": 0,
+                    "load_terms": 0,
+                    "save_terms": 0,
                     "key": "field_59b4939fb2016",
-                    "label": "Section Slug",
-                    "name": "section_slug",
-                    "type": "text",
+                    "label": "Section",
+                    "name": "section",
+                    "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -127,5 +130,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505006699
+    "modified": 1505047559
 }
