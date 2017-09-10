@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<?php $tops = get_field( 'frontpage_tops', 'option' ); ?>
+<?php ?>
 <div class="container colored-box py-3">
 <!--    <div class="row">-->
 <!--        <div class="col-12 mx-auto mt-3">-->
@@ -23,31 +23,48 @@
 <!--        </div>-->
 <!--    </div>-->
 
+
     <div class="row">
-    <?php foreach ($tops as $pos => $top) : ?>
-        <div class="col-6">
-            <h4 class="text-center"><?php echo $top['frontpage_top_title']; ?></h4>
-
-            <ul class="list-unstyled mb-0">
-            <?php foreach ($top['frontpage_top_items'] as $top_item) : ?>
-                <?php $item = get_post($top_item['frontpage_top_item_id']); ?>
-
-                <li class="media mt-4">
-                    <a href="<?php echo esc_url( get_permalink($item) ); ?>">
-                        <img class="d-flex mr-3" src="http://via.placeholder.com/64" alt="" width="64" />
-                    </a>
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($item) ); ?>"><?php the_field('master_type', $item); ?> - <?php echo get_the_title($item); ?></a></h5>
-                        <?php echo $top_item['frontpage_top_item_text']; ?>
-                    </div>
-                </li>
-            <?php endforeach; ?>
+        <div class="col-12">
+            <ul class="nav nav-pills mb-3" role="tablist">
+                <?php foreach (get_field('frontpage_vips', 'option') as $pos => $vip) : ?>
+                    <?php $section = pror_get_section_by_slug($vip['section_slug']); ?>
+                    <li class="nav-item">
+                        <a class="nav-link<?php if ($pos == 0): ?> active<?php endif; ?>" data-toggle="pill" href="#section-<?php echo $section['slug']; ?>" role="tab"><?php echo $section['name']; ?></a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
 
-        <?php if (($pos+1) % 2 == 0): ?><div class="w-100 my-3"></div><?php endif; ?>
-    <?php endforeach; ?>
+        <div class="tab-content w-100">
+            <?php foreach (get_field('frontpage_vips', 'option') as $pos => $vip) : ?>
+                <?php $section = pror_get_section_by_slug($vip['section_slug']); ?>
 
+                <div class="tab-pane fade show<?php if ($pos == 0): ?> active<?php endif; ?>" id="section-<?php echo $section['slug']; ?>" role="tabpanel">
+                    <?php foreach ($vip['lists'] as $list): ?>
+                        <div class="col-6">
+                            <h4 class="text-center"><?php echo $list['title']; ?></h4>
+
+                            <ul class="list-unstyled mb-0">
+                            <?php foreach ($list['masters'] as $master_id): ?>
+                                <li class="media mt-4">
+                                    <a href="<?php echo esc_url( get_permalink($master_id) ); ?>">
+                                        <img class="d-flex mr-3" src="http://via.placeholder.com/64" alt="" width="64" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($master_id) ); ?>"><?php the_field('master_type', $master_id); ?> - <?php echo get_the_title($master_id); ?></a></h5>
+                                        <?php echo get_the_excerpt($master_id); ?>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                            </ul>
+                        </div>
+
+                        <?php if (($pos+1) % 2 == 0): ?><div class="w-100 my-3"></div><?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 
 
