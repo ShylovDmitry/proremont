@@ -253,10 +253,6 @@ add_action('pre_get_posts', function($query) {
         return;
     }
 
-    global $save_prev_section_value;
-    $save_prev_section_value = $query->get('section');
-    $query->set('section', null);
-
     $query->set('tax_query', array(
         array (
             'taxonomy' => 'location',
@@ -265,6 +261,10 @@ add_action('pre_get_posts', function($query) {
             'operator' => 'IN',
         )
     ));
+
+    global $save_prev_section_value;
+    $save_prev_section_value = $query->get('section');
+    $query->set('section', null);
 });
 
 add_filter('the_posts', function($posts, $query) {
