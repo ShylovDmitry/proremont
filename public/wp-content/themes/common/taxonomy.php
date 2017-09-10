@@ -6,10 +6,9 @@
     <div class="row">
         <div class="col">
             <?php
-                $term = pror_get_city_object();
-                $city_name = $term ? $term->name : '';
+                $section = pror_get_section();
             ?>
-            <h1><?php single_term_title() ?> - <?php echo $city_name; ?></h1>
+            <h1><?php single_term_title() ?> - <?php echo $section['name']; ?></h1>
 
             <?php get_template_part('master-search-form'); ?>
 

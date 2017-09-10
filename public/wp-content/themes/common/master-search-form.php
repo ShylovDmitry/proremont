@@ -2,20 +2,19 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Локация</label>
         <div class="col-sm-10">
-            <?php
-                $city_term = pror_get_city_object();
-                $selected_location = $city_term ? $city_term->term_id : 0;
 
-                wp_dropdown_categories(array(
-                    'taxonomy' => 'location',
-                    'orderby' => 'name',
-                    'selected' => $selected_location,
-                    'hierarchical'       => 1,
-                    'name'               => 'change_city',
-                    'class'              => 'form-control',
-                    'value_field'	     => 'term_id',
-                ));
-            ?>
+            <select class="form-control" name="change_section">
+                <?php
+                    $selected_section = pror_get_section();
+                    $selected_section_slug = $selected_section ? $selected_section['slug'] : '';
+                ?>
+                <?php foreach (get_field('website_sections', 'option') as $section) : ?>
+                    <option value="<?php echo $section['slug']; ?>"<?php if ($selected_section_slug == $section['slug']): ?> selected="selected"<?php endif; ?>>
+                        <?php echo $section['name']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+
         </div>
     </div>
     <div class="form-group row">

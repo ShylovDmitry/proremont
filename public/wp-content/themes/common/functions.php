@@ -3,15 +3,15 @@
 add_image_size('pror-medium', 300, 300, true);
 
 add_filter('request', function($query_vars) {
-    if (isset($_GET['change_city'])) {
-        $term = get_term($_GET['change_city']);
+    if (isset($_GET['change_section'])) {
+        $section = pror_get_section_by_slug($_GET['change_section']);
 
         $p = parse_url($_SERVER['REQUEST_URI']);
         parse_str($p['query'], $q);
-        unset($q['change_city']);
+        unset($q['change_section']);
 
         $url = sprintf('%s%s',
-            str_replace('/' . $query_vars['city'] . '/', '/' . $term->slug . '/', $p['path']),
+            str_replace('/' . $query_vars['section'] . '/', '/' . $section['slug'] . '/', $p['path']),
             empty($q) ? '' : '?' . http_build_query($q)
         );
         wp_redirect($url);
@@ -80,7 +80,7 @@ register_taxonomy('catalog_master', 'master', array(
         'edit_item' => __('Edit Catalog'),
     ),
     'hierarchical' => true,
-    'rewrite' => array('slug' => 'catalog_master/%city%', 'hierarchical' => true,),
+    'rewrite' => array('slug' => 'catalog_master/%section%', 'hierarchical' => true,),
     'public' => true,
 ));
 
@@ -238,36 +238,39 @@ add_action('pre_get_posts', function($query) {
         return;
     }
 
-    $term = pror_get_city_object();
-    if (!$term) {
+    $section = pror_get_section();
+    if (!$section) {
         return;
     }
 
     $query->set('tax_query', array(
         array (
             'taxonomy' => 'location',
-            'field' => 'slug',
-            'terms' => $term->slug,
+            'terms' => $section['locations'],
+            'include_children' => false,
+            'operator' => 'IN',
         )
     ));
 });
 
-function pror_get_city_object() {
-    $city = get_query_var('city');
-    $term = get_term_by('slug', $city, 'location');
-    if ($term) {
-        return $term;
-    }
+function pror_get_section() {
+    return pror_get_section_by_slug(get_query_var('section'));
+}
 
-    $default_city = 'lvov';
-    return get_term_by('slug', $default_city, 'location');
+function pror_get_section_by_slug($slug) {
+    foreach (get_field('website_sections', 'option') as $section) {
+        if ($section['slug'] == $slug) {
+            return $section;
+        }
+    }
+    return null;
 }
 
 
 add_filter('term_link', function($post_link, $id = 0) {
-    $term = pror_get_city_object();
-    if ($term) {
-        $post_link = str_replace('%city%', $term->slug, $post_link);
+    $section = pror_get_section();
+    if ($section) {
+        $post_link = str_replace('%section%', $section['slug'], $post_link);
     }
 
     return $post_link;
@@ -275,7 +278,7 @@ add_filter('term_link', function($post_link, $id = 0) {
 
 
 add_action('init', function() {
-    add_rewrite_tag('%city%', '([^&]+)');
+    add_rewrite_tag('%section%', '([^&]+)');
 });
 
 function pror_adrotate_group_by_name($name) {
