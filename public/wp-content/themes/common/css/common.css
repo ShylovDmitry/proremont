@@ -47,3 +47,10 @@ body {
     height: 200px;
     width: auto;
 }
+
+
+.comment-rating-field-pro-plugin {
+    float: right;
+    border: 1px solid lightblue;
+    padding: 10px;
+}

@@ -7,6 +7,13 @@
 
 add_image_size('pror-medium', 300, 300, true);
 
+add_theme_support( 'html5', array(
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+) );
+
 if( function_exists('acf_add_options_page') ) {
     $parent = acf_add_options_page(array(
 		'page_title' 	=> 'Front Page Settings',
@@ -17,9 +24,17 @@ if( function_exists('acf_add_options_page') ) {
 
 add_filter('comment_form_default_fields', function($fields) {
     unset($fields['url']);
+    unset($fields['author']);
+    unset($fields['email']);
 
     return $fields;
 });
+
+add_filter('comment_form_defaults', function($defaults) {
+    $defaults['must_log_in'] = '<p class="must-log-in">Только авторизированый пользователь может оставить коментарий.</p>';
+
+    return $defaults;
+}, 1, 5);
 
 
 /*

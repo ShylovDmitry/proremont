@@ -21,24 +21,28 @@
 
             <hr />
 
-            <?php the_content(); ?>
+            <div class="clearfix mb-5">
+                <?php the_content(); ?>
+            </div>
 
-            <?php
-            $images = get_field('master_gallery');
+            <div class="clearfix mb-5">
+                <?php
+                $images = get_field('master_gallery');
 
-            if( $images ): ?>
-                <div class="master-gallery-wrapper">
-                <div class="master-gallery">
-                    <?php foreach( $images as $image ): ?>
-                        <div>
-                            <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
-                                <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                </div>
-            <?php endif; ?>
+                if( $images ): ?>
+                    <div class="master-gallery-wrapper">
+                    <div class="master-gallery">
+                        <?php foreach( $images as $image ): ?>
+                            <div>
+                                <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
+                                    <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    </div>
+                <?php endif; ?>
+            </div>
 
             <?php
                 if ( comments_open() || get_comments_number() ) :

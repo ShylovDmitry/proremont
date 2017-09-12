@@ -28,43 +28,19 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
-				/* translators: %s: post title */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'twentyseventeen' ), get_the_title() );
-			} else {
-				printf(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s Reply to &ldquo;%2$s&rdquo;',
-						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'twentyseventeen'
-					),
-					number_format_i18n( $comments_number ),
-					get_the_title()
-				);
-			}
-			?>
-		</h2>
-
-		<ol class="comment-list">
+		<ul class="list-unstyled comment-list">
 			<?php
 				wp_list_comments( array(
-					'avatar_size' => 100,
-					'style'       => 'ol',
+					'avatar_size' => 50,
+					'style'       => 'ul',
 					'short_ping'  => true,
-					'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
 				) );
 			?>
-		</ol>
+		</ul>
 
 		<?php the_comments_pagination( array(
-			'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+			'prev_text' => 'Previous',
+			'next_text' => 'Next',
 		) );
 
 	endif; // Check for have_comments().
@@ -76,7 +52,17 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	comment_form(array(
+//	    'must_log_in' => '<p class="must-log-in">Только авторизированый пользователь может оставить коментарий.</p>',
+		'logged_in_as'         => '<p class="logged-in-as">' . sprintf(
+		                              /* translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL */
+		                              __( 'Авторизирован как <strong>%1$s</strong>. <a href="%2$s">Выйти?</a>' ),
+		                              $user_identity,
+		                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+		                          ) . '</p>',
+        'cancel_reply_link'    => __( 'Cancel reply' ),
+		'label_submit'         => 'Коментировать',
+    ));
 	?>
 
 </div><!-- #comments -->

@@ -3,25 +3,6 @@
     "title": "Master",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_59ab41700f046",
-            "label": "Telephone",
-            "name": "master_tel",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
             "layout": "horizontal",
             "choices": {
                 "master": "\u041c\u0430\u0441\u0442\u0435\u0440",
@@ -56,6 +37,41 @@
             "label": "Is confirmed?",
             "name": "master_is_confirmed",
             "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_59ab41700f046",
+            "label": "Telephone",
+            "name": "master_tel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "placeholder": "",
+            "key": "field_59b5b30d70fe1",
+            "label": "Website",
+            "name": "master_website",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -108,5 +124,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1504823491
+    "modified": 1505080126
 }

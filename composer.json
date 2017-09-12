@@ -22,14 +22,15 @@
     "advanced-custom-fields-pro": "5.5.3",
     "wp-all-import-pro": "4.4.9",
     "wp-all-export-pro": "1.4.7",
+    "wpai-acf-add-on": "3.1.5",
+    "comment-rating-field-pro-plugin": "3.4.8",
     "wpackagist-plugin/contact-form-7": "4.9",
     "wpackagist-plugin/ewww-image-optimizer": "3.6.1",
     "wpackagist-plugin/wordpress-seo": "5.4",
-    "wpackagist-plugin/query-monitor": "2.14.0",
     "wpackagist-plugin/adrotate": "4.6.2",
     "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
-    "wpackagist-plugin/wp-review": "4.0.10",
-    "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5"
+    "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5",
+    "wpackagist-plugin/oa-social-login": "5.3"
   },
   "extra": {
     "installer-paths": {
@@ -40,5 +41,11 @@
     "wordpress-install-dir": {
       "johnpbloch/wordpress-core": "public/wp"
     }
+  },
+  "scripts" : {
+    "post-install-cmd" : [
+      "rm -f cli/wp",
+      "ln -s ../vendor/wp-cli/wp-cli/bin/wp cli/wp"
+    ]
   }
 }
