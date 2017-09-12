@@ -10,28 +10,6 @@
 <?php ?>
 <div class="container colored-box py-3">
 
-    <div class="row">
-        <div class="col-12 mx-auto mt-3">
-            <ul class="list-inline list-unstyled text-center mb-0">
-                <li class="list-inline-item">Вибери свой город:</li>
-                <?php
-                    $terms = get_terms(array(
-                        'taxonomy' => 'section',
-                        'hide_empty' => false,
-                    ));
-                ?>
-                <?php foreach ($terms as $term): ?>
-                    <li class="list-inline-item"><a href="<?php echo home_url("{$term->slug}/"); ?>"><?php echo $term->name; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-        <div class="col-2 mx-auto mb-3">
-            <hr />
-        </div>
-    </div>
-
-
-
     <?php $current_section_id = pror_get_section()->term_id; ?>
     <?php foreach (get_field('frontpage_vips', 'option') as $vip): ?>
         <?php if (in_array($current_section_id, $vip['section'])): ?>
@@ -99,6 +77,29 @@
         <?php if (($pos+1) % 3 == 0): ?><div class="w-100"></div><?php endif; ?>
     <?php endforeach; ?>
     </div>
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+        <div class="col-12 mx-auto mt-3">
+            <h6>Вибери свой город</h6>
+            <div class="row">
+                <?php
+                    $terms = get_terms(array(
+                        'taxonomy' => 'section',
+                        'hide_empty' => false,
+                    ));
+                ?>
+                <?php foreach ($terms as $term): ?>
+                    <div class="col-3"><a href="<?php echo home_url("{$term->slug}/"); ?>">Ремонт <?php echo $term->name; ?></a></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 
