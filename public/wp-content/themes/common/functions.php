@@ -358,14 +358,25 @@ add_filter('term_link', function($termlink, $term, $taxonomy) {
 }, 10, 3);
 
 add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
-    $locations = get_the_terms($post, 'location');
-
-    if (isset($locations, $locations[0]) && $locations[0]->term_id) {
-        $post_link = str_replace('%section%', pror_get_section_by_location_id($locations[0]->term_id)->slug, $post_link);
+    if (get_post_type($post) == 'master') {
+        $locations = get_the_terms($post, 'location');
+        if (isset($locations, $locations[0]) && $locations[0]->term_id) {
+            $post_link = str_replace('%section%', pror_get_section_by_location_id($locations[0]->term_id)->slug, $post_link);
+        }
     }
 
     return $post_link;
 }, 10, 4);
+
+add_filter('page_link', function($link, $post_ID, $sample) {
+    $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
+    if ($catalog_master_page->ID == $post_ID) {
+        $section_slug = pror_get_section()->slug;
+        $link = str_replace("/{$catalog_master_page->post_name}/", "/{$section_slug}/{$catalog_master_page->post_name}/", $link);
+    }
+
+    return $link;
+}, 10, 3);
 
 add_filter('nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
     $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
