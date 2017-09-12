@@ -9,8 +9,7 @@
         <div class="col">
             <div class="row">
                 <div class="col-12">
-                    <?php $section = pror_get_section(); ?>
-                    <h3 class="mb-4"><?php the_title() ?> - <?php echo $section->name; ?></h3>
+                    <h3 class="mb-4"><?php the_title() ?> - <?php echo pror_get_section()->name; ?></h3>
                 </div>
 
                 <?php

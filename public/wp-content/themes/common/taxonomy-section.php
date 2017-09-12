@@ -67,7 +67,7 @@
     <hr class="my-5"/>
     <div class="row">
         <div class="col-12">
-            <h3 class="text-center mb-4"><a href="<?php echo esc_url( get_permalink($catalog_master_page) ); ?>"><?php echo get_the_title($catalog_master_page) ?></a></h3>
+            <h3 class="text-center mb-4"><a href="<?php echo esc_url( get_permalink($catalog_master_page) ); ?>"><?php echo get_the_title($catalog_master_page) ?> - <?php echo pror_get_section()->name; ?></a></h3>
         </div>
     <?php
     $main_catalogs = get_terms(array(
@@ -79,7 +79,7 @@
     ?>
     <?php foreach ($main_catalogs as $pos => $main_catalog): ?>
         <div class="col-4">
-            <h6><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a> (<?php echo $main_catalog->count; ?>)</h6>
+            <h6><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a></h6>
 
             <?php
             $sub_catalogs = get_terms(array(
