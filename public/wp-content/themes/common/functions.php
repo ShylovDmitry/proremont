@@ -346,6 +346,11 @@ add_filter('request', function($query_vars) {
         exit;
     }
 
+    if (isset($query_vars['section']) && get_page_by_path($query_vars['section'])) {
+        $query_vars['pagename'] = $query_vars['section'];
+        unset($query_vars['section']);
+    }
+
     return $query_vars;
 });
 
