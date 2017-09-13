@@ -186,7 +186,7 @@ add_filter('wpseo_breadcrumb_links', function($crumbs) {
     $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
     $breadcrumb_catalog_master = array(
         'text' => sprintf('%s - %s', get_the_title($catalog_master_page), $section->name),
-        'url' => str_replace("/{$catalog_master_page->post_name}/", "/{$section->slug}/{$catalog_master_page->post_name}/", get_permalink($catalog_master_page)),
+        'url' => get_permalink($catalog_master_page),
         'allow_html' => true,
     );
 
