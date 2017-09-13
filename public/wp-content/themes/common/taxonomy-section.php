@@ -91,10 +91,17 @@
                     $terms = get_terms(array(
                         'taxonomy' => 'section',
                         'hide_empty' => false,
+                        'meta_key' => 'sort',
+                        'orderby' => 'meta_value',
                     ));
                 ?>
-                <?php foreach ($terms as $term): ?>
-                    <div class="col-3"><a href="<?php echo home_url("{$term->slug}/"); ?>">Ремонт <?php echo $term->name; ?></a></div>
+                <?php $halved = array_chunk($terms, ceil(count($terms)/4));?>
+                <?php foreach ($halved as $half): ?>
+                    <div class="col-3">
+                        <?php foreach ($half as $term): ?>
+                            <div><a href="<?php echo home_url("{$term->slug}/"); ?>">Ремонт <?php echo $term->name; ?></a></div>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endforeach; ?>
             </div>
         </div>

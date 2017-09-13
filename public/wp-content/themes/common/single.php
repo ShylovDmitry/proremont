@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_sidebar('banner-top'); ?>
+
 <?php get_template_part('breadcrumb'); ?>
 
 <div class="container colored-box py-3">
