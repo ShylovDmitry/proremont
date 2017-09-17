@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b7e71f6f70348a3b51b21bb4095b0f79",
-    "content-hash": "a4ea77b9319755ea7b7ddd675b01204f",
+    "hash": "fb6130ccb32c1a6ab2301b5ea78b5d7e",
+    "content-hash": "d436dbf309a01a7223e8ae1fc4524cad",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2085,15 +2085,15 @@
         },
         {
             "name": "wpackagist-plugin/adrotate",
-            "version": "4.6.2",
+            "version": "4.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/adrotate/",
-                "reference": "tags/4.6.2"
+                "reference": "tags/4.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/adrotate.4.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/adrotate.4.6.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2164,16 +2164,36 @@
             "homepage": "https://wordpress.org/plugins/oa-social-login/"
         },
         {
-            "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "2.2.6",
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "2.14.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/2.2.6"
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/2.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.2.14.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/query-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "2.3.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/2.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.3.0.zip",
                 "reference": null,
                 "shasum": null
             },
