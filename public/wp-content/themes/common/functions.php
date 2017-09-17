@@ -43,6 +43,7 @@ add_filter('comment_form_defaults', function($defaults) {
 
 register_nav_menus(array(
     'header_main' => 'Header Main',
+    'header_dropdown' => 'Header Dropdown',
     'footer_main' => 'Footer Main',
     'footer_secondary' => 'Footer Secondary',
 ));

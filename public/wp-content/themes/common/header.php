@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css">
     <link href="<?php echo get_template_directory_uri(); ?>/css/slick-lightbox.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/common.css">
 
@@ -34,15 +35,16 @@
                 <a class="nav-link text-success dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <?php echo pror_get_section()->name; ?>
                 </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <?php
-                        $sections = get_terms(array(
-                            'taxonomy' => 'section',
-                            'hide_empty' => false,
-                        ));
+                        $menu_name = 'header_dropdown';
+                        $locations = get_nav_menu_locations();
+                        $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                        $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
                     ?>
-                    <?php foreach ($sections as $section): ?>
-                        <a class="dropdown-item py-0" href="<?php home_url( $wp->request . '/' ); ?>?change_section=<?php echo $section->slug; ?>"><?php echo $section->name; ?></a>
+                    <?php foreach ($menuitems as $menuitem): $post = wp_get_nav_menu_object($menuitem->object_id); ?>
+                        <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?change_section=<?php echo $post->slug; ?>"><?php echo $post->name; ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>

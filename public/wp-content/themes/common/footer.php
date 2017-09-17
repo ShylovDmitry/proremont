@@ -57,6 +57,7 @@
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/slick-lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
 
