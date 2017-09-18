@@ -26,7 +26,7 @@
                     <?php foreach ($main_catalogs as $main_catalog): ?>
                         <div class="col-12">
                             <hr />
-                            <h6><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a></h6>
+                            <h6><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a> (<?php echo pror_get_count($main_catalog); ?>)</h6>
 
                             <?php
                             $sub_catalogs = get_terms(array(
@@ -42,7 +42,7 @@
                                     <div class="col-6">
                                         <?php foreach ($half as $sub_catalog): ?>
                                             <div>
-                                                <a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a>
+                                                <a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a> (<?php echo pror_get_count($sub_catalog); ?>)
                                             </div>
                                         <?php endforeach; ?>
                                     </div>

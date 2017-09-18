@@ -392,3 +392,26 @@ function pror_get_section_by_location_id($location_id) {
 
     return null;
 }
+
+function pror_get_count($tax) {
+    $section = pror_get_section();
+    $locations = get_field('locations', $section);
+
+    $q = new WP_Query(array(
+        'post_type' => 'master',
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'location',
+			    'terms' => $locations,
+                'include_children' => false,
+            ),
+            array(
+                'taxonomy' => 'catalog_master',
+                'terms' => $tax->term_id,
+                'include_children' => false,
+            ),
+        ),
+    ));
+    return $q->found_posts;
+}
