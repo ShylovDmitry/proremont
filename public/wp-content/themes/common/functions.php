@@ -342,16 +342,6 @@ add_filter('page_link', function($link, $post_ID, $sample) {
     return $link;
 }, 10, 3);
 
-add_filter('nav_menu_link_attributes', function( $atts, $item, $args, $depth ) {
-    $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
-    if ($item->object_id == $catalog_master_page->ID) {
-        $section = pror_get_section();
-        $atts = str_replace("/{$catalog_master_page->post_name}/", "/{$section->slug}/{$catalog_master_page->post_name}/", $atts);
-    }
-
-    return $atts;
-}, 10, 4);
-
 add_filter('wp_seo_get_bc_title', function($link_text, $id) {
     $catalog_master_page = get_page_by_template_name('template-catalog_master.php');
     if ($catalog_master_page->ID == $id) {
