@@ -5,6 +5,8 @@
  * Common
  */
 
+add_theme_support( 'post-thumbnails' );
+
 add_image_size('pror-medium', 300, 300, true);
 
 add_theme_support( 'html5', array(
@@ -105,6 +107,7 @@ register_post_type('master', array(
         'editor',
         'comments',
         'revisions',
+        'thumbnail',
     ),
 ));
 
@@ -404,4 +407,11 @@ function pror_get_count($tax) {
         ),
     ));
     return $q->found_posts;
+}
+
+function pror_format_phones($phones_str) {
+    $phones = explode("\n", $phones_str);
+    return array_map(function($phone) {
+        return "+" . $phone;
+    }, $phones);
 }

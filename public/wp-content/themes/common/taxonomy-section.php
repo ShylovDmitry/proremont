@@ -23,7 +23,7 @@
                         <?php foreach ($list['masters'] as $master_id): ?>
                             <li class="media mt-4">
                                 <a href="<?php echo esc_url( get_permalink($master_id) ); ?>">
-                                    <img class="d-flex mr-3" src="http://via.placeholder.com/64" alt="" width="64" />
+                                    <?php echo get_the_post_thumbnail($master_id, 'pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
                                 </a>
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($master_id) ); ?>"><?php the_field('master_type', $master_id); ?> - <?php echo get_the_title($master_id); ?></a></h5>

@@ -52,10 +52,29 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_59ab41700f046",
-            "label": "Telephone",
-            "name": "master_tel",
+            "key": "field_59c1a8da1b724",
+            "label": "Contact Name",
+            "name": "master_contact_name",
             "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": 380971112233,
+            "rows": 4,
+            "key": "field_59c25a2cb418c",
+            "label": "Telephones",
+            "name": "master_telephones",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -124,5 +143,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505080126
+    "modified": 1505909394
 }

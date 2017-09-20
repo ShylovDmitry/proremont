@@ -54,3 +54,14 @@ body {
     border: 1px solid lightblue;
     padding: 10px;
 }
+
+
+.wp-post-image {
+    width: 100px;
+    height: auto;
+}
+
+.single .wp-post-image {
+    width: 200px;
+    height: auto;
+}

@@ -14,8 +14,9 @@
             <?php if (have_posts()): ?>
 
                 <?php while (have_posts()): the_post(); ?>
+                    <?php $master_phones = pror_format_phones(get_field('master_telephones')); ?>
                     <div class="media">
-                        <img class="d-flex mr-3" src="http://via.placeholder.com/100" alt="" width="100" />
+                        <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
                         <div class="media-body">
                             <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_field('master_type'); ?> - <?php the_title(); ?></a>
                                 <?php if(get_field('master_is_confirmed')): ?>
@@ -25,7 +26,12 @@
 
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-3"><?php the_terms(null, 'location'); ?></li>
-                                <li>Телефон: <a href="#"><?php the_field('master_tel'); ?></a></li>
+                                <li>
+                                    Телефон:
+                                        <?php foreach ($master_phones as $phone): ?>
+                                            <a href="#"><?php echo $phone; ?></a>
+                                        <?php endforeach; ?>
+                                 </li>
                             </ul>
                         </div>
                     </div>
