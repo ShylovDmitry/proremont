@@ -43,8 +43,8 @@
                         $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                         $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
                     ?>
-                    <?php foreach ($menuitems as $menuitem): $post = wp_get_nav_menu_object($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?change_section=<?php echo $post->slug; ?>"><?php echo $post->name; ?></a>
+                    <?php foreach ($menuitems as $menuitem): $menu_post = wp_get_nav_menu_object($menuitem->object_id); ?>
+                        <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?change_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>

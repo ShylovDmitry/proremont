@@ -14,7 +14,7 @@
             <?php if (have_posts()): ?>
 
                 <?php while (have_posts()): the_post(); ?>
-                    <?php $master_phones = pror_format_phones(get_field('master_telephones')); ?>
+                    <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
                     <div class="media">
                         <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
                         <div class="media-body">
