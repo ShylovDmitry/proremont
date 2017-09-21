@@ -390,6 +390,18 @@ function pror_get_count($tax) {
     $section = pror_get_section();
     $locations = get_field('locations', $section);
 
+    $cat = array($tax->term_id);
+    if ($tax->parent == 0) {
+        $sub_taxes = get_terms(array(
+            'parent' => $tax->term_id,
+            'hierarchical' => false,
+            'taxonomy' => 'catalog_master',
+            'hide_empty' => false,
+            'fields' => 'ids',
+        ));
+        $cat = array_merge($cat, $sub_taxes);
+    }
+
     $q = new WP_Query(array(
         'post_type' => 'master',
         'tax_query' => array(
@@ -401,7 +413,7 @@ function pror_get_count($tax) {
             ),
             array(
                 'taxonomy' => 'catalog_master',
-                'terms' => $tax->term_id,
+                'terms' => $cat,
                 'include_children' => false,
             ),
         ),
