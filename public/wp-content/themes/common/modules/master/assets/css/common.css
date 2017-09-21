@@ -1,0 +1,32 @@
+.master-gallery-wrapper {
+    width: 780px;
+    background: lightgrey;
+    padding: 10px 30px 1px;
+}
+
+.master-gallery .slick-slide {
+    padding: 0 5px;
+}
+
+.master-gallery .slick-slide img {
+    height: 200px;
+    width: auto;
+}
+
+
+.comment-rating-field-pro-plugin {
+    float: right;
+    border: 1px solid lightblue;
+    padding: 10px;
+}
+
+
+.wp-post-image {
+    width: 100px;
+    height: auto;
+}
+
+.single .wp-post-image {
+    width: 200px;
+    height: auto;
+}

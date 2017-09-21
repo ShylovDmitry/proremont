@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php module_template('banner/top'); ?>
+
 <div class="jumbotron jumbotron-fluid pt-5 pb-5">
     <div class="container text-center frontpage-title">
         <h1 class="display-3">Все <strong>про ремонт</strong> тут</h1>
@@ -7,7 +9,6 @@
     </div>
 </div>
 
-<?php ?>
 <div class="container colored-box py-3">
 
     <?php $current_section_id = pror_get_section()->term_id; ?>
@@ -41,44 +42,9 @@
     <?php endforeach; ?>
 
 
-
-    <?php $catalog_master_page = get_page_by_template_name('template-catalog_master.php'); ?>
     <hr class="my-5"/>
-    <div class="row">
-        <div class="col-12">
-            <h3 class="text-center mb-4"><a href="<?php echo esc_url( get_permalink($catalog_master_page) ); ?>"><?php echo get_the_title($catalog_master_page) ?> - <?php echo pror_get_section()->name; ?></a></h3>
-        </div>
-    <?php
-    $main_catalogs = get_terms(array(
-        'parent' => 0,
-        'hierarchical' => false,
-        'taxonomy' => 'catalog_master',
-        'hide_empty' => false,
-    ));
-    ?>
-    <?php foreach ($main_catalogs as $pos => $main_catalog): ?>
-        <div class="col-4">
-            <h6><a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php echo $main_catalog->name; ?></a> (<?php echo pror_get_count($main_catalog); ?>)</h6>
 
-            <?php
-            $sub_catalogs = get_terms(array(
-                'parent' => $main_catalog->term_id,
-                'hierarchical' => false,
-                'taxonomy' => 'catalog_master',
-                'hide_empty' => false,
-            ));
-            ?>
-            <ul class="list-unstyled">
-            <?php foreach ($sub_catalogs as $sub_catalog): ?>
-                <li><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a> (<?php echo pror_get_count($sub_catalog); ?>)</li>
-            <?php endforeach; ?>
-            </ul>
-        </div>
-        <?php if (($pos+1) % 3 == 0): ?><div class="w-100"></div><?php endif; ?>
-    <?php endforeach; ?>
-    </div>
-
-
+    <?php module_template('catalog_master/3columns'); ?>
 
     <div class="row">
         <div class="col-12">

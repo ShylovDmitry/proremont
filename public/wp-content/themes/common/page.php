@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_template_part('breadcrumb'); ?>
+<?php module_template('breadcrumbs/breadcrumbs'); ?>
 
 <div class="container colored-box py-3">
     <div class="row">
