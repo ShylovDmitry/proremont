@@ -16,7 +16,18 @@
                     <h3 class="mt-0 mb-1"><?php the_field('master_type'); ?> - <?php the_title(); ?></h3>
 
                     <br />
-                    <p><?php the_terms(null, 'location'); ?></p>
+                    <p>
+                        <?php
+                            $term = get_the_terms(null, 'location');
+                            if (isset($term, $term[0])) {
+                                echo trim(get_term_parents_list($term[0]->term_id, 'location', array(
+                                    'separator' => ', ',
+                                    'link' => false
+                                )), ', ');
+                            }
+
+                        ?>
+                    </p>
                     <p>Досвід 10 років.</p>
                     <p>Телефон:
                         <?php foreach ($master_phones as $phone): ?>
