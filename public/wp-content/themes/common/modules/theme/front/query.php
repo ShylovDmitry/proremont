@@ -5,16 +5,11 @@ add_action('pre_get_posts', function($query) {
         return;
     }
 
-    $filter = isset($_GET['filter']) && is_array($_GET['filter']) && !empty($_GET['filter']) ? $_GET['filter'] : null;
-    if (!$filter) {
-        return;
-    }
-
-    if (!empty($filter['master_type'])) {
+    if (isset($_GET['f_master_type']) && $_GET['f_master_type']) {
         $query->set('meta_query', array(
             array(
                 'key' => 'master_type',
-                'value' => $filter['master_type'],
+                'value' => $_GET['f_master_type'],
             )
         ));
     }

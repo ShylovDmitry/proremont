@@ -20,6 +20,10 @@ function pror_get_section_by_slug($slug) {
     return get_term_by('slug', $slug, 'section');
 }
 
+function pror_get_section_by_id($id) {
+    return get_term_by('id', $id, 'section');
+}
+
 function pror_get_section_by_location_id($location_id) {
     $sections = get_terms(array(
         'taxonomy' => 'section',

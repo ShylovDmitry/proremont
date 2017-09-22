@@ -1,18 +1,40 @@
 <?php
 
 add_filter('request', function($query_vars) {
-    if (isset($_GET['change_section'])) {
-        $p = parse_url($_SERVER['REQUEST_URI']);
-        parse_str($p['query'], $q);
-        unset($q['change_section']);
 
-        $url = sprintf('%s%s',
-            str_replace('/' . $query_vars['section'] . '/', '/' . pror_get_section_by_slug($_GET['change_section'])->slug . '/', $p['path']),
-            empty($q) ? '' : '?' . http_build_query($q)
-        );
-        wp_redirect($url);
+    $p_url = parse_url($_SERVER['REQUEST_URI']);
+    parse_str($p_url['query'], $q_url);
+
+    if (isset($_GET['f_switch_catalog'])) {
+        $term = get_term((int)$_GET['f_switch_catalog'], 'catalog_master');
+
+        $new_path = $term->slug;
+        if ($term->parent) {
+            $parent_term = get_term($term->parent, 'catalog_master');
+            $new_path = "{$parent_term->slug}/{$new_path}";
+        }
+
+        $p_url['path'] = str_replace("/{$query_vars['catalog_master']}/", "/{$new_path}/", $p_url['path']);
+        unset($q_url['f_switch_catalog']);
+    }
+
+    if (isset($_GET['f_switch_section'])) {
+        $section = pror_get_section_by_id((int)$_GET['f_switch_section'], 'section');
+
+        $p_url['path'] = str_replace("/{$query_vars['section']}/", "/{$section->slug}/", $p_url['path']);
+        unset($q_url['f_switch_section']);
+    }
+
+    if (isset($_GET['f_master_type']) && empty($_GET['f_master_type'])) {
+        unset($q_url['f_master_type']);
+    }
+
+    $new_url = $p_url['path'] . (empty($q_url) ? '' : '?' . http_build_query($q_url));
+    if ($new_url != $_SERVER['REQUEST_URI']) {
+        wp_redirect($new_url);
         exit;
     }
+
 
     if ('/' === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
         || strpos($_SERVER['REQUEST_URI'], '/page/') === 0)
