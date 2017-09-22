@@ -1,14 +1,26 @@
 <?php
 
 add_action('wp_print_styles', function () {
+    wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', array(), '4.0.0-beta');
+    wp_enqueue_style('open-iconic', get_module_css('theme/open-iconic/css/open-iconic-bootstrap.min.css'), array(), '1.1.1');
+
+    wp_enqueue_style('slick', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), '1.6.0');
+    wp_enqueue_style('slick-theme', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css', array(), '1.6.0');
+    wp_enqueue_style('slick-lightbox', get_module_css('theme/slick-lightbox.css'), array(), dlv_get_ver());
+
+    wp_enqueue_style('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css', array(), '4.0.3');
     wp_enqueue_style('theme-common', get_module_css('theme/common.css'), array(), dlv_get_ver());
-    wp_enqueue_style('theme-slick-lightbox', get_module_css('theme/slick-lightbox.css'), array(), dlv_get_ver());
-    wp_enqueue_style('theme-open-iconic', get_module_css('theme/open-iconic/css/open-iconic-bootstrap.min.css'), array(), dlv_get_ver());
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('theme-common', get_module_js('theme/common.js'), array('jquery'), dlv_get_ver(), true);
-    wp_enqueue_script('theme-slick-lightbox', get_module_js('theme/slick-lightbox.min.js'), array('jquery'), dlv_get_ver(), true);
+    wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', array('jquery'), '1.11.0', true);
+    wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js', array('jquery'), '4.0.0-beta', true);
+
+    wp_enqueue_script('slick', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), '1.6.0', true);
+    wp_enqueue_script('slick-lightbox', get_module_js('theme/slick-lightbox.min.js'), array('jquery', 'slick'), dlv_get_ver(), true);
+
+    wp_enqueue_script('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', array('jquery'), '4.0.3', true);
+    wp_enqueue_script('theme-common', get_module_js('theme/common.js'), array('jquery', 'slick', 'select2'), dlv_get_ver(), true);
 });
 
 add_theme_support( 'post-thumbnails' );

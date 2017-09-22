@@ -1,4 +1,4 @@
-$(function () {
+jQuery(function ($) {
     $('.master-gallery').slick({
         dots: true,
         infinite: true,
