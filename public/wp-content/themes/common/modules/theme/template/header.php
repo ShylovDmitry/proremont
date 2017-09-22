@@ -20,7 +20,7 @@
                         $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
                     ?>
                     <?php foreach ($menuitems as $menuitem): $menu_post = wp_get_nav_menu_object($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?change_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                        <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->term_id; ?>"><?php echo $menu_post->name; ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
