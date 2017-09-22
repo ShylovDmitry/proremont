@@ -3,6 +3,25 @@
     "title": "Master",
     "fields": [
         {
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_59c58e39795ce",
+            "label": "Is PRO?",
+            "name": "master_is_pro",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "layout": "horizontal",
             "choices": {
                 "master": "\u041c\u0430\u0441\u0442\u0435\u0440",
@@ -143,5 +162,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505984241
+    "modified": 1506119253
 }

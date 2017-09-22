@@ -3,7 +3,10 @@
     <div class="media">
         <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
         <div class="media-body">
-            <h3 class="mt-0 mb-1"><?php the_field('master_type'); ?> - <?php the_title(); ?></h3>
+            <h3 class="mt-0 mb-1">
+                <?php if (get_field('master_is_pro')): ?>[PRO]<?php endif; ?>
+                <?php the_field('master_type'); ?> - <?php the_title(); ?>
+            </h3>
 
             <br />
             <p>
@@ -37,10 +40,10 @@
         <?php
         $images = get_field('master_gallery');
 
-        if( $images ): ?>
+        if ($images): ?>
             <div class="master-gallery-wrapper">
             <div class="master-gallery">
-                <?php foreach( $images as $image ): ?>
+                <?php foreach ($images as $image): ?>
                     <div>
                         <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
                             <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>

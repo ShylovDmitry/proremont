@@ -10,6 +10,8 @@
 </div>
 
 <div class="container colored-box py-3">
+    <?php module_template('master/pro-3columns'); ?>
+
 
     <?php $current_section_id = pror_get_section()->term_id; ?>
     <?php foreach (get_field('frontpage_vips', 'option') as $vip): ?>
