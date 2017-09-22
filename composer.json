@@ -31,7 +31,9 @@
     "wpackagist-plugin/regenerate-thumbnails": "2.3.1",
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5",
     "wpackagist-plugin/oa-social-login": "5.3",
-    "wpackagist-plugin/query-monitor": "2.14.0"
+    "wpackagist-plugin/query-monitor": "2.14.0",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2",
+    "wpackagist-plugin/amazon-web-services": "1.0.3"
   },
   "extra": {
     "installer-paths": {
