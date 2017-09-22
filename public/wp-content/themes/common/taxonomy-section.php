@@ -59,6 +59,18 @@
                         'hide_empty' => false,
                         'meta_key' => 'sort',
                         'orderby' => 'meta_value',
+                        'meta_query' => array(
+                            'relation' => 'OR',
+                            array(
+                                'key' => 'hidden',
+                                'value' => 1,
+                                'compare' => '!=',
+                            ),
+                            array(
+                                'key' => 'hidden',
+                                'compare' => 'NOT EXISTS',
+                            )
+                        )
                     ));
                 ?>
                 <?php $halved = array_chunk($terms, ceil(count($terms)/4));?>
