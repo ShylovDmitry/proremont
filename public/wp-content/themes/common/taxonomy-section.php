@@ -12,38 +12,6 @@
 <div class="container colored-box py-3">
     <?php module_template('master/pro-3columns'); ?>
 
-
-    <?php $current_section_id = pror_get_section()->term_id; ?>
-    <?php foreach (get_field('frontpage_vips', 'option') as $vip): ?>
-        <?php if (in_array($current_section_id, $vip['section'])): ?>
-
-            <?php foreach ($vip['lists'] as $pos => $list): ?>
-                <div class="col-6">
-                    <h4 class="text-center"><?php echo $list['title']; ?></h4>
-
-                    <ul class="list-unstyled mb-0">
-                        <?php shuffle($list['masters']); ?>
-                        <?php foreach ($list['masters'] as $master_id): ?>
-                            <li class="media mt-4">
-                                <a href="<?php echo esc_url( get_permalink($master_id) ); ?>">
-                                    <?php echo get_the_post_thumbnail($master_id, 'pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="<?php echo esc_url( get_permalink($master_id) ); ?>"><?php the_field('master_type', $master_id); ?> - <?php echo get_the_title($master_id); ?></a></h5>
-                                    <?php echo get_the_excerpt($master_id); ?>
-                                </div>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-
-                <?php if (($pos+1) % 2 == 0): ?><div class="w-100 my-3"></div><?php endif; ?>
-            <?php endforeach; ?>
-
-        <?php endif; ?>
-    <?php endforeach; ?>
-
-
     <hr class="my-5"/>
 
     <?php module_template('catalog_master/3columns'); ?>
