@@ -3,6 +3,7 @@
 register_nav_menus(array(
     'header_main' => 'Header Main',
     'header_dropdown' => 'Header Dropdown',
+    'master_filter_page' => 'Master Filter Page',
     'footer_main' => 'Footer Main',
     'footer_secondary' => 'Footer Secondary',
 ));

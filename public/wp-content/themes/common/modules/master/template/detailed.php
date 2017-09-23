@@ -1,7 +1,11 @@
 <?php if (have_posts()): the_post(); ?>
-    <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
     <div class="media">
-        <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
+        <?php if (has_post_thumbnail()): ?>
+            <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
+        <?php else: ?>
+            <img src="http://via.placeholder.com/100" class="wp-post-image d-flex mr-3" />
+        <?php endif; ?>
+
         <div class="media-body">
             <h3 class="mt-0 mb-1">
                 <?php if (get_field('master_is_pro')): ?>[PRO]<?php endif; ?>
@@ -21,8 +25,8 @@
 
                 ?>
             </p>
-            <p>Досвід 10 років.</p>
             <p>Телефон:
+                <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
                 <?php foreach ($master_phones as $phone): ?>
                     <a href="#"><?php echo $phone; ?></a>
                 <?php endforeach; ?>
@@ -54,6 +58,8 @@
             </div>
         <?php endif; ?>
     </div>
+
+    <hr />
 
     <?php
         if ( comments_open() || get_comments_number() ) :

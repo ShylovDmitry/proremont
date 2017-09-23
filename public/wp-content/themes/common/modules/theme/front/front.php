@@ -59,25 +59,3 @@ add_filter('comment_form_defaults', function($defaults) {
 add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
-
-
-
-//add_filter('rocket_buffer', function($buffer) {
-//    $buffer = str_replace('<script src=', '<script async src=', $buffer);
-//
-//    preg_match_all( '/<link\s*.+href=[\'|"]([^\'|"]+\.css?.+)[\'|"](.+)>/iU' , $buffer, $tags_match );
-//    $i=0;
-//    foreach ( $tags_match[0] as $tag ) {
-//        $css_url = set_url_scheme( $tags_match[1][ $i ] );
-//        $css_filename = str_replace(home_url(), APP_PATH, $css_url);
-//
-//        if (file_exists($css_filename)) {
-//            $buffer = str_replace( $tag, '', $buffer );
-//            $buffer = str_replace( '</title>', '</title><style>'.file_get_contents($css_filename).'</style>', $buffer );
-//        }
-//
-//        $i++;
-//    }
-//
-//    return $buffer;
-//}, PHP_INT_MAX);
