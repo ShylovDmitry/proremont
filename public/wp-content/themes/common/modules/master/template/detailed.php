@@ -28,7 +28,7 @@
             <p>Телефон:
                 <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
                 <?php foreach ($master_phones as $phone): ?>
-                    <a href="#"><?php echo $phone; ?></a>
+                    <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a>
                 <?php endforeach; ?>
             </p>
         </div>

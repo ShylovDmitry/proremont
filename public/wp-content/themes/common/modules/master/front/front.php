@@ -42,6 +42,25 @@ function pror_get_section_by_location_id($location_id) {
 function pror_format_phones($phones_str) {
     $phones = explode("\n", $phones_str);
     return array_map(function($phone) {
-        return "+" . $phone;
+        if (strlen($phone) == 9) {
+            $phone = '380' . $phone;
+        }
+        if (strlen($phone) == 10) {
+            $phone = '38' . $phone;
+        }
+        if (strlen($phone) == 11) {
+            $phone = '3' . $phone;
+        }
+
+        if (strlen($phone) == 12) {
+            $tel = '+' . $phone;
+            if (preg_match('/(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
+                $phone = sprintf('+%s (%s) %s %s', $matches[1], $matches[2], $matches[3], $matches[4]);
+            }
+        } else {
+            $tel = $phone;
+        }
+
+        return array('tel' => $tel, 'text' => $phone);
     }, $phones);
 }
