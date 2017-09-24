@@ -30,3 +30,7 @@
     width: 200px;
     height: auto;
 }
+
+.master-3columns .description {
+    word-break: break-word;
+}

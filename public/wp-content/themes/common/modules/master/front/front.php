@@ -8,6 +8,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('master-common', get_module_js('master/common.js'), array('jquery'), dlv_get_ver(), true);
 });
 
+add_filter('excerpt_length', function( $length ) {
+    return 20;
+}, 999);
+
 function pror_get_section() {
     $section = pror_get_section_by_slug(get_query_var('section'));
     if (!$section) {

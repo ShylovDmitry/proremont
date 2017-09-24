@@ -21,7 +21,7 @@ $query = new WP_Query(array(
 ?>
 
 <?php if ($query->have_posts()): ?>
-    <div class="row">
+    <div class="row master-3columns">
         <div class="col-12">
             <h3>PRO мастера</h3>
         </div>
@@ -31,7 +31,7 @@ $query = new WP_Query(array(
         <?php $pos = 0; ?>
         <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
             <div class="col-4">
-                <div class="media">
+                <div class="media mb-2">
                     <a href="<?php echo esc_url( get_permalink() ); ?>">
                         <?php if (has_post_thumbnail()): ?>
                             <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
@@ -44,8 +44,10 @@ $query = new WP_Query(array(
                             <?php if (get_field('master_is_pro')): ?>[PRO]<?php endif; ?>
                             <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_field('master_type'); ?> - <?php the_title(); ?></a>
                         </h5>
-                        <?php the_excerpt(); ?>
                     </div>
+                </div>
+                <div class="description">
+                    <?php the_excerpt(); ?>
                 </div>
             </div>
 
