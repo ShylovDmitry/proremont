@@ -10,6 +10,8 @@ defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', false);
 
 define('WP_ENV', 'local');
 
+define('FS_METHOD', 'direct');
+
 /**
  * Authentication Unique Keys and Salts
  * https://api.wordpress.org/secret-key/1.1/salt/

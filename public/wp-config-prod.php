@@ -9,6 +9,8 @@ defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', false);
 
 define('WP_ENV', 'prod');
 
+define('FS_METHOD', 'direct');
+
 defined('DB_NAME') or define('DB_NAME', 'proremont');
 defined('DB_USER') or define('DB_USER', 'root4');
 defined('DB_PASSWORD') or define('DB_PASSWORD', 'RXYU2BTuXVmn');
