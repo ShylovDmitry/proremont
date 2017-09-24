@@ -35,6 +35,7 @@ rsync -avz --delete --no-perms -O -e "ssh -i \"$SERVER_KEY\"" \
     --exclude='/composer-artifacts' \
     --exclude='/.sass-cache' \
     --exclude='/node_modules' \
+    --exclude='/public/wp-content/db.php' \
     --exclude='/public/wp/wp-content/*' \
     --exclude='/public/wp-config.php' \
     --exclude='/public/wp-content/cache/*' \
@@ -47,9 +48,9 @@ rsync -avz --delete --no-perms -O -e "ssh -i \"$SERVER_KEY\"" \
 ssh -i "$SERVER_KEY" $SERVER_HOST "rm -f $DEPLOY_FOLDER/public/wp-config.php"
 ssh -i "$SERVER_KEY" $SERVER_HOST "ln -fs $DEPLOY_FOLDER/public/wp-config-$STACK.php $DEPLOY_FOLDER/public/wp-config.php"
 
-ssh -i "$SERVER_KEY" $SERVER_HOST "chown -R $SERVER_USER:nginx $DEPLOY_FOLDER/"
-ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type d -exec chmod 2755 {} \;"
-ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type f -exec chmod 0644 {} \;"
+ssh -i "$SERVER_KEY" $SERVER_HOST "chown -R $SERVER_USER:www $DEPLOY_FOLDER/"
+ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type d -exec chmod 2775 {} \;"
+ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type f -exec chmod 0664 {} \;"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod 440 $DEPLOY_FOLDER/public/wp-config*.php"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 770 $DEPLOY_FOLDER/public/wp-content/uploads"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 774 $DEPLOY_FOLDER/public/wp-content/banners"
