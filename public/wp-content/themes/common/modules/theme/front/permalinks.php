@@ -4,6 +4,7 @@ add_filter('request', function($query_vars) {
     if (is_admin()) {
         return $query_vars;
     }
+
     $p_url = parse_url($_SERVER['REQUEST_URI']);
     $p_url['query'] = isset($p_url['query']) ? $p_url['query'] : '';
     parse_str($p_url['query'], $q_url);

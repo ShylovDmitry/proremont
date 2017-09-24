@@ -24,6 +24,12 @@ $query = new WP_Query(array(
             'include_children' => false,
             'operator' => 'IN',
         ),
+        array(
+            'taxonomy' => 'catalog_master',
+            'field' => 'slug',
+            'terms' => get_query_var('catalog_master'),
+            'include_children' => false,
+        ),
     ),
     'meta_query' => array(
         array(
