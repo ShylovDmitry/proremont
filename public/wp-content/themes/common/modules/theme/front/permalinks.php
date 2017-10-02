@@ -33,7 +33,7 @@ add_filter('request', function($query_vars) {
         unset($q_url['f_master_type']);
     }
 
-    $new_url = $p_url['path'] . (empty($q_url['query']) ? '' : '?' . http_build_query($q_url['query']));
+    $new_url = $p_url['path'] . (empty($q_url) ? '' : '?' . http_build_query($q_url));
     if ($new_url != $_SERVER['REQUEST_URI']) {
         wp_redirect($new_url);
         exit;
