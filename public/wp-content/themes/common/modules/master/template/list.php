@@ -13,6 +13,26 @@
 </div>
 
 <?php
+    $master_types = array(
+            '' => 'Все',
+            'master' => 'Мастер',
+            'brіgada' => 'Бригада',
+            'kompania' => 'Компания',
+    );
+    $selected_type = isset($_GET['f_master_type']) ? $_GET['f_master_type'] : key($master_types);
+?>
+<ul class="nav nav-tabs mb-4">
+    <?php foreach ($master_types as $type_key => $type_value): ?>
+        <li class="nav-item">
+            <a class="nav-link<?php if ($selected_type == $type_key): ?> active<?php endif; ?>" href="?f_master_type=<?php echo $type_key; ?>">
+                <?php echo $type_value; ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+
+<?php
 $query = new WP_Query(array(
     'post_type' => 'master',
     'posts_per_page' => 4,
