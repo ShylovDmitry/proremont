@@ -1,7 +1,6 @@
 <div class="row">
     <div class="col-12">
-        <?php $catalog_master_page = pror_get_page_by_template_name('template-catalog_master.php'); ?>
-        <h3 class="text-center mb-4"><a href="<?php echo esc_url( get_permalink($catalog_master_page) ); ?>"><?php echo get_the_title($catalog_master_page) ?> - <?php echo pror_get_section()->name; ?></a></h3>
+        <h3 class="text-center mb-4">Каталог Мастеров - <?php echo pror_get_section()->name; ?></h3>
     </div>
 
     <?php foreach (pror_catalog_get_main() as $pos => $main_catalog): ?>

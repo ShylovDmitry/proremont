@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php module_template('banner/top'); ?>
-
 <div class="jumbotron jumbotron-fluid pt-5 pb-5">
     <div class="container text-center frontpage-title">
         <h1 class="display-3">Все <strong>про ремонт</strong> тут</h1>
@@ -10,11 +8,11 @@
 </div>
 
 <div class="container colored-box py-3">
-    <?php module_template('master/pro-3columns'); ?>
+    <?php module_template('catalog_master/3columns'); ?>
 
     <hr class="my-5"/>
 
-    <?php module_template('catalog_master/3columns'); ?>
+    <?php module_template('master/pro-3columns'); ?>
 
     <div class="row">
         <div class="col-12">
