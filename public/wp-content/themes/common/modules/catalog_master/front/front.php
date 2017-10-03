@@ -1,5 +1,13 @@
 <?php
 
+add_action('wp_print_styles', function () {
+    wp_enqueue_style('catalog-master-common', get_module_css('catalog_master/common.css'), array(), dlv_get_ver());
+});
+
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script('catalog-master-common', get_module_js('catalog_master/common.js'), array('jquery'), dlv_get_ver(), true);
+});
+
 function pror_catalog_get_main() {
     return get_terms(array(
         'parent' => 0,

@@ -1,17 +1,3 @@
-<h1><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
-
-<?php module_template('master/searchbox'); ?>
-
-<div class="row">
-    <div class="col">
-        <?php wp_nav_menu(array(
-                'container' => false,
-                'menu_class' => 'list-unstyled list-inline my-0 text-right',
-                'theme_location' => 'master_filter_page',
-        )); ?>
-    </div>
-</div>
-
 <?php
     $master_types = array(
             '' => 'Все',
