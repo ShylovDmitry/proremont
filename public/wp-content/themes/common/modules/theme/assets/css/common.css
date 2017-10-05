@@ -1,18 +1,21 @@
 body {
-    background: #e9ecef;
-    color: #474747;
+    background: #eee;
+    color: #3e3e3e;
     font-size: 87.5%;
     font-weight: 300;
 }
 
 .colored-box {
-    background: white;
+    box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
+    background: #fff;
 }
 
-.col-300 {
-    -ms-flex: 0 0 330px;
-    flex: 0 0 330px;
-    max-width: 330px;
+@media (min-width: 992px) {
+    .col-lg-300 {
+        -ms-flex: 0 0 330px;
+        flex: 0 0 330px;
+        max-width: 330px;
+    }
 }
 
 .frontpage-title h1 {
@@ -25,4 +28,24 @@ body {
 
 .frontpage-title .lead {
     font-weight: 200;
+}
+
+.navbar {
+    background: #3c3c3b;
+    color: #fff
+}
+.navbar a {
+    color: #fff;
+}
+.navbar .dropdown-menu a {
+    color: #212529;
+}
+
+
+.footer {
+    background: #3c3c3b;
+    color: #fff
+}
+.footer a {
+    color: #fff;
 }

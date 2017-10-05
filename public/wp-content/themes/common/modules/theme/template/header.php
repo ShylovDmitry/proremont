@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+<nav class="navbar navbar-expand-lg mb-2">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">ProRemont</a>
 
@@ -8,7 +8,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="dropdown">
-                <a class="nav-link text-success dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <?php echo pror_get_section()->name; ?>
                 </a>
 
