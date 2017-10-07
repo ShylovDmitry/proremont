@@ -10,48 +10,49 @@
 <div class="container colored-box py-3">
     <?php module_template('catalog_master/3columns'); ?>
 
-    <hr class="my-5"/>
+    <div class="my-5"></div>
 
-    <?php module_template('master/pro-3columns'); ?>
+    <?php module_template('master/pro-2columns'); ?>
 
-    <div class="row">
-        <div class="col-12">
-            <hr />
-        </div>
-        <div class="col-12 mx-auto mt-3">
-            <h6>Вибери свой город</h6>
-            <div class="row">
-                <?php
-                    $terms = get_terms(array(
-                        'taxonomy' => 'section',
-                        'hide_empty' => false,
-                        'meta_key' => 'sort',
-                        'orderby' => 'meta_value',
-                        'meta_query' => array(
-                            'relation' => 'OR',
-                            array(
-                                'key' => 'hidden',
-                                'value' => 1,
-                                'compare' => '!=',
-                            ),
-                            array(
-                                'key' => 'hidden',
-                                'compare' => 'NOT EXISTS',
-                            )
-                        )
-                    ));
-                ?>
-                <?php $halved = array_chunk($terms, ceil(count($terms)/4));?>
-                <?php foreach ($halved as $half): ?>
-                    <div class="col-3">
-                        <?php foreach ($half as $term): ?>
-                            <div><a href="<?php echo home_url("{$term->slug}/"); ?>">Ремонт <?php echo $term->name; ?></a></div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
+
+<!--    <div class="row">-->
+<!--        <div class="col-12">-->
+<!--            <hr />-->
+<!--        </div>-->
+<!--        <div class="col-12 mx-auto mt-3">-->
+<!--            <h6>Вибери свой город</h6>-->
+<!--            <div class="row">-->
+<!--                --><?php
+//                    $terms = get_terms(array(
+//                        'taxonomy' => 'section',
+//                        'hide_empty' => false,
+//                        'meta_key' => 'sort',
+//                        'orderby' => 'meta_value',
+//                        'meta_query' => array(
+//                            'relation' => 'OR',
+//                            array(
+//                                'key' => 'hidden',
+//                                'value' => 1,
+//                                'compare' => '!=',
+//                            ),
+//                            array(
+//                                'key' => 'hidden',
+//                                'compare' => 'NOT EXISTS',
+//                            )
+//                        )
+//                    ));
+//                ?>
+<!--                --><?php //$halved = array_chunk($terms, ceil(count($terms)/4));?>
+<!--                --><?php //foreach ($halved as $half): ?>
+<!--                    <div class="col-3">-->
+<!--                        --><?php //foreach ($half as $term): ?>
+<!--                            <div><a href="--><?php //echo home_url("{$term->slug}/"); ?><!--">Ремонт --><?php //echo $term->name; ?><!--</a></div>-->
+<!--                        --><?php //endforeach; ?>
+<!--                    </div>-->
+<!--                --><?php //endforeach; ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 </div>

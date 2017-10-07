@@ -8,22 +8,22 @@
 <use xlink:href="#path0_fill" fill="white" transform="translate(6463.49 -11550)"/>
 </mask>
 <g mask="url(#mask0_outline_ins)">
-<use xlink:href="#path1_stroke_2x" transform="translate(6463.49 -11550)" fill="#FFFFFF"/>
+<use xlink:href="#path1_stroke_2x" transform="translate(6463.49 -11550)"/>
 </g>
 </g>
 <g id="Rectangle 42">
-<use xlink:href="#path2_stroke" transform="translate(6459 -11545.1)" fill="#FFFFFF"/>
+<use xlink:href="#path2_stroke" transform="translate(6459 -11545.1)"/>
 </g>
 <g id="Rectangle 43">
 <mask id="mask1_outline_ins">
 <use xlink:href="#path3_fill" fill="white" transform="translate(6474.73 -11526.2)"/>
 </mask>
 <g mask="url(#mask1_outline_ins)">
-<use xlink:href="#path4_stroke_2x" transform="translate(6474.73 -11526.2)" fill="#FFFFFF"/>
+<use xlink:href="#path4_stroke_2x" transform="translate(6474.73 -11526.2)"/>
 </g>
 </g>
 <g id="Vector 11">
-<use xlink:href="#path5_stroke" transform="translate(6490.91 -11544.6)" fill="#FFFFFF"/>
+<use xlink:href="#path5_stroke" transform="translate(6490.91 -11544.6)"/>
 </g>
 </g>
 </g>

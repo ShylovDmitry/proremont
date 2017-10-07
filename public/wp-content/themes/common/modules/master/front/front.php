@@ -68,3 +68,15 @@ function pror_format_phones($phones_str) {
         return array('tel' => $tel, 'text' => $phone);
     }, $phones);
 }
+
+function pror_get_master_location($master_id = null) {
+    $term = get_the_terms($master_id, 'location');
+    if (isset($term, $term[0])) {
+        return trim(get_term_parents_list($term[0]->term_id, 'location', array(
+            'separator' => ' / ',
+            'link' => false
+        )), '/ ');
+    }
+
+    return '-';
+}

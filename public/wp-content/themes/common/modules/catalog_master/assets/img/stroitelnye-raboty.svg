@@ -3,8 +3,8 @@
 <desc>Created using Figma</desc>
 <g id="Canvas" transform="translate(-5880 11445)">
 <g id="Vector 13">
-<use xlink:href="#path0_fill" transform="translate(5881 -11444)" fill="#FFFFFF"/>
-<use xlink:href="#path1_stroke" transform="translate(5881 -11444)" fill="#FFFFFF"/>
+<use xlink:href="#path0_fill" transform="translate(5881 -11444)"/>
+<use xlink:href="#path1_stroke" transform="translate(5881 -11444)"/>
 </g>
 </g>
 <defs>

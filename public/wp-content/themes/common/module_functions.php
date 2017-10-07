@@ -110,6 +110,23 @@ function module_img($name) {
     echo get_module_img($name);
 }
 
+/*
+ * SVG helper
+ */
+
+function get_module_svg($name) {
+    list($module, $file) = explode('/', $name, 2);
+
+    return file_get_contents(sprintf('%s/assets/img/%s',
+        get_stylesheet_directory() . '/modules/' . $module,
+        $file
+    ));
+}
+
+function module_svg($name) {
+    echo get_module_svg($name);
+}
+
 
 /*
  * Template helper

@@ -4,16 +4,16 @@
 <g id="Canvas" transform="translate(-5885 11550)">
 <g id="Group">
 <g id="Vector 15">
-<use xlink:href="#path0_stroke" transform="translate(5910.56 -11516.7)" fill="#FFFFFF"/>
+<use xlink:href="#path0_stroke" transform="translate(5910.56 -11516.7)"/>
 </g>
 <g id="Rectangle 48">
-<use xlink:href="#path1_fill" transform="translate(5896.11 -11527.8)" fill="#FFFFFF"/>
+<use xlink:href="#path1_fill" transform="translate(5896.11 -11527.8)"/>
 </g>
 <g id="Rectangle 48">
-<use xlink:href="#path1_fill" transform="translate(5896.11 -11542.2)" fill="#FFFFFF"/>
+<use xlink:href="#path1_fill" transform="translate(5896.11 -11542.2)"/>
 </g>
 <g id="Rectangle 48">
-<use xlink:href="#path1_fill" transform="matrix(6.12323e-17 -1 1 6.12323e-17 5909.44 -11530)" fill="#FFFFFF"/>
+<use xlink:href="#path1_fill" transform="matrix(6.12323e-17 -1 1 6.12323e-17 5909.44 -11530)"/>
 </g>
 <g id="Ellipse 5">
 <mask id="mask0_outline_out">
@@ -21,22 +21,22 @@
 <use xlink:href="#path2_fill" fill="black" transform="translate(5910.56 -11516.7)"/>
 </mask>
 <g mask="url(#mask0_outline_out)">
-<use xlink:href="#path3_stroke_2x" transform="translate(5910.56 -11516.7)" fill="#FFFFFF"/>
+<use xlink:href="#path3_stroke_2x" transform="translate(5910.56 -11516.7)"/>
 </g>
 </g>
 <g id="Vector 14">
-<use xlink:href="#path4_fill" transform="translate(5885 -11536.7)" fill="#FFFFFF"/>
-<use xlink:href="#path5_fill" transform="translate(5885 -11536.7)" fill="#FFFFFF"/>
-<use xlink:href="#path6_fill" transform="translate(5885 -11536.7)" fill="#FFFFFF"/>
+<use xlink:href="#path4_fill" transform="translate(5885 -11536.7)"/>
+<use xlink:href="#path5_fill" transform="translate(5885 -11536.7)"/>
+<use xlink:href="#path6_fill" transform="translate(5885 -11536.7)"/>
 </g>
 <g id="Rectangle 47">
-<use xlink:href="#path7_fill" transform="translate(5898.33 -11550)" fill="#FFFFFF"/>
+<use xlink:href="#path7_fill" transform="translate(5898.33 -11550)"/>
 </g>
 <g id="Rectangle 47">
-<use xlink:href="#path7_fill" transform="translate(5898.33 -11524.4)" fill="#FFFFFF"/>
+<use xlink:href="#path7_fill" transform="translate(5898.33 -11524.4)"/>
 </g>
 <g id="Rectangle 47">
-<use xlink:href="#path8_fill" transform="translate(5897.22 -11538.9)" fill="#FFFFFF"/>
+<use xlink:href="#path8_fill" transform="translate(5897.22 -11538.9)"/>
 </g>
 </g>
 </g>
