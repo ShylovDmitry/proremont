@@ -49,3 +49,30 @@ body {
 .footer a {
     color: #fff;
 }
+
+
+
+
+.switch-catalog-block {
+    font-family: 'Roboto', sans-serif;
+}
+.switch-catalog-block .button {
+    background: #FF8F12;
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+.switch-catalog-block .button span {
+    font-size: 12px;
+    margin-right: 5px;
+}
+.switch-catalog-block #catalogMenu {
+    margin-top: 35px;
+}
+
+
+
+.master-list-block h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.1rem;
+}

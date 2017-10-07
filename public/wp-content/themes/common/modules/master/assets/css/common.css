@@ -1,3 +1,37 @@
+.master-list {
+
+}
+
+.master-list .nav {
+    padding-left: 30px;
+    border-bottom: 25px solid #3C3C3D;
+}
+
+.master-list .nav .nav-item {
+    margin: 0 5px;
+}
+
+.master-list .nav .nav-link {
+    color: #3C3C3D;
+    border-radius: 0;
+    border: 0;
+    border-top: 5px solid #FF8F12;
+}
+.master-list .nav .nav-link:hover {
+    border-color: #FF8F12;
+    background: #f5f7f9;
+}
+
+.master-list .nav .nav-link.active {
+    color: #fff;
+    background-color: #3C3C3D;
+    border-radius: 0;
+    border: 0;
+    border-top: 5px solid #3C3C3D;
+}
+
+
+
 .master-gallery-wrapper {
     width: 780px;
     background: lightgrey;
