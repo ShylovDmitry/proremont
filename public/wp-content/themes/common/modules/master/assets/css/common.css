@@ -31,33 +31,69 @@
 }
 
 
+.catalog a,
+.catalog a:hover {
+    color: #3C3C3D;
+}
 
-.master-gallery-wrapper {
+.catalog h6 span {
+    width: 64px;
+    height: 64px;
+    background: #3C3C3D;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 64px;
+    margin-right: 7px;
+}
+
+.catalog h6 svg {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    fill: #fff;
+}
+
+.catalog ul {
+    margin-left: 76px;
+}
+
+.catalog ul a::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF8F12;
+    margin-right: 10px;
+}
+
+
+.gallery-wrapper {
     width: 780px;
-    background: lightgrey;
+    background: #3C3C3D;
     padding: 10px 30px 1px;
 }
 
-.master-gallery .slick-slide {
+.gallery .slick-slide {
     padding: 0 5px;
 }
 
-.master-gallery .slick-slide img {
+.gallery .slick-dots li.slick-active button:before {
+    color: #fff;
+}
+
+.gallery .slick-slide img {
     height: 200px;
     width: auto;
 }
+
 
 
 .wp-post-image {
     width: 100px;
     height: auto;
 }
-
-.single .wp-post-image {
-    width: 200px;
-    height: auto;
-}
-
 
 
 .master-item a,
@@ -82,27 +118,8 @@
 .master-item img {
     border: 1px solid #BDBDBD;
 }
-
-.master-item .rating a {
-    font-size: 0;
-}
-.master-item .rating a span {
-    color: #3C3C3D;
-    font-size: 12px;
-}
-.master-item .rating a:hover span {
-    text-decoration: underline;
-}
-.master-item .rating .comment-rating-field-pro-plugin {
-    text-align: center;
+.master-item .rating {
     float: right;
-}
-.master-item .rating .rating-always-on {
-    margin-right: 0 !important;
-}
-.master-item .rating .total {
-    display: block;
-    margin-top: 3px;
 }
 
 
@@ -141,3 +158,37 @@
     background-color: #FF8F12;
     border-color: #FF8F12;
 }
+
+
+.master-detailed .header .left {
+    float: left;
+}
+.master-detailed .header img {
+    width: 175px;
+    height: auto;
+    border: 1px solid #BDBDBD;
+}
+.master-detailed .header .phone a {
+    color: #3C3C3D;
+    font-weight: bolder;
+}
+
+.master-detailed h1 {
+    font-size: 2rem;
+}
+.master-detailed .type {
+    font-weight: bolder;
+}
+
+.master-detailed h4 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+
+
+
+

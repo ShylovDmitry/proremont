@@ -1,62 +1,87 @@
 <?php if (have_posts()): the_post(); ?>
-    <div class="media">
-        <?php if (has_post_thumbnail()): ?>
-            <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
-        <?php else: ?>
-            <img src="http://via.placeholder.com/100" class="wp-post-image d-flex mr-3" />
-        <?php endif; ?>
+<div class="master-detailed<?php if (get_field('master_is_pro')): ?> pro<?php endif; ?>">
+    <div class="header">
+        <div class="left">
+            <?php if (has_post_thumbnail()): ?>
+                <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
+            <?php else: ?>
+                <img src="http://via.placeholder.com/100" class="d-flex mr-3" />
+            <?php endif; ?>
+
+            <div class="rating">
+                <?php module_template('rating/total'); ?>
+            </div>
+        </div>
 
         <div class="media-body">
-            <h3 class="mt-0 mb-1">
-                <?php if (get_field('master_is_pro')): ?>[PRO]<?php endif; ?>
-                <?php the_field('master_type'); ?> - <?php the_title(); ?>
-            </h3>
+            <h1 class="mt-0 mb-1"><?php the_title(); ?></h1>
 
             <br />
-            <p>
-                <?php
-                    $term = get_the_terms(null, 'location');
-                    if (isset($term, $term[0])) {
-                        echo trim(get_term_parents_list($term[0]->term_id, 'location', array(
-                            'separator' => ', ',
-                            'link' => false
-                        )), ', ');
-                    }
-
-                ?>
-            </p>
-            <p>Телефон:
+            <div class="type"><?php the_field('master_type'); ?></div>
+            <div class="location"><?php echo pror_get_master_location(); ?></div>
+            <br />
+            <div class="phone">Телефон:
                 <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
-                <?php foreach ($master_phones as $phone): ?>
-                    <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a>
+                <?php $master_phones_count = count($master_phones)-1; ?>
+                <?php foreach ($master_phones as $pos => $phone): ?>
+                    <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a><?php if ($pos != $master_phones_count): ?>, <?php endif; ?>
                 <?php endforeach; ?>
-            </p>
+            </div>
         </div>
     </div>
+    <div class="clearfix"></div>
 
-    <hr />
-
-    <div class="clearfix mb-5">
+    <div class="content">
+        <h4>О мастере</h4>
         <?php the_content(); ?>
     </div>
 
-    <div class="clearfix mb-5">
-        <?php
-        $images = get_field('master_gallery');
+    <div class="catalog">
+        <h4>Услуги</h4>
 
-        if ($images): ?>
-            <div class="master-gallery-wrapper">
-            <div class="master-gallery">
-                <?php foreach ($images as $image): ?>
-                    <div>
-                        <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
-                            <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
+        <div class="row">
+            <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
+                <div class="col-6">
+                    <h6>
+                        <span><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
+                        <a href="<?php echo esc_url( get_term_link($parent) ); ?>"><?php echo $parent->name; ?></a>
+                    </h6>
+
+                    <ul class="list-unstyled">
+                    <?php foreach ($parent->children as $child): ?>
+                        <li><a href="<?php echo esc_url( get_term_link($child) ); ?>"><?php echo $child->name; ?></a></li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php if (($pos+1) % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <?php
+    $images = get_field('master_gallery');
+    if ($images): ?>
+        <div class="gallery">
+            <h4>Галерея</h4>
+
+            <div class="gallery-wrapper">
+                <div class="gallery-carousel">
+                    <?php foreach ($images as $image): ?>
+                        <div>
+                            <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
+                                <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-            </div>
-        <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="rating">
+        <h4>Оценки</h4>
+        <?php module_template('rating/breakdown'); ?>
+        <div class="clearfix"></div>
     </div>
 
     <hr />
@@ -66,5 +91,5 @@
             comments_template();
         endif;
     ?>
-
+</div>
 <?php endif; ?>

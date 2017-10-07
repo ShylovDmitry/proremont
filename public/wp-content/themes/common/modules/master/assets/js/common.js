@@ -1,12 +1,12 @@
 jQuery(function ($) {
-    $('.master-gallery').slick({
+    $('.gallery-carousel').slick({
         dots: true,
         infinite: true,
         speed: 300,
         centerMode: true,
         variableWidth: true
     });
-    $('.master-gallery').slickLightbox();
+    $('.gallery-carousel').slickLightbox();
 
 
     $('#master_search_catalog').select2();

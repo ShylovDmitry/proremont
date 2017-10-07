@@ -44,6 +44,7 @@ function pror_get_section_by_location_id($location_id) {
 }
 
 function pror_format_phones($phones_str) {
+    $phones_str = str_replace(chr(13), '', $phones_str);
     $phones = explode("\n", $phones_str);
     return array_map(function($phone) {
         if (strlen($phone) == 9) {
@@ -79,4 +80,38 @@ function pror_get_master_location($master_id = null) {
     }
 
     return '-';
+}
+
+function pror_get_master_catalogs($master_id = null) {
+    $master_terms = get_the_terms($master_id, 'catalog_master');
+
+    $sub_terms = array();
+    foreach ($master_terms as $master_term) {
+        if ($master_term->parent) {
+            if (!isset($sub_terms[$master_term->parent])) {
+                $sub_terms[$master_term->parent] = array();
+            }
+            $sub_terms[$master_term->parent][] = $master_term;
+        } else {
+            $sub_terms[$master_term->term_id] = array();
+        }
+    }
+
+    $parent_terms = get_terms(array(
+        'term_taxonomy_id' => array_keys($sub_terms),
+        'hierarchical' => false,
+        'taxonomy' => 'catalog_master',
+        'hide_empty' => false,
+        'meta_key' => 'sort',
+        'orderby' => 'meta_value',
+    ));
+
+
+    foreach ($parent_terms as &$parent_term) {
+        $parent_term->children = $sub_terms[$parent_term->term_id];
+    }
+    unset($parent_term);
+
+    return $parent_terms;
+
 }
