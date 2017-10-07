@@ -48,13 +48,6 @@
 }
 
 
-.comment-rating-field-pro-plugin {
-    float: right;
-    border: 1px solid lightblue;
-    padding: 10px;
-}
-
-
 .wp-post-image {
     width: 100px;
     height: auto;
@@ -65,58 +58,86 @@
     height: auto;
 }
 
-.master-2columns .description {
+
+
+.master-item a,
+.master-item a:hover {
+    color: #3C3C3D;
+}
+
+.master-item-pro a,
+.master-item-pro a:hover {
+    color: #FF8F12;
+}
+
+.master-item .type {
+    font-weight: bolder;
+}
+
+.master-item .excerpt {
     font-family: 'Open Sans', sans-serif;
     word-break: break-word;
 }
 
-.master-2columns img {
+.master-item img {
     border: 1px solid #BDBDBD;
 }
 
-.master-2columns .rating a {
+.master-item .rating a {
     font-size: 0;
 }
-.master-2columns .rating a span {
+.master-item .rating a span {
     color: #3C3C3D;
     font-size: 12px;
 }
-.master-2columns .rating a:hover span {
+.master-item .rating a:hover span {
     text-decoration: underline;
 }
-.master-2columns .rating .comment-rating-field-pro-plugin {
-    border: 0;
-    padding: 0;
+.master-item .rating .comment-rating-field-pro-plugin {
     text-align: center;
+    float: right;
 }
-.master-2columns .rating .rating-always-on {
+.master-item .rating .rating-always-on {
     margin-right: 0 !important;
 }
-.master-2columns .rating .total {
+.master-item .rating .total {
     display: block;
     margin-top: 3px;
 }
 
 
 
+
+
 .master-2columns h3 {
-    font-family: 'Roboto', sans-serif;
+    color: #FF8F12;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #BDBDBD;
+}
+.master-2columns .master-item {
+    border: 1px solid #FF8F12;
+    padding: 10px;
+}
+
+
+.master-list-pro h3 {
     color: #FF8F12;
     padding-bottom: 5px;
     border-bottom: 1px solid #BDBDBD;
 }
 
-.master-2columns a,
-.master-2columns a:hover {
-    color: #FF8F12
+.master-list-simple h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #BDBDBD;
 }
 
-.master-2columns .item {
-    font-family: 'Roboto', sans-serif;
-    border: 2px solid #FF8F12;
-    padding: 10px;
-}
 
-.master-2columns .item .type {
-    font-weight: bolder;
+
+.pagination .page-link,
+.pagination .page-link:hover {
+    color: #3e3e3e;
+}
+.pagination .page-item.active .page-link {
+    background-color: #FF8F12;
+    border-color: #FF8F12;
 }
