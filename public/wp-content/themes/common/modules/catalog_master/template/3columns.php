@@ -5,10 +5,10 @@
         <div class="row mt-3 mb-1">
             <?php foreach($catalogs_part as $main_catalog): ?>
                 <div class="col-4">
-                    <h6>
-                        <span><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
-                        <a class="pror-collapse" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu"><?php echo $main_catalog->name; ?></a>
-                    </h6>
+                    <div class="catalog-title">
+                        <span class="circle"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
+                        <span class="link"><a class="pror-collapse" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu"><?php echo $main_catalog->name; ?></a></span>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

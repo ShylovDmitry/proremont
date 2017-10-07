@@ -21,23 +21,37 @@
     color: #3C3C3D;
 }
 
-.catalog-mater-3col h6 span {
+.catalog-mater-3col .catalog-title {
+    display: table;
+}
+.catalog-mater-3col .catalog-title span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.catalog-mater-3col .catalog-title a {
+    font-size: 16px;
+    font-weight: bolder;
+}
+.catalog-mater-3col .catalog-title .link {
+    padding-left: 10px;
+}
+.catalog-mater-3col .catalog-title .circle {
     width: 64px;
     height: 64px;
     background: #3C3C3D;
     border-radius: 50%;
-    display: inline-block;
     text-align: center;
     line-height: 64px;
-    margin-right: 7px;
 }
 
-.catalog-mater-3col h6 svg {
+.catalog-mater-3col .catalog-title .circle svg {
     width: 42px;
     height: 42px;
     line-height: 42px;
     fill: #fff;
 }
+
 
 .catalog-mater-3col hr {
     border-color: #BDBDBD;

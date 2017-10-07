@@ -42,10 +42,10 @@
         <div class="row">
             <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
                 <div class="col-6">
-                    <h6>
-                        <span><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
-                        <a href="<?php echo esc_url( get_term_link($parent) ); ?>"><?php echo $parent->name; ?></a>
-                    </h6>
+                    <div class="catalog-title">
+                        <span class="circle"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
+                        <span class="link"><a href="<?php echo esc_url( get_term_link($parent) ); ?>"><?php echo $parent->name; ?></a></span>
+                    </div>
 
                     <ul class="list-unstyled">
                     <?php foreach ($parent->children as $child): ?>

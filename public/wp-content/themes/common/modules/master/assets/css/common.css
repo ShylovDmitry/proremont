@@ -31,70 +31,6 @@
 }
 
 
-.catalog a,
-.catalog a:hover {
-    color: #3C3C3D;
-}
-
-.catalog h6 span {
-    width: 64px;
-    height: 64px;
-    background: #3C3C3D;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 64px;
-    margin-right: 7px;
-}
-
-.catalog h6 svg {
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    fill: #fff;
-}
-
-.catalog ul {
-    margin-left: 76px;
-}
-
-.catalog ul a::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #FF8F12;
-    margin-right: 10px;
-}
-
-
-.gallery-wrapper {
-    width: 780px;
-    background: #3C3C3D;
-    padding: 10px 30px 1px;
-}
-
-.gallery .slick-slide {
-    padding: 0 5px;
-}
-
-.gallery .slick-dots li.slick-active button:before {
-    color: #fff;
-}
-
-.gallery .slick-slide img {
-    height: 200px;
-    width: auto;
-}
-
-
-
-.wp-post-image {
-    width: 100px;
-    height: auto;
-}
-
 
 .master-item a,
 .master-item a:hover {
@@ -190,5 +126,82 @@
 
 
 
+
+.master-detailed .catalog a,
+.master-detailed .catalog a:hover {
+    color: #3C3C3D;
+}
+
+.master-detailed .catalog-title {
+    display: table;
+}
+.master-detailed .catalog-title span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.master-detailed .catalog-title a {
+    font-size: 16px;
+    font-weight: bolder;
+}
+.master-detailed .catalog-title .link {
+    padding-left: 10px;
+}
+.master-detailed .catalog-title .circle {
+    width: 64px;
+    height: 64px;
+    background: #3C3C3D;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 64px;
+}
+
+.master-detailed .catalog-title .circle svg {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    fill: #fff;
+}
+
+.master-detailed .catalog ul {
+    margin-left: 75px;
+}
+
+.master-detailed .catalog ul a::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF8F12;
+    margin-right: 10px;
+}
+
+
+.master-detailed .gallery-wrapper {
+    width: 780px;
+    background: #3C3C3D;
+    padding: 10px 30px 1px;
+}
+
+.master-detailed .gallery .slick-slide {
+    padding: 0 5px;
+}
+
+.master-detailed .gallery .slick-dots li.slick-active button:before {
+    color: #fff;
+}
+
+.master-detailed .gallery .slick-slide img {
+    height: 200px;
+    width: auto;
+}
+
+
+
+.wp-post-image {
+    width: 100px;
+    height: auto;
+}
 
 
