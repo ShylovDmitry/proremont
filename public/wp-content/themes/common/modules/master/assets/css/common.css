@@ -118,6 +118,9 @@
 .master-detailed h1 {
     font-size: 2rem;
 }
+.master-detailed.pro h1 {
+    color: #FF8F12;
+}
 .master-detailed h1 .is-confirmed {
     font-size: 20px;
     margin-left: 5px;
