@@ -50,7 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar {
     background: #3c3c3b;
-    color: #fff
+    color: #fff;
+    padding: 0;
 }
 .navbar a {
     color: #fff;

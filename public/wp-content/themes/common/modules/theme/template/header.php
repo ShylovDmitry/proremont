@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">ProRemont</a>
+        <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">
+            <img src="<?php module_img('theme/proremont-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
