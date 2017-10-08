@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<div class="jumbotron jumbotron-fluid pt-5 pb-5">
+<div class="jumbotron jumbotron-fluid header">
     <div class="container text-center frontpage-title">
-        <h1 class="display-3">Все <strong>про ремонт</strong> тут</h1>
-        <p class="lead mt-3">Тут ви найдете всю необходимую информацию для создания своего уютного уголока.</p>
+        <h1 class="display-3">Каталог <span>мастеров</span></h1>
+        <p class="lead mt-3">Выбери своего мастера по <strong>отзывам</strong> и <strong>портфолио</strong>.</p>
     </div>
 </div>
 

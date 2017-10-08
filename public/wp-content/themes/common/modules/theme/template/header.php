@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg mb-2">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">ProRemont</a>
 
