@@ -14,10 +14,15 @@
         </div>
 
         <div class="media-body">
-            <h1 class="mt-0 mb-1"><?php the_title(); ?></h1>
+            <h1 class="mt-0 mb-1">
+                <?php the_title(); ?>
+                <?php if (get_field('master_is_confirmed')): ?>
+                    <span class="oi oi-circle-check is-confirmed"></span>
+                <?php endif; ?>
+            </h1>
 
-            <br />
             <div class="type"><?php the_field('master_type'); ?></div>
+            <br />
             <div class="location"><?php echo pror_get_master_location(); ?></div>
             <br />
             <div class="phone">Телефон:

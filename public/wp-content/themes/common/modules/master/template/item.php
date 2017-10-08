@@ -15,7 +15,7 @@
             <h5 class="mt-0 mb-1">
                 <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
                 <?php if (get_field('master_is_confirmed')): ?>
-                    <small><span class="oi oi-circle-check ml-2 text-secondary" data-toggle="tooltip" title="Документи мастера подтверджени <br />Телефон подтвержден"></span></small>
+                    <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" title="Документи мастера подтверджени <br />Телефон подтвержден"></span>
                 <?php endif; ?>
             </h5>
             <div class="type"><?php the_field('master_type'); ?></div>

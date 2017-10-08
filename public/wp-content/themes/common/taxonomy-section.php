@@ -3,7 +3,7 @@
 <div class="jumbotron jumbotron-fluid header">
     <div class="container text-center frontpage-title">
         <h1 class="display-3">Каталог <span>мастеров</span></h1>
-        <p class="lead mt-3">Выбери своего мастера по <strong>отзывам</strong> и <strong>портфолио</strong>.</p>
+        <p class="lead mt-3">Подберите себе мастера по <strong>отзывам</strong> и <strong>портфолио</strong></p>
     </div>
 </div>
 
