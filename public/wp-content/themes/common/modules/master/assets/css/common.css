@@ -205,3 +205,39 @@
 }
 
 
+
+.master-detailed .comment {
+    overflow: hidden;
+}
+.master-detailed .comment .fn {
+    font-size: 16px;
+}
+.master-detailed .comment .says {
+    display: none;
+}
+.master-detailed .comment article {
+    padding-left: 110px;
+}
+.master-detailed .comment .comment-author {
+    float: left;
+}
+.master-detailed .comment .comment-author img {
+    margin-left: -110px;
+    position: absolute;
+}
+.master-detailed .comment .comment-meta {
+    overflow: hidden;
+}
+.master-detailed .comment .comment-metadata {
+    float: right;
+}
+.master-detailed .comment .rating-container {
+    float: none;
+    margin-top: 10px;
+}
+.master-detailed .comment .crfp-rating-breakdown {
+    float: left;
+    width: 33%;
+    clear: none;
+    margin-top: 0;
+}

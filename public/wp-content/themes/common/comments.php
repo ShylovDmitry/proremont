@@ -31,9 +31,10 @@ if ( post_password_required() ) {
 		<ul class="list-unstyled comment-list">
 			<?php
 				wp_list_comments( array(
-					'avatar_size' => 50,
-					'style'       => 'ul',
-					'short_ping'  => true,
+					'avatar_size' => 100,
+					'style' => 'ul',
+                    'type' => 'comment',
+					'short_ping' => true,
 				) );
 			?>
 		</ul>

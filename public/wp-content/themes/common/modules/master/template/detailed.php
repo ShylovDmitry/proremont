@@ -84,12 +84,13 @@
         <div class="clearfix"></div>
     </div>
 
-    <hr />
-
+    <div class="content">
+        <h4>Отзывы</h4>
     <?php
         if ( comments_open() || get_comments_number() ) :
             comments_template();
         endif;
     ?>
+    </div>
 </div>
 <?php endif; ?>
