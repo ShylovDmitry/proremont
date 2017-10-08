@@ -208,6 +208,9 @@
 
 .master-detailed .comment {
     overflow: hidden;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 20px;
 }
 .master-detailed .comment .fn {
     font-size: 16px;
@@ -240,4 +243,54 @@
     width: 33%;
     clear: none;
     margin-top: 0;
+}
+
+
+
+
+.master-detailed .comment-respond {
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
+}
+.master-detailed .comment-respond .comment-reply-title {
+    margin: -15px -15px 15px;
+    padding: 12px 15px;
+    background: #FF8F12;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+}
+.master-detailed .comment-respond .form-submit {
+    text-align: right;
+}
+.master-detailed .comment-respond .submit {
+    border: 0;
+    background: #FF8F12;
+    color: #fff;
+    padding: 7px 15px;;
+    font-weight: 300;
+    margin-left: 20px;
+}
+
+.master-detailed .comment-respond strong {
+    font-size: 16px;
+}
+.master-detailed .comment-respond .crfp-field label {
+    float: left;
+    width: 80px;
+}
+.master-detailed .comment-respond textarea {
+    width: 100%;
+}
+.master-detailed .comment-respond .cancel-form {
+    color: #3C3C3D;
+}
+
+.master-detailed .comment-respond .comment-form {
+    padding-left: 110px;
+}
+.master-detailed .comment-respond .comment-form .avatar {
+    margin-left: -110px;
+    position: absolute;
 }

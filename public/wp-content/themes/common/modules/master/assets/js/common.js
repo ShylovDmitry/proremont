@@ -24,4 +24,15 @@ jQuery(function ($) {
     $('#master_search_form .form-check-input').on('change', function () {
         $('#master_search_form').submit();
     });
+
+    $('#commentform').submit(function(e) {
+        $('#comment-error').html('');
+        if ($('#comment').val() == '') {
+            e.preventDefault();
+            $('#comment-error').html('Отзыв не может быть пустым.');
+        }
+    });
+    $('#comment').on('keypress', function(e) {
+        $('#comment-error').html('');
+    });
 });

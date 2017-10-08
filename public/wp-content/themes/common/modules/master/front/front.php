@@ -115,3 +115,10 @@ function pror_get_master_catalogs($master_id = null) {
     return $parent_terms;
 
 }
+
+add_filter('comment_form_submit_button', function($submit_button, $args) {
+    $submit_button = sprintf('<a href="%1$s" class="cancel-form">Отмена</a> ',
+            wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) )
+        ). $submit_button;
+    return $submit_button;
+}, 10, 2);

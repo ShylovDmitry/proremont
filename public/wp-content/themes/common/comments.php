@@ -53,16 +53,17 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
+	$logged_user = wp_get_current_user();
 	comment_form(array(
-//	    'must_log_in' => '<p class="must-log-in">Только авторизированый пользователь может оставить коментарий.</p>',
-		'logged_in_as'         => '<p class="logged-in-as">' . sprintf(
-		                              /* translators: 1: edit user link, 2: accessibility text, 3: user name, 4: logout URL */
-		                              __( 'Авторизирован как <strong>%1$s</strong>. <a href="%2$s">Выйти?</a>' ),
-		                              $user_identity,
-		                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
-		                          ) . '</p>',
-        'cancel_reply_link'    => __( 'Cancel reply' ),
-		'label_submit'         => 'Коментировать',
+		'logged_in_as' => '<div class="logged-in-as">' . sprintf(
+                              '%1$s<strong>%2$s</strong><p><i>Если это не вы, нажмите <a href="%3$s">выйти</a>.</i></p>',
+                              get_avatar($logged_user ? $logged_user->ID : null),
+                              $user_identity,
+                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+                          ) . '</div>',
+        'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
+        'title_reply' => 'Оставить отзыв',
+        'label_submit' => 'Оставить отзыв',
     ));
 	?>
 
