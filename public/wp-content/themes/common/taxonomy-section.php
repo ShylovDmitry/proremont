@@ -3,7 +3,36 @@
 <div class="jumbotron jumbotron-fluid header">
     <div class="container text-center frontpage-title">
         <h1 class="display-3">Каталог <span>мастеров</span></h1>
-        <p class="lead mt-3">Подберите себе мастера по <strong>отзывам</strong> и <strong>портфолио</strong></p>
+        <p class="lead mt-3">Найдите своєго мастера по <strong>отзывам</strong> и <strong>портфолио</strong></p>
+    </div>
+</div>
+
+<div class="container mt-3 mb-4 frontpage-cons">
+    <div class="row">
+        <div class="col-4 text-align">
+            <div class="item">
+                <div class="circle">
+                    <strong>1246</strong>
+                    мастеров
+                </div>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <div class="item">
+                <div class="circle">
+                    <strong>рейтинг</strong>
+                    и отзывы
+                </div>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <div class="item">
+                <div class="circle">
+                    <strong>бесплатний</strong>
+                    каталог
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

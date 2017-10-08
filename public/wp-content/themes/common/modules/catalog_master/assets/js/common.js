@@ -9,8 +9,11 @@ jQuery(function ($) {
         var isHidden = target.hasClass('d-none');
 
         $(parent.data('pror-children'), parent).addClass('d-none');
+        $('.catalog-title', parent).removeClass('active');
+
         if (isHidden) {
             target.removeClass('d-none');
+            $(this).parents('.catalog-title').addClass('active');
         }
     });
 });

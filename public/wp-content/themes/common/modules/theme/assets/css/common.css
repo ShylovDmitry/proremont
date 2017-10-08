@@ -6,8 +6,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-body .container {
-    max-width: 960px;
+@media (min-width: 1200px) {
+    body .container {
+        max-width: 960px;
+    }
 }
 
 .colored-box {
@@ -27,13 +29,46 @@ body .container {
     font-weight: 100;
 }
 
-.frontpage-title h1 span {
+.jumbotron.header h1 span {
     font-weight: 900;
 }
 
-.frontpage-title .lead {
+.jumbotron.header .lead {
     font-weight: 200;
 }
+
+
+
+.frontpage-cons {
+    font-size: 22px;
+    font-weight: 200;
+    display: table;
+}
+.frontpage-cons .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.frontpage-cons .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    line-height: 30px;
+}
+.frontpage-cons strong {
+    display: block;
+    color: #FF8F12;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+
 
 
 @media (min-width: 992px) {

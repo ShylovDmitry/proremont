@@ -36,20 +36,8 @@
 .catalog-mater-3col .catalog-title .link {
     padding-left: 10px;
 }
-.catalog-mater-3col .catalog-title .circle {
-    width: 64px;
-    height: 64px;
-    background: #3C3C3D;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 64px;
-}
-
-.catalog-mater-3col .catalog-title .circle svg {
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    fill: #fff;
+.catalog-mater-3col .catalog-title.active svg {
+    fill: #FF8F12;
 }
 
 

@@ -161,21 +161,6 @@
 .master-detailed .catalog-title .link {
     padding-left: 10px;
 }
-.master-detailed .catalog-title .circle {
-    width: 64px;
-    height: 64px;
-    background: #3C3C3D;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 64px;
-}
-
-.master-detailed .catalog-title .circle svg {
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    fill: #fff;
-}
 
 .master-detailed .catalog ul {
     margin-left: 75px;
