@@ -122,3 +122,7 @@ add_filter('comment_form_submit_button', function($submit_button, $args) {
         ). $submit_button;
     return $submit_button;
 }, 10, 2);
+
+add_filter('get_comment_author_link', function($return, $author, $comment_ID) {
+    return $author;
+}, 10, 3);

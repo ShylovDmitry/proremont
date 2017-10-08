@@ -234,6 +234,9 @@
 .master-detailed .comment .comment-metadata {
     float: right;
 }
+.master-detailed .comment .comment-metadata a {
+    color: #3C3C3D;
+}
 .master-detailed .comment .rating-container {
     float: none;
     margin-top: 10px;
