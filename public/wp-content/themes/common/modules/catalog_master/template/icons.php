@@ -19,7 +19,7 @@ $terms = get_terms(array(
     <?php foreach ($terms as $term): ?>
         <li class="list-inline-item">
             <span class="catalog-icon">
-                <?php module_svg("catalog_master/{$term->slug}.svg"); ?>
+                <?php module_svg("catalog_master/{$term->slug}-white.svg"); ?>
             </span>
         </li>
     <?php endforeach; ?>

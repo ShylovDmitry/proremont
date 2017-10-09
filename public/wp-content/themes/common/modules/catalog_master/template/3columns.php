@@ -17,7 +17,7 @@
             <div class="item item-<?php echo $p%3 + 1; ?> py-3 px-3 mt-4 d-none" id="catalogSubcategory_<?php echo $main_catalog->term_id; ?>">
                 <div class="arrow"></div>
 
-                <a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>">Смотреть все</a> <span class="help-text">из раздела <?php echo $main_catalog->name; ?></span>
+                <a class="all" href="<?php echo esc_url( get_term_link($main_catalog) ); ?>">Смотреть все</a> <span class="help-text">из раздела <?php echo $main_catalog->name; ?></span>
                 <hr />
 
                 <div class="row">
