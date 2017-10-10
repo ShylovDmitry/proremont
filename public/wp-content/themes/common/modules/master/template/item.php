@@ -4,7 +4,7 @@
             <?php if (has_post_thumbnail()): ?>
                 <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
             <?php else: ?>
-                <img src="http://via.placeholder.com/100" class="wp-post-image d-flex mr-3" />
+                <img src="<?php module_img('master/no-avatar.png'); ?>" class="wp-post-image d-flex mr-3" />
             <?php endif; ?>
         </a>
         <div class="media-body">

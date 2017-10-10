@@ -2,7 +2,7 @@
     <div class="container pt-4">
         <div class="row">
 
-            <div class="col-4">
+            <div class="col-sm-4">
                 <p>
                     <strong>Служба поддержки:</strong>
                 </p>
@@ -13,7 +13,7 @@
                 </p>
             </div>
 
-            <div class="col-3">
+            <div class="col-sm-4">
                 <p>
                     Ми в соцсетях:
                 </p>
@@ -23,7 +23,7 @@
                 </ul>
             </div>
 
-            <div class="col">
+            <div class="col-sm-4">
                 <?php wp_nav_menu(array(
                         'container' => false,
                         'menu_class' => 'list-unstyled list-inline',
@@ -33,12 +33,12 @@
         </div>
 
         <div class="row">
-            <div class="col-4">
+            <div class="col-sm-4">
                 <p>
                     2017 &copy; ProRemont. Все права защищены.
                 </p>
             </div>
-            <div class="col-3">
+            <div class="col-sm-8">
                 <?php wp_nav_menu(array(
                         'container' => false,
                         'menu_class' => 'list-unstyled list-inline',
