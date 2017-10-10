@@ -1,6 +1,5 @@
 jQuery(function ($) {
     $('.gallery-carousel').slick({
-        dots: true,
         infinite: true,
         speed: 300,
         centerMode: true,

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "da48615e14185f5835dff5ffe0ff208b",
-    "content-hash": "038980f265a44fec5139bf8d60cb1ae0",
+    "hash": "1868ba5cf1b36eb82265a55ae97e73ed",
+    "content-hash": "1c7b27d34cda6e4a3d5ebad1da2b8608",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2104,6 +2104,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/adrotate/"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-cron-manager",
+            "version": "2.3.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-cron-manager/",
+                "reference": "tags/2.3.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-cron-manager.2.3.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-cron-manager/"
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",

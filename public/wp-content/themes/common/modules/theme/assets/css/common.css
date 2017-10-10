@@ -72,10 +72,10 @@ body {
 
 
 @media (min-width: 992px) {
-    .col-lg-300 {
+    .col-300 {
         -ms-flex: 0 0 330px;
         flex: 0 0 330px;
-        max-width: 330px;
+        width: 330px;
     }
 }
 

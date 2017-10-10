@@ -32,6 +32,7 @@
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5",
     "wpackagist-plugin/oa-social-login": "5.3",
     "wpackagist-plugin/query-monitor": "2.15.0",
+    "wpackagist-plugin/advanced-cron-manager": "2.3.0",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2",
     "wpackagist-plugin/amazon-web-services": "1.0.3"
   },

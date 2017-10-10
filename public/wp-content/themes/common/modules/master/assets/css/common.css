@@ -31,7 +31,9 @@
 }
 
 
-
+.master-item {
+    height: 100%;
+}
 .master-item a,
 .master-item a:hover {
     color: #3C3C3D;
@@ -67,16 +69,23 @@
 
 
 
-
 .master-2columns h3 {
-    color: #FF8F12;
     padding-bottom: 5px;
     border-bottom: 1px solid #BDBDBD;
 }
 .master-2columns .master-item {
-    border: 1px solid #FF8F12;
+    border: 1px solid #e3e3e3;
     padding: 10px;
 }
+
+.master-2columns.pro h3 {
+    color: #FF8F12;
+}
+.master-2columns.pro .master-item {
+    border-color: #FF8F12;
+}
+
+
 
 
 .master-list-pro h3 {
@@ -89,6 +98,7 @@
     padding-bottom: 5px;
     border-bottom: 1px solid #BDBDBD;
 }
+
 
 
 
@@ -178,9 +188,9 @@
 
 
 .master-detailed .gallery-wrapper {
-    width: 780px;
+    width: 600px;
     background: #3C3C3D;
-    padding: 10px 30px 1px;
+    padding: 10px 30px;
 }
 
 .master-detailed .gallery .slick-slide {
