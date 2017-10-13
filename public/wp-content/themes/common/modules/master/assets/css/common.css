@@ -29,7 +29,8 @@
     font-weight: bolder; }
   .master-item .excerpt {
     font-family: "Open Sans", sans-serif;
-    word-break: break-word; }
+    word-break: break-word;
+    margin-bottom: -1rem; }
   .master-item img {
     border: 1px solid #BDBDBD; }
   .master-item .rating {
