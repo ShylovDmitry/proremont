@@ -1,0 +1,333 @@
+@import "../../../theme/assets/css/variables";
+
+
+.master-list {
+    .nav {
+        padding-left: 30px;
+        border-bottom: 25px solid #3C3C3D;
+
+        .nav-link {
+            margin: 0 5px;
+            color: #3C3C3D;
+            border-radius: 0;
+            border: 0;
+            border-top: 5px solid $color-orange;
+
+            &:hover {
+                border-color: $color-orange;
+                background: #f5f7f9;
+            }
+
+            &.active {
+                color: #fff;
+                background-color: #3C3C3D;
+                border-radius: 0;
+                border: 0;
+                border-top: 5px solid #3C3C3D;
+            }
+        }
+    }
+}
+
+
+.master-item {
+    height: 100%;
+
+    a, a:hover {
+        color: #3C3C3D;
+    }
+
+    h5 .is-confirmed {
+        font-size: 14px;
+        margin-left: 5px;
+        color: #30F447;
+    }
+
+    .type {
+        font-weight: bolder;
+    }
+
+    .excerpt {
+        font-family: $secondary-font;
+        word-break: break-word;
+    }
+
+    img {
+        border: 1px solid $color-grey;
+    }
+    .rating {
+        float: right;
+    }
+
+    &.master-item-pro {
+        a, a:hover {
+            color: $color-orange;
+        }
+
+        .media > a {
+            position: relative;
+
+            &::after {
+                content: url('../img/pro-leaf.svg');
+                width: 40px;
+                height: 10px;
+                position: absolute;
+                top: 65px;
+                left: 0;
+            }
+        }
+    }
+}
+
+
+.master-2columns {
+    h3 {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $color-grey;
+    }
+    .master-item {
+        border: 1px solid $color-grey;
+        padding: 10px;
+    }
+
+    &.pro h3 {
+        color: $color-orange;
+    }
+    &.pro .master-item {
+        border-color: $color-orange;
+    }
+}
+
+
+.master-list-pro h3 {
+    color: $color-orange;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-grey;
+}
+
+.master-list-simple h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-grey;
+}
+
+
+.pagination {
+    .page-link, .page-link:hover {
+        color: #3e3e3e;
+    }
+    .page-item.active .page-link {
+        background-color: $color-orange;
+        border-color: $color-orange;
+    }
+
+}
+
+.master-detailed {
+    .header {
+        .left {
+            float: left;
+            position: relative;
+
+            &::after {
+                content: url('../img/pro-leaf.svg');
+                width: 50px;
+                height: 10px;
+                position: absolute;
+                top: 125px;
+                left: 0;
+            }
+        }
+
+        img {
+            width: 175px;
+            height: 175px;
+            border: 1px solid $color-grey;
+        }
+        .phone a {
+            color: #3C3C3D;
+            font-weight: bolder;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+
+        & .is-confirmed {
+            font-size: 20px;
+            margin-left: 5px;
+            color: #30F447;
+        }
+    }
+    &.pro h1 {
+        color: $color-orange;
+    }
+
+
+    .type {
+        font-weight: bolder;
+    }
+
+    h4 {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $color-grey;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+
+    .catalog {
+        a, a:hover {
+            color: #3C3C3D;
+        }
+
+        ul {
+            margin-left: 75px;
+
+            a::before {
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: $color-orange;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .catalog-title {
+        display: table;
+
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        a {
+            font-size: 16px;
+            font-weight: bolder;
+        }
+        .link {
+            padding-left: 10px;
+        }
+    }
+
+    .gallery-wrapper {
+        width: 600px;
+        background: #3C3C3D;
+        padding: 10px 30px;
+    }
+
+    .gallery {
+        .slick-slide {
+            padding: 0 5px;
+
+            img {
+                height: 200px;
+                width: auto;
+            }
+        }
+        .slick-dots li.slick-active button:before {
+            color: #fff;
+        }
+    }
+
+    .comment {
+        overflow: hidden;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #dfdfdf;
+        margin-bottom: 20px;
+
+        .fn {
+            font-size: 16px;
+        }
+        .says {
+            display: none;
+        }
+        article {
+            padding-left: 110px;
+        }
+        .comment-author {
+            float: left;
+
+            img {
+                margin-left: -110px;
+                position: absolute;
+            }
+        }
+        .comment-meta {
+            overflow: hidden;
+        }
+        .comment-metadata {
+            float: right;
+
+            a {
+                color: #3C3C3D;
+            }
+        }
+        .rating-container {
+            float: none;
+            margin-top: 10px;
+        }
+        .crfp-rating-breakdown {
+            float: left;
+            width: 33%;
+            clear: none;
+            margin-top: 0;
+        }
+
+    }
+
+    .comment-respond {
+        padding: 15px;
+        margin-top: 20px;
+        box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
+
+        .comment-reply-title {
+            margin: -15px -15px 15px;
+            padding: 12px 15px;
+            background: $color-orange;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .form-submit {
+            text-align: right;
+        }
+        .submit {
+            border: 0;
+            background: $color-orange;
+            color: #fff;
+            padding: 7px 15px;;
+            font-weight: 300;
+            margin-left: 20px;
+        }
+
+        strong {
+            font-size: 16px;
+        }
+        .crfp-field label {
+            float: left;
+            width: 80px;
+        }
+        textarea {
+            width: 100%;
+        }
+        .cancel-form {
+            color: #3C3C3D;
+        }
+
+        .comment-form {
+            padding-left: 110px;
+
+            .avatar {
+                margin-left: -110px;
+                position: absolute;
+            }
+        }
+    }
+}
+
+.wp-post-image {
+    width: 100px;
+    height: auto;
+}

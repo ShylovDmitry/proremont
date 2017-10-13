@@ -1,0 +1,48 @@
+@import "../../../theme/assets/css/variables";
+
+.rating-total {
+    text-align: center;
+
+    &.comment-rating-field-pro-plugin a {
+        font-size: 0;
+
+        span {
+            color: #3C3C3D;
+            font-size: 12px;
+        }
+        &:hover span {
+            text-decoration: underline;
+        }
+    }
+
+    & .rating-always-on {
+        margin-right: 0 !important;
+    }
+
+    & .total {
+        display: block;
+        margin-top: 3px;
+    }
+
+    & .rating-container {
+        margin: 0;
+    }
+
+}
+
+.rating-breakdown {
+    .rating-container {
+        width: 33.3%;
+        clear: none;
+        float: left;
+        text-align: center;
+        margin: 0;
+
+        .label {
+            display: block;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+    }
+}

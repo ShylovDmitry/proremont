@@ -1,38 +1,30 @@
 .rating-total {
-    text-align: center;
-}
-.rating-total.comment-rating-field-pro-plugin a {
-    font-size: 0;
-}
-.rating-total.comment-rating-field-pro-plugin a span {
-    color: #3C3C3D;
-    font-size: 12px;
-}
-.rating-total.comment-rating-field-pro-plugin a:hover span {
-    text-decoration: underline;
-}
-.rating-total .rating-always-on {
-    margin-right: 0 !important;
-}
-.rating-total .total {
+  text-align: center; }
+  .rating-total.comment-rating-field-pro-plugin a {
+    font-size: 0; }
+    .rating-total.comment-rating-field-pro-plugin a span {
+      color: #3C3C3D;
+      font-size: 12px; }
+    .rating-total.comment-rating-field-pro-plugin a:hover span {
+      text-decoration: underline; }
+  .rating-total .rating-always-on {
+    margin-right: 0 !important; }
+  .rating-total .total {
     display: block;
-    margin-top: 3px;
-}
-.rating-total .rating-container {
-    margin: 0;
-}
-
+    margin-top: 3px; }
+  .rating-total .rating-container {
+    margin: 0; }
 
 .rating-breakdown .rating-container {
-    width: 33.3%;
-    clear: none;
-    float: left;
-    text-align: center;
-    margin: 0;
-}
-.rating-breakdown .rating-container .label {
+  width: 33.3%;
+  clear: none;
+  float: left;
+  text-align: center;
+  margin: 0; }
+  .rating-breakdown .rating-container .label {
     display: block;
     font-size: 16px;
     font-weight: 300;
-    margin-bottom: 8px;
-}
+    margin-bottom: 8px; }
+
+/*# sourceMappingURL=common.css.map */

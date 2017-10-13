@@ -33,7 +33,7 @@
             <?php module_template('master/list'); ?>
         </div>
 
-        <div class="col col-md-12 col-lg-300">
+        <div class="col col-md-12 col-300">
             <?php module_template('banner/sidebar'); ?>
         </div>
 

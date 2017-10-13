@@ -1,0 +1,110 @@
+@import "../../../theme/assets/css/variables";
+
+.catalog-mater-icons {
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    .catalog-icon {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+.catalog-mater-3col {
+    a, a:hover {
+        color: #3C3C3D;
+    }
+
+    hr {
+        border-color: $color-grey;
+    }
+
+    .catalog-title {
+        display: table;
+
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        a {
+            font-size: 16px;
+            font-weight: bolder;
+        }
+        .link {
+            padding-left: 10px;
+        }
+        &.active svg {
+            fill: $color-orange;
+        }
+    }
+
+
+    .item {
+        background: #F9F9F9;
+        border: 1px solid $color-grey;
+        position: relative;
+
+        .all {
+            text-decoration: underline;
+        }
+
+        .help-text {
+            color: #a5a5a5;
+        }
+
+        a::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color-orange;
+            margin-right: 10px;
+        }
+
+        .arrow {
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 5px;
+            top: 0;
+            left: 27px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 11px;
+                margin-left: -7px;
+                border-top-width: 0;
+                top: -11px;
+                border-bottom-color: $color-grey;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 11px;
+                margin-left: -7px;
+                border-top-width: 0;
+                top: -10px;
+                border-bottom-color: #F9F9F9;
+            }
+        }
+
+        &.item-2 .arrow {
+            left: 347px;
+        }
+        &.item-3 .arrow {
+            left: 667px;
+        }
+    }
+}

@@ -1,56 +1,48 @@
 body {
-    background: #eee;
-    color: #3e3e3e;
-    font-size: 87.5%;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif;
-}
+  background: #eee;
+  color: #3e3e3e;
+  font-size: 87.5%;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif; }
 
 @media (min-width: 1200px) {
-    body .container {
-        max-width: 960px;
-    }
-}
+  body .container {
+    max-width: 960px; } }
+
+@media (min-width: 992px) {
+  .col-300 {
+    -ms-flex: 0 0 330px;
+    flex: 0 0 330px;
+    width: 330px; } }
 
 .colored-box {
-    box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
-    background: #fff;
-}
+  box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5);
+  background: #fff; }
 
 .jumbotron.header {
-    background: transparent no-repeat center 80%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/home.jpg');
-    background-size: cover;
-    color: #fff;
-    padding: 200px 0 40px;
-}
-.jumbotron.header h1 {
+  background: transparent no-repeat center 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/home.jpg");
+  background-size: cover;
+  color: #fff;
+  padding: 200px 0 40px; }
+  .jumbotron.header h1 {
     margin-top: 20px;
-    font-weight: 100;
-}
-
-.jumbotron.header h1 span {
-    font-weight: 900;
-}
-
-.jumbotron.header .lead {
-    font-weight: 200;
-}
-
-
+    font-weight: 100; }
+    .jumbotron.header h1 span {
+      font-weight: 900; }
+  .jumbotron.header .lead {
+    font-weight: 200; }
 
 .frontpage-cons {
-    font-size: 22px;
-    font-weight: 200;
-    display: table;
-}
-.frontpage-cons .item {
+  font-size: 22px;
+  font-weight: 200;
+  display: table; }
+  .frontpage-cons .item {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-.frontpage-cons .circle {
+    flex-direction: column; }
+  .frontpage-cons .circle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,90 +51,58 @@ body {
     border-radius: 50%;
     width: 180px;
     height: 180px;
-    line-height: 30px;
-}
-.frontpage-cons strong {
+    line-height: 30px; }
+  .frontpage-cons strong {
     display: block;
     color: #FF8F12;
     font-weight: 900;
-    font-size: 28px;
-}
-
-
-
-
-@media (min-width: 992px) {
-    .col-300 {
-        -ms-flex: 0 0 330px;
-        flex: 0 0 330px;
-        width: 330px;
-    }
-}
+    font-size: 28px; }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-}
+  font-family: "Roboto", sans-serif;
+  font-weight: 900; }
 
 .navbar {
-    background: #3c3c3b;
-    color: #fff;
-    padding: 0;
-}
-.navbar a {
-    color: #fff;
-}
-.navbar .dropdown-menu a {
-    color: #212529;
-}
-
+  background: #3c3c3b;
+  color: #fff;
+  padding: 0; }
+  .navbar a {
+    color: #fff; }
+  .navbar .dropdown-menu a {
+    color: #212529; }
 
 .footer {
-    background: #3c3c3b;
-    color: #fff
-}
-.footer a {
-    color: #fff;
-}
-
-
-
+  background: #3c3c3b;
+  color: #fff; }
+  .footer a {
+    color: #fff; }
 
 .switch-catalog-block {
-    font-family: 'Roboto', sans-serif;
-}
-.switch-catalog-block .button {
+  font-family: 'Roboto', sans-serif; }
+  .switch-catalog-block .button {
     background: #FF8F12;
     color: #fff;
     padding: 8px 12px;
-    text-decoration: none;
-}
-.switch-catalog-block .button span {
-    font-size: 12px;
-    margin-right: 5px;
-}
-.switch-catalog-block #catalogMenu {
-    margin-top: 35px;
-}
-
-
+    text-decoration: none; }
+    .switch-catalog-block .button span {
+      font-size: 12px;
+      margin-right: 5px; }
+  .switch-catalog-block #catalogMenu {
+    margin-top: 35px; }
 
 .master-list-block h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.1rem;
-}
-
+  font-size: 2.1rem; }
 
 .page h1 {
-    color: #FF8F12;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #BDBDBD;
-    margin-bottom: 20px;
-}
+  color: #FF8F12;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #BDBDBD;
+  margin-bottom: 20px; }
 
 .wpcf7-submit {
-    border: 0;
-    background: #FF8F12;
-    color: #fff;
-    padding: 6px 14px;
-}
+  border: 0;
+  background: #FF8F12;
+  color: #fff;
+  padding: 6px 14px; }
+
+/*# sourceMappingURL=common.css.map */

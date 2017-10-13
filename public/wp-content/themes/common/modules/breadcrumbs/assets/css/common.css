@@ -1,8 +1,7 @@
 #breadcrumbs {
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
+  margin-top: 15px;
+  margin-bottom: 5px; }
+  #breadcrumbs a {
+    color: #BDBDBD; }
 
-#breadcrumbs a {
-    color: #BDBDBD;
-}
+/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,10 @@
+@import "../../../theme/assets/css/variables";
+
+#breadcrumbs {
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    a {
+        color: $color-grey;
+    }
+}
