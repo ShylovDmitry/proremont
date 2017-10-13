@@ -6,7 +6,10 @@
 /vendor/
 /public/wp/
 
+/public/.htaccess
+
 /public/wp-content/ewww/
+/public/wp-content/cache/
 
 /public/wp-content/plugins/
 !/public/wp-content/plugins/.gitkeep

@@ -54,14 +54,14 @@
     width: 10px;
     height: 5px;
     top: 0;
-    left: 2%;
+    left: 27px;
 }
 
 .catalog-mater-3col .item.item-2 .arrow {
-    left: 37%;
+    left: 347px;
 }
 .catalog-mater-3col .item.item-3 .arrow {
-    left: 71%;
+    left: 667px;
 }
 
 .catalog-mater-3col .item .arrow::before {

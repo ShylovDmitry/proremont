@@ -26,3 +26,14 @@ function dlv_get_ver() {
     $rev_file = APP_PATH . 'rev.txt';
     return file_exists($rev_file) ? trim(file_get_contents($rev_file)) : time();
 }
+
+
+//use Leafo\ScssPhp\Compiler;
+//add_filter('http_response', function($response, $r, $url) {
+//    if (strpos($url, '.scss.css')) {
+//        $scss = new Compiler();
+//        $response['body'] = $scss->compile($response['body']);
+//    }
+//    return $response;
+//}, 100, 3);
+

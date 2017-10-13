@@ -1,5 +1,8 @@
 <?php
 
+/** Enable Cache by WP Rocket */
+define( 'WP_CACHE', true );
+
 if (!isset($_SERVER['HTTP_HOST'])) {
     $_SERVER['HTTP_HOST'] = 'dev1.proremont.ua';
 }
