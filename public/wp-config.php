@@ -1,7 +1,5 @@
 <?php
 
-define('WP_CACHE', true); // Added by WP Rocket
-
 define('DISABLE_WP_CRON', false);
 
 if (!isset($_SERVER['HTTP_HOST'])) {

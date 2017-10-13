@@ -1,10 +1,7 @@
 <?php
 
-/** Enable Cache by WP Rocket */
-define( 'WP_CACHE', true );
-
 if (!isset($_SERVER['HTTP_HOST'])) {
-    $_SERVER['HTTP_HOST'] = 'dev1.proremont.ua';
+    $_SERVER['HTTP_HOST'] = 'dev.proremont.co';
 }
 
 defined('WP_DEBUG') or define('WP_DEBUG', false);
@@ -14,7 +11,7 @@ define('WP_ENV', 'dev');
 
 define('FS_METHOD', 'direct');
 
-defined('DB_NAME') or define('DB_NAME', 'proremont');
+defined('DB_NAME') or define('DB_NAME', 'dev_proremont');
 defined('DB_USER') or define('DB_USER', 'root4');
 defined('DB_PASSWORD') or define('DB_PASSWORD', 'RXYU2BTuXVmn');
 defined('DB_HOST') or define('DB_HOST', 'proremont.cesjuvqkj6et.eu-central-1.rds.amazonaws.com');

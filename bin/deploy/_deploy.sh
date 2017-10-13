@@ -6,7 +6,7 @@ if [ -z $1 ]; then
 fi
 
 SERVER_USER=ec2-user
-SERVER_HOST=$SERVER_USER@52.28.148.152
+SERVER_HOST=$SERVER_USER@proremont.co
 SERVER_KEY="~/.ssh/proremont.pem"
 
 STACK=$1
@@ -65,5 +65,9 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 777 $DEPLOY_FOLDER/public/wp-content
 #ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/min/*"
 
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cp $DEPLOY_FOLDER/configs/supervisor/supervisord.conf /etc/supervisord.conf"
+
+ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs $DEPLOY_FOLDER/config /config"
+
+ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/nginx configtest && sudo /etc/init.d/nginx reload"
 
 echo "Done."

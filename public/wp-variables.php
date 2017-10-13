@@ -1,6 +1,7 @@
 <?php
 
-#defined('WP_CACHE') or define('WP_CACHE', true);
+/** Enable Cache by WP Rocket */
+defined('WP_CACHE') or define('WP_CACHE', true);
 
 define('APP_PATH', dirname(__FILE__));
 

@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SERVER['HTTP_HOST'])) {
-    $_SERVER['HTTP_HOST'] = 'proremont.ua';
+    $_SERVER['HTTP_HOST'] = 'proremont.co';
 }
 
 defined('WP_DEBUG') or define('WP_DEBUG', false);

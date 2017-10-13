@@ -14,9 +14,9 @@ DEV_DIR="/var/www/html/dev/"
 PROD_DIR="/var/www/html/prod/"
 LOCAL_DIR="$BASE_DIR/../../"
 
-DEV_URL="http://dev.delevy.com"
-PROD_URL="http://www.delevy.com"
-LOCAL_URL="http://delevy.lh"
+DEV_URL="http://dev.proremont.co"
+PROD_URL="http://proremont.co"
+LOCAL_URL="http://proremont.local"
 
 
 if [ $FROM_STACK = "prod" ]; then
