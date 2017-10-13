@@ -1,11 +1,6 @@
 <div class="master-list">
     <?php
-        $master_types = array(
-                '' => 'Все',
-                'master' => 'Мастер',
-                'brіgada' => 'Бригада',
-                'kompania' => 'Компания',
-        );
+        $master_types = pror_get_master_types();
         $selected_type = isset($_GET['f_master_type']) ? $_GET['f_master_type'] : key($master_types);
     ?>
     <ul class="nav nav-tabs mb-4">
@@ -49,7 +44,7 @@
 
     <?php if ($query->have_posts()): ?>
         <div class="master-list-pro">
-            <h3 class="mt-5 mb-4">PRO мастера</h3>
+            <h3 class="mt-5 mb-4">PRO <?php echo $master_types[$selected_type]; ?></h3>
 
             <?php $pos = 0; ?>
             <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
@@ -66,7 +61,7 @@
 
     <?php if (have_posts()): ?>
         <div class="master-list-simple">
-            <h3 class="mt-5 mb-4">Мастера</h3>
+            <h3 class="mt-5 mb-4"><?php echo $master_types[$selected_type]; ?></h3>
 
             <?php while (have_posts()): the_post(); ?>
                 <?php module_template('master/item'); ?>
@@ -77,6 +72,6 @@
             <?php get_template_part('pagination'); ?>
         </div>
     <?php else: ?>
-        <i>Перевірте цей розділ пізнійше. Скоро ми додамо майстрів і компанії.</i>
+        <i>Ничего не найдено. Проверьте этот раздел позже.</i>
     <?php endif; ?>
 </div>

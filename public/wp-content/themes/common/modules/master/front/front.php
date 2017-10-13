@@ -12,6 +12,15 @@ add_filter('excerpt_length', function( $length ) {
     return 20;
 }, 999);
 
+function pror_get_master_types() {
+    return array(
+        '' => 'Все',
+        'master' => 'Мастера',
+        'brіgada' => 'Бригады',
+        'kompania' => 'Компании',
+    );
+}
+
 function pror_get_section() {
     $section = pror_get_section_by_slug(get_query_var('section'));
     if (!$section) {
