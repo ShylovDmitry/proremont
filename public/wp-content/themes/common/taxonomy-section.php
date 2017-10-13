@@ -2,6 +2,7 @@
 
 <div class="jumbotron jumbotron-fluid header">
     <div class="container text-center frontpage-title">
+        <h2 class="display-5"><?php echo pror_get_section()->name; ?></h2>
         <h1 class="display-3">Каталог <span>Мастеров</span></h1>
         <p class="lead mt-3">Найдите своего мастера быстро и легко по <strong>отзывам</strong> и <strong>портфолио</strong></p>
     </div>

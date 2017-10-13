@@ -8,4 +8,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php module_template('google/gtm_body'); ?>
+
 <?php module_template('theme/header'); ?>
