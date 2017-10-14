@@ -44,6 +44,10 @@
 
     <?php module_template('master/pro-2columns'); ?>
 
+    <div class="my-5"></div>
+
+    <?php module_template('theme/gallery-2columns'); ?>
+
 
 <!--    <div class="row">-->
 <!--        <div class="col-12">-->
