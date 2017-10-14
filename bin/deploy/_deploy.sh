@@ -54,15 +54,14 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type f -exec chmod 0664
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod 440 $DEPLOY_FOLDER/public/wp-config*.php"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 770 $DEPLOY_FOLDER/public/wp-content/uploads"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 774 $DEPLOY_FOLDER/public/wp-content/banners"
-#ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 770 $DEPLOY_FOLDER/public/wp-content/cache"
+ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 770 $DEPLOY_FOLDER/public/wp-content/cache"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 777 $DEPLOY_FOLDER/public/wp-content/ewww"
 
-#ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp option update blog_public $OPTION_BLOG_PUBLIC"
-#ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp cache flush"
+ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp option update blog_public $OPTION_BLOG_PUBLIC"
+ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp cache flush"
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp rocket preload"
 
-#ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/wp-rocket/*"
-#ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/min/*"
+ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/*"
 
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cp $DEPLOY_FOLDER/configs/supervisor/supervisord.conf /etc/supervisord.conf"
 

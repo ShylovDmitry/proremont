@@ -3,9 +3,9 @@
     <div class="header">
         <div class="left">
             <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
+                <?php the_post_thumbnail('pror-medium'); ?>
             <?php else: ?>
-                <img src="<?php module_img('master/no-avatar.png'); ?>" class="d-flex mr-3" />
+                <img src="<?php module_img('master/no-avatar.png'); ?>" />
             <?php endif; ?>
 
             <div class="rating">
@@ -46,7 +46,7 @@
 
         <div class="row">
             <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="catalog-title">
                         <span class="icon"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
                         <span class="link"><a href="<?php echo esc_url( get_term_link($parent) ); ?>"><?php echo $parent->name; ?></a></span>
@@ -58,7 +58,7 @@
                     <?php endforeach; ?>
                     </ul>
                 </div>
-                <?php if (($pos+1) % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
+                <?php if (($pos+1) % 2 == 0): ?><div class="w-100 d-none d-md-block"></div><?php endif; ?>
             <?php endforeach; ?>
         </div>
     </div>

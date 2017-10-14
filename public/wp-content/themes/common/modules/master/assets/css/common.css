@@ -19,6 +19,10 @@
 
 .master-item {
   height: 100%; }
+  .master-item .left {
+    float: left;
+    position: relative;
+    margin-right: 15px; }
   .master-item a, .master-item a:hover {
     color: #3C3C3D; }
   .master-item h5 .is-confirmed {
@@ -32,8 +36,10 @@
     word-break: break-word;
     margin-bottom: -1rem; }
   .master-item img {
-    border: 1px solid #BDBDBD; }
-  .master-item .rating {
+    border: 1px solid #BDBDBD;
+    width: 100px;
+    height: auto; }
+  .master-item .media-body .rating {
     float: right; }
   .master-item.master-item-pro a, .master-item.master-item-pro a:hover {
     color: #FF8F12; }
@@ -75,7 +81,8 @@
 
 .master-detailed .header .left {
   float: left;
-  position: relative; }
+  position: relative;
+  margin-right: 15px; }
   .master-detailed .header .left::after {
     content: url("../img/pro-leaf.svg");
     width: 50px;
@@ -202,9 +209,5 @@
     .master-detailed .comment-respond .comment-form .avatar {
       margin-left: -110px;
       position: absolute; }
-
-.wp-post-image {
-  width: 100px;
-  height: auto; }
 
 /*# sourceMappingURL=common.css.map */

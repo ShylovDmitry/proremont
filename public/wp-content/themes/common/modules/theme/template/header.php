@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm">
+<nav class="navbar navbar-expand">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">
             <img src="<?php module_img('theme/proremont-co-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <form class="form-inline my-2 my-lg-0 ml-5 mr-auto">
+            <form class="form-inline my-2 my-lg-0 ml-5 mr-auto d-none d-md-block">
 <!--                <div class="input-group">-->
 <!--                    <input type="text" size="40" class="form-control form-control-sm" placeholder="Ремонт санузла">-->
 <!--                    <span class="input-group-btn">-->
@@ -38,7 +38,7 @@
 
             <?php wp_nav_menu(array(
                     'container' => false,
-                    'menu_class' => 'navbar-nav',
+                    'menu_class' => 'navbar-nav d-none d-md-block',
                     'theme_location' => 'header_main',
             )); ?>
         </div>

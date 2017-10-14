@@ -33,6 +33,12 @@
 .master-item {
     height: 100%;
 
+    .left {
+        float: left;
+        position: relative;
+        margin-right: 15px;
+    }
+    
     a, a:hover {
         color: #3C3C3D;
     }
@@ -55,8 +61,10 @@
 
     img {
         border: 1px solid $color-grey;
+        width: 100px;
+        height: auto;
     }
-    .rating {
+    .media-body .rating {
         float: right;
     }
 
@@ -128,6 +136,7 @@
         .left {
             float: left;
             position: relative;
+            margin-right: 15px;
 
             &::after {
                 content: url('../img/pro-leaf.svg');
@@ -326,9 +335,4 @@
             }
         }
     }
-}
-
-.wp-post-image {
-    width: 100px;
-    height: auto;
 }

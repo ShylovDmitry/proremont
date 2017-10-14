@@ -1,6 +1,6 @@
 @import "../../../theme/assets/css/variables";
 
-.rating-total {
+div.rating-total {
     text-align: center;
 
     &.comment-rating-field-pro-plugin a {
@@ -15,7 +15,7 @@
         }
     }
 
-    & .rating-always-on {
+    & span.rating-always-on {
         margin-right: 0 !important;
     }
 

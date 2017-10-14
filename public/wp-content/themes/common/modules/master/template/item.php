@@ -1,14 +1,20 @@
 <div class="master-item<?php if (get_field('master_is_pro')): ?> master-item-pro<?php endif; ?>">
     <div class="media mb-2">
-        <a href="<?php echo esc_url( get_permalink() ); ?>">
-            <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('pror-medium', array( 'class' => 'd-flex mr-3' )); ?>
-            <?php else: ?>
-                <img src="<?php module_img('master/no-avatar.png'); ?>" class="wp-post-image d-flex mr-3" />
-            <?php endif; ?>
-        </a>
+        <div class="left">
+            <a href="<?php echo esc_url( get_permalink() ); ?>">
+                <?php if (has_post_thumbnail()): ?>
+                    <?php the_post_thumbnail('pror-medium'); ?>
+                <?php else: ?>
+                    <img src="<?php module_img('master/no-avatar.png'); ?>" />
+                <?php endif; ?>
+            </a>
+            <div class="rating d-sm-none">
+                <?php module_template('rating/total'); ?>
+            </div>
+        </div>
+
         <div class="media-body">
-            <div class="rating">
+            <div class="rating d-none d-sm-block">
                 <?php module_template('rating/total'); ?>
             </div>
 
