@@ -121,10 +121,17 @@ h1, h2, h3, h4, h5, h6 {
   .navbar .dropdown {
     width: 100%;
     text-align: center; }
+    @media (min-width: 576px) {
+      .navbar .dropdown {
+        width: auto;
+        text-align: inherit; } }
     .navbar .dropdown > a {
       white-space: nowrap; }
     .navbar .dropdown .dropdown-menu {
       width: 100%; }
+      @media (min-width: 576px) {
+        .navbar .dropdown .dropdown-menu {
+          width: auto; } }
       .navbar .dropdown .dropdown-menu a {
         color: #212529; }
 

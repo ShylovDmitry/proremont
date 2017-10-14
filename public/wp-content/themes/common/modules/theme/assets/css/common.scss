@@ -164,12 +164,21 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         text-align: center;
 
+        @media (min-width: $screen-width-sm) {
+            width: auto;
+            text-align: inherit;
+        }
+
         & > a {
             white-space: nowrap;
         }
 
         .dropdown-menu {
             width: 100%;
+
+            @media (min-width: $screen-width-sm) {
+                width: auto;
+            }
 
             & a {
                 color: #212529;
