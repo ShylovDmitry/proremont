@@ -18,8 +18,7 @@
                     Ми в соцсетях:
                 </p>
                 <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item"><a href="#">Facebook</a></li>
-                    <li class="list-inline-item"><a href="#">Google+</a></li>
+                    <li class="list-inline-item"><a href="#"><img src="<?php module_img('theme/social-facebook.png'); ?>" width="50" height="50" /></a></li>
                 </ul>
             </div>
 
