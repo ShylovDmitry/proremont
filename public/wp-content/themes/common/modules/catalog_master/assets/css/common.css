@@ -20,7 +20,7 @@
   .catalog-mater-3col .catalog-title a {
     font-size: 16px;
     font-weight: bolder; }
-  .catalog-mater-3col .catalog-title .link {
+  .catalog-mater-3col .catalog-title .text {
     padding-left: 10px; }
   .catalog-mater-3col .catalog-title.active svg {
     fill: #FF8F12; }
@@ -70,8 +70,14 @@
       top: -10px;
       border-bottom-color: #F9F9F9; }
   .catalog-mater-3col .item.item-2 .arrow {
-    left: 347px; }
+    left: 267px; }
+    @media (min-width: 992px) {
+      .catalog-mater-3col .item.item-2 .arrow {
+        left: 347px; } }
   .catalog-mater-3col .item.item-3 .arrow {
-    left: 667px; }
+    left: 507px; }
+    @media (min-width: 992px) {
+      .catalog-mater-3col .item.item-3 .arrow {
+        left: 667px; } }
 
 /*# sourceMappingURL=common.css.map */

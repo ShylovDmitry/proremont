@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-sm">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">
             <img src="<?php module_img('theme/proremont-co-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />

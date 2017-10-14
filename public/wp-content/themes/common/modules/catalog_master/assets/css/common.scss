@@ -33,7 +33,7 @@
             font-size: 16px;
             font-weight: bolder;
         }
-        .link {
+        .text {
             padding-left: 10px;
         }
         &.active svg {
@@ -101,10 +101,18 @@
         }
 
         &.item-2 .arrow {
-            left: 347px;
+            left: 267px;
+
+            @media (min-width: $screen-width-lg) {
+                left: 347px;
+            }
         }
         &.item-3 .arrow {
-            left: 667px;
+            left: 507px;
+
+            @media (min-width: $screen-width-lg) {
+                left: 667px;
+            }
         }
     }
 }
