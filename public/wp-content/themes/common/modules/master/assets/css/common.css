@@ -83,13 +83,6 @@
   float: left;
   position: relative;
   margin-right: 15px; }
-  .master-detailed .header .left::after {
-    content: url("../img/pro-leaf.svg");
-    width: 50px;
-    height: 10px;
-    position: absolute;
-    top: 125px;
-    left: 0; }
 .master-detailed .header img {
   width: 175px;
   height: 175px;
@@ -97,6 +90,13 @@
 .master-detailed .header .phone a {
   color: #3C3C3D;
   font-weight: bolder; }
+.master-detailed.pro .header .left::after {
+  content: url("../img/pro-leaf.svg");
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  top: 125px;
+  left: 0; }
 .master-detailed h1 {
   font-size: 2rem; }
   .master-detailed h1 .is-confirmed {

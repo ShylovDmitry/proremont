@@ -137,15 +137,6 @@
             float: left;
             position: relative;
             margin-right: 15px;
-
-            &::after {
-                content: url('../img/pro-leaf.svg');
-                width: 50px;
-                height: 10px;
-                position: absolute;
-                top: 125px;
-                left: 0;
-            }
         }
 
         img {
@@ -158,6 +149,16 @@
             font-weight: bolder;
         }
     }
+    &.pro .header .left::after {
+        content: url('../img/pro-leaf.svg');
+        width: 50px;
+        height: 10px;
+        position: absolute;
+        top: 125px;
+        left: 0;
+    }
+
+
 
     h1 {
         font-size: 2rem;
