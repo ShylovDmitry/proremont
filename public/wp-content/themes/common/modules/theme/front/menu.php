@@ -41,3 +41,12 @@ add_filter('wp_nav_menu_objects', function($sorted_menu_items, $args) {
 
     return $sorted_menu_items;
 }, 10, 2);
+
+add_filter('wp_nav_menu_objects', function($sorted_menu_items, $args) {
+    foreach ($sorted_menu_items as &$sorted_menu_item) {
+        $sorted_menu_item->url = str_replace('/catalog/', sprintf('/%s/catalog/', pror_get_section()->slug), $sorted_menu_item->url);
+    }
+    unset($sorted_menu_item);
+
+    return $sorted_menu_items;
+}, 10, 2);

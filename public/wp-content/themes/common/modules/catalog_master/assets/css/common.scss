@@ -122,3 +122,40 @@
         }
     }
 }
+
+.catalog-master-page {
+    a, a:hover {
+        color: #3C3C3D;
+    }
+
+    .catalog-subs {
+        padding-left: 75px;
+
+        a::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $color-orange;
+            margin-right: 10px;
+        }
+    }
+
+    .catalog-title a {
+        display: table;
+        font-size: 16px;
+        font-weight: bolder;
+
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .icon {
+            font-size: 0;
+        }
+        .link {
+            padding-left: 10px;
+        }
+    }
+}

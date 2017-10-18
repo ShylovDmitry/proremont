@@ -83,4 +83,28 @@
       .catalog-mater-3col .item.item-3 .arrow {
         left: 667px; } }
 
+.catalog-master-page a, .catalog-master-page a:hover {
+  color: #3C3C3D; }
+.catalog-master-page .catalog-subs {
+  padding-left: 75px; }
+  .catalog-master-page .catalog-subs a::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF8F12;
+    margin-right: 10px; }
+.catalog-master-page .catalog-title a {
+  display: table;
+  font-size: 16px;
+  font-weight: bolder; }
+  .catalog-master-page .catalog-title a span {
+    display: table-cell;
+    vertical-align: middle; }
+  .catalog-master-page .catalog-title a .icon {
+    font-size: 0; }
+  .catalog-master-page .catalog-title a .link {
+    padding-left: 10px; }
+
 /*# sourceMappingURL=common.css.map */
