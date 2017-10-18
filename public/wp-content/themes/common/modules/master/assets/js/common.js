@@ -34,4 +34,14 @@ jQuery(function ($) {
     $('#comment').on('keypress', function(e) {
         $('#comment-error').html('');
     });
+
+    $('.show-number').click(function(e) {
+        e.preventDefault();
+
+        ga('send', 'event', 'Master Page', 'phone click');
+
+        var parent = $(this).parents('.master-phones');
+        $('.stub', parent).addClass('d-none');
+        $('.phones', parent).removeClass('d-none');
+    })
 });

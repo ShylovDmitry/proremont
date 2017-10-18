@@ -87,9 +87,12 @@
   width: 175px;
   height: 175px;
   border: 1px solid #BDBDBD; }
-.master-detailed .header .phone a {
-  color: #3C3C3D;
+.master-detailed .header .master-phones {
   font-weight: bolder; }
+  .master-detailed .header .master-phones .show-number {
+    color: #FF8F12; }
+.master-detailed .header .phone a {
+  color: #3C3C3D; }
 .master-detailed.pro .header .left::after {
   content: url("../img/pro-leaf.svg");
   width: 50px;

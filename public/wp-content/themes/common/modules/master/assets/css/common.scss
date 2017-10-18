@@ -144,9 +144,15 @@
             height: 175px;
             border: 1px solid $color-grey;
         }
+        .master-phones {
+            font-weight: bolder;
+            .show-number {
+                color: $color-orange;
+            }
+        }
+
         .phone a {
             color: #3C3C3D;
-            font-weight: bolder;
         }
     }
     &.pro .header .left::after {
@@ -344,3 +350,4 @@
         }
     }
 }
+

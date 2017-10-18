@@ -26,11 +26,7 @@
             <div class="location"><?php echo pror_get_master_location(); ?></div>
             <br />
             <div class="phone">Телефон:
-                <?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
-                <?php $master_phones_count = count($master_phones)-1; ?>
-                <?php foreach ($master_phones as $pos => $phone): ?>
-                    <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a><?php if ($pos != $master_phones_count): ?>, <?php endif; ?>
-                <?php endforeach; ?>
+                <?php module_template('master/master-phones'); ?>
             </div>
         </div>
     </div>
