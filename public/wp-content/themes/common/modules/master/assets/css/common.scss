@@ -223,9 +223,16 @@
     }
 
     .gallery-wrapper {
-        width: 600px;
+        width: 100%;
         background: #3C3C3D;
         padding: 10px 30px;
+
+        @media (min-width: $screen-width-lg) {
+            width: 600px;
+        }
+        @media (min-width: $screen-width-xl) {
+            width: 780px
+        }
     }
 
     .gallery {

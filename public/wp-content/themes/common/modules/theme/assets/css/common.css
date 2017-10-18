@@ -5,10 +5,6 @@ body {
   font-weight: 300;
   font-family: "Roboto", sans-serif; }
 
-@media (min-width: 1200px) {
-  body .container {
-    max-width: 960px; } }
-
 @media (min-width: 992px) {
   .col-300 {
     -ms-flex: 0 0 330px;

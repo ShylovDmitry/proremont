@@ -4,9 +4,10 @@
 
 <?php module_template('breadcrumbs/breadcrumbs'); ?>
 
-<div class="container colored-box py-3">
-    <div class="row switch-catalog-block">
-        <div class="col-12">
+<div class="container">
+    <div class="row master-list-block">
+        <div class="col colored-box py-3">
+    <div class="switch-catalog-block">
             <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> Другие услуги</a>
 
             <div class="collapse" id="catalogBlock">
@@ -14,10 +15,7 @@
             </div>
 
             <hr />
-        </div>
     </div>
-    <div class="row master-list-block">
-        <div class="col">
             <h1 class="mb-3"><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
 
 <!--            <div class="row">-->

@@ -135,9 +135,15 @@
   .master-detailed .catalog-title .link {
     padding-left: 10px; }
 .master-detailed .gallery-wrapper {
-  width: 600px;
+  width: 100%;
   background: #3C3C3D;
   padding: 10px 30px; }
+  @media (min-width: 992px) {
+    .master-detailed .gallery-wrapper {
+      width: 600px; } }
+  @media (min-width: 1200px) {
+    .master-detailed .gallery-wrapper {
+      width: 780px; } }
 .master-detailed .gallery .slick-slide {
   padding: 0 5px; }
   .master-detailed .gallery .slick-slide img {

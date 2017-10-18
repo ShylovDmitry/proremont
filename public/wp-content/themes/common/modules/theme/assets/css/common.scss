@@ -8,11 +8,11 @@ body {
     font-family: $primary-font;
 }
 
-body .container {
-    @media (min-width: $screen-width-xl) {
-        max-width: 960px;
-    }
-}
+//body .container {
+//    @media (min-width: $screen-width-xl) {
+//        max-width: 960px;
+//    }
+//}
 
 .col-300 {
     @media (min-width: $screen-width-lg) {

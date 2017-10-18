@@ -4,9 +4,9 @@
 
 <?php module_template('breadcrumbs/breadcrumbs'); ?>
 
-<div class="container colored-box py-3">
+<div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col colored-box py-3">
             <?php module_template('master/detailed'); ?>
         </div>
 
