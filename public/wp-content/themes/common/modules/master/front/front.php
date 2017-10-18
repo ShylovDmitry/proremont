@@ -24,7 +24,7 @@ function pror_get_master_types() {
 function pror_get_section() {
     $section = pror_get_section_by_slug(get_query_var('section'));
     if (!$section) {
-        $section = pror_get_section_by_slug('lvov');
+        $section = pror_get_section_by_slug('kiev');
     }
     return $section;
 }

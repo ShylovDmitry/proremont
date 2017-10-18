@@ -1,7 +1,7 @@
 <?php
 $master_terms = get_the_terms(null, 'catalog_master');
 
-$parents = array();
+$parents = array(-1);
 foreach ($master_terms as $master_term) {
     $parents[] = $master_term->parent ? $master_term->parent : $master_term->term_id;
 }

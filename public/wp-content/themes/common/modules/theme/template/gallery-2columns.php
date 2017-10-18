@@ -8,7 +8,7 @@ $query = new WP_Query(array(
     'post_status' => 'inherit',
     'post_type' => 'attachment',
     'post__in' => $gallery_ids,
-    'orderby' => 'rand',
+    'orderby' => 'post__in',
     'posts_per_page' => 20,
 ));
 ?>
@@ -17,7 +17,7 @@ $query = new WP_Query(array(
 <div class="gallery-2columns">
     <div class="row">
         <div class="col-12">
-            <h3>Галерея работ</h3>
+            <h3>Недавно добавленые фотографии</h3>
         </div>
     </div>
 

@@ -14,15 +14,18 @@
   border-color: #BDBDBD; }
 .catalog-mater-3col .catalog-title {
   display: table; }
-  .catalog-mater-3col .catalog-title span {
+  .catalog-mater-3col .catalog-title .icon, .catalog-mater-3col .catalog-title .text {
     display: table-cell;
     vertical-align: middle; }
   .catalog-mater-3col .catalog-title a {
     font-size: 16px;
     font-weight: bolder; }
   .catalog-mater-3col .catalog-title .text {
-    padding-left: 10px; }
-  .catalog-mater-3col .catalog-title.active svg {
+    padding-left: 10px;
+    text-decoration: underline; }
+  .catalog-mater-3col .catalog-title.active .text span, .catalog-mater-3col .catalog-title a:hover .text span {
+    background: rgba(255, 139, 17, 0.51); }
+  .catalog-mater-3col .catalog-title.active svg, .catalog-mater-3col .catalog-title a:hover svg {
     fill: #FF8F12; }
 .catalog-mater-3col .item {
   background: #F9F9F9;

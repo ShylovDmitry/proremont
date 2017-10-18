@@ -41,13 +41,16 @@ $query = new WP_Query(array(
 </div>
 <?php else: ?>
 
-
     <?php
     $query = new WP_Query(array(
         'post_type' => 'master',
         'posts_per_page' => 12,
         'orderby' => 'rand',
         'tax_query' => array(
+            array(
+                'taxonomy' => 'catalog_master',
+                'operator' => 'EXISTS',
+            ),
             array(
                 'taxonomy' => 'location',
                 'terms' => get_field('locations', pror_get_section()),

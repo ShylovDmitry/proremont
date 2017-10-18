@@ -8,7 +8,7 @@
                     <div class="catalog-title">
                         <a class="pror-collapse" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu">
                             <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
-                            <span class="text"><?php echo $main_catalog->name; ?></span>
+                            <span class="text"><span><?php echo $main_catalog->name; ?></span></span>
                         </a>
                     </div>
                 </div>
