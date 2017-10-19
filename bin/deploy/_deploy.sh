@@ -14,7 +14,7 @@ BASEDIR=$(dirname $0)
 DEPLOY_FOLDER="/var/www/html/$STACK"
 
 if [ $STACK = 'prod' ]; then
-    OPTION_BLOG_PUBLIC=0
+    OPTION_BLOG_PUBLIC=1
 else
     OPTION_BLOG_PUBLIC=0
 fi
