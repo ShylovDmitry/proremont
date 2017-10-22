@@ -91,6 +91,8 @@ add_action('profile_update', function ($user_id, $old_user_data) {
             'ID' => $master_post_id,
             'post_title' => get_field('master_title', "user_{$user_id}"),
             'post_status' => 'publish',
+            'post_excerpt' => get_field('master_excerpt', "user_{$user_id}"),
+            'post_content' => get_field('master_text', "user_{$user_id}"),
         ));
 
         $catalog_terms = get_field('master_catalog', "user_{$user_id}");
