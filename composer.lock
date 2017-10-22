@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b3161b68e57a5fcd7ba285d7cb8345e7",
-    "content-hash": "6c27986b5248ad3ca114ab0f878cc9be",
+    "hash": "92517d057aaf2eb1e2a458f184a1d99c",
+    "content-hash": "1899b26b4d5158e4f79267c31c14ecd3",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -655,16 +655,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.5",
+            "version": "5.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "0d4fda8efdf216ade084a7f0aad5637572ce9835"
+                "reference": "d283e11b6e14c6f4664cf080415c4341293e5bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/0d4fda8efdf216ade084a7f0aad5637572ce9835",
-                "reference": "0d4fda8efdf216ade084a7f0aad5637572ce9835",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/d283e11b6e14c6f4664cf080415c4341293e5bbd",
+                "reference": "d283e11b6e14c6f4664cf080415c4341293e5bbd",
                 "shasum": ""
             },
             "require": {
@@ -717,7 +717,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2017-10-10 13:22:37"
+            "time": "2017-10-21 13:15:38"
         },
         {
             "name": "mustache/mustache",
@@ -956,16 +956,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.11",
+            "version": "v0.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "b193cd020e8c6b66cea6457826ae005e94e6d2c0"
+                "reference": "cdb5593c3684bab74e10fcfffe4a0c8d1c39695d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/b193cd020e8c6b66cea6457826ae005e94e6d2c0",
-                "reference": "b193cd020e8c6b66cea6457826ae005e94e6d2c0",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/cdb5593c3684bab74e10fcfffe4a0c8d1c39695d",
+                "reference": "cdb5593c3684bab74e10fcfffe4a0c8d1c39695d",
                 "shasum": ""
             },
             "require": {
@@ -1025,7 +1025,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-07-29 19:30:02"
+            "time": "2017-10-19 06:13:20"
         },
         {
             "name": "ramsey/array_column",
@@ -1659,16 +1659,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
                 "shasum": ""
             },
             "require": {
@@ -1680,7 +1680,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -1714,7 +1714,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14 15:44:48"
+            "time": "2017-10-11 12:05:26"
         },
         {
             "name": "symfony/process",
@@ -2198,15 +2198,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "3.6.1",
+            "version": "4.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/3.6.1"
+                "reference": "tags/4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.4.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2278,15 +2278,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.6",
+            "version": "5.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.6"
+                "reference": "tags/5.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2295,6 +2295,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-hide-dashboard",
+            "version": "2.2.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-hide-dashboard/",
+                "reference": "tags/2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-hide-dashboard.2.2.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-hide-dashboard/"
         },
         {
             "name": "wpackagist-plugin/yoast-seo-settings-xml-csv-import",

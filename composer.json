@@ -26,8 +26,8 @@
     "wp-rocket": "2.10.9",
     "comment-rating-field-pro-plugin": "3.4.9",
     "wpackagist-plugin/contact-form-7": "4.9",
-    "wpackagist-plugin/ewww-image-optimizer": "3.6.1",
-    "wpackagist-plugin/wordpress-seo": "5.6",
+    "wpackagist-plugin/ewww-image-optimizer": "4.0.0",
+    "wpackagist-plugin/wordpress-seo": "5.6.1",
     "wpackagist-plugin/adrotate": "4.6.3",
     "wpackagist-plugin/regenerate-thumbnails": "2.3.1",
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5",
@@ -35,7 +35,8 @@
     "wpackagist-plugin/query-monitor": "2.15.0",
     "wpackagist-plugin/advanced-cron-manager": "2.3.0",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2",
-    "wpackagist-plugin/amazon-web-services": "1.0.3"
+    "wpackagist-plugin/amazon-web-services": "1.0.3",
+    "wpackagist-plugin/wp-hide-dashboard": "2.2.1"
   },
   "extra": {
     "installer-paths": {

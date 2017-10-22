@@ -20,7 +20,6 @@ add_action('init', function() {
             'editor',
             'comments',
             'revisions',
-            'thumbnail',
         ),
     ));
 
