@@ -73,15 +73,15 @@
             color: $color-orange;
         }
 
-        .media > a {
+        .left > a {
             position: relative;
 
             &::after {
                 content: url('../img/pro-leaf.svg');
-                width: 40px;
+                width: 35px;
                 height: 10px;
                 position: absolute;
-                top: 65px;
+                top: 25px;
                 left: 0;
             }
         }
@@ -99,11 +99,27 @@
         padding: 10px;
     }
 
-    &.pro h3 {
-        color: $color-orange;
-    }
-    &.pro .master-item {
-        border-color: $color-orange;
+    &.pro {
+        h3 {
+            color: $color-orange;
+        }
+
+        .master-item {
+            border-color: $color-orange;
+        }
+
+        .left > a {
+            position: relative;
+
+            &::after {
+                content: url('../img/pro-leaf.svg');
+                width: 35px;
+                height: 10px;
+                position: absolute;
+                top: 25px;
+                left: 0;
+            }
+        }
     }
 }
 

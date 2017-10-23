@@ -100,6 +100,9 @@ add_action('profile_update', function ($user_id, $old_user_data) {
 
         $location_terms = get_field('master_location', "user_{$user_id}");
         wp_set_post_terms($master_post_id, $location_terms, 'location');
+
+        $logo_id = get_field('master_logo', "user_{$user_id}");
+        update_post_meta($master_post_id, '_thumbnail_id', $logo_id);
     }
 }, 10, 2);
 
@@ -121,4 +124,24 @@ function pror_get_master_post_id($user_id) {
         'post_status' => 'any',
     ));
     return isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
+}
+
+
+function pror_get_query_pro_master_ids() {
+    $query = new WP_User_Query(array(
+        'role' => 'master',
+        'fields' => 'ID',
+        'meta_query' => array(
+            array(
+                'key' => 'master_location',
+                'value' => get_field('locations', pror_get_section()),
+                'compare' => 'IN',
+            ),
+            array(
+                'key' => 'master_is_pro',
+                'value' => '1',
+            ),
+        ),
+    ));
+    return $query->results ? $query->results : array(-999);
 }

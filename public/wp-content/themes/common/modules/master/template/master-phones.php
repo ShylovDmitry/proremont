@@ -1,4 +1,4 @@
-<?php $master_phones = pror_format_phones(get_field('master_phones')); ?>
+<?php $master_phones = pror_get_master_phones(get_the_author_meta('ID'));?>
 <?php $master_phones_count = count($master_phones)-1; ?>
 
 <span class="master-phones">

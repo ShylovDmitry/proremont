@@ -3,18 +3,13 @@ $query = new WP_Query(array(
     'post_type' => 'master',
     'posts_per_page' => 12,
     'orderby' => 'rand',
+    'author__in' => pror_get_query_pro_master_ids(),
     'tax_query' => array(
         array(
             'taxonomy' => 'location',
             'terms' => get_field('locations', pror_get_section()),
             'include_children' => false,
             'operator' => 'IN',
-        ),
-    ),
-    'meta_query' => array(
-        array(
-            'key' => 'master_is_pro',
-            'value' => 1,
         ),
     ),
 ));

@@ -1,5 +1,5 @@
 <?php if (have_posts()): the_post(); ?>
-<div class="master-detailed<?php if (get_field('master_is_pro')): ?> pro<?php endif; ?>">
+<div class="master-detailed<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
     <div class="header">
         <div class="left">
             <?php if (has_post_thumbnail()): ?>
@@ -16,12 +16,12 @@
         <div class="media-body">
             <h1 class="mt-0 mb-1">
                 <?php the_title(); ?>
-                <?php if (get_field('master_is_confirmed')): ?>
+                <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
                     <span class="oi oi-circle-check is-confirmed"></span>
                 <?php endif; ?>
             </h1>
 
-            <div class="type"><?php the_field('master_type'); ?></div>
+            <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
             <br />
             <div class="location"><?php echo pror_get_master_location(); ?></div>
             <br />

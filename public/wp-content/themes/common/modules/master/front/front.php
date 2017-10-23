@@ -52,35 +52,44 @@ function pror_get_section_by_location_id($location_id) {
     return null;
 }
 
-function pror_format_phones($phones_str) {
-    $phones_str = str_replace(chr(13), '', $phones_str);
-    $phones = explode("\n", $phones_str);
-    return array_map(function($phone) {
-        if (strlen($phone) == 9) {
-            $phone = '380' . $phone;
-        }
-        if (strlen($phone) == 10) {
-            $phone = '38' . $phone;
-        }
-        if (strlen($phone) == 11) {
-            $phone = '3' . $phone;
-        }
+function pror_get_master_phones($user_id) {
+    $master_phones = get_field('master_phones', "user_{$user_id}");
 
-        if (strlen($phone) == 12) {
-            $tel = '+' . $phone;
-            if (preg_match('/(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
-                $phone = sprintf('%s %s %s', $matches[2], $matches[3], $matches[4]);
-            }
-        } else {
-            $tel = $phone;
-        }
+    $phones = array();
+    foreach ($master_phones as $master_phone) {
+        $phones[] = pror_format_phones($master_phone['tel']);
+    }
 
-        return array('tel' => $tel, 'text' => $phone);
-    }, $phones);
+    return $phones;
 }
 
-function pror_get_master_location($master_id = null) {
-    $term = get_the_terms($master_id, 'location');
+function pror_format_phones($phone) {
+//    $phones_str = str_replace(chr(13), '', $phones_str);
+//    $phones = explode("\n", $phones_str);
+    if (strlen($phone) == 9) {
+        $phone = '380' . $phone;
+    }
+    if (strlen($phone) == 10) {
+        $phone = '38' . $phone;
+    }
+    if (strlen($phone) == 11) {
+        $phone = '3' . $phone;
+    }
+
+    if (strlen($phone) == 12) {
+        $tel = '+' . $phone;
+        if (preg_match('/(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
+            $phone = sprintf('%s %s %s', $matches[2], $matches[3], $matches[4]);
+        }
+    } else {
+        $tel = $phone;
+    }
+
+    return array('tel' => $tel, 'text' => $phone);
+}
+
+function pror_get_master_location($master_post_id = null) {
+    $term = get_the_terms($master_post_id, 'location');
     if (isset($term, $term[0])) {
         return trim(get_term_parents_list($term[0]->term_id, 'location', array(
             'separator' => ' / ',

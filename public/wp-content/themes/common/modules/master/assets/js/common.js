@@ -38,7 +38,9 @@ jQuery(function ($) {
     $('.show-number').click(function(e) {
         e.preventDefault();
 
-        ga('send', 'event', 'Master Page', 'phone click');
+        if (ga) {
+            ga('send', 'event', 'Master Page', 'phone click');
+        }
 
         var parent = $(this).parents('.master-phones');
         $('.stub', parent).addClass('d-none');

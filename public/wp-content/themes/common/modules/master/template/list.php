@@ -19,6 +19,7 @@
         'post_type' => 'master',
         'posts_per_page' => 4,
         'orderby' => 'rand',
+        'author__in' => pror_get_query_pro_master_ids(),
         'tax_query' => array(
             array(
                 'taxonomy' => 'location',
@@ -30,13 +31,6 @@
                 'taxonomy' => 'catalog_master',
                 'field' => 'slug',
                 'terms' => get_query_var('catalog_master'),
-                'include_children' => false,
-            ),
-        ),
-        'meta_query' => array(
-            array(
-                'key' => 'master_is_pro',
-                'value' => 1,
             ),
         ),
     ));

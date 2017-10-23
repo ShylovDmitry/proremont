@@ -43,14 +43,14 @@
     float: right; }
   .master-item.master-item-pro a, .master-item.master-item-pro a:hover {
     color: #FF8F12; }
-  .master-item.master-item-pro .media > a {
+  .master-item.master-item-pro .left > a {
     position: relative; }
-    .master-item.master-item-pro .media > a::after {
+    .master-item.master-item-pro .left > a::after {
       content: url("../img/pro-leaf.svg");
-      width: 40px;
+      width: 35px;
       height: 10px;
       position: absolute;
-      top: 65px;
+      top: 25px;
       left: 0; }
 
 .master-2columns h3 {
@@ -63,6 +63,15 @@
   color: #FF8F12; }
 .master-2columns.pro .master-item {
   border-color: #FF8F12; }
+.master-2columns.pro .left > a {
+  position: relative; }
+  .master-2columns.pro .left > a::after {
+    content: url("../img/pro-leaf.svg");
+    width: 35px;
+    height: 10px;
+    position: absolute;
+    top: 25px;
+    left: 0; }
 
 .master-list-pro h3 {
   color: #FF8F12;
