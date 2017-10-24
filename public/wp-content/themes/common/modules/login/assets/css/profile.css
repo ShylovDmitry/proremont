@@ -1,0 +1,15 @@
+.acf-taxonomy-field.acf-soh .categorychecklist-holder {
+  max-height: none;
+  float: none; }
+.acf-taxonomy-field.acf-soh .acf-checkbox-list > li {
+  margin-bottom: 30px; }
+  .acf-taxonomy-field.acf-soh .acf-checkbox-list > li > label input {
+    display: none; }
+  .acf-taxonomy-field.acf-soh .acf-checkbox-list > li > label span {
+    font-weight: bold;
+    font-size: 16px; }
+.acf-taxonomy-field.acf-soh .children li {
+  float: left;
+  width: 33%; }
+
+/*# sourceMappingURL=profile.css.map */

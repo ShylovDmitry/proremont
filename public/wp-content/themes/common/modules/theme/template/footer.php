@@ -29,6 +29,8 @@
                         'menu_class' => 'list-unstyled list-inline',
                         'theme_location' => 'footer_main',
                 )); ?>
+
+                <?php module_template('login/advanced-menu'); ?>
             </div>
         </div>
 

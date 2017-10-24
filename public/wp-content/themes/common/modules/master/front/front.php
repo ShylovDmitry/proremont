@@ -21,37 +21,6 @@ function pror_get_master_types() {
     );
 }
 
-function pror_get_section() {
-    $section = pror_get_section_by_slug(get_query_var('section'));
-    if (!$section) {
-        $section = pror_get_section_by_slug('kiev');
-    }
-    return $section;
-}
-
-function pror_get_section_by_slug($slug) {
-    return get_term_by('slug', $slug, 'section');
-}
-
-function pror_get_section_by_id($id) {
-    return get_term_by('id', $id, 'section');
-}
-
-function pror_get_section_by_location_id($location_id) {
-    $sections = get_terms(array(
-        'taxonomy' => 'section',
-        'hide_empty' => false,
-    ));
-
-    foreach ($sections as $section) {
-        if (in_array($location_id, get_field('locations', $section))) {
-            return $section;
-        }
-    }
-
-    return null;
-}
-
 function pror_get_master_phones($user_id) {
     $master_phones = get_field('master_phones', "user_{$user_id}");
 
@@ -66,6 +35,8 @@ function pror_get_master_phones($user_id) {
 function pror_format_phones($phone) {
 //    $phones_str = str_replace(chr(13), '', $phones_str);
 //    $phones = explode("\n", $phones_str);
+    $phone = preg_replace('/\s+/', '', $phone);
+
     if (strlen($phone) == 9) {
         $phone = '380' . $phone;
     }
@@ -142,5 +113,32 @@ add_filter('comment_form_submit_button', function($submit_button, $args) {
 }, 10, 2);
 
 add_filter('get_comment_author_link', function($return, $author, $comment_ID) {
+    // Remove link tag
     return $author;
 }, 10, 3);
+
+
+function pror_get_query_pro_master_ids() {
+    $query = new WP_User_Query(array(
+        'role' => 'master',
+        'fields' => 'ID',
+        'meta_query' => array(
+            array(
+                'key' => 'master_location',
+                'value' => get_field('locations', pror_get_section()),
+                'compare' => 'IN',
+            ),
+            array(
+                'key' => 'master_is_pro',
+                'value' => '1',
+            ),
+        ),
+    ));
+    return $query->results ? $query->results : array(-999);
+}
+
+//add_filter('oa_social_login_filter_new_user_fields', function($user_fields) {
+//    $user_fields['user_login'] = $user_fields['user_email'];
+//    return $user_fields;
+//});
+

@@ -130,7 +130,7 @@
                 {
                     "default_value": "",
                     "maxlength": "",
-                    "placeholder": 380971112233,
+                    "placeholder": "099 123 4567",
                     "prepend": "",
                     "append": "",
                     "key": "field_59ebc80ea9687",
@@ -138,13 +138,14 @@
                     "name": "tel",
                     "type": "text",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
-                    }
+                    },
+                    "admin_only": 0
                 }
             ],
             "min": 1,
@@ -292,5 +293,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508630408
+    "modified": 1508876678
 }

@@ -41,6 +41,8 @@
                     'menu_class' => 'navbar-nav d-none d-md-block',
                     'theme_location' => 'header_main',
             )); ?>
+
+            <?php module_template('login/top-menu'); ?>
         </div>
     </div>
 </nav>

@@ -1,0 +1,31 @@
+@import "../../../theme/assets/css/variables";
+
+.acf-taxonomy-field.acf-soh {
+    .categorychecklist-holder {
+        max-height: none;
+        float: none;
+    }
+
+    .acf-checkbox-list {
+        & > li {
+            margin-bottom: 30px;
+
+            & > label {
+                input {
+                    display: none;
+                }
+
+                span {
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+
+        }
+    }
+
+    .children li {
+        float: left;
+        width: 33%;
+    }
+}
