@@ -88,34 +88,20 @@
             }
         },
         {
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": "",
-            "rows": 4,
-            "key": "field_59ebc9769376e",
-            "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
-            "name": "master_excerpt",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "tabs": "visual",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "default_value": "",
-            "delay": 0,
-            "key": "field_59ebc99b9376f",
-            "label": "\u041f\u043e\u043b\u043d\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
-            "name": "master_text",
-            "type": "wysiwyg",
+            "return_format": "id",
+            "preview_size": "pror-medium",
+            "library": "uploadedTo",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "key": "field_59ebc8f130c58",
+            "label": "\u041b\u043e\u0433\u043e",
+            "name": "master_logo",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -183,20 +169,34 @@
             }
         },
         {
-            "return_format": "id",
-            "preview_size": "pror-medium",
-            "library": "uploadedTo",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_59ebc8f130c58",
-            "label": "\u041b\u043e\u0433\u043e",
-            "name": "master_logo",
-            "type": "image",
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 4,
+            "key": "field_59ebc9769376e",
+            "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
+            "name": "master_excerpt",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_59ebc99b9376f",
+            "label": "\u041f\u043e\u043b\u043d\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
+            "name": "master_text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -241,7 +241,7 @@
             "load_terms": 1,
             "save_terms": 1,
             "key": "field_59ebd9a8748a5",
-            "label": "\u041c\u0435\u0441\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u044b",
+            "label": "\u0413\u043e\u0440\u043e\u0434",
             "name": "master_location",
             "type": "taxonomy",
             "instructions": "",
@@ -251,7 +251,8 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "admin_only": 0
         },
         {
             "taxonomy": "catalog_master",
@@ -293,5 +294,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508876678
+    "modified": 1508882835
 }

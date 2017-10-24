@@ -1,9 +1,11 @@
 <?php
 
-if (pror_current_user_has_role('master')) {
-    remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
-    show_admin_bar(false);
-}
+add_action('init', function() {
+    if (pror_current_user_has_role('master')) {
+        remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+        show_admin_bar(false);
+    }
+});
 
 add_action('user_register', function($user_id) {
     if (!pror_user_has_role($user_id, 'master')) {
