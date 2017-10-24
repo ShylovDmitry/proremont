@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAGI,qDAA0B;EACtB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,IAAI;AAIX,mDAAO;EACH,aAAa,EAAE,IAAI;EAGf,iEAAM;IACF,OAAO,EAAE,IAAI;EAGjB,gEAAK;IACD,WAAW,EAAE,IAAI;IACjB,SAAS,EAAE,IAAI;AAO/B,wCAAa;EACT,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,GAAG",
-"sources": ["profile.scss"],
+"sources": ["admin-profile.scss"],
 "names": [],
-"file": "profile.css"
+"file": "admin-profile.css"
 }

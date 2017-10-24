@@ -2,7 +2,7 @@
 
 add_action('admin_enqueue_scripts', function() {
     if (pror_current_user_has_role('master')) {
-        wp_enqueue_style('admin-profile', get_module_css('login/profile.css'), array(), dlv_get_ver());
+        wp_enqueue_style('admin-profile', get_module_css('master/admin-profile.css'), array(), dlv_get_ver());
     }
 });
 

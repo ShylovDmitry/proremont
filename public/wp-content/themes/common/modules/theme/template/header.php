@@ -42,7 +42,7 @@
                     'theme_location' => 'header_main',
             )); ?>
 
-            <?php module_template('login/top-menu'); ?>
+            <?php module_template('login/menu/top'); ?>
         </div>
     </div>
 </nav>

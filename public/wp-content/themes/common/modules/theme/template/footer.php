@@ -30,7 +30,7 @@
                         'theme_location' => 'footer_main',
                 )); ?>
 
-                <?php module_template('login/advanced-menu'); ?>
+                <?php module_template('login/menu/advanced'); ?>
             </div>
         </div>
 
