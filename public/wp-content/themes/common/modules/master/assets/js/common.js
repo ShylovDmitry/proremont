@@ -45,5 +45,5 @@ jQuery(function ($) {
         var parent = $(this).parents('.master-phones');
         $('.stub', parent).addClass('d-none');
         $('.phones', parent).removeClass('d-none');
-    })
+    });
 });

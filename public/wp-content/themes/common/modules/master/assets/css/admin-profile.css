@@ -1,3 +1,34 @@
+.yoast-alert {
+  display: none; }
+
+#your-profile > h2:nth-of-type(1) {
+  display: none; }
+#your-profile > h2:nth-of-type(2), #your-profile > .form-table:nth-of-type(2) {
+  display: none; }
+#your-profile .user-url-wrap,
+#your-profile .user-googleplus-wrap,
+#your-profile .user-twitter-wrap,
+#your-profile .user-facebook-wrap {
+  display: none; }
+#your-profile > h2:nth-of-type(4), #your-profile > .form-table:nth-of-type(4) {
+  display: none; }
+#your-profile > h2:nth-of-type(6) {
+  margin: 30px 0 0;
+  padding: 15px 10px;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-bottom-width: 0;
+  text-decoration: underline; }
+#your-profile > .form-table:nth-of-type(6) {
+  margin-top: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-top-width: 0; }
+  #your-profile > .form-table:nth-of-type(6) .acf-label {
+    padding-left: 10px; }
+  #your-profile > .form-table:nth-of-type(6) .acf-input {
+    padding-right: 10px; }
+
 .acf-taxonomy-field.acf-soh .categorychecklist-holder {
   max-height: none;
   float: none; }
@@ -11,5 +42,8 @@
 .acf-taxonomy-field.acf-soh .children li {
   float: left;
   width: 33%; }
+
+#wpfooter {
+  display: none !important; }
 
 /*# sourceMappingURL=admin-profile.css.map */

@@ -41,9 +41,11 @@ add_action('profile_update', function ($user_id, $old_user_data) {
     }
 
     if ($master_post_id) {
+        $title = get_field('master_title', "user_{$user_id}");
         wp_update_post(array(
             'ID' => $master_post_id,
-            'post_title' => get_field('master_title', "user_{$user_id}"),
+            'post_title' => $title,
+            'post_name' => sanitize_title(pror_master_rus2translit($title)),
             'post_status' => 'publish',
             'post_excerpt' => get_field('master_excerpt', "user_{$user_id}"),
             'post_content' => get_field('master_text', "user_{$user_id}"),
@@ -78,4 +80,43 @@ function pror_get_master_post_id($user_id) {
         'post_status' => 'any',
     ));
     return isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
+}
+
+add_action('admin_menu', function() {
+    global $submenu;
+    $master_post_id = pror_get_master_post_id(get_current_user_id());
+    $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id));
+});
+
+
+function pror_master_rus2translit($string) {
+    $converter = array(
+        'а' => 'a',   'б' => 'b',   'в' => 'v',
+        'г' => 'g',   'д' => 'd',   'е' => 'e',
+        'ё' => 'e',   'ж' => 'zh',  'з' => 'z',
+        'и' => 'i',   'й' => 'y',   'к' => 'k',
+        'л' => 'l',   'м' => 'm',   'н' => 'n',
+        'о' => 'o',   'п' => 'p',   'р' => 'r',
+        'с' => 's',   'т' => 't',   'у' => 'u',
+        'ф' => 'f',   'х' => 'h',   'ц' => 'c',
+        'ч' => 'ch',  'ш' => 'sh',  'щ' => 'sch',
+        'ь' => '\'',  'ы' => 'y',   'ъ' => '\'',
+        'э' => 'e',   'ю' => 'yu',  'я' => 'ya',
+        'і' => 'i',   'ї' => 'yi',  'є' => 'e',
+
+
+        'А' => 'A',   'Б' => 'B',   'В' => 'V',
+        'Г' => 'G',   'Д' => 'D',   'Е' => 'E',
+        'Ё' => 'E',   'Ж' => 'Zh',  'З' => 'Z',
+        'И' => 'I',   'Й' => 'Y',   'К' => 'K',
+        'Л' => 'L',   'М' => 'M',   'Н' => 'N',
+        'О' => 'O',   'П' => 'P',   'Р' => 'R',
+        'С' => 'S',   'Т' => 'T',   'У' => 'U',
+        'Ф' => 'F',   'Х' => 'H',   'Ц' => 'C',
+        'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Sch',
+        'Ь' => '\'',  'Ы' => 'Y',   'Ъ' => '\'',
+        'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
+        'І' => 'I',   'Ї' => 'Yi',  'Є' => 'E',
+    );
+    return strtr($string, $converter);
 }
