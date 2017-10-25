@@ -64,10 +64,10 @@ add_action('wp_footer', function() {
 
 function pror_user_has_role($user_id, $role) {
     $user = get_user_by('id', $user_id);
-    return in_array($role, (array)$user->roles);
+    return $user && in_array($role, (array)$user->roles);
 }
 
 function pror_current_user_has_role($role) {
     $user = wp_get_current_user();
-    return pror_user_has_role($user->ID, $role);
+    return $user && pror_user_has_role($user->ID, $role);
 }

@@ -240,8 +240,8 @@
             "allow_null": 0,
             "return_format": "id",
             "add_term": 0,
-            "load_terms": 1,
-            "save_terms": 1,
+            "load_terms": 0,
+            "save_terms": 0,
             "key": "field_59ebd9a8748a5",
             "label": "\u0413\u043e\u0440\u043e\u0434",
             "name": "master_location",
@@ -263,8 +263,8 @@
             "allow_null": 0,
             "return_format": "id",
             "add_term": 0,
-            "load_terms": 1,
-            "save_terms": 1,
+            "load_terms": 0,
+            "save_terms": 0,
             "key": "field_59ebda792dfb3",
             "label": "\u041a\u0430\u0442\u0430\u043b\u043e\u0433 \u0440\u0430\u0431\u043e\u0442",
             "name": "master_catalog",
@@ -276,7 +276,8 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "admin_only": 0
         }
     ],
     "location": [
@@ -296,5 +297,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508934446
+    "modified": 1508967301
 }
