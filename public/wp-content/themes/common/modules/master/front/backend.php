@@ -2,7 +2,6 @@
 
 add_action('login_enqueue_scripts', function() {
     wp_enqueue_style('custom-login', get_module_css('master/admin-login.css'), array(), dlv_get_ver());
-//    wp_enqueue_script('custom-login', get_stylesheet_directory_uri() . '/style-login.js');
 });
 
 add_action('init', function() {
@@ -13,6 +12,14 @@ add_action('init', function() {
 });
 
 add_action('user_register', function($user_id) {
+    pror_update_master_info($user_id);
+}, 10);
+
+add_action('profile_update', function ($user_id, $old_user_data) {
+    pror_update_master_info($user_id);
+}, 10, 2);
+
+function pror_update_master_info($user_id) {
     if (!pror_user_has_role($user_id, 'master')) {
         return;
     }
@@ -21,34 +28,22 @@ add_action('user_register', function($user_id) {
 
     update_user_meta($user_id, 'show_admin_bar_front', false);
 
-    pror_create_master_post($user_id, $user->data->user_login);
-});
-
-add_action('profile_update', function ($user_id, $old_user_data) {
-    if (!pror_user_has_role($user_id, 'master')) {
-        return;
-    }
-
-//    update_user_meta($user_id, 'nickname', get_field('master_title', "user_{$user_id}"));
-//    wp_update_user(array(
-//        'ID' => $user_id,
-//        'display_name' => get_field('master_title', "user_{$user_id}"),
-//    ));
 
     $master_post_id = pror_get_master_post_id($user_id);
     if (!$master_post_id) {
-        $master_post_id = pror_create_master_post($user_id, $old_user_data->user_login);
+        $master_post_id = pror_create_master_post($user_id, $user->data->user_login);
     }
 
     if ($master_post_id) {
         $title = get_field('master_title', "user_{$user_id}");
+
         wp_update_post(array(
             'ID' => $master_post_id,
             'post_title' => $title,
             'post_name' => sanitize_title(pror_master_rus2translit($title)),
-            'post_status' => 'publish',
             'post_excerpt' => get_field('master_excerpt', "user_{$user_id}"),
             'post_content' => get_field('master_text', "user_{$user_id}"),
+            'comment_status' => 'open',
         ));
 
         $catalog_terms = get_field('master_catalog', "user_{$user_id}");
@@ -59,8 +54,26 @@ add_action('profile_update', function ($user_id, $old_user_data) {
 
         $logo_id = get_field('master_logo', "user_{$user_id}");
         update_post_meta($master_post_id, '_thumbnail_id', $logo_id);
+
+        wp_update_post(array(
+            'ID' => $master_post_id,
+            'post_status' => ($title && $catalog_terms && $location_terms) ? 'publish' : 'draft',
+        ));
     }
-}, 10, 2);
+}
+
+add_action('delete_user', function($user_id) {
+    $master_post_id = pror_get_master_post_id($user_id);
+    if ($master_post_id) {
+        wp_delete_post($master_post_id, true);
+    }
+
+//    $user_obj = get_userdata( $user_id );
+//    $email = $user_obj->user_email;
+//
+//	$headers = 'From: ' . get_bloginfo( "name" ) . ' <' . get_bloginfo( "admin_email" ) . '>' . "\r\n";
+//	wp_mail( $email, 'You are being deleted, brah', 'Your account at ' . get_bloginfo("name") . ' is being deleted right now.', $headers );
+});
 
 
 
@@ -69,7 +82,6 @@ function pror_create_master_post($user_id, $title) {
         'post_author' => $user_id,
         'post_title' => $title,
         'post_type' => 'master',
-        'comment_status' => 'open',
     ));
 }
 

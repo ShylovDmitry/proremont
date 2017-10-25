@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7af1f00d9b429baed6a5c03b9b91ea9b",
-    "content-hash": "af5b08de43a5cbfd4d7f6411d58a4b5e",
+    "hash": "edc13cbd6106f6978049bb592e0a4100",
+    "content-hash": "218b92d193bd1585c8987e37ce6b6781",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -1959,12 +1959,12 @@
         },
         {
             "name": "wp-all-import-pro",
-            "version": "4.4.9",
+            "version": "4.5",
             "dist": {
                 "type": "zip",
-                "url": "composer-artifacts/wp-all-import-pro-4.4.9.zip",
+                "url": "composer-artifacts/wp-all-import-pro-4.5.zip",
                 "reference": null,
-                "shasum": "2fd8ff819075187f90d96c25bb1b0dcb9badc952"
+                "shasum": "5a7c322dac6a50937ce62fb09299b1a783fc1b17"
             },
             "type": "wordpress-plugin"
         },
@@ -2278,15 +2278,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.7",
+            "version": "5.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.7"
+                "reference": "tags/5.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2344,6 +2344,17 @@
                 "url": "composer-artifacts/wpai-acf-add-on-3.1.5.zip",
                 "reference": null,
                 "shasum": "e21318e64249acd9b738d6d4bcbb3bfedd62244c"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "wpai-user-add-on",
+            "version": "1.0.9",
+            "dist": {
+                "type": "zip",
+                "url": "composer-artifacts/wpai-user-add-on-1.0.9.zip",
+                "reference": null,
+                "shasum": "a562b6bb1a98bd5e2192e103ba10b7e9813ce595"
             },
             "type": "wordpress-plugin"
         }
