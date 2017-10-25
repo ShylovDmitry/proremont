@@ -135,7 +135,7 @@
                 }
             ],
             "min": 1,
-            "max": 0,
+            "max": 10,
             "layout": "table",
             "button_label": "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0442\u0435\u043b\u0435\u0444\u043e\u043d",
             "collapsed": "",
@@ -150,7 +150,8 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "admin_only": 0
         },
         {
             "default_value": "",
@@ -208,8 +209,8 @@
         },
         {
             "library": "all",
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 25,
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -222,14 +223,15 @@
             "label": "\u0413\u0430\u043b\u0435\u0440\u0435\u044f",
             "name": "master_gallery",
             "type": "gallery",
-            "instructions": "",
+            "instructions": "\u0412\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0434\u043e 25 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u0439.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "admin_only": 0
         },
         {
             "taxonomy": "location",
@@ -294,5 +296,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508887046
+    "modified": 1508934446
 }
