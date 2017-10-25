@@ -137,6 +137,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff; }
   .footer a {
     color: #fff; }
+  .footer strong {
+    font-weight: 700; }
+  @media (min-width: 768px) {
+    .footer .copyright,
+    .footer .footer-menu {
+      position: absolute;
+      bottom: 0; } }
 
 .switch-catalog-block {
   font-family: 'Roboto', sans-serif; }

@@ -60,7 +60,7 @@
     </div>
 
     <?php
-    $images = get_field('master_gallery');
+    $images = get_field('master_gallery', "user_" . get_the_author_meta('ID'));
     if ($images): ?>
         <div class="gallery">
             <h4>Галерея</h4>

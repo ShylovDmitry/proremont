@@ -69,6 +69,7 @@ function pror_create_master_post($user_id, $title) {
         'post_author' => $user_id,
         'post_title' => $title,
         'post_type' => 'master',
+        'comment_status' => 'open',
     ));
 }
 
