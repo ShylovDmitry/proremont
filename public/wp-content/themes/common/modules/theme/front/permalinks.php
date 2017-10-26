@@ -71,7 +71,10 @@ add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
     if (get_post_type($post) == 'master') {
         $locations = get_the_terms($post, 'location');
         if (isset($locations, $locations[0]) && $locations[0]->term_id) {
-            $post_link = str_replace('%section%', pror_get_section_by_location_id($locations[0]->term_id)->slug, $post_link);
+            $section = pror_get_section_by_location_id($locations[0]->term_id);
+            if ($section) {
+                $post_link = str_replace('%section%', $section->slug, $post_link);
+            }
         }
     }
 

@@ -34,7 +34,11 @@
 
     <div class="content">
         <h4>О мастере</h4>
-        <?php the_content(); ?>
+        <?php if(get_the_content()): ?>
+            <?php the_content(); ?>
+        <?php else: ?>
+            <i>Нет информации.</i>
+        <?php endif; ?>
     </div>
 
     <div class="catalog">

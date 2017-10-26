@@ -23,6 +23,7 @@ npm install
 composer install
 
 rsync -avz --delete --no-perms -O -e "ssh -i \"$SERVER_KEY\"" \
+    --exclude='*.sql' \
     --exclude='*.idea' \
     --exclude='*.git' \
     --exclude='*.gitignore' \

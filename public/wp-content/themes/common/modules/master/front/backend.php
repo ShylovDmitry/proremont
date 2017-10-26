@@ -2,6 +2,17 @@
 
 add_action('login_enqueue_scripts', function() {
     wp_enqueue_style('custom-login', get_module_css('master/admin-login.css'), array(), dlv_get_ver());
+
+//    $page = 6;
+//    $limit = 200;
+//    foreach (get_users(array('role' => 'master', 'orderby' => 'ID', 'number' => $limit, 'offset' => $page * $limit - 1)) as $user) {
+//        error_log("user ({$user->data->ID}): {$user->data->user_email}");
+//        $res = wp_update_user(array(
+//            'ID' => $user->data->ID,
+//            'user_email' => $user->data->user_email,
+//        ));
+//        error_log($res);
+//    }
 });
 
 add_action('init', function() {
@@ -13,11 +24,12 @@ add_action('init', function() {
 
 add_action('user_register', function($user_id) {
     pror_update_master_info($user_id);
-}, 10);
+});
 
 add_action('profile_update', function ($user_id, $old_user_data) {
     pror_update_master_info($user_id);
 }, 10, 2);
+
 
 function pror_update_master_info($user_id) {
     if (!pror_user_has_role($user_id, 'master')) {
