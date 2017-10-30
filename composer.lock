@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "edc13cbd6106f6978049bb592e0a4100",
-    "content-hash": "218b92d193bd1585c8987e37ce6b6781",
+    "hash": "e978c32c5c1590fae9a899b08e3d28e8",
+    "content-hash": "9cad3aafab4029375bbab6fcb923f696",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2177,6 +2177,26 @@
             "homepage": "https://wordpress.org/plugins/amazon-web-services/"
         },
         {
+            "name": "wpackagist-plugin/bnfw",
+            "version": "1.6.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/bnfw/",
+                "reference": "tags/1.6.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/bnfw.1.6.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/bnfw/"
+        },
+        {
             "name": "wpackagist-plugin/contact-form-7",
             "version": "4.9",
             "source": {
@@ -2315,6 +2335,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-hide-dashboard/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-mail-bank",
+            "version": "3.0.27",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1509012439",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-mail-bank/"
         },
         {
             "name": "wpackagist-plugin/yoast-seo-settings-xml-csv-import",

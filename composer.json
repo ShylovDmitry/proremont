@@ -37,7 +37,9 @@
     "wpackagist-plugin/advanced-cron-manager": "2.3.0",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2",
     "wpackagist-plugin/amazon-web-services": "1.0.3",
-    "wpackagist-plugin/wp-hide-dashboard": "2.2.1"
+    "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
+    "wpackagist-plugin/wp-mail-bank": "3.0.27",
+    "wpackagist-plugin/bnfw": "1.6.7"
   },
   "extra": {
     "installer-paths": {
