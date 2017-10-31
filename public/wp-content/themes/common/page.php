@@ -8,7 +8,7 @@
             <?php module_template('breadcrumbs/breadcrumbs'); ?>
 
             <div class="row">
-                <div class="col colored-box py-3">
+                <div class="col colored-box py-3 content">
 
                     <?php if (have_posts()): the_post(); ?>
                         <h1><?php the_title(); ?></h1>

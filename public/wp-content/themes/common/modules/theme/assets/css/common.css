@@ -145,6 +145,11 @@ h1, h2, h3, h4, h5, h6 {
       position: absolute;
       bottom: 0; } }
 
+.page .content a {
+  color: #FF8F12; }
+.page .content strong {
+  font-weight: 900; }
+
 .switch-catalog-block {
   font-family: 'Roboto', sans-serif; }
   .switch-catalog-block .button {

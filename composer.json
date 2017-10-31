@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.6",
-    "johnpbloch/wordpress": "4.8.2",
+    "johnpbloch/wordpress": "4.8.3",
     "composer/installers": "~1.0",
     "wp-cli/wp-cli" : "~0.22",
     "psy/psysh" : "~0.6",
@@ -26,7 +26,7 @@
     "wpai-user-add-on": "1.0.9",
     "wp-rocket": "2.10.9",
     "comment-rating-field-pro-plugin": "3.4.9",
-    "wpackagist-plugin/contact-form-7": "4.9",
+    "wpackagist-plugin/contact-form-7": "4.9.1",
     "wpackagist-plugin/ewww-image-optimizer": "4.0.0",
     "wpackagist-plugin/wordpress-seo": "5.7.1",
     "wpackagist-plugin/adrotate": "4.6.3",
@@ -38,7 +38,7 @@
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2",
     "wpackagist-plugin/amazon-web-services": "1.0.3",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
-    "wpackagist-plugin/wp-mail-bank": "3.0.27",
+    "wpackagist-plugin/wp-mail-bank": "3.0.28",
     "wpackagist-plugin/bnfw": "1.6.7"
   },
   "extra": {
