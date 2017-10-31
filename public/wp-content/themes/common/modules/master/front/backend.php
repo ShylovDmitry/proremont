@@ -16,7 +16,7 @@ add_action('login_enqueue_scripts', function() {
 });
 
 add_action('init', function() {
-    if (pror_current_user_has_role('master')) {
+    if (pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) {
         remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
         show_admin_bar(false);
     }
@@ -108,9 +108,11 @@ function pror_get_master_post_id($user_id) {
 }
 
 add_action('admin_menu', function() {
-    global $submenu;
-    $master_post_id = pror_get_master_post_id(get_current_user_id());
-    $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id));
+    if (pror_current_user_has_role('master')) {
+        global $submenu;
+        $master_post_id = pror_get_master_post_id(get_current_user_id());
+        $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id));
+    }
 });
 
 
