@@ -10,3 +10,8 @@ function pror_get_page_by_template_name($name) {
     $pages = get_posts($args);
     return $pages[0];
 }
+
+
+add_filter('oa_social_login_filter_new_user_role', function() {
+    return 'subscriber';
+});
