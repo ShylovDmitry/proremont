@@ -2,17 +2,6 @@
 
 add_action('login_enqueue_scripts', function() {
     wp_enqueue_style('custom-login', get_module_css('master/admin-login.css'), array(), dlv_get_ver());
-
-//    $page = 6;
-//    $limit = 200;
-//    foreach (get_users(array('role' => 'master', 'orderby' => 'ID', 'number' => $limit, 'offset' => $page * $limit - 1)) as $user) {
-//        error_log("user ({$user->data->ID}): {$user->data->user_email}");
-//        $res = wp_update_user(array(
-//            'ID' => $user->data->ID,
-//            'user_email' => $user->data->user_email,
-//        ));
-//        error_log($res);
-//    }
 });
 
 add_action('init', function() {
@@ -32,7 +21,7 @@ add_action('profile_update', function ($user_id, $old_user_data) {
 
 
 function pror_update_master_info($user_id) {
-    if (!pror_user_has_role($user_id, 'master')) {
+    if (!pror_user_has_role($user_id, 'master') && !pror_user_has_role($user_id, 'subscriber')) {
         return;
     }
 
@@ -40,12 +29,22 @@ function pror_update_master_info($user_id) {
 
     update_user_meta($user_id, 'show_admin_bar_front', false);
 
+    $should_be_master = get_field('master_should_be', "user_{$user_id}");
+    $caps = ($should_be_master == 'yes') ? array('master' => true) : array('subscriber' => true);
+    update_user_meta($user_id, 'wp_capabilities', $caps);
 
-    $master_post_id = pror_get_master_post_id($user_id);
-    if (!$master_post_id) {
-        $master_post_id = pror_create_master_post($user_id, $user->data->user_login);
+    if ($should_be_master != 'yes') {
+        $master_post_id = pror_get_master_post_id($user_id);
+        if ($master_post_id) {
+            wp_update_post(array(
+                'ID' => $master_post_id,
+                'post_status' => 'draft',
+            ));
+        }
+        return;
     }
 
+    $master_post_id = pror_get_master_post_id($user_id, $user->data->user_login);
     if ($master_post_id) {
         $title = get_field('master_title', "user_{$user_id}");
 
@@ -79,17 +78,25 @@ add_action('delete_user', function($user_id) {
     if ($master_post_id) {
         wp_delete_post($master_post_id, true);
     }
-
-//    $user_obj = get_userdata( $user_id );
-//    $email = $user_obj->user_email;
-//
-//	$headers = 'From: ' . get_bloginfo( "name" ) . ' <' . get_bloginfo( "admin_email" ) . '>' . "\r\n";
-//	wp_mail( $email, 'You are being deleted, brah', 'Your account at ' . get_bloginfo("name") . ' is being deleted right now.', $headers );
 });
 
 
+function pror_get_master_post_id($user_id, $title = null) {
+    $posts = get_posts(array(
+        'author' => $user_id,
+        'posts_per_page' => 1,
+        'post_type' => 'master',
+        'post_status' => 'any',
+    ));
 
-function pror_create_master_post($user_id, $title) {
+    $post_id = isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
+    if ($post_id) {
+        return $post_id;
+    }
+    if (!$title) {
+        return false;
+    }
+
     return wp_insert_post(array(
         'post_author' => $user_id,
         'post_title' => $title,
@@ -97,21 +104,13 @@ function pror_create_master_post($user_id, $title) {
     ));
 }
 
-function pror_get_master_post_id($user_id) {
-    $posts = get_posts(array(
-        'author' => $user_id,
-        'posts_per_page' => 1,
-        'post_type' => 'master',
-        'post_status' => 'any',
-    ));
-    return isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
-}
-
 add_action('admin_menu', function() {
     if (pror_current_user_has_role('master')) {
-        global $submenu;
         $master_post_id = pror_get_master_post_id(get_current_user_id());
-        $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id));
+        if ($master_post_id) {
+            global $submenu;
+            $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id));
+        }
     }
 });
 

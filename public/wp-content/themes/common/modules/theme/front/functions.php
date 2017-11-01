@@ -12,6 +12,9 @@ function pror_get_page_by_template_name($name) {
 }
 
 
-add_filter('oa_social_login_filter_new_user_role', function() {
-    return 'subscriber';
+add_filter('oa_social_login_filter_new_user_role', function($user_role) {
+    if (strpos($_SERVER['SCRIPT_NAME'], 'wp-login.php') === false) {
+        return 'subscriber';
+    }
+    return $user_role;
 });
