@@ -10,7 +10,7 @@
             <?php module_template('master/detailed'); ?>
         </div>
 
-        <div class="col-300">
+        <div class="col col-md-12 col-300">
             <?php module_template('banner/sidebar'); ?>
         </div>
     </div>

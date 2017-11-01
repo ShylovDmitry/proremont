@@ -10,7 +10,7 @@
 
             <div class="catalog-subs row">
                 <?php foreach (pror_get_catalog($main_catalog->term_id) as $pos => $sub_catalog): ?>
-                    <div class="col-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a></div>
+                    <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a></div>
                     <?php if (($pos+1) % 2 == 0): ?><div class="w-100 d-lg-none"></div><?php endif; ?>
                 <?php endforeach; ?>
             </div>

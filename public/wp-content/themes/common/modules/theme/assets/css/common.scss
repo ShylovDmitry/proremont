@@ -8,17 +8,12 @@ body {
     font-family: $primary-font;
 }
 
-//body .container {
-//    @media (min-width: $screen-width-xl) {
-//        max-width: 960px;
-//    }
-//}
-
 .col-300 {
+    padding-top: 20px;
+
     @media (min-width: $screen-width-lg) {
-        -ms-flex: 0 0 330px;
-        flex: 0 0 330px;
-        width: 330px;
+        padding-top: 0;
+        flex-basis: 330px;
     }
 }
 
