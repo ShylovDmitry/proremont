@@ -134,13 +134,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     padding: 0;
 
-    &.navbar-expand>.container {
-        flex-wrap: wrap;
-        @media (min-width: $screen-width-sm) {
-            flex-wrap: nowrap;
-        }
-    }
-
     .navbar-brand {
         width: 100%;
         margin-right: 0;
@@ -155,13 +148,21 @@ h1, h2, h3, h4, h5, h6 {
     a {
         color: #fff;
     }
-    .dropdown {
-        width: 100%;
-        text-align: center;
+    .navbar-nav {
+        margin-left: 20px;
+    }
+    .navbar-toggler {
+        margin-right: 10px;
 
         @media (min-width: $screen-width-sm) {
-            width: auto;
-            text-align: inherit;
+            margin-right: 0;
+        }
+    }
+    .dropdown {
+        margin-left: 10px;
+
+        @media (min-width: $screen-width-sm) {
+            margin-left: 0;
         }
 
         & > a {

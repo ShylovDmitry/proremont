@@ -100,11 +100,6 @@ h1, h2, h3, h4, h5, h6 {
   background: #3c3c3b;
   color: #fff;
   padding: 0; }
-  .navbar.navbar-expand > .container {
-    flex-wrap: wrap; }
-    @media (min-width: 576px) {
-      .navbar.navbar-expand > .container {
-        flex-wrap: nowrap; } }
   .navbar .navbar-brand {
     width: 100%;
     margin-right: 0;
@@ -115,13 +110,18 @@ h1, h2, h3, h4, h5, h6 {
         margin-right: 1rem; } }
   .navbar a {
     color: #fff; }
+  .navbar .navbar-nav {
+    margin-left: 20px; }
+  .navbar .navbar-toggler {
+    margin-right: 10px; }
+    @media (min-width: 576px) {
+      .navbar .navbar-toggler {
+        margin-right: 0; } }
   .navbar .dropdown {
-    width: 100%;
-    text-align: center; }
+    margin-left: 10px; }
     @media (min-width: 576px) {
       .navbar .dropdown {
-        width: auto;
-        text-align: inherit; } }
+        margin-left: 0; } }
     .navbar .dropdown > a {
       white-space: nowrap;
       font-size: 20px; }

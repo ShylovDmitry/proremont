@@ -16,7 +16,7 @@
 
             <div class="col-md-4">
                 <p>
-                    Ми в соцсетях:
+                    Мы в соцсетях:
                 </p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item"><a href="https://www.facebook.com/ProRemont.Catalog/" target="_blank"><img src="<?php module_img('theme/social-facebook.png'); ?>" width="40" height="40" /></a></li>
