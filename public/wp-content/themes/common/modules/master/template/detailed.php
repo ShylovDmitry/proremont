@@ -36,6 +36,8 @@
         <h4>О мастере</h4>
         <?php if(get_the_content()): ?>
             <?php the_content(); ?>
+        <?php elseif(get_the_excerpt()): ?>
+            <?php the_excerpt(); ?>
         <?php else: ?>
             <i>Нет информации.</i>
         <?php endif; ?>
