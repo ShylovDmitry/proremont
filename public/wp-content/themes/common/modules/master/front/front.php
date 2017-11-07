@@ -46,14 +46,15 @@ function pror_format_phones($phone) {
     if (strlen($phone) == 11) {
         $phone = '3' . $phone;
     }
-
     if (strlen($phone) == 12) {
-        $tel = '+' . $phone;
-        if (preg_match('/(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
+        $phone = '+' . $phone;
+    }
+
+    $tel = $phone;
+    if (strlen($phone) == 13) {
+        if (preg_match('/\+(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
             $phone = sprintf('%s %s %s', $matches[2], $matches[3], $matches[4]);
         }
-    } else {
-        $tel = $phone;
     }
 
     return array('tel' => $tel, 'text' => $phone);

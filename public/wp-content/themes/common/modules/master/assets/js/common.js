@@ -38,7 +38,7 @@ jQuery(function ($) {
     $('.show-number').click(function(e) {
         e.preventDefault();
 
-        if (ga) {
+        if (typeof ga != 'undefined') {
             ga('send', 'event', 'Master Page', 'phone click');
         }
 
