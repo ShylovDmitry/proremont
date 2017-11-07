@@ -8,6 +8,32 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('master-common', get_module_js('master/common.js'), array('jquery'), dlv_get_ver(), true);
 });
 
+add_action('wpseo_register_extra_replacements', function() {
+    wpseo_register_var_replacement('%%city%%', function() {
+        if (get_post_type() == 'master') {
+            $terms = get_the_terms(null, 'location');
+            if (isset($terms, $terms[0])) {
+                return $terms[0]->name;
+            }
+        }
+        return '';
+    });
+
+    wpseo_register_var_replacement('%%catalogs%%', function() {
+        $catalogs = array();
+        if (get_post_type() == 'master') {
+            foreach (pror_get_master_catalogs() as $pos => $parent) {
+                $catalogs[] = $parent->name;
+                foreach ($parent->children as $child) {
+                    $catalogs[] = $child->name;
+                }
+            }
+        }
+        return implode(', ', $catalogs);
+    });
+});
+
+
 add_filter('excerpt_length', function( $length ) {
     return 20;
 }, 999);
