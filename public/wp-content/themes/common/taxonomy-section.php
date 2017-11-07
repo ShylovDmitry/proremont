@@ -29,7 +29,7 @@
         <div class="col-4 text-center">
             <div class="item">
                 <div class="circle">
-                    <strong>бесплатний</strong>
+                    <strong>бесплатный</strong>
                     каталог
                 </div>
             </div>

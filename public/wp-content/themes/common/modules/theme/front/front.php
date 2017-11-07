@@ -57,6 +57,10 @@ add_filter('comment_form_defaults', function($defaults) {
     return $defaults;
 }, 1, 5);
 
+add_shortcode('clearfix', function() {
+    return '<div class="clearfix"></div>';
+});
+
 add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
