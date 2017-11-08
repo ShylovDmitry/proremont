@@ -9,6 +9,13 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_action('wpseo_register_extra_replacements', function() {
+    wpseo_register_var_replacement('%%master_type%%', function() {
+        if (get_post_type() == 'master') {
+            return get_field('master_type', "user_" . get_post_field('post_author'));
+        }
+        return '';
+    });
+
     wpseo_register_var_replacement('%%city%%', function() {
         if (get_post_type() == 'master') {
             $terms = get_the_terms(null, 'location');
