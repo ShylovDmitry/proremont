@@ -49,7 +49,7 @@ function pror_get_master_types() {
     return array(
         '' => 'Все',
         'master' => 'Мастера',
-        'brіgada' => 'Бригады',
+        'brigada' => 'Бригады',
         'kompania' => 'Компании',
     );
 }

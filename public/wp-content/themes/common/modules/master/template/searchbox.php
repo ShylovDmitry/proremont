@@ -45,7 +45,7 @@
 /*                $master_types = array(
                         '' => 'Все',
                         'master' => 'Мастер',
-                        'brіgada' => 'Бригада',
+                        'brigada' => 'Бригада',
                         'kompania' => 'Компания',
                 );
                 $selected_type = isset($_GET['f_master_type']) ? $_GET['f_master_type'] : key($master_types);
