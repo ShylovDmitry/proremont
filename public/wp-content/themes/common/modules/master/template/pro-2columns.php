@@ -53,7 +53,8 @@ $query = new WP_Query(array(
                 'operator' => 'IN',
             ),
         ),
-        'meta_query' => array(array('key' => '_thumbnail_id')),
+        'custom_query' => 'with_logo',
+//        'meta_query' => array(array('key' => '_thumbnail_id')),
     ));
     ?>
     <div class="master-2columns">
