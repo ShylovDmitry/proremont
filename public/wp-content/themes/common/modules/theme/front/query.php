@@ -1,19 +1,23 @@
 <?php
 
-add_action('pre_get_posts', function($query) {
-    if (is_admin() ||  !$query->is_main_query()) {
-        return;
+add_filter('posts_clauses', function($clauses, $query) {
+    if (is_admin() || (!$query->is_main_query() && $query->query['post_type'] != 'master')) {
+        return $clauses;
     }
 
     if (isset($_GET['f_master_type']) && $_GET['f_master_type']) {
-        $query->set('meta_query', array(
-            array(
-                'key' => 'master_type',
-                'value' => $_GET['f_master_type'],
-            )
-        ));
+        global $wpdb;
+
+        $join = &$clauses['join'];
+        if (!empty($join)) $join .= ' ';
+        $join .= "JOIN {$wpdb->prefix}usermeta custom_um ON custom_um.user_id = {$wpdb->posts}.post_author AND custom_um.meta_key = 'master_type'";
+
+        $where = &$clauses['where'];
+        $where .= " AND custom_um.meta_value='" . $_GET['f_master_type'] . "'";
     }
-});
+
+    return $clauses;
+}, 10, 2);
 
 global $save_prev_section_value;
 add_action('pre_get_posts', function($query) {
