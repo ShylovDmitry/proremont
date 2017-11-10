@@ -68,7 +68,7 @@ function pror_get_master_phones($user_id) {
 function pror_format_phones($phone) {
 //    $phones_str = str_replace(chr(13), '', $phones_str);
 //    $phones = explode("\n", $phones_str);
-    $phone = preg_replace('/\s+/', '', $phone);
+    $phone = preg_replace('/[\s-)(]+/', '', $phone);
 
     if (strlen($phone) == 9) {
         $phone = '380' . $phone;
