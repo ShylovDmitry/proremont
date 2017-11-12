@@ -1,7 +1,6 @@
 <?php
 
 add_action('init', function() {
-
     register_post_type('master', array(
         'labels' => array(
             'name' => __('Masters'),
@@ -12,8 +11,9 @@ add_action('init', function() {
         'public' => true,
         'rewrite' => array(
             'with_front' => false,
-            'slug' => '%section%/master'
+            'slug' => '%section%/master',
         ),
+        'delete_with_user' => true,
         'supports' => array(
             'title',
             'excerpt',
@@ -61,4 +61,6 @@ add_action('init', function() {
         'publicly_queryable' => false,
     ));
 
+    add_rewrite_rule('([^/]+)/master/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$','index.php?section=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
+    add_rewrite_rule('([^/]+)/master/([^/]+)/(feed|rdf|rss|rss2|atom)/?$','index.php?section=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
 });
