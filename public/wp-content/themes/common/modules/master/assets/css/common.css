@@ -188,11 +188,12 @@
   .master-detailed .comment .rating-container {
     float: none;
     margin-top: 10px; }
-  .master-detailed .comment .crfp-rating-breakdown {
-    float: left;
-    width: 33%;
-    clear: none;
-    margin-top: 0; }
+  @media (min-width: 768px) {
+    .master-detailed .comment .crfp-rating-breakdown {
+      float: left;
+      width: 33%;
+      clear: none;
+      margin-top: 0; } }
 .master-detailed .comment-respond {
   padding: 15px;
   margin-top: 20px;
