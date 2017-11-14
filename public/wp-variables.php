@@ -3,6 +3,11 @@
 /** Enable Cache by WP Rocket */
 defined('WP_CACHE') or define('WP_CACHE', true);
 
+if (!isset($_SERVER['HTTPS'])) {
+    $_SERVER['HTTPS'] = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ? 'on' : 'off';
+}
+
+
 define('APP_PATH', dirname(__FILE__));
 
 //require_once(__DIR__ . '/../vendor/autoload.php');
@@ -22,9 +27,10 @@ defined('WP_ENV_PROD') or define('WP_ENV_PROD', WP_ENV == 'prod');
 /**
  * URLs
  */
-defined('WP_HOME') or define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
-defined('WP_SITEURL') or define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp');
-
+$scheme = $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
+defined('WP_HOME') or define('WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST']);
+defined('WP_SITEURL') or define('WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST'] . '/wp');
+//var_dump(WP_HOME);
 
 /**
  * Custom Content Directory

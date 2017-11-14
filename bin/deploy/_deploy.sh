@@ -6,7 +6,7 @@ if [ -z $1 ]; then
 fi
 
 SERVER_USER=ec2-user
-SERVER_HOST=$SERVER_USER@proremont.co
+SERVER_HOST=$SERVER_USER@52.28.148.152
 SERVER_KEY="~/.ssh/proremont.pem"
 
 STACK=$1
