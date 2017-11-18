@@ -67,7 +67,7 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cp $DEPLOY_FOLDER/configs/supervisor/supervisord.conf /etc/supervisord.conf"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs $DEPLOY_FOLDER/config /config"
-#ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs /config/php/php.ini /etc/php.ini"
+ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs /config/php/php.ini /etc/php-5.6.ini"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/nginx configtest && sudo /etc/init.d/nginx reload"
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/php-fpm reload"

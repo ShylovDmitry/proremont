@@ -35,14 +35,14 @@ function pror_get_section_by_location_id($location_id) {
 function pror_detect_section_by_ip() {
     $section_slug = 'kiev';
 
-    if (!WP_ENV_LOCAL) {
-        $ipInfo = new \IpInfoDb\IpInfoDb(IPINFODB_API_KEY);
-        $response = $ipInfo->city($_SERVER['REMOTE_ADDR']);
+//    $_SERVER['REMOTE_ADDR'] = '93.77.137.79';
 
-        if ($response->isSuccess()) {
-            $section_slug = pror_convert_location_to_slug($response->getRegionName(), $response->getCityName(), $section_slug);
-        } else {
-//            echo $response->getStatusMessage();
+    if (!WP_ENV_LOCAL) {
+        $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
+        $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $ip));
+
+        if ($geo) {
+            $section_slug = pror_convert_location_to_slug($geo['geoplugin_region'], $geo['geoplugin_city'], $section_slug);
         }
     }
 
@@ -50,58 +50,59 @@ function pror_detect_section_by_ip() {
 }
 
 function pror_convert_location_to_slug($region, $city, $default_slug) {
+    $region = htmlspecialchars_decode($region, ENT_QUOTES);
+    $city = htmlspecialchars_decode($city, ENT_QUOTES);
+
     $data = array(
-        "L'viv/Lvivska oblast" => 'lvov',
-        "Lvivska oblast" => 'lv',
+        "Cherkasy/Cherkas'ka Oblast'" => 'cherkassy',
+        "Cherkas'ka Oblast'" => 'chk',
+        "Chernihiv/Chernihiv" => 'chernigov',
+        "Chernihiv" => 'chn',
+        "Chernivtsi/Chernivtsi" => 'chernovtsy',
+        "Chernivtsi" => 'chv',
+        "Dnipro/Dnipro" => 'dnepr',
+        "Dnipro" => 'dnp',
+        "Donetsk/Donets'ka Oblast'" => 'donetsk',
+        "Donets'ka Oblast'" => 'don',
+        "Ivano-Frankivs'k/Ivano-Frankivs'ka Oblast'" => 'ivano-frankovsk',
+        "Ivano-Frankivs'ka Oblast'" => 'if',
+        "Kharkiv/Kharkivs'ka Oblast'" => 'kharkov',
+        "Kharkivs'ka Oblast'" => 'kha',
+        "Kherson/Khersons'ka Oblast'" => 'kherson',
+        "Khersons'ka Oblast'" => 'khe',
+        "Khmelnytskyi/Khmel'nyts'ka Oblast'" => 'khmelnitskiy',
+        "Khmel'nyts'ka Oblast'" => 'khm',
+        "Kropyvnytskyi/Kropyvnytskyi" => 'kropivnitskiy',
+        "Kropyvnytskyi" => 'kir',
         "Kiev/Kyiv" => 'kiev',
         "Kyiv" => 'ko',
-        "Kiev/Kyivska oblast" => 'kiev',
-        "Kyivska oblast" => 'ko',
-
-        "Cherkasy/Cherkaska oblast" => 'cherkassy',
-        "Cherkaska oblast" => 'chk',
-        "Chernihiv/Chernihivska oblast" => 'chernigov',
-        "Chernihivska oblast" => 'chn',
-        "Chernivtsi/Chernivetska oblast" => 'chernovtsy',
-        "Chernivetska oblast" => 'chv',
-        "Dnipropetrovsk/Dnipropetrovska oblast" => 'dnepr',
-        "Dnipropetrovska oblast" => 'dnp',
-        "Donets'k/Donetska oblast" => 'donetsk',
-        "Donetska oblast" => 'don',
-        "Ivano-Frankivs'k/Ivano-Frankivska oblast" => 'ivano-frankovsk',
-        "Ivano-Frankivska oblast" => 'if',
-        "Kharkiv/Kharkivska oblast" => 'kharkov',
-        "Kharkivska oblast" => 'kha',
-        "Kherson/Khersonska oblast" => 'kherson',
-        "Khersonska oblast" => 'khe',
-        "Khmel'nyts'kyy/Khmelnytska oblast" => 'khmelnitskiy',
-        "Khmelnytska oblast" => 'khm',
-        "Kirovohrad/Kirovohradska oblast" => 'kropivnitskiy',
-        "Kirovohradska oblast" => 'kir',
-        "Luhans'k/Luhanska oblast" => 'lugansk',
-        "Luhanska oblast" => 'lug',
-        "Mykolayiv/Mykolaivska oblast" => 'nikolaev',
-        "Mykolaivska oblast" => 'nik',
-        "Odessa/Odeska oblast" => 'odessa',
-        "Odeska oblast" => 'od',
-        "Poltava/Poltavska oblast" => 'poltava',
-        "Poltavska oblast" => 'pol',
-        "Rivne/Rivnenska oblast" => 'rovno',
-        "Rivnenska oblast" => 'rov',
-        "Sumy/Sumska oblast" => 'sumy',
-        "Sumska oblast" => 'sum',
-        "Ternopil'/Ternopilska oblast" => 'ternopol',
-        "Ternopilska oblast" => 'ter',
-        "Vinnytsya/Vinnytska oblast" => 'vinnitsa',
-        "Vinnytska oblast" => 'vin',
-        "Luts'k/Volynska oblast" => 'lutsk',
-        "Volynska oblast" => 'vol',
-        "Uzhhorod/Zakarpatska oblast" => 'uzhgorod',
-        "Zakarpatska oblast" => 'zak',
-        "Zaporizhzhya/Zaporizka oblast" => 'zaporozhe',
-        "Zaporizka oblast" => 'zap',
-        "Zhytomyr/Zhytomyrska oblast" => 'zhitomir',
-        "Zhytomyrska oblast" => 'zht',
+        "Kyiv City" => 'kiev',
+        "Lviv/L'vivs'ka Oblast'" => 'lvov',
+        "L'vivs'ka Oblast'" => 'lv',
+        "Luhansk/Luhans'ka Oblast'" => 'lugansk',
+        "Luhans'ka Oblast'" => 'lug',
+        "Mykolayiv/Mykolayivs'ka Oblast'" => 'nikolaev',
+        "Mykolayivs'ka Oblast'" => 'nik',
+        "Odesa/Odessa" => 'odessa',
+        "Odessa" => 'od',
+        "Poltava/Poltavs'ka Oblast'" => 'poltava',
+        "Poltavs'ka Oblast'" => 'pol',
+        "Rivne/Rivnens'ka Oblast'" => 'rovno',
+        "Rivnens'ka Oblast'" => 'rov',
+        "Sumy/Sums'ka Oblast'" => 'sumy',
+        "Sums'ka Oblast'" => 'sum',
+        "Ternopil/Ternopil's'ka Oblast'" => 'ternopol',
+        "Ternopil's'ka Oblast'" => 'ter',
+        "Vinnytsia/Vinnyts'ka Oblast'" => 'vinnitsa',
+        "Vinnyts'ka Oblast'" => 'vin',
+        "Lutsk/Volyns'ka Oblast'" => 'lutsk',
+        "Volyns'ka Oblast'" => 'vol',
+        "Uzhhorod/Transcarpathia" => 'uzhgorod',
+        "Transcarpathia" => 'zak',
+        "Zaporizhia/Zaporizhia" => 'zaporozhe',
+        "Zaporizhia" => 'zap',
+        "Zhytomyr/Zhytomyrs'ka Oblast'" => 'zhitomir',
+        "Zhytomyrs'ka Oblast'" => 'zht',
     );
 
     if (isset($data[$city . '/' . $region])) {
