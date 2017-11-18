@@ -10,7 +10,10 @@ if (!isset($_SERVER['HTTPS'])) {
 
 define('APP_PATH', dirname(__FILE__));
 
-//require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+
+define('IPINFODB_API_KEY', 'e6060ba84f7b87fd382b7a830212ff4a91ccdcb7899777492f765cefdd21e66c');
 
 #define('AWS_ACCESS_KEY_ID', 'xx');
 #define('AWS_SECRET_ACCESS_KEY', 'xx');

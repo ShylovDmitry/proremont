@@ -16,13 +16,15 @@ add_filter('posts_clauses', function($clauses, $query) {
         $where .= " AND custom_um.meta_value = '" . esc_sql($_GET['f_master_type']) . "'";
     }
 
-    if ($query->query['custom_query'] == 'with_logo') {
-        $join = &$clauses['join'];
-        if (!empty($join)) $join .= ' ';
-        $join .= "JOIN {$wpdb->prefix}usermeta custom_um_logo ON custom_um_logo.user_id = {$wpdb->posts}.post_author AND custom_um_logo.meta_key = 'master_logo'";
+    if (isset($query->query['custom_query'])) {
+        if ($query->query['custom_query'] == 'with_logo') {
+            $join = &$clauses['join'];
+            if (!empty($join)) $join .= ' ';
+            $join .= "JOIN {$wpdb->prefix}usermeta custom_um_logo ON custom_um_logo.user_id = {$wpdb->posts}.post_author AND custom_um_logo.meta_key = 'master_logo'";
 
-        $where = &$clauses['where'];
-        $where .= " AND custom_um_logo.meta_value != ''";
+            $where = &$clauses['where'];
+            $where .= " AND custom_um_logo.meta_value != ''";
+        }
     }
 
     return $clauses;
