@@ -23,7 +23,7 @@ add_filter('request', function($query_vars) {
     }
 
     if (isset($_GET['f_switch_section'])) {
-        $section = pror_get_section_by_id((int)$_GET['f_switch_section'], 'section');
+        $section = pror_get_section_by_id((int)$_GET['f_switch_section']);
 
         $p_url['path'] = str_replace("/{$query_vars['section']}/", "/{$section->slug}/", $p_url['path']);
         unset($q_url['f_switch_section']);
@@ -80,22 +80,3 @@ add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
 
     return $post_link;
 }, 10, 4);
-
-add_filter('page_link', function($link, $post_ID, $sample) {
-    $catalog_master_page = pror_get_page_by_template_name('template-catalog_master.php');
-    if ($catalog_master_page->ID == $post_ID) {
-        $section_slug = pror_get_section()->slug;
-        $link = str_replace("/{$catalog_master_page->post_name}/", "/{$section_slug}/{$catalog_master_page->post_name}/", $link);
-    }
-
-    return $link;
-}, 10, 3);
-
-add_filter('wp_seo_get_bc_title', function($link_text, $id) {
-    $catalog_master_page = pror_get_page_by_template_name('template-catalog_master.php');
-    if ($catalog_master_page->ID == $id) {
-        return sprintf('%s - %s', $link_text, pror_get_section()->name);
-    }
-
-    return $link_text;
-}, 10, 2);

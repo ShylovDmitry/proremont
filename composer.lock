@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "928cdb3055cd3c8d440b62c7d9b6dfa9",
-    "content-hash": "c84e1f8be56ce60aaedb511fe3b4c9cc",
+    "hash": "cc6610ce5090ffff91527f8df3e2cfb1",
+    "content-hash": "43363eb3cf0b15f7187dcb3180791f86",
     "packages": [
         {
             "name": "advanced-custom-fields-pro",
@@ -2470,15 +2470,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.7.1",
+            "version": "5.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.7.1"
+                "reference": "tags/5.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.7.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.8.zip",
                 "reference": null,
                 "shasum": null
             },

@@ -33,14 +33,17 @@ function pror_get_section_by_location_id($location_id) {
 }
 
 function pror_detect_section_by_ip() {
-    $ipInfo = new \IpInfoDb\IpInfoDb(IPINFODB_API_KEY);
-    $response = $ipInfo->city($_SERVER['REMOTE_ADDR']);
-
     $section_slug = 'kiev';
-    if (!$response->isSuccess()) {
-//        echo $response->getStatusMessage();
-    } else {
-        $section_slug = pror_convert_location_to_slug($response->getRegionName(), $response->getCityName(), $section_slug);
+
+    if (!WP_ENV_LOCAL) {
+        $ipInfo = new \IpInfoDb\IpInfoDb(IPINFODB_API_KEY);
+        $response = $ipInfo->city($_SERVER['REMOTE_ADDR']);
+
+        if ($response->isSuccess()) {
+            $section_slug = pror_convert_location_to_slug($response->getRegionName(), $response->getCityName(), $section_slug);
+        } else {
+//            echo $response->getStatusMessage();
+        }
     }
 
     return pror_get_section_by_slug($section_slug);
