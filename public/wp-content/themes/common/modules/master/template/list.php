@@ -2,11 +2,18 @@
     <?php
         $master_types = pror_get_master_types();
         $selected_type = isset($_GET['f_master_type']) ? $_GET['f_master_type'] : key($master_types);
+
+        global $wp;
+        $current_url =  home_url($wp->request . '/');
+        $page_pos = strpos($current_url , '/page');
+        if ($page_pos) {
+            $current_url = substr($current_url, 0, $page_pos + 1);
+        }
     ?>
     <ul class="nav nav-tabs mb-4">
         <?php foreach ($master_types as $type_key => $type_value): ?>
             <li class="nav-item">
-                <a class="nav-link<?php if ($selected_type == $type_key): ?> active<?php endif; ?>" href="?f_master_type=<?php echo $type_key; ?>">
+                <a class="nav-link<?php if ($selected_type == $type_key): ?> active<?php endif; ?>" href="<?php echo $current_url; ?>?f_master_type=<?php echo $type_key; ?>">
                     <?php echo $type_value; ?>
                 </a>
             </li>
