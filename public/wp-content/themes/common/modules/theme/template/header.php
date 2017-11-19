@@ -3,9 +3,10 @@
         <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">
             <img src="<?php module_img('theme/proremont-co-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />
         </a>
-        <div class="dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <?php echo pror_get_section()->name; ?>
+
+        <div class="dropdown section-list invisible">
+            <a class="nav-link dropdown-toggle" href="#" data-slug="<?php echo pror_get_section()->slug; ?>" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo pror_get_section()->name; ?>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -16,8 +17,7 @@
                     $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
                 ?>
                 <?php foreach ($menuitems as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                    <a class="dropdown-item py-0" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->term_id; ?>">
-                        <?php echo $menu_post->name; ?></a>
+                    <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
                 <?php endforeach; ?>
             </div>
         </div>

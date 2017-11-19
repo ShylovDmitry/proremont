@@ -6,15 +6,21 @@ function pror_get_section() {
         return $section;
     }
 
-    return pror_detect_section_by_ip();
+    $section = pror_get_section_by_slug(pror_get_section_cookie());
+    if ($section) {
+        return $section;
+    }
+
+    $section = pror_get_section_by_slug(pror_detect_section_by_ip());
+    if ($section) {
+        return $section;
+    }
+
+    return pror_get_section_by_slug('kiev');
 }
 
 function pror_get_section_by_slug($slug) {
     return get_term_by('slug', $slug, 'section');
-}
-
-function pror_get_section_by_id($id) {
-    return get_term_by('id', $id, 'section');
 }
 
 function pror_get_section_by_location_id($location_id) {
@@ -33,23 +39,18 @@ function pror_get_section_by_location_id($location_id) {
 }
 
 function pror_detect_section_by_ip() {
-    $section_slug = 'kiev';
-
 //    $_SERVER['REMOTE_ADDR'] = '93.77.137.79';
 
-    if (!WP_ENV_LOCAL) {
-        $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
-        $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $ip));
+    $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
+    $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $ip));
 
-        if ($geo) {
-            $section_slug = pror_convert_location_to_slug($geo['geoplugin_region'], $geo['geoplugin_city'], $section_slug);
-        }
+    if ($geo) {
+        return pror_convert_location_to_slug($geo['geoplugin_region'], $geo['geoplugin_city']);
     }
-
-    return pror_get_section_by_slug($section_slug);
+    return false;
 }
 
-function pror_convert_location_to_slug($region, $city, $default_slug) {
+function pror_convert_location_to_slug($region, $city) {
     $region = htmlspecialchars_decode($region, ENT_QUOTES);
     $city = htmlspecialchars_decode($city, ENT_QUOTES);
 
@@ -110,6 +111,6 @@ function pror_convert_location_to_slug($region, $city, $default_slug) {
     } else if (isset($data[$region])) {
         return $data[$region];
     } else {
-        return $default_slug;
+        return false;
     }
 }

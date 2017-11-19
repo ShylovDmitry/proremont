@@ -22,6 +22,8 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', array('jquery'), null, true);
     wp_enqueue_script('theme-common', get_module_js('theme/common.js'), array('jquery', 'slick', 'select2'), dlv_get_ver(), true);
+
+	wp_localize_script('theme-common', 'ProRemont', array('ajax_url' => admin_url( 'admin-ajax.php')));
 });
 
 add_theme_support( 'post-thumbnails' );
@@ -74,4 +76,11 @@ function pror_user_has_role($user_id, $role) {
 function pror_current_user_has_role($role) {
     $user = wp_get_current_user();
     return $user && pror_user_has_role($user->ID, $role);
+}
+
+
+add_action('wp_ajax_detect_location', 'pror_detect_location');
+add_action('wp_ajax_nopriv_detect_location', 'pror_detect_location');
+function pror_detect_location() {
+    wp_send_json_success(pror_get_section()->slug);
 }

@@ -5,6 +5,24 @@ add_filter('request', function($query_vars) {
         return $query_vars;
     }
 
+    if ('/' === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+        || strpos($_SERVER['REQUEST_URI'], '/page/') === 0)
+    {
+        $url = sprintf('/%s%s',
+            pror_get_section()->slug,
+            $_SERVER['REQUEST_URI']
+        );
+        wp_redirect($url);
+        exit;
+    }
+
+
+    if (isset($query_vars['section']) && get_page_by_path($query_vars['section'])) {
+        $query_vars['pagename'] = $query_vars['section'];
+        unset($query_vars['section']);
+    }
+
+
     $p_url = parse_url($_SERVER['REQUEST_URI']);
     $p_url['query'] = isset($p_url['query']) ? $p_url['query'] : '';
     parse_str($p_url['query'], $q_url);
@@ -23,9 +41,11 @@ add_filter('request', function($query_vars) {
     }
 
     if (isset($_GET['f_switch_section'])) {
-        $section = pror_get_section_by_id((int)$_GET['f_switch_section']);
+        $section = pror_get_section_by_slug($_GET['f_switch_section']);
 
-        $p_url['path'] = str_replace("/{$query_vars['section']}/", "/{$section->slug}/", $p_url['path']);
+        if ($section) {
+            $p_url['path'] = str_replace("/{$query_vars['section']}/", "/{$section->slug}/", $p_url['path']);
+        }
         unset($q_url['f_switch_section']);
     }
 
@@ -40,24 +60,22 @@ add_filter('request', function($query_vars) {
     }
 
 
-    if ('/' === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
-        || strpos($_SERVER['REQUEST_URI'], '/page/') === 0)
-    {
-        $url = sprintf('/%s%s',
-            pror_get_section()->slug,
-            $_SERVER['REQUEST_URI']
-        );
-        wp_redirect($url);
-        exit;
-    }
-
-    if (isset($query_vars['section']) && get_page_by_path($query_vars['section'])) {
-        $query_vars['pagename'] = $query_vars['section'];
-        unset($query_vars['section']);
-    }
-
     return $query_vars;
 });
+
+function pror_set_section_cookie($section_slug) {
+    if ($section_slug != pror_get_section_cookie()) {
+        setcookie('pror_section', $section_slug, strtotime('+1 year'), '/', $_SERVER['HTTP_HOST'], false, true);
+    }
+}
+
+function pror_remove_section_cookie() {
+    setcookie('pror_section', '', strtotime( '-1 year' ), '/', $_SERVER['HTTP_HOST'], false, true);
+}
+
+function pror_get_section_cookie() {
+    return isset($_COOKIE, $_COOKIE['pror_section']) ? $_COOKIE['pror_section'] : null;
+}
 
 add_action('init', function() {
     add_rewrite_rule('([^/]+)/(.?.+?)(?:/([0-9]+))?/?$','index.php?section=$matches[1]&pagename=$matches[2]&page=$matches[3]','top');
