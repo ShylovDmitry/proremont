@@ -20,7 +20,12 @@ function pror_get_section() {
 }
 
 function pror_get_section_by_slug($slug) {
-    return get_term_by('slug', $slug, 'section');
+    $term = get_term_by('slug', $slug, 'section');
+
+    if ($term && get_field('hidden', $term) == false) {
+        return $term;
+    }
+    return false;
 }
 
 function pror_get_section_by_location_id($location_id) {
