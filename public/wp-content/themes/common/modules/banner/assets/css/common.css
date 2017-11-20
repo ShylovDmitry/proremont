@@ -1,4 +1,6 @@
 .g {
   display: table; }
+  .g.g-sidebar {
+    margin-bottom: 15px; }
 
 /*# sourceMappingURL=common.css.map */

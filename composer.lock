@@ -4,9 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f96cd934e0af0006b3d5f30294943671",
-    "content-hash": "b1d481bfb08de5f4069b12e86964d6bf",
+    "hash": "0ff5e5c096b0e0a463faf88a126fd70d",
+    "content-hash": "9a806b67598d19d6207dfb70bd5faffd",
     "packages": [
+        {
+            "name": "adrotate-pro",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "composer-artifacts/adrotate-pro-4.10.1.zip",
+                "reference": null,
+                "shasum": "f9a9aa3e5171f5e12b3f0ab228e17165234b64c4"
+            },
+            "type": "wordpress-plugin"
+        },
         {
             "name": "advanced-custom-fields-pro",
             "version": "5.5.3",
@@ -2097,26 +2108,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "wpackagist-plugin/adrotate",
-            "version": "4.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/adrotate/",
-                "reference": "tags/4.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/adrotate.4.7.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/adrotate/"
-        },
-        {
             "name": "wpackagist-plugin/advanced-cron-manager",
             "version": "2.3.0",
             "source": {
@@ -2338,7 +2329,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-bank",
-            "version": "3.0.29",
+            "version": "3.0.30",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
@@ -2346,7 +2337,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1509842766",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1510915432",
                 "reference": null,
                 "shasum": null
             },

@@ -2,4 +2,8 @@
 
 .g {
     display: table;
+
+    &.g-sidebar {
+        margin-bottom: 15px;
+    }
 }

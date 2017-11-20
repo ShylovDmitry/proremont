@@ -25,7 +25,7 @@ $query = new WP_Query(array(
         <div class="row">
             <?php $pos = 0; ?>
             <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-                <div class="col-6 col-md-3 my-2">
+                <div class="col-6 col-md-3 my-3">
                     <a href="<?php echo wp_get_attachment_image_url(get_the_ID(), 'full'); ?>">
                         <?php echo wp_get_attachment_image(get_the_ID(), 'pror-medium', false,  array('class' => 'img-fluid w-100')); ?>
                     </a>

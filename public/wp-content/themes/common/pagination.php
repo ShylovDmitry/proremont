@@ -7,11 +7,13 @@
             'next_text' => '&raquo;',
         ));
     ?>
-    <?php foreach ($links as $link): ?>
-        <?php $link = str_replace('page-numbers', 'page-numbers page-link', $link); ?>
-        <?php $active_class = strpos($link, ' current') !== false ? ' active' : ''; ?>
+    <?php if (is_array($links)): ?>
+        <?php foreach ($links as $link): ?>
+            <?php $link = str_replace('page-numbers', 'page-numbers page-link', $link); ?>
+            <?php $active_class = strpos($link, ' current') !== false ? ' active' : ''; ?>
 
-        <li class="page-item<?php echo $active_class; ?>"><?php echo $link; ?></li>
-    <?php endforeach; ?>
+            <li class="page-item<?php echo $active_class; ?>"><?php echo $link; ?></li>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </ul>
 </nav>
