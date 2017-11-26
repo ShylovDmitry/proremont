@@ -139,11 +139,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; }
   .footer strong {
     font-weight: 700; }
-  @media (min-width: 768px) {
-    .footer .copyright,
-    .footer .footer-menu {
-      position: absolute;
-      bottom: 0; } }
+  .footer .copyright {
+    color: #999;
+    font-size: 14px; }
+  .footer .footer-menu {
+    margin-top: 35px; }
 
 .page .content a {
   color: #FF8F12; }
