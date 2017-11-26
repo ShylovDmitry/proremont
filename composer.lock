@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0ff5e5c096b0e0a463faf88a126fd70d",
-    "content-hash": "9a806b67598d19d6207dfb70bd5faffd",
+    "hash": "641e18ce21151638c0896d695eca0a8c",
+    "content-hash": "0981f46f4fea33554920c8d005e9b021",
     "packages": [
         {
             "name": "adrotate-pro",
@@ -2129,15 +2129,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/1.2"
+                "reference": "tags/1.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2149,15 +2149,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-web-services",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
-                "reference": "tags/1.0.3"
+                "reference": "tags/1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2169,15 +2169,15 @@
         },
         {
             "name": "wpackagist-plugin/bnfw",
-            "version": "1.6.7",
+            "version": "1.6.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/bnfw/",
-                "reference": "tags/1.6.7"
+                "reference": "tags/1.6.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/bnfw.1.6.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/bnfw.1.6.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2209,15 +2209,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/4.0.2"
+                "reference": "tags/4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.4.0.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.4.0.3.zip",
                 "reference": null,
                 "shasum": null
             },

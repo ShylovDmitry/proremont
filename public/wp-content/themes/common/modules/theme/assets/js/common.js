@@ -3,6 +3,8 @@ jQuery(function ($) {
 
     $('.gallery-2columns-carousel').slickLightbox();
 
+    $("#side_banner").stick_in_parent({offset_top: 15});
+
     init();
 
 
