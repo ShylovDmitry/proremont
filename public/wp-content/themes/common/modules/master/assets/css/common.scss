@@ -121,8 +121,8 @@
             }
         }
     }
-}
 
+}
 
 .master-list-pro h3 {
     color: $color-orange;
@@ -133,6 +133,21 @@
 .master-list-simple h3 {
     padding-bottom: 5px;
     border-bottom: 1px solid $color-grey;
+}
+
+.masters-see-all {
+    font-size: 1.3rem;
+    background: $color-orange;
+    color: #fff;
+    padding: 8px 12px;
+    margin: 30px 0 10px;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover, &:focus {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 

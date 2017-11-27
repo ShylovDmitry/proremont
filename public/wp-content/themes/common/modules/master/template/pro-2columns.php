@@ -26,7 +26,7 @@ $query = new WP_Query(array(
     <div class="row">
         <?php $pos = 0; ?>
         <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-            <div class="col-12 col-md-6 my-2">
+            <div class="col-12 my-2">
                 <?php module_template('master/item'); ?>
             </div>
 
@@ -39,7 +39,7 @@ $query = new WP_Query(array(
     <?php
     $query = new WP_Query(array(
         'post_type' => 'master',
-        'posts_per_page' => 12,
+        'posts_per_page' => 8,
         'orderby' => 'rand',
         'tax_query' => array(
             array(
@@ -54,7 +54,6 @@ $query = new WP_Query(array(
             ),
         ),
         'custom_query' => 'with_logo',
-//        'meta_query' => array(array('key' => '_thumbnail_id')),
     ));
     ?>
     <div class="master-2columns">
@@ -76,3 +75,7 @@ $query = new WP_Query(array(
         </div>
     </div>
 <?php endif; ?>
+
+<div class="text-center">
+    <a href="<?php echo home_url(pror_get_section()->slug . '/catalog/'); ?>" class="masters-see-all">Смотреть всех мастеров</a>
+</div>
