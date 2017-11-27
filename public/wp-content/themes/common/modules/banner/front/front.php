@@ -38,7 +38,7 @@ add_filter('query', function($query) {
 
     if (strpos($query, " OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog") > 0) {
 
-        preg_match("/ `{$wpdb->prefix}adrotate_linkmeta`\.`group` = ad_catalog\(([^\)]+)\)/i", $query, $matches);
+        preg_match("/ `{$wpdb->prefix}adrotate_linkmeta`\.`group` = ad_catalog\(([^\)]*)\)/i", $query, $matches);
         if (isset($matches[1])) {
             $catalog = explode('|', $matches[1]);
             $group_ids = $wpdb->get_col(
@@ -46,19 +46,24 @@ add_filter('query', function($query) {
                     '"' . implode('", "', $catalog) . '"')
             );
 
-            if (!$group_ids) {
-                $group_ids = array('-1');
+            if ($group_ids) {
+                $group_ids_str = implode(',', $group_ids);
+                $query = preg_replace(
+                    "/ OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog\(([^\)]*)\)/i",
+                    " AND `pror_adrotate_linkmeta`.`group` IN ({$group_ids_str})",
+                    $query
+                );
+            } else {
+                $query = preg_replace(
+                    "/ OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog\(([^\)]*)\)/i",
+                    " ",
+                    $query
+                );
             }
 
-            $group_ids_str = implode(',', $group_ids);
             $query = preg_replace(
                 "/`wp_adrotate_linkmeta`[\s]+WHERE/i",
                 " `wp_adrotate_linkmeta`, `wp_adrotate_linkmeta` `pror_adrotate_linkmeta` WHERE `wp_adrotate`.`id` = `pror_adrotate_linkmeta`.`ad` AND ",
-                $query
-            );
-            $query = preg_replace(
-                "/ OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog\(([^\)]+)\)/i",
-                " AND `pror_adrotate_linkmeta`.`group` IN ({$group_ids_str})",
                 $query
             );
         }
