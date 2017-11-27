@@ -9,11 +9,11 @@ function pror_adrotate_group_by_name($name, $section, $catalog) {
 
     $section_name = sprintf('%s_%s', $name, $section);
     $group_id = $wpdb->get_var("SELECT id FROM `{$wpdb->prefix}adrotate_groups` WHERE `name` = '{$section_name}';");
+
     if ($group_id) {
         $catalog_str = implode('|', $catalog);
 
         $group_output = adrotate_group("$group_id,ad_catalog($catalog_str)");
-
         if (preg_replace('/<!--(.|\s)*?-->/', '', $group_output . $group_output) != '') {
             $group_output = str_replace("g g-", "g g-{$name} g-{$section_name} g-", $group_output);
             return $group_output;
@@ -90,7 +90,7 @@ function pror_banner_get_catalog() {
         return array_map(function($el) {
             return $el->slug;
         }, pror_get_master_catalogs($master->ID));
-    } else if (is_page('catalog')) {
+    } else {
         return get_terms(array(
             'parent' => 0,
             'hierarchical' => false,
@@ -99,6 +99,4 @@ function pror_banner_get_catalog() {
             'fields' => 'slugs',
         ));
     }
-
-    return array();
 }
