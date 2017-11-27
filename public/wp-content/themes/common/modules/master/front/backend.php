@@ -44,6 +44,10 @@ function pror_update_master_info($user_id) {
         return;
     }
 
+    $master_excerpt = get_field('master_excerpt', "user_{$user_id}");
+    $master_excerpt = preg_replace('/\s+/', ' ', $master_excerpt);
+    update_user_meta($user_id, 'master_excerpt', $master_excerpt);
+
     $master_post_id = pror_get_master_post_id($user_id, $user->data->user_login);
     if ($master_post_id) {
         $title = get_field('master_title', "user_{$user_id}");
@@ -52,7 +56,7 @@ function pror_update_master_info($user_id) {
             'ID' => $master_post_id,
             'post_title' => $title,
             'post_name' => sanitize_title(pror_master_rus2translit($title)),
-            'post_excerpt' => get_field('master_excerpt', "user_{$user_id}"),
+            'post_excerpt' => $master_excerpt,
             'post_content' => get_field('master_text', "user_{$user_id}"),
             'comment_status' => 'open',
         ));

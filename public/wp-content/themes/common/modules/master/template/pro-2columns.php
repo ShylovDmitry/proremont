@@ -67,7 +67,7 @@ $query = new WP_Query(array(
         <div class="row">
             <?php $pos = 0; ?>
             <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-                <div class="col-12 col-lg-6 my-2">
+                <div class="col-12 my-2">
                     <?php module_template('master/item'); ?>
                 </div>
 

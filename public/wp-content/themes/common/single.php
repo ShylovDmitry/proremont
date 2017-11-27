@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php module_template('banner/top'); ?>
-
 <?php module_template('breadcrumbs/breadcrumbs'); ?>
 
 <div class="container">
