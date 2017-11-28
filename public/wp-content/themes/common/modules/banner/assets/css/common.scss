@@ -2,8 +2,10 @@
 
 .g {
     display: table;
+    margin-bottom: 15px;
+    max-width: 300px;
 
-    .g-col {
-        margin-bottom: 15px;
+    img {
+        max-width: 100%;
     }
 }

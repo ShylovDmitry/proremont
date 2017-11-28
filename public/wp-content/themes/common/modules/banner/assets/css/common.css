@@ -1,6 +1,8 @@
 .g {
-  display: table; }
-  .g .g-col {
-    margin-bottom: 15px; }
+  display: table;
+  margin-bottom: 15px;
+  max-width: 300px; }
+  .g img {
+    max-width: 100%; }
 
 /*# sourceMappingURL=common.css.map */
