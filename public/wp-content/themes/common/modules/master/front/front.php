@@ -42,7 +42,7 @@ add_action('wpseo_register_extra_replacements', function() {
 
 
 add_filter('excerpt_length', function( $length ) {
-    return 250;
+    return 20;
 }, 999);
 
 function pror_get_master_types() {
