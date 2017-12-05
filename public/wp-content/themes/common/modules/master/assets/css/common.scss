@@ -3,8 +3,11 @@
 
 .master-list {
     .nav {
-        padding-left: 30px;
         border-bottom: 25px solid #3C3C3D;
+
+        @media (min-width: $screen-width-lg) {
+            padding-left: 30px;
+        }
 
         .nav-link {
             margin: 0 5px;

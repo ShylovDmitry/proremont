@@ -129,7 +129,12 @@
     }
 
     .catalog-subs {
-        padding-left: 75px;
+        padding-top: 25px;
+
+        @media (min-width: $screen-width-sm) {
+            padding-top: 0;
+            padding-left: 75px;
+        }
 
         a::before {
             content: '';

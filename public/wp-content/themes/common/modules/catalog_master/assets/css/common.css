@@ -86,7 +86,11 @@
 .catalog-master-page a, .catalog-master-page a:hover {
   color: #3C3C3D; }
 .catalog-master-page .catalog-subs {
-  padding-left: 75px; }
+  padding-top: 25px; }
+  @media (min-width: 576px) {
+    .catalog-master-page .catalog-subs {
+      padding-top: 0;
+      padding-left: 75px; } }
   .catalog-master-page .catalog-subs a::before {
     content: '';
     display: inline-block;

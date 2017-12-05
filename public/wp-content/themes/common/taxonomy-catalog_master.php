@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col col-md-12 col-ad">
+        <div class="col col-sidebar-ad">
             <?php module_template('banner/sidebar'); ?>
         </div>
 

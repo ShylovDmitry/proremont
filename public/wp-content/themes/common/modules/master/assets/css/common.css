@@ -1,6 +1,8 @@
 .master-list .nav {
-  padding-left: 30px;
   border-bottom: 25px solid #3C3C3D; }
+  @media (min-width: 992px) {
+    .master-list .nav {
+      width: 600px; } }
   .master-list .nav .nav-link {
     margin: 0 5px;
     color: #3C3C3D;

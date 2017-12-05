@@ -2,13 +2,9 @@
     <div class="container pt-4">
         <div class="row">
 
-            <div class="col-md-4">
-                <p>
-                    <strong>Служба поддержки:</strong>
-                </p>
-                <p>
-                    <a href="mailto:ProRemont.Catalog@gmail.com">ProRemont.Catalog@gmail.com</a>
-                </p>
+            <div class="col-12 col-sm-6 col-md-4 order-3 order-sm-2 order-md-1">
+                <p><strong>Служба поддержки:</strong></p>
+                <p><a href="mailto:ProRemont.Catalog@gmail.com">ProRemont.Catalog@gmail.com</a></p>
 
                 <?php wp_nav_menu(array(
                         'container' => false,
@@ -16,19 +12,15 @@
                         'theme_location' => 'footer_main',
                 )); ?>
 
-                <p class="copyright">
-                    2017 &copy; ProRemont. Все права защищены.
-                </p>
+                <p class="copyright">2017 &copy; ProRemont. Все права защищены.</p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-12 col-md-4 order-1 order-md-2 mb-5 mb-md-0">
                 <div class="fb-page" data-href="https://www.facebook.com/ProRemont.Catalog/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ProRemont.Catalog/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ProRemont.Catalog/">ProRemont - Каталог Мастеров с рейтингами со всей Украины.</a></blockquote></div>
             </div>
 
-            <div class="col-md-4">
-                <p>
-                    <strong>Для мастеров:</strong>
-                </p>
+            <div class="col-12 col-sm-6 col-md-4 order-2 order-sm-3 mb-5 mb-sm-0">
+                <p><strong>Для мастеров:</strong></p>
                 <?php module_template('master/menu/advanced'); ?>
 
                 <?php wp_nav_menu(array(
