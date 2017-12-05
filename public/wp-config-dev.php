@@ -4,8 +4,8 @@ if (!isset($_SERVER['HTTP_HOST'])) {
     $_SERVER['HTTP_HOST'] = 'dev.proremont.co';
 }
 
-defined('WP_DEBUG') or define('WP_DEBUG', false);
-defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', false);
+defined('WP_DEBUG') or define('WP_DEBUG', true);
+defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', true);
 
 define('WP_ENV', 'dev');
 
