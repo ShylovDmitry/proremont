@@ -43,6 +43,7 @@ rsync -avz --delete --no-perms -O -e "ssh -i \"$SERVER_KEY\"" \
     --exclude='/public/wp-content/ewww/*' \
     --exclude='/public/wp-content/banners/*' \
     --exclude='/public/wp-content/uploads/*' \
+    --exclude='/public/wp-content/wp-rocket-config/*' \
     . $SERVER_HOST:$DEPLOY_FOLDER
 
 
