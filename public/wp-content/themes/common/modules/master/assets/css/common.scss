@@ -168,9 +168,14 @@
 .master-detailed {
     .header {
         .left {
-            float: left;
+            text-align: center;
             position: relative;
             margin-right: 15px;
+
+            @media (min-width: $screen-width-md) {
+                float: left;
+                text-align: left;
+            }
         }
 
         img {
@@ -232,7 +237,12 @@
         }
 
         ul {
-            margin-left: 75px;
+            padding-top: 25px;
+
+            @media (min-width: $screen-width-sm) {
+                padding-top: 0;
+                margin-left: 75px;
+            }
 
             a::before {
                 content: '';
@@ -379,11 +389,22 @@
         }
 
         .comment-form {
-            padding-left: 110px;
+            @media (min-width: $screen-width-sm) {
+                padding-left: 110px;
+            }
+
+            .logged-in-as {
+                padding-left: 110px;
+                height: 110px;
+            }
 
             .avatar {
                 margin-left: -110px;
                 position: absolute;
+            }
+
+            textarea {
+                border: 1px solid $color-orange;
             }
         }
     }
