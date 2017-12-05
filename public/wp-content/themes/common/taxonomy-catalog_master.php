@@ -4,23 +4,25 @@
 
 <div class="container">
     <div class="row master-list-block">
-        <div class="col colored-box py-3">
-            <div class="switch-catalog-block">
-                <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> Другие услуги</a>
+        <div class="col">
+            <div class="colored-box p-3">
+                <div class="switch-catalog-block">
+                    <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> Другие услуги</a>
 
-                <div class="collapse" id="catalogBlock">
-                    <?php module_template('catalog_master/3columns'); ?>
+                    <div class="collapse" id="catalogBlock">
+                        <?php module_template('catalog_master/3columns'); ?>
+                    </div>
+
+                    <hr />
                 </div>
 
-                <hr />
+                <h1 class="mb-3"><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
+
+                <?php module_template('master/list'); ?>
             </div>
-
-            <h1 class="mb-3"><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
-
-            <?php module_template('master/list'); ?>
         </div>
 
-        <div class="col col-md-12 col-300">
+        <div class="col col-md-12 col-ad">
             <?php module_template('banner/sidebar'); ?>
         </div>
 

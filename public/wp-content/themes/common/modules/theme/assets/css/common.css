@@ -4,12 +4,13 @@ body {
   font-weight: 300;
   font-family: "Roboto", sans-serif; }
 
-.col-300 {
+.col-ad {
   padding-top: 20px; }
   @media (min-width: 992px) {
-    .col-300 {
+    .col-ad {
       padding-top: 0;
-      flex-basis: 330px; } }
+      padding-left: 0;
+      flex-basis: 315px; } }
 
 .colored-box {
   box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5);

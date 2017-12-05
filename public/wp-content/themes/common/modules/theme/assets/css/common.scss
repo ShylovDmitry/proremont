@@ -7,12 +7,17 @@ body {
     font-family: $primary-font;
 }
 
-.col-300 {
+.container {
+
+}
+
+.col-ad {
     padding-top: 20px;
 
     @media (min-width: $screen-width-lg) {
         padding-top: 0;
-        flex-basis: 330px;
+        padding-left: 0;
+        flex-basis: 315px;
     }
 }
 

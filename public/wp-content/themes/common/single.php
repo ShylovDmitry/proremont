@@ -4,11 +4,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col colored-box py-3">
-            <?php module_template('master/detailed'); ?>
+        <div class="col">
+            <div class="colored-box p-3">
+                <?php module_template('master/detailed'); ?>
+            </div>
         </div>
 
-        <div class="col col-md-12 col-300">
+        <div class="col col-md-12 col-ad">
             <?php module_template('banner/sidebar'); ?>
         </div>
     </div>

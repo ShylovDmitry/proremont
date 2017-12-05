@@ -42,21 +42,27 @@
 
         <div class="col">
             <div class="row">
-                <div class="col-12 colored-box mb-3 py-3">
-                    <?php module_template('catalog_master/3columns'); ?>
+                <div class="col-12 mb-3">
+                    <div class="colored-box p-3">
+                        <?php module_template('catalog_master/3columns'); ?>
+                    </div>
                 </div>
 
-                <div class="col-12 colored-box mb-3 py-3">
-                    <?php module_template('master/pro-2columns'); ?>
+                <div class="col-12 mb-3">
+                    <div class="colored-box p-3">
+                        <?php module_template('master/pro-2columns'); ?>
+                    </div>
                 </div>
 
-                <div class="col-12 colored-box py-3">
-                    <?php module_template('theme/gallery-2columns'); ?>
+                <div class="col-12">
+                    <div class="colored-box p-3">
+                        <?php module_template('theme/gallery-2columns'); ?>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col col-md-12 col-300">
+        <div class="col col-md-12 col-ad">
             <?php module_template('banner/sidebar'); ?>
         </div>
 
