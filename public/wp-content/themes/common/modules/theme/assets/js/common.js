@@ -8,6 +8,10 @@ jQuery(function ($) {
         $(document.body).trigger("sticky_kit:recalc");
     });
 
+    setTimeout(function() {
+        $(document.body).trigger("sticky_kit:recalc");
+    }, 4000);
+
     init();
 
 
