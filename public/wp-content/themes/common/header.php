@@ -18,6 +18,6 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php module_template('google/gtm_body'); ?>
+<?php do_action('pror_body_before'); ?>
 
 <?php module_template('theme/header'); ?>
