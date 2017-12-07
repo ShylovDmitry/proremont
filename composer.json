@@ -28,8 +28,8 @@
     "comment-rating-field-pro-plugin": "3.4.9",
     "adrotate-pro": "4.10.1",
     "wpackagist-plugin/contact-form-7": "4.9.1",
-    "wpackagist-plugin/ewww-image-optimizer": "4.0.3",
-    "wpackagist-plugin/wordpress-seo": "5.8",
+    "wpackagist-plugin/ewww-image-optimizer": "4.0.4",
+    "wpackagist-plugin/wordpress-seo": "5.9.1",
     "wpackagist-plugin/regenerate-thumbnails": "2.3.1",
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.5",
     "wpackagist-plugin/oa-social-login": "5.4.0",
@@ -38,8 +38,8 @@
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.2.1",
     "wpackagist-plugin/amazon-web-services": "1.0.4",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
-    "wpackagist-plugin/wp-mail-bank": "3.0.30",
-    "wpackagist-plugin/bnfw": "1.6.8"
+    "wpackagist-plugin/wp-mail-bank": "3.0.31",
+    "wpackagist-plugin/bnfw": "1.6.9"
   },
   "extra": {
     "installer-paths": {
