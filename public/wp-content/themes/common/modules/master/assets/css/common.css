@@ -83,6 +83,11 @@
   padding-bottom: 5px;
   border-bottom: 1px solid #BDBDBD; }
 
+.master-banner {
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+
 .masters-see-all {
   font-size: 1.3rem;
   background: #FF8F12;

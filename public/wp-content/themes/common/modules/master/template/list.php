@@ -62,8 +62,15 @@
         <div class="master-list-simple">
             <h3 class="mt-5 mb-4"><?php echo $master_types[$selected_type]; ?></h3>
 
-            <?php while (have_posts()): the_post(); ?>
+            <?php $pos = 0; ?>
+            <?php while (have_posts()): the_post(); $pos++; ?>
                 <?php module_template('master/item'); ?>
+
+                <?php if ($pos == 2): ?>
+                    <div class="master-banner d-lg-none">
+                        <?php module_template('banner/mobile'); ?>
+                    </div>
+                <?php endif; ?>
             <?php endwhile; ?>
 
             <?php get_template_part('pagination'); ?>
