@@ -3,17 +3,8 @@ jQuery(function ($) {
 
     $('.gallery-2columns-carousel').slickLightbox();
 
-    $("#side_banner").stick_in_parent({offset_top: 15});
-    $("#side_banner img").on("load", function() {
-        $(document.body).trigger("sticky_kit:recalc");
-    });
-
-    setTimeout(function() {
-        $(document.body).trigger("sticky_kit:recalc");
-    }, 4000);
 
     init();
-
 
     function init() {
         var section = pror_get_section_slug();

@@ -7,20 +7,6 @@ body {
     font-family: $primary-font;
 }
 
-.col-sidebar-ad {
-    padding-top: 20px;
-    display: none;
-
-    @media (min-width: $screen-width-lg) {
-        display: block;
-
-        padding-top: 0;
-        padding-left: 0;
-        flex-basis: 315px;
-        max-width: 315px;
-    }
-}
-
 .colored-box {
     box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
     background: #fff;

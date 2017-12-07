@@ -16,9 +16,7 @@
             </div>
         </div>
 
-        <div class="col col-sidebar-ad">
-            <?php module_template('banner/sidebar'); ?>
-        </div>
+        <?php module_template('banner/sidebar-col'); ?>
     </div>
 </div>
 

@@ -4,6 +4,10 @@ add_action('wp_print_styles', function () {
     wp_enqueue_style('banner-common', get_module_css('banner/common.css'), array(), dlv_get_ver());
 });
 
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script('banner-common', get_module_js('banner/common.js'), array('jquery', 'sticky-kit'), dlv_get_ver(), true);
+});
+
 function pror_adrotate_group_by_name($name, $section, $catalog) {
     global $wpdb;
 

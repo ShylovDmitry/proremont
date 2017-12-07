@@ -1,3 +1,8 @@
+html .col-banner-sidebar {
+  padding-left: 0;
+  flex-basis: 315px;
+  max-width: 315px; }
+
 .g {
   display: table;
   margin-bottom: 15px;
