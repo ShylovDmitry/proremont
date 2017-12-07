@@ -26,7 +26,7 @@ $query = new WP_Query(array(
     <div class="row">
         <?php $pos = 0; ?>
         <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-            <div class="col-12 my-2">
+            <div class="col-12">
                 <?php module_template('master/item'); ?>
             </div>
 
@@ -58,19 +58,16 @@ $query = new WP_Query(array(
     ?>
     <div class="master-2columns">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mb-3">
                 <h3>Мастера</h3>
             </div>
         </div>
 
         <div class="row">
-            <?php $pos = 0; ?>
-            <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-                <div class="col-12 my-2">
+            <?php while ($query->have_posts()): $query->the_post(); ?>
+                <div class="col-12">
                     <?php module_template('master/item'); ?>
                 </div>
-
-                <?php if ($pos % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
             <?php endwhile; ?>
         </div>
     </div>

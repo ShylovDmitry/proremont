@@ -50,8 +50,6 @@
             <?php $pos = 0; ?>
             <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
                 <?php module_template('master/item'); ?>
-
-                <hr class="my-4" />
             <?php endwhile; ?>
         </div>
     <?php endif; ?>
@@ -66,8 +64,6 @@
 
             <?php while (have_posts()): the_post(); ?>
                 <?php module_template('master/item'); ?>
-
-                <hr class="my-4" />
             <?php endwhile; ?>
 
             <?php get_template_part('pagination'); ?>
