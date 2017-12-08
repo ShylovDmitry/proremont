@@ -43,6 +43,11 @@
         <?php endif; ?>
     </div>
 
+    <div class="d-lg-none">
+        <?php module_template('banner/mobile'); ?>
+    </div>
+
+
     <div class="catalog">
         <h4>Услуги</h4>
 

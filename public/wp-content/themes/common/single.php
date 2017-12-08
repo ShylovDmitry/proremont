@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <?php module_template('banner/sidebar'); ?>
+        <?php module_template('banner/sidebar-col'); ?>
     </div>
 </div>
 

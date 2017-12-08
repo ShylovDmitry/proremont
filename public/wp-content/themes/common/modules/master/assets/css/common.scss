@@ -242,7 +242,7 @@
         }
 
         ul {
-            padding-top: 25px;
+            padding-top: 15px;
 
             @media (min-width: $screen-width-sm) {
                 padding-top: 0;
@@ -283,10 +283,10 @@
         padding: 10px 30px;
 
         @media (min-width: $screen-width-lg) {
-            width: 600px;
+            width: 583px;
         }
         @media (min-width: $screen-width-xl) {
-            width: 780px
+            width: 763px;
         }
     }
 

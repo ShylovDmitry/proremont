@@ -149,7 +149,7 @@
 .master-detailed .catalog a, .master-detailed .catalog a:hover {
   color: #3C3C3D; }
 .master-detailed .catalog ul {
-  padding-top: 25px; }
+  padding-top: 15px; }
   @media (min-width: 576px) {
     .master-detailed .catalog ul {
       padding-top: 0;
@@ -178,10 +178,10 @@
   padding: 10px 30px; }
   @media (min-width: 992px) {
     .master-detailed .gallery-wrapper {
-      width: 600px; } }
+      width: 583px; } }
   @media (min-width: 1200px) {
     .master-detailed .gallery-wrapper {
-      width: 780px; } }
+      width: 763px; } }
 .master-detailed .gallery .slick-slide {
   padding: 0 5px; }
   .master-detailed .gallery .slick-slide img {
