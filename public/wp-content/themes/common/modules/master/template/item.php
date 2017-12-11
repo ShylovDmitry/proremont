@@ -21,7 +21,7 @@
             <h5 class="mt-0 mb-1">
                 <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
                 <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
-                    <span class="oi oi-circle-check is-confirmed"></span>
+                    <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
                 <?php endif; ?>
             </h5>
             <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
