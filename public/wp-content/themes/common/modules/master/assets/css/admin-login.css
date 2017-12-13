@@ -1,10 +1,10 @@
 body.login {
-  background: #3c3c3b; }
+  background: #121313; }
   body.login #login {
     padding-top: 30px; }
   body.login h1 a {
     width: 100%;
-    background: url("../img/proremont-co-logo-white.png") no-repeat center center;
+    background: url("../../../theme/assets/img/proremont-co-logo-white.png") no-repeat center center;
     background-size: contain; }
   body.login #backtoblog a,
   body.login #nav a {
