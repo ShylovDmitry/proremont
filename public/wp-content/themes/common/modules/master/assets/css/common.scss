@@ -355,7 +355,8 @@
             float: right;
 
             a {
-                color: #3C3C3D;
+                font-size: .85rem;
+                color: $color-light;
             }
         }
         .rating-container {
@@ -363,8 +364,7 @@
             margin-top: 10px;
         }
         .crfp-rating-breakdown {
-
-
+            font-size: .85rem;
             @media (min-width: $screen-width-md) {
                 float: left;
                 width: 33%;
