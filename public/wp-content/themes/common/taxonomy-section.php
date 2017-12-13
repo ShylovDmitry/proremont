@@ -7,11 +7,11 @@
 
         <div class="row">
             <div class="col-3 find-master">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Ищу специалиста</a>
+                <a class="btn btn-primary btn-lg" href="<?php echo pror_get_catalog_link(); ?>" role="button">Ищу специалиста</a>
                 <div class="help">Каталог №1 в Украине</div>
             </div>
             <div class="col-3 iam-master">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Я исполнитель</a>
+                <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
                 <div class="help">Бесплатное размешенее</div>
             </div>
         </div>

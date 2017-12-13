@@ -74,5 +74,5 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <div class="text-center">
-    <a href="<?php echo home_url(pror_get_section()->slug . '/catalog/'); ?>" class="masters-see-all">Смотреть всех мастеров</a>
+    <a href="<?php echo pror_get_catalog_link(); ?>" class="masters-see-all">Смотреть всех мастеров</a>
 </div>
