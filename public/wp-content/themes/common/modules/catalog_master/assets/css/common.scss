@@ -15,11 +15,11 @@
 
 .catalog-mater-3col {
     a, a:hover {
-        color: #3C3C3D;
+        color: $color-dark;
     }
 
     hr {
-        border-color: $color-grey;
+        border-color: $color-light;
     }
 
     .catalog-title {
@@ -35,14 +35,16 @@
         }
         .text {
             padding-left: 10px;
-            text-decoration: underline;
+            span {
+                text-decoration: underline;
+            }
         }
         &.active, a:hover {
             .text span {
-                background: rgba(255, 139, 17, 0.51);
+                color: $color-primary;
             }
             svg {
-                fill: $color-orange;
+                fill: $color-primary;
             }
         }
     }
@@ -50,7 +52,7 @@
 
     .item {
         background: #F9F9F9;
-        border: 1px solid $color-grey;
+        border: 1px solid $color-light;
         position: relative;
 
         .all {
@@ -58,7 +60,7 @@
         }
 
         .help-text {
-            color: #a5a5a5;
+            color: $color-light;
         }
 
         a::before {
@@ -67,7 +69,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: $color-orange;
+            background-color: $color-primary;
             margin-right: 10px;
         }
 
@@ -89,7 +91,7 @@
                 margin-left: -7px;
                 border-top-width: 0;
                 top: -11px;
-                border-bottom-color: $color-grey;
+                border-bottom-color: $color-light;
             }
 
             &::after {
@@ -124,10 +126,6 @@
 }
 
 .catalog-master-page {
-    a, a:hover {
-        color: #3C3C3D;
-    }
-
     .catalog-subs {
         padding-top: 15px;
 
@@ -142,7 +140,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: $color-orange;
+            background-color: $color-primary;
             margin-right: 10px;
         }
     }

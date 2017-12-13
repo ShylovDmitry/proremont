@@ -4,7 +4,7 @@
     <?php foreach(array_chunk(pror_get_catalog(), 3) as $catalogs_part): ?>
         <div class="row mt-3 mb-1">
             <?php foreach($catalogs_part as $main_catalog): ?>
-                <div class="col-sm-4">
+                <div class="col-6 col-md-4">
                     <div class="catalog-title">
                         <a class="pror-collapse" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu">
                             <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
@@ -24,9 +24,8 @@
 
                 <div class="row">
                     <?php foreach (pror_get_catalog($main_catalog->term_id) as $pos => $sub_catalog): ?>
-                        <div class="col-6 col-lg-4 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a></div>
-                        <?php if (($pos+1) % 2 == 0): ?><div class="w-100 d-lg-none"></div><?php endif; ?>
-                        <?php if (($pos+1) % 3 == 0): ?><div class="w-100 d-none d-lg-block"></div><?php endif; ?>
+                        <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>"><?php echo $sub_catalog->name; ?></a></div>
+                        <?php if (($pos+1) % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             </div>

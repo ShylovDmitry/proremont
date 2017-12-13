@@ -1,10 +1,20 @@
 <?php get_header(); ?>
 
 <div class="jumbotron jumbotron-fluid header">
-    <div class="container text-center frontpage-title">
-        <h2><?php echo pror_get_section()->name; ?></h2>
-        <h1>Каталог <span>Мастеров</span></h1>
-        <p class="lead mt-3">Найдите своего мастера быстро и легко по <strong>отзывам</strong> и <strong>портфолио</strong></p>
+    <div class="container frontpage-title">
+        <h1>КАТАЛОГ МАСТЕРОВ</h1>
+        <p class="lead mt-1">Найдите своего мастера по <strong>отзывам</strong></p>
+
+        <div class="row">
+            <div class="col-3 find-master">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Ищу специалиста</a>
+                <div class="help">Каталог №1 в Украине</div>
+            </div>
+            <div class="col-3 iam-master">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Я исполнитель</a>
+                <div class="help">Бесплатное размешенее</div>
+            </div>
+        </div>
     </div>
 </div>
 

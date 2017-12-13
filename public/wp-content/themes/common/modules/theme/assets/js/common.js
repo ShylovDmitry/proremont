@@ -61,7 +61,7 @@ jQuery(function ($) {
     function pror_update_section_list(section) {
         var container = $('.navbar .section-list');
         var el = $('.dropdown-item[data-slug=' + section + ']', container);
-        $('.dropdown-toggle', container).html(el.html());
+        $('.dropdown-toggle span', container).html(el.html());
         $('.dropdown-toggle', container).data('slug', section);
         container.removeClass('invisible');
 

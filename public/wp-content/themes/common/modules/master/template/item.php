@@ -25,7 +25,7 @@
                 <?php endif; ?>
             </h5>
             <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
-            <div class="location"><?php echo pror_get_master_location(); ?></div>
+            <div class="location"><?php echo end(pror_get_master_location()); ?></div>
             <div class="catalog"><?php module_template('catalog_master/icons'); ?></div>
         </div>
     </div>

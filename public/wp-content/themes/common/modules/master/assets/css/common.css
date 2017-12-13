@@ -1,26 +1,26 @@
 .master-list .nav {
-  border-bottom: 25px solid #3C3C3D; }
+  border-bottom: 25px solid #424949; }
   @media (min-width: 992px) {
     .master-list .nav {
       padding-left: 30px; } }
   .master-list .nav .nav-link {
     margin: 0 5px;
-    color: #3C3C3D;
+    color: #424949;
     border-radius: 0;
     border: 0;
-    border-top: 5px solid #FF8F12; }
+    border-top: 5px solid #E67E22; }
     .master-list .nav .nav-link:hover {
-      border-color: #FF8F12;
+      border-color: #E67E22;
       background: #f5f7f9; }
     .master-list .nav .nav-link.active {
       color: #fff;
-      background-color: #3C3C3D;
+      background-color: #424949;
       border-radius: 0;
       border: 0;
-      border-top: 5px solid #3C3C3D; }
+      border-top: 5px solid #424949; }
 
 .master-item {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #e8ebeb;
   padding-bottom: 20px;
   margin-bottom: 20px; }
   .master-item .left {
@@ -34,7 +34,10 @@
     margin-left: 5px;
     color: #30F447; }
   .master-item .type {
-    font-weight: bolder; }
+    font-weight: bolder;
+    font-size: .85rem; }
+  .master-item .location {
+    font-size: .85rem; }
   .master-item .excerpt {
     font-family: "Open Sans", sans-serif;
     word-break: break-word;
@@ -44,16 +47,16 @@
       margin-top: -10px;
       margin-bottom: 15px; }
       .master-item .excerpt .more a {
-        color: #FF8F12;
+        color: #E67E22;
         font-size: .85rem; }
   .master-item img {
-    border: 1px solid #BDBDBD;
+    border: 1px solid #B2BABB;
     width: 100px;
     height: auto; }
   .master-item .media-body .rating {
     float: right; }
   .master-item.master-item-pro a, .master-item.master-item-pro a:hover {
-    color: #FF8F12; }
+    color: #E67E22; }
   .master-item.master-item-pro .left > a {
     position: relative; }
     .master-item.master-item-pro .left > a::after {
@@ -66,11 +69,11 @@
 
 .master-2columns h3 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD; }
+  border-bottom: 1px solid #e8ebeb; }
 .master-2columns.pro h3 {
-  color: #FF8F12; }
+  color: #E67E22; }
 .master-2columns.pro .master-item {
-  border-color: #FF8F12; }
+  border-color: #E67E22; }
 .master-2columns.pro .left > a {
   position: relative; }
   .master-2columns.pro .left > a::after {
@@ -82,22 +85,22 @@
     left: 0; }
 
 .master-list-pro h3 {
-  color: #FF8F12;
+  color: #E67E22;
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD; }
+  border-bottom: 1px solid #e8ebeb; }
 
 .master-list-simple h3 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD; }
+  border-bottom: 1px solid #e8ebeb; }
 
 .master-banner {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #e8ebeb;
   padding-bottom: 20px;
   margin-bottom: 20px; }
 
 .masters-see-all {
   font-size: 1.3rem;
-  background: #FF8F12;
+  background: #E67E22;
   color: #fff;
   padding: 8px 12px;
   margin: 10px 0 10px;
@@ -110,8 +113,8 @@
 .pagination .page-link, .pagination .page-link:hover {
   color: #3e3e3e; }
 .pagination .page-item.active .page-link {
-  background-color: #FF8F12;
-  border-color: #FF8F12; }
+  background-color: #E67E22;
+  border-color: #E67E22; }
 
 .master-detailed .header .left {
   text-align: center;
@@ -124,11 +127,11 @@
 .master-detailed .header img {
   width: 175px;
   height: 175px;
-  border: 1px solid #BDBDBD; }
+  border: 1px solid #B2BABB; }
 .master-detailed .header .master-phones {
   font-weight: bolder; }
   .master-detailed .header .master-phones .show-number {
-    color: #FF8F12; }
+    color: #E67E22; }
 .master-detailed .header .phone a {
   color: #3C3C3D; }
 .master-detailed.pro .header .left::after {
@@ -145,12 +148,15 @@
     margin-left: 5px;
     color: #30F447; }
 .master-detailed.pro h1 {
-  color: #FF8F12; }
+  color: #E67E22; }
 .master-detailed .type {
-  font-weight: bolder; }
+  font-weight: bolder;
+  font-size: .85rem; }
+.master-detailed .location {
+  font-size: .85rem; }
 .master-detailed h4 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #e8ebeb;
   margin-bottom: 20px;
   margin-top: 30px; }
 .master-detailed .catalog a, .master-detailed .catalog a:hover {
@@ -167,7 +173,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #FF8F12;
+    background-color: #E67E22;
     margin-right: 10px; }
 .master-detailed .catalog-title {
   display: table; }
@@ -181,7 +187,7 @@
     padding-left: 10px; }
 .master-detailed .gallery-wrapper {
   width: 100%;
-  background: #3C3C3D;
+  background: #B2BABB;
   padding: 10px 30px; }
   @media (min-width: 992px) {
     .master-detailed .gallery-wrapper {
@@ -234,7 +240,7 @@
   .master-detailed .comment-respond .comment-reply-title {
     margin: -15px -15px 15px;
     padding: 12px 15px;
-    background: #FF8F12;
+    background: #E67E22;
     color: #fff;
     font-size: 16px;
     font-weight: 300; }
@@ -242,11 +248,14 @@
     text-align: right; }
   .master-detailed .comment-respond .submit {
     border: 0;
-    background: #FF8F12;
+    background: #E67E22;
     color: #fff;
     padding: 7px 15px;
     font-weight: 300;
-    margin-left: 20px; }
+    margin-left: 20px;
+    cursor: pointer; }
+    .master-detailed .comment-respond .submit:hover {
+      background-color: #bf6516; }
   .master-detailed .comment-respond strong {
     font-size: 16px; }
   .master-detailed .comment-respond .crfp-field label {
@@ -260,12 +269,15 @@
     .master-detailed .comment-respond .comment-form {
       padding-left: 110px; } }
   .master-detailed .comment-respond .comment-form .logged-in-as {
-    padding-left: 110px;
-    height: 110px; }
+    height: 110px;
+    padding-left: 110px; }
+    @media (min-width: 576px) {
+      .master-detailed .comment-respond .comment-form .logged-in-as {
+        padding-left: 0; } }
   .master-detailed .comment-respond .comment-form .avatar {
     margin-left: -110px;
     position: absolute; }
   .master-detailed .comment-respond .comment-form textarea {
-    border: 1px solid #FF8F12; }
+    border: 1px solid #E67E22; }
 
 /*# sourceMappingURL=common.css.map */

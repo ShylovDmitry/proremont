@@ -8,14 +8,14 @@ body.login {
     background-size: contain; }
   body.login #backtoblog a,
   body.login #nav a {
-    color: #FF8F12; }
+    color: #E67E22; }
     body.login #backtoblog a:hover,
     body.login #nav a:hover {
-      color: #FF8F12; }
+      color: #E67E22; }
   body.login .message {
-    border-color: #FF8F12; }
+    border-color: #E67E22; }
   body.login .button-primary {
-    background: #FF8F12;
+    background: #E67E22;
     border: 0;
     text-shadow: none;
     box-shadow: none; }

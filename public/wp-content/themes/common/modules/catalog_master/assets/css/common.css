@@ -9,9 +9,9 @@
     text-align: center; }
 
 .catalog-mater-3col a, .catalog-mater-3col a:hover {
-  color: #3C3C3D; }
+  color: #424949; }
 .catalog-mater-3col hr {
-  border-color: #BDBDBD; }
+  border-color: #B2BABB; }
 .catalog-mater-3col .catalog-title {
   display: table; }
   .catalog-mater-3col .catalog-title .icon, .catalog-mater-3col .catalog-title .text {
@@ -21,27 +21,28 @@
     font-size: 16px;
     font-weight: bolder; }
   .catalog-mater-3col .catalog-title .text {
-    padding-left: 10px;
-    text-decoration: underline; }
+    padding-left: 10px; }
+    .catalog-mater-3col .catalog-title .text span {
+      text-decoration: underline; }
   .catalog-mater-3col .catalog-title.active .text span, .catalog-mater-3col .catalog-title a:hover .text span {
-    background: rgba(255, 139, 17, 0.51); }
+    color: #E67E22; }
   .catalog-mater-3col .catalog-title.active svg, .catalog-mater-3col .catalog-title a:hover svg {
-    fill: #FF8F12; }
+    fill: #E67E22; }
 .catalog-mater-3col .item {
   background: #F9F9F9;
-  border: 1px solid #BDBDBD;
+  border: 1px solid #B2BABB;
   position: relative; }
   .catalog-mater-3col .item .all {
     text-decoration: underline; }
   .catalog-mater-3col .item .help-text {
-    color: #a5a5a5; }
+    color: #B2BABB; }
   .catalog-mater-3col .item a::before {
     content: '';
     display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #FF8F12;
+    background-color: #E67E22;
     margin-right: 10px; }
   .catalog-mater-3col .item .arrow {
     position: absolute;
@@ -60,7 +61,7 @@
       margin-left: -7px;
       border-top-width: 0;
       top: -11px;
-      border-bottom-color: #BDBDBD; }
+      border-bottom-color: #B2BABB; }
     .catalog-mater-3col .item .arrow::after {
       content: "";
       position: absolute;
@@ -83,8 +84,6 @@
       .catalog-mater-3col .item.item-3 .arrow {
         left: 667px; } }
 
-.catalog-master-page a, .catalog-master-page a:hover {
-  color: #3C3C3D; }
 .catalog-master-page .catalog-subs {
   padding-top: 15px; }
   @media (min-width: 576px) {
@@ -97,7 +96,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #FF8F12;
+    background-color: #E67E22;
     margin-right: 10px; }
 .catalog-master-page .catalog-title a {
   display: table;

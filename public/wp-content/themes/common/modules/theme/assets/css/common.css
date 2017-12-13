@@ -1,6 +1,6 @@
 body {
-  background: #eee;
-  color: #3e3e3e;
+  background: #e8ebeb;
+  color: #424949;
   font-weight: 300;
   font-family: "Roboto", sans-serif; }
 
@@ -14,34 +14,55 @@ body {
       margin-left: 0;
       margin-right: 0; } }
 
+a, a:hover {
+  color: #424949; }
+
 .jumbotron.header {
-  background: transparent no-repeat center 80%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/home.jpg");
+  background: transparent no-repeat center center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/home2.jpg");
   background-size: cover;
   color: #fff;
   padding: 100px 0 20px; }
   @media (min-width: 768px) {
     .jumbotron.header {
-      padding: 200px 0 40px; } }
+      padding: 100px 0 80px; } }
   .jumbotron.header h1 {
     margin-top: 20px;
-    font-weight: 100;
-    font-size: 2.5rem; }
+    font-weight: 600;
+    font-size: 2rem; }
     @media (min-width: 576px) {
       .jumbotron.header h1 {
-        font-size: 3.5rem; } }
+        font-size: 2.5rem; } }
     @media (min-width: 768px) {
       .jumbotron.header h1 {
-        font-size: 4.5rem; } }
-    .jumbotron.header h1 span {
-      font-weight: 900; }
-  .jumbotron.header h2 {
-    font-size: 1.5rem; }
-    @media (min-width: 768px) {
-      .jumbotron.header h2 {
-        font-size: 2rem; } }
+        font-size: 3.5rem; } }
   .jumbotron.header .lead {
-    font-weight: 200; }
+    font-weight: 200;
+    margin-bottom: 50px; }
+  .jumbotron.header .help {
+    font-family: "Open Sans", sans-serif;
+    margin-top: 5px;
+    font-size: .75rem; }
+  .jumbotron.header .find-master a {
+    background-color: #E67E22;
+    border-color: #E67E22;
+    color: #121313;
+    text-transform: uppercase;
+    font-size: .85rem;
+    font-weight: 600;
+    padding: 20px 40px; }
+    .jumbotron.header .find-master a:hover {
+      background-color: #bf6516; }
+  .jumbotron.header .iam-master a {
+    background-color: #e8ebeb;
+    border-color: #e8ebeb;
+    color: #121313;
+    text-transform: uppercase;
+    font-size: .85rem;
+    font-weight: 600;
+    padding: 20px 40px; }
+    .jumbotron.header .iam-master a:hover {
+      background-color: #cdd2d3; }
 
 .frontpage-cons {
   font-weight: 200;
@@ -80,7 +101,7 @@ body {
         line-height: 1.3; } }
   .frontpage-cons strong {
     display: block;
-    color: #FF8F12;
+    color: #E67E22;
     font-weight: 900;
     font-size: 1rem; }
     @media (min-width: 576px) {
@@ -95,17 +116,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900; }
 
 .navbar {
-  background: #3c3c3b;
+  background: #424949;
   color: #fff;
   padding: 0; }
   .navbar .navbar-brand {
     width: 100%;
     margin-right: 0;
     text-align: center; }
-    @media (min-width: 576px) {
+    @media (min-width: 992px) {
       .navbar .navbar-brand {
         width: auto;
-        margin-right: 1rem; } }
+        margin-right: 100px; } }
   .navbar a {
     color: #fff; }
   .navbar .navbar-nav {
@@ -122,7 +143,10 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: 0; } }
     .navbar .dropdown > a {
       white-space: nowrap;
-      font-size: 20px; }
+      font-size: .85rem;
+      font-weight: 600; }
+      .navbar .dropdown > a span {
+        border-bottom: 2px dotted #fff; }
     .navbar .dropdown .dropdown-menu {
       width: 100%; }
       @media (min-width: 576px) {
@@ -145,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 35px; }
 
 .page .content a {
-  color: #FF8F12; }
+  color: #E67E22; }
 .page .content strong {
   font-weight: 900; }
 .page .content .alignleft {
@@ -164,13 +188,15 @@ h1, h2, h3, h4, h5, h6 {
 .switch-catalog-block {
   font-family: 'Roboto', sans-serif; }
   .switch-catalog-block .button {
-    background: #FF8F12;
+    background: #E67E22;
     color: #fff;
     padding: 8px 12px;
     text-decoration: none; }
     .switch-catalog-block .button span {
       font-size: 12px;
       margin-right: 5px; }
+    .switch-catalog-block .button:hover {
+      background-color: #bf6516; }
   .switch-catalog-block #catalogMenu {
     margin-top: 35px; }
 
@@ -178,21 +204,21 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.1rem; }
 
 .page h1 {
-  color: #FF8F12;
+  color: #E67E22;
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #e8ebeb;
   margin-bottom: 20px; }
 
 .wpcf7-submit {
   border: 0;
-  background: #FF8F12;
+  background: #E67E22;
   color: #fff;
   padding: 6px 14px; }
 
 .gallery-2columns h3 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #BDBDBD; }
+  border-bottom: 1px solid #e8ebeb; }
 .gallery-2columns img {
-  border: 1px solid #BDBDBD; }
+  border: 1px solid #e8ebeb; }
 
 /*# sourceMappingURL=common.css.map */

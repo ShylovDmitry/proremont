@@ -22,8 +22,7 @@
             </h1>
 
             <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
-            <br />
-            <div class="location"><?php echo pror_get_master_location(); ?></div>
+            <div class="location"><?php echo end(pror_get_master_location()); ?></div>
             <br />
             <div class="phone">Телефон:
                 <?php module_template('master/master-phones'); ?>

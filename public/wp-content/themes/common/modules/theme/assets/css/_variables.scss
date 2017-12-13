@@ -7,5 +7,12 @@ $primary-font: 'Roboto', sans-serif;
 $secondary-font: 'Open Sans', sans-serif;
 $default-font: Arial;
 
-$color-orange: #FF8F12;
-$color-grey: #BDBDBD;
+
+$color-primary: #E67E22;
+$color-primary-lighter: lighten($color-primary, 20);
+
+$color-light: #B2BABB;
+$color-lighter: lighten($color-light, 20);
+
+$color-dark: #424949;
+$color-darker: darken($color-dark, 20);

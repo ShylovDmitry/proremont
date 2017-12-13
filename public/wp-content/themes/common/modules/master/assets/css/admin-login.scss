@@ -15,19 +15,19 @@ body.login {
 
     #backtoblog a,
     #nav a {
-        color: $color-orange;
+        color: $color-primary;
 
         &:hover {
-            color: $color-orange;
+            color: $color-primary;
         }
     }
 
     .message {
-        border-color: $color-orange;
+        border-color: $color-primary;
     }
 
     .button-primary {
-        background: $color-orange;
+        background: $color-primary;
         border: 0;
         text-shadow: none;
         box-shadow: none;
