@@ -187,6 +187,10 @@ h1, h2, h3, h4, h5, h6 {
     }
     .navbar-nav {
         margin-left: 20px;
+
+        .nav-link {
+            color: $color-light;
+        }
     }
     .navbar-toggler {
         margin-right: 10px;
@@ -220,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             & a {
-                color: #212529;
+                color: $color-dark;
             }
         }
 
@@ -229,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .footer {
-    background: #3c3c3b;
+    background: $color-dark;
     color: #fff;
 
     a {
@@ -241,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .copyright {
-        color: #999;
+        color: $color-light;
         font-size: 14px;
     }
     .footer-menu {
@@ -280,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .switch-catalog-block {
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
 
     .button {
         background: $color-primary;

@@ -44,10 +44,6 @@
         position: relative;
         margin-right: 15px;
     }
-    
-    a, a:hover {
-        color: #3C3C3D;
-    }
 
     h5 .is-confirmed {
         font-size: 14px;
@@ -212,7 +208,7 @@
         }
 
         .phone a {
-            color: #3C3C3D;
+            color: $color-dark;
         }
     }
     &.pro .header .left::after {
@@ -259,7 +255,7 @@
 
     .catalog {
         a, a:hover {
-            color: #3C3C3D;
+            color: $color-dark;
         }
 
         ul {
@@ -416,7 +412,7 @@
             width: 100%;
         }
         .cancel-form {
-            color: #3C3C3D;
+            color: $color-dark;
         }
 
         .comment-form {
