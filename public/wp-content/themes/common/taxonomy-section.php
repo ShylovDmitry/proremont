@@ -6,11 +6,11 @@
         <p class="lead mt-1">Найдите своего мастера по <strong>отзывам</strong></p>
 
         <div class="row">
-            <div class="col-3 find-master">
+            <div class="col-12 col-md-6 col-lg-3 find-master">
                 <a class="btn btn-primary btn-lg" href="<?php echo pror_get_catalog_link(); ?>" role="button">Ищу специалиста</a>
                 <div class="help">Каталог №1 в Украине</div>
             </div>
-            <div class="col-3 iam-master">
+            <div class="col-12 col-md-6 col-lg-3 iam-master">
                 <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
                 <div class="help">Бесплатное размешенее</div>
             </div>

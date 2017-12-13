@@ -30,16 +30,17 @@ a, a:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/home2.jpg');
     background-size: cover;
     color: #fff;
-    padding: 100px 0 20px;
+    padding: 80px 0 50px;
+    text-align: center;
 
     @media (min-width: $screen-width-md) {
         padding: 100px 0 80px;
+        text-align: inherit;
     }
 
     h1 {
-        margin-top: 20px;
         font-weight: 600;
-        font-size: 2rem;
+        font-size: 1.9rem;
 
         @media (min-width: $screen-width-sm) {
             font-size: 2.5rem;
@@ -78,6 +79,12 @@ a, a:hover {
     }
 
     .iam-master {
+        margin-top: 40px;
+
+        @media (min-width: $screen-width-md) {
+            margin-top: 0;
+        }
+
         a {
             background-color: $color-lighter;
             border-color: $color-lighter;

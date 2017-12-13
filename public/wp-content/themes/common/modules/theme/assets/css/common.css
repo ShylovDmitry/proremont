@@ -22,14 +22,15 @@ a, a:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../img/home2.jpg");
   background-size: cover;
   color: #fff;
-  padding: 100px 0 20px; }
+  padding: 80px 0 50px;
+  text-align: center; }
   @media (min-width: 768px) {
     .jumbotron.header {
-      padding: 100px 0 80px; } }
+      padding: 100px 0 80px;
+      text-align: inherit; } }
   .jumbotron.header h1 {
-    margin-top: 20px;
     font-weight: 600;
-    font-size: 2rem; }
+    font-size: 1.9rem; }
     @media (min-width: 576px) {
       .jumbotron.header h1 {
         font-size: 2.5rem; } }
@@ -53,16 +54,21 @@ a, a:hover {
     padding: 20px 40px; }
     .jumbotron.header .find-master a:hover {
       background-color: #bf6516; }
-  .jumbotron.header .iam-master a {
-    background-color: #e8ebeb;
-    border-color: #e8ebeb;
-    color: #121313;
-    text-transform: uppercase;
-    font-size: .85rem;
-    font-weight: 600;
-    padding: 20px 40px; }
-    .jumbotron.header .iam-master a:hover {
-      background-color: #cdd2d3; }
+  .jumbotron.header .iam-master {
+    margin-top: 40px; }
+    @media (min-width: 768px) {
+      .jumbotron.header .iam-master {
+        margin-top: 0; } }
+    .jumbotron.header .iam-master a {
+      background-color: #e8ebeb;
+      border-color: #e8ebeb;
+      color: #121313;
+      text-transform: uppercase;
+      font-size: .85rem;
+      font-weight: 600;
+      padding: 20px 40px; }
+      .jumbotron.header .iam-master a:hover {
+        background-color: #cdd2d3; }
 
 .frontpage-cons {
   font-weight: 200;
