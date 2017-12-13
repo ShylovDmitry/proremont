@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af3b08f384098f22777ec854367a687c",
-    "content-hash": "e9c532e2180f153b71967c441ca51933",
+    "hash": "6be26a072cc314642f97d4e915bce57b",
+    "content-hash": "1a3ea628d5c50a96465faa73afff7def",
     "packages": [
         {
             "name": "adrotate-pro",
@@ -2286,15 +2286,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "5.9.2",
+            "version": "5.9.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/5.9.2"
+                "reference": "tags/5.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.9.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.9.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2326,7 +2326,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-bank",
-            "version": "3.0.31",
+            "version": "3.0.32",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
@@ -2334,7 +2334,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1512101921",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1513149634",
                 "reference": null,
                 "shasum": null
             },
