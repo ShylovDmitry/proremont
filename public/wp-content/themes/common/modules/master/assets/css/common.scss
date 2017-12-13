@@ -63,6 +63,17 @@
         font-family: $secondary-font;
         word-break: break-word;
         margin-bottom: -1rem;
+
+        .more {
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 15px;
+
+            a {
+                color: $color-orange;
+                font-size: .85rem;
+            }
+        }
     }
 
     img {

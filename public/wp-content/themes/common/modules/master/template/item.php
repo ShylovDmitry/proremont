@@ -31,5 +31,9 @@
     </div>
     <div class="excerpt">
         <?php the_excerpt(); ?>
+
+        <div class="more">
+            <a href="<?php echo esc_url( get_permalink() ); ?>">Переглянути &raquo;</a>
+        </div>
     </div>
 </div>
