@@ -35,10 +35,7 @@ a, a:hover {
       background-image: url("../img/home2_2.jpg"); } }
   .jumbotron.header h1 {
     font-weight: 600;
-    font-size: 1.9rem; }
-    @media (min-width: 576px) {
-      .jumbotron.header h1 {
-        font-size: 2.5rem; } }
+    font-size: 2.5rem; }
     @media (min-width: 768px) {
       .jumbotron.header h1 {
         font-size: 3.5rem; } }
@@ -76,7 +73,6 @@ a, a:hover {
         background-color: #cdd2d3; }
 
 .frontpage-cons {
-  font-weight: 200;
   display: table; }
   .frontpage-cons .item {
     display: flex;
@@ -109,6 +105,7 @@ a, a:hover {
     .frontpage-cons .circle svg {
       fill: #121313;
       height: 20px;
+      max-width: 100%;
       margin-bottom: 7px; }
       @media (min-width: 576px) {
         .frontpage-cons .circle svg {
@@ -170,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 0; } }
     .navbar .dropdown > a {
       white-space: nowrap;
-      font-size: .85rem;
+      font-size: 1.1rem;
       font-weight: 600; }
       .navbar .dropdown > a svg {
         vertical-align: middle;

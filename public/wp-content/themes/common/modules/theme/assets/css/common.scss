@@ -46,11 +46,7 @@ a, a:hover {
 
     h1 {
         font-weight: 600;
-        font-size: 1.9rem;
-
-        @media (min-width: $screen-width-sm) {
-            font-size: 2.5rem;
-        }
+        font-size: 2.5rem;
 
         @media (min-width: $screen-width-md) {
             font-size: 3.5rem;
@@ -110,7 +106,6 @@ a, a:hover {
 
 
 .frontpage-cons {
-    font-weight: 200;
     display: table;
 
     .item {
@@ -147,6 +142,7 @@ a, a:hover {
         svg {
             fill: $color-darker;
             height: 20px;
+            max-width: 100%;
             margin-bottom: 7px;
 
             @media (min-width: $screen-width-sm) {
@@ -230,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 
         & > a {
             white-space: nowrap;
-            font-size: .85rem;
+            font-size: 1.1rem;
             font-weight: 600;
 
             svg {
