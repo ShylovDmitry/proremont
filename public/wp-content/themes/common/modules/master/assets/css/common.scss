@@ -155,7 +155,7 @@
     margin-bottom: 20px;
 }
 
-.masters-see-all {
+.btn.masters-see-all {
     font-size: 1.3rem;
     background: $color-primary;
     color: #fff;
@@ -164,9 +164,9 @@
     text-decoration: none;
     display: inline-block;
 
-    &:hover, &:focus {
+    &:hover {
+        background-color: darken($color-primary, 10);
         color: #fff;
-        text-decoration: none;
     }
 }
 

@@ -27,7 +27,7 @@ a, a:hover {
 
 .jumbotron.header {
     background: transparent no-repeat center center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/home2.jpg');
+    background-image: url('../img/home2_7.jpg');
     background-size: cover;
     color: #fff;
     padding: 80px 0 50px;
@@ -36,6 +36,11 @@ a, a:hover {
     @media (min-width: $screen-width-md) {
         padding: 100px 0 80px;
         text-align: inherit;
+        background-image: url('../img/home2_1.jpg');
+    }
+
+    @media (min-width: $screen-width-lg) {
+        background-image: url('../img/home2_2.jpg');
     }
 
     h1 {
@@ -175,6 +180,8 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         margin-right: 0;
         text-align: center;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
 
         @media (min-width: $screen-width-lg) {
             width: auto;
@@ -194,16 +201,20 @@ h1, h2, h3, h4, h5, h6 {
     }
     .navbar-toggler {
         margin-right: 10px;
+        margin-bottom: 10px;
 
         @media (min-width: $screen-width-sm) {
             margin-right: 0;
+            margin-bottom: 0;
         }
     }
     .dropdown {
         margin-left: 10px;
+        margin-bottom: 10px;
 
         @media (min-width: $screen-width-sm) {
             margin-left: 0;
+            margin-bottom: 0;
         }
 
         & > a {

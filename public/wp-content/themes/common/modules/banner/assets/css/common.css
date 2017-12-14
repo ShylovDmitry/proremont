@@ -6,7 +6,8 @@ html .col-banner-sidebar {
 .g {
   display: table;
   margin-bottom: 15px;
-  max-width: 300px; }
+  max-width: 300px;
+  box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5); }
   .g img {
     max-width: 100%; }
 
