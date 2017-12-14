@@ -163,6 +163,9 @@ h1, h2, h3, h4, h5, h6 {
       white-space: nowrap;
       font-size: .85rem;
       font-weight: 600; }
+      .navbar .dropdown > a svg {
+        vertical-align: middle;
+        fill: #E67E22; }
       .navbar .dropdown > a span {
         border-bottom: 2px dotted #fff; }
     .navbar .dropdown .dropdown-menu {

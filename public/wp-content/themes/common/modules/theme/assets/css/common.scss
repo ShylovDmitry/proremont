@@ -222,6 +222,11 @@ h1, h2, h3, h4, h5, h6 {
             font-size: .85rem;
             font-weight: 600;
 
+            svg {
+                vertical-align: middle;
+                fill: $color-primary;
+            }
+
             span {
                 border-bottom: 2px dotted #fff;
             }

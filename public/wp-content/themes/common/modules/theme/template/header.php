@@ -6,7 +6,7 @@
 
         <div class="dropdown section-list invisible">
             <a class="nav-link dropdown-toggle" href="#" data-slug="<?php echo pror_get_section()->slug; ?>" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span><?php echo pror_get_section()->name; ?></span>
+                <?php module_svg('theme/ic_location_on_black_18px.svg'); ?> <span><?php echo pror_get_section()->name; ?></span>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
