@@ -18,11 +18,12 @@
     </div>
 </div>
 
-<div class="container mt-3 mb-4 frontpage-cons">
+<div class="container my-4 frontpage-cons">
     <div class="row">
         <div class="col-4 text-align">
             <div class="item">
                 <div class="circle">
+                    <?php module_svg('theme/icon_master.svg'); ?>
                     <strong>1 329</strong>
                     мастеров
                 </div>
@@ -31,6 +32,7 @@
         <div class="col-4 text-center">
             <div class="item">
                 <div class="circle">
+                    <?php module_svg('theme/icon_rating.svg'); ?>
                     <strong>рейтинг</strong>
                     и отзывы
                 </div>
@@ -39,6 +41,7 @@
         <div class="col-4 text-center">
             <div class="item">
                 <div class="circle">
+                    <?php module_svg('theme/icon_free.svg'); ?>
                     <strong>бесплатный</strong>
                     каталог
                 </div>

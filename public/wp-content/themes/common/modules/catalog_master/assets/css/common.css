@@ -24,6 +24,8 @@
     padding-left: 10px; }
     .catalog-mater-3col .catalog-title .text span {
       text-decoration: underline; }
+  .catalog-mater-3col .catalog-title svg {
+    fill: #424949; }
   .catalog-mater-3col .catalog-title.active .text span, .catalog-mater-3col .catalog-title a:hover .text span {
     color: #E67E22; }
   .catalog-mater-3col .catalog-title.active svg, .catalog-mater-3col .catalog-title a:hover svg {

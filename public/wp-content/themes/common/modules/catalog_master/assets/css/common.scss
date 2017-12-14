@@ -39,6 +39,11 @@
                 text-decoration: underline;
             }
         }
+
+        svg {
+            fill: $color-dark;
+        }
+
         &.active, a:hover {
             .text span {
                 color: $color-primary;
