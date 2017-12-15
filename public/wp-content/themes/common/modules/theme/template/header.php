@@ -37,11 +37,12 @@
 <!--                </div>-->
             </form>
 
-            <?php wp_nav_menu(array(
-                    'container' => false,
-                    'menu_class' => 'navbar-nav',
-                    'theme_location' => 'header_main',
-            )); ?>
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="btn find-master">Найти мастера</a>
+                    <a href="#" class="btn iam-master">Стать исполнителем</a>
+                </li>
+            </ul>
 
             <?php module_template('master/menu/top'); ?>
         </div>

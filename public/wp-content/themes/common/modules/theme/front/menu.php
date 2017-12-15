@@ -1,7 +1,6 @@
 <?php
 
 register_nav_menus(array(
-    'header_main' => 'Header Main',
     'header_dropdown' => 'Header Dropdown',
     'footer_main' => 'Footer Main',
     'footer_master' => 'Footer Master',

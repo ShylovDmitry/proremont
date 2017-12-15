@@ -148,9 +148,23 @@ h1, h2, h3, h4, h5, h6 {
   .navbar a {
     color: #fff; }
   .navbar .navbar-nav {
-    margin-left: 20px; }
-    .navbar .navbar-nav .nav-link {
-      color: #B2BABB; }
+    margin: 0 20px; }
+    .navbar .navbar-nav .find-master {
+      background-color: #E67E22;
+      color: #121313;
+      font-size: 1rem;
+      padding: 5px 15px;
+      margin: 10px 15px 10px 0; }
+      .navbar .navbar-nav .find-master:hover {
+        background-color: #bf6516; }
+    .navbar .navbar-nav .iam-master {
+      background-color: #B2BABB;
+      color: #121313;
+      font-size: 1rem;
+      padding: 5px 15px;
+      margin: 10px 0; }
+      .navbar .navbar-nav .iam-master:hover {
+        background-color: #97a2a3; }
   .navbar .navbar-toggler {
     margin-right: 10px;
     margin-bottom: 10px; }

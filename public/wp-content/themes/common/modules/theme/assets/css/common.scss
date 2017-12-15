@@ -200,10 +200,29 @@ h1, h2, h3, h4, h5, h6 {
         color: #fff;
     }
     .navbar-nav {
-        margin-left: 20px;
+        margin: 0 20px;
 
-        .nav-link {
-            color: $color-light;
+        .find-master {
+            background-color: $color-primary;
+            color: $color-darker;
+            font-size: 1rem;
+            padding: 5px 15px;
+            margin: 10px 15px 10px 0;
+
+            &:hover {
+                background-color: darken($color-primary, 10);
+            }
+        }
+        .iam-master {
+            background-color: $color-light;
+            color: $color-darker;
+            font-size: 1rem;
+            padding: 5px 15px;
+            margin: 10px 0;
+
+            &:hover {
+                background-color: darken($color-light, 10);
+            }
         }
     }
     .navbar-toggler {
