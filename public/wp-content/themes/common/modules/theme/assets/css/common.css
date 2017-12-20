@@ -18,8 +18,8 @@ a, a:hover {
   color: #424949; }
 
 .jumbotron.header {
-  background: transparent no-repeat center center;
-  background-image: url("../img/home2_7.jpg");
+  background: transparent no-repeat center top;
+  background-image: url("../img/home3_7.jpg");
   background-size: cover;
   color: #fff;
   padding: 80px 0 50px;
@@ -29,10 +29,10 @@ a, a:hover {
     .jumbotron.header {
       padding: 100px 0 80px;
       text-align: inherit;
-      background-image: url("../img/home2_1.jpg"); } }
+      background-image: url("../img/home3_1.jpg"); } }
   @media (min-width: 992px) {
     .jumbotron.header {
-      background-image: url("../img/home2_2.jpg"); } }
+      background-image: url("../img/home3_2.jpg"); } }
   .jumbotron.header h1 {
     font-weight: 600;
     font-size: 2.5rem; }
@@ -158,13 +158,13 @@ h1, h2, h3, h4, h5, h6 {
       .navbar .navbar-nav .find-master:hover {
         background-color: #bf6516; }
     .navbar .navbar-nav .iam-master {
-      background-color: #B2BABB;
+      background-color: #e8ebeb;
       color: #121313;
       font-size: 1rem;
       padding: 5px 15px;
       margin: 10px 0; }
       .navbar .navbar-nav .iam-master:hover {
-        background-color: #97a2a3; }
+        background-color: #cdd2d3; }
   .navbar .navbar-toggler {
     margin-right: 10px;
     margin-bottom: 10px; }

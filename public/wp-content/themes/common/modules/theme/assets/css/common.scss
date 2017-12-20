@@ -26,8 +26,8 @@ a, a:hover {
 
 
 .jumbotron.header {
-    background: transparent no-repeat center center;
-    background-image: url('../img/home2_7.jpg');
+    background: transparent no-repeat center top;
+    background-image: url('../img/home3_7.jpg');
     background-size: cover;
     color: #fff;
     padding: 80px 0 50px;
@@ -37,11 +37,11 @@ a, a:hover {
     @media (min-width: $screen-width-md) {
         padding: 100px 0 80px;
         text-align: inherit;
-        background-image: url('../img/home2_1.jpg');
+        background-image: url('../img/home3_1.jpg');
     }
 
     @media (min-width: $screen-width-lg) {
-        background-image: url('../img/home2_2.jpg');
+        background-image: url('../img/home3_2.jpg');
     }
 
     h1 {
@@ -214,14 +214,14 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
         .iam-master {
-            background-color: $color-light;
+            background-color: $color-lighter;
             color: $color-darker;
             font-size: 1rem;
             padding: 5px 15px;
             margin: 10px 0;
 
             &:hover {
-                background-color: darken($color-light, 10);
+                background-color: darken($color-lighter, 10);
             }
         }
     }

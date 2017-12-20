@@ -39,8 +39,10 @@
 
             <ul class="navbar-nav">
                 <li>
-                    <a href="#" class="btn find-master">Найти мастера</a>
-                    <a href="#" class="btn iam-master">Стать исполнителем</a>
+                    <a href="<?php echo pror_get_catalog_link(); ?>" class="btn find-master">Найти мастера</a>
+                </li>
+                <li>
+                    <a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="btn iam-master">Стать исполнителем</a>
                 </li>
             </ul>
 
