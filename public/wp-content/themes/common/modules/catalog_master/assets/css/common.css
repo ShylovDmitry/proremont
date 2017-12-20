@@ -111,5 +111,7 @@
     font-size: 0; }
   .catalog-master-page .catalog-title a .link {
     padding-left: 10px; }
+  .catalog-master-page .catalog-title a svg {
+    fill: #424949; }
 
 /*# sourceMappingURL=common.css.map */

@@ -173,16 +173,19 @@
     border-radius: 50%;
     background-color: #E67E22;
     margin-right: 10px; }
-.master-detailed .catalog-title {
-  display: table; }
-  .master-detailed .catalog-title span {
+.master-detailed .catalog-title a {
+  display: table;
+  font-size: 16px;
+  font-weight: bolder; }
+  .master-detailed .catalog-title a span {
     display: table-cell;
     vertical-align: middle; }
-  .master-detailed .catalog-title a {
-    font-size: 16px;
-    font-weight: bolder; }
-  .master-detailed .catalog-title .link {
+  .master-detailed .catalog-title a .icon {
+    font-size: 0; }
+  .master-detailed .catalog-title a .link {
     padding-left: 10px; }
+  .master-detailed .catalog-title a svg {
+    fill: #424949; }
 .master-detailed .gallery-wrapper {
   width: 100%;
   background: #B2BABB;

@@ -278,19 +278,23 @@
         }
     }
 
-    .catalog-title {
+    .catalog-title a {
         display: table;
+        font-size: 16px;
+        font-weight: bolder;
 
         span {
             display: table-cell;
             vertical-align: middle;
         }
-        a {
-            font-size: 16px;
-            font-weight: bolder;
+        .icon {
+            font-size: 0;
         }
         .link {
             padding-left: 10px;
+        }
+        svg {
+            fill: $color-dark;
         }
     }
 

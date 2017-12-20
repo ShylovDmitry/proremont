@@ -54,8 +54,10 @@
             <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
                 <div class="col-md-6 mb-3">
                     <div class="catalog-title">
-                        <span class="icon"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
-                        <span class="link"><a href="<?php echo esc_url( get_term_link($parent) ); ?>"><?php echo $parent->name; ?></a></span>
+                        <a href="<?php echo esc_url( get_term_link($parent) ); ?>">
+                            <span class="icon"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
+                            <span class="link"><?php echo $parent->name; ?></span>
+                        </a>
                     </div>
 
                     <ul class="list-unstyled">
