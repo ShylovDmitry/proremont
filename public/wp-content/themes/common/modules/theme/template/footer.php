@@ -4,7 +4,7 @@
 
             <div class="col-12 col-sm-6 col-lg-4 order-3 order-sm-2 order-lg-1">
                 <p><strong>Служба поддержки:</strong></p>
-                <p><a href="mailto:ProRemont.Catalog@gmail.com">ProRemont.Catalog@gmail.com</a></p>
+                <p><a href="mailto:info@proremont.co">info@proremont.co</a></p>
 
                 <?php wp_nav_menu(array(
                         'container' => false,
@@ -12,7 +12,7 @@
                         'theme_location' => 'footer_main',
                 )); ?>
 
-                <p class="copyright">2017 &copy; ProRemont. Все права защищены.</p>
+                <p class="copyright"><?php echo date('Y'); ?> &copy; ProRemont. Все права защищены.</p>
             </div>
 
             <div class="col-12 col-lg-4 order-1 order-lg-2 mb-5 mb-lg-0">
