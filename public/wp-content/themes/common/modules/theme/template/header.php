@@ -38,12 +38,8 @@
             </form>
 
             <ul class="navbar-nav">
-                <li>
-                    <a href="<?php echo pror_get_catalog_link(); ?>" class="btn find-master">Найти мастера</a>
-                </li>
-                <li>
-                    <a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="btn iam-master">Стать исполнителем</a>
-                </li>
+                <li><a href="<?php echo pror_get_catalog_link(); ?>" class="btn find-master">Найти мастера</a></li>
+                <li><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="btn iam-master">Стать исполнителем</a></li>
             </ul>
 
             <?php module_template('master/menu/top'); ?>

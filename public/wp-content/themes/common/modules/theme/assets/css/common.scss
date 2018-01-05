@@ -291,7 +291,8 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 14px;
     }
     .footer-menu {
-        margin-top: 35px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 }
 
@@ -377,5 +378,19 @@ h1, h2, h3, h4, h5, h6 {
     }
     img {
         border: 1px solid $color-lighter;
+    }
+}
+
+.footer .social-icons {
+    svg {
+        width: 36px;
+        height: 36px;
+        fill: $color-lighter;
+    }
+
+    a:hover {
+        svg {
+            fill: $color-light;
+        }
     }
 }

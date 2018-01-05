@@ -3,7 +3,13 @@
         <div class="row">
 
             <div class="col-12 col-sm-6 col-lg-4 order-3 order-sm-2 order-lg-1">
-                <p><strong>Служба поддержки:</strong></p>
+                <ul class="list-inline social-icons">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/ProRemont.Catalog/" target="_blank"><?php module_svg('theme/iconmonstr-facebook-3.svg'); ?></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/proremont.catalog/" target="_blank"><?php module_svg('theme/iconmonstr-instagram-3.svg'); ?></a></li>
+                    <li class="list-inline-item"><a href="https://plus.google.com/116406093379791925793" target="_blank"><?php module_svg('theme/iconmonstr-google-plus-3.svg'); ?></a></li>
+                    <li class="list-inline-item"><a href="https://vk.com/proremont.catalog" target="_blank"><?php module_svg('theme/iconmonstr-vk-3.svg'); ?></a></li>
+                </ul>
+
                 <p><a href="mailto:info@proremont.co">info@proremont.co</a></p>
 
                 <?php wp_nav_menu(array(
