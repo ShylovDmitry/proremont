@@ -101,6 +101,15 @@ a, a:hover {
             }
         }
     }
+
+    .reklama-link {
+        color: $color-light;
+        text-decoration: underline;
+
+        &:hover {
+            color: $color-lighter;
+        }
+    }
 }
 
 

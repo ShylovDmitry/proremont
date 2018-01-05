@@ -71,6 +71,11 @@ a, a:hover {
       padding: 20px 40px; }
       .jumbotron.header .iam-master a:hover {
         background-color: #cdd2d3; }
+  .jumbotron.header .reklama-link {
+    color: #B2BABB;
+    text-decoration: underline; }
+    .jumbotron.header .reklama-link:hover {
+      color: #e8ebeb; }
 
 .frontpage-cons {
   display: table; }

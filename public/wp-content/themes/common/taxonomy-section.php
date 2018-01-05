@@ -15,6 +15,12 @@
                 <div class="help">Бесплатное размешенее</div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12 mt-5">
+                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама</a>
+            </div>
+        </div>
     </div>
 </div>
 
