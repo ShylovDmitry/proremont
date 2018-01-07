@@ -39,7 +39,8 @@
     "wpackagist-plugin/amazon-web-services": "1.0.4",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
     "wpackagist-plugin/wp-mail-bank": "3.0.36",
-    "wpackagist-plugin/bnfw": "1.6.9"
+    "wpackagist-plugin/bnfw": "1.6.9",
+    "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2"
   },
   "extra": {
     "installer-paths": {
