@@ -63,9 +63,9 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp option update 
 ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp cache flush"
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp rocket preload"
 
-ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/*"
+ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/wp-rocket/*"
 
-#ssh -i "$SERVER_KEY" $SERVER_HOST "cp $DEPLOY_FOLDER/configs/supervisor/supervisord.conf /etc/supervisord.conf"
+ssh -i "$SERVER_KEY" $SERVER_HOST "cp /configs/supervisor/supervisord.conf /etc/supervisord.conf"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs $DEPLOY_FOLDER/config /config"
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs /config/php/php.ini /etc/php-5.6.ini"
