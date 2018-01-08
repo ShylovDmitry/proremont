@@ -19,6 +19,8 @@
                 <h1 class="mb-3"><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
 
                 <?php module_template('master/list'); ?>
+
+                <div class="term-description"><?php echo term_description(); ?></div>
             </div>
         </div>
 
