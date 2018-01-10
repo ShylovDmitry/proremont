@@ -2,12 +2,12 @@
     "name": "ProRemont",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=7kbEMaG3eg",
+            "src": "/wp-content/themes/common/modules/theme/assets/img/favicon/android-chrome-192x192.png?v=7kbEMaG3eg",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-256x256.png?v=7kbEMaG3eg",
+            "src": "/wp-content/themes/common/modules/theme/assets/img/favicon/android-chrome-256x256.png?v=7kbEMaG3eg",
             "sizes": "256x256",
             "type": "image/png"
         }
