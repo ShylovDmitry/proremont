@@ -275,4 +275,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer .social-icons a:hover svg {
   fill: #B2BABB; }
 
+.btn.btn-pror-primary,
+a.btn.btn-pror-primary {
+  background: #E67E22;
+  color: #fff; }
+
 /*# sourceMappingURL=common.css.map */
