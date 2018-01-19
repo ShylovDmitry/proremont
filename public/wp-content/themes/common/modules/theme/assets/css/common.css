@@ -73,7 +73,8 @@ a, a:hover {
         background-color: #cdd2d3; }
   .jumbotron.header .reklama-link {
     color: #B2BABB;
-    text-decoration: underline; }
+    text-decoration: none;
+    border-bottom: 1px dashed; }
     .jumbotron.header .reklama-link:hover {
       color: #e8ebeb; }
 

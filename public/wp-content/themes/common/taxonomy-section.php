@@ -18,7 +18,7 @@
 
         <div class="row">
             <div class="col-12 mt-5">
-                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама</a>
+                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама на сайте</a>
             </div>
         </div>
     </div>

@@ -104,7 +104,8 @@ a, a:hover {
 
     .reklama-link {
         color: $color-light;
-        text-decoration: underline;
+        text-decoration: none;
+        border-bottom: 1px dashed;
 
         &:hover {
             color: $color-lighter;
