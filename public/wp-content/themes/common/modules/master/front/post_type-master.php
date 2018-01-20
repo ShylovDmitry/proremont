@@ -11,7 +11,7 @@ add_action('init', function() {
         'public' => true,
         'rewrite' => array(
             'with_front' => false,
-            'slug' => '%section%/master',
+            'slug' => '%location%/master',
         ),
         'delete_with_user' => true,
         'supports' => array(
@@ -61,6 +61,6 @@ add_action('init', function() {
         'publicly_queryable' => false,
     ));
 
-    add_rewrite_rule('([^/]+)/master/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$','index.php?section=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
-    add_rewrite_rule('([^/]+)/master/([^/]+)/(feed|rdf|rss|rss2|atom)/?$','index.php?section=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
+    add_rewrite_rule('([^/]+)/master/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
+    add_rewrite_rule('([^/]+)/master/([^/]+)/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
 });
