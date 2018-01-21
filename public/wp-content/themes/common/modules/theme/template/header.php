@@ -15,10 +15,21 @@
                     $locations = get_nav_menu_locations();
                     $menu = wp_get_nav_menu_object( $locations['header_dropdown'] );
                     $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+
+                    $half = ceil(count($menuitems) / 2);
+                    $one = array_slice($menuitems, 0, $half);
+                    $two = array_slice($menuitems, $half);
                 ?>
-                <?php foreach ($menuitems as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                    <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
-                <?php endforeach; ?>
+                <div class="left">
+                    <?php foreach ($one as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="right">
+                    <?php foreach ($two as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
 

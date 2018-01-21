@@ -196,11 +196,16 @@ h1, h2, h3, h4, h5, h6 {
         border-bottom: 2px dotted #fff; }
     .navbar .dropdown .dropdown-menu {
       width: 100%; }
+      .navbar .dropdown .dropdown-menu .left, .navbar .dropdown .dropdown-menu .right {
+        width: 50%; }
+      .navbar .dropdown .dropdown-menu.show {
+        display: flex; }
       @media (min-width: 576px) {
         .navbar .dropdown .dropdown-menu {
           width: auto; } }
       .navbar .dropdown .dropdown-menu a {
-        color: #424949; }
+        color: #424949;
+        padding: .15rem 2rem; }
 
 .footer {
   background: #424949;

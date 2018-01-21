@@ -271,12 +271,21 @@ h1, h2, h3, h4, h5, h6 {
         .dropdown-menu {
             width: 100%;
 
+            .left, .right {
+                width: 50%;
+            }
+
+            &.show {
+                display: flex;
+            }
+
             @media (min-width: $screen-width-sm) {
                 width: auto;
             }
 
             & a {
                 color: $color-dark;
+                padding: .15rem 2rem;
             }
         }
 
