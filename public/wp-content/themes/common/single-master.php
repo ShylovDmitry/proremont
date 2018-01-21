@@ -6,10 +6,7 @@
     <div class="row">
         <div class="col">
             <div class="colored-box p-3">
-                <h1><?php the_title(); ?></h1>
-                <div><?php echo get_the_date(); ?></div>
-                <hr />
-                <?php the_content(); ?>
+                <?php module_template('master/detailed'); ?>
             </div>
         </div>
 
