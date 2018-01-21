@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6aabde827b27abe99c339b7c401a8797",
-    "content-hash": "82a4cd3d8dec735c9de9829faa3f107d",
+    "hash": "8ab03bd803f22a7a0b00520089beaf30",
+    "content-hash": "9f834efd2a2772d879d9a92a0d16f088",
     "packages": [
         {
             "name": "adrotate-pro",
@@ -2349,7 +2349,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-bank",
-            "version": "3.0.39",
+            "version": "3.0.40",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
@@ -2357,7 +2357,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1516362801",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1516434023",
                 "reference": null,
                 "shasum": null
             },
