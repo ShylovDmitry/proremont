@@ -155,8 +155,6 @@ function pror_get_master_catalogs($master_id = null) {
                 $sub_terms[$master_term->parent] = array();
             }
             $sub_terms[$master_term->parent][] = $master_term;
-        } else {
-            $sub_terms[$master_term->term_id] = array();
         }
     }
 
