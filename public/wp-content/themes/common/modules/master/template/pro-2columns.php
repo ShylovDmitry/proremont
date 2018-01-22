@@ -1,7 +1,10 @@
 <?php
-$query = new WP_Query(array(
+$number_of_masters = 12;
+$unique_ids = array();
+
+$pro_masters_query = new WP_Query(array(
     'post_type' => 'master',
-    'posts_per_page' => 12,
+    'posts_per_page' => $number_of_masters,
     'orderby' => 'rand',
     'author__in' => pror_get_query_pro_master_ids(),
     'tax_query' => array(
@@ -13,34 +16,20 @@ $query = new WP_Query(array(
         ),
     ),
 ));
-?>
+while ($pro_masters_query->have_posts()) {
+    $pro_masters_query->the_post();
+    $unique_ids[] = get_the_ID();
+}
 
-<?php if ($query->have_posts()): ?>
-<div class="master-2columns pro">
-    <div class="row">
-        <div class="col-12">
-            <h3>PRO мастера</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <?php $pos = 0; ?>
-        <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
-            <div class="col-12">
-                <?php module_template('master/item'); ?>
-            </div>
-
-            <?php if ($pos % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
-        <?php endwhile; ?>
-    </div>
-</div>
-<?php else: ?>
-
-    <?php
-    $query = new WP_Query(array(
+$rated_masters_query = null;
+if (count($unique_ids) < $number_of_masters) {
+    $rated_masters_query = new WP_Query(array(
+        'post__not_in' => $unique_ids,
         'post_type' => 'master',
-        'posts_per_page' => 8,
-        'orderby' => 'rand',
+        'posts_per_page' => $number_of_masters - count($unique_ids),
+        'meta_key' => 'pror-crfp-lower-bound',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
         'tax_query' => array(
             array(
                 'taxonomy' => 'catalog_master',
@@ -53,25 +42,72 @@ $query = new WP_Query(array(
                 'operator' => 'IN',
             ),
         ),
-        'custom_query' => 'with_logo',
     ));
-    ?>
-    <div class="master-2columns">
-        <div class="row">
-            <div class="col-12 mb-3">
-                <h3>Мастера</h3>
-            </div>
-        </div>
 
-        <div class="row">
-            <?php while ($query->have_posts()): $query->the_post(); ?>
+    while ($rated_masters_query->have_posts()) {
+        $rated_masters_query->the_post();
+        $unique_ids[] = get_the_ID();
+    }
+}
+
+$masters_query = null;
+if ($rated_masters_query) {
+    if (count($unique_ids) < $number_of_masters) {
+        $masters_query = new WP_Query(array(
+            'post__not_in' => $unique_ids,
+            'post_type' => 'master',
+            'posts_per_page' => $number_of_masters - count($unique_ids),
+            'orderby' => 'rand',
+            'order' => 'DESC',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'catalog_master',
+                    'operator' => 'EXISTS',
+                ),
+                array(
+                    'taxonomy' => 'location',
+                    'terms' => get_field('locations', pror_get_section()),
+                    'include_children' => false,
+                    'operator' => 'IN',
+                ),
+            ),
+            'custom_query' => 'with_logo',
+        ));
+    }
+}
+?>
+
+<div class="master-2columns">
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h3>Мастера</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <?php while ($pro_masters_query->have_posts()): $pro_masters_query->the_post(); ?>
+            <div class="col-12">
+                <?php module_template('master/item'); ?>
+            </div>
+        <?php endwhile; ?>
+
+        <?php if ($rated_masters_query): ?>
+            <?php while ($rated_masters_query->have_posts()): $rated_masters_query->the_post(); ?>
                 <div class="col-12">
                     <?php module_template('master/item'); ?>
                 </div>
             <?php endwhile; ?>
-        </div>
+        <?php endif; ?>
+
+        <?php if ($masters_query): ?>
+            <?php while ($masters_query->have_posts()): $masters_query->the_post(); ?>
+                <div class="col-12">
+                    <?php module_template('master/item'); ?>
+                </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
-<?php endif; ?>
+</div>
 
 <div class="text-center">
     <a href="<?php echo pror_get_catalog_link(); ?>" class="btn masters-see-all">Смотреть всех мастеров</a>
