@@ -1,7 +1,7 @@
 <div class="master-item<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> master-item-pro<?php endif; ?>">
     <div class="media mb-2">
         <div class="left">
-            <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
                 <?php if (has_post_thumbnail()): ?>
                     <?php the_post_thumbnail('pror-medium'); ?>
                 <?php else: ?>
@@ -19,7 +19,7 @@
             </div>
 
             <h5 class="mt-0 mb-1">
-                <a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a>
                 <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
                     <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
                 <?php endif; ?>
