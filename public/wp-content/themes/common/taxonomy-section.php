@@ -77,6 +77,12 @@
                     </div>
                 </div>
 
+                <div class="col-12 mb-3">
+                    <div class="colored-box p-3">
+                        <?php module_template('blog/latest-posts'); ?>
+                    </div>
+                </div>
+
                 <div class="col-12">
                     <div class="colored-box p-3">
                         <?php module_template('theme/gallery-2columns'); ?>

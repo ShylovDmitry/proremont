@@ -17,14 +17,14 @@ $query = new WP_Query(array(
 <div class="gallery-2columns">
     <div class="row">
         <div class="col-12">
-            <h3>Недавно добавленые фотографии</h3>
+            <h3 class="header-underlined">Недавно добавленые фотографии</h3>
         </div>
     </div>
 
     <div class="gallery-2columns-carousel">
         <div class="row">
             <?php $pos = 0; ?>
-            <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
+            <?php while ($query->have_posts()): $query->the_post(); $pos++; ?>
                 <div class="col-6 col-md-3 my-3">
                     <a href="<?php echo wp_get_attachment_image_url(get_the_ID(), 'full'); ?>">
                         <?php echo wp_get_attachment_image(get_the_ID(), 'pror-medium', false,  array('class' => 'img-fluid w-100')); ?>

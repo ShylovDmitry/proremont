@@ -47,8 +47,7 @@
         <div class="master-list-pro">
             <h3 class="mt-5 mb-4">PRO <?php echo $master_types[$selected_type]; ?></h3>
 
-            <?php $pos = 0; ?>
-            <?php while ($query->have_posts()): $query->the_post(); $pos++;?>
+            <?php while ($query->have_posts()): $query->the_post();?>
                 <?php module_template('master/item'); ?>
             <?php endwhile; ?>
         </div>
@@ -73,7 +72,7 @@
                 <?php endif; ?>
             <?php endwhile; ?>
 
-            <?php get_template_part('pagination'); ?>
+            <?php module_template('theme/pagination'); ?>
         </div>
     <?php else: ?>
         <i>Ничего не найдено. Проверьте этот раздел позже.</i>

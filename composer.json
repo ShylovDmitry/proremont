@@ -40,6 +40,7 @@
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
     "wpackagist-plugin/wp-mail-bank": "3.0.40",
     "wpackagist-plugin/bnfw": "1.6.9",
+    "wpackagist-plugin/social-sharing-icons": "2.4",
     "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2"
   },
   "extra": {

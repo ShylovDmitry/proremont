@@ -23,7 +23,7 @@ add_action('init', function() {
         ),
     ));
 
-    register_taxonomy('catalog_master', 'master', array(
+    register_taxonomy('catalog_master', array('master', 'post'), array(
         'labels' => array(
             'name' => __('Catalog'),
             'singular_name' => __('Catalog'),

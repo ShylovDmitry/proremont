@@ -5,11 +5,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="colored-box p-3">
-                <h1><?php the_title(); ?></h1>
-                <div><?php echo get_the_date(); ?></div>
-                <hr />
-                <?php the_content(); ?>
+            <div class="colored-box px-3 pb-3">
+                <?php module_template('blog/detailed'); ?>
+            </div>
+
+
+            <div class="colored-box mt-3 p-3">
+                <?php module_template('blog/related-posts', array('main_post_id' => get_the_ID())); ?>
             </div>
         </div>
 

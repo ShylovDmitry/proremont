@@ -80,7 +80,7 @@ if ($rated_masters_query) {
 <div class="master-2columns">
     <div class="row">
         <div class="col-12 mb-3">
-            <h3>Мастера</h3>
+            <h3 class="header-underlined">Мастера</h3>
         </div>
     </div>
 

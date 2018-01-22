@@ -94,6 +94,12 @@ function pror_banner_get_catalog() {
         return array_map(function($el) {
             return $el->slug;
         }, pror_get_master_catalogs($master->ID));
+    } else if (is_singular('post')) {
+        $post = get_queried_object();
+
+        return array_map(function($el) {
+            return $el->slug;
+        }, pror_get_master_catalogs($post->ID));
     } else {
         return get_terms(array(
             'parent' => 0,

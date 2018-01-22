@@ -316,6 +316,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page {
+    h1 {
+        color: $color-primary;
+        margin-bottom: 20px;
+    }
+
     .content {
         a {
             color: $color-primary;
@@ -375,14 +380,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.1rem;
 }
 
-
-.page h1 {
-    color: $color-primary;
-    padding-bottom: 5px;
-    border-bottom: 1px solid $color-lighter;
-    margin-bottom: 20px;
-}
-
 .wpcf7-submit {
     border: 0;
     background: $color-primary;
@@ -391,10 +388,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-2columns {
-    h3 {
-        padding-bottom: 5px;
-        border-bottom: 1px solid $color-lighter;
-    }
     img {
         border: 1px solid $color-lighter;
     }
@@ -419,4 +412,140 @@ h1, h2, h3, h4, h5, h6 {
 a.btn.btn-pror-primary {
     background: $color-primary;
     color: #fff;
+}
+
+.header-underlined {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e8ebeb;
+}
+
+.comments-area {
+    .comment {
+        overflow: hidden;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #dfdfdf;
+        margin-bottom: 20px;
+        min-height: 110px;
+
+        .fn {
+            font-size: 16px;
+        }
+        .says {
+            display: none;
+        }
+        article {
+            padding-left: 110px;
+        }
+        .comment-author {
+            float: left;
+
+            img {
+                margin-left: -110px;
+                position: absolute;
+            }
+        }
+        .comment-meta {
+            overflow: hidden;
+        }
+        .comment-metadata {
+            float: right;
+
+            a {
+                font-size: .75rem;
+                color: $color-light;
+            }
+        }
+        .rating-container {
+            float: none;
+            margin-top: 10px;
+        }
+        .crfp-rating-breakdown {
+            font-size: .85rem;
+
+            @media (min-width: $screen-width-md) {
+                float: left;
+                width: 33%;
+                clear: none;
+                margin-top: 0;
+            }
+        }
+    }
+
+
+    .comment-respond {
+        padding: 15px;
+        margin-top: 20px;
+        box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
+
+        .comment-reply-title {
+            margin: -15px -15px 15px;
+            padding: 12px 15px;
+            background: $color-primary;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .form-submit {
+            text-align: right;
+        }
+        .submit {
+            border: 0;
+            background: $color-primary;
+            color: #fff;
+            padding: 7px 15px;;
+            font-weight: 300;
+            margin-left: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($color-primary, 10);
+            }
+        }
+
+        strong {
+            font-size: 16px;
+        }
+        i {
+            font-size: .75rem;
+            a {
+                color: $color-primary;
+            }
+        }
+        .crfp-field label {
+            float: left;
+            width: 80px;
+        }
+        textarea {
+            width: 100%;
+        }
+        .cancel-form {
+            color: $color-dark;
+        }
+
+        .comment-form {
+            @media (min-width: $screen-width-sm) {
+                padding-left: 110px;
+            }
+
+            .logged-in-as {
+                height: 110px;
+                padding-left: 110px;
+
+                @media (min-width: $screen-width-sm) {
+                    height: 75px;
+                    padding-left: 0;
+                }
+            }
+
+            .avatar {
+                margin-left: -110px;
+                position: absolute;
+            }
+
+            textarea {
+                height: 100px;
+                border: 1px solid $color-primary;
+            }
+        }
+    }
 }

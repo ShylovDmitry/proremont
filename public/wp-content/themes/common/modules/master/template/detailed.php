@@ -32,7 +32,7 @@
     <div class="clearfix"></div>
 
     <div class="content">
-        <h4>О мастере</h4>
+        <h4 class="header-underlined">О мастере</h4>
         <?php if(get_the_content()): ?>
             <?php the_content(); ?>
         <?php elseif(get_the_excerpt()): ?>
@@ -48,7 +48,7 @@
 
 
     <div class="catalog">
-        <h4>Услуги</h4>
+        <h4 class="header-underlined">Услуги</h4>
 
         <div class="row">
             <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
@@ -75,7 +75,7 @@
     $images = get_field('master_gallery', "user_" . get_the_author_meta('ID'));
     if ($images): ?>
         <div class="gallery">
-            <h4>Галерея</h4>
+            <h4 class="header-underlined">Галерея</h4>
 
             <div class="gallery-wrapper">
                 <div class="gallery-carousel">
@@ -92,13 +92,13 @@
     <?php endif; ?>
 
     <div class="rating">
-        <h4>Оценки</h4>
+        <h4 class="header-underlined">Оценки</h4>
         <?php module_template('rating/breakdown'); ?>
         <div class="clearfix"></div>
     </div>
 
     <div class="content">
-        <h4>Отзывы</h4>
+        <h4 class="header-underlined">Отзывы</h4>
     <?php
         if ( comments_open() || get_comments_number() ) :
             comments_template();

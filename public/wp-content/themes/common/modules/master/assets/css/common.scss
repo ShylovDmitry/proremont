@@ -107,37 +107,6 @@
 }
 
 
-.master-2columns {
-    h3 {
-        padding-bottom: 5px;
-        border-bottom: 1px solid $color-lighter;
-    }
-
-    &.pro {
-        h3 {
-            color: $color-primary;
-        }
-
-        .master-item {
-            border-color: $color-primary;
-        }
-
-        .left > a {
-            position: relative;
-
-            &::after {
-                content: url('../img/pro-leaf.svg');
-                width: 35px;
-                height: 10px;
-                position: absolute;
-                top: 25px;
-                left: 0;
-            }
-        }
-    }
-
-}
-
 .master-list-pro h3 {
     color: $color-primary;
     padding-bottom: 5px;
@@ -246,8 +215,6 @@
     }
 
     h4 {
-        padding-bottom: 5px;
-        border-bottom: 1px solid $color-lighter;
         margin-bottom: 20px;
         margin-top: 30px;
     }
@@ -324,124 +291,4 @@
             color: #fff;
         }
     }
-
-    .comment {
-        overflow: hidden;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #dfdfdf;
-        margin-bottom: 20px;
-
-        .fn {
-            font-size: 16px;
-        }
-        .says {
-            display: none;
-        }
-        article {
-            padding-left: 110px;
-        }
-        .comment-author {
-            float: left;
-
-            img {
-                margin-left: -110px;
-                position: absolute;
-            }
-        }
-        .comment-meta {
-            overflow: hidden;
-        }
-        .comment-metadata {
-            float: right;
-
-            a {
-                font-size: .85rem;
-                color: $color-light;
-            }
-        }
-        .rating-container {
-            float: none;
-            margin-top: 10px;
-        }
-        .crfp-rating-breakdown {
-            font-size: .85rem;
-            @media (min-width: $screen-width-md) {
-                float: left;
-                width: 33%;
-                clear: none;
-                margin-top: 0;
-            }
-        }
-
-    }
-
-    .comment-respond {
-        padding: 15px;
-        margin-top: 20px;
-        box-shadow: 0 3px 5px 0 rgba(174,174,174,.5);
-
-        .comment-reply-title {
-            margin: -15px -15px 15px;
-            padding: 12px 15px;
-            background: $color-primary;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 300;
-        }
-        .form-submit {
-            text-align: right;
-        }
-        .submit {
-            border: 0;
-            background: $color-primary;
-            color: #fff;
-            padding: 7px 15px;;
-            font-weight: 300;
-            margin-left: 20px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: darken($color-primary, 10);
-            }
-        }
-
-        strong {
-            font-size: 16px;
-        }
-        .crfp-field label {
-            float: left;
-            width: 80px;
-        }
-        textarea {
-            width: 100%;
-        }
-        .cancel-form {
-            color: $color-dark;
-        }
-
-        .comment-form {
-            @media (min-width: $screen-width-sm) {
-                padding-left: 110px;
-            }
-
-            .logged-in-as {
-                height: 110px;
-                padding-left: 110px;
-
-                @media (min-width: $screen-width-sm) {
-                    padding-left: 0;
-                }
-            }
-
-            .avatar {
-                margin-left: -110px;
-                position: absolute;
-            }
-
-            textarea {
-                border: 1px solid $color-primary;
-            }
-        }
-    }
 }
-

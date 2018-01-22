@@ -1,0 +1,50 @@
+.blog article .post-image {
+  margin-left: -1rem !important;
+  margin-right: -1rem !important; }
+.blog article .post-date {
+  font-size: .85rem;
+  color: #B2BABB; }
+.blog article .post-more-link {
+  font-size: .85rem;
+  color: #E67E22; }
+
+.single article .post-image {
+  margin-left: -1rem !important;
+  margin-right: -1rem !important; }
+.single article .post-date {
+  font-size: .85rem;
+  color: #B2BABB; }
+.single article .oneall_sharing_icons {
+  display: flex;
+  justify-content: center; }
+.single article .post-catalogs {
+  font-size: .85rem; }
+  .single article .post-catalogs a {
+    color: #E67E22; }
+.single article .post-content a {
+  color: #E67E22; }
+.single article .post-content strong {
+  font-weight: 900; }
+.single article .post-content .alignleft {
+  float: left;
+  margin: 0 10px 10px 0; }
+.single article .post-content .alignright {
+  float: right;
+  margin: 0 0 10px 10px; }
+.single article .post-content .aligncenter {
+  display: block;
+  margin: 0 auto 10px; }
+.single article .post-content img {
+  max-width: 100%;
+  height: auto; }
+
+article.small-post .post-title {
+  margin-top: 15px; }
+article.small-post .post-date {
+  font-size: .85rem;
+  color: #B2BABB; }
+article.small-post .post-more-link {
+  font-size: .85rem;
+  color: #E67E22; }
+
+/*# sourceMappingURL=common.css.map */

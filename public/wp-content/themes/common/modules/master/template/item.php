@@ -33,7 +33,7 @@
         <?php the_excerpt(); ?>
 
         <div class="more">
-            <a href="<?php echo esc_url( get_permalink() ); ?>">Смотреть телефон &raquo;</a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">Смотреть телефон &raquo;</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,85 @@
+@import "../../../theme/assets/css/variables";
+
+.blog {
+    article {
+        .post-image {
+            margin-left: -1rem!important;
+            margin-right: -1rem!important;
+        }
+        .post-date {
+            font-size: .85rem;
+            color: $color-light;
+        }
+        .post-more-link {
+            font-size: .85rem;
+            color: $color-primary;
+        }
+    }
+}
+
+.single {
+    article {
+        .post-image {
+            margin-left: -1rem!important;
+            margin-right: -1rem!important;
+        }
+
+        .post-date {
+            font-size: .85rem;
+            color: $color-light;
+        }
+
+        .oneall_sharing_icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .post-catalogs {
+            font-size: .85rem;
+
+            a {
+                color: $color-primary;
+            }
+        }
+
+        .post-content {
+            a {
+                color: $color-primary;
+            }
+            strong {
+                font-weight: 900;
+            }
+            .alignleft {
+                float: left;
+                margin: 0 10px 10px 0;
+            }
+            .alignright {
+                float: right;
+                margin: 0 0 10px 10px;
+            }
+            .aligncenter {
+                display: block;
+                margin: 0 auto 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+article.small-post {
+    .post-title {
+        margin-top: 15px;
+    }
+
+    .post-date {
+        font-size: .85rem;
+        color: $color-light;
+    }
+    .post-more-link {
+        font-size: .85rem;
+        color: $color-primary;
+    }
+}
