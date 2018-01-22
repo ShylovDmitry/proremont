@@ -10,7 +10,10 @@
 
 .single article .post-image {
   margin-left: -1rem !important;
-  margin-right: -1rem !important; }
+  margin-right: -1rem !important;
+  text-align: center;
+  display: block;
+  background: #fff; }
 .single article .post-date {
   font-size: .85rem;
   color: #B2BABB; }
@@ -38,6 +41,10 @@
   max-width: 100%;
   height: auto; }
 
+article.small-post .post-img-link {
+  text-align: center;
+  display: block;
+  background: #e8ebeb; }
 article.small-post .post-title {
   margin-top: 15px; }
 article.small-post .post-date {

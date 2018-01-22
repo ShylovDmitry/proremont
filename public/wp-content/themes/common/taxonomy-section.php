@@ -78,9 +78,7 @@
                 </div>
 
                 <div class="col-12 mb-3">
-                    <div class="colored-box p-3">
-                        <?php module_template('blog/latest-posts'); ?>
-                    </div>
+                    <?php module_template('blog/latest-posts', array('container_class' => 'colored-box p-3')); ?>
                 </div>
 
                 <div class="col-12">
