@@ -12,7 +12,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3 iam-master">
                 <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
-                <div class="help">Бесплатное размещенее</div>
+                <div class="help">Бесплатное размещение</div>
             </div>
         </div>
 
