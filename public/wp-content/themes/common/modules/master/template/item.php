@@ -3,7 +3,9 @@
         <div class="left">
             <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
                 <?php if (has_post_thumbnail()): ?>
-                    <?php the_post_thumbnail('pror-medium'); ?>
+                    <?php the_post_thumbnail('pror-medium', array(
+                            'alt' => sprintf('%s - %s', end(pror_get_master_location()), get_the_title())
+                    )); ?>
                 <?php else: ?>
                     <img src="<?php module_img('master/no-avatar.png'); ?>" />
                 <?php endif; ?>
