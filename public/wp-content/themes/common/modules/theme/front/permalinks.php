@@ -96,7 +96,7 @@ add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
 }, 10, 4);
 
 add_action('wp', function() {
-    if (get_post_type() == 'master') {
+    if (!is_admin() && get_post_type() == 'master') {
         global $wp;
         $locations = get_the_terms(null, 'location');
         $parts = explode('/', $wp->request);
