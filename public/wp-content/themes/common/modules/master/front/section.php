@@ -1,22 +1,29 @@
 <?php
 
+global $global_section;
 function pror_get_section() {
+    global $global_section;
+
+    if ($global_section) {
+        return $global_section;
+    }
+
     $section = pror_get_section_by_slug(get_query_var('section'));
-    if ($section) {
-        return $section;
+    if (!$section) {
+
+        $section = pror_get_section_by_slug(pror_get_section_cookie());
+        if (!$section) {
+
+            $section = pror_get_section_by_slug(pror_detect_section_by_ip());
+            if ($section) {
+
+                $section = pror_get_section_by_slug('kiev');
+            }
+        }
     }
 
-    $section = pror_get_section_by_slug(pror_get_section_cookie());
-    if ($section) {
-        return $section;
-    }
-
-    $section = pror_get_section_by_slug(pror_detect_section_by_ip());
-    if ($section) {
-        return $section;
-    }
-
-    return pror_get_section_by_slug('kiev');
+    $global_section = $section;
+    return $section;
 }
 
 function pror_get_section_by_slug($slug) {
