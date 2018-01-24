@@ -1,7 +1,7 @@
 <?php
 
 add_action('wp_print_styles', function () {
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,700,900|Roboto+Condensed', array(), null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,500,700,900|Roboto+Condensed', array(), null);
     wp_enqueue_style('bootstrap', get_module_css('theme/bootstrap-4.0.0-beta.min.css'), array(), null);
     wp_enqueue_style('slick', get_module_css('theme/slick-1.6.0.css'), array(), null);
     wp_enqueue_style('slick-theme', get_module_css('theme/slick-theme-1.6.0.css'), array(), null);
