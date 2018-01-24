@@ -3,7 +3,9 @@
     <div class="header">
         <div class="left">
             <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('pror-medium'); ?>
+                <?php the_post_thumbnail('pror-medium', array(
+                        'alt' => pror_get_master_img_alt(),
+                )); ?>
             <?php else: ?>
                 <img src="<?php module_img('master/no-avatar.png'); ?>" />
             <?php endif; ?>

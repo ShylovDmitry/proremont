@@ -177,6 +177,14 @@ function pror_get_master_catalogs($master_id = null) {
 
 }
 
+function pror_get_master_img_alt() {
+    $catalogs = array_map(function($el) {
+        return $el->name;
+    }, pror_get_master_catalogs());
+
+    return sprintf('%s - %s - %s', implode(', ', $catalogs), end(pror_get_master_location()), get_the_title());
+}
+
 add_filter('comment_form_submit_button', function($submit_button, $args) {
     $submit_button = sprintf('<a href="%1$s" class="cancel-form">Отмена</a> ',
             wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) )
