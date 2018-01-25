@@ -1,6 +1,9 @@
 .blog article .post-image {
   margin-left: -1rem !important;
-  margin-right: -1rem !important; }
+  margin-right: -1rem !important;
+  text-align: center;
+  display: block;
+  background: #fff; }
 .blog article .post-date {
   font-size: .85rem;
   color: #B2BABB; }
