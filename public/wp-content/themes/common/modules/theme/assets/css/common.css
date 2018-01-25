@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
     margin-bottom: 10px; }
 
-.page h1 {
+.page .page-title {
   color: #E67E22;
   margin-bottom: 20px; }
 .page .content a {

@@ -8,9 +8,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('catalog-master-common', get_module_js('catalog_master/common.js'), array('jquery'), dlv_get_ver(), true);
 });
 
-function pror_get_catalog_link() {
-    return home_url(pror_get_section()->slug . '/catalog/');
-}
 
 function pror_get_catalog($parent_id = 0, $hide_empty = true) {
     $terms = get_terms(array(

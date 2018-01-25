@@ -80,8 +80,11 @@
     img {
         border: 1px solid $color-light;
         width: 100px;
+        max-width: 100px;
+        font-size: .75rem;
         height: auto;
     }
+
     .media-body .rating {
         float: right;
     }

@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo home_url(pror_get_section()->slug . '/'); ?>">
+        <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
             <img src="<?php module_img('theme/proremont-co-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />
         </a>
 
-        <div class="dropdown section-list invisible">
+        <div class="dropdown section-list">
             <a class="nav-link dropdown-toggle" href="#" data-slug="<?php echo pror_get_section()->slug; ?>" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php module_svg('theme/ic_location_on_black_18px.svg'); ?> <span><?php echo pror_get_section()->name; ?></span>
             </a>
@@ -22,12 +22,12 @@
                 ?>
                 <div class="left">
                     <?php foreach ($one as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
                     <?php endforeach; ?>
                 </div>
                 <div class="right">
                     <?php foreach ($two as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="<?php echo home_url( $wp->request . '/' ); ?>?f_switch_section=<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             </form>
 
             <ul class="navbar-nav">
-                <li><a href="<?php echo pror_get_catalog_link(); ?>" class="btn find-master">Найти мастера</a></li>
+                <li><a href="<?php echo home_url('/catalog/'); ?>" class="btn find-master">Найти мастера</a></li>
                 <li><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="btn iam-master">Стать исполнителем</a></li>
             </ul>
 

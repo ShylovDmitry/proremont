@@ -4,15 +4,15 @@
         <div class="col-sm-10">
 
             <?php
-                wp_dropdown_categories(array(
-                    'hide_empty' => 0,
-                    'taxonomy' => 'catalog_master',
-                    'selected' => get_queried_object_id(),
-                    'hierarchical' => 1,
-                    'name' => 'f_switch_catalog',
-                    'id' => 'master_search_catalog',
-                    'class' => 'form-control',
-                ));
+//                wp_dropdown_categories(array(
+//                    'hide_empty' => 0,
+//                    'taxonomy' => 'catalog_master',
+//                    'selected' => get_queried_object_id(),
+//                    'hierarchical' => 1,
+//                    'name' => 'f_switch_catalog',
+//                    'id' => 'master_search_catalog',
+//                    'class' => 'form-control',
+//                ));
             ?>
 
         </div>

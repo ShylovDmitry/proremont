@@ -1,7 +1,7 @@
 <?php
 
 add_action('wp_print_styles', function () {
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,500,700,900|Roboto+Condensed', array(), null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500,700,900|Roboto+Condensed', array(), null);
     wp_enqueue_style('bootstrap', get_module_css('theme/bootstrap-4.0.0-beta.min.css'), array(), null);
     wp_enqueue_style('slick', get_module_css('theme/slick-1.6.0.css'), array(), null);
     wp_enqueue_style('slick-theme', get_module_css('theme/slick-theme-1.6.0.css'), array(), null);
@@ -68,10 +68,6 @@ add_filter('comment_form_defaults', function($defaults) {
     return $defaults;
 }, 1, 5);
 
-add_shortcode('clearfix', function() {
-    return '<div class="clearfix"></div>';
-});
-
 add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
@@ -85,11 +81,4 @@ function pror_user_has_role($user_id, $role) {
 function pror_current_user_has_role($role) {
     $user = wp_get_current_user();
     return $user && pror_user_has_role($user->ID, $role);
-}
-
-
-add_action('wp_ajax_detect_location', 'pror_detect_location');
-add_action('wp_ajax_nopriv_detect_location', 'pror_detect_location');
-function pror_detect_location() {
-    wp_send_json_success(pror_get_section()->slug);
 }

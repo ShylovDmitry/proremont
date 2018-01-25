@@ -209,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
     a {
         color: #fff;
     }
+
     .navbar-nav {
         margin: 0 20px;
 
@@ -223,6 +224,7 @@ h1, h2, h3, h4, h5, h6 {
                 background-color: darken($color-primary, 10);
             }
         }
+
         .iam-master {
             background-color: $color-lighter;
             color: $color-darker;
@@ -235,6 +237,7 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
     }
+
     .navbar-toggler {
         margin-right: 10px;
         margin-bottom: 10px;
@@ -244,6 +247,7 @@ h1, h2, h3, h4, h5, h6 {
             margin-bottom: 0;
         }
     }
+
     .dropdown {
         margin-left: 10px;
         margin-bottom: 10px;
@@ -309,6 +313,7 @@ h1, h2, h3, h4, h5, h6 {
         color: $color-light;
         font-size: 14px;
     }
+
     .footer-menu {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -316,7 +321,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page {
-    h1 {
+    .page-title {
         color: $color-primary;
         margin-bottom: 20px;
     }

@@ -110,5 +110,5 @@ if ($rated_masters_query) {
 </div>
 
 <div class="text-center">
-    <a href="<?php echo pror_get_catalog_link(); ?>" class="btn masters-see-all">Смотреть всех мастеров</a>
+    <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all">Смотреть всех мастеров</a>
 </div>

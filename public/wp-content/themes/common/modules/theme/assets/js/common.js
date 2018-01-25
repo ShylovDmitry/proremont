@@ -4,69 +4,11 @@ jQuery(function ($) {
     $('.gallery-2columns-carousel').slickLightbox();
 
 
-    init();
-
-    function init() {
-        var section = pror_get_section_slug();
-        if (section) {
-            pror_update_links(section);
-            pror_update_section_list(section);
-        } else {
-            pror_detect_location(function(section) {
-                pror_update_links(section);
-                pror_update_section_list(section);
-            });
-        }
-
-        $('.navbar .section-list .dropdown-menu a').click(function() {
-            setCookie('pror_section', $(this).data('slug'), 365);
-        });
-    }
-
-    function pror_detect_location(callback) {
-        $.get(ProRemont.ajax_url, {action: 'detect_location'}, function(response) {
-            if (response.success) {
-                callback && callback(response.data);
-            }
-        });
-    }
-
-    function pror_get_section_slug() {
-        var container = $('.navbar .section-list');
-
-        var match = /\/([^\/]+)\//g.exec(document.location.pathname);
-        if (match && $('.dropdown-item[data-slug=' + match[1] + ']', container).length) {
-            return match[1];
-        }
-
-        var cookie = getCookie('pror_section');
-        if (cookie && $('.dropdown-item[data-slug=' + cookie + ']', container).length) {
-            return cookie;
-        }
-
-        return false;
-    }
-
-    function pror_update_links(section) {
-        var container = $('.navbar .section-list');
-        var old_section = $('.dropdown-toggle', container).data('slug');
-
-        $('.navbar a, .footer a').each(function() {
-            var href = $(this).attr('href');
-            href = href.replace('/' + old_section + '/', '/' + section + '/');
-            $(this).attr('href', href);
-        });
-    }
-
-    function pror_update_section_list(section) {
-        var container = $('.navbar .section-list');
-        var el = $('.dropdown-item[data-slug=' + section + ']', container);
-        $('.dropdown-toggle span', container).html(el.html());
-        $('.dropdown-toggle', container).data('slug', section);
-        container.removeClass('invisible');
-
-        setCookie('pror_section', section, 365);
-    }
+    $('.navbar .section-list .dropdown-menu a').click(function(e) {
+        e.preventDefault();
+        setCookie('pror_section', $(this).data('slug'), 365);
+        window.location.reload(true);
+    });
 });
 
 

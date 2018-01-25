@@ -64,3 +64,12 @@ add_action('init', function() {
     add_rewrite_rule('([^/]+)/master/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
     add_rewrite_rule('([^/]+)/master/([^/]+)/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
 });
+
+add_filter('rewrite_rules_array', function($rules) {
+    foreach ($rules as $regexp => $rule) {
+        if (strpos($rule, 'index.php?section=$matches[1]') === 0 && strpos($regexp, '/mastera/') === false) {
+            unset($rules[$regexp]);
+        }
+    }
+    return $rules;
+});

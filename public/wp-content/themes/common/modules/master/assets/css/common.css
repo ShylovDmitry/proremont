@@ -50,6 +50,8 @@
   .master-item img {
     border: 1px solid #B2BABB;
     width: 100px;
+    max-width: 100px;
+    font-size: .75rem;
     height: auto; }
   .master-item .media-body .rating {
     float: right; }
