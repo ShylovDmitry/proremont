@@ -1,0 +1,27 @@
+<?php
+    $dfp_current_page = pror_get_current_page_identifier();
+    $dfp_current_section = pror_get_section()->slug;
+    $dfp_current_catalog = pror_banner_get_catalog();
+?>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+    function ProrDefineSlot(adUnitPath, size, opt_div) {
+        googletag.defineSlot(adUnitPath, size, opt_div)
+            .setTargeting('page', '<?php echo $dfp_current_page; ?>')
+            .setTargeting('section', '<?php echo $dfp_current_section; ?>')
+            .setTargeting('master_catalog', <?php echo json_encode($dfp_current_catalog); ?>)
+            .addService(googletag.pubads());
+    }
+
+    googletag.cmd.push(function() {
+        ProrDefineSlot('/21681373772/sidebar1', [300, 600], 'div-sidebar1');
+        ProrDefineSlot('/21681373772/sidebar2', [300, 600], 'div-sidebar2');
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>

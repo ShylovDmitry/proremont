@@ -372,4 +372,9 @@ a.btn.btn-pror-primary {
     height: 100px;
     border: 1px solid #E67E22; }
 
+.homepage-content a {
+  color: #E67E22; }
+.homepage-content strong {
+  font-weight: 900; }
+
 /*# sourceMappingURL=common.css.map */

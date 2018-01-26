@@ -33,7 +33,7 @@ add_action('init', function() {
         'hierarchical' => true,
         'rewrite' => array(
             'with_front' => false,
-            'slug' => '%section%/mastera',
+            'slug' => 'mastera',
             'hierarchical' => true,
         ),
         'public' => true,

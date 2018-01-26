@@ -81,11 +81,21 @@
                     <?php module_template('blog/latest-posts', array('container_class' => 'colored-box p-3')); ?>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 mb-3">
                     <div class="colored-box p-3">
                         <?php module_template('theme/gallery-2columns'); ?>
                     </div>
                 </div>
+
+                <?php wp_reset_query(); ?>
+                <?php if (get_the_content()): ?>
+                <div class="col-12">
+                    <div class="colored-box p-3 homepage-content">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+
             </div>
         </div>
 

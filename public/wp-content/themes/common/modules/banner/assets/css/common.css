@@ -3,12 +3,8 @@ html .col-banner-sidebar {
   flex-basis: 315px;
   max-width: 315px; }
 
-.g {
-  display: table;
-  margin-bottom: 15px;
-  max-width: 300px;
+#div-sidebar1,
+#div-sidebar2 {
   box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5); }
-  .g img {
-    max-width: 100%; }
 
 /*# sourceMappingURL=common.css.map */

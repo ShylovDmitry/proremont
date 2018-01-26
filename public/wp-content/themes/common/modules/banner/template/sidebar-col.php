@@ -1,5 +1,19 @@
 <div class="col col-banner-sidebar d-none d-lg-block">
     <div id="banner_sidebar">
-        <?php echo pror_adrotate_group_by_name('sidebar', pror_get_section()->slug, pror_banner_get_catalog()); ?>
+
+        <!-- /21681373772/sidebar1 -->
+        <div id='div-sidebar1' style='height:600px; width:300px;'>
+            <script>
+                googletag.cmd.push(function() { googletag.display('div-sidebar1'); });
+            </script>
+        </div>
+
+        <!-- /21681373772/sidebar2 -->
+<!--        <div id='div-sidebar2' style='height:600px; width:300px;'>-->
+<!--            <script>-->
+<!--                googletag.cmd.push(function() { googletag.display('div-sidebar2'); });-->
+<!--            </script>-->
+<!--        </div>-->
+
     </div>
 </div>

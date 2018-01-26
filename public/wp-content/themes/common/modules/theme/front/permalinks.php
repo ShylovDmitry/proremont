@@ -36,10 +36,6 @@ function pror_get_section_cookie() {
     return isset($_COOKIE, $_COOKIE['pror_section']) ? $_COOKIE['pror_section'] : null;
 }
 
-add_filter('term_link', function($termlink, $term, $taxonomy) {
-    return str_replace('%section%', pror_get_section()->slug, $termlink);
-}, 10, 3);
-
 add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
     if (get_post_type($post) == 'master') {
         $locations = get_the_terms($post, 'location');
@@ -52,7 +48,7 @@ add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
 }, 10, 4);
 
 add_action('wp', function() {
-    if (!is_admin() && get_post_type() == 'master') {
+    if (!is_admin() && is_singular('master') && get_post_type() == 'master') {
         global $wp;
         $locations = get_the_terms(null, 'location');
         $parts = explode('/', $wp->request);

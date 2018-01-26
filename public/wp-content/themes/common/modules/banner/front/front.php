@@ -8,72 +8,9 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('banner-common', get_module_js('banner/common.js'), array('jquery', 'sticky-kit'), dlv_get_ver(), true);
 });
 
-function pror_adrotate_group_by_name($name, $section, $catalog) {
-    global $wpdb;
-
-    $section_name = sprintf('%s_%s', $name, $section);
-    $group_id = $wpdb->get_var("SELECT id FROM `{$wpdb->prefix}adrotate_groups` WHERE `name` = '{$section_name}';");
-
-    if ($group_id) {
-        $catalog_str = implode('|', $catalog);
-
-        $group_output = adrotate_group("$group_id,ad_catalog($catalog_str)");
-        if (preg_replace('/<!--(.|\s)*?-->/', '', $group_output . $group_output) != '') {
-            $group_output = str_replace("g g-", "g g-{$name} g-{$section_name} g-", $group_output);
-            return $group_output;
-        }
-    }
-
-    $group_id = $wpdb->get_var("SELECT id FROM `{$wpdb->prefix}adrotate_groups` WHERE `name` = '{$name}';");
-    if ($group_id) {
-//        $catalog_str = implode('|', $catalog);
-
-//        $group_output = adrotate_group("$group_id,ad_catalog($catalog_str)");
-        $group_output = adrotate_group($group_id);
-        $group_output = str_replace("g g-", "g g-{$name} g-{$section_name} g-", $group_output);
-        return $group_output;
-    }
-
-    return '';
-}
-
-add_filter('query', function($query) {
-    global $wpdb;
-
-    if (strpos($query, " OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog") > 0) {
-
-        preg_match("/ `{$wpdb->prefix}adrotate_linkmeta`\.`group` = ad_catalog\(([^\)]*)\)/i", $query, $matches);
-        if (isset($matches[1])) {
-            $catalog = explode('|', $matches[1]);
-            $group_ids = $wpdb->get_col(
-                sprintf("SELECT id FROM `{$wpdb->prefix}adrotate_groups` WHERE `name` IN (%s);",
-                    '"' . implode('", "', $catalog) . '"')
-            );
-
-            if ($group_ids) {
-                $group_ids_str = implode(',', $group_ids);
-                $query = preg_replace(
-                    "/ OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog\(([^\)]*)\)/i",
-                    " AND `pror_adrotate_linkmeta`.`group` IN ({$group_ids_str})",
-                    $query
-                );
-            } else {
-                $query = preg_replace(
-                    "/ OR `{$wpdb->prefix}adrotate_linkmeta`.`group` = ad_catalog\(([^\)]*)\)/i",
-                    " ",
-                    $query
-                );
-            }
-
-            $query = preg_replace(
-                "/`wp_adrotate_linkmeta`[\s]+WHERE/i",
-                " `wp_adrotate_linkmeta`, `wp_adrotate_linkmeta` `pror_adrotate_linkmeta` WHERE `wp_adrotate`.`id` = `pror_adrotate_linkmeta`.`ad` AND ",
-                $query
-            );
-        }
-    }
-
-    return $query;
+add_action('wp_head', function() {
+    module_template('banner/adsense');
+    module_template('banner/gpt');
 });
 
 function pror_banner_get_catalog() {
@@ -108,5 +45,21 @@ function pror_banner_get_catalog() {
             'hide_empty' => false,
             'fields' => 'slugs',
         ));
+    }
+}
+
+function pror_get_current_page_identifier() {
+    if (is_front_page()) {
+        return 'homepage';
+    } else if (is_tax('catalog_master')) {
+        return 'catalog_master';
+    } else if (is_singular('master')) {
+        return 'master';
+    } else if (is_home()) {
+        return 'blog';
+    } else if (is_singular('post')) {
+        return 'blog';
+    } else {
+        return '-';
     }
 }

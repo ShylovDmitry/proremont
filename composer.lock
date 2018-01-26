@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a08b102074959d1a8a5007dc93a41615",
-    "content-hash": "4c1a9daaeba4a39e9ce59a497d1d9f6e",
+    "hash": "4f3a7aac763d6714491ec026e49ed6af",
+    "content-hash": "9f6abec796b4cc735de0cc9eedb1be21",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -42,17 +42,6 @@
             ],
             "description": "WP Background Processing can be used to fire off non-blocking asynchronous requests or as a background processing tool, allowing you to queue tasks.",
             "time": "2016-08-07 10:26:07"
-        },
-        {
-            "name": "adrotate-pro",
-            "version": "4.10.1",
-            "dist": {
-                "type": "zip",
-                "url": "composer-artifacts/adrotate-pro-4.10.1.zip",
-                "reference": null,
-                "shasum": "f9a9aa3e5171f5e12b3f0ab228e17165234b64c4"
-            },
-            "type": "wordpress-plugin"
         },
         {
             "name": "advanced-custom-fields-pro",
@@ -1055,16 +1044,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.1.3",
+            "version": "v3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda"
+                "reference": "e57b3a09784f846411aa7ed664eedb73e3399078"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/579f4ce846734a1cf55d6a531d00ca07a43e3cda",
-                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e57b3a09784f846411aa7ed664eedb73e3399078",
+                "reference": "e57b3a09784f846411aa7ed664eedb73e3399078",
                 "shasum": ""
             },
             "require": {
@@ -1102,7 +1091,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-12-26 14:43:21"
+            "time": "2018-01-25 21:31:33"
         },
         {
             "name": "psr/log",
