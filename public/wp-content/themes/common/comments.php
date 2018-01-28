@@ -25,6 +25,18 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
+    <?php
+    $cache_expire = 0;
+    $cache_key = pror_cache_key();
+    $cache_group = 'pror:comments:post:id-' . get_the_ID();
+
+    $cache = wp_cache_get($cache_key, $cache_group);
+    if ($cache):
+        echo $cache;
+    else:
+    ob_start();
+    ?>
+
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
@@ -52,7 +64,14 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyseventeen' ); ?></p>
 	<?php
 	endif;
+	?>
 
+    <?php
+    wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+    endif;
+    ?>
+
+    <?php
 	$logged_user = wp_get_current_user();
 	comment_form(array(
 		'logged_in_as' => '<div class="logged-in-as">' . sprintf(

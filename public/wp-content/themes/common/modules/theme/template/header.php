@@ -1,3 +1,15 @@
+<?php
+$cache_expire = 0;
+$cache_key = pror_cache_key('block', 'section');
+$cache_group = 'pror:theme:header';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
@@ -57,3 +69,9 @@
         </div>
     </div>
 </nav>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>
+

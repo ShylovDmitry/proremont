@@ -1,3 +1,15 @@
+<?php
+$cache_expire = 0;
+$cache_key = pror_cache_key();
+$cache_group = 'pror:blog:list:main';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
 <?php $pos = 0; ?>
 <?php while (have_posts()): the_post(); $pos++; ?>
     <div class="colored-box p-3 mb-3">
@@ -30,3 +42,8 @@
 <?php endwhile; ?>
 
 <?php module_template('theme/pagination', array('container_class' => 'colored-box p-3')); ?>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>

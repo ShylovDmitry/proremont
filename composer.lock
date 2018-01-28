@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4f3a7aac763d6714491ec026e49ed6af",
-    "content-hash": "9f6abec796b4cc735de0cc9eedb1be21",
+    "hash": "7ccfc5c4dc3317860556b4414bc48e68",
+    "content-hash": "52c21e833cdcd6027eb1e0e9ef94f4fa",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -2440,6 +2440,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
+        },
+        {
+            "name": "wpackagist-plugin/memcached-redux",
+            "version": "0.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/memcached-redux/",
+                "reference": "tags/0.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/memcached-redux.0.1.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/memcached-redux/"
         },
         {
             "name": "wpackagist-plugin/oa-social-login",

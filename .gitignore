@@ -1,5 +1,6 @@
 .idea
 /public/wp-content/db.php
+/public/wp-content/object-cache.php
 
 
 /cli/wp

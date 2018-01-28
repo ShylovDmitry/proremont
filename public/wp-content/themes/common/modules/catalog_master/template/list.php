@@ -1,3 +1,15 @@
+<?php
+$cache_expire = 0;
+$cache_key = pror_cache_key('block', 'section');
+$cache_group = 'pror:catalog_master:list';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
 <div class="catalog-mater-3col" id="catalogMenu" data-pror-children=".item">
 <!--    <h3 class="text-center mb-4">Каталог - --><?php //echo pror_get_section()->name; ?><!--</h3>-->
 
@@ -47,3 +59,8 @@
         <?php endforeach; ?>
     <?php endforeach; ?>
 </div>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>

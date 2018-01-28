@@ -65,12 +65,13 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp cache flush"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "rm -rf $DEPLOY_FOLDER/public/wp-content/cache/wp-rocket/*"
 
-ssh -i "$SERVER_KEY" $SERVER_HOST "cp /config/supervisor/supervisord.conf /etc/supervisord.conf"
+ssh -i "$SERVER_KEY" $SERVER_HOST "sudo cp -f /config/supervisor/supervisord.conf /etc/supervisord.conf"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs $DEPLOY_FOLDER/config /config"
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo ln -fs /config/php/php.ini /etc/php-5.6.ini"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/nginx configtest && sudo /etc/init.d/nginx reload"
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/php-fpm reload"
+ssh -i "$SERVER_KEY" $SERVER_HOST "echo 'flush_all' | sudo nc localhost 11211"
 
 echo "Done."

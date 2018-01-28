@@ -1,5 +1,18 @@
 <?php if (have_posts()): the_post(); ?>
 <div class="master-detailed<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
+
+    <?php
+    $cache_expire = 0;
+    $cache_key = pror_cache_key();
+    $cache_group = 'pror:master:post:id-' . get_the_ID();
+
+    $cache = wp_cache_get($cache_key, $cache_group);
+    if ($cache):
+        echo $cache;
+    else:
+    ob_start();
+    ?>
+
     <div class="header">
         <div class="left">
             <?php if (has_post_thumbnail()): ?>
@@ -98,6 +111,11 @@
         <?php module_template('rating/breakdown'); ?>
         <div class="clearfix"></div>
     </div>
+
+    <?php
+    wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+    endif;
+    ?>
 
     <div class="content">
         <h4 class="header-underlined">Отзывы</h4>

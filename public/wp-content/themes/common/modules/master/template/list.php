@@ -1,3 +1,15 @@
+<?php
+$cache_expire = 24*60*60;
+$cache_key = pror_cache_key(null, 'section');
+$cache_group = 'pror:master:list:main';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
 <div class="master-list">
     <?php
         $master_types = pror_get_master_types();
@@ -78,3 +90,8 @@
         <i>Ничего не найдено. Проверьте этот раздел позже.</i>
     <?php endif; ?>
 </div>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>

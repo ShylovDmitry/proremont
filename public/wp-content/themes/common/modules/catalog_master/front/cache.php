@@ -1,0 +1,17 @@
+<?php
+
+add_action('save_post_page', function($post_ID, $post, $update) {
+    if ($post->post_name == 'catalog') {
+        pror_cache_delete_wildcard('pror:catalog_master:page');
+    }
+}, 10, 3);
+
+add_action('created_catalog_master', 'pror_catalog_master_clear_cache');
+add_action('edited_catalog_master', 'pror_catalog_master_clear_cache');
+add_action('delete_catalog_master', 'pror_catalog_master_clear_cache');
+
+
+function pror_catalog_master_clear_cache() {
+    pror_cache_delete_wildcard('pror:catalog_master:list');
+    pror_cache_delete_wildcard('pror:catalog_master:page');
+}

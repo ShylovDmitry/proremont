@@ -10,13 +10,13 @@
                     <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> Другие услуги</a>
 
                     <div class="collapse" id="catalogBlock">
-                        <?php module_template('catalog_master/3columns'); ?>
+                        <?php module_template('catalog_master/list'); ?>
                     </div>
 
                     <hr />
                 </div>
 
-                <h1 class="mb-3"><?php single_term_title() ?> - <?php echo pror_get_section()->name; ?></h1>
+                <h1 class="mb-3"><?php single_term_title() ?></h1>
 
                 <?php module_template('master/list'); ?>
 

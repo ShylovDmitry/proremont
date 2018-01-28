@@ -1,7 +1,21 @@
 <?php
 $container_class = isset($__data['container_class']) ? $__data['container_class'] : '';
 $limit = isset($__data['limit']) ? $__data['limit'] : 6;
+?>
 
+<?php
+$cache_expire = 0;
+$cache_key = pror_cache_key(sprintf('posts-%s-%s', $container_class, $limit) , 'section');
+$cache_group = 'pror:blog:list:latest';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
+<?php
 $query = new WP_Query(array(
     'post_type' => 'post',
     'post_status' => 'publish',
@@ -27,3 +41,8 @@ $query = new WP_Query(array(
         </div>
     </div>
 <?php endif; ?>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>

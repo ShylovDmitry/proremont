@@ -1,4 +1,16 @@
 <?php
+$cache_expire = 0;
+$cache_key = pror_cache_key('block');
+$cache_group = 'pror:theme:gallery';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
+<?php
 $gallery_ids = get_field('frontpage_main_gallery', 'option', false);
 if (!$gallery_ids) {
     $gallery_ids = array(-1);
@@ -38,3 +50,8 @@ $query = new WP_Query(array(
     </div>
 </div>
 <?php endif; ?>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>

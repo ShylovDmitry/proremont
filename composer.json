@@ -39,6 +39,7 @@
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
     "wpackagist-plugin/wp-mail-bank": "3.0.41",
     "wpackagist-plugin/bnfw": "1.6.9",
+    "wpackagist-plugin/memcached-redux": "0.1.6",
     "wpackagist-plugin/social-sharing-icons": "2.4",
     "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2"
   },
@@ -55,7 +56,9 @@
   "scripts" : {
     "post-install-cmd" : [
       "rm -f cli/wp",
-      "ln -s ../vendor/wp-cli/wp-cli/bin/wp cli/wp"
+      "ln -s ../vendor/wp-cli/wp-cli/bin/wp cli/wp",
+      "rm -f public/wp-content/object-cache.php",
+      "ln -s ./plugins/memcached-redux/object-cache.php public/wp-content/object-cache.php"
     ]
   }
 }

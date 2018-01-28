@@ -1,4 +1,16 @@
 <?php
+$cache_expire = 5*60;
+$cache_key = pror_cache_key('block', 'section');
+$cache_group = 'pror:master:list:front';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
+<?php
 $number_of_masters = 12;
 $unique_ids = array();
 
@@ -108,6 +120,10 @@ if ($rated_masters_query) {
         <?php endif; ?>
     </div>
 </div>
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>
 
 <div class="text-center">
     <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all">Смотреть всех мастеров</a>

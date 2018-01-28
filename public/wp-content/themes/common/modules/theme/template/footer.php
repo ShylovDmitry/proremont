@@ -1,3 +1,15 @@
+<?php
+$cache_expire = 0;
+$cache_key = pror_cache_key('block');
+$cache_group = 'pror:theme:footer';
+
+$cache = wp_cache_get($cache_key, $cache_group);
+if ($cache):
+    echo $cache;
+else:
+ob_start();
+?>
+
 <div class="footer mt-5 py-4">
     <div class="container pt-4">
         <div class="row">
@@ -47,3 +59,9 @@
   js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.11&appId=535430443460993';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<?php
+wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+endif;
+?>
+

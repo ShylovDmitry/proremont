@@ -63,6 +63,10 @@ add_filter('comment_form_defaults', function($defaults) {
     return $defaults;
 }, 1, 5);
 
+add_shortcode('clearfix', function() {
+    return '<div class="clearfix"></div>';
+});
+
 add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
@@ -76,4 +80,43 @@ function pror_user_has_role($user_id, $role) {
 function pror_current_user_has_role($role) {
     $user = wp_get_current_user();
     return $user && pror_user_has_role($user->ID, $role);
+}
+
+function pror_cache_key($key = null, $depends_str = '') {
+    $depends = explode(',', $depends_str);
+    if (empty($key)) {
+        $key = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    }
+
+    if (isset($depends['section'])) {
+        $key .= '-' . pror_get_section()->slug;
+    }
+
+    foreach ($_COOKIE as $name => $value) {
+        if (strpos($name, 'wordpress_logged_in_') === 0) {
+            $user = wp_get_current_user();
+            $key .= '-loggedin=' . (isset($user->roles[0]) ? $user->roles[0] : '_');
+
+            break;
+        }
+    }
+
+    return $key;
+}
+
+function pror_cache_delete_wildcard($group) {
+    global $wp_object_cache;
+
+    if (method_exists($wp_object_cache, 'get_mc')) {
+        foreach ($wp_object_cache->get_mc('default')->getAllKeys() as $full_key) {
+            if (strpos($full_key, ':' . $group . ':') !== false) {
+                $key = end(explode(':', $full_key));
+
+                $correct_group = substr($full_key, strpos($full_key, $group));
+                $correct_group = str_replace(':' . $key, '', $correct_group);
+
+                wp_cache_delete($key, $correct_group);
+            }
+        }
+    }
 }

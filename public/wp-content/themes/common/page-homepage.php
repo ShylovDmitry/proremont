@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-12 mb-3">
                     <div class="colored-box p-3">
-                        <?php module_template('catalog_master/3columns'); ?>
+                        <?php module_template('catalog_master/list'); ?>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
 
                 <div class="col-12 mb-3">
                     <div class="colored-box p-3">
-                        <?php module_template('master/pro-2columns'); ?>
+                        <?php module_template('master/front-list'); ?>
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@
 
                 <div class="col-12 mb-3">
                     <div class="colored-box p-3">
-                        <?php module_template('theme/gallery-2columns'); ?>
+                        <?php module_template('theme/gallery'); ?>
                     </div>
                 </div>
 
