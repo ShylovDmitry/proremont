@@ -18,11 +18,6 @@ add_action('wp_enqueue_scripts', function () {
 }, 1);
 
 add_action('wp_enqueue_scripts', function () {
-    remove_action('wp_footer', 'adrotate_custom_javascript', 100);
-    add_action('wp_footer', 'adrotate_custom_javascript', PHP_INT_MAX);
-}, 11);
-
-add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('popper', get_module_js('theme/popper-1.11.0.min.js'), array('jquery'), null, true);
     wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('jquery'), null, true);
     wp_enqueue_script('slick', get_module_js('theme/slick-1.6.0.min.js'), array('jquery'), null, true);
