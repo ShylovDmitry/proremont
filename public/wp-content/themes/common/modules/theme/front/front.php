@@ -88,7 +88,7 @@ function pror_cache_key($key = null, $depends_str = '') {
         $key = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     }
 
-    if (isset($depends['section'])) {
+    if (in_array('section', $depends)) {
         $key .= '-' . pror_get_section()->slug;
     }
 
