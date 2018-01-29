@@ -7,8 +7,12 @@ html .col-banner-sidebar {
 #div-sidebar2 {
   box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5); }
 
-#banner_mobile1 > div,
-#banner_mobile2 > div {
-  margin: 0 auto; }
+#banner_mobile1,
+#banner_mobile2 {
+  margin-left: -15px;
+  margin-right: -15px; }
+  #banner_mobile1 > div,
+  #banner_mobile2 > div {
+    margin: 0 auto; }
 
 /*# sourceMappingURL=common.css.map */
