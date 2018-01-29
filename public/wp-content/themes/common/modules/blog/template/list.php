@@ -36,7 +36,7 @@ ob_start();
 
     <?php if ($pos == 1): ?>
         <div class="mb-3 d-lg-none">
-            <?php module_template('banner/mobile'); ?>
+            <?php module_template('banner/mobile1'); ?>
         </div>
     <?php endif; ?>
 <?php endwhile; ?>

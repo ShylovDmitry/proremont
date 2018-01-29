@@ -67,10 +67,6 @@
                     </div>
                 </div>
 
-                <div class="col-12 mb-3 d-lg-none">
-                    <?php module_template('banner/mobile'); ?>
-                </div>
-
                 <div class="col-12 mb-3">
                     <div class="colored-box p-3">
                         <?php module_template('master/front-list'); ?>

@@ -58,7 +58,7 @@
     </div>
 
     <div class="d-lg-none">
-        <?php module_template('banner/mobile'); ?>
+        <?php module_template('banner/mobile1'); ?>
     </div>
 
 

@@ -77,9 +77,9 @@ ob_start();
             <?php while (have_posts()): the_post(); $pos++; ?>
                 <?php module_template('master/item'); ?>
 
-                <?php if ($pos == 2): ?>
-                    <div class="master-banner d-lg-none">
-                        <?php module_template('banner/mobile'); ?>
+                <?php if ($pos == 1): ?>
+                    <div class="master-item d-lg-none">
+                        <?php module_template('banner/mobile1'); ?>
                     </div>
                 <?php endif; ?>
             <?php endwhile; ?>

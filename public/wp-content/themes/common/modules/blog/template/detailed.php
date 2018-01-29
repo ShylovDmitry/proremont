@@ -19,7 +19,7 @@
     <div class="post-date header-underlined mb-3"><?php echo get_the_date(); ?></div>
 
     <div class="mb-3 d-lg-none">
-        <?php module_template('banner/mobile'); ?>
+        <?php module_template('banner/mobile1'); ?>
     </div>
 
 

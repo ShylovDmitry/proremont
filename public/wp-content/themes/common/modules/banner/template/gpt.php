@@ -19,7 +19,10 @@
 
     googletag.cmd.push(function() {
         ProrDefineSlot('/21681373772/sidebar1', [300, 600], 'div-sidebar1');
-        ProrDefineSlot('/21681373772/sidebar2', [300, 600], 'div-sidebar2');
+//        ProrDefineSlot('/21681373772/sidebar2', [300, 600], 'div-sidebar2');
+
+        ProrDefineSlot('/21681373772/mobile1', [300, 250], 'div-mobile1');
+//        ProrDefineSlot('/21681373772/mobile2', [300, 250], 'div-mobile2');
 
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();

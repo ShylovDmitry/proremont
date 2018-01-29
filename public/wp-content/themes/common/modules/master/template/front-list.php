@@ -103,19 +103,36 @@ if ($rated_masters_query) {
             </div>
         <?php endwhile; ?>
 
+        <?php $pos = 0; ?>
         <?php if ($rated_masters_query): ?>
-            <?php while ($rated_masters_query->have_posts()): $rated_masters_query->the_post(); ?>
+            <?php while ($rated_masters_query->have_posts()): $rated_masters_query->the_post(); $pos++; ?>
                 <div class="col-12">
                     <?php module_template('master/item'); ?>
                 </div>
+
+                <?php if ($pos == 1): ?>
+                    <div class="col-12 d-lg-none">
+                        <div class="master-item">
+                            <?php module_template('banner/mobile1'); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             <?php endwhile; ?>
         <?php endif; ?>
 
         <?php if ($masters_query): ?>
-            <?php while ($masters_query->have_posts()): $masters_query->the_post(); ?>
+            <?php while ($masters_query->have_posts()): $masters_query->the_post(); $pos++; ?>
                 <div class="col-12">
                     <?php module_template('master/item'); ?>
                 </div>
+
+                <?php if ($pos == 1): ?>
+                    <div class="col-12 d-lg-none">
+                        <div class="master-item">
+                            <?php module_template('banner/mobile1'); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             <?php endwhile; ?>
         <?php endif; ?>
     </div>
