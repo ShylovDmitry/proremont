@@ -24,6 +24,7 @@
         ProrDefineSlot('/21681373772/mobile1', [300, 250], 'div-mobile1');
 //        ProrDefineSlot('/21681373772/mobile2', [300, 250], 'div-mobile2');
 
+        googletag.pubads().enableAsyncRendering();
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
     });
