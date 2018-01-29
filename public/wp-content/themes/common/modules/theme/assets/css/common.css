@@ -195,7 +195,8 @@ h1, h2, h3, h4, h5, h6 {
       .navbar .dropdown > a span {
         border-bottom: 2px dotted #fff; }
     .navbar .dropdown .dropdown-menu {
-      width: 100%; }
+      width: 100%;
+      min-width: 20rem; }
       .navbar .dropdown .dropdown-menu .left, .navbar .dropdown .dropdown-menu .right {
         width: 50%; }
       .navbar .dropdown .dropdown-menu.show {
