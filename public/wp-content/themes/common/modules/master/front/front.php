@@ -216,9 +216,3 @@ function pror_get_query_pro_master_ids() {
     ));
     return $query->results ? $query->results : array(-1);
 }
-
-//add_filter('oa_social_login_filter_new_user_fields', function($user_fields) {
-//    $user_fields['user_login'] = $user_fields['user_email'];
-//    return $user_fields;
-//});
-
