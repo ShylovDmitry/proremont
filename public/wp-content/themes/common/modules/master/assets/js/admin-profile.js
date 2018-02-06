@@ -9,4 +9,26 @@ jQuery(function ($) {
             $('#nickname').val(title);
         }
     });
+
+    var catalog_master = $('*[data-taxonomy="catalog_master"]');
+    $(':checkbox', catalog_master).click(function() {
+        manageCatalogCheckboxes(true);
+    });
+    manageCatalogCheckboxes();
+
+    function manageCatalogCheckboxes(show_dialog) {
+        show_dialog = show_dialog || false;
+
+        if ($(':checkbox:checked', catalog_master).length < 5) {
+            $(':checkbox', catalog_master).attr('disabled', false);
+        } else {
+            $(':checkbox:not(:checked)', catalog_master).attr('disabled', true);
+            if (show_dialog) {
+                $('#modalCatalogLimitreached').modal('show');
+            }
+        }
+    }
+
+    $('#adminmenu li.self-page-link a').attr('target', '_blank');
+    $('#adminmenu li.pro-account-link a').attr('target', '_blank');
 });
