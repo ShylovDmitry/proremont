@@ -216,3 +216,13 @@ function pror_get_query_pro_master_ids() {
     ));
     return $query->results ? $query->results : array(-1);
 }
+
+
+add_filter('acf/update_value/key=field_59ebc80ea9687', function($value, $post_id, $field) {
+    return preg_replace('/\D+/', '', $value);
+}, 10, 3);
+
+add_filter('acf/load_value/key=field_59ebc80ea9687', function($value, $post_id, $field) {
+    $formatted = pror_format_phones($value);
+    return $formatted['text'];
+}, 10, 3);

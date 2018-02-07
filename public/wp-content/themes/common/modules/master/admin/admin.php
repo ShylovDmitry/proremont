@@ -34,10 +34,44 @@ add_action('pre_get_posts', function($wp_query_obj) {
     return;
 });
 
-add_action('show_user_profile', function() {
-    module_template('master/admin/profile-top');
+add_action('show_user_profile', function($profileuser) {
+    module_template('master/admin/profile-top', ['profileuser' => $profileuser]);
 }, 5);
 
-add_action('show_user_profile', function() {
-    module_template('master/admin/profile-bottom');
+add_action('show_user_profile', function($profileuser) {
+    module_template('master/admin/profile-bottom', ['profileuser' => $profileuser]);
 }, 100);
+
+add_action('edit_user_profile', function($profileuser) {
+    module_template('master/admin/profile-top', ['profileuser' => $profileuser]);
+}, 5);
+
+add_action('edit_form_after_title', function($post) {
+    if (get_post_type($post) == 'master' && pror_current_user_has_role('administrator')) {
+        echo sprintf('<a href="%s">%s (ID %s)</a>', get_edit_user_link($post->post_author), 'Редактировать пользователя', $post->post_author);
+    }
+});
+
+add_action('pre_user_query', function($u_query) {
+    if ( $u_query->query_vars['search'] ){
+        $search_query = trim( $u_query->query_vars['search'], '*' );
+        if ( $_REQUEST['s'] == $search_query ){
+            global $wpdb;
+
+            // let's search by users first name
+			$u_query->query_from .= " JOIN {$wpdb->usermeta} phone_usermeta ON phone_usermeta.user_id = {$wpdb->users}.ID AND phone_usermeta.meta_key LIKE 'master_phones_%'";
+
+			// you can add here any meta key you want to search by
+			// $u_query->query_from .= " JOIN {$wpdb->usermeta} cstm ON cstm.user_id = {$wpdb->users}.ID AND cstm.meta_key = 'YOU CUSTOM meta_key'";
+
+ 			// let's search by all the post titles, the user has been published
+//			$u_query->query_from .= " JOIN {$wpdb->posts} psts ON psts.post_author = {$wpdb->users}.ID";
+
+ 			// what fields to include in the search
+ 			$search_by = array( 'user_login', 'user_email', 'display_name', 'phone_usermeta.meta_value'/*, 'psts.post_title'*/ );
+
+ 			// apply to the query
+			$u_query->query_where = 'WHERE 1=1' . $u_query->get_search_sql( $search_query, $search_by, 'both' );
+        }
+    }
+});

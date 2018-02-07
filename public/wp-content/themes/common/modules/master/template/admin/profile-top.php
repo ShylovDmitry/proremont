@@ -1,8 +1,12 @@
+<?php
+$profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdClass();
+?>
 <table class="form-table profile-info">
     <tbody>
+    <?php if (pror_current_user_has_role('master')): ?>
         <tr>
             <th>
-                <label for="pror-profile-ispro">PRO-аккаунт</label>
+                <label>PRO-аккаунт</label>
             </th>
             <td>
                 <?php if (get_field('master_is_pro', "user_" . get_current_user_id())): ?>
@@ -14,7 +18,7 @@
         </tr>
         <tr>
             <th>
-                <label for="pror-profile-ispro">Аккаунт проверен</label>
+                <label>Аккаунт проверен</label>
             </th>
             <td>
                 <?php if (get_field('master_is_confirmed', "user_" . get_current_user_id())): ?>
@@ -26,7 +30,7 @@
         </tr>
         <tr>
             <th>
-                <label for="pror-profile-ispro">Рейтинг</label>
+                <label>Рейтинг</label>
             </th>
             <td>
                 <?php
@@ -42,5 +46,28 @@
                 <?php endif; ?>
             </td>
         </tr>
+    <?php elseif (pror_current_user_has_role('administrator')): ?>
+        <tr>
+            <th>
+                <label>&nbsp;</label>
+            </th>
+            <td>
+                <?php
+                    $posts = get_posts(array(
+                        'author' => $profileuser->ID,
+                        'posts_per_page' => 1,
+                        'post_type' => 'master',
+                        'post_status' => 'any',
+                    ));
+                    $post_id = isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
+                ?>
+                <?php if ($post_id): ?>
+                    <a href="<?php echo get_edit_post_link($post_id); ?>">Редактировать страницу (ID <?php echo $post_id; ?>)</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="<?php echo get_the_permalink($post_id); ?>" target="_blank">Перейти на сайт</a>
+                <?php endif; ?>
+            </td>
+        </tr>
+    <?php endif; ?>
     </tbody>
 </table>
