@@ -19,7 +19,7 @@ add_action('wp_enqueue_scripts', function () {
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('popper', get_module_js('theme/popper-1.11.0.min.js'), array('jquery'), null, true);
-    wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('jquery'), null, true);
+    wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('popper', 'jquery'), null, true);
     wp_enqueue_script('slick', get_module_js('theme/slick-1.6.0.min.js'), array('jquery'), null, true);
     wp_enqueue_script('select2', get_module_js('theme/select2-4.0.3.min.js'), array('jquery'), null, true);
 
@@ -80,6 +80,10 @@ function pror_user_has_role($user_id, $role) {
 function pror_current_user_has_role($role) {
     $user = wp_get_current_user();
     return $user && pror_user_has_role($user->ID, $role);
+}
+
+function pror_cache_expire($expire = 0) {
+    return $expire ? $expire - time()%$expire : 0;
 }
 
 function pror_cache_key($key = null, $depends_str = '') {

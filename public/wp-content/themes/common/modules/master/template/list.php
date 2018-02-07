@@ -1,5 +1,5 @@
 <?php
-$cache_expire = 24*60*60;
+$cache_expire = pror_cache_expire(24*60*60);
 $cache_key = pror_cache_key(null, 'section');
 $cache_group = 'pror:master:list:main';
 
@@ -55,23 +55,11 @@ ob_start();
     ));
     ?>
 
-    <?php if ($query->have_posts()): ?>
-        <div class="master-list-pro">
-            <h3 class="mt-5 mb-4">PRO <?php echo $master_types[$selected_type]; ?></h3>
-
+    <div class="master-list-simple">
+        <?php if ($query->have_posts() || have_posts()): ?>
             <?php while ($query->have_posts()): $query->the_post();?>
                 <?php module_template('master/item'); ?>
             <?php endwhile; ?>
-        </div>
-    <?php endif; ?>
-
-
-
-
-
-    <?php if (have_posts()): ?>
-        <div class="master-list-simple">
-            <h3 class="mt-5 mb-4"><?php echo $master_types[$selected_type]; ?></h3>
 
             <?php $pos = 0; ?>
             <?php while (have_posts()): the_post(); $pos++; ?>
@@ -85,10 +73,10 @@ ob_start();
             <?php endwhile; ?>
 
             <?php module_template('theme/pagination'); ?>
-        </div>
-    <?php else: ?>
-        <i>Ничего не найдено. Проверьте этот раздел позже.</i>
-    <?php endif; ?>
+        <?php else: ?>
+            <i>Ничего не найдено. Проверьте этот раздел позже.</i>
+        <?php endif; ?>
+    </div>
 </div>
 
 <?php

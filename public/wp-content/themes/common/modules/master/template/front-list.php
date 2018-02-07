@@ -1,5 +1,5 @@
 <?php
-$cache_expire = 5*60;
+$cache_expire = pror_cache_expire(5*60);
 $cache_key = pror_cache_key('block', 'section');
 $cache_group = 'pror:master:list:front';
 
@@ -16,7 +16,7 @@ $unique_ids = array();
 
 $pro_masters_query = new WP_Query(array(
     'post_type' => 'master',
-    'posts_per_page' => $number_of_masters,
+    'posts_per_page' => min(6, $number_of_masters),
     'orderby' => 'rand',
     'author__in' => pror_get_query_pro_master_ids(),
     'tax_query' => array(

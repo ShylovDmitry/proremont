@@ -1,5 +1,5 @@
 <?php
-$cache_expire = 0;
+$cache_expire = pror_cache_expire(0);
 $cache_key = pror_cache_key('block', 'section');
 $cache_group = 'pror:theme:header';
 

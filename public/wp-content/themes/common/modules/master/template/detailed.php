@@ -2,7 +2,7 @@
 <div class="master-detailed<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
 
     <?php
-    $cache_expire = 0;
+    $cache_expire = pror_cache_expire(0);
     $cache_key = pror_cache_key();
     $cache_group = 'pror:master:post:id-' . get_the_ID();
 

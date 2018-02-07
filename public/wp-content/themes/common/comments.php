@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
     <?php
-    $cache_expire = 0;
+    $cache_expire = pror_cache_expire(0);
     $cache_key = pror_cache_key();
     $cache_group = 'pror:comments:post:id-' . get_the_ID();
 

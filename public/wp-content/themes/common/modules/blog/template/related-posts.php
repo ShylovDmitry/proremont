@@ -5,7 +5,7 @@ $limit = isset($__data['limit']) ? $__data['limit'] : 6;
 ?>
 
 <?php
-$cache_expire = 0;
+$cache_expire = pror_cache_expire(0);
 $cache_key = pror_cache_key(sprintf('posts-%s-%s-%s', $main_post_id, $container_class, $limit) , 'section');
 $cache_group = 'pror:blog:list:related';
 
