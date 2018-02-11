@@ -41,8 +41,12 @@
 
     .left {
         float: left;
-        position: relative;
         margin-right: 15px;
+    }
+
+    .avatar {
+        position: relative;
+        display: inline-block;
     }
 
     h5 .is-confirmed {
@@ -81,8 +85,8 @@
         border: 1px solid $color-light;
         width: 100px;
         max-width: 100px;
-        font-size: .75rem;
         height: auto;
+        font-size: .75rem;
     }
 
     .media-body .rating {
@@ -94,15 +98,13 @@
             color: $color-primary;
         }
 
-        .left > a {
-            position: relative;
-
+        .left .avatar {
             &::after {
                 content: url('../img/pro-leaf.svg');
                 width: 35px;
                 height: 10px;
                 position: absolute;
-                top: 25px;
+                bottom: 30%;
                 left: 0;
             }
         }
@@ -152,7 +154,6 @@
     .header {
         .left {
             text-align: center;
-            position: relative;
             margin-right: 15px;
 
             @media (min-width: $screen-width-md) {
@@ -161,11 +162,17 @@
             }
         }
 
+        .avatar {
+            position: relative;
+        }
+
         img {
             width: 175px;
-            height: 175px;
+            max-width: 175px;
+            height: auto;
             border: 1px solid $color-light;
         }
+
         .master-phones {
             font-weight: bolder;
             .show-number {
@@ -177,12 +184,12 @@
             color: $color-dark;
         }
     }
-    &.pro .header .left::after {
+    &.pro .header .avatar::after {
         content: url('../img/pro-leaf.svg');
         width: 50px;
         height: 10px;
         position: absolute;
-        top: 125px;
+        bottom: 20%;
         left: 0;
     }
 

@@ -15,13 +15,16 @@
 
     <div class="header">
         <div class="left">
-            <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('pror-medium', array(
-                        'alt' => pror_get_master_img_alt(),
-                )); ?>
-            <?php else: ?>
-                <img src="<?php module_img('master/no-avatar.png'); ?>" />
-            <?php endif; ?>
+            <div class="avatar">
+                <?php if (has_post_thumbnail()): ?>
+                    <?php the_post_thumbnail('pror-medium', array(
+                            'alt' => pror_get_master_img_alt(),
+                            'pror_no_scrset' => true,
+                    )); ?>
+                <?php else: ?>
+                    <img src="<?php module_img('master/no-avatar.png'); ?>" />
+                <?php endif; ?>
+            </div>
 
             <div class="rating">
                 <?php module_template('rating/total'); ?>

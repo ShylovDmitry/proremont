@@ -124,3 +124,60 @@ function pror_cache_delete_wildcard($group) {
         }
     }
 }
+
+add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $size) {
+    if (isset($attr['pror_no_scrset']) && $attr['pror_no_scrset']) {
+        unset($attr['srcset']);
+        unset($attr['sizes']);
+    }
+    return $attr;
+}, 11, 3);
+
+
+//add_action('init', function() {
+//    $str = 'Киевская область>Киев';
+//    list($parent, $child) = explode('>', $str);
+//    $par = get_term_by('name', $parent, 'location');
+//    $term = get_terms('location', [
+//        'name' => $child,
+//        'parent' => $par->term_id,
+//    ]);
+//
+//    var_dump($term[0]->term_id, $par, $term);exit;
+//}, 11);
+
+//add_action('init', function() {
+//    $str = 'Отделочные работы и ремонт>Комплексный ремонт под ключ|Отделочные работы и ремонт>Малярные и штукатурные работы|Строительные работы>Фундамент и бетонные работы|Строительные работы>Фасадные работы|Строительные работы>Снос зданий, демонтаж|Инженерно-монтажные работы>Сантехнические работы|Инженерно-монтажные работы>Отопление и водоснабжение';
+//
+//    $ids = [];
+//    foreach (explode('|', $str) as $s) {
+//        list($parent, $child) = explode('>', $s);
+//        $par = get_term_by('name', $parent, 'catalog_master');
+//        $term = get_terms('catalog_master', [
+//            'name' => $child,
+//            'parent' => $par->term_id,
+//        ]);
+//        if (isset($term[0])) {
+//            $ids[] = '' . $term[0]->term_id;
+//        }
+//    }
+//
+//    var_dump(serialize($ids));exit;
+//}, 11);
+
+//add_action('init', function() {
+//    if (isset($_GET['pror_offset'])) {
+//        $users = get_users([
+//            'role' => 'master',
+//            'number' => isset($_GET['pror_limit']) ? $_GET['pror_limit'] : 100,
+//            'offset' => $_GET['pror_offset'],
+//            'orderby' => 'ID',
+//            'fields' => ['ID'],
+//        ]);
+//        foreach ($users as $user) {
+//            var_dump($user->ID);
+//            pror_update_master_info($user->ID);
+//        }
+//        exit;
+//    }
+//}, 11);
