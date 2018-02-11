@@ -39,7 +39,7 @@ $query = new WP_Query(array(
             <?php while ($query->have_posts()): $query->the_post(); $pos++; ?>
                 <div class="col-6 col-md-3 my-3">
                     <a href="<?php echo wp_get_attachment_image_url(get_the_ID(), 'full'); ?>">
-                        <?php echo wp_get_attachment_image(get_the_ID(), 'pror-medium', false,  array('class' => 'img-fluid w-100')); ?>
+                        <?php echo wp_get_attachment_image(get_the_ID(), 'pror-medium', false,  array('class' => 'img-fluid w-100', 'pror_no_scrset' => true)); ?>
                     </a>
                 </div>
 
