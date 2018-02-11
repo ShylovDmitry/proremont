@@ -129,6 +129,7 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
     if (isset($attr['pror_no_scrset']) && $attr['pror_no_scrset']) {
         unset($attr['srcset']);
         unset($attr['sizes']);
+        unset($attr['pror_no_scrset']);
     }
     return $attr;
 }, 11, 3);
