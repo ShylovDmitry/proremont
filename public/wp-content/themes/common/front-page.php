@@ -30,7 +30,7 @@
             <div class="item">
                 <div class="circle">
                     <?php module_svg('theme/icon_master.svg'); ?>
-                    <strong>1 329</strong>
+                    <strong>3 269</strong>
                     мастеров
                 </div>
             </div>
