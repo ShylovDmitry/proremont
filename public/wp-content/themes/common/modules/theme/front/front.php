@@ -182,3 +182,48 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
 //        exit;
 //    }
 //}, 11);
+
+//add_action('init', function() {
+//    if (isset($_GET['pror_offset'])) {
+//        $bad_tax = array( 643, 607, 648, 635, 630, 611, 618 );
+//        $pp = new WP_Query([
+//            'post_type' => 'master',
+//            'post_status' => 'any',
+//            'posts_per_page' => isset($_GET['pror_limit']) ? $_GET['pror_limit'] : 100,
+//            'offset' => $_GET['pror_offset'],
+//            'orderby' => 'ID',
+//            'tax_query' => array(
+//                array(
+//                    'taxonomy' => 'catalog_master',
+//                    'terms' => $bad_tax,
+//                    'include_children' => false,
+//                    'operator' => 'IN',
+//                ),
+//            ),
+//        ]);
+//        $c = 0;
+//        while ($pp->have_posts()) {
+//            $c++;
+//            $pp->the_post();
+//
+//            global $post;
+//            $user_id = $post->post_author;
+//            $master_post_id = get_the_ID();
+//            $terms = wp_get_post_terms( $master_post_id, 'catalog_master', ['fields'=>'ids']);
+//            $catalog_terms = array_diff($terms, $bad_tax);
+//
+//            update_user_meta( $user_id, 'master_catalog', $catalog_terms );
+//
+//            wp_set_post_terms($master_post_id, $catalog_terms, 'catalog_master');
+//
+//            wp_update_post(array(
+//                'ID' => $master_post_id,
+//                'post_status' => ($catalog_terms) ? 'publish' : 'draft',
+//            ));
+//
+//        }
+//        var_dump($c);
+//
+//        exit;
+//    }
+//}, 11);
