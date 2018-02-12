@@ -219,7 +219,8 @@ function pror_get_query_pro_master_ids() {
 
 
 add_filter('acf/update_value/key=field_59ebc80ea9687', function($value, $post_id, $field) {
-    return preg_replace('/\D+/', '', $value);
+    $formatted = pror_format_phones(preg_replace('/\D+/', '', $value));
+    return $formatted['tel'];
 }, 10, 3);
 
 add_filter('acf/load_value/key=field_59ebc80ea9687', function($value, $post_id, $field) {
