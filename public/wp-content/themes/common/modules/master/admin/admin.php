@@ -60,6 +60,7 @@ add_action('pre_user_query', function($u_query) {
 
             // let's search by users first name
 			$u_query->query_from .= " JOIN {$wpdb->usermeta} phone_usermeta ON phone_usermeta.user_id = {$wpdb->users}.ID AND phone_usermeta.meta_key LIKE 'master_phones_%'";
+			$u_query->query_from .= " JOIN {$wpdb->usermeta} name_usermeta ON name_usermeta.user_id = {$wpdb->users}.ID AND name_usermeta.meta_key = 'master_title'";
 
 			// you can add here any meta key you want to search by
 			// $u_query->query_from .= " JOIN {$wpdb->usermeta} cstm ON cstm.user_id = {$wpdb->users}.ID AND cstm.meta_key = 'YOU CUSTOM meta_key'";
@@ -68,7 +69,7 @@ add_action('pre_user_query', function($u_query) {
 //			$u_query->query_from .= " JOIN {$wpdb->posts} psts ON psts.post_author = {$wpdb->users}.ID";
 
  			// what fields to include in the search
- 			$search_by = array( 'user_login', 'user_email', 'display_name', 'phone_usermeta.meta_value'/*, 'psts.post_title'*/ );
+ 			$search_by = array( 'user_login', 'user_email', 'display_name', 'name_usermeta.meta_value', 'phone_usermeta.meta_value'/*, 'psts.post_title'*/ );
 
  			// apply to the query
 			$u_query->query_where = 'WHERE 1=1' . $u_query->get_search_sql( $search_query, $search_by, 'both' );
