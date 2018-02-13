@@ -35,8 +35,7 @@ a, a:hover {
     text-align: center;
 
     @media (min-width: $screen-width-md) {
-        padding: 100px 0 80px;
-        text-align: inherit;
+        padding: 60px 0 60px;
         background-image: url('../img/home4_1.jpg');
     }
 
@@ -44,60 +43,86 @@ a, a:hover {
         background-image: url('../img/home4_2.jpg');
     }
 
-    h1 {
-        font-weight: 600;
-        font-size: 2.5rem;
+    .frontpage-block {
+        max-width: 500px;
+    }
 
-        @media (min-width: $screen-width-md) {
-            font-size: 3.5rem;
+    .text-block {
+        font-weight: 200;
+        font-size: 1.3rem;
+
+        .first {
+            margin-bottom: 10px;
+            word-spacing: 5px;
+        }
+        .last {
+
+        }
+        h1  {
+            font-weight: 600;
+            font-size: 2.3rem;
+            margin: 0;
+
+           .highlighted {
+               display: block;
+               font-weight: 900;
+               font-size: 4.0rem;
+               color: $color-primary;
+           }
         }
     }
 
-    .lead {
-        font-weight: 200;
-        margin-bottom: 50px;
-    }
 
-    .help {
-        font-family: $secondary-font;
-        margin-top: 5px;
-        font-size: .75rem;
-    }
+    .buttons {
+        margin-top: 50px;
 
-    .find-master {
-        a {
-            background-color: $color-primary;
-            border-color: $color-primary;
-            color: $color-darker;
-            text-transform: uppercase;
-            font-size: .85rem;
-            font-weight: 600;
-            padding: 20px 40px;
+        .help {
+            font-family: $secondary-font;
+            margin-top: 5px;
+            font-size: .75rem;
+        }
 
-            &:hover {
-                background-color: darken($color-primary, 10);
+        & > div {
+            margin: 10px 20px;
+        }
+
+        .find-master {
+            display: inline-block;
+
+            a {
+                background-color: $color-primary;
+                border-color: $color-primary;
+                color: $color-darker;
+                text-transform: uppercase;
+                font-size: .85rem;
+                font-weight: 600;
+                padding: 20px 40px;
+
+                &:hover {
+                    background-color: darken($color-primary, 10);
+                }
             }
         }
-    }
 
-    .iam-master {
-        margin-top: 40px;
+        .iam-master {
+            display: inline-block;
 
-        @media (min-width: $screen-width-md) {
-            margin-top: 0;
-        }
+            @media (min-width: $screen-width-md) {
+                margin-top: 0;
+            }
 
-        a {
-            background-color: $color-lighter;
-            border-color: $color-lighter;
-            color: $color-darker;
-            text-transform: uppercase;
-            font-size: .85rem;
-            font-weight: 600;
-            padding: 20px 40px;
+            a {
+                background-color: $color-lighter;
+                border-color: $color-lighter;
+                color: $color-darker;
+                text-transform: uppercase;
+                font-size: .85rem;
+                font-weight: 600;
+                padding: 20px 40px;
 
-            &:hover {
-                background-color: darken($color-lighter, 10);
+                &:hover {
+                    background-color: darken($color-lighter, 10);
+                }
             }
         }
     }

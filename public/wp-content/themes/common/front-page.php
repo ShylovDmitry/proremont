@@ -1,23 +1,27 @@
 <?php get_header(); ?>
 
 <div class="jumbotron jumbotron-fluid header">
-    <div class="container frontpage-title">
-        <h1>КАТАЛОГ МАСТЕРОВ</h1>
-        <p class="lead mt-1">Найдите своего мастера по <strong>отзывам</strong></p>
-
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 find-master">
-                <a class="btn btn-primary btn-lg" href="<?php echo home_url('/catalog/'); ?>" role="button">Ищу специалиста</a>
-                <div class="help">Каталог №1 в Украине</div>
+    <div class="container">
+        <div class="frontpage-block">
+            <div class="text-block">
+                <div class="first">Всеукраинский бесплатный</div>
+                <h1>ОНЛАЙН-КАТАЛОГ<span class="highlighted">МАСТЕРОВ</span></h1>
+                <div class="last">для ремонта квартир, домов<br />и офисных помещений</div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 iam-master">
-                <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
-                <div class="help">Бесплатное размещение</div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-12 mt-5">
+            <div class="buttons">
+                <div class="find-master">
+                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/catalog/'); ?>" role="button">Ищу специалиста</a>
+                    <div class="help">Каталог №1 в Украине</div>
+                </div>
+
+                <div class="iam-master">
+                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
+                    <div class="help">Бесплатное размещение</div>
+                </div>
+            </div>
+
+            <div class="mt-5">
                 <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама на сайте</a>
             </div>
         </div>
