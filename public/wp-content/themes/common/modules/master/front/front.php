@@ -5,7 +5,9 @@ add_action('wp_print_styles', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('master-common', get_module_js('master/common.js'), array('jquery'), dlv_get_ver(), true);
+    if (get_post_type() == 'master') {
+        wp_enqueue_script('master-common', get_module_js('master/common.js'), array('jquery'), dlv_get_ver(), true);
+    }
 });
 
 add_action('comment_rating_field_pro_rating_input_updated_post_rating', function ($post_id, $totalRatings, $averageRatings, $commentsWithARating, $countRatings, $averageRating, $ratingSplit, $ratingSplitPercentages) {

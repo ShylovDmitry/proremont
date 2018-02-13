@@ -1,4 +1,13 @@
 jQuery(function ($) {
+
+    function pror_track_master_action(type) {
+        $.post(ProRemontObj.ajaxurl, {action: 'pror_master_action', type: type, post_id: ProRemontObj.postid}, function (response) {
+            // console.log(response);
+        });
+    }
+
+    pror_track_master_action('page_view');
+
     $('.gallery-carousel').slick({
         infinite: true,
         speed: 300,
@@ -37,6 +46,8 @@ jQuery(function ($) {
 
     $('.show-number').click(function(e) {
         e.preventDefault();
+
+        pror_track_master_action('show_phone');
 
         if (typeof ga != 'undefined') {
             ga('send', 'event', 'Master Page', 'phone click');

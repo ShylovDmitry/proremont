@@ -65,6 +65,11 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
                     <a href="<?php echo get_edit_post_link($post_id); ?>">Редактировать страницу (ID <?php echo $post_id; ?>)</a>
                     &nbsp;&nbsp;&nbsp;
                     <a href="<?php echo get_the_permalink($post_id); ?>" target="_blank">Перейти на сайт</a>
+                    <br />
+                    <br />
+                    За последнии 30 дней:
+                        <b><?php echo pror_stats_get_period('master_page_view', $post_id, 30); ?></b> просмотров,
+                        <b><?php echo pror_stats_get_period('master_show_phone', $post_id, 30); ?></b> звонков
                 <?php endif; ?>
             </td>
         </tr>

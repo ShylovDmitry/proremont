@@ -14,7 +14,7 @@ add_action('wp_print_styles', function () {
 
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', get_module_js('theme/jquery-3.2.1.slim.min.js'), false, null, true);
+    wp_enqueue_script('jquery', get_module_js('theme/jquery-3.3.1.min.js'), false, null, true);
 }, 1);
 
 add_action('wp_enqueue_scripts', function () {
@@ -27,7 +27,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sticky-kit', get_module_js('theme/jquery.sticky-kit.min.js'), array('jquery'), dlv_get_ver(), true);
     wp_enqueue_script('theme-common', get_module_js('theme/common.js'), array('slick', 'select2', 'jquery'), dlv_get_ver(), true);
 
-	wp_localize_script('theme-common', 'ProRemont', array('ajax_url' => admin_url( 'admin-ajax.php')));
+	wp_localize_script('theme-common', 'ProRemontObj', array('ajaxurl' => admin_url('admin-ajax.php'), 'postid' => get_the_ID()));
 });
 
 add_theme_support( 'post-thumbnails' );
