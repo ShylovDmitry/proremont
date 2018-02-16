@@ -143,5 +143,6 @@ endif;
 ?>
 
 <div class="text-center">
-    <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all">Смотреть всех мастеров</a>
+    <?php $m_number = pror_catalog_get_count(); ?>
+    <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all">Смотреть <strong><?php echo $m_number; ?></strong> <?php echo pror_declension_words($m_number, ['мастера', 'мастеров', 'мастеров']); ?></a>
 </div>

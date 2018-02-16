@@ -32,24 +32,34 @@ function pror_get_catalog($parent_id = 0, $hide_empty = true) {
 
 }
 
-function pror_catalog_get_count($tax) {
+function pror_catalog_get_count($tax = null) {
     $section = pror_get_section();
     $locations = get_field('locations', $section);
 
-    $cat = array($tax->term_id);
-    if ($tax->parent == 0) {
-        $sub_taxes = get_terms(array(
-            'parent' => $tax->term_id,
+    if ($tax) {
+        $cat = array($tax->term_id);
+        if ($tax->parent == 0) {
+            $sub_taxes = get_terms(array(
+                'parent' => $tax->term_id,
+                'hierarchical' => false,
+                'taxonomy' => 'catalog_master',
+                'hide_empty' => false,
+                'fields' => 'ids',
+            ));
+            $cat = array_merge($cat, $sub_taxes);
+        }
+    } else {
+        $cat = get_terms(array(
             'hierarchical' => false,
             'taxonomy' => 'catalog_master',
             'hide_empty' => false,
             'fields' => 'ids',
         ));
-        $cat = array_merge($cat, $sub_taxes);
     }
 
     $q = new WP_Query(array(
         'post_type' => 'master',
+        'nopaging' => true,
         'tax_query' => array(
             'relation' => 'AND',
             array(

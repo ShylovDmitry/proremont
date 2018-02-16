@@ -133,3 +133,7 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
     }
     return $attr;
 }, 11, 3);
+
+function pror_declension_words($n, $words){
+    return ($words[($n=($n=$n%100)>19?($n%10):$n)==1?0 : (($n>1&&$n<=4)?1:2)]);
+}

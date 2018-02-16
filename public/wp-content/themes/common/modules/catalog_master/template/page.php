@@ -17,13 +17,13 @@ ob_start();
             <div class="catalog-title">
                 <a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>" title="<?php echo esc_attr($main_catalog->name); ?>">
                     <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
-                    <span class="link"><span><?php echo $main_catalog->name; ?></span></span>
+                    <span class="link"><span><?php echo $main_catalog->name; ?> (<?php echo pror_catalog_get_count($main_catalog); ?>)</span></span>
                 </a>
             </div>
 
             <div class="catalog-subs row">
                 <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>
-                    <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" title="<?php echo esc_attr($sub_catalog->name); ?>"><?php echo $sub_catalog->name; ?></a></div>
+                    <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" title="<?php echo esc_attr($sub_catalog->name); ?>"><?php echo $sub_catalog->name; ?> (<?php echo pror_catalog_get_count($sub_catalog); ?>)</a></div>
                     <?php if (($index+1) % 2 == 0): ?><div class="w-100 d-lg-none"></div><?php endif; ?>
                 <?php endforeach; ?>
             </div>
