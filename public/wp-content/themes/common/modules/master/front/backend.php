@@ -30,7 +30,7 @@ function pror_update_master_info($user_id) {
     update_user_meta($user_id, 'show_admin_bar_front', false);
 
     $should_be_master = get_field('master_should_be', "user_{$user_id}");
-    $caps = ($should_be_master == 'yes') ? array('master' => true) : array('subscriber' => true);
+    $caps = ($should_be_master) ? array('master' => true) : array('subscriber' => true);
     update_user_meta($user_id, 'wp_capabilities', $caps);
 
     if ($should_be_master != 'yes') {

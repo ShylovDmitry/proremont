@@ -1,8 +1,11 @@
 jQuery(function ($) {
-    $('#your-profile').submit(function() {
+
+    $('.categorychecklist-holder > ul > li > label :checkbox').remove();
+
+    $('#your-profile').submit(function(e) {
         var should_be_master = $('[data-name="master_should_be"] .acf-input input:checked').val();
 
-        if (should_be_master == 'yes') {
+        if (should_be_master) {
             var title = $('[data-name="master_title"] .acf-input input').val();
 
             $('#display_name option:selected').text(title);

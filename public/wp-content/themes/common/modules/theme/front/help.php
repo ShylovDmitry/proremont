@@ -179,7 +179,7 @@
 
 //add_action('init', function() {
 //    if (isset($_GET['pror_offset'])) {
-//        $bad_tax = array( 643, 607, 648, 635, 630, 611, 618 );
+//        $bad_tax = array( 643, 607, 648, 635, 630, 611, 618, 620, 650 );
 //        $pp = new WP_Query([
 //            'post_type' => 'master',
 //            'post_status' => 'any',
