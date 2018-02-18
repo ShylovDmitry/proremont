@@ -74,13 +74,13 @@
                     <div class="catalog-title">
                         <a href="<?php echo esc_url( get_term_link($parent) ); ?>" title="<?php echo esc_attr($parent->name); ?>">
                             <span class="icon"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
-                            <span class="link"><?php echo $parent->name; ?></span>
+                            <span class="link"><?php echo $parent->name; ?> (<?php echo pror_catalog_get_count($parent); ?>)</span>
                         </a>
                     </div>
 
                     <ul class="list-unstyled">
                     <?php foreach ($parent->children as $child): ?>
-                        <li><a href="<?php echo esc_url( get_term_link($child) ); ?>" title="<?php echo esc_attr($child->name); ?>"><?php echo $child->name; ?></a></li>
+                        <li><a href="<?php echo esc_url( get_term_link($child) ); ?>" title="<?php echo esc_attr($child->name); ?>"><?php echo $child->name; ?> (<?php echo pror_catalog_get_count($child); ?>)</a></li>
                     <?php endforeach; ?>
                     </ul>
                 </div>
