@@ -105,6 +105,7 @@
   position: relative; }
 .master-detailed .header img {
   width: 175px;
+  max-width: 175px;
   height: auto;
   border: 1px solid #B2BABB; }
 .master-detailed .header .master-phones {
@@ -155,16 +156,29 @@
 .master-detailed .catalog-title a {
   display: table;
   font-size: 16px;
-  font-weight: bolder; }
-  .master-detailed .catalog-title a span {
+  font-weight: bolder;
+  text-decoration: none; }
+  .master-detailed .catalog-title a .icon, .master-detailed .catalog-title a .link {
     display: table-cell;
     vertical-align: middle; }
   .master-detailed .catalog-title a .icon {
     font-size: 0; }
   .master-detailed .catalog-title a .link {
-    padding-left: 10px; }
+    padding-left: 10px;
+    font-weight: 200; }
+    .master-detailed .catalog-title a .link span {
+      font-weight: 400; }
+  .master-detailed .catalog-title a:hover .link span, .master-detailed .catalog-title a:visited .link span {
+    text-decoration: underline; }
   .master-detailed .catalog-title a svg {
     fill: #424949; }
+.master-detailed .catalog-subs a {
+  text-decoration: none;
+  font-weight: 200; }
+  .master-detailed .catalog-subs a span {
+    font-weight: 300; }
+  .master-detailed .catalog-subs a:hover span, .master-detailed .catalog-subs a:visited span {
+    text-decoration: underline; }
 .master-detailed .gallery-wrapper {
   width: 100%;
   background: #B2BABB;

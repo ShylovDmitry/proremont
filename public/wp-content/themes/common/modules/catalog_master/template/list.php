@@ -34,8 +34,8 @@ ob_start();
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="catalog-title">
                         <a class="pror-collapse" title="<?php echo esc_attr($main_catalog->name); ?>" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu">
-                            <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
-                            <span class="text"><span><?php echo $main_catalog->name; ?> (<?php echo pror_catalog_get_count($main_catalog); ?>)</span></span>
+                            <span class="icon"><?php module_svg("catalog_master/____{$main_catalog->slug}.svg"); ?></span>
+                            <span class="text"><span><?php echo $main_catalog->name; ?></span> <?php echo pror_catalog_get_count($main_catalog); ?></span>
                         </a>
                     </div>
                 </div>
@@ -51,7 +51,9 @@ ob_start();
 
                 <div class="row">
                     <?php foreach (pror_get_catalog($main_catalog->term_id) as $pos => $sub_catalog): ?>
-                        <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" title="<?php echo esc_attr($sub_catalog->name); ?>"><?php echo $sub_catalog->name; ?> (<?php echo pror_catalog_get_count($sub_catalog); ?>)</a></div>
+                        <div class="col-12 col-md-6 my-1">
+                            <a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" class="subcategory-link" title="<?php echo esc_attr($sub_catalog->name); ?>"><span><?php echo $sub_catalog->name; ?></span> <?php echo pror_catalog_get_count($sub_catalog); ?></a>
+                        </div>
                         <?php if (($pos+1) % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
                     <?php endforeach; ?>
                 </div>

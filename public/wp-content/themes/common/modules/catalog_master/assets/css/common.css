@@ -21,15 +21,19 @@
     font-size: 16px;
     font-weight: bolder; }
   .catalog-mater-3col .catalog-title .text {
-    padding-left: 10px; }
+    padding-left: 10px;
+    font-weight: 200; }
     .catalog-mater-3col .catalog-title .text span {
+      font-weight: 400;
       text-decoration: underline; }
   .catalog-mater-3col .catalog-title svg {
     fill: #424949; }
-  .catalog-mater-3col .catalog-title.active .text span, .catalog-mater-3col .catalog-title a:hover .text span {
-    color: #E67E22; }
-  .catalog-mater-3col .catalog-title.active svg, .catalog-mater-3col .catalog-title a:hover svg {
-    fill: #E67E22; }
+  .catalog-mater-3col .catalog-title.active, .catalog-mater-3col .catalog-title a:hover {
+    text-decoration: none; }
+    .catalog-mater-3col .catalog-title.active .text, .catalog-mater-3col .catalog-title a:hover .text {
+      color: #E67E22; }
+    .catalog-mater-3col .catalog-title.active svg, .catalog-mater-3col .catalog-title a:hover svg {
+      fill: #E67E22; }
 .catalog-mater-3col .item {
   background: #F9F9F9;
   border: 1px solid #B2BABB;
@@ -85,6 +89,13 @@
     @media (min-width: 992px) {
       .catalog-mater-3col .item.item-3 .arrow {
         left: 667px; } }
+  .catalog-mater-3col .item .subcategory-link {
+    font-weight: 200;
+    text-decoration: none; }
+    .catalog-mater-3col .item .subcategory-link span {
+      font-weight: 300; }
+    .catalog-mater-3col .item .subcategory-link:hover span, .catalog-mater-3col .item .subcategory-link:visited span {
+      text-decoration: underline; }
 
 .catalog-master-page .catalog-subs {
   padding-top: 15px; }
@@ -103,15 +114,28 @@
 .catalog-master-page .catalog-title a {
   display: table;
   font-size: 16px;
-  font-weight: bolder; }
-  .catalog-master-page .catalog-title a span {
+  font-weight: bolder;
+  text-decoration: none; }
+  .catalog-master-page .catalog-title a .icon, .catalog-master-page .catalog-title a .link {
     display: table-cell;
     vertical-align: middle; }
   .catalog-master-page .catalog-title a .icon {
     font-size: 0; }
   .catalog-master-page .catalog-title a .link {
-    padding-left: 10px; }
+    padding-left: 10px;
+    font-weight: 200; }
+    .catalog-master-page .catalog-title a .link span {
+      font-weight: 400; }
+  .catalog-master-page .catalog-title a:hover .link span, .catalog-master-page .catalog-title a:visited .link span {
+    text-decoration: underline; }
   .catalog-master-page .catalog-title a svg {
     fill: #424949; }
+.catalog-master-page .catalog-subs a {
+  text-decoration: none;
+  font-weight: 200; }
+  .catalog-master-page .catalog-subs a span {
+    font-weight: 300; }
+  .catalog-master-page .catalog-subs a:hover span, .catalog-master-page .catalog-subs a:visited span {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=common.css.map */
