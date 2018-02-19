@@ -10,7 +10,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
             </th>
             <td>
                 <?php if (get_field('master_is_confirmed', "user_" . get_current_user_id())): ?>
-                    <span class="oi oi-circle-check text-success"></span> Ваш аккаунт подтверждень. Тепер посетители Вам доверяют.
+                    <span class="oi oi-circle-check text-success"></span> Ваш аккаунт подтвержден. Тепер посетители сайта Вам доверяют.
                 <?php else: ?>
                     <span class="oi oi-circle-x text-danger"></span> Ваш аккаунт <strong>НЕ подтвержден</strong>. Доверие посетителей к Вам ниже. Узнайте <a href="#" data-toggle="modal" data-target="#modalConfirmAccount">как подтвердить аккаунт</a>.
                 <?php endif; ?>
@@ -22,7 +22,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
             </th>
             <td>
                 <?php if (get_field('master_is_pro', "user_" . get_current_user_id())): ?>
-                    <span class="oi oi-circle-check text-success"></span> Поздравлям! Вам открыты все функции сайта.
+                    <span class="oi oi-circle-check text-success"></span> Поздравляем! Вам открыты максимальные возможности сайта.
                 <?php else: ?>
                     <span class="oi oi-circle-x text-danger"></span> Вы <strong>НЕ используете</strong> все возможности сайта. Узнайте <a href="https://proremont.co/pro-akkaunt-dlya-masterov/?utm_source=adminpanel&utm_medium=content&utm_campaign=status_link" target="_blank">как привлечь внимание посетителей</a>.
                 <?php endif; ?>
@@ -40,7 +40,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
                 <?php if (is_array($ratings) && $averageRating > 4): ?>
                     <span class="oi oi-circle-check text-success"></span> У вас хороший рейтинг. Так держать!
                 <?php elseif (is_array($ratings)): ?>
-                    <span class="oi oi-circle-x text-danger"></span> Ваш рейтинг нуждается в улучшени. Попросите своих клиентов оставить хорошие оценки.
+                    <span class="oi oi-circle-x text-danger"></span> Ваш рейтинг нуждается в улучшени. Попросите своих клиентов оставить хорошие оценки и отзывы - Вы сразу займете более высокие позиции в поиске и станете в разы заметнее.
                 <?php else: ?>
                     <span class="oi oi-circle-x text-danger"></span> У вас <strong>НЕТ отзывов</strong>. Узнайте <a href="#" data-toggle="modal" data-target="#modalAboutReviews">как отображаться в ТОПе</a>.
                 <?php endif; ?>
