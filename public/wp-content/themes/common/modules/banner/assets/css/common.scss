@@ -6,11 +6,6 @@ html .col-banner-sidebar {
     max-width: 315px;
 }
 
-#div-sidebar1,
-#div-sidebar2 {
-    box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5);
-}
-
 #banner_mobile1,
 #banner_mobile2 {
     margin-left: -15px;
@@ -18,5 +13,26 @@ html .col-banner-sidebar {
 
     & > div {
         margin: 0 auto;
+    }
+}
+
+#banner_sidebar {
+    .reklama-link {
+        font-size: .75rem;
+        color: darken($color-lighter, 40);
+        text-decoration: underline;
+    }
+}
+
+.banner-mobile {
+    .reklama-block {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .reklama-link {
+        font-size: .75rem;
+        color: darken($color-lighter, 40);
+        text-decoration: underline;
     }
 }

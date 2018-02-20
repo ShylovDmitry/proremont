@@ -19,9 +19,13 @@
                 <h1 class="mb-3"><?php single_term_title() ?></h1>
 
                 <?php module_template('master/list'); ?>
-
-                <div class="term-description"><?php echo term_description(); ?></div>
             </div>
+
+            <?php if (term_description()): ?>
+                <div class="colored-box mt-3 p-3">
+                    <div class="term-description"><?php echo term_description(); ?></div>
+                </div>
+            <?php endif; ?>
         </div>
 
         <?php module_template('banner/sidebar-col'); ?>

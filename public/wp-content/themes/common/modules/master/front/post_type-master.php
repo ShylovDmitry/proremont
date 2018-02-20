@@ -11,7 +11,7 @@ add_action('init', function() {
         'public' => true,
         'rewrite' => array(
             'with_front' => false,
-            'slug' => '%location%/master',
+            'slug' => 'm',
         ),
         'delete_with_user' => true,
         'supports' => array(
@@ -60,9 +60,6 @@ add_action('init', function() {
         'public' => true,
         'publicly_queryable' => false,
     ));
-
-    add_rewrite_rule('([^/]+)/master/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
-    add_rewrite_rule('([^/]+)/master/([^/]+)/(feed|rdf|rss|rss2|atom)/?$','index.php?location=$matches[1]&master=$matches[2]&feed=$matches[3]','top');
 });
 
 add_filter('rewrite_rules_array', function($rules) {
@@ -70,7 +67,7 @@ add_filter('rewrite_rules_array', function($rules) {
         if (strpos($rule, 'index.php?section=$matches[1]') === 0 && strpos($regexp, '/mastera/') === false) {
             unset($rules[$regexp]);
         }
-        if (strpos($rule, 'index.php?location=$matches[1]') === 0 && strpos($regexp, '/master/') === false) {
+        if (strpos($rule, 'index.php?location=$matches[1]') === 0 && strpos($regexp, '/m/') === false) {
             unset($rules[$regexp]);
         }
         if (strpos($rule, 'index.php?category_name=$matches[1]') === 0) {

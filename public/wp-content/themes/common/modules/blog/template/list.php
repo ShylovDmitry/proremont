@@ -22,12 +22,15 @@ ob_start();
                 </div>
             <?php endif; ?>
             <h3 class="pt-3"><a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h3>
+            <div class="post-date"><?php echo get_the_date(); ?></div>
             <div class="excerpt">
                 <?php the_excerpt(); ?>
             </div>
             <div class="row">
                 <div class="col-6">
-                    <div class="post-date"><?php echo get_the_date(); ?></div>
+                    <div class="post-catalogs">
+                        <?php the_terms(get_the_ID(), 'catalog_master'); ?>
+                    </div>
                 </div>
                 <div class="col-6 text-right">
                     <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link">Подробнее &raquo;</a>

@@ -2,7 +2,7 @@
 
 add_action('admin_enqueue_scripts', function($hook) {
     if ((pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) && is_admin()) {
-        wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500,700,900|Roboto+Condensed', array(), null);
+        wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500,700,900', array(), null);
         wp_enqueue_style('bootstrap', get_module_css('theme/bootstrap-4.0.0-beta.min.css'), array(), null);
         wp_enqueue_style('open-iconic', get_module_css('theme/open-iconic/css/open-iconic-bootstrap.min.css'), array(), '1.1.1');
         wp_enqueue_style('admin-profile', get_module_css('master/admin-profile.css'), array(), dlv_get_ver());

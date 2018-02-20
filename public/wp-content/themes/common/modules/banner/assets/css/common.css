@@ -3,10 +3,6 @@ html .col-banner-sidebar {
   flex-basis: 315px;
   max-width: 315px; }
 
-#div-sidebar1,
-#div-sidebar2 {
-  box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5); }
-
 #banner_mobile1,
 #banner_mobile2 {
   margin-left: -15px;
@@ -14,5 +10,18 @@ html .col-banner-sidebar {
   #banner_mobile1 > div,
   #banner_mobile2 > div {
     margin: 0 auto; }
+
+#banner_sidebar .reklama-link {
+  font-size: .75rem;
+  color: #7c898b;
+  text-decoration: underline; }
+
+.banner-mobile .reklama-block {
+  width: 300px;
+  margin: 0 auto; }
+.banner-mobile .reklama-link {
+  font-size: .75rem;
+  color: #7c898b;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=common.css.map */

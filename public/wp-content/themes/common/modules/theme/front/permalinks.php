@@ -35,28 +35,3 @@ function pror_remove_section_cookie() {
 function pror_get_section_cookie() {
     return isset($_COOKIE, $_COOKIE['pror_section']) ? $_COOKIE['pror_section'] : null;
 }
-
-add_filter('post_type_link', function($post_link, $post, $leavename, $sample) {
-    if (get_post_type($post) == 'master') {
-        $locations = get_the_terms($post, 'location');
-        if (isset($locations, $locations[0]) && $locations[0]->term_id) {
-            $post_link = str_replace('%location%', $locations[0]->slug, $post_link);
-        }
-    }
-
-    return $post_link;
-}, 10, 4);
-
-add_action('wp', function() {
-    if (!is_admin() && is_singular('master') && get_post_type() == 'master') {
-        global $wp;
-        $locations = get_the_terms(null, 'location');
-        $parts = explode('/', $wp->request);
-
-        if (isset($locations, $locations[0]) && $locations[0]->term_id && $parts[0] != $locations[0]->slug) {
-            $url = str_replace($parts[0] . '/', $locations[0]->slug . '/', $wp->request);
-            wp_redirect(home_url($url));
-            exit;
-        }
-    }
-});

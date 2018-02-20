@@ -5,9 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="colored-box p-3">
-                <?php module_template('master/detailed'); ?>
-            </div>
+            <?php module_template('master/detailed'); ?>
         </div>
 
         <?php module_template('banner/sidebar-col'); ?>
