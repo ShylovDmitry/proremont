@@ -31,7 +31,7 @@ $query = new WP_Query(array(
             <div class="row">
             <?php $pos = 0; ?>
             <?php while ($query->have_posts()): $query->the_post(); $pos++; ?>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
                     <?php module_template('blog/small'); ?>
 
                     <?php if ($pos % 2 == 0): ?><div class="w-100"></div><?php endif; ?>
