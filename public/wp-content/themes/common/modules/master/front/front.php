@@ -127,7 +127,7 @@ function pror_format_phones($phone) {
     $tel = $phone;
     if (strlen($phone) == 13) {
         if (preg_match('/\+(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
-            $phone = sprintf('%s %s %s', $matches[2], $matches[3], $matches[4]);
+            $phone = sprintf('(%s) %s %s', $matches[2], $matches[3], $matches[4]);
         }
     }
 

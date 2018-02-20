@@ -112,6 +112,10 @@
   font-weight: bolder; }
   .master-detailed .header .master-phones .show-number {
     color: #E67E22; }
+  .master-detailed .header .master-phones .delimiter {
+    display: inline-block;
+    font-weight: 300;
+    padding-right: 5px; }
 .master-detailed .header .phone a {
   color: #424949; }
 .master-detailed.pro .header .avatar::after {

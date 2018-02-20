@@ -4,13 +4,13 @@
 <span class="master-phones">
     <span class="stub">
         <?php foreach ($master_phones as $pos => $phone): ?>
-            <?php echo sprintf('%sx xxx xxxx', substr($phone['text'], 0, 2)); ?><?php if ($pos != $master_phones_count): ?>, <?php endif; ?>
+            <?php echo sprintf('%s xxx xxxx', substr($phone['text'], 0, 5)); ?><?php if ($pos != $master_phones_count): ?><span class="delimiter">,</span><?php endif; ?>
         <?php endforeach; ?>
         <a href="#" class="show-number">Показать</a>
     </span>
     <span class="phones d-none">
         <?php foreach ($master_phones as $pos => $phone): ?>
-            <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a><?php if ($pos != $master_phones_count): ?>, <?php endif; ?>
+            <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a><?php if ($pos != $master_phones_count): ?><span class="delimiter">,</span><?php endif; ?>
         <?php endforeach; ?>
     </span>
 </span>
