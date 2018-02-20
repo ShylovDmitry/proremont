@@ -18,7 +18,7 @@ a, a:hover {
   color: #424949; }
 
 .jumbotron.header {
-  background: transparent no-repeat center top;
+  background: #2C2C2C no-repeat center top;
   background-image: url("../img/home4_7.jpg");
   background-size: cover;
   color: #fff;
