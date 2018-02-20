@@ -50,11 +50,7 @@ a, a:hover {
       .jumbotron.header .text-block h1 .highlighted {
         display: block;
         font-weight: 900;
-        font-size: 3.4rem;
         color: #E67E22; }
-        @media (min-width: 768px) {
-          .jumbotron.header .text-block h1 .highlighted {
-            font-size: 4.0rem; } }
   .jumbotron.header .buttons {
     margin-top: 50px; }
     .jumbotron.header .buttons .help {

@@ -70,12 +70,7 @@ a, a:hover {
             .highlighted {
                 display: block;
                 font-weight: 900;
-                font-size: 3.4rem;
                 color: $color-primary;
-
-                @media (min-width: $screen-width-md) {
-                    font-size: 4.0rem;
-                }
             }
         }
     }
