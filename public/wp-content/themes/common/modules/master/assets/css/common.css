@@ -77,11 +77,10 @@
   border-bottom: 1px solid #e8ebeb; }
 
 .btn.masters-see-all {
-  font-size: 1.3rem;
+  font-size: 1rem;
   background: #E67E22;
   color: #fff;
   padding: 8px 12px;
-  margin: 10px 0 10px;
   text-decoration: none;
   display: inline-block; }
   .btn.masters-see-all:hover {

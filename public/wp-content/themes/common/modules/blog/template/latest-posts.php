@@ -26,7 +26,7 @@ $query = new WP_Query(array(
 <?php if ($query->have_posts()): ?>
     <div class="<?php echo $container_class; ?>">
         <div class="latest-posts">
-            <h3 class="header-underlined">Последнии статии</h3>
+            <h3 class="header-underlined">Последние статьи</h3>
 
             <div class="row">
             <?php $pos = 0; ?>
@@ -38,6 +38,10 @@ $query = new WP_Query(array(
                 </div>
             <?php endwhile; ?>
             </div>
+        </div>
+
+        <div class="see-blog">
+            <a href="<?php echo home_url('/blog/'); ?>" class="btn">Смотреть все статьи</a>
         </div>
     </div>
 <?php endif; ?>

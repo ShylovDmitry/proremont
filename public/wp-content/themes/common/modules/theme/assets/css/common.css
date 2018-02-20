@@ -168,24 +168,36 @@ h1, h2, h3, h4, h5, h6 {
         margin-right: 100px; } }
   .navbar a {
     color: #fff; }
-  .navbar .navbar-nav {
-    margin: 0 20px; }
+  @media (min-width: 992px) {
     .navbar .navbar-nav .find-master {
+      border-radius: .25rem;
+      line-height: 1.25;
+      user-select: none;
+      font-weight: 400;
+      white-space: nowrap;
+      vertical-align: middle;
       background-color: #E67E22;
       color: #121313;
       font-size: 1rem;
-      padding: 5px 15px;
-      margin: 10px 15px 10px 0; }
+      margin-left: 15px; }
       .navbar .navbar-nav .find-master:hover {
-        background-color: #bf6516; }
+        background-color: #bf6516;
+        color: #121313; } }
+  @media (min-width: 992px) {
     .navbar .navbar-nav .iam-master {
+      border-radius: .25rem;
+      line-height: 1.25;
+      user-select: none;
+      font-weight: 400;
+      white-space: nowrap;
+      vertical-align: middle;
       background-color: #e8ebeb;
       color: #121313;
       font-size: 1rem;
-      padding: 5px 15px;
-      margin: 10px 0; }
+      margin-left: 15px; }
       .navbar .navbar-nav .iam-master:hover {
-        background-color: #cdd2d3; }
+        background-color: #cdd2d3;
+        color: #121313; } }
   .navbar .navbar-toggler {
     margin-right: 10px;
     margin-bottom: 10px; }

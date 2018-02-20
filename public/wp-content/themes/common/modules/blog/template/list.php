@@ -14,12 +14,14 @@ ob_start();
 <?php while (have_posts()): the_post(); $pos++; ?>
     <div class="colored-box px-3 pb-3 mb-3">
         <article>
-            <div class="post-image mb-3">
-                <a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                    <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
-                </a>
-            </div>
-            <h3><a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h3>
+            <?php if (has_post_thumbnail()): ?>
+                <div class="post-image">
+                    <a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <h3 class="pt-3"><a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h3>
             <div class="excerpt">
                 <?php the_excerpt(); ?>
             </div>

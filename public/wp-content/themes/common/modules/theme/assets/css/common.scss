@@ -239,29 +239,45 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-nav {
-        margin: 0 20px;
-
         .find-master {
-            background-color: $color-primary;
-            color: $color-darker;
-            font-size: 1rem;
-            padding: 5px 15px;
-            margin: 10px 15px 10px 0;
+            @media (min-width: $screen-width-lg) {
+                border-radius: .25rem;
+                line-height: 1.25;
+                user-select: none;
+                font-weight: 400;
+                white-space: nowrap;
+                vertical-align: middle;
 
-            &:hover {
-                background-color: darken($color-primary, 10);
+                background-color: $color-primary;
+                color: $color-darker;
+                font-size: 1rem;
+                margin-left: 15px;
+
+                &:hover {
+                    background-color: darken($color-primary, 10);
+                    color: $color-darker;
+                }
             }
         }
 
         .iam-master {
-            background-color: $color-lighter;
-            color: $color-darker;
-            font-size: 1rem;
-            padding: 5px 15px;
-            margin: 10px 0;
+            @media (min-width: $screen-width-lg) {
+                border-radius: .25rem;
+                line-height: 1.25;
+                user-select: none;
+                font-weight: 400;
+                white-space: nowrap;
+                vertical-align: middle;
 
-            &:hover {
-                background-color: darken($color-lighter, 10);
+                background-color: $color-lighter;
+                color: $color-darker;
+                font-size: 1rem;
+                margin-left: 15px;
+
+                &:hover {
+                    background-color: darken($color-lighter, 10);
+                    color: $color-darker;
+                }
             }
         }
     }

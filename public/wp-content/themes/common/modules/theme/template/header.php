@@ -61,8 +61,9 @@ ob_start();
             </form>
 
             <ul class="navbar-nav">
-                <li><a href="<?php echo home_url('/catalog/'); ?>" class="btn find-master">Найти мастера</a></li>
-                <li><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="btn iam-master">Стать исполнителем</a></li>
+                <li class="nav-item"><a href="<?php echo home_url('/blog/'); ?>" class="nav-link">Блог</a></li>
+                <li class="nav-item"><a href="<?php echo home_url('/catalog/'); ?>" class="nav-link find-master">Найти мастера</a></li>
+                <li class="nav-item"><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="nav-link iam-master">Стать исполнителем</a></li>
             </ul>
 
             <?php module_template('master/menu/top'); ?>

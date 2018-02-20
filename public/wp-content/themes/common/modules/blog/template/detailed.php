@@ -11,11 +11,13 @@
     ob_start();
     ?>
 
-    <div class="post-image mb-3">
-        <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
-    </div>
+    <?php if (has_post_thumbnail()): ?>
+        <div class="post-image">
+            <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+        </div>
+    <?php endif; ?>
 
-    <h1 class="post-title"><?php the_title(); ?></h1>
+    <h1 class="post-title pt-3"><?php the_title(); ?></h1>
     <div class="post-date header-underlined mb-3"><?php echo get_the_date(); ?></div>
 
     <div class="mb-3 d-lg-none">
