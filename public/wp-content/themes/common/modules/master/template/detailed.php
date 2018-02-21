@@ -13,7 +13,7 @@
     ob_start();
     ?>
 
-    <div class="colored-box p-3">
+    <div class="colored-box p-3 main-content">
         <div class="header">
             <div class="left">
                 <div class="avatar">
@@ -40,7 +40,10 @@
                     <?php endif; ?>
                 </h1>
 
-                <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
+                <div class="type">
+                    <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
+                    <?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?>
+                </div>
                 <div class="location"><?php echo end(pror_get_master_location()); ?></div>
                 <br />
                 <div class="phone">Телефон:
@@ -49,9 +52,9 @@
             </div>
         </div>
         <div class="clearfix"></div>
+        <div class="line"></div>
 
         <div class="content">
-            <h4 class="header-underlined"></h4>
             <?php if(get_the_content()): ?>
                 <?php the_content(); ?>
             <?php elseif(get_the_excerpt()): ?>
@@ -64,32 +67,13 @@
         <div class="d-lg-none mt-2">
             <?php module_template('banner/mobile1'); ?>
         </div>
-
     </div>
 
-    <div class="colored-box mt-3 pt-3 px-3">
-        <div class="catalog">
-            <h4 class="header-underlined">Услуги</h4>
-
-            <div class="row">
-                <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
-                    <div class="col-md-6 mb-3">
-                        <div class="catalog-title">
-                            <a href="<?php echo esc_url( get_term_link($parent) ); ?>" title="<?php echo esc_attr($parent->name); ?>">
-                                <span class="icon"><?php module_svg("catalog_master/____{$parent->slug}.svg"); ?></span>
-                                <span class="link"><span><?php echo $parent->name; ?></span> <?php echo pror_catalog_get_count($parent); ?></span>
-                            </a>
-                        </div>
-
-                        <ul class="list-unstyled catalog-subs">
-                        <?php foreach ($parent->children as $child): ?>
-                            <li><a href="<?php echo esc_url( get_term_link($child) ); ?>" title="<?php echo esc_attr($child->name); ?>"><span><?php echo $child->name; ?></span> <?php echo pror_catalog_get_count($child); ?></a></li>
-                        <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <?php if (($pos+1) % 2 == 0): ?><div class="w-100 d-none d-md-block"></div><?php endif; ?>
-                <?php endforeach; ?>
-            </div>
+    <div class="colored-box mt-3 p-3">
+        <div class="rating">
+            <h4 class="header-underlined">Оценки</h4>
+            <?php module_template('rating/breakdown'); ?>
+            <div class="clearfix"></div>
         </div>
     </div>
 
@@ -115,11 +99,29 @@
         </div>
     <?php endif; ?>
 
-    <div class="colored-box mt-3 p-3">
-        <div class="rating">
-            <h4 class="header-underlined">Оценки</h4>
-            <?php module_template('rating/breakdown'); ?>
-            <div class="clearfix"></div>
+    <div class="colored-box mt-3 pt-3 px-3">
+        <div class="catalog">
+            <h4 class="header-underlined">Услуги</h4>
+
+            <div class="row">
+                <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
+                    <div class="col-md-6 mb-3">
+                        <div class="catalog-title">
+                            <a href="<?php echo esc_url( get_term_link($parent) ); ?>" title="<?php echo esc_attr($parent->name); ?>">
+                                <span class="icon"><?php module_svg("catalog_master/____{$parent->slug}.svg"); ?></span>
+                                <span class="link"><span><?php echo $parent->name; ?></span> <?php echo pror_catalog_get_count($parent); ?></span>
+                            </a>
+                        </div>
+
+                        <ul class="list-unstyled catalog-subs">
+                        <?php foreach ($parent->children as $child): ?>
+                            <li><a href="<?php echo esc_url( get_term_link($child) ); ?>" title="<?php echo esc_attr($child->name); ?>"><span><?php echo $child->name; ?></span> <?php echo pror_catalog_get_count($child); ?></a></li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php if (($pos+1) % 2 == 0): ?><div class="w-100 d-none d-md-block"></div><?php endif; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 

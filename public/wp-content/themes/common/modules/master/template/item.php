@@ -1,5 +1,5 @@
-<div class="master-item<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> master-item-pro<?php endif; ?>">
-    <div class="media mb-2">
+<div class="master-item<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
+    <div class="media">
         <div class="left">
             <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
                 <div class="avatar">
@@ -29,16 +29,20 @@
                     <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
                 <?php endif; ?>
             </h5>
-            <div class="type"><?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?></div>
+            <div class="type">
+                <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
+                <?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?>
+            </div>
             <div class="location"><?php echo end(pror_get_master_location()); ?></div>
             <div class="catalog"><?php module_template('catalog_master/icons'); ?></div>
         </div>
     </div>
+    <div class="line"></div>
     <div class="excerpt">
         <?php the_excerpt(); ?>
 
         <div class="more">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">Смотреть телефон &raquo;</a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">Подробнее &raquo;</a>
         </div>
     </div>
 </div>

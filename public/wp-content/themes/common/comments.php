@@ -71,19 +71,22 @@ if ( post_password_required() ) {
     endif;
     ?>
 
-    <?php
-	$logged_user = wp_get_current_user();
-	comment_form(array(
-		'logged_in_as' => '<div class="logged-in-as">' . sprintf(
-                              '%1$s<strong>%2$s</strong><p><i>Если это не вы, нажмите <a href="%3$s">выйти</a>.</i></p>',
-                              get_avatar($logged_user ? $logged_user->ID : null),
-                              $user_identity,
-                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
-                          ) . '</div>',
-        'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
-        'title_reply' => 'Оставить отзыв',
-        'label_submit' => 'Оставить отзыв',
-    ));
-	?>
+    <a class="leave-review-button" data-toggle="collapse" href="#leaveReview" role="button" aria-expanded="false" aria-controls="leaveReview">Написать новый отзыв <span class="oi oi-pencil"></span></a>
+    <div class="collapse" id="leaveReview">
+        <?php
+        $logged_user = wp_get_current_user();
+        comment_form(array(
+            'logged_in_as' => '<div class="logged-in-as">' . sprintf(
+                                  '%1$s<strong>%2$s</strong><p><i>Если это не вы, нажмите <a href="%3$s">выйти</a>.</i></p>',
+                                  get_avatar($logged_user ? $logged_user->ID : null),
+                                  $user_identity,
+                                  wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+                              ) . '</div>',
+            'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
+            'title_reply' => 'Оставить отзыв',
+            'label_submit' => 'Оставить отзыв',
+        ));
+        ?>
+    </div>
 
 </div><!-- #comments -->

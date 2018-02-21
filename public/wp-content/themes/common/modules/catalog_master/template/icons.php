@@ -18,9 +18,11 @@ $terms = get_terms(array(
 <ul class="catalog-mater-icons list-inline">
     <?php foreach ($terms as $term): ?>
         <li class="list-inline-item">
-            <span class="catalog-icon" data-toggle="tooltip" data-placement="top" title="<?php echo $term->name; ?>">
-                <?php module_svg("catalog_master/{$term->slug}-white.svg"); ?>
-            </span>
+            <a href="<?php echo esc_url( get_term_link($term) ); ?>" title="<?php echo esc_attr($term->name); ?>" >
+                <span class="catalog-icon" data-toggle="tooltip" data-placement="top" title="<?php echo $term->name; ?>">
+                    <?php module_svg("catalog_master/{$term->slug}-white.svg"); ?>
+                </span>
+            </a>
         </li>
     <?php endforeach; ?>
 </ul>

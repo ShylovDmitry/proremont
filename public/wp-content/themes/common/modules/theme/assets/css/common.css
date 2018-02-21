@@ -319,6 +319,10 @@ a.btn.btn-pror-primary {
   border-bottom: 1px solid #e8ebeb;
   font-family: "Roboto", sans-serif; }
 
+.comments-area .leave-review-button {
+  color: #E67E22; }
+  .comments-area .leave-review-button .oi {
+    font-size: .75rem; }
 .comments-area .comment {
   overflow: hidden;
   padding-bottom: 20px;

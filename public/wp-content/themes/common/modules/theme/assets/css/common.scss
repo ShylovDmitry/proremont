@@ -479,6 +479,13 @@ a.btn.btn-pror-primary {
 }
 
 .comments-area {
+    .leave-review-button {
+        color: $color-primary;
+
+        .oi {
+            font-size: .75rem;
+        }
+    }
     .comment {
         overflow: hidden;
         padding-bottom: 20px;
