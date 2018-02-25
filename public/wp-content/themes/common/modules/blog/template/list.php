@@ -22,7 +22,12 @@ ob_start();
                 </div>
             <?php endif; ?>
             <h3 class="pt-3"><a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a></h3>
-            <div class="post-date"><?php echo get_the_date(); ?></div>
+
+            <div class="header-underlined mb-3">
+                <div class="post-date"><?php echo get_the_date(); ?></div>
+                <div class="post-categories"><?php the_terms(get_the_ID(), 'category'); ?></div>
+            </div>
+
             <div class="excerpt">
                 <?php the_excerpt(); ?>
             </div>

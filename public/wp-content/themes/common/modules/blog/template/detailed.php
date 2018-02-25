@@ -1,4 +1,4 @@
-<article>
+<article class="main-article">
     <?php
     $cache_expire = pror_cache_expire(0);
     $cache_key = pror_cache_key();
@@ -19,7 +19,10 @@
         <?php endif; ?>
 
         <h1 class="post-title pt-3"><?php the_title(); ?></h1>
-        <div class="post-date header-underlined mb-3"><?php echo get_the_date(); ?></div>
+        <div class="header-underlined mb-3">
+            <div class="post-date"><?php echo get_the_date(); ?></div>
+            <div class="post-categories"><?php the_terms(get_the_ID(), 'category'); ?></div>
+        </div>
 
         <div class="mb-3 d-lg-none">
             <?php module_template('banner/mobile1'); ?>

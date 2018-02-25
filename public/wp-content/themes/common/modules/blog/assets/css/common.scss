@@ -1,6 +1,6 @@
 @import "../../../theme/assets/css/variables";
 
-.blog {
+.blog, .category {
     article {
         .post-image {
             margin-left: -1rem!important;
@@ -10,10 +10,19 @@
             background: #fff;
         }
 
+        .post-categories {
+            font-size: .85rem;
+            color: $color-light;
+
+            a {
+                color: $color-primary;
+            }
+        }
+
         .post-date {
             font-size: .85rem;
             color: $color-light;
-            margin-bottom: 5px;
+            float: right;
         }
 
         .post-more-link {
@@ -33,7 +42,7 @@
 }
 
 .single {
-    article {
+    .main-article {
         .post-image {
             margin-left: -1rem!important;
             margin-right: -1rem!important;
@@ -42,9 +51,19 @@
             background: #fff;
         }
 
+        .post-categories {
+            font-size: .85rem;
+            color: $color-light;
+
+            a {
+                color: $color-primary;
+            }
+        }
+
         .post-date {
             font-size: .85rem;
             color: $color-light;
+            float: right;
         }
 
         .oneall_sharing_icons {
@@ -108,6 +127,15 @@ article.small-post {
     }
     .post-title {
         margin-top: 15px;
+    }
+
+    .post-categories {
+        font-size: .85rem;
+        color: $color-light;
+
+        a {
+            color: $color-primary;
+        }
     }
 
     .post-date {
