@@ -10,7 +10,7 @@ if (!isset($_SERVER['HTTPS'])) {
 
 define('APP_PATH', dirname(__FILE__));
 
-//require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/../vendor/autoload.php');
 
 #define('AWS_ACCESS_KEY_ID', 'xx');
 #define('AWS_SECRET_ACCESS_KEY', 'xx');

@@ -209,18 +209,22 @@
     font-size: 0; }
   .master-detailed .catalog-title a .link {
     padding-left: 10px;
-    font-weight: 200; }
+    font-weight: 200;
+    color: #E67E22; }
     .master-detailed .catalog-title a .link span {
-      font-weight: 400; }
+      font-weight: 400;
+      color: #424949; }
   .master-detailed .catalog-title a:hover .link span, .master-detailed .catalog-title a:visited .link span {
     text-decoration: underline; }
   .master-detailed .catalog-title a svg {
     fill: #424949; }
 .master-detailed .catalog-subs a {
   text-decoration: none;
-  font-weight: 200; }
+  font-weight: 200;
+  color: #E67E22; }
   .master-detailed .catalog-subs a span {
-    font-weight: 300; }
+    font-weight: 300;
+    color: #424949; }
   .master-detailed .catalog-subs a:hover span, .master-detailed .catalog-subs a:visited span {
     text-decoration: underline; }
 .master-detailed .gallery-wrapper {

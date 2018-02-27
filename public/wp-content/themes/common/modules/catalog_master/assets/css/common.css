@@ -22,10 +22,12 @@
     font-weight: bolder; }
   .catalog-mater-3col .catalog-title .text {
     padding-left: 10px;
-    font-weight: 200; }
+    font-weight: 200;
+    color: #E67E22; }
     .catalog-mater-3col .catalog-title .text span {
       font-weight: 400;
-      text-decoration: underline; }
+      text-decoration: underline;
+      color: #424949; }
   .catalog-mater-3col .catalog-title svg {
     fill: #424949; }
   .catalog-mater-3col .catalog-title.active, .catalog-mater-3col .catalog-title a:hover {
@@ -91,9 +93,11 @@
         left: 667px; } }
   .catalog-mater-3col .item .subcategory-link {
     font-weight: 200;
-    text-decoration: none; }
+    text-decoration: none;
+    color: #E67E22; }
     .catalog-mater-3col .item .subcategory-link span {
-      font-weight: 300; }
+      font-weight: 300;
+      color: #424949; }
     .catalog-mater-3col .item .subcategory-link:hover span, .catalog-mater-3col .item .subcategory-link:visited span {
       text-decoration: underline; }
 
@@ -123,18 +127,22 @@
     font-size: 0; }
   .catalog-master-page .catalog-title a .link {
     padding-left: 10px;
-    font-weight: 200; }
+    font-weight: 200;
+    color: #E67E22; }
     .catalog-master-page .catalog-title a .link span {
-      font-weight: 400; }
+      font-weight: 400;
+      color: #424949; }
   .catalog-master-page .catalog-title a:hover .link span, .catalog-master-page .catalog-title a:visited .link span {
     text-decoration: underline; }
   .catalog-master-page .catalog-title a svg {
     fill: #424949; }
 .catalog-master-page .catalog-subs a {
   text-decoration: none;
-  font-weight: 200; }
+  font-weight: 200;
+  color: #E67E22; }
   .catalog-master-page .catalog-subs a span {
-    font-weight: 300; }
+    font-weight: 300;
+    color: #424949; }
   .catalog-master-page .catalog-subs a:hover span, .catalog-master-page .catalog-subs a:visited span {
     text-decoration: underline; }
 

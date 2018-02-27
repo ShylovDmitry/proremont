@@ -36,10 +36,12 @@
         .text {
             padding-left: 10px;
             font-weight: 200;
+            color: $color-primary;
 
             span {
                 font-weight: 400;
                 text-decoration: underline;
+                color: $color-dark;
             }
         }
 
@@ -136,9 +138,11 @@
         .subcategory-link {
             font-weight: 200;
             text-decoration: none;
+            color: $color-primary;
 
             span {
                 font-weight: 300;
+                color: $color-dark;
 
             }
 
@@ -188,9 +192,11 @@
         .link {
             padding-left: 10px;
             font-weight: 200;
+            color: $color-primary;
 
             span {
                 font-weight: 400;
+                color: $color-dark;
             }
         }
 
@@ -209,9 +215,11 @@
         a {
             text-decoration: none;
             font-weight: 200;
+            color: $color-primary;
 
             span {
                 font-weight: 300;
+                color: $color-dark;
             }
 
             &:hover, &:visited {
