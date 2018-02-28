@@ -34,7 +34,7 @@ ob_start();
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="catalog-title">
                         <a class="pror-collapse" title="<?php echo esc_attr($main_catalog->name); ?>" href="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-target="#catalogSubcategory_<?php echo $main_catalog->term_id; ?>" data-pror-parent="#catalogMenu">
-                            <span class="icon"><?php module_svg("catalog_master/____{$main_catalog->slug}.svg"); ?></span>
+                            <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
                             <span class="text"><span><?php echo $main_catalog->name; ?></span> <?php echo pror_catalog_get_count($main_catalog); ?></span>
                         </a>
                     </div>

@@ -217,7 +217,9 @@
   .master-detailed .catalog-title a:hover .link span, .master-detailed .catalog-title a:visited .link span {
     text-decoration: underline; }
   .master-detailed .catalog-title a svg {
-    fill: #424949; }
+    fill: #424949;
+    width: 48px;
+    height: 48px; }
 .master-detailed .catalog-subs a {
   text-decoration: none;
   font-weight: 200;

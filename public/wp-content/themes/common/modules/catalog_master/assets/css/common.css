@@ -29,7 +29,9 @@
       text-decoration: underline;
       color: #424949; }
   .catalog-mater-3col .catalog-title svg {
-    fill: #424949; }
+    fill: #424949;
+    width: 48px;
+    height: 48px; }
   .catalog-mater-3col .catalog-title.active, .catalog-mater-3col .catalog-title a:hover {
     text-decoration: none; }
     .catalog-mater-3col .catalog-title.active .text, .catalog-mater-3col .catalog-title a:hover .text {
@@ -135,7 +137,9 @@
   .catalog-master-page .catalog-title a:hover .link span, .catalog-master-page .catalog-title a:visited .link span {
     text-decoration: underline; }
   .catalog-master-page .catalog-title a svg {
-    fill: #424949; }
+    fill: #424949;
+    width: 48px;
+    height: 48px; }
 .catalog-master-page .catalog-subs a {
   text-decoration: none;
   font-weight: 200;

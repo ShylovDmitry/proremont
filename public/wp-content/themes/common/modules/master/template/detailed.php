@@ -108,7 +108,7 @@
                     <div class="col-md-6 mb-3">
                         <div class="catalog-title">
                             <a href="<?php echo esc_url( get_term_link($parent) ); ?>" title="<?php echo esc_attr($parent->name); ?>">
-                                <span class="icon"><?php module_svg("catalog_master/____{$parent->slug}.svg"); ?></span>
+                                <span class="icon"><?php module_svg("catalog_master/{$parent->slug}.svg"); ?></span>
                                 <span class="link"><span><?php echo $parent->name; ?></span> <?php echo pror_catalog_get_count($parent); ?></span>
                             </a>
                         </div>
