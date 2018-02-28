@@ -3,15 +3,15 @@
 add_filter('wpseo_og_og_image', 'pror_cover_og_tag_image');
 add_filter('wpseo_og_og_image_secure_url', 'pror_cover_og_tag_image');
 
-add_filter('wpseo_og_og_width', function($content) {
+add_filter('wpseo_og_og_image_width', function($content) {
     if (get_post_type() == 'master' || get_post_type() == 'post') {
-        return 600;
+        return 1200;
     }
     return $content;
 });
-add_filter('wpseo_og_og_height', function($content) {
+add_filter('wpseo_og_og_image_height', function($content) {
     if (get_post_type() == 'master' || get_post_type() == 'post') {
-        return 315;
+        return 630;
     }
     return $content;
 });
@@ -37,27 +37,28 @@ function pror_cover_generate_image($type, $id) {
 function pror_cover_generate_master_image($user_id) {
     $title = get_field('master_title', "user_{$user_id}");
     $logo_id = get_field('master_logo', "user_{$user_id}");
-    $padding = 15;
+    $padding = 50;
+    $image_size = 260;
 
     $imagine = new Imagine\Gd\Imagine();
-    $image = $imagine->open(__DIR__ . '/../assets/img/master-fb-template.jpg');
+    $image = $imagine->open(__DIR__ . '/../assets/img/1200-master-fb2.jpg');
 
     try {
         $logo = wp_get_attachment_image_src($logo_id, 'pror-medium');
         if ($logo) {
-            $image->paste($imagine->open($logo[0])->thumbnail(new \Imagine\Image\Box(120, 120)), new Imagine\Image\Point($padding, $padding));
+            $image->paste($imagine->open($logo[0])->thumbnail(new \Imagine\Image\Box($image_size, $image_size)), new Imagine\Image\Point($padding, $padding));
         }
     } catch (Exception $e) {
     }
 
     try {
         $font_path = __DIR__ . '/../assets/font/GothamPro/GothamProMedium.ttf';
-        $font = $imagine->font($font_path, 24, new \Imagine\Image\Color('fff'));
+        $font = $imagine->font($font_path, 48, new \Imagine\Image\Color('fff'));
 
-        $lines = pror_cover_split_lines($title, $font, $image->getSize()->getWidth() - $padding * 3 - 120);
-        $line_height = $font->box($title)->getHeight() * 1.4;
+        $lines = pror_cover_split_lines($title, $font, $image->getSize()->getWidth() - $padding * 3 - $image_size);
+        $line_height = $font->box($title)->getHeight() * 1.2;
         for ($i = 0; $i < min(4, count($lines)); $i++) {
-            $image->draw()->text($lines[$i], $font, new \Imagine\Image\Point(120 + $padding*2, $padding + $i*$line_height));
+            $image->draw()->text($lines[$i], $font, new \Imagine\Image\Point($image_size + $padding*2, $padding + $i*$line_height));
         }
 
         $image->show('jpg');
@@ -70,15 +71,14 @@ function pror_cover_generate_master_image($user_id) {
 
 function pror_cover_generate_post_image($post_id) {
     $title = get_the_title($post_id);
-    $title .= $title;
-    $padding = 15;
+    $padding = 50;
 
     $imagine = new Imagine\Gd\Imagine();
-    $image = $imagine->open(__DIR__ . '/../assets/img/master-fb-template.jpg');
+    $image = $imagine->open(__DIR__ . '/../assets/img/1200-master-fb2.jpg');
 
     try {
         $font_path = __DIR__ . '/../assets/font/GothamPro/GothamProMedium.ttf';
-        $font = $imagine->font($font_path, 20, new \Imagine\Image\Color('fff'));
+        $font = $imagine->font($font_path, 40, new \Imagine\Image\Color('fff'));
 
         $lines = pror_cover_split_lines($title, $font, $image->getSize()->getWidth() - $padding * 2);
         $line_height = $font->box($title)->getHeight() * 1.2;
