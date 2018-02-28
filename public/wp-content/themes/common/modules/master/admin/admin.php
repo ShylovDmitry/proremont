@@ -1,5 +1,12 @@
 <?php
 
+add_action('init', function() {
+    if (pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) {
+        remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+        show_admin_bar(false);
+    }
+});
+
 add_action('admin_enqueue_scripts', function($hook) {
     if ((pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) && is_admin()) {
         wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500,700,900', array(), null);
@@ -11,27 +18,6 @@ add_action('admin_enqueue_scripts', function($hook) {
         wp_enqueue_script('popper', get_module_js('theme/popper-1.11.0.min.js'), array('jquery'), null, true);
         wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('popper', 'jquery'), null, true);
     }
-});
-
-
-add_action('pre_get_posts', function($wp_query_obj) {
-    global $current_user, $pagenow;
-
-    $is_attachment_request = ($wp_query_obj->get('post_type')=='attachment');
-
-    if( !$is_attachment_request )
-        return;
-
-    if( !is_a( $current_user, 'WP_User') )
-        return;
-
-    if( !in_array( $pagenow, array( 'upload.php', 'admin-ajax.php' ) ) )
-        return;
-
-    if( !current_user_can('delete_pages') )
-        $wp_query_obj->set('author', $current_user->ID );
-
-    return;
 });
 
 add_action('show_user_profile', function($profileuser) {
@@ -52,21 +38,13 @@ add_action('edit_form_after_title', function($post) {
     }
 });
 
-add_action('pre_user_query', function($u_query) {
-    if ( $u_query->query_vars['search'] ){
-        $search_query = trim( $u_query->query_vars['search'], '*' );
-        if ( $_REQUEST['s'] == $search_query ){
-            global $wpdb;
-
-            $u_query->query_from .= " LEFT JOIN {$wpdb->usermeta} phone_usermeta ON phone_usermeta.user_id = {$wpdb->users}.ID AND phone_usermeta.meta_key LIKE 'master_phones_%'";
-			$u_query->query_from .= " LEFT JOIN {$wpdb->usermeta} name_usermeta ON name_usermeta.user_id = {$wpdb->users}.ID AND name_usermeta.meta_key = 'master_title'";
-
-//			 $u_query->query_from .= " JOIN {$wpdb->usermeta} cstm ON cstm.user_id = {$wpdb->users}.ID AND cstm.meta_key = 'YOU CUSTOM meta_key'";
-//			$u_query->query_from .= " JOIN {$wpdb->posts} psts ON psts.post_author = {$wpdb->users}.ID";
-
- 			$search_by = array( 'user_login', 'user_email', 'display_name', 'name_usermeta.meta_value', 'phone_usermeta.meta_value'/*, 'psts.post_title'*/ );
-
- 			$u_query->query_where = 'WHERE 1=1' . $u_query->get_search_sql( $search_query, $search_by, 'both' );
+add_action('admin_menu', function() {
+    if (pror_current_user_has_role('master')) {
+        $master_post_id = pror_get_master_post_id(get_current_user_id());
+        if ($master_post_id) {
+            global $submenu;
+            $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id), null, 'self-page-link');
+            $submenu['profile.php'][] = array('PRO-аккаунт', 'read', home_url('/pro-akkaunt-dlya-masterov/?utm_source=adminpanel&utm_medium=side_menu&utm_campaign=link'), null, 'pro-account-link');
         }
     }
 });

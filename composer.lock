@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4fd56c58e388351ef366bbe0fff573f1",
-    "content-hash": "7113218544233a73ee6b0acc68dc90fc",
+    "hash": "7807729b3644e093739dbc880cde0a80",
+    "content-hash": "7664485c0833d3aa4c4ccd9cabb92a7d",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -2395,15 +2395,15 @@
         },
         {
             "name": "wpackagist-plugin/amazon-s3-and-cloudfront",
-            "version": "1.2.1",
+            "version": "1.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/amazon-s3-and-cloudfront/",
-                "reference": "tags/1.2.1"
+                "reference": "tags/1.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.2.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.1.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2414,36 +2414,16 @@
             "homepage": "https://wordpress.org/plugins/amazon-s3-and-cloudfront/"
         },
         {
-            "name": "wpackagist-plugin/amazon-web-services",
-            "version": "1.0.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/amazon-web-services/",
-                "reference": "tags/1.0.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/amazon-web-services.1.0.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/amazon-web-services/"
-        },
-        {
             "name": "wpackagist-plugin/bnfw",
-            "version": "1.6.10",
+            "version": "1.6.11",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/bnfw/",
-                "reference": "tags/1.6.10"
+                "reference": "tags/1.6.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/bnfw.1.6.10.zip",
+                "url": "https://downloads.wordpress.org/plugin/bnfw.1.6.11.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2455,15 +2435,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.0",
+            "version": "5.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.0"
+                "reference": "tags/5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2595,15 +2575,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "6.2",
+            "version": "6.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/6.2"
+                "reference": "tags/6.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.6.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2655,7 +2635,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-bank",
-            "version": "3.0.46",
+            "version": "3.0.51",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
@@ -2663,7 +2643,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1517915047",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1519711017",
                 "reference": null,
                 "shasum": null
             },

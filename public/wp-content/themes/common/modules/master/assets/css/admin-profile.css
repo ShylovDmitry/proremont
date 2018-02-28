@@ -86,6 +86,9 @@ strong {
     padding-right: 10px; }
 #your-profile > .form-table .user-sessions-wrap {
   display: none; }
+#your-profile .acf-input-prepend {
+  line-height: 23px;
+  height: 28px; }
 
 .profile-info {
   margin: 30px 0; }

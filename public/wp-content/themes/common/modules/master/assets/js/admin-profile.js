@@ -34,4 +34,9 @@ jQuery(function ($) {
 
     $('#adminmenu li.self-page-link a').attr('target', '_blank');
     $('#adminmenu li.pro-account-link a').attr('target', '_blank');
+
+    var referral_tel = $('[data-name="master_referral_tel"] input');
+    if (referral_tel.val()) {
+        referral_tel.attr('disabled', true);
+    }
 });

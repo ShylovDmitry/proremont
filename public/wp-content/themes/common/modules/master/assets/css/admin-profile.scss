@@ -136,6 +136,11 @@ strong {
     & > .form-table .user-sessions-wrap {
         display: none;
     }
+
+    .acf-input-prepend {
+        line-height: 23px;
+        height: 28px;
+    }
 }
 
 .profile-info {
