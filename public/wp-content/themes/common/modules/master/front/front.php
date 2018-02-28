@@ -26,10 +26,10 @@ add_action('comment_rating_field_pro_rating_input_updated_post_rating', function
 }, 10, 8);
 
 add_action('pre_get_posts', function($query) {
-    if (is_admin() || !$query->is_main_query()) {
+    if (is_admin() || !$query->is_main_query() || !in_array($query->get('post_type'), array('master'))) {
         return $query;
     }
-
+    
     $query->set('orderby', 'meta_value_num');
     $query->set('order', 'DESC');
     $query->set('meta_query', array(
