@@ -8,13 +8,13 @@ jQuery(function ($) {
 
     pror_track_master_action('page_view');
 
-    $('.gallery-carousel').slick({
+    $('.master-detailed .gallery-carousel').slick({
         infinite: true,
         speed: 300,
         centerMode: true,
         variableWidth: true
     });
-    $('.gallery-carousel').slickLightbox();
+    $('.master-detailed .gallery-carousel').slickLightbox();
 
 
     $('#master_search_catalog').select2();

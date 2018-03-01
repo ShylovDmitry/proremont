@@ -16,7 +16,8 @@ body {
       margin-right: 0; } }
 
 a, a:hover {
-  color: #424949; }
+  color: #424949;
+  outline: none; }
 
 .jumbotron.header {
   background: #2C2C2C no-repeat center top;
@@ -415,5 +416,26 @@ a.btn.btn-pror-primary {
   color: #E67E22; }
 .homepage-content strong {
   font-weight: 900; }
+
+@media (min-width: 1200px) {
+  .post-content {
+    width: 80%;
+    margin: 0 auto; } }
+.post-content a {
+  color: #E67E22; }
+.post-content strong {
+  font-weight: 900; }
+.post-content .alignleft {
+  float: left;
+  margin: 0 10px 10px 0; }
+.post-content .alignright {
+  float: right;
+  margin: 0 0 10px 10px; }
+.post-content .aligncenter {
+  display: block;
+  margin: 0 auto 10px; }
+.post-content img {
+  max-width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=common.css.map */

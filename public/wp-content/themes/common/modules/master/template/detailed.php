@@ -87,7 +87,7 @@
                 <div class="gallery-wrapper">
                     <div class="gallery-carousel">
                         <?php foreach ($images as $image): ?>
-                            <div>
+                            <div class="slick-slide">
                                 <a href="<?php echo wp_get_attachment_image_url($image['ID'], 'full'); ?>">
                                     <?php echo wp_get_attachment_image( $image['ID'], 'pror-medium', '', array('height' => 20)); ?>
                                 </a>

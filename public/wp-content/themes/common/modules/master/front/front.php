@@ -29,7 +29,7 @@ add_action('pre_get_posts', function($query) {
     if (is_admin() || !$query->is_main_query() || !in_array($query->get('post_type'), array('master'))) {
         return $query;
     }
-    
+
     $query->set('orderby', 'meta_value_num');
     $query->set('order', 'DESC');
     $query->set('meta_query', array(
@@ -158,6 +158,10 @@ function pror_get_master_catalogs($master_id = null) {
             }
             $sub_terms[$master_term->parent][] = $master_term;
         }
+    }
+
+    if (empty($sub_terms)) {
+        return [];
     }
 
     $parent_terms = get_terms(array(

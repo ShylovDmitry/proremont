@@ -51,26 +51,6 @@
       margin-right: auto; } }
   .single .main-article .post-catalogs a {
     color: #E67E22; }
-@media (min-width: 1200px) {
-  .single .main-article .post-content {
-    width: 80%;
-    margin: 0 auto; } }
-.single .main-article .post-content a {
-  color: #E67E22; }
-.single .main-article .post-content strong {
-  font-weight: 900; }
-.single .main-article .post-content .alignleft {
-  float: left;
-  margin: 0 10px 10px 0; }
-.single .main-article .post-content .alignright {
-  float: right;
-  margin: 0 0 10px 10px; }
-.single .main-article .post-content .aligncenter {
-  display: block;
-  margin: 0 auto 10px; }
-.single .main-article .post-content img {
-  max-width: 100%;
-  height: auto; }
 
 article.small-post .post-img-link {
   text-align: center;

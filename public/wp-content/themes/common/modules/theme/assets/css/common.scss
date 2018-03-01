@@ -23,6 +23,7 @@ body {
 
 a, a:hover {
     color: $color-dark;
+    outline: none;
 }
 
 
@@ -622,5 +623,36 @@ a.btn.btn-pror-primary {
     }
     strong {
         font-weight: 900;
+    }
+}
+
+
+.post-content {
+    @media (min-width: $screen-width-xl) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    a {
+        color: $color-primary;
+    }
+    strong {
+        font-weight: 900;
+    }
+    .alignleft {
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+    .alignright {
+        float: right;
+        margin: 0 0 10px 10px;
+    }
+    .aligncenter {
+        display: block;
+        margin: 0 auto 10px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
