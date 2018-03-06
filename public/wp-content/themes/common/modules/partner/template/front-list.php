@@ -5,7 +5,7 @@ $container_class = isset($__data['container_class']) ? $__data['container_class'
 <?php
 $cache_expire = pror_cache_expire(5*60);
 $cache_key = pror_cache_key(sprintf('block-%s', $container_class) , 'section');
-$cache_group = 'pror:partner:list:front';
+$cache_group = 'pror:partners:list:front';
 
 $cache = wp_cache_get($cache_key, $cache_group);
 if ($cache):
@@ -15,11 +15,16 @@ ob_start();
 ?>
 
 <?php
+$partners_ids = get_field('frontpage_partners', 'option', false);
+if (!$partners_ids) {
+    $partners_ids = array(-1);
+}
+
 $query = new WP_Query(array(
     'post_type' => 'partner',
-    'posts_per_page' => 12,
-    'orderby' => 'rand',
-    'order' => 'DESC',
+    'post__in' => $partners_ids,
+    'orderby' => 'post__in',
+    'posts_per_page' => 20,
 ));
 ?>
 

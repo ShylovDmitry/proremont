@@ -17,3 +17,11 @@ function pror_partner_clear_cache($post_ID = null) {
     pror_cache_delete_wildcard('pror:partner:list:front');
     pror_cache_delete_wildcard('pror:partner:list:main');
 }
+
+add_action('acf/update_value', function($value, $post_id, $field) {
+    if ($field['name'] == 'frontpage_partners') {
+        pror_cache_delete_wildcard('pror:partners:list:front');
+    }
+
+    return $value;
+}, 10, 3);
