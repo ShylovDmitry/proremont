@@ -2,7 +2,7 @@
     <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
         <div class="avatar">
             <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('pror-medium', array(
+                <?php the_post_thumbnail('medium', array(
                         'alt' => get_the_title(),
                         'pror_no_scrset' => true,
                 )); ?>
