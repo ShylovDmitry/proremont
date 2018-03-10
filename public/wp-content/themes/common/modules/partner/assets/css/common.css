@@ -41,6 +41,9 @@
       margin-right: auto; } }
   .partner-detailed .post-catalogs a {
     color: #E67E22; }
+.partner-detailed .oneall_sharing_icons {
+  display: flex;
+  justify-content: center; }
 
 .partner-item .avatar {
   height: 100px;

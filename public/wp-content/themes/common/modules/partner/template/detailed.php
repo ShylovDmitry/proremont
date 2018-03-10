@@ -18,7 +18,7 @@
             <div class="left">
                 <div class="avatar">
                     <?php if (has_post_thumbnail()): ?>
-                        <?php the_post_thumbnail('pror-medium', array(
+                        <?php the_post_thumbnail('medium', array(
                                 'alt' => pror_get_master_img_alt(),
                                 'pror_no_scrset' => true,
                         )); ?>
