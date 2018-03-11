@@ -4,13 +4,13 @@ add_filter('wpseo_og_og_image', 'pror_cover_og_tag_image');
 add_filter('wpseo_og_og_image_secure_url', 'pror_cover_og_tag_image');
 
 add_filter('wpseo_og_og_image_width', function($content) {
-    if (get_post_type() == 'master' || get_post_type() == 'post' || get_post_type() == 'page') {
+    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner'))) {
         return 1200;
     }
     return $content;
 });
 add_filter('wpseo_og_og_image_height', function($content) {
-    if (get_post_type() == 'master' || get_post_type() == 'post' || get_post_type() == 'page') {
+    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner'))) {
         return 630;
     }
     return $content;
@@ -20,7 +20,7 @@ function pror_cover_og_tag_image($content) {
     if (get_post_type() == 'master') {
         return home_url('/cover/m/' . get_the_author_meta('ID') . '/');
     }
-    else if (get_post_type() == 'post' || get_post_type() == 'page') {
+    else if (in_array(get_post_type(), array('post', 'page', 'partner'))) {
         return home_url('/cover/post/' . get_the_ID() . '/');
     }
     return $content;
@@ -29,7 +29,7 @@ function pror_cover_og_tag_image($content) {
 function pror_cover_generate_image($type, $id) {
     if ($type == 'm') {
         pror_cover_generate_master_image($id);
-    } elseif ($type == 'post' || $type == 'page') {
+    } elseif (in_array(get_post_type(), array('post', 'page', 'partner'))) {
         pror_cover_generate_post_image($id);
     }
 }
