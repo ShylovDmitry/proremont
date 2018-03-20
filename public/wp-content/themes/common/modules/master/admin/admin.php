@@ -17,6 +17,8 @@ add_action('admin_enqueue_scripts', function($hook) {
         wp_enqueue_script('admin-profile', get_module_js('master/admin-profile.js'), array(), dlv_get_ver(), true);
         wp_enqueue_script('popper', get_module_js('theme/popper-1.11.0.min.js'), array('jquery'), null, true);
         wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('popper', 'jquery'), null, true);
+
+        wp_localize_script('admin-profile', 'ProRemontMasterObj', array('is_pro' => get_field('master_is_pro', "user_" . get_current_user_id())));
     }
 });
 

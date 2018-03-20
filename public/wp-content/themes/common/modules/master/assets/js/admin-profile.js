@@ -20,6 +20,10 @@ jQuery(function ($) {
     manageCatalogCheckboxes();
 
     function manageCatalogCheckboxes(show_dialog) {
+        if (ProRemontMasterObj.is_pro) {
+            return;
+        }
+
         show_dialog = show_dialog || false;
 
         if ($(':checkbox:checked', catalog_master).length < 5) {
