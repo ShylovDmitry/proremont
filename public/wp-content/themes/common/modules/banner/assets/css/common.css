@@ -14,7 +14,10 @@ html .col-banner-sidebar {
 #banner_sidebar .reklama-link {
   font-size: .75rem;
   color: #7c898b;
-  text-decoration: underline; }
+  text-decoration: none;
+  border-bottom: 1px dashed; }
+  #banner_sidebar .reklama-link:hover {
+    border-bottom-style: solid; }
 
 .banner-mobile .reklama-block {
   width: 300px;
@@ -22,6 +25,9 @@ html .col-banner-sidebar {
 .banner-mobile .reklama-link {
   font-size: .75rem;
   color: #7c898b;
-  text-decoration: underline; }
+  text-decoration: none;
+  border-bottom: 1px dashed; }
+  .banner-mobile .reklama-link:hover {
+    border-bottom-style: solid; }
 
 /*# sourceMappingURL=common.css.map */

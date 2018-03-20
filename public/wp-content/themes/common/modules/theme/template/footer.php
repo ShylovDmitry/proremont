@@ -22,7 +22,7 @@ ob_start();
                     <li class="list-inline-item"><a href="https://vk.com/proremont.catalog" target="_blank"><?php module_svg('theme/iconmonstr-vk-3.svg'); ?></a></li>
                 </ul>
 
-                <p><a href="mailto:info@proremont.co">info@proremont.co</a></p>
+                <p><a href="mailto:info@proremont.co" class="email-link">info@proremont.co</a></p>
 
                 <?php wp_nav_menu(array(
                         'container' => false,

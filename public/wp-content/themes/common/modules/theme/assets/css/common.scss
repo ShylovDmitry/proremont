@@ -139,7 +139,7 @@ a, a:hover {
         border-bottom: 1px dashed;
 
         &:hover {
-            color: $color-lighter;
+            border-bottom-style: solid;
         }
     }
 }
@@ -370,6 +370,23 @@ h1, h2, h3, h4, h5, h6 {
     .footer-menu {
         margin-top: 20px;
         margin-bottom: 10px;
+
+        a {
+            text-decoration: none;
+            border-bottom: 1px dashed;
+
+            &:hover {
+                border-bottom-style: solid;
+            }
+        }
+    }
+
+    .profile-menu, .footer-menu-master {
+        font-size: .9rem;
+    }
+
+    .email-link {
+        color: $color-light;
     }
 }
 
