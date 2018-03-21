@@ -225,7 +225,7 @@
 //add_action('init', function() {
 //    if (isset($_GET['pror_offset'])) {
 //
-//        $section = get_term_by('slug', 'chernovtsy', 'section');
+//        $section = get_term_by('slug', 'kharkov', 'section');
 //        $locations = get_field('locations', 'section_' . $section->term_id);
 //
 //
@@ -271,7 +271,7 @@
 //                <td>' . $user->user_login . '</td>
 //                <td>' . get_field('master_title', 'user_'.$user_id) . '</td>
 //                <td>' . implode('<br/>', array_map(function($value) { return $value['text']; }, pror_get_master_phones($user_id))) . '</td>
-//                <td>' . str_replace('http://proremont.local', 'https://proremont.co', get_edit_user_link($post->post_author)) . '</td>
+//                <td>https://proremont.co/wp/wp-admin/user-edit.php?user_id=' . $post->post_author . '</td>
 //                <td>' . str_replace('http://proremont.local', 'https://proremont.co', get_the_permalink($master_post_id)) . '</td>
 //                <td></td>
 //            </tr>';
