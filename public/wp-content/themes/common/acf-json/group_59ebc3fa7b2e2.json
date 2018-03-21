@@ -141,6 +141,34 @@
             "admin_only": 0
         },
         {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "https:\/\/proremont.co\/m\/",
+            "append": "",
+            "key": "field_5ab185c6ed95e",
+            "label": "URL",
+            "name": "master_url_slug",
+            "type": "text",
+            "instructions": "\u0414\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b \u0442\u043e\u043b\u044c\u043a\u043e \u041b\u0430\u0442\u0438\u043d\u0441\u043a\u0438\u0435 \u0441\u0438\u043c\u0432\u043e\u043b\u044b (a-z \u0438 A-Z), \u0446\u0438\u0444\u0440\u044b(0-9) \u0438 \u0442\u0438\u0440\u0435 (-).",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59fa384b8c11a",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0
+        },
+        {
             "taxonomy": "location",
             "field_type": "select",
             "multiple": 0,
@@ -479,5 +507,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1521554565
+    "modified": 1521585773
 }

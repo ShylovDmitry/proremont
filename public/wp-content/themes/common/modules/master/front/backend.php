@@ -55,7 +55,7 @@ function pror_update_master_info($user_id) {
         wp_update_post(array(
             'ID' => $master_post_id,
             'post_title' => $title,
-            'post_name' => sanitize_title(pror_master_rus2translit($title)),
+            'post_name' => get_field('master_url_slug', "user_{$user_id}"),
             'post_excerpt' => $master_excerpt,
             'post_content' => get_field('master_text', "user_{$user_id}"),
             'comment_status' => 'open',
@@ -74,6 +74,9 @@ function pror_update_master_info($user_id) {
             'ID' => $master_post_id,
             'post_status' => ($title && $catalog_terms && $location_terms) ? 'publish' : 'draft',
         ));
+
+        $post = get_post($master_post_id);
+        update_user_meta($user_id, 'master_url_slug', $post->post_name);
     }
 }
 
@@ -140,3 +143,7 @@ function pror_master_rus2translit($string) {
     );
     return strtr($string, $converter);
 }
+
+add_filter('sanitize_title', function($title, $fallback_title, $context) {
+    return pror_master_rus2translit($title);
+}, 5, 3);

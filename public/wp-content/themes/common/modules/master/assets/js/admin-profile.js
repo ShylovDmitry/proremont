@@ -43,4 +43,56 @@ jQuery(function ($) {
     if (referral_tel.val()) {
         referral_tel.attr('disabled', true);
     }
+
+
+    var jqxhr;
+    function check_sanitize_title(title, cb) {
+        if (jqxhr) {
+            jqxhr.abort();
+        }
+        jqxhr = $.post(ProRemontMasterObj.ajaxurl, {action: 'pror_master_sanitize_title', title: title, user_id: ProRemontMasterObj.user_id}, cb);
+    }
+
+    $('[data-name="master_title"] .acf-input input').blur(function() {
+        check_sanitize_title($(this).val(), function(response) {
+            var input = $('[data-name="master_url_slug"] .acf-input input');
+            if (input.val() == '') {
+                input.val(response.data.title);
+                check_url_slug();
+            }
+        });
+    });
+
+    $('[data-name="master_url_slug"] .acf-input').append('<div class="master_url_slug_helptext mt-1"></div>');
+
+    var url_slug_input = $('[data-name="master_url_slug"] .acf-input input');
+    var url_slug_helptext = $('[data-name="master_url_slug"] .master_url_slug_helptext');
+
+    function check_url_slug() {
+        url_slug_helptext.removeClass('text-success').removeClass('text-danger').text('Загружается...');
+
+        check_sanitize_title(url_slug_input.val(), function(response) {
+            switch (response.data.error) {
+                case 'empty':
+                    url_slug_input.removeClass('text-success').addClass('text-danger');
+                    url_slug_helptext.removeClass('text-success').addClass('text-danger').text('URL не может быть пустым.');
+                    break;
+                case 'chars':
+                    url_slug_input.removeClass('text-success').addClass('text-danger');
+                    url_slug_helptext.removeClass('text-success').addClass('text-danger').text('Используються запрещенные символы');
+                    break;
+                case 'exists':
+                    url_slug_input.removeClass('text-success').addClass('text-danger');
+                    url_slug_helptext.removeClass('text-success').addClass('text-danger').text('Такой URL уже используется.');
+                    break;
+                default:
+                    url_slug_input.removeClass('text-danger').addClass('text-success');
+                    url_slug_helptext.removeClass('text-danger').addClass('text-success').text('Хорошо!');
+                    break;
+            }
+        });
+    }
+
+    url_slug_input.keyup(check_url_slug);
+    url_slug_input.blur(check_url_slug);
 });

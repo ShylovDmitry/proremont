@@ -18,7 +18,12 @@ add_action('admin_enqueue_scripts', function($hook) {
         wp_enqueue_script('popper', get_module_js('theme/popper-1.11.0.min.js'), array('jquery'), null, true);
         wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0-beta.min.js'), array('popper', 'jquery'), null, true);
 
-        wp_localize_script('admin-profile', 'ProRemontMasterObj', array('is_pro' => get_field('master_is_pro', "user_" . get_current_user_id())));
+        $user_id = isset($_GET, $_GET['user_id']) ? $_GET['user_id'] : get_current_user_id();
+        wp_localize_script('admin-profile', 'ProRemontMasterObj', array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'is_pro' => get_field('master_is_pro', "user_" . $user_id),
+            'user_id' => $user_id,
+        ));
     }
 });
 
@@ -50,3 +55,39 @@ add_action('admin_menu', function() {
         }
     }
 });
+
+
+add_action('wp_ajax_pror_master_sanitize_title', 'pror_ajax_master_sanitize_title');
+add_action('wp_ajax_nopriv_pror_master_sanitize_title', 'pror_ajax_master_sanitize_title');
+function pror_ajax_master_sanitize_title() {
+    $title = sanitize_title($_POST['title']);
+
+    $res = '';
+    if (empty($title)) {
+        $res = 'empty';
+    } else if (!preg_match('/^[a-zA-Z0-9\-\.]+$/', $_POST['title'])) {
+        $res = 'chars';
+    } else if ($post = get_page_by_path($title, OBJECT, 'master')) {
+        if ($post->post_author != $_POST['user_id']) {
+            $res = 'exists';
+        }
+    }
+
+    wp_send_json_success(array(
+        'title' => $title,
+        'error' => $res,
+    ));
+}
+
+add_filter('acf/load_value/key=field_5ab185c6ed95e', function($value, $post_id, $field) {
+    if (empty($value)) {
+        list($type, $user_id) = explode('_', $post_id);
+        $post_id = pror_get_master_post_id($user_id);
+        $post = get_post($post_id);
+
+        if ($post) {
+            return $post->post_name;
+        }
+    }
+    return $value;
+}, 10, 3);
