@@ -69,7 +69,7 @@ jQuery(function ($) {
     var url_slug_helptext = $('[data-name="master_url_slug"] .master_url_slug_helptext');
 
     function check_url_slug() {
-        url_slug_helptext.removeClass('text-success').removeClass('text-danger').text('Загружается...');
+        url_slug_helptext.removeClass('text-success').removeClass('text-danger').text('Проверяется...');
 
         check_sanitize_title(url_slug_input.val(), function(response) {
             switch (response.data.error) {
