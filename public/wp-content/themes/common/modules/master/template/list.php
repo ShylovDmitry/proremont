@@ -57,15 +57,28 @@ ob_start();
 
     <div class="master-list-simple">
         <?php if ($query->have_posts() || have_posts()): ?>
-            <?php while ($query->have_posts()): $query->the_post();?>
+            <?php $pos = 0; ?>
+
+            <?php while ($query->have_posts()): $query->the_post(); $pos++; ?>
                 <?php module_template('master/item'); ?>
+
+                <?php if ($pos == 1): ?>
+                    <?php module_template('banner/native1'); ?>
+                <?php endif; ?>
+                <?php if ($pos == 4): ?>
+                    <div class="master-item d-lg-none">
+                        <?php module_template('banner/mobile1'); ?>
+                    </div>
+                <?php endif; ?>
             <?php endwhile; ?>
 
-            <?php $pos = 0; ?>
             <?php while (have_posts()): the_post(); $pos++; ?>
                 <?php module_template('master/item'); ?>
 
                 <?php if ($pos == 1): ?>
+                    <?php module_template('banner/native1'); ?>
+                <?php endif; ?>
+                <?php if ($pos == 4): ?>
                     <div class="master-item d-lg-none">
                         <?php module_template('banner/mobile1'); ?>
                     </div>

@@ -1,0 +1,85 @@
+#adunit {
+  color: #212529;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5; }
+  #adunit a {
+    color: #424949;
+    outline: none;
+    text-decoration: none; }
+  #adunit a:hover {
+    text-decoration: underline;
+    outline: none; }
+  #adunit .native-block {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f8f9f9;
+    border: 1px solid #e7e8e8;
+    border-radius: 4px; }
+  #adunit .native-media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  #adunit .native-media-left {
+    float: left;
+    margin-right: 15px; }
+    #adunit .native-media-left img {
+      border: 1px solid #e7e8e8;
+      width: 100px;
+      max-width: 100px;
+      height: auto;
+      font-size: .75rem;
+      vertical-align: middle;
+      display: inline-block; }
+  #adunit .native-media-body {
+    -ms-flex: 1;
+    flex: 1; }
+  #adunit .native-rating {
+    height: 16px;
+    width: 80px;
+    background-image: url(https://dev.proremont.co/wp-content/plugins/comment-rating-field-pro-plugin//views/global/svg.php?svg=star&color=f5c710&size=16);
+    float: right; }
+  #adunit .title-link {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.1; }
+    #adunit .title-link, #adunit .title-link:hover {
+      color: #E67E22;
+      outline: none; }
+  #adunit .attribution-link:hover {
+    text-decoration: none; }
+  #adunit .native-advertiser {
+    font-weight: bolder;
+    font-size: .85rem; }
+  #adunit .attribution {
+    background: #E67E22;
+    color: #fff;
+    font-weight: 900;
+    font-size: 75%;
+    padding: 2px 4px;
+    border-radius: 2px;
+    vertical-align: text-bottom; }
+  #adunit .native-sep {
+    text-align: center;
+    font-size: 0;
+    margin: 10px; }
+    #adunit .native-sep::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      background: #e7e8e8; }
+  #adunit .native-body {
+    font-family: "Open Sans", sans-serif;
+    word-break: break-word; }
+  #adunit .native-calltoaction {
+    text-align: right; }
+    #adunit .native-calltoaction a {
+      color: #E67E22;
+      font-size: .85rem;
+      font-weight: 400; }
+
+/*# sourceMappingURL=native1-source.css.map */

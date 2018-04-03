@@ -10,7 +10,7 @@
 </script>
 <script>
     function ProrDefineSlot(adUnitPath, size, opt_div) {
-        googletag.defineSlot(adUnitPath, size, opt_div)
+        return googletag.defineSlot(adUnitPath, size, opt_div)
             .setTargeting('page', '<?php echo $dfp_current_page; ?>')
             .setTargeting('section', '<?php echo $dfp_current_section; ?>')
             .setTargeting('master_catalog', <?php echo json_encode($dfp_current_catalog); ?>)
@@ -23,6 +23,8 @@
 
         ProrDefineSlot('/21681373772/mobile1', [300, 250], 'div-mobile1');
 //        ProrDefineSlot('/21681373772/mobile2', [300, 250], 'div-mobile2');
+
+        ProrDefineSlot('/21681373772/native1', ['fluid'], 'div-native1').setCollapseEmptyDiv(true, true);
 
         googletag.pubads().enableAsyncRendering();
         googletag.pubads().enableSingleRequest();
