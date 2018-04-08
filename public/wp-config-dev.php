@@ -1,5 +1,8 @@
 <?php
 
+if (strpos($_SERVER['HTTP_HOST'], 'proremont') === false) {
+    unset($_SERVER['HTTP_HOST']);
+}
 if (!isset($_SERVER['HTTP_HOST'])) {
     $_SERVER['HTTP_HOST'] = 'dev.proremont.co';
 }

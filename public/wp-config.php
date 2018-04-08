@@ -1,9 +1,11 @@
 <?php
 
 define('DISABLE_WP_CRON', false);
-
+if (strpos($_SERVER['HTTP_HOST'], 'proremont') === false) {
+    unset($_SERVER['HTTP_HOST']);
+}
 if (!isset($_SERVER['HTTP_HOST'])) {
-    $_SERVER['HTTP_HOST'] = 'remont.lh';
+    $_SERVER['HTTP_HOST'] = 'proremont.local';
 }
 defined('WP_DEBUG') or define('WP_DEBUG', true);
 defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', true);
