@@ -65,7 +65,7 @@ ob_start();
                 <?php if ($pos == 1): ?>
                     <?php module_template('banner/native1'); ?>
                 <?php endif; ?>
-                <?php if ($pos == 4): ?>
+                <?php if ($pos == 2): ?>
                     <div class="master-item d-lg-none">
                         <?php module_template('banner/mobile1'); ?>
                     </div>
@@ -78,7 +78,7 @@ ob_start();
                 <?php if ($pos == 1): ?>
                     <?php module_template('banner/native1'); ?>
                 <?php endif; ?>
-                <?php if ($pos == 4): ?>
+                <?php if ($pos == 2): ?>
                     <div class="master-item d-lg-none">
                         <?php module_template('banner/mobile1'); ?>
                     </div>
