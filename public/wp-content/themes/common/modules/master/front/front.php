@@ -244,3 +244,31 @@ add_filter('acf/load_value/key=field_5a967ee9592b1', function($value, $post_id, 
     $formatted = pror_format_phones($value);
     return $formatted['text'];
 }, 10, 3);
+
+
+add_filter('login_headerurl', function($login_header_url) {
+    return home_url();
+});
+
+add_filter('login_headertitle', function() {
+    if ($_GET['action'] == 'register') {
+        return 'Регистрация';
+    }
+    if ($_GET['action'] == 'lostpassword') {
+        return 'Востановление пароля';
+    }
+    if ($_GET['action'] == 'rp') {
+        return 'Установка нового пароля';
+    }
+    return 'Вход';
+});
+
+add_action('login_header', function() {
+    if ($_GET['checkemail'] == 'registered') {
+        echo <<< "HTML"
+<style>
+#loginform {display: none;}
+</style>
+HTML;
+    }
+});

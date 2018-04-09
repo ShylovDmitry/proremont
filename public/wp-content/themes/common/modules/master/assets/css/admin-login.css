@@ -4,8 +4,18 @@ body.login {
     padding-top: 30px; }
   body.login h1 a {
     width: 100%;
-    background: url("../../../theme/assets/img/proremont-co-logo-white.png") no-repeat center center;
-    background-size: contain; }
+    height: 90px;
+    background: none;
+    text-indent: 0;
+    color: #fff; }
+    body.login h1 a:hover, body.login h1 a:active {
+      color: #fff; }
+    body.login h1 a::before {
+      content: '';
+      background: url("../../../theme/assets/img/proremont-co-logo-white.png") no-repeat center center;
+      background-size: contain;
+      height: 64px;
+      display: block; }
   body.login #backtoblog a,
   body.login #nav a {
     color: #E67E22; }

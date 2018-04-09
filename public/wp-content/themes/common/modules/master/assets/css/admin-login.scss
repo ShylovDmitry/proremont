@@ -9,8 +9,22 @@ body.login {
 
     h1 a {
         width: 100%;
-        background: url('../../../theme/assets/img/proremont-co-logo-white.png') no-repeat center center;
-        background-size: contain;
+        height: 90px;
+        background: none;
+        text-indent: 0;
+        color: #fff;
+
+        &:hover, &:active {
+            color: #fff;
+        }
+
+        &::before {
+            content: '';
+            background: url('../../../theme/assets/img/proremont-co-logo-white.png') no-repeat center center;
+            background-size: contain;
+            height: 64px;
+            display: block;
+        }
     }
 
     #backtoblog a,

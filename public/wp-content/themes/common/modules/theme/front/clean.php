@@ -40,11 +40,3 @@ function disable_emojicons_tinymce( $plugins ) {
         return array();
     }
 }
-
-
-add_filter('login_headerurl', function($login_header_url) {
-    return home_url();
-});
-add_filter('login_headertitle', function($login_header_title) {
-    return '';
-});
