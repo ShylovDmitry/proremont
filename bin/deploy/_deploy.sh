@@ -49,6 +49,7 @@ rsync -avz --delete --no-perms -O -e "ssh -i \"$SERVER_KEY\"" \
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "rm -f $DEPLOY_FOLDER/public/wp-config.php"
 ssh -i "$SERVER_KEY" $SERVER_HOST "ln -fs $DEPLOY_FOLDER/public/wp-config-$STACK.php $DEPLOY_FOLDER/public/wp-config.php"
+ssh -i "$SERVER_KEY" $SERVER_HOST "ln -fs $DEPLOY_FOLDER/public/robots-$STACK.txt $DEPLOY_FOLDER/public/robots.txt"
 
 ssh -i "$SERVER_KEY" $SERVER_HOST "chown -R $SERVER_USER:www $DEPLOY_FOLDER/"
 ssh -i "$SERVER_KEY" $SERVER_HOST "find $DEPLOY_FOLDER/ -type d -exec chmod 2775 {} \;"
