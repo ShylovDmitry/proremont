@@ -1,2 +1,7 @@
 path: public/wp
 user: admin
+color: true
+disabled_commands:
+  - db drop
+require:
+  - cli/utils.php

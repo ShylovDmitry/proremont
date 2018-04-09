@@ -14,9 +14,9 @@ BASEDIR=$(dirname $0)
 DEPLOY_FOLDER="/var/www/html/$STACK"
 
 if [ $STACK = 'prod' ]; then
-    OPTION_BLOG_PUBLIC=1
+    OPTION_BLOG_PUBLIC='1'
 else
-    OPTION_BLOG_PUBLIC=0
+    OPTION_BLOG_PUBLIC='0'
 fi
 
 npm install
@@ -59,7 +59,7 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 774 $DEPLOY_FOLDER/public/wp-content
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 770 $DEPLOY_FOLDER/public/wp-content/cache"
 ssh -i "$SERVER_KEY" $SERVER_HOST "chmod -R 777 $DEPLOY_FOLDER/public/wp-content/ewww"
 
-ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp option update blog_public $OPTION_BLOG_PUBLIC"
+ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp option update blog_public 2 && sh cli/wp option update blog_public $OPTION_BLOG_PUBLIC"
 ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp cache flush"
 #ssh -i "$SERVER_KEY" $SERVER_HOST "cd $DEPLOY_FOLDER && sh cli/wp rocket preload"
 
