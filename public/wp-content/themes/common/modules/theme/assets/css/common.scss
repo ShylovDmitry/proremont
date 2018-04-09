@@ -26,6 +26,14 @@ a, a:hover {
     outline: none;
 }
 
+.pror-color-primary {
+    color: $color-primary;
+}
+
+.pror-border-primary {
+    border-color: $color-primary;
+}
+
 
 .jumbotron.header {
     background: #2C2C2C no-repeat center top;
@@ -456,13 +464,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2.1rem;
 }
 
-.wpcf7-submit {
-    border: 0;
-    background: $color-primary;
-    color: #fff;
-    padding: 6px 14px;
-}
-
 .gallery-2columns {
     img {
         border: 1px solid $color-lighter;
@@ -668,7 +669,7 @@ a.btn.btn-pror-primary {
         display: block;
         margin: 0 auto 10px;
     }
-    img {
+    figure, img {
         max-width: 100%;
         height: auto;
     }

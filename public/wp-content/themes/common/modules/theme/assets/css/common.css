@@ -19,6 +19,12 @@ a, a:hover {
   color: #424949;
   outline: none; }
 
+.pror-color-primary {
+  color: #E67E22; }
+
+.pror-border-primary {
+  border-color: #E67E22; }
+
 .jumbotron.header {
   background: #2C2C2C no-repeat center top;
   background-image: url("../img/home4_7.jpg");
@@ -303,12 +309,6 @@ h1, h2, h3, h4, h5, h6 {
 .master-list-block h1 {
   font-size: 2.1rem; }
 
-.wpcf7-submit {
-  border: 0;
-  background: #E67E22;
-  color: #fff;
-  padding: 6px 14px; }
-
 .gallery-2columns img {
   border: 1px solid #e8ebeb; }
 
@@ -443,7 +443,7 @@ a.btn.btn-pror-primary {
 .post-content .aligncenter {
   display: block;
   margin: 0 auto 10px; }
-.post-content img {
+.post-content figure, .post-content img {
   max-width: 100%;
   height: auto; }
 
