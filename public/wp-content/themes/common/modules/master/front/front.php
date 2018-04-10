@@ -199,8 +199,7 @@ add_filter('comment_form_submit_button', function($submit_button, $args) {
 }, 10, 2);
 
 add_filter('get_comment_author_link', function($return, $author, $comment_ID) {
-    // Remove link tag
-    return $author;
+    return str_replace(' rel=', 'target="_blank" rel=', $return);
 }, 10, 3);
 
 
