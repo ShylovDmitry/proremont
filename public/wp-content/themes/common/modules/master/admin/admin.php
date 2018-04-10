@@ -50,7 +50,7 @@ add_action('admin_menu', function() {
         $master_post_id = pror_get_master_post_id(get_current_user_id());
         if ($master_post_id) {
             global $submenu;
-            $submenu['profile.php'][] = array('Перейти на Вашу страницу', 'read', get_permalink($master_post_id), null, 'self-page-link');
+            $submenu['profile.php'][] = array('Перейти на свою страницу', 'read', get_permalink($master_post_id), null, 'self-page-link');
             $submenu['profile.php'][] = array('PRO-аккаунт', 'read', home_url('/pro-akkaunt-dlya-masterov/?utm_source=adminpanel&utm_medium=side_menu&utm_campaign=link'), null, 'pro-account-link');
         }
     }

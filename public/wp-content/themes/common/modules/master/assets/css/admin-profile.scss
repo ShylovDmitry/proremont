@@ -10,6 +10,7 @@ body {
 
 a, a:hover {
     color: $color-primary;
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,6 +30,12 @@ strong {
 
 .yoast-alert {
     display: none;
+}
+
+.btn.btn-pror-primary,
+a.btn.btn-pror-primary {
+    background: $color-primary;
+    color: #fff;
 }
 
 

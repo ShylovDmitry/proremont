@@ -10,9 +10,9 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
             </th>
             <td>
                 <?php if (get_field('master_is_confirmed', "user_" . get_current_user_id())): ?>
-                    <span class="oi oi-circle-check text-success"></span> Ваш аккаунт подтвержден. Тепер посетители сайта Вам доверяют.
+                    <span class="oi oi-circle-check text-success"></span> Подтвержден.
                 <?php else: ?>
-                    <span class="oi oi-circle-x text-danger"></span> Ваш аккаунт <strong>НЕ подтвержден</strong>. Доверие посетителей к Вам ниже. Узнайте <a href="#" data-toggle="modal" data-target="#modalConfirmAccount">как подтвердить аккаунт</a>.
+                    <span class="oi oi-circle-x text-danger"></span> <strong>НЕТ</strong>. Доверие посетителей низкое. <a href="#" data-toggle="modal" data-target="#modalConfirmAccount">Как подтвердить аккаунт?</a>
                 <?php endif; ?>
             </td>
         </tr>
@@ -22,9 +22,9 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
             </th>
             <td>
                 <?php if (get_field('master_is_pro', "user_" . get_current_user_id())): ?>
-                    <span class="oi oi-circle-check text-success"></span> Поздравляем! Вам открыты максимальные возможности сайта.
+                    <span class="oi oi-circle-check text-success"></span> Поздравляем! Тебе открыты все возможности сайта.
                 <?php else: ?>
-                    <span class="oi oi-circle-x text-danger"></span> Вы <strong>НЕ используете</strong> все возможности сайта. Узнайте <a href="https://proremont.co/pro-akkaunt-dlya-masterov/?utm_source=adminpanel&utm_medium=content&utm_campaign=status_link" target="_blank">как привлечь внимание посетителей</a>.
+                    <span class="oi oi-circle-x text-danger"></span> <strong>НЕТ</strong>. <a href="https://proremont.co/pro-akkaunt-dlya-masterov/?utm_source=adminpanel&utm_medium=content&utm_campaign=status_link" target="_blank">Как получить на 250% больше клиентов?</a>
                 <?php endif; ?>
             </td>
         </tr>
@@ -38,11 +38,11 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
                     $averageRating = get_post_meta( $comment_id, 'crfp-average-rating', true );
                 ?>
                 <?php if (is_array($ratings) && $averageRating > 4): ?>
-                    <span class="oi oi-circle-check text-success"></span> У вас хороший рейтинг. Так держать!
+                    <span class="oi oi-circle-check text-success"></span> У тебя хороший рейтинг. Так держать!
                 <?php elseif (is_array($ratings)): ?>
-                    <span class="oi oi-circle-x text-danger"></span> Ваш рейтинг нуждается в улучшени. Попросите своих клиентов оставить хорошие оценки и отзывы - Вы сразу займете более высокие позиции в поиске и станете в разы заметнее.
+                    <span class="oi oi-circle-x text-danger"></span> <strong>Низкий</strong>. Попроси своих клиентов оставить хорошие оценки и отзывы.
                 <?php else: ?>
-                    <span class="oi oi-circle-x text-danger"></span> У вас <strong>НЕТ отзывов</strong>. Узнайте <a href="#" data-toggle="modal" data-target="#modalAboutReviews">как отображаться в ТОПе</a>.
+                    <span class="oi oi-circle-x text-danger"></span> <strong>НЕТ</strong>. <a href="#" data-toggle="modal" data-target="#modalAboutReviews">Как повысить доверие?</a>
                 <?php endif; ?>
             </td>
         </tr>

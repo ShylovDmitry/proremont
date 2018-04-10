@@ -1,5 +1,8 @@
 jQuery(function ($) {
 
+    var CATEGORY_LIMIT = 5;
+
+
     $('.categorychecklist-holder > ul > li > label :checkbox').remove();
 
     $('#your-profile').submit(function(e) {
@@ -26,7 +29,7 @@ jQuery(function ($) {
 
         show_dialog = show_dialog || false;
 
-        if ($(':checkbox:checked', catalog_master).length < 5) {
+        if ($(':checkbox:checked', catalog_master).length < CATEGORY_LIMIT) {
             $(':checkbox', catalog_master).attr('disabled', false);
         } else {
             $(':checkbox:not(:checked)', catalog_master).attr('disabled', true);

@@ -6,7 +6,8 @@ body {
   font-size: 12px; }
 
 a, a:hover {
-  color: #E67E22; }
+  color: #E67E22;
+  text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
@@ -23,6 +24,11 @@ strong {
 
 .yoast-alert {
   display: none; }
+
+.btn.btn-pror-primary,
+a.btn.btn-pror-primary {
+  background: #E67E22;
+  color: #fff; }
 
 .wp-core-ui .button.acf-button {
   border: 0;
