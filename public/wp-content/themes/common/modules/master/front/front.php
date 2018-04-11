@@ -250,7 +250,7 @@ add_filter('login_headerurl', function($login_header_url) {
 });
 
 add_filter('login_headertitle', function() {
-    if ($_GET['action'] == 'register') {
+    if ($_GET['action'] == 'register' || $_GET['checkemail'] == 'registered') {
         return 'Регистрация';
     }
     if ($_GET['action'] == 'lostpassword') {
