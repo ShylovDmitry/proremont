@@ -13,7 +13,7 @@ ob_start();
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-            <img src="<?php module_img('theme/proremont-co-logo-white.png'); ?>" height="40px" alt="ProRemont logo" />
+            <img src="<?php module_img('theme/logo-proremont.png'); ?>" height="40px" alt="ProRemont logo" />
         </a>
 
         <div class="dropdown section-list">
