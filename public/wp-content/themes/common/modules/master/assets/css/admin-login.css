@@ -29,5 +29,7 @@ body.login {
     border: 0;
     text-shadow: none;
     box-shadow: none; }
+  body.login #resetpassform .indicator-hint {
+    display: none; }
 
 /*# sourceMappingURL=admin-login.css.map */

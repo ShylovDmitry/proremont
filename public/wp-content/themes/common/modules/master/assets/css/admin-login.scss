@@ -46,4 +46,8 @@ body.login {
         text-shadow: none;
         box-shadow: none;
     }
+
+    #resetpassform .indicator-hint {
+        display: none;
+    }
 }
