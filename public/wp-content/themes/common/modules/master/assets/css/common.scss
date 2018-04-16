@@ -48,6 +48,11 @@
     .avatar {
         position: relative;
         display: inline-block;
+        margin-bottom: 10px;
+
+        @media (min-width: $screen-width-sm) {
+            margin-bottom: 0;
+        }
     }
 
     h5 .is-confirmed {
@@ -195,6 +200,7 @@
 
         .avatar {
             position: relative;
+            margin-bottom: 10px;
         }
 
         img {

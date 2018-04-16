@@ -27,7 +27,6 @@ div.rating-total {
     & .rating-container {
         margin: 0;
     }
-
 }
 
 .rating-breakdown {
@@ -45,4 +44,12 @@ div.rating-total {
             margin-bottom: 8px;
         }
     }
+}
+
+
+.pror-score {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 900;
 }

@@ -1,4 +1,15 @@
 <?php
+    global $post;
+
+    $total = get_post_meta($post->ID, 'crfp-total-ratings', true);
+    $totals = get_post_meta($post->ID, 'crfp-totals', true);
+    $score = round(array_sum($totals) / ($total * count($totals)), 1);
+?>
+    <div class="pror-score">
+        <?php echo sprintf("%.1f", $score); ?>
+    </div>
+
+<?php
     $instance = array(
         'enabled' => 2,
         'displaystyle' => 'grey',

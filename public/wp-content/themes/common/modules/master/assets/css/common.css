@@ -30,7 +30,11 @@
     margin-right: 15px; }
   .master-item .avatar {
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    margin-bottom: 10px; }
+    @media (min-width: 576px) {
+      .master-item .avatar {
+        margin-bottom: 0; } }
   .master-item h5 .is-confirmed {
     font-size: 14px;
     margin-left: 5px;
@@ -125,7 +129,8 @@
       float: left;
       text-align: left; } }
 .master-detailed .header .avatar {
-  position: relative; }
+  position: relative;
+  margin-bottom: 10px; }
 .master-detailed .header img {
   width: 175px;
   max-width: 175px;
