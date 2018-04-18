@@ -1,10 +1,9 @@
 <?php
 
 $name = 'Ігор Мандзяк';
-$phone = '+38 063 147 89 70';
-$phone_href = '+380631478970';
+$phones = ['+380631478970' => '063 147 89 70', '+380678643294' => '067 864 32 94'];
 $email = 'igor@proremont.co';
 $avatar_filename = 'igor.jpg';
-$position = 'Команда <b>ProRemont</b>';
+$position = 'Керівник відділу комунікації з корпоративними клієнтами';
 
 include "template.php";

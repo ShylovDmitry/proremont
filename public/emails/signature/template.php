@@ -8,8 +8,13 @@
 <tr><td colspan="2" style="padding-bottom: 5px; color: #E67E22; font-size: 18px; font-family: Arial, Helvetica, sans-serif;"><?php echo $name; ?></td></tr>
 <tr><td colspan="2" style="color: #424949; font-size: 14px; font-family: Arial, Helvetica, sans-serif;"><i><?php echo $position; ?></i></td></tr>
 <tr><td colspan="2" style="color: #424949; font-size: 20px; font-family: Arial, Helvetica, sans-serif;"><strong>&nbsp;</strong></td></tr>
-<tr><td width="45" valign="top" style="vertical-align: top; width: 45px; color: #E67E22; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">тел.:</td><td style="color: #424949; font-size: 14px; font-family: Arial, Helvetica, sans-serif;"><a href="tel:<?php echo $phone_href; ?>" style="color: #1da1db; text-decoration: none; font-weight: normal; font-size: 14px;"><?php echo $phone; ?></a></td></tr>
 <tr><td width="45" valign="top" style="vertical-align: top; width: 45px; color: #E67E22; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">email:</td><td style="color: #424949; font-size: 14px; font-family: Arial, Helvetica, sans-serif;"><a href="mailto:<?php echo $email; ?>" style="color: #1da1db; text-decoration: none; font-weight: normal; font-size: 14px;"><?php echo $email; ?></a></td></tr>
+<tr><td width="45" valign="top" style="vertical-align: top; width: 45px; color: #E67E22; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">тел.:</td><td style="color: #424949; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">
+        <?php $i = 0; ?>
+        <?php foreach ($phones as $phone_href => $phone_text): $i++; ?>
+            <a href="tel:<?php echo $phone_href; ?>" style="color: #1da1db; text-decoration: none; font-weight: normal; font-size: 14px;"><?php echo $phone_text; ?></a><?php if ($i != count($phones)): ?>, <?php endif; ?>
+        <?php endforeach; ?>
+</td></tr>
 </table>
 </td></tr></table>
 <p style="color: #424949; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">
