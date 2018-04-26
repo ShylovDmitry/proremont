@@ -3,8 +3,6 @@
 /** Enable Cache by WP Rocket */
 defined('WP_CACHE') or define('WP_CACHE', true);
 
-define('CUSTOM_TAGS', true);
-
 if (!isset($_SERVER['HTTPS'])) {
     $_SERVER['HTTPS'] = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ? 'on' : 'off';
 }
