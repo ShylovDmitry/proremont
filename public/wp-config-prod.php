@@ -1,11 +1,6 @@
 <?php
 
-if (strpos($_SERVER['HTTP_HOST'], 'proremont') === false) {
-    unset($_SERVER['HTTP_HOST']);
-}
-if (!isset($_SERVER['HTTP_HOST'])) {
-    $_SERVER['HTTP_HOST'] = 'proremont.co';
-}
+$_SERVER['HTTP_HOST'] = 'proremont.co';
 
 defined('WP_DEBUG') or define('WP_DEBUG', false);
 defined('WP_DEBUG_DISPLAY') or define('WP_DEBUG_DISPLAY', false);
