@@ -77,4 +77,6 @@ ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/nginx configtest && sudo /et
 ssh -i "$SERVER_KEY" $SERVER_HOST "sudo /etc/init.d/php-fpm reload"
 ssh -i "$SERVER_KEY" $SERVER_HOST "echo 'flush_all' | sudo nc localhost 11211"
 
+ssh -i "$SERVER_KEY" $SERVER_HOST "echo '*/5 * * * * wget -qO- https://proremont.co/wp/wp-cron.php &> /dev/null' | crontab -"
+
 echo "Done."
