@@ -3,7 +3,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
 ?>
 <table class="form-table profile-info">
     <tbody>
-    <?php if (pror_current_user_has_role('master')): ?>
+    <?php if (pror_is_master_published()): ?>
         <tr>
             <th>
                 <label>Подтвержден</label>
@@ -46,7 +46,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
                 <?php endif; ?>
             </td>
         </tr>
-    <?php elseif (pror_current_user_has_role('administrator')): ?>
+    <?php elseif (pror_user_has_role('administrator')): ?>
         <tr>
             <th>
                 <label>&nbsp;</label>

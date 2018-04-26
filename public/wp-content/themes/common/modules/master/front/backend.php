@@ -5,7 +5,7 @@ add_action('login_enqueue_scripts', function() {
 });
 
 add_action('init', function() {
-    if (pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) {
+    if (pror_user_has_role('master subscriber')) {
         remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
         show_admin_bar(false);
     }
@@ -21,7 +21,7 @@ add_action('profile_update', function ($user_id, $old_user_data) {
 
 
 function pror_update_master_info($user_id) {
-    if (!pror_user_has_role($user_id, 'master') && !pror_user_has_role($user_id, 'subscriber')) {
+    if (!pror_user_has_role('master', $user_id)) {
         return;
     }
 
@@ -29,11 +29,14 @@ function pror_update_master_info($user_id) {
 
     update_user_meta($user_id, 'show_admin_bar_front', false);
 
-    $should_be_master = get_field('master_should_be', "user_{$user_id}");
-    $caps = ($should_be_master) ? array('master' => true) : array('subscriber' => true);
-    update_user_meta($user_id, 'wp_capabilities', $caps);
+    $title = get_field('master_title', "user_{$user_id}");
+    if (!$title) {
+        return;
+    }
 
-    if ($should_be_master != 'yes') {
+
+    $master_is_hidden = get_field('master_is_hidden', "user_{$user_id}");
+    if ($master_is_hidden) {
         $master_post_id = pror_get_master_post_id($user_id);
         if ($master_post_id) {
             wp_update_post(array(
@@ -88,7 +91,11 @@ add_action('delete_user', function($user_id) {
 });
 
 
-function pror_get_master_post_id($user_id, $title = null) {
+function pror_get_master_post_id($user_id = null, $create_title = null) {
+    if (!$user_id) {
+        $user_id = get_current_user_id();
+    }
+
     $posts = get_posts(array(
         'author' => $user_id,
         'posts_per_page' => 1,
@@ -100,13 +107,13 @@ function pror_get_master_post_id($user_id, $title = null) {
     if ($post_id) {
         return $post_id;
     }
-    if (!$title) {
+    if (!$create_title) {
         return false;
     }
 
     return wp_insert_post(array(
         'post_author' => $user_id,
-        'post_title' => $title,
+        'post_title' => $create_title,
         'post_type' => 'master',
     ));
 }

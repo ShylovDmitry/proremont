@@ -1,5 +1,5 @@
 <ul class="profile-menu list-unstyled">
-<?php if (is_user_logged_in() && pror_current_user_has_role('master')): ?>
+<?php if (is_user_logged_in() && pror_user_has_role('master')): ?>
     <li><a href="<?php echo get_edit_user_link(); ?>">Профиль</a></li>
     <li><a href="<?php echo esc_url(wp_logout_url(home_url())); ?>">Выйти</a></li>
 <?php else: ?>

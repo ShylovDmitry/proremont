@@ -86,6 +86,10 @@ add_filter('excerpt_length', function( $length ) {
     return 20;
 }, 999);
 
+function pror_is_master_published($user_id = null) {
+    return pror_get_master_post_id($user_id);
+}
+
 function pror_get_master_types() {
     return array(
         '' => 'Все',
@@ -136,7 +140,7 @@ function pror_format_phones($phone) {
 
 function pror_get_master_location($master_post_id = null) {
     $term = get_the_terms($master_post_id, 'location');
-    if (isset($term, $term[0])) {
+    if (!is_wp_error($term) && isset($term, $term[0])) {
         $location_str = trim(get_term_parents_list($term[0]->term_id, 'location', array(
             'separator' => '/',
             'link' => false

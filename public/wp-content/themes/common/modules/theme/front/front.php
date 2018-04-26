@@ -72,14 +72,19 @@ add_action('wp_footer', function() {
 }, 1000);
 
 
-function pror_user_has_role($user_id, $role) {
-    $user = get_user_by('id', $user_id);
-    return $user && in_array($role, (array)$user->roles);
-}
+function pror_user_has_role($roles, $user_id = null) {
+    $user = $user_id ? get_user_by('id', $user_id) : wp_get_current_user();
 
-function pror_current_user_has_role($role) {
-    $user = wp_get_current_user();
-    return $user && pror_user_has_role($user->ID, $role);
+    if (!$user) {
+        return false;
+    }
+
+    foreach (explode(' ', $roles) as $role) {
+        if (in_array($role, (array)$user->roles)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function pror_cache_expire($expire = 0) {

@@ -1,14 +1,14 @@
 <?php
 
 add_action('init', function() {
-    if (pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) {
+    if (pror_user_has_role('master subscriber')) {
         remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
         show_admin_bar(false);
     }
 });
 
 add_action('admin_enqueue_scripts', function($hook) {
-    if ((pror_current_user_has_role('master') || pror_current_user_has_role('subscriber')) && is_admin()) {
+    if (pror_user_has_role('master subscriber') && is_admin()) {
         wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:100,300,400,500,700,900', array(), null);
         wp_enqueue_style('bootstrap', get_module_css('theme/bootstrap-4.0.0-beta.min.css'), array(), null);
         wp_enqueue_style('open-iconic', get_module_css('theme/open-iconic/css/open-iconic-bootstrap.min.css'), array(), '1.1.1');
@@ -40,14 +40,14 @@ add_action('edit_user_profile', function($profileuser) {
 }, 5);
 
 add_action('edit_form_after_title', function($post) {
-    if (get_post_type($post) == 'master' && pror_current_user_has_role('administrator')) {
+    if (get_post_type($post) == 'master' && pror_user_has_role('administrator')) {
         echo sprintf('<a href="%s">%s (ID %s)</a>', get_edit_user_link($post->post_author), 'Редактировать пользователя', $post->post_author);
     }
 });
 
 add_action('admin_menu', function() {
-    if (pror_current_user_has_role('master')) {
-        $master_post_id = pror_get_master_post_id(get_current_user_id());
+    if (pror_user_has_role('master')) {
+        $master_post_id = pror_get_master_post_id();
         if ($master_post_id) {
             global $submenu;
             $submenu['profile.php'][] = array('Перейти на свою страницу', 'read', get_permalink($master_post_id), null, 'self-page-link');

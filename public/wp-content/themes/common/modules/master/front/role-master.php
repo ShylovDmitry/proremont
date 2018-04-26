@@ -1,6 +1,15 @@
 <?php
 
 add_action('init', function() {
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//    $role = get_role('subscriber');
+//    $role->remove_cap('upload_files');
+
     if (!get_role('master')) {
         pror_create_master_role();
     }
@@ -23,7 +32,4 @@ function pror_create_master_role() {
             'upload_files' => true,
         )
     );
-
-    $role = get_role('subscriber');
-    $role->add_cap('upload_files');
 }
