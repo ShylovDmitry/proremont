@@ -5,7 +5,7 @@ add_action('wp_head', function() {
         return;
     }
 
-//    module_template('scripts/ga');
+    module_template('scripts/esputnik');
     module_template('scripts/gtm');
     module_template('scripts/pixel');
     module_template('scripts/yandex_metrica');
@@ -16,7 +16,7 @@ add_action('login_head', function() {
         return;
     }
 
-//    module_template('scripts/ga');
+    module_template('scripts/esputnik');
     module_template('scripts/gtm');
     module_template('scripts/pixel');
     module_template('scripts/yandex_metrica');
@@ -30,7 +30,7 @@ add_action('admin_head', function() {
         return;
     }
 
-//    module_template('scripts/ga');
+    module_template('scripts/esputnik');
     module_template('scripts/gtm');
     module_template('scripts/pixel');
     module_template('scripts/yandex_metrica');
