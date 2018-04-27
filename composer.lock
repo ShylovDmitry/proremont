@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7733a085e565dde4ac4a1548241a5303",
-    "content-hash": "f7327906fbbb3d2a982d55f10579da67",
+    "hash": "ad811f8fe6907aa518027754511db719",
+    "content-hash": "61bc6593d83fa9c929f1f917189e9f40",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -4243,15 +4243,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "7.2",
+            "version": "7.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/7.2"
+                "reference": "tags/7.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.7.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.7.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -4303,7 +4303,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-bank",
-            "version": "3.0.56",
+            "version": "3.0.58",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-bank/",
@@ -4311,7 +4311,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1523526228",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-bank.zip?timestamp=1524532741",
                 "reference": null,
                 "shasum": null
             },
