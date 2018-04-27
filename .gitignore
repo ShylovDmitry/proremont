@@ -14,6 +14,7 @@
 
 /public/wp-content/plugins/
 !/public/wp-content/plugins/.gitkeep
+!/public/wp-content/plugins/oa-social-login
 !/public/wp-content/plugins/pror_stats
 !/public/wp-content/plugins/pror_esputnik
 
