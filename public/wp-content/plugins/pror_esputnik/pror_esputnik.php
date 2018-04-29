@@ -278,7 +278,7 @@ function pror_esputnik_create_user($user_id) {
         'fields' => [
                 [
                     'id' => $CUSTOM_FIELDS['MASTER_IS_CONFIRMED'],
-                    'value' => get_field('master_is_confirmed', "user_{$user_id}") ? 'yes' : '',
+                    'value' => get_field('master_is_confirmed', "user_{$user_id}") ? '1' : '',
                 ],
                 [
                     'id' => $CUSTOM_FIELDS['MASTER_TYPE'],

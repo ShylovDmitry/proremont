@@ -284,3 +284,105 @@
 //        exit;
 //    }
 //}, 11);
+
+//add_action('init', function() {
+//    if (isset($_GET['pror_offset'])) {
+//        $users = get_users([
+//            'role' => 'master',
+//            'number' => isset($_GET['pror_limit']) ? $_GET['pror_limit'] : 10000,
+//            'offset' => $_GET['pror_offset'],
+//            'orderby' => 'ID',
+//        ]);
+//
+//
+//
+//        echo '<table>';
+//        echo '<tr>
+//            <th>ID</th>
+//            <th>Name</th>
+//            <th>Email</th>
+//            <th>Phone</th>
+//            <th>Region</th>
+//            <th>Town</th>
+//            <th>Link</th>
+//            <th>Catalog</th>
+//            <th>Confirmed</th>
+//            <th>Type</th>
+//        </tr>';
+//
+//        $c = 0;
+//        foreach ($users as $user) {
+//            if (strpos($user->user_email, 'ProRemont.Catalog+') === 0) {
+//                continue;
+//            }
+//            $c++;
+//
+//            $user_id = $user->ID;
+//
+//            $phone = '';
+//            foreach (pror_get_master_phones($user_id) as $phone) {
+//                $phone = $phone['tel'];
+//                if (strpos($phone, '+38044') === 0 || strpos($phone, '+38032') === 0) {
+//                    continue;
+//                }
+//                break;
+//            }
+//
+//            $master_region = '';
+//            $master_town = '';
+//            $master_link = '';
+//            $master_catalog = '';
+//
+//            $posts = get_posts(array(
+//                'author' => $user_id,
+//                'posts_per_page' => 1,
+//                'post_type' => 'master',
+//                'post_status' => 'any',
+//            ));
+//            $post_id = isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
+//            if ($post_id) {
+//                $master_link = get_permalink($post_id);
+//
+//                $catalogs = [];
+//                $catalogs[] = '';
+//                foreach (pror_get_master_catalogs($post_id) as $cat) {
+//                    $catalogs[] = $cat->name;
+//                    foreach ($cat->children as $child) {
+//                        $catalogs[] = $child->name;
+//                    }
+//                }
+//                $catalogs[] = '';
+//                $master_catalog = implode('|', $catalogs);
+//
+//
+//                $loc = pror_get_master_location($post_id);
+//                if ($loc) {
+//                    $master_region = $loc[0];
+//                    $master_town = $loc[1];
+//                }
+//            }
+//
+//
+//
+//            echo '<tr>
+//                <td>' . $user_id . '</td>
+//                <td>' . get_field('master_title', "user_{$user_id}") . '</td>
+//                <td>' . $user->user_email . '</td>
+//                <td>' . $phone . '</td>
+//                <td>' . $master_region . '</td>
+//                <td>' . $master_town . '</td>
+//                <td>' . str_replace('http://proremont.local', 'https://proremont.co', $master_link) . '</td>
+//                <td>' . $master_catalog . '</td>
+//                <td>' . (get_field('master_is_confirmed', "user_{$user_id}") ? '1' : '') . '</td>
+//                <td>' . get_field('master_type', "user_{$user_id}") . '</td>
+//                <td></td>
+//            </tr>';
+//
+//
+//        }
+//
+//        echo '</table>';
+//
+//        exit;
+//    }
+//}, 11);
