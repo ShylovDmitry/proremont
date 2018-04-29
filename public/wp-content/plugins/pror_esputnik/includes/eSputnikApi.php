@@ -24,8 +24,10 @@ class eSputnikApi {
         $request_entity->contacts = array($contact);
         $request_entity->dedupeOn = 'email';
         $request_entity->contactFields = array('firstName', 'email', 'sms', 'address', 'town', 'region');
+        $request_entity->customFieldsIDs = array('76993', '76998', '77003', '77004', );
         $request_entity->groupNamesExclude = array_merge([], array_diff($this->allGroups, (array) $groups));
         $request_entity->groupNames = (array) $groups;
+        $request_entity->restoreDeleted = true;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_POST, 1);

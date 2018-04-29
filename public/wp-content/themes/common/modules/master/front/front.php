@@ -151,8 +151,8 @@ function pror_get_master_location($master_post_id = null) {
     return array();
 }
 
-function pror_get_master_catalogs($master_id = null) {
-    $master_terms = get_the_terms($master_id, 'catalog_master');
+function pror_get_master_catalogs($master_post_id = null) {
+    $master_terms = get_the_terms($master_post_id, 'catalog_master');
 
     $sub_terms = array();
     foreach ($master_terms as $master_term) {

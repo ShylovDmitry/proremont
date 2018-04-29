@@ -262,12 +262,29 @@ add_action('delete_user', function($user_id, $reassign) {
 
 
 function pror_esputnik_create_user($user_id) {
+    $CUSTOM_FIELDS = [
+        'MASTER_PROFILE_URL' => 76993,
+        'MASTER_CATALOG' => 76998,
+        'MASTER_IS_CONFIRMED' => 77003,
+        'MASTER_TYPE' => 77004,
+    ];
+
     $user = get_userdata($user_id);
     $email = $user->data->user_email;
 
     $contact = [
         'firstName' => pror_user_has_role('master', $user_id) ? get_field('master_title', "user_{$user_id}") : '',
         'channels' => [['type' => 'email', 'value' => $email]],
+        'fields' => [
+                [
+                    'id' => $CUSTOM_FIELDS['MASTER_IS_CONFIRMED'],
+                    'value' => get_field('master_is_confirmed', "user_{$user_id}") ? 'yes' : '',
+                ],
+                [
+                    'id' => $CUSTOM_FIELDS['MASTER_TYPE'],
+                    'value' => get_field('master_type', "user_{$user_id}"),
+                ],
+        ],
     ];
 
     foreach (pror_get_master_phones($user_id) as $phone) {
@@ -282,6 +299,26 @@ function pror_esputnik_create_user($user_id) {
     ));
     $post_id = isset($posts, $posts[0], $posts[0]->ID) ? $posts[0]->ID : false;
     if ($post_id) {
+        $contact['fields'][] = [
+            'id' => $CUSTOM_FIELDS['MASTER_PROFILE_URL'],
+            'value' => get_permalink($post_id),
+        ];
+
+        $catalogs = [];
+        $catalogs[] = '';
+        foreach (pror_get_master_catalogs(13622) as $cat) {
+            $catalogs[] = $cat->name;
+            foreach ($cat->children as $child) {
+                $catalogs[] = $child->name;
+            }
+        }
+        $catalogs[] = '';
+        $contact['fields'][] = [
+            'id' => $CUSTOM_FIELDS['MASTER_CATALOG'],
+            'value' => implode('|', $catalogs),
+        ];
+
+
         $loc = pror_get_master_location($post_id);
         if ($loc) {
             $contact['address'] = ['region' => $loc[0], 'town' => $loc[1]];
