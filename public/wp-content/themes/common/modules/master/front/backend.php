@@ -73,13 +73,18 @@ function pror_update_master_info($user_id) {
         $logo_id = get_field('master_logo', "user_{$user_id}");
         update_post_meta($master_post_id, '_thumbnail_id', $logo_id);
 
-        wp_update_post(array(
-            'ID' => $master_post_id,
-            'post_status' => ($title && $catalog_terms && $location_terms) ? 'publish' : 'draft',
-        ));
-
         $post = get_post($master_post_id);
         update_user_meta($user_id, 'master_url_slug', $post->post_name);
+
+        $post_status = ($title && $catalog_terms && $location_terms) ? 'publish' : 'draft';
+        wp_update_post(array(
+            'ID' => $master_post_id,
+            'post_status' => $post_status,
+        ));
+
+        if ($post_status == 'publish') {
+            do_action('pror_update_master_info_published', $user_id, $master_post_id);
+        }
     }
 }
 
