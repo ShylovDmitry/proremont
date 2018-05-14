@@ -1,13 +1,13 @@
 @import "../../../theme/assets/css/variables";
 
-html .col-banner-sidebar {
+html .col-prom-sidebar {
     padding-left: 0;
     flex-basis: 315px;
     max-width: 315px;
 }
 
-#banner_mobile1,
-#banner_mobile2 {
+#prom_mobile1,
+#prom_mobile2 {
     margin-left: -15px;
     margin-right: -15px;
 
@@ -16,7 +16,7 @@ html .col-banner-sidebar {
     }
 }
 
-#banner_sidebar {
+#prom_sidebar {
     .reklama-link {
         font-size: .75rem;
         color: darken($color-lighter, 40);
@@ -29,7 +29,7 @@ html .col-banner-sidebar {
     }
 }
 
-.banner-mobile {
+.prom-mobile {
     .reklama-block {
         width: 300px;
         margin: 0 auto;

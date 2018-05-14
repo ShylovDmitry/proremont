@@ -8,7 +8,7 @@
             <?php module_template('partner/detailed'); ?>
         </div>
 
-        <?php module_template('banner/sidebar-col'); ?>
+        <?php module_template('prom/sidebar-col'); ?>
     </div>
 </div>
 

@@ -1,7 +1,7 @@
 <?php
     $dfp_current_page = pror_get_current_page_identifier();
     $dfp_current_section = pror_get_section()->slug;
-    $dfp_current_catalog = pror_banner_get_catalog();
+    $dfp_current_catalog = pror_prom_get_catalog();
 ?>
 <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 <script>

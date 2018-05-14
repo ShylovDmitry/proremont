@@ -119,7 +119,7 @@ if ($rated_masters_query) {
                         <?php if ($pos == 1): ?>
                             <div class="col-12 d-lg-none">
                                 <div class="master-item">
-                                    <?php module_template('banner/mobile1'); ?>
+                                    <?php module_template('prom/mobile1'); ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -135,7 +135,7 @@ if ($rated_masters_query) {
                         <?php if ($pos == 1): ?>
                             <div class="col-12 d-lg-none">
                                 <div class="master-item">
-                                    <?php module_template('banner/mobile1'); ?>
+                                    <?php module_template('prom/mobile1'); ?>
                                 </div>
                             </div>
                         <?php endif; ?>

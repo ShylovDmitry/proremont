@@ -34,3 +34,20 @@ function getCookie(cname) {
     }
     return "";
 }
+
+
+
+
+function adBlockNotDetected() {
+}
+
+function adBlockDetected() {
+	$('.prom-placeholder').hide();
+	$('.prom-placeholder-blocked').show();
+}
+
+if(typeof blockAdBlock === 'undefined') {
+	adBlockDetected();
+} else {
+	blockAdBlock.on(true, adBlockDetected).onNotDetected(adBlockNotDetected);
+}

@@ -1,5 +1,5 @@
 jQuery(function ($) {
-    $("#banner_sidebar").stick_in_parent({offset_top: 15});
+    $("#prom_sidebar").stick_in_parent({offset_top: 15});
 
     var breakpoint = detect_breakpoint();
 

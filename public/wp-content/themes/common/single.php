@@ -10,7 +10,7 @@
             <?php module_template('blog/related-posts', array('main_post_id' => get_the_ID(), 'container_class' => 'colored-box mt-3 p-3')); ?>
         </div>
 
-        <?php module_template('banner/sidebar-col'); ?>
+        <?php module_template('prom/sidebar-col'); ?>
     </div>
 </div>
 

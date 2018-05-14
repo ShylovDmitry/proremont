@@ -22,7 +22,7 @@
 
         </div>
 
-        <?php module_template('banner/sidebar-col'); ?>
+        <?php module_template('prom/sidebar-col'); ?>
     </div>
 </div>
 

@@ -63,11 +63,11 @@ ob_start();
                 <?php module_template('master/item'); ?>
 
                 <?php if ($pos == 1): ?>
-                    <?php module_template('banner/native1'); ?>
+                    <?php module_template('prom/native1'); ?>
                 <?php endif; ?>
                 <?php if ($pos == 2): ?>
                     <div class="master-item d-lg-none">
-                        <?php module_template('banner/mobile1'); ?>
+                        <?php module_template('prom/mobile1'); ?>
                     </div>
                 <?php endif; ?>
             <?php endwhile; ?>
@@ -76,11 +76,11 @@ ob_start();
                 <?php module_template('master/item'); ?>
 
                 <?php if ($pos == 1): ?>
-                    <?php module_template('banner/native1'); ?>
+                    <?php module_template('prom/native1'); ?>
                 <?php endif; ?>
                 <?php if ($pos == 2): ?>
                     <div class="master-item d-lg-none">
-                        <?php module_template('banner/mobile1'); ?>
+                        <?php module_template('prom/mobile1'); ?>
                     </div>
                 <?php endif; ?>
             <?php endwhile; ?>

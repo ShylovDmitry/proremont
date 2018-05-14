@@ -1,4 +1,4 @@
-<div id="banner_native1" class="banner-native">
+<div id="prom_native1" class="prom-native">
 
     <!-- /21681373772/native1 -->
     <div id='div-native1'>

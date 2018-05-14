@@ -1,19 +1,19 @@
 <?php
 
 add_action('wp_print_styles', function () {
-    wp_enqueue_style('banner-common', get_module_css('banner/common.css'), array(), dlv_get_ver());
+    wp_enqueue_style('prom-common', get_module_css('prom/common.css'), array(), dlv_get_ver());
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('banner-common', get_module_js('banner/common.js'), array('jquery', 'sticky-kit'), dlv_get_ver(), true);
+    wp_enqueue_script('prom-common', get_module_js('prom/common.js'), array('jquery', 'sticky-kit'), dlv_get_ver(), true);
 });
 
 add_action('wp_head', function() {
-    module_template('banner/adsense');
-    module_template('banner/gpt');
+    module_template('prom/adsense');
+    module_template('prom/gpt');
 });
 
-function pror_banner_get_catalog() {
+function pror_prom_get_catalog() {
     if (is_tax('catalog_master')) {
         $tax = get_queried_object();
 

@@ -65,7 +65,7 @@
         </div>
 
         <div class="d-lg-none mt-2">
-            <?php module_template('banner/mobile1'); ?>
+            <?php module_template('prom/mobile1'); ?>
         </div>
     </div>
 
