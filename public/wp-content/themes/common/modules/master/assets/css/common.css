@@ -186,15 +186,15 @@
     background: #e7e8e8; }
 .master-detailed.pro .line::after {
   background: #ffecbc; }
-.master-detailed .catalog a, .master-detailed .catalog a:hover {
+.master-detailed .catalog-block a, .master-detailed .catalog-block a:hover {
   color: #424949; }
-.master-detailed .catalog ul {
+.master-detailed .catalog-block ul {
   padding-top: 15px; }
   @media (min-width: 576px) {
-    .master-detailed .catalog ul {
+    .master-detailed .catalog-block ul {
       padding-top: 0;
       margin-left: 75px; } }
-  .master-detailed .catalog ul a::before {
+  .master-detailed .catalog-block ul a::before {
     content: '';
     display: inline-block;
     width: 10px;

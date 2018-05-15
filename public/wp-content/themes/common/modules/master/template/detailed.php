@@ -100,7 +100,7 @@
     <?php endif; ?>
 
     <div class="colored-box mt-3 pt-3 px-3">
-        <div class="catalog">
+        <div class="catalog-block">
             <h4 class="header-underlined">Услуги</h4>
 
             <div class="row">
@@ -133,11 +133,25 @@
     <div class="colored-box mt-3 p-3">
         <div class="content">
             <h4 class="header-underlined">Отзывы</h4>
-        <?php
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
-        ?>
+            <?php
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+            ?>
+        </div>
+    </div>
+
+    <div class="colored-box mt-3 p-3">
+        <div class="content">
+            <?php
+            $catalog_ids = [];
+            foreach (pror_get_master_catalogs() as $parent) {
+                foreach ($parent->children as $child) {
+                    $catalog_ids[] = $child->term_id;
+                }
+            }
+            ?>
+            <?php module_template('master/related-list', ['catalog_ids' => $catalog_ids]); ?>
         </div>
     </div>
 </div>

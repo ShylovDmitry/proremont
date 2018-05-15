@@ -53,4 +53,5 @@ function pror_master_clear_cache($post_ID = null) {
     }
     pror_cache_delete_wildcard('pror:master:list:front');
     pror_cache_delete_wildcard('pror:master:list:main');
+    pror_cache_delete_wildcard('pror:master:list:related');
 }
