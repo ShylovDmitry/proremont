@@ -151,7 +151,7 @@
                 }
             }
             ?>
-            <?php module_template('master/related-list', ['catalog_ids' => $catalog_ids]); ?>
+            <?php module_template('master/related-list', ['exclude_master_id' => get_the_ID(), 'catalog_ids' => $catalog_ids]); ?>
         </div>
     </div>
 </div>
