@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.6",
-    "johnpbloch/wordpress": "4.9.5",
+    "johnpbloch/wordpress": "4.9.6",
     "composer/installers": "~1.0",
     "wp-cli/wp-cli" : "1.5.0",
     "psy/psysh" : "~0.6",
@@ -36,7 +36,6 @@
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.3.2",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
     "wpackagist-plugin/wp-mail-bank": "3.0.58",
-    "wpackagist-plugin/bnfw": "1.6.13",
     "wpackagist-plugin/memcached-redux": "0.1.6",
     "wpackagist-plugin/social-sharing-icons": "2.4",
     "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2",
