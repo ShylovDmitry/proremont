@@ -159,3 +159,15 @@ function pror_master_rus2translit($string) {
 add_filter('sanitize_title', function($title, $fallback_title, $context) {
     return pror_master_rus2translit($title);
 }, 5, 3);
+
+
+add_filter('wp_login_errors', function($errors, $redirect_to) {
+    if (isset($errors->errors['registered'])) {
+        foreach ($errors->errors['registered'] as $key => &$value) {
+            $value = 'Проверьте свою почту.';
+        }
+        unset($value);
+    }
+
+    return $errors;
+}, 10, 2);
