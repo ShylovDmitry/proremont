@@ -125,7 +125,9 @@ if ($rated_masters_query) {
                     </div>
 
                     <?php if ($pos == 1 && $display_native): ?>
-                        <?php module_template('prom/native1'); ?>
+                        <div class="col-12">
+                            <?php module_template('prom/native1'); ?>
+                        </div>
                     <?php endif; ?>
                     <?php if ($pos == 2 && $display_mobile): ?>
                         <div class="col-12 d-lg-none">
@@ -141,7 +143,9 @@ if ($rated_masters_query) {
                         </div>
 
                         <?php if ($pos == 1 && $display_native): ?>
-                            <?php module_template('prom/native1'); ?>
+                            <div class="col-12">
+                                <?php module_template('prom/native1'); ?>
+                            </div>
                         <?php endif; ?>
                         <?php if ($pos == 2 && $display_mobile): ?>
                             <div class="col-12 d-lg-none">
@@ -158,7 +162,9 @@ if ($rated_masters_query) {
                         </div>
 
                         <?php if ($pos == 1 && $display_native): ?>
-                            <?php module_template('prom/native1'); ?>
+                            <div class="col-12">
+                                <?php module_template('prom/native1'); ?>
+                            </div>
                         <?php endif; ?>
                         <?php if ($pos == 2 && $display_mobile): ?>
                             <div class="col-12 d-lg-none">
