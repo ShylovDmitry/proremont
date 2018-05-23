@@ -29,7 +29,7 @@ ob_start();
             </div>
         </div>
 
-        <?php if ($pos == 2): ?>
+        <?php if ($pos == 1): ?>
             <div class="mb-4 d-lg-none">
                 <?php module_template('prom/mobile1'); ?>
             </div>

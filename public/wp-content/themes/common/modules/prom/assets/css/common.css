@@ -6,7 +6,8 @@ html .col-prom-sidebar {
 #prom_mobile1,
 #prom_mobile2 {
   margin-left: -15px;
-  margin-right: -15px; }
+  margin-right: -15px;
+  margin-bottom: 10px; }
   #prom_mobile1 > div,
   #prom_mobile2 > div {
     margin: 0 auto; }

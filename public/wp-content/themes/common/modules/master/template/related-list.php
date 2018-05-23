@@ -2,11 +2,13 @@
 $exclude_master_id = isset($__data['exclude_master_id']) ? $__data['exclude_master_id'] : '';
 $catalog_ids = isset($__data['catalog_ids']) ? $__data['catalog_ids'] : '';
 $container_class = isset($__data['container_class']) ? $__data['container_class'] : '';
+$display_native = isset($__data['display_native']) ? $__data['display_native'] : 1;
+$display_mobile = isset($__data['display_mobile']) ? $__data['display_mobile'] : 1;
 ?>
 
 <?php
 $cache_expire = pror_cache_expire(10*60);
-$cache_key = pror_cache_key(sprintf('block-%s-%s-%s', $container_class, implode(',', $catalog_ids), $exclude_master_id) , 'section');
+$cache_key = pror_cache_key(sprintf('block-%s-%s-%s-%s-%s', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile) , 'section');
 $cache_group = 'pror:master:list:related';
 
 $cache = wp_cache_get($cache_key, $cache_group);
@@ -116,24 +118,34 @@ if ($rated_masters_query) {
             </div>
 
             <div class="row">
-                <?php while ($pro_masters_query->have_posts()): $pro_masters_query->the_post(); ?>
+                <?php $pos = 0; ?>
+                <?php while ($pro_masters_query->have_posts()): $pro_masters_query->the_post(); $pos++; ?>
                     <div class="col-12">
                         <?php module_template('master/item'); ?>
                     </div>
+
+                    <?php if ($pos == 1 && $display_native): ?>
+                        <?php module_template('prom/native1'); ?>
+                    <?php endif; ?>
+                    <?php if ($pos == 2 && $display_mobile): ?>
+                        <div class="col-12 d-lg-none">
+                            <?php module_template('prom/mobile1'); ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endwhile; ?>
 
-                <?php $pos = 0; ?>
                 <?php if ($rated_masters_query): ?>
                     <?php while ($rated_masters_query->have_posts()): $rated_masters_query->the_post(); $pos++; ?>
                         <div class="col-12">
                             <?php module_template('master/item'); ?>
                         </div>
 
-                        <?php if ($pos == 1): ?>
+                        <?php if ($pos == 1 && $display_native): ?>
+                            <?php module_template('prom/native1'); ?>
+                        <?php endif; ?>
+                        <?php if ($pos == 2 && $display_mobile): ?>
                             <div class="col-12 d-lg-none">
-                                <div class="master-item">
-                                    <?php module_template('prom/mobile1'); ?>
-                                </div>
+                                <?php module_template('prom/mobile1'); ?>
                             </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
@@ -145,11 +157,12 @@ if ($rated_masters_query) {
                             <?php module_template('master/item'); ?>
                         </div>
 
-                        <?php if ($pos == 1): ?>
+                        <?php if ($pos == 1 && $display_native): ?>
+                            <?php module_template('prom/native1'); ?>
+                        <?php endif; ?>
+                        <?php if ($pos == 2 && $display_mobile): ?>
                             <div class="col-12 d-lg-none">
-                                <div class="master-item">
-                                    <?php module_template('prom/mobile1'); ?>
-                                </div>
+                                <?php module_template('prom/mobile1'); ?>
                             </div>
                         <?php endif; ?>
                     <?php endwhile; ?>

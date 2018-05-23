@@ -66,7 +66,7 @@ ob_start();
                     <?php module_template('prom/native1'); ?>
                 <?php endif; ?>
                 <?php if ($pos == 2): ?>
-                    <div class="master-item d-lg-none">
+                    <div class="d-lg-none">
                         <?php module_template('prom/mobile1'); ?>
                     </div>
                 <?php endif; ?>
@@ -79,7 +79,7 @@ ob_start();
                     <?php module_template('prom/native1'); ?>
                 <?php endif; ?>
                 <?php if ($pos == 2): ?>
-                    <div class="master-item d-lg-none">
+                    <div class="d-lg-none">
                         <?php module_template('prom/mobile1'); ?>
                     </div>
                 <?php endif; ?>

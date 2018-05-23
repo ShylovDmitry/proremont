@@ -103,13 +103,22 @@ if ($rated_masters_query) {
             </div>
 
             <div class="row">
-                <?php while ($pro_masters_query->have_posts()): $pro_masters_query->the_post(); ?>
+                <?php $pos = 0; ?>
+                <?php while ($pro_masters_query->have_posts()): $pro_masters_query->the_post(); $pos++; ?>
                     <div class="col-12">
                         <?php module_template('master/item'); ?>
                     </div>
+
+                    <?php if ($pos == 1): ?>
+                        <?php module_template('prom/native1'); ?>
+                    <?php endif; ?>
+                    <?php if ($pos == 2): ?>
+                        <div class="col-12 d-lg-none">
+                            <?php module_template('prom/mobile1'); ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endwhile; ?>
 
-                <?php $pos = 0; ?>
                 <?php if ($rated_masters_query): ?>
                     <?php while ($rated_masters_query->have_posts()): $rated_masters_query->the_post(); $pos++; ?>
                         <div class="col-12">
@@ -117,10 +126,11 @@ if ($rated_masters_query) {
                         </div>
 
                         <?php if ($pos == 1): ?>
+                            <?php module_template('prom/native1'); ?>
+                        <?php endif; ?>
+                        <?php if ($pos == 2): ?>
                             <div class="col-12 d-lg-none">
-                                <div class="master-item">
-                                    <?php module_template('prom/mobile1'); ?>
-                                </div>
+                                <?php module_template('prom/mobile1'); ?>
                             </div>
                         <?php endif; ?>
                     <?php endwhile; ?>
@@ -133,10 +143,11 @@ if ($rated_masters_query) {
                         </div>
 
                         <?php if ($pos == 1): ?>
+                            <?php module_template('prom/native1'); ?>
+                        <?php endif; ?>
+                        <?php if ($pos == 2): ?>
                             <div class="col-12 d-lg-none">
-                                <div class="master-item">
-                                    <?php module_template('prom/mobile1'); ?>
-                                </div>
+                                <?php module_template('prom/mobile1'); ?>
                             </div>
                         <?php endif; ?>
                     <?php endwhile; ?>

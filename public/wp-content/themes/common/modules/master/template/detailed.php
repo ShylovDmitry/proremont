@@ -65,10 +65,10 @@
                 <i>Нет информации.</i>
             <?php endif; ?>
         </div>
+    </div>
 
-        <div class="d-lg-none mt-2">
-            <?php module_template('prom/mobile1'); ?>
-        </div>
+    <div class="d-lg-none mt-3">
+        <?php module_template('prom/mobile1'); ?>
     </div>
 
     <div class="colored-box mt-3 p-3">
@@ -153,7 +153,7 @@
                 }
             }
             ?>
-            <?php module_template('master/related-list', ['exclude_master_id' => get_the_ID(), 'catalog_ids' => $catalog_ids]); ?>
+            <?php module_template('master/related-list', ['exclude_master_id' => get_the_ID(), 'catalog_ids' => $catalog_ids, 'display_mobile' => 0]); ?>
         </div>
     </div>
 </div>
