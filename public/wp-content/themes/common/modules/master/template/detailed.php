@@ -49,6 +49,8 @@
                 <div class="phone">Телефон:
                     <?php module_template('master/master-phones'); ?>
                 </div>
+                <div class="report mt-2 text-right"><a href="#" data-toggle="modal" data-target="#reportModal">Пожаловаться</a>
+                </div>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -156,3 +158,22 @@
     </div>
 </div>
 <?php endif; ?>
+
+
+
+
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reportModalLabel">Пожаловаться на исполнителя</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php echo do_shortcode('[contact-form-7 id="34139" title="Пожаловаться"]'); ?>
+      </div>
+    </div>
+  </div>
+</div>
