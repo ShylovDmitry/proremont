@@ -45,9 +45,9 @@ function pror_esputnik_install() {
 	dbDelta($sql);
 
 
-//	if (!wp_next_scheduled('pror_esputnik_sync')) {
-//        wp_schedule_event( time(), '5min', 'pror_esputnik_sync' );
-//    }
+	if (!wp_next_scheduled('pror_esputnik_sync')) {
+        wp_schedule_event( time(), '5min', 'pror_esputnik_sync' );
+    }
 }
 
 function pror_esputnik_uninstall() {
