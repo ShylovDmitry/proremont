@@ -1,5 +1,5 @@
-<div class="partner-item col-6 col-sm-4 mb-3">
-    <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
+<div class="partner-item col-3 col-sm-3 col-md-2 mb-3">
+    <a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
         <div class="avatar">
             <?php if (has_post_thumbnail()): ?>
                 <?php the_post_thumbnail('medium', array(
@@ -11,7 +11,7 @@
             <?php endif; ?>
         </div>
     </a>
-    <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-        <h5 class="text-center pt-3"><?php the_title(); ?></h5>
-    </a>
+<!--    <a href="--><?php //echo esc_url( get_permalink() ); ?><!--" title="--><?php //echo esc_attr(get_the_title()); ?><!--">-->
+<!--        <h5 class="text-center pt-3">--><?php //the_title(); ?><!--</h5>-->
+<!--    </a>-->
 </div>

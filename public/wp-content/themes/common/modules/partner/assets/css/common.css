@@ -46,14 +46,14 @@
   justify-content: center; }
 
 .partner-item .avatar {
-  height: 100px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center; }
   .partner-item .avatar img {
     width: auto;
     height: auto;
-    max-height: 100px;
+    max-height: 70px;
     max-width: 100%; }
 
 .btn.partners-see-all {

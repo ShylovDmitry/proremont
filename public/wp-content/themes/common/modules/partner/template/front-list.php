@@ -40,9 +40,14 @@ $query = new WP_Query(array(
             <div class="row">
                 <div class="col-12">
                     <div class="partner-wrapper mb-3">
-                        <div class="partner-carousel">
+<!--                        <div class="partner-carousel">-->
+<!--                            --><?php //while ($query->have_posts()): $query->the_post(); ?>
+<!--                                --><?php //module_template('partner/slide'); ?>
+<!--                            --><?php //endwhile; ?>
+<!--                        </div>-->
+                        <div class="partner-list-simple row">
                             <?php while ($query->have_posts()): $query->the_post(); ?>
-                                <?php module_template('partner/slide'); ?>
+                                <?php module_template('partner/item'); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>
