@@ -59,7 +59,7 @@ add_filter('comment_form_default_fields', function($fields) {
 });
 
 add_filter('comment_form_defaults', function($defaults) {
-    $defaults['must_log_in'] = '<p class="must-log-in">Только авторизированый пользователь может оставить отзыв.</p>';
+    $defaults['must_log_in'] = '<p class="must-log-in">Только авторизированый пользователь может здесь писать.</p>';
 
     return $defaults;
 }, 1, 5);

@@ -22,7 +22,6 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
 
     <?php
@@ -71,7 +70,10 @@ if ( post_password_required() ) {
     endif;
     ?>
 
-    <a class="leave-review-button" data-toggle="collapse" href="#leaveReview" role="button" aria-expanded="false" aria-controls="leaveReview">Написать новый отзыв <span class="oi oi-pencil"></span></a>
+    <?php
+    $type_text = (get_post_type() == 'post') ? 'коментарий' : 'отзыв';
+    ?>
+    <a class="leave-review-button" data-toggle="collapse" href="#leaveReview" role="button" aria-expanded="false" aria-controls="leaveReview">Написать новый <?php echo $type_text; ?> <span class="oi oi-pencil"></span></a>
     <div class="collapse" id="leaveReview">
         <?php
         $logged_user = wp_get_current_user();
@@ -83,8 +85,8 @@ if ( post_password_required() ) {
                                   wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
                               ) . '</div>',
             'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
-            'title_reply' => 'Оставить отзыв',
-            'label_submit' => 'Оставить отзыв',
+            'title_reply' => 'Оставить ' . $type_text,
+            'label_submit' => 'Оставить ' . $type_text,
         ));
         ?>
     </div>
