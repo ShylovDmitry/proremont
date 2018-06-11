@@ -355,6 +355,10 @@ add_action('pror_esputnik_sync', function() {
     for ($i = 0; $i < 5; $i++) {
         $record = $wpdb->get_row("SELECT * FROM $table_name WHERE done_time IS NULL AND in_progress = 0 ORDER BY create_time LIMIT 1");
 
+        if (!$record || !$record->id) {
+            break;
+        }
+
         $wpdb->query($wpdb->prepare("UPDATE $table_name SET in_progress = 1 WHERE id = {$record->id}"));
 
         $res = pror_esputnik_process_action($record->action, json_decode($record->data, true));
