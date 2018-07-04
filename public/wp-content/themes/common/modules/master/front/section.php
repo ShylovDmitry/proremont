@@ -35,6 +35,16 @@ function pror_get_section_by_slug($slug) {
     return false;
 }
 
+function pror_get_section_name($section) {
+    if (pll_default_language() != pll_current_language()) {
+        $langed_name = get_field('name_' . pll_current_language(), $section);
+        if ($langed_name) {
+            return $langed_name;
+        }
+    }
+    return $section ? $section->name : '-';
+}
+
 function pror_get_section_by_location_id($location_id) {
     $sections = get_terms(array(
         'taxonomy' => 'section',

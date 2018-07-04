@@ -8,7 +8,7 @@
             <div class="post-date"><?php echo get_the_date(); ?></div>
         </div>
         <div class="col-6 text-right">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link">Подробнее &raquo;</a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link"><?php _e('Подробнее &raquo;', 'common'); ?></a>
         </div>
     </div>
 </article>

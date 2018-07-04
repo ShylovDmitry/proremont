@@ -16,7 +16,7 @@
         'displayaverage' => 1,
         'displaytotalratings' => 1,
         'filtercomments' => 1,
-        'totalratingsbefore' => '<a href="' . get_permalink() . '#comments"><span>Отзывы (</span>',
+        'totalratingsbefore' => sprintf(__('<a href="%s#comments"><span>Отзывы (</span>', 'common'), get_permalink()),
         'totalratingsafter' => '<span>)</span></a>',
         'cssClass' => 'rating-total',
     );

@@ -3,6 +3,26 @@
     "title": "Section",
     "fields": [
         {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_5b3c13d5619e6",
+            "label": "Name UK",
+            "name": "name_uk",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0
+        },
+        {
             "taxonomy": "location",
             "field_type": "checkbox",
             "multiple": 0,
@@ -82,5 +102,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507919611
+    "modified": 1530663928
 }

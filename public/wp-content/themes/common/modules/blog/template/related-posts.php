@@ -36,7 +36,7 @@ $query = new WP_Query(array(
 <?php if ($query->have_posts()): ?>
     <div class="<?php echo $container_class; ?>">
         <div class="related-posts">
-            <h3 class="header-underlined">Похожие статьи</h3>
+            <h3 class="header-underlined"><?php _e('Похожие статьи', 'common'); ?></h3>
 
             <div class="row">
             <?php $pos = 0; ?>
@@ -51,7 +51,7 @@ $query = new WP_Query(array(
         </div>
 
         <div class="see-blog">
-            <a href="<?php echo home_url('/blog/'); ?>" class="btn">Смотреть все статьи</a>
+            <a href="<?php echo home_url('/blog/'); ?>" class="btn"><?php _e('Смотреть все статьи', 'common'); ?></a>
         </div>
     </div>
 <?php endif; ?>

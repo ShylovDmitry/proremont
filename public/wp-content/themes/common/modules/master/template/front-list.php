@@ -98,7 +98,7 @@ if ($rated_masters_query) {
         <div class="master-2columns">
             <div class="row">
                 <div class="col-12 mb-1">
-                    <h3 class="header-underlined">Мастера</h3>
+                    <h3 class="header-underlined"><?php _e('Мастера', 'common'); ?></h3>
                 </div>
             </div>
 
@@ -162,8 +162,7 @@ if ($rated_masters_query) {
         </div>
 
         <div class="text-center mt-1">
-            <?php $m_number = pror_catalog_get_count(); ?>
-            <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all">Смотреть <strong><?php echo $m_number; ?></strong> <?php echo pror_declension_words($m_number, ['мастера', 'мастеров', 'мастеров']); ?></a>
+            <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all"><?php _e('Смотреть всех мастеров', 'common'); ?></a>
         </div>
     </div>
 <?php endif; ?>

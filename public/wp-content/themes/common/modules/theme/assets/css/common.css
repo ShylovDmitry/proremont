@@ -290,6 +290,8 @@ h1, h2, h3, h4, h5, h6 {
 .page .content img {
   max-width: 100%;
   height: auto; }
+.page small {
+  font-weight: 300; }
 
 .switch-catalog-block {
   font-family: "Roboto", sans-serif; }
@@ -446,5 +448,8 @@ a.btn.btn-pror-primary {
 .post-content figure, .post-content img {
   max-width: 100%;
   height: auto; }
+
+.wpcf7 .form-row label {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=common.css.map */

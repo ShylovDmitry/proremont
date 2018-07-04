@@ -42,15 +42,14 @@
 
                 <div class="type">
                     <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
-                    <?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?>
+                    <?php _e(the_field('master_type', "user_" . get_the_author_meta('ID')), 'common'); ?>
                 </div>
-                <div class="location"><?php echo end(pror_get_master_location()); ?></div>
+                <div class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></div>
                 <br />
-                <div class="phone">Телефон:
+                <div class="phone"><?php _e('Телефон:', 'common'); ?>
                     <?php module_template('master/master-phones'); ?>
                 </div>
-                <div class="report mt-2 text-right"><a href="#" data-toggle="modal" data-target="#reportModal">Пожаловаться</a>
-                </div>
+                <div class="report mt-2 text-right"><a href="#" data-toggle="modal" data-target="#reportModal"><?php _e('Пожаловаться', 'common'); ?></a></div>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -62,7 +61,7 @@
             <?php elseif(get_the_excerpt()): ?>
                 <?php the_excerpt(); ?>
             <?php else: ?>
-                <i>Нет информации.</i>
+                <i><?php _e('Нет информации.', 'common'); ?></i>
             <?php endif; ?>
         </div>
     </div>
@@ -73,7 +72,7 @@
 
     <div class="colored-box mt-3 p-3">
         <div class="rating">
-            <h4 class="header-underlined">Оценки</h4>
+            <h4 class="header-underlined"><?php _e('Оценки', 'common'); ?></h4>
             <?php module_template('rating/breakdown'); ?>
             <div class="clearfix"></div>
         </div>
@@ -84,7 +83,7 @@
     if ($images): ?>
         <div class="colored-box mt-3 p-3">
             <div class="gallery">
-                <h4 class="header-underlined">Галерея</h4>
+                <h4 class="header-underlined"><?php _e('Галерея', 'common'); ?></h4>
 
                 <div class="gallery-wrapper">
                     <div class="gallery-carousel">
@@ -103,7 +102,7 @@
 
     <div class="colored-box mt-3 pt-3 px-3">
         <div class="catalog-block">
-            <h4 class="header-underlined">Услуги</h4>
+            <h4 class="header-underlined"><?php _e('Услуги', 'common'); ?></h4>
 
             <div class="row">
                 <?php foreach (pror_get_master_catalogs() as $pos => $parent): ?>
@@ -134,7 +133,7 @@
 
     <div class="colored-box mt-3 p-3">
         <div class="content">
-            <h4 class="header-underlined">Отзывы</h4>
+            <h4 class="header-underlined"><?php _e('Отзывы', 'common'); ?></h4>
             <?php
                 if ( comments_open() || get_comments_number() ) :
                     comments_template();
@@ -166,7 +165,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="reportModalLabel">Пожаловаться на исполнителя</h5>
+        <h5 class="modal-title" id="reportModalLabel"><?php _e('Пожаловаться на исполнителя', 'common'); ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
           <span aria-hidden="true">&times;</span>
         </button>

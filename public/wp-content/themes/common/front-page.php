@@ -4,25 +4,25 @@
     <div class="container">
         <div class="frontpage-block">
             <div class="text-block">
-                <div class="first">Всеукраинский бесплатный</div>
+                <?php _e('<div class="first">Всеукраинский бесплатный</div>
                 <h1>ОНЛАЙН-КАТАЛОГ<span class="highlighted">МАСТЕРОВ</span></h1>
-                <div class="last">для ремонта квартир, домов<br />и офисных помещений</div>
+                <div class="last">для ремонта квартир, домов<br />и офисных помещений</div>', 'common'); ?>
             </div>
 
             <div class="buttons">
                 <div class="find-master">
-                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/catalog/'); ?>" role="button">Ищу специалиста</a>
-                    <div class="help">Каталог №1 в Украине</div>
+                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/catalog/'); ?>" role="button"><?php _e('Ищу специалиста', 'common'); ?></a>
+                    <div class="help"><?php _e('Каталог №1 в Украине', 'common'); ?></div>
                 </div>
 
                 <div class="iam-master">
-                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button">Я исполнитель</a>
-                    <div class="help">Бесплатное размещение</div>
+                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button"><?php _e('Я исполнитель', 'common'); ?></a>
+                    <div class="help"><?php _e('Бесплатное размещение', 'common'); ?></div>
                 </div>
             </div>
 
             <div class="mt-5">
-                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама на сайте</a>
+                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link"><?php _e('Реклама на сайте', 'common'); ?></a>
             </div>
         </div>
     </div>
@@ -34,8 +34,7 @@
             <div class="item">
                 <div class="circle">
                     <?php module_svg('theme/icon_master.svg'); ?>
-                    <strong>3 421</strong>
-                    мастеров
+                    <?php echo sprintf(__('<strong>%s</strong> мастеров', 'common'), '3 421'); ?>
                 </div>
             </div>
         </div>
@@ -43,8 +42,7 @@
             <div class="item">
                 <div class="circle">
                     <?php module_svg('theme/icon_rating.svg'); ?>
-                    <strong>рейтинг</strong>
-                    и отзывы
+                    <?php _e('<strong>рейтинг</strong> и отзывы', 'common'); ?>
                 </div>
             </div>
         </div>
@@ -52,8 +50,7 @@
             <div class="item">
                 <div class="circle">
                     <?php module_svg('theme/icon_free.svg'); ?>
-                    <strong>бесплатный</strong>
-                    каталог
+                    <?php _e('<strong>бесплатный</strong> каталог', 'common'); ?>
                 </div>
             </div>
         </div>

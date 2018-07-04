@@ -29,7 +29,7 @@ $query = new WP_Query(array(
 <div class="gallery-2columns">
     <div class="row">
         <div class="col-12">
-            <h3 class="header-underlined">Недавно добавленые фотографии</h3>
+            <h3 class="header-underlined"><?php _e('Недавно добавленые фотографии', 'common'); ?></h3>
         </div>
     </div>
 

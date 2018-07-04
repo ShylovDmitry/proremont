@@ -1,6 +1,6 @@
 <form id="master_search_form" class="mb-4 p-3 bg-light border border-secondary">
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Каталог</label>
+        <label class="col-sm-2 col-form-label"><?php _e('Каталог', 'common'); ?></label>
         <div class="col-sm-10">
 
             <?php
@@ -20,7 +20,7 @@
 
    <div class="form-group mb-0">
         <div class="text-right">
-            <button type="submit" class="btn btn-primary">Поиск</button>
+            <button type="submit" class="btn btn-primary"><?php _e('Поиск', 'common'); ?></button>
         </div>
     </div>
 </form>

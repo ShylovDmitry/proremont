@@ -44,7 +44,7 @@
     ?>
 
     <div class="colored-box mt-3 p-3">
-        <h4 class="header-underlined">Коментарии</h4>
+        <h4 class="header-underlined"><?php _e('Коментарии', 'common'); ?></h4>
         <?php
             if ( comments_open() || get_comments_number() ) :
                 comments_template();

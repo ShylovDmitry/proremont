@@ -44,7 +44,7 @@
             <?php elseif(get_the_excerpt()): ?>
                 <?php the_excerpt(); ?>
             <?php else: ?>
-                <i>Нет информации.</i>
+                <i><?php _e('Нет информации.', 'common'); ?></i>
             <?php endif; ?>
         </div>
 

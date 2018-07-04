@@ -1,5 +1,9 @@
 <?php
 
+__('Мастер', 'common');
+__('Бригада', 'common');
+__('Компания', 'common');
+
 add_action('wp_print_styles', function () {
     wp_enqueue_style('master-common', get_module_css('master/common.css'), array(), dlv_get_ver());
 });
@@ -92,10 +96,10 @@ function pror_is_master_published($user_id = null) {
 
 function pror_get_master_types() {
     return array(
-        '' => 'Все',
-        'master' => 'Мастера',
-        'brigada' => 'Бригады',
-        'kompania' => 'Компании',
+        '' => __('Все', 'common'),
+        'master' => __('Мастера', 'common'),
+        'brigada' => __('Бригады', 'common'),
+        'kompania' => __('Компании', 'common'),
     );
 }
 
@@ -149,6 +153,15 @@ function pror_get_master_location($master_post_id = null) {
     }
 
     return array();
+}
+
+function pror_get_master_section($master_post_id = null) {
+    $term = get_the_terms($master_post_id, 'location');
+    if (!is_wp_error($term) && isset($term, $term[0])) {
+        return pror_get_section_by_location_id($term[0]->term_id);
+    }
+
+    return '';
 }
 
 function pror_get_master_catalogs($master_post_id = null) {

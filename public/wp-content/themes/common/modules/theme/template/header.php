@@ -18,7 +18,7 @@ ob_start();
 
         <div class="dropdown section-list">
             <a class="nav-link dropdown-toggle" href="#" data-slug="<?php echo pror_get_section()->slug; ?>" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php module_svg('theme/ic_location_on_black_18px.svg'); ?> <span><?php echo pror_get_section()->name; ?></span>
+                <?php module_svg('theme/ic_location_on_black_18px.svg'); ?> <span><?php echo pror_get_section_name(pror_get_section()); ?></span>
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -34,12 +34,12 @@ ob_start();
                 ?>
                 <div class="left">
                     <?php foreach ($one as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo pror_get_section_name($menu_post); ?></a>
                     <?php endforeach; ?>
                 </div>
                 <div class="right">
                     <?php foreach ($two as $menuitem): $menu_post = get_term($menuitem->object_id); ?>
-                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo $menu_post->name; ?></a>
+                        <a class="dropdown-item py-0" data-slug="<?php echo $menu_post->slug; ?>" href="#<?php echo $menu_post->slug; ?>"><?php echo pror_get_section_name($menu_post); ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -61,9 +61,15 @@ ob_start();
             </form>
 
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="<?php echo home_url('/blog/'); ?>" class="nav-link">Блог</a></li>
-                <li class="nav-item"><a href="<?php echo home_url('/catalog/'); ?>" class="nav-link find-master">Найти мастера</a></li>
-                <li class="nav-item"><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="nav-link iam-master">Стать исполнителем</a></li>
+                <?php pll_the_languages([
+                        'hide_if_no_translation' => 0,
+                        'hide_if_empty' => 0,
+                        'show_flags' => 1,
+                        'show_names' => 0,
+                ]);?>
+                    <li class="nav-item"><a href="<?php echo home_url('/blog/'); ?>" class="nav-link"><?php _e('Блог', 'common'); ?></a></li>
+                <li class="nav-item"><a href="<?php echo home_url('/catalog/'); ?>" class="nav-link find-master"><?php _e('Найти мастера', 'common'); ?></a></li>
+                <li class="nav-item"><a href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" class="nav-link iam-master"><?php _e('Стать исполнителем', 'common'); ?></a></li>
             </ul>
 
             <?php module_template('master/menu/top'); ?>

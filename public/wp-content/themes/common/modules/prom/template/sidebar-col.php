@@ -11,7 +11,7 @@
             <div class="prom-placeholder-blocked" style="display:none;">
                 <img src="<?php module_img('prom/nonad-3600.png'); ?>" alt="" width="300" height="600" />
             </div>
-            <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link">Реклама на ProRemont.co</a>
+            <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link"><?php _e('Реклама на ProRemont.co', 'common'); ?></a>
         </div>
 
         <!-- /21681373772/sidebar2 -->

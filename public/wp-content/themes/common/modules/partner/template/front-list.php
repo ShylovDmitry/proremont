@@ -33,7 +33,7 @@ $query = new WP_Query(array(
         <div class="list">
             <div class="row">
                 <div class="col-12 mb-1">
-                    <h3 class="header-underlined">Партнеры</h3>
+                    <h3 class="header-underlined"><?php _e('Партнеры', 'common'); ?></h3>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ $query = new WP_Query(array(
         </div>
 
         <div class="text-center mt-1">
-            <a href="<?php echo home_url('/partners/'); ?>" class="btn partners-see-all">Смотреть всех партнеров</a>
+            <a href="<?php echo home_url('/partners/'); ?>" class="btn partners-see-all"><?php _e('Смотреть всех партнеров', 'common'); ?></a>
         </div>
     </div>
 <?php endif; ?>

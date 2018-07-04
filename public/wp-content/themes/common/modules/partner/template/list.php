@@ -32,7 +32,7 @@ ob_start();
 
         <?php module_template('theme/pagination'); ?>
     <?php else: ?>
-        <i>Ничего не найдено. Проверьте этот раздел позже.</i>
+        <i><?php _e('Ничего не найдено. Проверьте этот раздел позже.', 'common'); ?></i>
     <?php endif; ?>
 </div>
 

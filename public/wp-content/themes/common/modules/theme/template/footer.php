@@ -30,15 +30,15 @@ ob_start();
                         'theme_location' => 'footer_main',
                 )); ?>
 
-                <p class="copyright"><?php echo date('Y'); ?> &copy; ProRemont. Все права защищены.</p>
+                <p class="copyright"><?php echo date('Y'); ?> <?php _e('&copy; ProRemont. Все права защищены.', 'common'); ?></p>
             </div>
 
             <div class="col-12 col-lg-4 order-1 order-lg-2 mb-5 mb-lg-0">
-                <div class="fb-page" data-href="https://www.facebook.com/ProRemont.Catalog/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ProRemont.Catalog/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ProRemont.Catalog/">ProRemont - Каталог Мастеров с рейтингами со всей Украины.</a></blockquote></div>
+                <div class="fb-page" data-href="https://www.facebook.com/ProRemont.Catalog/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ProRemont.Catalog/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ProRemont.Catalog/"><?php _e('ProRemont - Каталог Мастеров с рейтингами со всей Украины.', 'common'); ?></a></blockquote></div>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-4 order-2 order-sm-3 mb-5 mb-sm-0">
-                <p><strong>Для мастеров:</strong></p>
+                <p><strong><?php _e('Для мастеров:', 'common'); ?></strong></p>
                 <?php module_template('master/menu/advanced'); ?>
 
                 <?php wp_nav_menu(array(

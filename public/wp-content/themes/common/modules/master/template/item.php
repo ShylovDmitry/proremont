@@ -31,9 +31,9 @@
             </h5>
             <div class="type">
                 <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
-                <?php the_field('master_type', "user_" . get_the_author_meta('ID')); ?>
+                <?php _e(the_field('master_type', "user_" . get_the_author_meta('ID')), 'common'); ?>
             </div>
-            <div class="location"><?php echo end(pror_get_master_location()); ?></div>
+            <div class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></div>
             <div class="catalog"><?php module_template('catalog_master/icons'); ?></div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <?php the_excerpt(); ?>
 
         <div class="more">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">Подробнее &raquo;</a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php _e('Подробнее &raquo;', 'common'); ?></a>
         </div>
     </div>
 </div>
