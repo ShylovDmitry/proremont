@@ -17,6 +17,7 @@ function pror_get_catalog($parent_id = 0, $hide_empty = true) {
         'hide_empty' => false,
         'meta_key' => 'sort',
         'orderby' => 'meta_value',
+        'lang' => pll_current_language(),
     ));
     if (!$hide_empty) {
         return $terms;
@@ -36,15 +37,18 @@ function pror_catalog_get_count($tax = null) {
     $section = pror_get_section();
     $locations = get_field('locations', $section);
 
-    if ($tax) {
-        $cat = array($tax->term_id);
-        if ($tax->parent == 0) {
+    $default_tax = get_term(pll_get_term($tax->term_id, pll_default_language()));
+
+    if ($default_tax) {
+        $cat = array($default_tax->term_id);
+        if ($default_tax->parent == 0) {
             $sub_taxes = get_terms(array(
-                'parent' => $tax->term_id,
+                'parent' => $default_tax->term_id,
                 'hierarchical' => false,
                 'taxonomy' => 'catalog_master',
                 'hide_empty' => false,
                 'fields' => 'ids',
+                'lang' => '',
             ));
             $cat = array_merge($cat, $sub_taxes);
         }
@@ -54,6 +58,7 @@ function pror_catalog_get_count($tax = null) {
             'taxonomy' => 'catalog_master',
             'hide_empty' => false,
             'fields' => 'ids',
+            'lang' => '',
         ));
     }
 

@@ -20,7 +20,7 @@
     "wp-cli/wp-cli" : "1.5.1",
     "psy/psysh" : "~0.6",
     "imagine/imagine": "~0.5.0",
-    "advanced-custom-fields-pro": "5.5.3",
+    "advanced-custom-fields-pro": "5.6.10",
     "wp-all-import-pro": "4.5",
     "wp-all-export-pro": "1.4.7",
     "wpai-acf-add-on": "3.1.5",

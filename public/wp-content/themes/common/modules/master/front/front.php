@@ -30,8 +30,8 @@ add_action('comment_rating_field_pro_rating_input_updated_post_rating', function
 }, 10, 8);
 
 add_action('pre_get_posts', function($query) {
-    if (is_admin() || !$query->is_main_query() || !isset($query->query['catalog_master'])) {
-        return $query;
+    if (is_admin() || !$query->is_main_query() || !$query->is_tax('catalog_master')) {
+        return;
     }
 
     $query->set('orderby', 'meta_value_num');
@@ -52,6 +52,14 @@ add_action('pre_get_posts', function($query) {
 
     return $query;
 });
+
+add_filter('get_terms_args', function($args, $taxonomies) {
+    if (!isset($args['lang'])) {
+        $args['lang'] = '';
+    }
+
+    return $args;
+}, 10, 2);
 
 
 

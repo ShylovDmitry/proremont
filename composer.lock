@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "938dc4b29d089d5c5ce4d4253a2daaea",
-    "content-hash": "e0f922e27f78d5183f903fbf075c9055",
+    "hash": "b249b7416352f4ba04c9f2d7dbb74a36",
+    "content-hash": "0d2c5d5f126731cacc2b58dc8a58f8e5",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -45,12 +45,12 @@
         },
         {
             "name": "advanced-custom-fields-pro",
-            "version": "5.5.3",
+            "version": "5.6.10",
             "dist": {
                 "type": "zip",
-                "url": "composer-artifacts/advanced-custom-fields-pro-5.5.3.zip",
+                "url": "composer-artifacts/advanced-custom-fields-pro-5.6.10.zip",
                 "reference": null,
-                "shasum": "26a357526c4c35da6f17e625d720862b41e99b04"
+                "shasum": "bb18d2b0c4929ec9c22ecd030ec2a74cd9b58e0d"
             },
             "type": "wordpress-plugin"
         },

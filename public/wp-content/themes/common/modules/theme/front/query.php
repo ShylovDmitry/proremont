@@ -32,16 +32,18 @@ add_filter('posts_clauses', function($clauses, $query) {
 
 global $save_prev_section_value;
 add_action('pre_get_posts', function($query) {
-    if (is_admin() || !$query->is_main_query()) {
+    if (is_admin() || !$query->is_main_query() || !$query->is_tax('catalog_master')) {
         return;
     }
 
-    if (!$query->is_tax('catalog_master')) {
-        return;
-    }
+    // Use default language slug
+    $tax = get_term_by('slug', $query->get('catalog_master'), 'catalog_master');
+    $default_tax = get_term(pll_get_term($tax->term_id, pll_default_language()));
+    $query->set('catalog_master', $default_tax->slug);
 
+    // Display records from specific region
     $query->set('tax_query', array(
-        array (
+        array(
             'taxonomy' => 'location',
             'terms' => get_field('locations', pror_get_section()),
             'include_children' => false,
