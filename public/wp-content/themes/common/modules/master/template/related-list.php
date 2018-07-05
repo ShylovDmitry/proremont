@@ -8,7 +8,7 @@ $display_mobile = isset($__data['display_mobile']) ? $__data['display_mobile'] :
 
 <?php
 $cache_expire = pror_cache_expire(10*60);
-$cache_key = pror_cache_key(sprintf('block-%s-%s-%s-%s-%s', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile) , 'section');
+$cache_key = pror_cache_key(sprintf('block-%s-%s-%s-%s-%s', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile) , 'section,lang');
 $cache_group = 'pror:master:list:related';
 
 $cache = wp_cache_get($cache_key, $cache_group);

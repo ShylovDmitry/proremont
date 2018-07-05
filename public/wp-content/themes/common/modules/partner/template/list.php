@@ -1,6 +1,6 @@
 <?php
 $cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key(null, 'section');
+$cache_key = pror_cache_key(null, 'section,lang');
 $cache_group = 'pror:partner:list:main';
 
 $cache = wp_cache_get($cache_key, $cache_group);

@@ -1,6 +1,6 @@
 <?php
 $cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key('block', 'section');
+$cache_key = pror_cache_key('block', 'section,lang');
 $cache_group = 'pror:catalog_master:page';
 
 $cache = wp_cache_get($cache_key, $cache_group);
