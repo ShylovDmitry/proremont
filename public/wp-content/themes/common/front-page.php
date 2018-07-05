@@ -11,18 +11,18 @@
 
             <div class="buttons">
                 <div class="find-master">
-                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/catalog/'); ?>" role="button"><?php _e('Ищу специалиста', 'common'); ?></a>
+                    <a class="btn btn-primary btn-lg" href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" role="button"><?php _e('Ищу специалиста', 'common'); ?></a>
                     <div class="help"><?php _e('Каталог №1 в Украине', 'common'); ?></div>
                 </div>
 
                 <div class="iam-master">
-                    <a class="btn btn-primary btn-lg" href="<?php echo home_url('/informacia-dlya-masterov/'); ?>" role="button"><?php _e('Я исполнитель', 'common'); ?></a>
+                    <a class="btn btn-primary btn-lg" href="<?php echo pror_get_permalink_by_slug('informacia-dlya-masterov'); ?>" role="button"><?php _e('Я исполнитель', 'common'); ?></a>
                     <div class="help"><?php _e('Бесплатное размещение', 'common'); ?></div>
                 </div>
             </div>
 
             <div class="mt-5">
-                <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link"><?php _e('Реклама на сайте', 'common'); ?></a>
+                <a href="<?php echo pror_get_permalink_by_slug('reklama'); ?>" class="reklama-link"><?php _e('Реклама на сайте', 'common'); ?></a>
             </div>
         </div>
     </div>

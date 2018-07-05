@@ -13,10 +13,11 @@ ob_start();
 <div class="catalog-master-page">
     <?php $pos = 0; ?>
     <?php foreach(pror_get_catalog() as $main_catalog): $pos++; ?>
+        <?php $lang_term_slug = get_term(pll_get_term($main_catalog->term_id, pll_default_language()))->slug; ?>
         <div class="catalog-mater-item mb-4">
             <div class="catalog-title">
                 <a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>" title="<?php echo esc_attr($main_catalog->name); ?>">
-                    <span class="icon"><?php module_svg("catalog_master/{$main_catalog->slug}.svg"); ?></span>
+                    <span class="icon"><?php module_svg("catalog_master/{$lang_term_slug}.svg"); ?></span>
                     <span class="link"><span><?php echo $main_catalog->name; ?></span> <?php echo pror_catalog_get_count($main_catalog); ?></span>
                 </a>
             </div>

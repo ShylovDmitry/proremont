@@ -12,7 +12,7 @@
     </div>
 
     <div class="reklama-block">
-        <a href="<?php echo home_url('/reklama/'); ?>" class="reklama-link"><?php _e('Реклама на ProRemont.co', 'common'); ?></a>
+        <a href="<?php echo pror_get_permalink_by_slug('reklama'); ?>" class="reklama-link"><?php _e('Реклама на ProRemont.co', 'common'); ?></a>
     </div>
 
 </div>

@@ -177,7 +177,7 @@ if ($rated_masters_query) {
         </div>
 
         <div class="text-center mt-1">
-            <a href="<?php echo home_url('/catalog/'); ?>" class="btn masters-see-all"><?php _e('Смотреть всех мастеров', 'common'); ?></a>
+            <a href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" class="btn masters-see-all"><?php _e('Смотреть всех мастеров', 'common'); ?></a>
         </div>
     </div>
 <?php endif; ?>

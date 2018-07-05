@@ -146,3 +146,10 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
 function pror_declension_words($n, $words){
     return ($words[($n=($n=$n%100)>19?($n%10):$n)==1?0 : (($n>1&&$n<=4)?1:2)]);
 }
+
+function pror_get_permalink_by_slug($slug) {
+    $post = get_page_by_path($slug);
+    $lang_post = pll_get_post($post->ID);
+
+    return get_the_permalink($lang_post ? $lang_post : $post);
+}

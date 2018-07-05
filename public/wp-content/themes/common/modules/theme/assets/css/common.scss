@@ -250,6 +250,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-nav {
+        .lang-item {
+            margin-top: 6px;
+            margin-right: 5px;
+
+            img {
+                height: 15px;
+                opacity: .6;
+            }
+            &.current-lang img {
+                opacity: 1;
+            }
+            a:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+
         .nav-link {
             padding-left: 1rem;
             padding-right: 1rem;

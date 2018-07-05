@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-07-04T14:25:07+02:00\n"
-"PO-Revision-Date: 2018-07-04T14:25:07+02:00\n"
+"POT-Creation-Date: 2018-07-05T07:50:49+02:00\n"
+"PO-Revision-Date: 2018-07-05T07:50:49+02:00\n"
 "X-Domain: common\n"
 
 #: 404.php:3
@@ -48,6 +48,14 @@ msgstr ""
 
 #: modules/rating/template/total.php:19
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
+msgstr ""
+
+#: modules/catalog_master/template/list.php:50
+msgid "Смотреть все"
+msgstr ""
+
+#: modules/catalog_master/template/list.php:50
+msgid "из раздела"
 msgstr ""
 
 #: modules/blog/template/latest-posts.php:29
@@ -109,7 +117,7 @@ msgid "Поиск"
 msgstr ""
 
 #: modules/master/template/front-list.php:101
-#: modules/master/front/front.php:100
+#: modules/master/front/front.php:110
 msgid "Мастера"
 msgstr ""
 
@@ -145,6 +153,24 @@ msgstr ""
 msgid "Пожаловаться на исполнителя"
 msgstr ""
 
+#: modules/master/template/menu/top.php:3
+#: modules/master/template/menu/advanced.php:3
+msgid "Профиль"
+msgstr ""
+
+#: modules/master/template/menu/top.php:4
+#: modules/master/template/menu/advanced.php:4
+msgid "Выйти"
+msgstr ""
+
+#: modules/master/template/menu/advanced.php:6
+msgid "Войти"
+msgstr ""
+
+#: modules/master/template/menu/advanced.php:7
+msgid "Зарегистрироваться"
+msgstr ""
+
 #: modules/master/front/front.php:3
 msgid "Мастер"
 msgstr ""
@@ -157,15 +183,15 @@ msgstr ""
 msgid "Компания"
 msgstr ""
 
-#: modules/master/front/front.php:99
+#: modules/master/front/front.php:109
 msgid "Все"
 msgstr ""
 
-#: modules/master/front/front.php:101
+#: modules/master/front/front.php:111
 msgid "Бригады"
 msgstr ""
 
-#: modules/master/front/front.php:102
+#: modules/master/front/front.php:112
 msgid "Компании"
 msgstr ""
 
@@ -173,15 +199,15 @@ msgstr ""
 msgid "Недавно добавленые фотографии"
 msgstr ""
 
-#: modules/theme/template/header.php:69
+#: modules/theme/template/header.php:70
 msgid "Блог"
 msgstr ""
 
-#: modules/theme/template/header.php:70
+#: modules/theme/template/header.php:71
 msgid "Найти мастера"
 msgstr ""
 
-#: modules/theme/template/header.php:71
+#: modules/theme/template/header.php:72
 msgid "Стать исполнителем"
 msgstr ""
 

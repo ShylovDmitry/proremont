@@ -177,6 +177,16 @@ h1, h2, h3, h4, h5, h6 {
         margin-right: 100px; } }
   .navbar a {
     color: #fff; }
+  .navbar .navbar-nav .lang-item {
+    margin-top: 6px;
+    margin-right: 5px; }
+    .navbar .navbar-nav .lang-item img {
+      height: 15px;
+      opacity: .6; }
+    .navbar .navbar-nav .lang-item.current-lang img {
+      opacity: 1; }
+    .navbar .navbar-nav .lang-item a:hover img {
+      opacity: 1; }
   .navbar .navbar-nav .nav-link {
     padding-left: 1rem;
     padding-right: 1rem; }

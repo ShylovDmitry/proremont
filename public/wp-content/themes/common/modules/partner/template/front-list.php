@@ -56,7 +56,7 @@ $query = new WP_Query(array(
         </div>
 
         <div class="text-center mt-1">
-            <a href="<?php echo home_url('/partners/'); ?>" class="btn partners-see-all"><?php _e('Смотреть всех партнеров', 'common'); ?></a>
+            <a href="<?php echo pror_get_permalink_by_slug('partners'); ?>" class="btn partners-see-all"><?php _e('Смотреть всех партнеров', 'common'); ?></a>
         </div>
     </div>
 <?php endif; ?>
