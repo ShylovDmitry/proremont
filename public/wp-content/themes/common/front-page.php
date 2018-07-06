@@ -11,7 +11,7 @@
 
             <div class="buttons">
                 <div class="find-master">
-                    <a class="btn btn-primary btn-lg" href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" role="button"><?php _e('Ищу специалиста', 'common'); ?></a>
+                    <a class="btn btn-primary btn-lg" href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" role="button"><?php _e('Ищу исполнителя', 'common'); ?></a>
                     <div class="help"><?php _e('Каталог №1 в Украине', 'common'); ?></div>
                 </div>
 
