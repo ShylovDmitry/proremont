@@ -21,7 +21,7 @@
         <h1 class="post-title pt-3"><?php the_title(); ?></h1>
         <div class="header-underlined mb-3">
             <div class="post-date"><?php echo get_the_date(); ?></div>
-            <div class="post-categories"><?php the_terms(get_the_ID(), 'category'); ?></div>
+            <div class="post-categories"><?php module_template('blog/categories'); ?></div>
         </div>
 
         <div class="mb-3 d-lg-none">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="post-catalogs">
-            <?php the_terms(get_the_ID(), 'catalog_master'); ?>
+            <?php module_template('blog/catalog_master'); ?>
         </div>
     </div>
 
