@@ -171,7 +171,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo do_shortcode('[contact-form-7 id="34139" title="Пожаловаться"]'); ?>
+          <?php if (pll_current_language() == 'uk'): ?>
+              <?php echo do_shortcode('[contact-form-7 id="35316" title="Пожалітись UK"]'); ?>
+          <?php else: ?>
+              <?php echo do_shortcode('[contact-form-7 id="34139" title="Пожаловаться"]'); ?>
+          <?php endif; ?>
       </div>
     </div>
   </div>
