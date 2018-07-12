@@ -16,6 +16,10 @@ function pror_fix_lang_link($url, $lang) {
 }
 
 add_filter('post_type_link', function($permalink, $post, $leavename) {
+    if (is_admin()) {
+        return $permalink;
+    }
+
     $post_types = ['master', 'partner'];
 
     if (in_array(get_post_type($post->ID), $post_types)) {
@@ -25,6 +29,10 @@ add_filter('post_type_link', function($permalink, $post, $leavename) {
 }, 10, 3);
 
 add_filter('post_link', function($permalink, $post, $leavename) {
+    if (is_admin()) {
+        return $permalink;
+    }
+
     $post_types = ['post'];
 
     if (in_array(get_post_type($post->ID), $post_types)) {
