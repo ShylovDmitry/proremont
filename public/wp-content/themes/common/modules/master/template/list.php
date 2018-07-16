@@ -4,7 +4,7 @@ $master_type = $_GET['f_master_type'];
 
 <?php
 $cache_expire = pror_cache_expire(24*60*60);
-$cache_key = pror_cache_key(sprintf('block-%s', $master_type) , 'section,lang');
+$cache_key = pror_cache_key(sprintf('block-%s-%s', $master_type, get_query_var('paged')) , 'section,lang');
 $cache_group = 'pror:master:list:main';
 
 $cache = wp_cache_get($cache_key, $cache_group);
