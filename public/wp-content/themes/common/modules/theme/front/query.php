@@ -64,3 +64,11 @@ add_filter('the_posts', function($posts, $query) {
     }
     return $posts;
 }, 10 ,2);
+
+
+add_action('get_terms_args', function($args) {
+    if (!isset($args['lang'])) {
+        $args['lang'] = '';
+    }
+    return $args;
+}, 5);
