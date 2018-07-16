@@ -50,6 +50,10 @@ add_filter('pll_pre_translation_url', function($url, $language, $queried_object_
     return $url;
 }, 10, 3);
 
+add_filter('pll_hide_archive_translation_url', function($hide, $lang, $args) {
+    return false;
+}, 10, 3);
+
 add_filter('pll_rewrite_rules', function($types) {
     $types[] = 'post';
     $types[] = 'master';

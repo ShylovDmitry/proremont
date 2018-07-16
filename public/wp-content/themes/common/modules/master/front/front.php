@@ -59,7 +59,7 @@ add_filter('get_terms_args', function($args, $taxonomies) {
     }
 
     return $args;
-}, 10, 2);
+}, 5, 2);
 
 
 
