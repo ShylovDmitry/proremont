@@ -44,7 +44,7 @@ $profileuser = isset($__data['profileuser']) ? $__data['profileuser'] : new stdC
                             <a href="tel:<?php echo $phone['tel']; ?>"><?php echo $phone['text']; ?></a><?php if ($pos != $master_phones_count): ?>, <?php endif; ?>
                         <?php endforeach; ?>
                     и подтверди свои данные в телефонном режиме <i>(займет менее 1 минуты)</i>.</p>
-                <p><strong>Персональный менеджер</strong> — Алёна, тел.: <a href="tel:+380935519695">093 551 96 95</a>.</p>
+                <p><strong>Персональный менеджер</strong> — Александр, тел.: <a href="tel:+380631996304">063 199 63 04</a>.</p>
                 <p>После подтверждения ты получить бейдж "Проверено" <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>.<br />
                     Посетители доверяют таким профилям больше.</p>
             </div>
