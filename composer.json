@@ -28,19 +28,20 @@
     "wp-media/wp-rocket": "2.11.4",
     "polylang-pro": "2.2.8",
     "comment-rating-field-pro-plugin": "3.4.9",
-    "wpackagist-plugin/contact-form-7": "5.0.2",
-    "wpackagist-plugin/wordpress-seo": "7.6.1",
+    "wpackagist-plugin/contact-form-7": "5.0.3",
+    "wpackagist-plugin/wordpress-seo": "7.9",
     "wpackagist-plugin/regenerate-thumbnails": "3.0.2",
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.7",
-    "wpackagist-plugin/query-monitor": "3.0.1",
+    "wpackagist-plugin/query-monitor": "3.1.0",
     "wpackagist-plugin/advanced-cron-manager": "2.3.2",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.4",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.4.2",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
-    "wpackagist-plugin/wp-mail-bank": "3.0.63",
+    "wpackagist-plugin/wp-mail-bank": "3.0.64",
     "wpackagist-plugin/memcached-redux": "0.1.6",
     "wpackagist-plugin/social-sharing-icons": "2.4",
     "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2",
-    "wpackagist-plugin/imagify": "1.8.0.1"
+    "wpackagist-plugin/ban-hammer":"2.6.1",
+    "wpackagist-plugin/imagify": "1.8.1"
   },
   "extra": {
     "installer-paths": {
