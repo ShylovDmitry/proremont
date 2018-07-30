@@ -18,10 +18,10 @@ add_filter('wpseo_og_og_image_height', function($content) {
 
 function pror_cover_og_tag_image($content) {
     if (get_post_type() == 'master') {
-        return home_url('/cover/m/' . get_the_author_meta('ID') . '/');
+        return home_url('/cover/m/' . get_the_author_meta('ID') . '/') . '?t=' . get_the_modified_date('U');
     }
     else if (in_array(get_post_type(), array('post', 'page', 'partner'))) {
-        return home_url('/cover/post/' . get_the_ID() . '/');
+        return home_url('/cover/post/' . get_the_ID() . '/') . '?t=' . get_the_modified_date('U');
     }
     return $content;
 }
