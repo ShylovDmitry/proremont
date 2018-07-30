@@ -34,19 +34,6 @@ function pror_update_master_info($user_id) {
         return;
     }
 
-
-    $master_is_hidden = get_field('master_is_hidden', "user_{$user_id}");
-    if ($master_is_hidden) {
-        $master_post_id = pror_get_master_post_id($user_id);
-        if ($master_post_id) {
-            wp_update_post(array(
-                'ID' => $master_post_id,
-                'post_status' => 'draft',
-            ));
-        }
-        return;
-    }
-
     $master_excerpt = get_field('master_excerpt', "user_{$user_id}");
     $master_excerpt = preg_replace('/\s+/', ' ', $master_excerpt);
     update_user_meta($user_id, 'master_excerpt', $master_excerpt);
@@ -76,7 +63,9 @@ function pror_update_master_info($user_id) {
         $post = get_post($master_post_id);
         update_user_meta($user_id, 'master_url_slug', $post->post_name);
 
-        $post_status = ($title && $catalog_terms && $location_terms) ? 'publish' : 'draft';
+        $master_is_hidden = get_field('master_is_hidden', "user_{$user_id}");
+
+        $post_status = ($title && $catalog_terms && $location_terms && !$master_is_hidden) ? 'publish' : 'draft';
         wp_update_post(array(
             'ID' => $master_post_id,
             'post_status' => $post_status,
