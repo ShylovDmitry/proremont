@@ -93,11 +93,11 @@ function pror_cache_expire($expire = 0) {
 }
 
 function pror_cache_key($key = null, $depends_str = '') {
-    $depends = explode(',', $depends_str);
     if (empty($key)) {
         $key = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     }
 
+    $depends = explode(',', $depends_str);
     if (in_array('section', $depends)) {
         $key .= '-' . pror_get_section()->slug;
     }
