@@ -10,13 +10,11 @@ $list = new WP_Query([
 <?php while($list->have_posts()): $list->the_post(); ?>
     <tr>
         <td>
-            <h5><?php the_title(); ?></h5>
-            <p><?php the_field('family_description'); ?></p>
-            <p>
-                <span class="text-danger font-weight-bold"><?php the_field('family_discount'); ?></span>
-                <br />
-                <span class="text-secondary small"><?php the_field('family_address'); ?></span>
-            </p>
+            <h5><?php the_title(); ?> <small class="text-danger font-weight-normal">/ <?php _e('скидка', 'common'); ?> <?php the_field('family_discount'); ?></small></h5>
+            <?php if(get_field('family_description')): ?>
+                <p><?php the_field('family_description'); ?></p>
+            <?php endif; ?>
+            <div class="text-secondary small"><?php the_field('family_address'); ?></div>
         </td>
     </tr>
 <?php endwhile; ?>

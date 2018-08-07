@@ -36,7 +36,7 @@
                 <h1 class="mt-0 mb-1">
                     <?php the_title(); ?>
                     <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
-                        <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
+                        <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="<?php _e('Проверено', 'common'); ?>"></span>
                     <?php endif; ?>
                 </h1>
 
