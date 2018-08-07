@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.6",
-    "johnpbloch/wordpress": "4.9.7",
+    "johnpbloch/wordpress": "4.9.8",
     "composer/installers": "~1.0",
     "wp-cli/wp-cli" : "1.5.1",
     "psy/psysh" : "~0.6",
@@ -34,14 +34,14 @@
     "wpackagist-plugin/yoast-seo-settings-xml-csv-import": "1.1.7",
     "wpackagist-plugin/query-monitor": "3.1.0",
     "wpackagist-plugin/advanced-cron-manager": "2.3.2",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.4.2",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.4.3",
     "wpackagist-plugin/wp-hide-dashboard": "2.2.1",
     "wpackagist-plugin/wp-mail-bank": "3.0.64",
     "wpackagist-plugin/memcached-redux": "0.1.6",
     "wpackagist-plugin/social-sharing-icons": "2.4",
     "wpackagist-plugin/wordpress-special-characters-in-usernames": "1.2",
     "wpackagist-plugin/ban-hammer":"2.6.1",
-    "wpackagist-plugin/imagify": "1.8.1"
+    "wpackagist-plugin/imagify": "1.8.1.1"
   },
   "extra": {
     "installer-paths": {
