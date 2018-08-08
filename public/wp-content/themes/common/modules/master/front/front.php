@@ -62,6 +62,13 @@ add_filter('get_terms_args', function($args, $taxonomies) {
 }, 5, 2);
 
 
+add_filter('acf/fields/taxonomy/wp_list_categories/name=master_catalog', function($args, $field) {
+    if (is_admin()) {
+        $args['lang'] = pll_default_language();
+    }
+    return $args;
+}, 10, 2);
+
 
 add_action('wpseo_register_extra_replacements', function() {
     wpseo_register_var_replacement('%%master_type%%', function() {

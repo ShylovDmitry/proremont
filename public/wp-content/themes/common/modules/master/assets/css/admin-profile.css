@@ -99,17 +99,17 @@ a.btn.btn-pror-primary {
 .profile-info {
   margin: 30px 0; }
 
-.acf-taxonomy-field.acf-soh .categorychecklist-holder {
+.acf-field-taxonomy.acf-field-59ebda792dfb3 .categorychecklist-holder {
   max-height: none;
   float: none; }
-.acf-taxonomy-field.acf-soh .acf-checkbox-list > li {
+.acf-field-taxonomy.acf-field-59ebda792dfb3 .acf-checkbox-list > li {
   margin-bottom: 30px; }
-  .acf-taxonomy-field.acf-soh .acf-checkbox-list > li > label input {
+  .acf-field-taxonomy.acf-field-59ebda792dfb3 .acf-checkbox-list > li > label input {
     display: none; }
-  .acf-taxonomy-field.acf-soh .acf-checkbox-list > li > label span {
+  .acf-field-taxonomy.acf-field-59ebda792dfb3 .acf-checkbox-list > li > label span {
     font-weight: bold;
     font-size: 16px; }
-.acf-taxonomy-field.acf-soh .children li {
+.acf-field-taxonomy.acf-field-59ebda792dfb3 .children li {
   float: left;
   width: 33%; }
 
