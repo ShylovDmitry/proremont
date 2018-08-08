@@ -99,6 +99,9 @@ a.btn.btn-pror-primary {
 .profile-info {
   margin: 30px 0; }
 
+#wp-admin-bar-languages {
+  display: none; }
+
 .acf-field-taxonomy.acf-field-59ebda792dfb3 .categorychecklist-holder {
   max-height: none;
   float: none; }
