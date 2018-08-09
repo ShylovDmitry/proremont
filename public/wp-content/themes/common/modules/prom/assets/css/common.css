@@ -31,4 +31,12 @@ html .col-prom-sidebar {
   .prom-mobile .reklama-link:hover {
     border-bottom-style: solid; }
 
+.prom-card .btn {
+  font-size: 1rem;
+  background: #E67E22;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: inline-block; }
+
 /*# sourceMappingURL=common.css.map */

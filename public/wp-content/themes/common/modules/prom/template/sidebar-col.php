@@ -1,4 +1,14 @@
 <div class="col col-prom-sidebar d-none d-lg-block">
+    <?php if (pror_get_section()->slug == 'lvov'): ?>
+        <div class="prom-card colored-box p-3 mb-3">
+            <h4 class="text-center"><?php _e('Экономьте на ремонте!', 'common'); ?></h4>
+            <p class="text-center"><img src="<?php module_img('theme/logo-proremont-dark.png'); ?>" height="16" alt="ProRemont logo" /> <?php _e('знает как', 'common'); ?>.</p>
+            <a href="<?php echo pror_get_permalink_by_slug('family-order'); ?>" class="btn btn-block"><?php _e('Сэкономить <strong>до $3,000</strong>', 'common'); ?></a>
+        </div>
+    <?php endif; ?>
+
+
+
     <div id="prom_sidebar">
 
         <div id="div-sidebar1-wrapper">
