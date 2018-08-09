@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2018-07-06T02:12:44+02:00\n"
-"PO-Revision-Date: 2018-07-06 03:13+0300\n"
+"POT-Creation-Date: 2018-08-09T12:10:42+02:00\n"
+"PO-Revision-Date: 2018-08-09 13:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: common\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -46,9 +46,21 @@ msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>."
 msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>."
 
 #: modules/prom/template/mobile1.php:15
-#: modules/prom/template/sidebar-col.php:14
+#: modules/prom/template/sidebar-col.php:24
 msgid "Реклама на ProRemont.co"
 msgstr "Реклама на ProRemont.co"
+
+#: modules/prom/template/sidebar-col.php:4
+msgid "Экономьте на ремонте!"
+msgstr "Економ на ремонті!"
+
+#: modules/prom/template/sidebar-col.php:5
+msgid "знает как"
+msgstr "знає як"
+
+#: modules/prom/template/sidebar-col.php:6
+msgid "Сэкономить <strong>до $3,000</strong>"
+msgstr "Зекономити <strong>до $3,000</strong>"
 
 #: modules/rating/template/total.php:19
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
@@ -61,6 +73,10 @@ msgstr "Дивитись все"
 #: modules/catalog_master/template/list.php:50
 msgid "из раздела"
 msgstr "з розділу"
+
+#: modules/family/template/list.php:13
+msgid "скидка"
+msgstr "знижка"
 
 #: modules/blog/template/latest-posts.php:29
 msgid "Последние статьи"
@@ -97,7 +113,7 @@ msgstr "Дивитись всіх партнерів"
 msgid "Нет информации."
 msgstr "Інформація відсутня."
 
-#: modules/partner/template/list.php:35 modules/master/template/list.php:90
+#: modules/partner/template/list.php:35 modules/master/template/list.php:94
 msgid "Ничего не найдено. Проверьте этот раздел позже."
 msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
 
@@ -119,13 +135,17 @@ msgid "Поиск"
 msgstr "Пошук"
 
 #: modules/master/template/front-list.php:101
-#: modules/master/front/front.php:110
+#: modules/master/front/front.php:117
 msgid "Мастера"
 msgstr "Майстри"
 
 #: modules/master/template/master-phones.php:9
 msgid "Показать"
 msgstr "Показати"
+
+#: modules/master/template/detailed.php:39
+msgid "Проверено"
+msgstr "Перевірено"
 
 #: modules/master/template/detailed.php:49
 msgid "Телефон:"
@@ -185,15 +205,15 @@ msgstr "Бригада"
 msgid "Компания"
 msgstr "Компанія"
 
-#: modules/master/front/front.php:109
+#: modules/master/front/front.php:116
 msgid "Все"
 msgstr "Всі"
 
-#: modules/master/front/front.php:111
+#: modules/master/front/front.php:118
 msgid "Бригады"
 msgstr "Бригади"
 
-#: modules/master/front/front.php:112
+#: modules/master/front/front.php:119
 msgid "Компании"
 msgstr "Компанії"
 
