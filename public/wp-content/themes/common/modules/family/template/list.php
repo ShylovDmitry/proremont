@@ -2,8 +2,8 @@
 $list = new WP_Query([
     'post_type' => 'family',
     'nopaging' => true,
-    'post__in' => get_field('family_list'),
-    'orderby' => 'post__in',
+    'orderby' => 'title',
+    'order'   => 'ASC',
 ]);
 ?>
 <table class="table table-bordered family-list">
