@@ -21,7 +21,7 @@
                 <?php module_template('master/list'); ?>
             </div>
 
-            <?php if (term_description()): ?>
+            <?php if (term_description() && get_query_var('paged') <= 1): ?>
                 <div class="colored-box mt-3 p-3">
                     <div class="term-description"><?php echo term_description(); ?></div>
                 </div>
