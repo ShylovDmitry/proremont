@@ -54,7 +54,11 @@ jQuery(function ($) {
         }
 
         var parent = $(this).parents('.master-phones');
-        $('.stub', parent).addClass('d-none');
-        $('.phones', parent).removeClass('d-none');
+        if ($('.registration-required-message', parent).length) {
+            $('.registration-required-message', parent).removeClass('d-none');
+        } else {
+            $('.stub', parent).addClass('d-none');
+            $('.phones', parent).removeClass('d-none');
+        }
     });
 });

@@ -46,9 +46,7 @@
                 </div>
                 <div class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></div>
                 <br />
-                <div class="phone"><?php _e('Телефон:', 'common'); ?>
-                    <?php module_template('master/master-phones'); ?>
-                </div>
+                <div class="phone"><?php module_template('master/master-phones'); ?></div>
                 <div class="report mt-2 text-right"><a href="#" data-toggle="modal" data-target="#reportModal"><?php _e('Пожаловаться', 'common'); ?></a></div>
             </div>
         </div>
