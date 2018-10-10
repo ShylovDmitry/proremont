@@ -5,7 +5,9 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <?php module_template('profile/lostpassword'); ?>
+            <div class="colored-box p-3">
+                <?php module_template('profile/password-reset'); ?>
+            </div>
         </div>
 
         <?php module_template('prom/sidebar-col'); ?>

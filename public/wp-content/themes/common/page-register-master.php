@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col">
             <div class="colored-box p-3">
-                <?php module_template('profile/login'); ?>
+                <?php module_template('profile/register-master'); ?>
             </div>
         </div>
 

@@ -1,9 +1,5 @@
 <?php
 
-__('Мастер', 'common');
-__('Бригада', 'common');
-__('Компания', 'common');
-
 add_action('wp_print_styles', function () {
     wp_enqueue_style('master-common', get_module_css('master/common.css'), array(), dlv_get_ver());
 });
