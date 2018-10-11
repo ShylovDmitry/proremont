@@ -49,7 +49,7 @@ jQuery(function ($) {
         if (jqxhr) {
             jqxhr.abort();
         }
-        jqxhr = $.post(ProRemontMasterObj.ajaxurl, {action: 'pror_master_sanitize_title', title: title, user_id: ProRemontMasterObj.user_id}, cb);
+        jqxhr = $.post(ProRemontObj.ajaxurl, {action: 'pror_master_sanitize_title', title: title, user_id: ProRemontMasterObj.user_id}, cb);
     }
 
     $('[data-name="master_title"] .acf-input input').blur(function() {

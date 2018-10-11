@@ -20,7 +20,6 @@ add_action('admin_enqueue_scripts', function($hook) {
 
         $user_id = isset($_GET, $_GET['user_id']) ? $_GET['user_id'] : get_current_user_id();
         wp_localize_script('admin-profile', 'ProRemontMasterObj', array(
-            'ajaxurl' => admin_url('admin-ajax.php'),
             'is_pro' => get_field('master_is_pro', "user_" . $user_id),
             'user_id' => $user_id,
         ));
