@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAEA,YAAa;EACT,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAElB,cAAE;IACE,KAAK,ECOC,OAAO",
-"sources": ["common.scss","../../../theme/assets/css/_variables.scss"],
-"names": [],
-"file": "common.css"
-}
+{"version":3,"sourceRoot":"","sources":["common.scss","../../../theme/assets/css/_variables.scss"],"names":[],"mappings":"AAEA;EACI;EACA;;AAEA;EACI,OCOM","file":"common.css"}

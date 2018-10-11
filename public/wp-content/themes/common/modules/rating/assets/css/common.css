@@ -1,36 +1,46 @@
 div.rating-total {
-  text-align: center; }
-  div.rating-total.comment-rating-field-pro-plugin a {
-    font-size: 0; }
-    div.rating-total.comment-rating-field-pro-plugin a span {
-      color: #424949;
-      font-size: 12px; }
-    div.rating-total.comment-rating-field-pro-plugin a:hover span {
-      text-decoration: underline; }
-  div.rating-total span.rating-always-on {
-    margin-right: 0 !important; }
-  div.rating-total .total {
-    display: block;
-    margin-top: 3px; }
-  div.rating-total .rating-container {
-    margin: 0; }
+  text-align: center;
+}
+div.rating-total.comment-rating-field-pro-plugin a {
+  font-size: 0;
+}
+div.rating-total.comment-rating-field-pro-plugin a span {
+  color: #424949;
+  font-size: 12px;
+}
+div.rating-total.comment-rating-field-pro-plugin a:hover span {
+  text-decoration: underline;
+}
+div.rating-total span.rating-always-on {
+  margin-right: 0 !important;
+}
+div.rating-total .total {
+  display: block;
+  margin-top: 3px;
+}
+div.rating-total .rating-container {
+  margin: 0;
+}
 
 .rating-breakdown .rating-container {
   width: 33.3%;
   clear: none;
   float: left;
   text-align: center;
-  margin: 0; }
-  .rating-breakdown .rating-container .label {
-    display: block;
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 8px; }
+  margin: 0;
+}
+.rating-breakdown .rating-container .label {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
 
 .pror-score {
   text-align: center;
   font-size: 1.25rem;
   line-height: 1.25rem;
-  font-weight: 900; }
+  font-weight: 900;
+}
 
 /*# sourceMappingURL=common.css.map */
