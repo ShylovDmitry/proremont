@@ -59,6 +59,10 @@ jQuery(function ($) {
         } else {
             $('.stub', parent).addClass('d-none');
             $('.phones', parent).removeClass('d-none');
+
+            if (typeof ga != 'undefined') {
+                ga('send', 'event', 'Master Page', 'phone shown');
+            }
         }
     });
 });
