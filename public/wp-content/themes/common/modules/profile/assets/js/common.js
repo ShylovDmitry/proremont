@@ -18,6 +18,36 @@ jQuery(function ($) {
         });
     });
 
+
+
+    $('#categories').select2({
+        maximumSelectionLength: 3,
+        matcher: function(params, data) {
+            if ($.trim(params.term) === '') {
+                return data;
+            }
+            if (typeof data.children === 'undefined') {
+                return null;
+            }
+
+            var filteredChildren = [];
+            $.each(data.children, function (idx, child) {
+                if ($.trim(child.text).toUpperCase().indexOf(params.term.toUpperCase()) > -1) {
+                    filteredChildren.push(child);
+                }
+            });
+
+            if (filteredChildren.length) {
+                var modifiedData = $.extend({}, data, true);
+                modifiedData.children = filteredChildren;
+
+                return modifiedData;
+            }
+            return null;
+        }
+    });
+
+
     $('#user_city').select2({
         escapeMarkup: function(markup) {
             return markup;

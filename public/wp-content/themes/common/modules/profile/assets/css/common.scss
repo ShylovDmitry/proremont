@@ -23,17 +23,22 @@
 }
 
 
+html .select2-container {
+    width: 100%;
+    display: block;
 
-html .select2-container .select2-selection--single {
-    height: 36px;
+    .select2-selection {
+        min-height: 36px;
 
-    .select2-selection__arrow {
-        height: 36px;
+        .select2-selection__arrow {
+            min-height: 36px;
+        }
+
+        .select2-selection__rendered {
+            line-height: 36px;
+        }
     }
 
-    .select2-selection__rendered {
-        line-height: 36px;
-    }
 }
 .select2-results li > span {
     font-size: 75%;

@@ -105,6 +105,23 @@ $acf_key = 'user_' . get_current_user_id();
             <input type="text" name="user_website" id="user_website" class="form-control" value="<?php echo get_field('master_website', $acf_key); ?>" />
         </div>
 
+        <div class="form-group">
+            <label for="categories" class="form-label"><?php _e( 'Категории', 'common' ); ?></label>
+
+            <?php $master_catalog = get_field('master_catalog', $acf_key); ?>
+            <select id="categories" name="user_catalog_master[]" multiple="multiple" class="form-control" style="width: 100%;" data-placeholder="Выбирете категории" lang="<?php echo pll_current_language(); ?>">
+                <?php foreach(pror_get_catalog() as $main_catalog): ?>
+                    <optgroup label="<?php echo $main_catalog->name; ?>">
+                        <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>
+                            <option value="<?php echo $sub_catalog->term_id; ?>"<?php if(in_array($sub_catalog->term_id, $master_catalog)): ?> selected="selected"<?php endif; ?>>
+                                <?php echo $sub_catalog->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </optgroup>
+                <?php endforeach; ?>
+            </select>
+        </div>
+
         <hr class="mb-4 mt-4" />
 
         <h3 class="mb-3"><label for="user_description" class="form-label"><?php _e( 'Описание', 'common' ); ?> <strong>*</strong></label></h3>
@@ -121,24 +138,6 @@ $acf_key = 'user_' . get_current_user_id();
                         'plugins' => 'lists header-button',
                     ],
             ]); ?>
-        </div>
-
-        <hr class="mb-4 mt-4" />
-
-        <h3 class="mb-3"><label class="form-label"><?php _e( 'Категории', 'common' ); ?> <strong>*</strong></label></h3>
-
-        <div class="form-group">
-            <?php foreach(pror_get_catalog() as $main_catalog): ?>
-                <div>
-                    <strong><?php echo $main_catalog->name; ?></strong><br />
-                    <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>
-                        <label class="form-check-label">
-                            <input type="checkbox" name="user_catalog_master[]" value="<?php echo $sub_catalog->term_id; ?>"<?php if (in_array($sub_catalog->term_id, get_field('master_catalog', $acf_key))): ?> checked<?php endif; ?> />
-                            <?php echo $sub_catalog->name; ?>
-                        </label><br />
-                    <?php endforeach; ?>
-                </div>
-            <?php endforeach; ?>
         </div>
 
         <hr class="mb-4 mt-4" />

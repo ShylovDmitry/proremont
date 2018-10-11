@@ -3,14 +3,12 @@
 add_action('wp_print_styles', function () {
 //    if (is_page('login')) {
         wp_enqueue_style('profile-common', get_module_css('profile/common.css'), array(), dlv_get_ver());
-        wp_enqueue_style('profile-select2', get_module_css('theme/select2.min.css'), array(), dlv_get_ver());
 //    }
 });
 
 add_action('wp_enqueue_scripts', function () {
 //    if (is_page('login')) {
         wp_enqueue_script('profile-common', get_module_js('profile/common.js'), array('jquery'), dlv_get_ver(), true);
-        wp_enqueue_script('profile-select2', get_module_js('theme/select2.min.js'), array('jquery'), dlv_get_ver(), true);
 //    }
 });
 
@@ -152,7 +150,12 @@ add_filter( 'login_redirect', function($redirect_to, $requested_redirect_to, $us
     } else {
         // Non-admin users always go to their account page after login
         // TODO: lang
-        $redirect_url = home_url( 'profile' );
+        if ( $redirect_to == '' ) {
+            $redirect_url = home_url( 'profile' );
+        } else {
+            $redirect_url = $redirect_to;
+        }
+
     }
 
     return wp_validate_redirect( $redirect_url, home_url() );
@@ -164,13 +167,19 @@ add_action( 'login_form_register', function() {
         if ( is_user_logged_in() ) {
             pror_profile_redirect_logged_in_user();
         } else {
-            wp_redirect( home_url( 'register' ) );
+            $redirect_to = isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : null;
+
+            $register_url = home_url( 'register' );
+            if ( ! empty( $redirect_to ) ) {
+                $register_url = add_query_arg( 'redirect_to', $redirect_to, $register_url );
+            }
+            wp_redirect( $register_url );
         }
         exit;
     }
 } );
 
-function pror_profile_register_user( $email, $first_name, $last_name ) {
+function pror_profile_register_user( $email, $first_name, $last_name, $role = 'subscriber' ) {
     $errors = new WP_Error();
 
     if ( ! is_email( $email ) ) {
@@ -192,6 +201,7 @@ function pror_profile_register_user( $email, $first_name, $last_name ) {
         'first_name'    => $first_name,
         'last_name'     => $last_name,
         'nickname'      => $first_name,
+        'role'          => $role,
     );
 
     $user_id = wp_insert_user( $user_data );
@@ -201,8 +211,7 @@ function pror_profile_register_user( $email, $first_name, $last_name ) {
 }
 
 function pror_profile_register_master( $email, $first_name, $last_name, $data ) {
-
-    $user_id = pror_profile_register_user($email, $first_name, $last_name);
+    $user_id = pror_profile_register_user($email, $first_name, $last_name, 'master');
 
     if (!is_wp_error($user_id)) {
         update_user_meta($user_id, 'master_title', $data['user_title']);

@@ -19,6 +19,6 @@
     </span>
 
     <?php if (!is_user_logged_in()): ?>
-        <div class="registration-required-message d-none">Для просмотра телефона необходимо <a href="<?php echo pror_get_permalink_by_slug('login'); ?>?redirect_to=<?php echo urlencode($redirect_to); ?>">войти</a> или <a href="<?php echo pror_get_permalink_by_slug('register'); ?>?redirect_to=<?php echo urlencode($redirect_to); ?>">зарегестрироваться</a>.</div>
+        <div class="registration-required-message d-none">Для просмотра телефона необходимо <a href="<?php echo pror_get_permalink_by_slug('login'); ?>?redirect_to=<?php echo urlencode($redirect_to); ?>">войти</a> или <a href="<?php echo pror_get_permalink_by_slug('register'); ?>; ?>">зарегестрироваться</a>.</div>
     <?php endif; ?>
 </div>
