@@ -128,7 +128,7 @@ function pror_profile_get_error_message( $error_code ) {
 }
 
 add_action( 'wp_logout', function() {
-    $redirect_url = home_url( 'login?logged_out=true' );
+    $redirect_url = home_url( '/' );
     wp_safe_redirect( $redirect_url );
     exit;
 } );

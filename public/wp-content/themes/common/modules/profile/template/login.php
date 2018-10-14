@@ -40,7 +40,7 @@
         <div class="row mb-3">
             <div class="col-sm-6">
                 <div class="mb-1">Используйте социальные сети что бы войти:</div>
-                <?php echo oa_social_login_render_login_form ('custom', ['callback_uri' => $_GET['redirect_to']]); ?>
+                <?php echo oa_social_login_render_login_form ('custom', ['callback_uri' => $_GET['redirect_to'] ? $_GET['redirect_to'] : home_url('profile')]); ?>
 
                 <hr />
 

@@ -14,6 +14,10 @@
   background: #e8ebeb;
   border: 1px solid #B2BABB;
 }
+.profile-login .logout-url, .profile-register .logout-url, .profile-settings .logout-url {
+  margin-top: 20px;
+  display: block;
+}
 
 html .select2-container {
   width: 100%;
