@@ -262,24 +262,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .navbar-nav {
-        .lang-item {
-            margin-top: 6px;
-            margin-right: 5px;
-
-            img {
-                height: 15px;
-                opacity: .6;
-            }
-            &.current-lang img {
-                opacity: 1;
-            }
-            a:hover {
-                img {
-                    opacity: 1;
-                }
-            }
-        }
-
         .nav-link {
             padding-left: 1rem;
             padding-right: 1rem;
@@ -399,6 +381,31 @@ h1, h2, h3, h4, h5, h6 {
     strong {
         font-weight: 700;
     }
+
+    .list-langs {
+        display: inline-block;
+        margin-left: 10px;
+
+        .lang-item {
+            margin-top: 6px;
+            margin-right: 5px;
+            display: inline-block;
+
+            img {
+                height: 15px;
+                opacity: .6;
+            }
+            &.current-lang img {
+                opacity: 1;
+            }
+            a:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
 
     .copyright {
         color: $color-light;

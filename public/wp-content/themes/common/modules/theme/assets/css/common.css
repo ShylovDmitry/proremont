@@ -240,20 +240,6 @@ h1, h2, h3, h4, h5, h6 {
 .navbar a {
   color: #fff;
 }
-.navbar .navbar-nav .lang-item {
-  margin-top: 6px;
-  margin-right: 5px;
-}
-.navbar .navbar-nav .lang-item img {
-  height: 15px;
-  opacity: 0.6;
-}
-.navbar .navbar-nav .lang-item.current-lang img {
-  opacity: 1;
-}
-.navbar .navbar-nav .lang-item a:hover img {
-  opacity: 1;
-}
 .navbar .navbar-nav .nav-link {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -355,6 +341,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer strong {
   font-weight: 700;
+}
+.footer .list-langs {
+  display: inline-block;
+  margin-left: 10px;
+}
+.footer .list-langs .lang-item {
+  margin-top: 6px;
+  margin-right: 5px;
+  display: inline-block;
+}
+.footer .list-langs .lang-item img {
+  height: 15px;
+  opacity: 0.6;
+}
+.footer .list-langs .lang-item.current-lang img {
+  opacity: 1;
+}
+.footer .list-langs .lang-item a:hover img {
+  opacity: 1;
 }
 .footer .copyright {
   color: #B2BABB;

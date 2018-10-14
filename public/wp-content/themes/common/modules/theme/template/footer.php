@@ -15,6 +15,16 @@ ob_start();
         <div class="row">
 
             <div class="col-12 col-sm-6 col-lg-4 order-3 order-sm-2 order-lg-1">
+                <?php _e('Язык:', 'common'); ?>
+                <ul class="list-unstyled list-langs">
+                    <?php pll_the_languages([
+                            'hide_if_no_translation' => 0,
+                            'hide_if_empty' => 0,
+                            'show_flags' => 1,
+                            'show_names' => 0,
+                    ]);?>
+                </ul>
+
                 <ul class="list-inline social-icons">
                     <li class="list-inline-item"><a href="https://www.facebook.com/ProRemont.Catalog/" target="_blank"><?php module_svg('theme/iconmonstr-facebook-3.svg'); ?></a></li>
                     <li class="list-inline-item"><a href="https://www.instagram.com/proremont.catalog/" target="_blank"><?php module_svg('theme/iconmonstr-instagram-3.svg'); ?></a></li>
