@@ -1,14 +1,20 @@
 div.rating-total {
   text-align: center;
 }
-div.rating-total.comment-rating-field-pro-plugin a {
+div.rating-total .pror-score {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: 900;
+}
+div.rating-total .comment-rating-field-pro-plugin a {
   font-size: 0;
 }
-div.rating-total.comment-rating-field-pro-plugin a span {
+div.rating-total .comment-rating-field-pro-plugin a span {
   color: #424949;
   font-size: 12px;
 }
-div.rating-total.comment-rating-field-pro-plugin a:hover span {
+div.rating-total .comment-rating-field-pro-plugin a:hover span {
   text-decoration: underline;
 }
 div.rating-total span.rating-always-on {
@@ -20,6 +26,25 @@ div.rating-total .total {
 }
 div.rating-total .rating-container {
   margin: 0;
+}
+
+div.rating-total-inline .comment-rating-field-pro-plugin a {
+  font-size: 0;
+}
+div.rating-total-inline .comment-rating-field-pro-plugin a span {
+  color: #424949;
+  font-size: 12px;
+}
+div.rating-total-inline .comment-rating-field-pro-plugin a:hover span {
+  text-decoration: underline;
+}
+div.rating-total-inline span.rating-always-on {
+  margin-right: 0 !important;
+}
+div.rating-total-inline .rating-container {
+  margin: 0;
+  float: none;
+  clear: none;
 }
 
 .rating-breakdown .rating-container {
@@ -34,13 +59,6 @@ div.rating-total .rating-container {
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 8px;
-}
-
-.pror-score {
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-  font-weight: 900;
 }
 
 /*# sourceMappingURL=common.css.map */

@@ -10,6 +10,14 @@
   text-align: center;
 }
 
+.catalog-mater-small-list a {
+  color: #6b7886;
+}
+.catalog-mater-small-list .space {
+  display: inline-block;
+  padding-right: 2px;
+}
+
 .catalog-mater-3col a, .catalog-mater-3col a:hover {
   color: #424949;
 }

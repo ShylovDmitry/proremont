@@ -3,7 +3,8 @@
 <?php $redirect_to = home_url($_SERVER['REQUEST_URI']); ?>
 
 <div class="master-phones">
-    <?php _e('Телефон:', 'common'); ?>
+    <span class="oi oi-phone phone-icon"></span>
+
     <span class="stub">
         <?php foreach ($master_phones as $pos => $phone): ?>
             <?php echo sprintf('%s xxx xxxx', substr($phone['text'], 0, 5)); ?><?php if ($pos != $master_phones_count): ?><span class="delimiter">,</span><?php endif; ?>
