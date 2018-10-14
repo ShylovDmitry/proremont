@@ -4,7 +4,23 @@
 
 <div class="row">
     <div class="col-3">
-        <?php module_template('profile/user/menu'); ?>
+        <?php module_template('profile/menu', [
+                'menu' => [
+                    [
+                        'slug' => 'settings',
+                        'name' => __('Настройки', 'common'),
+                        'icon' => 'person',
+                    ],
+//                    [
+//                        'slug' => 'saved',
+//                        'name' => __('Сохраненные', 'common'),
+//                    ],
+//                    [
+//                        'slug' => 'history',
+//                        'name' => __('Недавно просмотреные', 'common'),
+//                    ],
+                ],
+        ]); ?>
     </div>
     <div class="col-9">
         <div class="colored-box p-3">
