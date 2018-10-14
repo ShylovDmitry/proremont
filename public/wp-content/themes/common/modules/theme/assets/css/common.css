@@ -623,4 +623,35 @@ a.btn.btn-pror-primary {
   margin-bottom: 0;
 }
 
+#header {
+  background: #424949;
+  color: #fff;
+  padding: 15px 0 10px;
+}
+#header a {
+  color: #fff;
+}
+#header .header-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#header .logo {
+  align-self: center;
+}
+#header .master-link {
+  text-align: right;
+}
+#header .nav {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+#header .nav .nav-link {
+  font-size: 22px;
+  font-weight: 500;
+}
+#header .nav .btn {
+  margin: 0.5rem 1rem;
+}
+
 /*# sourceMappingURL=common.css.map */
