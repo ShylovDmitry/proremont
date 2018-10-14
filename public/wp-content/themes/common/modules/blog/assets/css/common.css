@@ -48,10 +48,6 @@
   color: #B2BABB;
   float: right;
 }
-.single .main-article .oneall_sharing_icons {
-  display: flex;
-  justify-content: center;
-}
 .single .main-article .post-catalogs {
   font-size: 0.85rem;
   margin-top: 15px;
@@ -66,6 +62,13 @@
 }
 .single .main-article .post-catalogs a {
   color: #E67E22;
+}
+.single .main-article .post-sharing {
+  margin-top: 20px;
+}
+.single .main-article .post-sharing .oneall_sharing_icons {
+  display: flex;
+  justify-content: center;
 }
 
 article.small-post .post-img-link {
@@ -109,6 +112,13 @@ article.small-post .post-more-link {
 .see-blog a:hover {
   background-color: #bf6516;
   color: #fff;
+}
+
+.latest-posts-list {
+  padding-left: 1rem;
+}
+.latest-posts-list li {
+  margin-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=common.css.map */

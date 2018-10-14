@@ -64,10 +64,13 @@
             color: $color-primary;
         }
     }
+    .post-sharing {
+        margin-top: 20px;
 
-    .oneall_sharing_icons {
-        display: flex;
-        justify-content: center;
+        .oneall_sharing_icons {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 

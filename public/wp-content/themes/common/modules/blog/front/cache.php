@@ -53,5 +53,6 @@ function pror_blog_clear_cache($post_ID = null) {
     }
     pror_cache_delete_wildcard('pror:blog:list:related');
     pror_cache_delete_wildcard('pror:blog:list:latest');
+    pror_cache_delete_wildcard('pror:blog:list:latest-list');
     pror_cache_delete_wildcard('pror:blog:list:main');
 }

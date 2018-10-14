@@ -54,12 +54,15 @@ ob_start();
             <form class="form-inline my-2 my-lg-0 ml-5 mr-auto d-none d-md-block"></form>
 
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('blog'); ?>" class="nav-link"><?php _e('Блог', 'common'); ?></a></li>
+                <?php if (is_user_logged_in()): ?>
+                    <?php $current_user = wp_get_current_user(); ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $current_user->display_name; ?></a></li>
+                <?php else: ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
+                <?php endif; ?>
                 <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" class="nav-link find-master"><?php _e('Найти мастера', 'common'); ?></a></li>
                 <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('informacia-dlya-masterov'); ?>" class="nav-link iam-master"><?php _e('Стать исполнителем', 'common'); ?></a></li>
             </ul>
-
-            <?php module_template('master/menu/top'); ?>
         </div>
     </div>
 </nav>

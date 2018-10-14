@@ -240,6 +240,14 @@ h1, h2, h3, h4, h5, h6 {
 .navbar a {
   color: #fff;
 }
+@media (min-width: 992px) {
+  .navbar .navbar-nav .username {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 .navbar .navbar-nav .nav-link {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -364,6 +372,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer .copyright {
   color: #B2BABB;
   font-size: 14px;
+}
+.footer .blog-list {
+  font-size: 0.9rem;
 }
 .footer .footer-menu {
   margin-top: 20px;

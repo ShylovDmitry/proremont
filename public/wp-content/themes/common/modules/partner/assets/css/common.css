@@ -57,7 +57,10 @@
 .partner-detailed .post-catalogs a {
   color: #E67E22;
 }
-.partner-detailed .oneall_sharing_icons {
+.partner-detailed .post-sharing {
+  margin-top: 20px;
+}
+.partner-detailed .post-sharing .oneall_sharing_icons {
   display: flex;
   justify-content: center;
 }

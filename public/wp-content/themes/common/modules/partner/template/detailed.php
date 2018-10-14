@@ -51,6 +51,10 @@
         <div class="post-catalogs">
             <?php the_terms(get_the_ID(), 'catalog_master'); ?>
         </div>
+
+        <div class="post-sharing">
+            <?php echo do_shortcode('[oa_social_sharing_icons]'); ?>
+        </div>
     </div>
 
     <?php
