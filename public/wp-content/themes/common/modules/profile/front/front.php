@@ -1,15 +1,19 @@
 <?php
 
+function pror_profile_is_profile_pages() {
+    return is_page('login') || is_page('register') || is_page('register-master') ;
+}
+
 add_action('wp_print_styles', function () {
-//    if (is_page('login')) {
+    if (pror_profile_is_profile_pages()) {
         wp_enqueue_style('profile-common', get_module_css('profile/common.css'), array(), dlv_get_ver());
-//    }
+    }
 });
 
 add_action('wp_enqueue_scripts', function () {
-//    if (is_page('login')) {
+    if (pror_profile_is_profile_pages()) {
         wp_enqueue_script('profile-common', get_module_js('profile/common.js'), array('jquery'), dlv_get_ver(), true);
-//    }
+    }
 });
 
 
@@ -120,6 +124,27 @@ function pror_profile_get_error_message( $error_code ) {
         case 'last_name':
             return __( 'Неправильное Фамилия.', 'common' );
 
+        case 'contact_phone':
+            return __( 'Неправильный Контактный телефон.', 'common' );
+
+        case 'user_title':
+            return __( 'Неправильное Название.', 'common' );
+
+        case 'user_type':
+            return __( 'Неправильный Тип.', 'common' );
+
+        case 'user_tel':
+            return __( 'Неправильный Робочий телефон.', 'common' );
+
+        case 'user_city':
+            return __( 'Неправильный Город.', 'common' );
+
+        case 'user_description':
+            return __( 'Неправильное Описание.', 'common' );
+
+        case 'user_catalog_master':
+            return __( 'Неправильная Категория.', 'common' );
+
         default:
             break;
     }
@@ -150,10 +175,10 @@ add_filter( 'login_redirect', function($redirect_to, $requested_redirect_to, $us
     } else {
         // Non-admin users always go to their account page after login
         // TODO: lang
-        if ( $redirect_to == '' ) {
+        if ( $requested_redirect_to == '' ) {
             $redirect_url = home_url( 'profile' );
         } else {
-            $redirect_url = $redirect_to;
+            $redirect_url = $requested_redirect_to;
         }
 
     }
@@ -179,7 +204,7 @@ add_action( 'login_form_register', function() {
     }
 } );
 
-function pror_profile_register_user( $email, $first_name, $last_name, $role = 'subscriber' ) {
+function pror_profile_register_user( $email, $data, $role = 'subscriber' ) {
     $errors = new WP_Error();
 
     if ( ! is_email( $email ) ) {
@@ -192,56 +217,110 @@ function pror_profile_register_user( $email, $first_name, $last_name, $role = 's
         return $errors;
     }
 
+    if (empty( $data['first_name'])) {
+        $errors->add( 'first_name', pror_profile_get_error_message( 'first_name' ) );
+        return $errors;
+    }
+
+    if (empty( $data['last_name'])) {
+        $errors->add( 'last_name', pror_profile_get_error_message( 'last_name' ) );
+        return $errors;
+    }
+
     $password = wp_generate_password( 12, false );
 
     $user_data = array(
         'user_login'    => $email,
         'user_email'    => $email,
         'user_pass'     => $password,
-        'first_name'    => $first_name,
-        'last_name'     => $last_name,
-        'nickname'      => $first_name,
+        'first_name'    => $data['first_name'],
+        'last_name'     => $data['last_name'],
+        'nickname'      => $data['first_name'],
         'role'          => $role,
     );
 
     $user_id = wp_insert_user( $user_data );
-//    wp_new_user_notification( $user_id, $password );
+
+    if (!is_wp_error($user_id)) {
+        if (empty( $data['contact_phone'])) {
+            $errors->add( 'contact_phone', pror_profile_get_error_message( 'contact_phone' ) );
+            return $errors;
+        }
+        update_user_meta($user_id, 'contact_phone', $data['contact_phone']);
+        update_user_meta($user_id, '_contact_phone', 'field_5bc3bcf7b0285');
+
+//        wp_new_user_notification( $user_id, $password );
+    }
 
     return $user_id;
 }
 
-function pror_profile_register_master( $email, $first_name, $last_name, $data ) {
-    $user_id = pror_profile_register_user($email, $first_name, $last_name, 'master');
+function pror_profile_register_master( $email, $data ) {
+    $user_id = pror_profile_register_user($email, $data, 'master');
 
     if (!is_wp_error($user_id)) {
+        $errors = new WP_Error();
+
+        if (empty( $data['user_title'])) {
+            $errors->add( 'user_title', pror_profile_get_error_message( 'user_title' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_title', $data['user_title']);
         update_user_meta($user_id, '_master_title', 'field_59ebc9689376d');
 
+        if (empty( $data['user_type'])) {
+            $errors->add( 'user_type', pror_profile_get_error_message( 'user_type' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_type', $data['user_type']);
         update_user_meta($user_id, '_master_type', 'field_59ebc3fa7f3e5');
 
-        update_user_meta($user_id, 'master_gallery', serialize([]));
-        update_user_meta($user_id, '_master_gallery', 'field_59ebc3fa7f436');
+        update_user_meta($user_id, 'master_url_slug', $data['user_url']);
+        update_user_meta($user_id, '_master_url_slug', 'field_5ab185c6ed95e');
 
-        // master_url_slug - field_5ab185c6ed95e
-
+        if (empty( $data['user_tel'])) {
+            $errors->add( 'user_tel', pror_profile_get_error_message( 'user_tel' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_phone', $data['user_tel']);
         update_user_meta($user_id, '_master_phone', 'field_5bb9dffd3c5c8');
 
+        if (empty( $data['user_city'])) {
+            $errors->add( 'user_city', pror_profile_get_error_message( 'user_city' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_location', $data['user_city']);
         update_user_meta($user_id, '_master_location', 'field_59ebd9a8748a5');
 
         update_user_meta($user_id, 'master_website', $data['user_website']);
         update_user_meta($user_id, '_master_website', 'field_59ebc3fa7f426');
 
+        if (empty( $data['user_description'])) {
+            $errors->add( 'user_description', pror_profile_get_error_message( 'user_description' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_text', $data['user_description']);
         update_user_meta($user_id, '_master_text', 'field_59ebc99b9376f');
 
+        if (empty( $data['user_catalog_master'])) {
+            $errors->add( 'user_catalog_master', pror_profile_get_error_message( 'user_catalog_master' ) );
+            return $errors;
+        }
         update_user_meta($user_id, 'master_catalog', $data['user_catalog_master']);
         update_user_meta($user_id, '_master_catalog', 'field_59ebda792dfb3');
+
+        update_user_meta($user_id, 'master_gallery', serialize([]));
+        update_user_meta($user_id, '_master_gallery', 'field_59ebc3fa7f436');
+
+        update_user_meta($user_id, 'master_logo', '');
+        update_user_meta($user_id, '_master_logo', 'field_59ebc8f130c58');
     }
 
     return $user_id;
+}
+
+function pror_profile_sanitize_url($title) {
+    return sanitize_title($title);
 }
 
 add_action( 'login_form_register', function() {
@@ -255,12 +334,16 @@ add_action( 'login_form_register', function() {
         if ( ! get_option( 'users_can_register' ) ) {
             $redirect_url = add_query_arg( 'register-errors', 'closed', $redirect_url );
         } else {
-            if ($_POST['account_type'] == 'master') {
-                $email = $_POST['email'];
-                $first_name = sanitize_text_field($_POST['first_name']);
-                $last_name = sanitize_text_field($_POST['last_name']);
+            $email = $_POST['email'];
 
-                $data = [
+            $data = [
+                'first_name' => sanitize_text_field($_POST['first_name']),
+                'last_name' => sanitize_text_field($_POST['last_name']),
+                'contact_phone' => sanitize_text_field($_POST['tel']),
+            ];
+
+            if ($_POST['account_type'] == 'master') {
+                $data = array_merge($data, [
                     'user_title' => sanitize_text_field($_POST['user_title']),
                     'user_type' => sanitize_text_field($_POST['user_type']),
                     'user_tel' => sanitize_text_field($_POST['user_tel']),
@@ -268,15 +351,12 @@ add_action( 'login_form_register', function() {
                     'user_website' => sanitize_text_field($_POST['user_website']),
                     'user_description' => $_POST['user_description'],
                     'user_catalog_master' => $_POST['user_catalog_master'],
-                ];
+                    'user_url' => pror_profile_sanitize_url($_POST['user_title']),
+                ]);
 
-                $result = pror_profile_register_master($email, $first_name, $last_name, $data);
+                $result = pror_profile_register_master($email, $data);
             } else {
-                $email = $_POST['email'];
-                $first_name = sanitize_text_field($_POST['first_name']);
-                $last_name = sanitize_text_field($_POST['last_name']);
-
-                $result = pror_profile_register_user($email, $first_name, $last_name);
+                $result = pror_profile_register_user($email, $data);
             }
 
             if ( is_wp_error( $result ) ) {

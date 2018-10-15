@@ -17,33 +17,41 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 
-function pror_profile_update_user( $first_name, $last_name ) {
+function pror_profile_update_user( $data ) {
     $errors = new WP_Error();
 
-    if (empty($first_name)) {
+    if (empty($data['first_name'])) {
         $errors->add( 'first_name', pror_profile_get_error_message( 'first_name') );
         return $errors;
     }
-    if (empty($last_name)) {
+    if (empty($data['last_name'])) {
         $errors->add( 'last_name', pror_profile_get_error_message( 'last_name') );
         return $errors;
     }
 
     $user_data = array(
         'ID'            => get_current_user_id(),
-        'first_name'    => $first_name,
-        'last_name'     => $last_name,
-        'nickname'      => $first_name,
+        'first_name'    => $data['first_name'],
+        'last_name'     => $data['last_name'],
+        'nickname'      => $data['first_name'],
     );
 
     $user_id = wp_update_user( $user_data );
 
+    if (!is_wp_error($user_id)) {
+        if (empty( $data['contact_phone'])) {
+            $errors->add( 'contact_phone', pror_profile_get_error_message( 'contact_phone' ) );
+            return $errors;
+        }
+        update_user_meta($user_id, 'contact_phone', $data['contact_phone']);
+    }
+
     return $user_id;
 }
 
-function pror_profile_update_master( $first_name, $last_name, $data ) {
+function pror_profile_update_master( $data ) {
 
-    $user_id = pror_profile_update_user($first_name, $last_name);
+    $user_id = pror_profile_update_user($data);
 
     if (!is_wp_error($user_id)) {
         update_user_meta($user_id, 'master_title', $data['user_title']);
@@ -85,11 +93,14 @@ add_action('wp', function() {
         $redirect_url = home_url('profile'); // TODO: lang
         $redirect_url = add_query_arg('section', $_GET['section'], $redirect_url);
 
-        if ($_POST['profile_update_type'] == 'master') {
-            $first_name = sanitize_text_field($_POST['first_name']);
-            $last_name = sanitize_text_field($_POST['last_name']);
+        $data = [
+            'first_name' => sanitize_text_field($_POST['first_name']),
+            'last_name' => sanitize_text_field($_POST['last_name']),
+            'contact_phone' => sanitize_text_field($_POST['tel']),
+        ];
 
-            $data = [
+        if ($_POST['profile_update_type'] == 'master') {
+            $data = array_merge($data, [
                 'user_title' => sanitize_text_field($_POST['user_title']),
                 'user_type' => sanitize_text_field($_POST['user_type']),
                 'user_tel' => sanitize_text_field($_POST['user_tel']),
@@ -99,14 +110,11 @@ add_action('wp', function() {
                 'user_catalog_master' => $_POST['user_catalog_master'],
                 'user_images' => $_POST['user_images'],
                 'logo_id' => (int) $_POST['logo_id'],
-            ];
+            ]);
 
-            $result = pror_profile_update_master($first_name, $last_name, $data);
+            $result = pror_profile_update_master($data);
         } else {
-            $first_name = sanitize_text_field($_POST['first_name']);
-            $last_name = sanitize_text_field($_POST['last_name']);
-
-            $result = pror_profile_update_user($first_name, $last_name);
+            $result = pror_profile_update_user($data);
         }
 
         if (is_wp_error($result)) {

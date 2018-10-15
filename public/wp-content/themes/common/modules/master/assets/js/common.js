@@ -53,7 +53,7 @@ jQuery(function ($) {
             ga('send', 'event', 'Master Page', 'phone click');
         }
 
-        var parent = $(this).parents('.master-phones');
+        var parent = $(this).parents('.master-phones-container');
         if ($('.registration-required-message', parent).length) {
             $('.registration-required-message', parent).removeClass('d-none');
         } else {

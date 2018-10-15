@@ -1,10 +1,10 @@
 <ul class="list-unstyled profile-menu">
-    <?php foreach ($__data['menu'] as $item): ?>
+    <?php foreach ($__data['menu'] as $slug => $item): ?>
         <?php
-            $class = (empty($_GET['section']) || $_GET['section'] == $item['slug']) ? 'active' : '';
+            $class = (empty($_GET['section']) || $_GET['section'] == $slug) ? 'active' : '';
         ?>
         <li>
-            <a href="<?php echo home_url('profile/?section=' . $item['slug']); ?>" class="<?php echo $class; ?>">
+            <a href="<?php echo home_url('profile/?section=' . $slug); ?>" class="<?php echo $class; ?>">
                 <?php if ($item['name']): ?>
                     <span class="oi oi-<?php echo $item['icon']; ?>"></span>
                 <?php endif; ?>

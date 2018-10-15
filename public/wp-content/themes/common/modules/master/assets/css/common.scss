@@ -156,6 +156,12 @@
 }
 
 .master-detailed {
+    .registration-required-message {
+        a {
+            color: $color-primary;
+        }
+    }
+
     .main-content {
         background: #f8f9f9;
         border: 1px solid #e7e8e8;

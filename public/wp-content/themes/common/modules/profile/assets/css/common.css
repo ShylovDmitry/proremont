@@ -11,8 +11,17 @@
 }
 .profile-login .form-container, .profile-register .form-container, .profile-settings .form-container {
   padding: 20px;
-  background: #e8ebeb;
-  border: 1px solid #B2BABB;
+  background: #fde7d3;
+  border: 1px solid #d8ab76;
+}
+.profile-login .required, .profile-register .required, .profile-settings .required {
+  color: #dc3545;
+}
+.profile-login label.error, .profile-register label.error, .profile-settings label.error {
+  font-weight: 300;
+  color: red;
+  font-size: 0.9rem;
+  width: 100%;
 }
 .profile-login .logout-url, .profile-register .logout-url, .profile-settings .logout-url {
   margin-top: 20px;

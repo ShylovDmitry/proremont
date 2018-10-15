@@ -1,23 +1,26 @@
 jQuery(function ($) {
 
-    tinyMCE.PluginManager.add('header-button', function(editor, url) {
-        ['h2'].forEach(function(name){
-            editor.addButton("header", {
-                tooltip: "Header",
-                text: "Header",
-                onClick: function() { editor.execCommand('mceToggleFormat', false, name); },
-                onPostRender: function() {
-                    var self = this, setup = function() {
-                        editor.formatter.formatChanged(name, function(state) {
-                            self.active(state);
-                        });
-                    };
-                    editor.formatter ? setup() : editor.on('init', setup);
-                }
-            })
+    if (typeof tinyMCE != 'undefined') {
+        tinyMCE.PluginManager.add('header-button', function (editor, url) {
+            ['h2'].forEach(function (name) {
+                editor.addButton("header", {
+                    tooltip: "Header",
+                    text: "Header",
+                    onClick: function () {
+                        editor.execCommand('mceToggleFormat', false, name);
+                    },
+                    onPostRender: function () {
+                        var self = this, setup = function () {
+                            editor.formatter.formatChanged(name, function (state) {
+                                self.active(state);
+                            });
+                        };
+                        editor.formatter ? setup() : editor.on('init', setup);
+                    }
+                })
+            });
         });
-    });
-
+    }
 
 
     $('#categories').select2({
@@ -174,5 +177,31 @@ jQuery(function ($) {
     $("#logo-block").on('click', '.close', function(e) {
         $(this).parents('[data-image-id]').remove();
         $('.upload-logo').removeClass('d-none');
+    });
+
+
+    function prorErrorPlacement(label, element) {
+        // position error label after generated textarea
+        if (element.is("#categories") || element.is("#user_city")) {
+            label.insertAfter(element.next());
+        } else if (element.is("#user_description")) {
+            label.insertAfter(element.parent());
+        } else {
+            label.insertAfter(element)
+        }
+    }
+
+    $('.from-validation-advanced').submit(function() {
+        tinyMCE.triggerSave();
+    }).validate({
+        ignore: "",
+        rules: {
+            user_description: 'required'
+        },
+        errorPlacement: prorErrorPlacement
+    });
+
+    $('.from-validation-simple').validate({
+        errorPlacement: prorErrorPlacement
     });
 });

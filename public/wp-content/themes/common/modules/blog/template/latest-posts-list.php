@@ -29,7 +29,7 @@ $query = new WP_Query(array(
         <?php endwhile; ?>
     </ul>
 
-    <a href="<?php echo home_url('/blog/'); ?>"><?php _e('Смотреть все статьи', 'common'); ?></a>
+    <i><a href="<?php echo home_url('/blog/'); ?>"><?php _e('Смотреть все статьи &raquo;', 'common'); ?></a></i>
 <?php endif; ?>
 
 <?php

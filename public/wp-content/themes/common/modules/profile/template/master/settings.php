@@ -12,18 +12,27 @@ $acf_key = 'user_' . get_current_user_id();
 
 
     <?php $userdata = get_userdata(get_current_user_id()); ?>
-    <form action="" method="post" class="form-container">
+    <form action="" method="post" class="form-container from-validation-advanced">
         <input type="hidden" name="profile_update_type" value="master" />
 
-
         <div class="form-group">
-            <label for="first_name" class="form-label"><?php _e( 'Имя', 'common' ); ?></label>
-            <input type="text" name="first_name" id="first_name" class="form-control" value="<?php echo $userdata->first_name; ?>" />
+            <label for="tel" class="form-label"><?php _e( 'Телефон', 'common' ); ?> <span class="required">*</span></label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">+380</span>
+                </div>
+                <input type="tel" name="tel" id="tel" class="form-control" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="last_name" class="form-label"><?php _e( 'Фамилия', 'common' ); ?></label>
-            <input type="text" name="last_name" id="last_name" class="form-control" value="<?php echo $userdata->last_name; ?>" />
+            <label for="first_name" class="form-label"><?php _e( 'Имя', 'common' ); ?> <span class="required">*</span></label>
+            <input type="text" name="first_name" id="first_name" class="form-control" value="<?php echo $userdata->first_name; ?>" required="required" />
+        </div>
+
+        <div class="form-group">
+            <label for="last_name" class="form-label"><?php _e( 'Фамилия', 'common' ); ?> <span class="required">*</span></label>
+            <input type="text" name="last_name" id="last_name" class="form-control" value="<?php echo $userdata->last_name; ?>" required="required" />
         </div>
 
 
@@ -32,12 +41,7 @@ $acf_key = 'user_' . get_current_user_id();
         <h3 class="mb-3">Информация</h3>
 
         <div class="form-group">
-            <label for="user_title" class="form-label"><?php _e( 'Название', 'common' ); ?> <strong>*</strong></label>
-            <input type="text" name="user_title" id="user_title" class="form-control" value="<?php echo get_field('master_title', $acf_key); ?>"/>
-        </div>
-
-        <div class="form-group">
-            <label class="form-label"><?php _e( 'Тип', 'common' ); ?> <strong>*</strong></label>
+            <label class="form-label"><?php _e( 'Тип', 'common' ); ?> <span class="required">*</span></label>
 
             <div class="form-group">
                 <div class="form-check form-check-inline">
@@ -59,6 +63,11 @@ $acf_key = 'user_' . get_current_user_id();
                     </label>
                 </div>
             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="user_title" class="form-label"><?php _e( 'Название', 'common' ); ?> <span class="required">*</span></label>
+            <input type="text" name="user_title" id="user_title" class="form-control" value="<?php echo get_field('master_title', $acf_key); ?>" required="required" />
         </div>
 
         <div class="form-group">
@@ -89,13 +98,18 @@ $acf_key = 'user_' . get_current_user_id();
         </div>
 
         <div class="form-group">
-            <label for="user_tel" class="form-label"><?php _e( 'Телефон', 'common' ); ?> <strong>*</strong></label>
-            <input type="tel" name="user_tel" id="user_tel" class="form-control" value="<?php echo get_field('master_phone', $acf_key); ?>"/>
+            <label for="user_tel" class="form-label"><?php _e( 'Рабочий телефон', 'common' ); ?> <span class="required">*</span></label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">+380</span>
+                </div>
+                <input type="tel" name="user_tel" id="user_tel" class="form-control" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="user_city" class="form-label"><?php _e( 'Город', 'common' ); ?> <strong>*</strong></label>
-            <select class="w-100" name="user_city" id="user_city" data-placeholder="Select a state">
+            <label for="user_city" class="form-label"><?php _e( 'Город', 'common' ); ?> <span class="required">*</span></label>
+            <select class="w-100" name="user_city" id="user_city" data-placeholder="Select a state" required="required">
                 <option selected value="<?php echo get_field('master_location', $acf_key, true); ?>"><?php echo get_term(get_field('master_location', $acf_key), 'location')->name; ?></option>
             </select>
         </div>
@@ -106,10 +120,10 @@ $acf_key = 'user_' . get_current_user_id();
         </div>
 
         <div class="form-group">
-            <label for="categories" class="form-label"><?php _e( 'Категории', 'common' ); ?></label>
+            <label for="categories" class="form-label"><?php _e( 'Основные категории', 'common' ); ?> <span class="required">*</span></label>
 
             <?php $master_catalog = get_field('master_catalog', $acf_key); ?>
-            <select id="categories" name="user_catalog_master[]" multiple="multiple" class="form-control" style="width: 100%;" data-placeholder="Выбирете категории" lang="<?php echo pll_current_language(); ?>">
+            <select id="categories" name="user_catalog_master[]" multiple="multiple" class="form-control" style="width: 100%;" data-placeholder="Выбирете категории" lang="<?php echo pll_current_language(); ?>" required="required">
                 <?php foreach(pror_get_catalog() as $main_catalog): ?>
                     <optgroup label="<?php echo $main_catalog->name; ?>">
                         <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>
@@ -124,7 +138,7 @@ $acf_key = 'user_' . get_current_user_id();
 
         <hr class="mb-4 mt-4" />
 
-        <h3 class="mb-3"><label for="user_description" class="form-label"><?php _e( 'Описание', 'common' ); ?> <strong>*</strong></label></h3>
+        <h3 class="mb-3"><label for="user_description" class="form-label"><?php _e( 'Описание', 'common' ); ?> <span class="required">*</span></h3>
 
         <div class="form-group">
             <?php wp_editor(get_field('master_text', $acf_key), 'user_description', [

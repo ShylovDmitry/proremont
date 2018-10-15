@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col">
             <div class="colored-box p-3">
-                <?php module_template('profile/register'); ?>
+                <?php module_template('profile/register-subscriber'); ?>
             </div>
         </div>
 
