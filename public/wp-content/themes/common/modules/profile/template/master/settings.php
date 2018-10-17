@@ -38,7 +38,7 @@ $acf_key = 'user_' . get_current_user_id();
 
         <hr class="mb-4 mt-4" />
 
-        <h3 class="mb-3">Информация</h3>
+        <h3 class="mb-3"><?php _e('Информация', 'common'); ?></h3>
 
         <div class="form-group">
             <label class="form-label"><?php _e( 'Тип', 'common' ); ?> <span class="required">*</span></label>
@@ -91,7 +91,7 @@ $acf_key = 'user_' . get_current_user_id();
                 </div>
 
                 <span class="btn btn-pror-primary btn-sm upload-logo fileinput-button<?php if ($logo_id): ?> d-none<?php endif; ?>">
-                    <span>Добавить лого</span>
+                    <span><?php _e('Добавить лого', 'common'); ?></span>
                     <input id="logoupload" type="file" name="files">
                 </span>
             </div>
@@ -178,7 +178,7 @@ $acf_key = 'user_' . get_current_user_id();
             <div class="clearfix"></div>
             <div class="text-right">
                 <span class="btn btn-pror-primary upload-gallery fileinput-button">
-                    <span>Добавить файл</span>
+                    <span><?php _e('Добавить файл', 'common'); ?></span>
                     <input id="fileupload" type="file" name="files" multiple>
                 </span>
             </div>

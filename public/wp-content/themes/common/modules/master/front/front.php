@@ -124,6 +124,11 @@ function pror_get_master_phones($user_id) {
         $phones[] = pror_format_phones($master_phone['tel']);
     }
 
+    $phone = get_field('master_phone', "user_{$user_id}");
+    if ($phone) {
+        $phones[] = pror_format_phones($phone);
+    }
+
     return $phones;
 }
 

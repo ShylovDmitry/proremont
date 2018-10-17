@@ -1,7 +1,7 @@
 <?php
 
 function pror_profile_is_profile_pages() {
-    return is_page('login') || is_page('register') || is_page('register-master') ;
+    return is_page('login') || is_page('register') || is_page('register-master') || is_page('profile') || is_page('password-lost') || is_page('password-reset');
 }
 
 add_action('wp_print_styles', function () {
@@ -27,8 +27,7 @@ add_action('login_form_login', function() {
         }
 
         // The rest are redirected to the login page
-        // TODO: lang
-        $login_url = home_url( 'login' );
+        $login_url = pror_get_permalink_by_slug( 'login' );
         if ( ! empty( $redirect_to ) ) {
             $login_url = add_query_arg( 'redirect_to', $redirect_to, $login_url );
         }
@@ -47,8 +46,7 @@ function pror_profile_redirect_logged_in_user( $redirect_to = null ) {
             wp_redirect( admin_url() );
         }
     } else {
-        // TODO: lang
-        wp_redirect( home_url( 'login' ) );
+        wp_redirect( pror_get_permalink_by_slug( 'login' ) );
     }
 }
 
@@ -59,8 +57,7 @@ add_filter('authenticate', function( $user, $username, $password ) {
         if ( is_wp_error( $user ) ) {
             $error_codes = join( ',', $user->get_error_codes() );
 
-            // TODO: lang
-            $login_url = home_url( 'login' );
+            $login_url = pror_get_permalink_by_slug( 'login' );
             $login_url = add_query_arg( 'login', $error_codes, $login_url );
 
             wp_redirect( $login_url );
@@ -153,13 +150,13 @@ function pror_profile_get_error_message( $error_code ) {
 }
 
 add_action( 'wp_logout', function() {
-    $redirect_url = home_url( '/' );
+    $redirect_url = pror_get_permalink_by_slug( '/' );
     wp_safe_redirect( $redirect_url );
     exit;
 } );
 
 add_filter( 'login_redirect', function($redirect_to, $requested_redirect_to, $user) {
-    $redirect_url = home_url();
+    $redirect_url = pror_get_permalink_by_slug( '/' );
 
     if ( ! isset( $user->ID ) ) {
         return $redirect_url;
@@ -174,9 +171,8 @@ add_filter( 'login_redirect', function($redirect_to, $requested_redirect_to, $us
         }
     } else {
         // Non-admin users always go to their account page after login
-        // TODO: lang
         if ( $requested_redirect_to == '' ) {
-            $redirect_url = home_url( 'profile' );
+            $redirect_url = pror_get_permalink_by_slug( 'profile' );
         } else {
             $redirect_url = $requested_redirect_to;
         }
@@ -194,7 +190,7 @@ add_action( 'login_form_register', function() {
         } else {
             $redirect_to = isset( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : null;
 
-            $register_url = home_url( 'register' );
+            $register_url = pror_get_permalink_by_slug( 'register' );
             if ( ! empty( $redirect_to ) ) {
                 $register_url = add_query_arg( 'redirect_to', $redirect_to, $register_url );
             }
@@ -326,9 +322,9 @@ function pror_profile_sanitize_url($title) {
 add_action( 'login_form_register', function() {
     if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
         if ($_POST['account_type'] == 'master') {
-            $redirect_url = home_url('register-master'); // TODO: lang
+            $redirect_url = pror_get_permalink_by_slug('register-master');
         } else {
-            $redirect_url = home_url('register'); // TODO: lang
+            $redirect_url = pror_get_permalink_by_slug('register');
         }
 
         if ( ! get_option( 'users_can_register' ) ) {
@@ -363,7 +359,7 @@ add_action( 'login_form_register', function() {
                 $errors = join( ',', $result->get_error_codes() );
                 $redirect_url = add_query_arg( 'register-errors', $errors, $redirect_url );
             } else {
-                $redirect_url = home_url( 'login' ); // TODO: lang
+                $redirect_url = pror_get_permalink_by_slug( 'login' );
                 $redirect_url = add_query_arg( 'registered', $email, $redirect_url );
             }
         }
@@ -380,7 +376,7 @@ add_action( 'login_form_lostpassword', function() {
             exit;
         }
 
-        wp_redirect( home_url( 'password-lost' ) );
+        wp_redirect( pror_get_permalink_by_slug( 'password-lost' ) );
         exit;
     }
 } );
@@ -390,11 +386,11 @@ add_action( 'login_form_lostpassword', function() {
         $errors = retrieve_password();
         if ( is_wp_error( $errors ) ) {
             // Errors found
-            $redirect_url = home_url( 'password-lost' );
+            $redirect_url = pror_get_permalink_by_slug( 'password-lost' );
             $redirect_url = add_query_arg( 'errors', join( ',', $errors->get_error_codes() ), $redirect_url );
         } else {
             // Email sent
-            $redirect_url = home_url( 'login' );
+            $redirect_url = pror_get_permalink_by_slug( 'login' );
             $redirect_url = add_query_arg( 'checkemail', 'confirm', $redirect_url );
         }
 
@@ -423,14 +419,14 @@ function pror_profile_redirect_to_custom_password_reset() {
         $user = check_password_reset_key( $_REQUEST['key'], $_REQUEST['login'] );
         if ( ! $user || is_wp_error( $user ) ) {
             if ( $user && $user->get_error_code() === 'expired_key' ) {
-                wp_redirect( home_url( 'login?login=expiredkey' ) );
+                wp_redirect( pror_get_permalink_by_slug( 'login' ) . '?login=expiredkey' );
             } else {
-                wp_redirect( home_url( 'login?login=invalidkey' ) );
+                wp_redirect( pror_get_permalink_by_slug( 'login' ) . '?login=invalidkey' );
             }
             exit;
         }
 
-        $redirect_url = home_url( 'password-reset' );
+        $redirect_url = pror_get_permalink_by_slug( 'password-reset' );
         $redirect_url = add_query_arg( 'login', esc_attr( $_REQUEST['login'] ), $redirect_url );
         $redirect_url = add_query_arg( 'key', esc_attr( $_REQUEST['key'] ), $redirect_url );
 
@@ -450,9 +446,9 @@ function pror_profile_do_password_reset() {
 
         if ( ! $user || is_wp_error( $user ) ) {
             if ( $user && $user->get_error_code() === 'expired_key' ) {
-                wp_redirect( home_url( 'login?login=expiredkey' ) );
+                wp_redirect( pror_get_permalink_by_slug( 'login' ) . '?login=expiredkey');
             } else {
-                wp_redirect( home_url( 'login?login=invalidkey' ) );
+                wp_redirect( pror_get_permalink_by_slug( 'login' ) . '?login=invalidkey' );
             }
             exit;
         }
@@ -460,7 +456,7 @@ function pror_profile_do_password_reset() {
         if ( isset( $_POST['pass1'] ) ) {
             if ( $_POST['pass1'] != $_POST['pass2'] ) {
                 // Passwords don't match
-                $redirect_url = home_url( 'password-reset' );
+                $redirect_url = pror_get_permalink_by_slug( 'password-reset' );
 
                 $redirect_url = add_query_arg( 'key', $rp_key, $redirect_url );
                 $redirect_url = add_query_arg( 'login', $rp_login, $redirect_url );
@@ -472,7 +468,7 @@ function pror_profile_do_password_reset() {
 
             if ( empty( $_POST['pass1'] ) ) {
                 // Password is empty
-                $redirect_url = home_url( 'password-reset' );
+                $redirect_url = pror_get_permalink_by_slug( 'password-reset' );
 
                 $redirect_url = add_query_arg( 'key', $rp_key, $redirect_url );
                 $redirect_url = add_query_arg( 'login', $rp_login, $redirect_url );
@@ -484,7 +480,7 @@ function pror_profile_do_password_reset() {
 
             // Parameter checks OK, reset password
             reset_password( $user, $_POST['pass1'] );
-            wp_redirect( home_url( 'login?password=changed' ) );
+            wp_redirect( pror_get_permalink_by_slug( 'login' ) . '?password=changed');
         } else {
             echo "Invalid request.";
         }

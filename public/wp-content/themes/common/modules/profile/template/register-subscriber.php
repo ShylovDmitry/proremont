@@ -19,7 +19,7 @@
             <div class="col-sm-6">
 
                 <div class="text-right">
-                    <a href="<?php echo home_url('register-master'); ?>">
+                    <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>">
                         <?php _e( 'Регистрация для исполнителей &raquo;', 'common' ); ?>
                     </a>
                 </div>
@@ -54,7 +54,7 @@
 
                     <div class="form-group">
                         <small class="form-text text-muted">
-                            <?php _e( '<strong>Заметка:</strong> Ваш пароль будет автоматически сгенерирован и отправлен на ваш Email.', 'common' ); ?>
+                            <?php _e( '<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и отправлен на ваш Email.', 'common' ); ?>
                         </small>
                     </div>
 

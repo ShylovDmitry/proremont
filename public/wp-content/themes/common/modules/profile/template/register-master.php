@@ -15,7 +15,7 @@
 
         <div class="mb-3">
             <div class="text-right">
-                <a href="<?php echo home_url('register'); ?>">
+                <a href="<?php echo pror_get_permalink_by_slug('register'); ?>">
                     <?php _e( 'Регистрация для пользователей &raquo;', 'common' ); ?>
                 </a>
             </div>
@@ -24,7 +24,7 @@
                 <input type="hidden" name="account_type" value="master" />
 
 
-                <h3 class="mb-3">Личные данные</h3>
+                <h3 class="mb-3"><?php _e('Личные данные', 'common'); ?></h3>
 
                 <div class="form-group">
                     <label for="email" class="form-label"><?php _e( 'Email', 'common' ); ?> <span class="required">*</span></label>
@@ -53,7 +53,7 @@
 
                 <hr class="mb-4 mt-4" />
 
-                <h3 class="mb-3">Информация</h3>
+                <h3 class="mb-3"><?php _e('Информация', 'common'); ?></h3>
 
                 <div class="form-group">
                     <label class="form-label"><?php _e( 'Тип', 'common' ); ?> <span class="required">*</span></label>
@@ -142,7 +142,7 @@
 
                 <div class="form-group">
                     <small class="form-text text-muted">
-                        <?php _e( '<strong>Заметка:</strong> Ваш пароль будет автоматически сгенерирован и отправлен на ваш Email.', 'common' ); ?>
+                        <?php _e( '<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и отправлен на ваш Email.', 'common' ); ?>
                     </small>
                 </div>
                 <div class="form-group">

@@ -30,7 +30,6 @@ function pror_get_catalog($parent_id = 0, $hide_empty = true) {
         }
     }
     return $non_empty_terms;
-
 }
 
 function pror_catalog_get_count($tax = null) {

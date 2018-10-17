@@ -3,7 +3,7 @@
         <?php
             printf(
                 __( 'Вы уже зарегистрированы. Перейдите в свой <a href="%s">профиль</a>.', 'common' ),
-                home_url('profile')
+                pror_get_permalink_by_slug('profile')
             );
         ?>
     <?php else: ?>
@@ -43,12 +43,12 @@
 
         <div class="row mb-3">
             <div class="col-sm-6">
-                <div class="mb-1">Используйте социальные сети что бы войти:</div>
-                <?php echo oa_social_login_render_login_form ('custom', ['callback_uri' => $_GET['redirect_to'] ? $_GET['redirect_to'] : home_url('profile')]); ?>
+                <div class="mb-1"><?php _e('Используйте социальные сети что бы войти:', 'common'); ?></div>
+                <?php echo oa_social_login_render_login_form ('custom', ['callback_uri' => $_GET['redirect_to'] ? $_GET['redirect_to'] : pror_get_permalink_by_slug('profile')]); ?>
 
                 <hr />
 
-                <div class="mb-1 mt-3">Или введите свой Email и пароль:</div>
+                <div class="mb-1 mt-3"><?php _e('Или введите свой Email и пароль:', 'common'); ?></div>
                 <form method="post" action="<?php echo wp_login_url($_GET['redirect_to']); ?>" class="form-container from-validation-simple">
                     <div class="form-group">
                         <label for="user_login" class="form-label"><?php _e( 'Email', 'common' ); ?></label>
