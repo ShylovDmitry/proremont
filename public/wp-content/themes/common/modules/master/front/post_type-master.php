@@ -46,14 +46,14 @@ add_action('init', function() {
     ));
 });
 
-add_filter('rewrite_rules_array', function($rules) {
-    foreach ($rules as $regexp => $rule) {
-        if (strpos($rule, 'index.php?section=$matches[1]') === 0 && strpos($regexp, '/mastera/') === false) {
-            unset($rules[$regexp]);
-        }
-        if (strpos($rule, 'index.php?location=$matches[1]') === 0 && strpos($regexp, '/m/') === false) {
-            unset($rules[$regexp]);
-        }
-    }
-    return $rules;
-});
+//add_filter('rewrite_rules_array', function($rules) {
+//    foreach ($rules as $regexp => $rule) {
+//        if (strpos($rule, 'index.php?section=$matches[1]') === 0 && strpos($regexp, '/mastera/') === false) {
+//            unset($rules[$regexp]);
+//        }
+//        if (strpos($rule, 'index.php?location=$matches[1]') === 0 && strpos($regexp, '/m/') === false) {
+//            unset($rules[$regexp]);
+//        }
+//    }
+//    return $rules;
+//});

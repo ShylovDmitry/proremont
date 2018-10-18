@@ -4,8 +4,7 @@
     $i = 0;
 ?>
 <div class="catalog-mater-small-list">
-    <?php foreach (get_the_terms(null, 'catalog_master') as $term): $i++ ?>
-        <?php $lang_term_slug = get_term(pll_get_term($term->term_id, pll_default_language()))->slug; ?>
+    <?php foreach ($terms as $term): $i++ ?>
         <a href="<?php echo esc_url( get_term_link($term) ); ?>" title="<?php echo esc_attr($term->name); ?>" ><?php echo $term->name; ?></a><?php if ($terms_count != $i): ?><span class="space">, </span><?php endif; ?>
     <?php endforeach; ?>
 </div>

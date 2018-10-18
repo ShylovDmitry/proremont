@@ -1,16 +1,5 @@
 <?php
 
-add_action('login_enqueue_scripts', function() {
-    wp_enqueue_style('custom-login', get_module_css('master/admin-login.css'), array(), dlv_get_ver());
-});
-
-add_action('init', function() {
-    if (pror_user_has_role('master subscriber')) {
-        remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
-        show_admin_bar(false);
-    }
-});
-
 add_action('user_register', function($user_id) {
     pror_update_master_info($user_id);
 });
@@ -148,15 +137,3 @@ function pror_master_rus2translit($string) {
 add_filter('sanitize_title', function($title, $fallback_title, $context) {
     return pror_master_rus2translit($title);
 }, 5, 3);
-
-
-add_filter('wp_login_errors', function($errors, $redirect_to) {
-    if (isset($errors->errors['registered'])) {
-        foreach ($errors->errors['registered'] as $key => &$value) {
-            $value = 'Проверьте свою почту.';
-        }
-        unset($value);
-    }
-
-    return $errors;
-}, 10, 2);

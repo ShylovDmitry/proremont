@@ -160,6 +160,9 @@ function pror_declension_words($n, $words){
 }
 
 function pror_get_permalink_by_slug($slug) {
+    if (empty($slug) || $slug == '/') {
+        $slug = 'glavnaya';
+    }
     $post = get_page_by_path($slug);
     $lang_post = pll_get_post($post->ID);
 

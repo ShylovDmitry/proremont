@@ -3,13 +3,46 @@
     "title": "Catalog",
     "fields": [
         {
+            "key": "field_5bc7a03a96f8f",
+            "label": "Название UK",
+            "name": "name_uk",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
             "default_value": "",
-            "min": "",
-            "max": "",
-            "step": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bc7a05296f90",
+            "label": "Ярлык UK",
+            "name": "slug_uk",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59d7e1ec848e2",
             "label": "Sort position",
             "name": "sort",
@@ -21,7 +54,14 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -41,5 +81,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507320322
+    "modified": 1539810400
 }

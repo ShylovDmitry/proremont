@@ -123,7 +123,7 @@ $acf_key = 'user_' . get_current_user_id();
             <label for="categories" class="form-label"><?php _e( 'Основные категории', 'common' ); ?> <span class="required">*</span></label>
 
             <?php $master_catalog = get_field('master_catalog', $acf_key); ?>
-            <select id="categories" name="user_catalog_master[]" multiple="multiple" class="form-control" style="width: 100%;" data-placeholder="Выбирете категории" lang="<?php echo pll_current_language(); ?>" required="required">
+            <select id="categories" name="user_catalog_master[]" multiple="multiple" class="form-control" style="width: 100%;" data-placeholder="<?php _e( 'Выбирете категории', 'common' ); ?>" lang="<?php echo pll_current_language(); ?>" required="required">
                 <?php foreach(pror_get_catalog() as $main_catalog): ?>
                     <optgroup label="<?php echo $main_catalog->name; ?>">
                         <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>

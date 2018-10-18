@@ -58,6 +58,7 @@ add_filter('pll_rewrite_rules', function($types) {
     $types[] = 'post';
     $types[] = 'master';
     $types[] = 'partner';
+    $types[] = 'catalog_master';
 
     return $types;
 });
