@@ -11,23 +11,6 @@ ob_start();
 ?>
 
 <div class="catalog-mater-3col" id="catalogMenu" data-pror-children=".item">
-<!--    <h3 class="text-center mb-4">Каталог - --><?php //echo pror_get_section()->name; ?><!--</h3>-->
-
-<!--            --><?php
-//
-//                wp_dropdown_categories(array(
-//                    'hide_empty' => 0,
-//                    'taxonomy' => 'catalog_master',
-////                    'selected' => get_queried_object_id(),
-//                    'hierarchical' => 1,
-//                    'name' => 'f_switch_catalog',
-//                    'id' => 'master_search_catalog1',
-//                    'class' => 'form-control',
-//                    'show_option_none' => 'Выберете категорию',
-//                ));
-//            ?>
-
-
     <?php foreach(array_chunk(pror_get_catalog(), 3) as $catalogs_part): ?>
         <div class="row mt-3 mb-1">
             <?php foreach($catalogs_part as $main_catalog): ?>
