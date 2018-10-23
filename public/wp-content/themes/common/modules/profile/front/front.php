@@ -82,6 +82,7 @@ function pror_profile_get_error_message( $error_code ) {
         'empty_username' => __( 'Необходимо ввести Email.', 'common' ),
         'empty_password' => __( 'Необходимо ввести пароль.', 'common' ),
         'invalid_username' => __("Пользователь с таким Email не зарегестрирован. Возможно вы использовали другой Email при регистрации", 'common'),
+        'existing_user_login' => sprintf( __("Пользователь с таким Email уже зарегестрирован. <a href='%s'>Войти</a> на сайт.", 'common'), wp_login_url() ),
         'incorrect_password' => sprintf( __("Неверний пароль. Вы <a href='%s'>забыли пароль</a>?", 'common'), wp_lostpassword_url() ),
         'email' => __( 'Вы ввели неверний Email.', 'common' ),
         'email_exists' => __( 'Пользователь с таким Email уже зарегистрирован.', 'common' ),
@@ -95,6 +96,7 @@ function pror_profile_get_error_message( $error_code ) {
         'first_name' => __( 'Неправильное Имя.', 'common' ),
         'last_name' => __( 'Неправильное Фамилия.', 'common' ),
         'contact_phone' => __( 'Неправильный Контактный телефон.', 'common' ),
+        'role' => __( 'Неверная Роль.', 'common' ),
         'user_title' => __( 'Неправильное Название.', 'common' ),
         'user_type' => __( 'Неправильный Тип.', 'common' ),
         'user_tel' => __( 'Неправильный Робочий телефон.', 'common' ),
@@ -157,6 +159,10 @@ add_action( 'login_form_register', function() {
 } );
 
 function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
+    if (!in_array( $role, ['subscriber', 'master'] )) {
+        return new WP_Error( 'role', pror_profile_get_error_message( 'role' ) );
+    }
+
     if (empty( pror_profile_get_send_param('first_name') )) {
         return new WP_Error( 'first_name', pror_profile_get_error_message( 'first_name' ) );
     }
@@ -169,28 +175,30 @@ function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
         return new WP_Error( 'contact_phone', pror_profile_get_error_message( 'contact_phone' ) );
     }
 
-    if (empty( pror_profile_get_send_param('user_title') )) {
-        return new WP_Error( 'user_title', pror_profile_get_error_message( 'user_title' ) );
-    }
+    if ($role == 'master') {
+        if (empty(pror_profile_get_send_param('user_title'))) {
+            return new WP_Error('user_title', pror_profile_get_error_message('user_title'));
+        }
 
-    if (empty( pror_profile_get_send_param('user_type') )) {
-        return new WP_Error( 'user_type', pror_profile_get_error_message( 'user_type' ) );
-    }
+        if (empty(pror_profile_get_send_param('user_type'))) {
+            return new WP_Error('user_type', pror_profile_get_error_message('user_type'));
+        }
 
-    if (empty( pror_profile_get_send_param('user_tel') )) {
-        return new WP_Error( 'user_tel', pror_profile_get_error_message( 'user_tel' ) );
-    }
+        if (empty(pror_profile_get_send_param('user_tel'))) {
+            return new WP_Error('user_tel', pror_profile_get_error_message('user_tel'));
+        }
 
-    if (empty( pror_profile_get_send_param('user_city') )) {
-        return new WP_Error( 'user_city', pror_profile_get_error_message( 'user_city' ) );
-    }
+        if (empty(pror_profile_get_send_param('user_city'))) {
+            return new WP_Error('user_city', pror_profile_get_error_message('user_city'));
+        }
 
-    if (empty( pror_profile_get_send_param('user_description') )) {
-        return new WP_Error( 'user_description', pror_profile_get_error_message( 'user_description' ) );
-    }
+        if (empty(pror_profile_get_send_param('user_description'))) {
+            return new WP_Error('user_description', pror_profile_get_error_message('user_description'));
+        }
 
-    if (empty( pror_profile_get_send_param('user_catalog_master') )) {
-        return new WP_Error( 'user_catalog_master', pror_profile_get_error_message( 'user_catalog_master' ) );
+        if (empty(pror_profile_get_send_param('user_catalog_master'))) {
+            return new WP_Error('user_catalog_master', pror_profile_get_error_message('user_catalog_master'));
+        }
     }
 
     $user_id = get_current_user_id();
@@ -473,3 +481,8 @@ function pror_profile_image_upload_ajax() {
 
     wp_send_json_success($res);
 }
+
+remove_action('register_new_user', 'wp_send_new_user_notifications');
+add_action('user_register', function($user_id) {
+    wp_send_new_user_notifications($user_id, 'admin');
+});

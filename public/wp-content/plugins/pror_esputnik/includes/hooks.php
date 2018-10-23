@@ -2,11 +2,6 @@
 
 defined( 'ABSPATH' ) or die();
 
-remove_action('register_new_user', 'wp_send_new_user_notifications');
-add_action('register_new_user', function($user_id) {
-    wp_send_new_user_notifications($user_id, 'admin');
-});
-
 add_action('user_register', function($user_id) {
     if (!pror_user_has_role('master subscriber', $user_id)) {
         return;
