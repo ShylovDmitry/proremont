@@ -25,7 +25,7 @@
                 </div>
 
                 <form action="<?php echo wp_registration_url(); ?>" method="post" class="form-container from-validation-simple">
-                    <input type="hidden" name="account_type" value="user" />
+                    <input type="hidden" name="user_role" value="user" />
 
                     <div class="form-group">
                         <label for="email" class="form-label"><?php _e( 'Email', 'common' ); ?> <span class="required">*</span></label>

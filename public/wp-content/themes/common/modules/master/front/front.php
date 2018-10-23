@@ -136,6 +136,9 @@ function pror_format_phones($phone) {
 //    $phones_str = str_replace(chr(13), '', $phones_str);
 //    $phones = explode("\n", $phones_str);
     $phone = preg_replace('/[\s-)(]+/', '', $phone);
+    if (!$phone) {
+        return false;
+    }
 
     if (strlen($phone) == 9) {
         $phone = '380' . $phone;
@@ -200,7 +203,7 @@ function pror_get_master_catalogs($master_post_id = null) {
     }
 
     $parent_terms = get_terms(array(
-        'term_taxonomy_id' => array_keys($sub_terms),
+        'term_id' => array_keys($sub_terms),
         'hierarchical' => false,
         'taxonomy' => 'catalog_master',
         'hide_empty' => false,

@@ -78,84 +78,31 @@ add_filter('authenticate', function( $user, $username, $password ) {
 }, 101, 3);
 
 function pror_profile_get_error_message( $error_code ) {
-    switch ( $error_code ) {
-        case 'empty_username':
-            return __( 'Необходимо ввести Email.', 'common' );
-
-        case 'empty_password':
-            return __( 'Необходимо ввести пароль.', 'common' );
-
-        case 'invalid_username':
-            return __("Пользователь с таким Email не зарегестрирован. Возможно вы использовали другой Email при регистрации", 'common');
-
-        case 'incorrect_password':
-            $err = __("Неверний пароль. Вы <a href='%s'>забыли пароль</a>?", 'common');
-            return sprintf( $err, wp_lostpassword_url() );
-
-        // Registration errors
-
-        case 'email':
-            return __( 'Вы ввели неверний Email.', 'common' );
-
-        case 'email_exists':
-            return __( 'Пользователь с таким Email уже зарегистрирован.', 'common' );
-
-        case 'closed':
-            return __( 'Регистрация для новых пользователей временно закрыта.', 'common' );
-
-        // Lost password
-
-        case 'invalid_email':
-        case 'invalidcombo':
-            return __( 'Пользователь с таким Email не найден.', 'common' );
-
-        // Reset password
-
-        case 'expiredkey':
-        case 'invalidkey':
-            return __( 'Ссылка для востановления пароля устарела.', 'common' );
-
-        case 'password_reset_mismatch':
-            return __( "Пароли не совпадают.", 'common' );
-
-        case 'password_reset_empty':
-            return __( "Извините, вы не можете использовать пустой пароль.", 'common' );
-
-
-        // Settings
-
-        case 'first_name':
-            return __( 'Неправильное Имя.', 'common' );
-
-        case 'last_name':
-            return __( 'Неправильное Фамилия.', 'common' );
-
-        case 'contact_phone':
-            return __( 'Неправильный Контактный телефон.', 'common' );
-
-        case 'user_title':
-            return __( 'Неправильное Название.', 'common' );
-
-        case 'user_type':
-            return __( 'Неправильный Тип.', 'common' );
-
-        case 'user_tel':
-            return __( 'Неправильный Робочий телефон.', 'common' );
-
-        case 'user_city':
-            return __( 'Неправильный Город.', 'common' );
-
-        case 'user_description':
-            return __( 'Неправильное Описание.', 'common' );
-
-        case 'user_catalog_master':
-            return __( 'Неправильная Категория.', 'common' );
-
-        default:
-            break;
-    }
-
-    return __( 'Ошибка. Попробуйте еще раз позже.', 'common' );
+    $codes = [
+        'empty_username' => __( 'Необходимо ввести Email.', 'common' ),
+        'empty_password' => __( 'Необходимо ввести пароль.', 'common' ),
+        'invalid_username' => __("Пользователь с таким Email не зарегестрирован. Возможно вы использовали другой Email при регистрации", 'common'),
+        'incorrect_password' => sprintf( __("Неверний пароль. Вы <a href='%s'>забыли пароль</a>?", 'common'), wp_lostpassword_url() ),
+        'email' => __( 'Вы ввели неверний Email.', 'common' ),
+        'email_exists' => __( 'Пользователь с таким Email уже зарегистрирован.', 'common' ),
+        'closed' => __( 'Регистрация для новых пользователей временно закрыта.', 'common' ),
+        'invalid_email' => __( 'Пользователь с таким Email не найден.', 'common' ),
+        'invalidcombo' => __( 'Пользователь с таким Email не найден.', 'common' ),
+        'expiredkey' => __( 'Ссылка для востановления пароля устарела.', 'common' ),
+        'invalidkey' => __( 'Ссылка для востановления пароля устарела.', 'common' ),
+        'password_reset_mismatch' => __( "Пароли не совпадают.", 'common' ),
+        'password_reset_empty' => __( "Извините, вы не можете использовать пустой пароль.", 'common' ),
+        'first_name' => __( 'Неправильное Имя.', 'common' ),
+        'last_name' => __( 'Неправильное Фамилия.', 'common' ),
+        'contact_phone' => __( 'Неправильный Контактный телефон.', 'common' ),
+        'user_title' => __( 'Неправильное Название.', 'common' ),
+        'user_type' => __( 'Неправильный Тип.', 'common' ),
+        'user_tel' => __( 'Неправильный Робочий телефон.', 'common' ),
+        'user_city' => __( 'Неправильный Город.', 'common' ),
+        'user_description' => __( 'Неправильное Описание.', 'common' ),
+        'user_catalog_master' => __( 'Неправильная Категория.', 'common' ),
+    ];
+    return isset($codes[$error_code]) ? $codes[$error_code] : __( 'Ошибка. Попробуйте еще раз позже.', 'common' );
 }
 
 add_action( 'wp_logout', function() {
@@ -209,128 +156,131 @@ add_action( 'login_form_register', function() {
     }
 } );
 
-function pror_profile_register_user( $email, $data, $role = 'subscriber' ) {
-    $errors = new WP_Error();
-
-    if ( ! is_email( $email ) ) {
-        $errors->add( 'email', pror_profile_get_error_message( 'email' ) );
-        return $errors;
+function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
+    if (empty( pror_profile_get_send_param('first_name') )) {
+        return new WP_Error( 'first_name', pror_profile_get_error_message( 'first_name' ) );
     }
 
-    if ( username_exists( $email ) || email_exists( $email ) ) {
-        $errors->add( 'email_exists', pror_profile_get_error_message( 'email_exists') );
-        return $errors;
+    if (empty( pror_profile_get_send_param('last_name') )) {
+        return new WP_Error( 'last_name', pror_profile_get_error_message( 'last_name' ) );
     }
 
-    if (empty( $data['first_name'])) {
-        $errors->add( 'first_name', pror_profile_get_error_message( 'first_name' ) );
-        return $errors;
+    if (empty( pror_profile_get_send_param('tel') )) {
+        return new WP_Error( 'contact_phone', pror_profile_get_error_message( 'contact_phone' ) );
     }
 
-    if (empty( $data['last_name'])) {
-        $errors->add( 'last_name', pror_profile_get_error_message( 'last_name' ) );
-        return $errors;
+    if (empty( pror_profile_get_send_param('user_title') )) {
+        return new WP_Error( 'user_title', pror_profile_get_error_message( 'user_title' ) );
     }
 
-    $password = wp_generate_password( 12, false );
+    if (empty( pror_profile_get_send_param('user_type') )) {
+        return new WP_Error( 'user_type', pror_profile_get_error_message( 'user_type' ) );
+    }
 
-    $user_data = array(
-        'user_login'    => $email,
-        'user_email'    => $email,
-        'user_pass'     => $password,
-        'first_name'    => $data['first_name'],
-        'last_name'     => $data['last_name'],
-        'nickname'      => $data['first_name'],
-        'role'          => $role,
-    );
+    if (empty( pror_profile_get_send_param('user_tel') )) {
+        return new WP_Error( 'user_tel', pror_profile_get_error_message( 'user_tel' ) );
+    }
 
-    $user_id = wp_insert_user( $user_data );
+    if (empty( pror_profile_get_send_param('user_city') )) {
+        return new WP_Error( 'user_city', pror_profile_get_error_message( 'user_city' ) );
+    }
 
-    if (!is_wp_error($user_id)) {
-        if (empty( $data['contact_phone'])) {
-            $errors->add( 'contact_phone', pror_profile_get_error_message( 'contact_phone' ) );
-            return $errors;
+    if (empty( pror_profile_get_send_param('user_description') )) {
+        return new WP_Error( 'user_description', pror_profile_get_error_message( 'user_description' ) );
+    }
+
+    if (empty( pror_profile_get_send_param('user_catalog_master') )) {
+        return new WP_Error( 'user_catalog_master', pror_profile_get_error_message( 'user_catalog_master' ) );
+    }
+
+    $user_id = get_current_user_id();
+    if ($user_id) {
+        return wp_update_user(array(
+            'ID'            => get_current_user_id(),
+            'first_name'    => pror_profile_get_send_param('first_name'),
+            'last_name'     => pror_profile_get_send_param('last_name'),
+            'nickname'      => pror_profile_get_send_param('first_name'),
+        ));
+    } else {
+        if ( ! is_email( $email ) ) {
+            return new WP_Error( 'email', pror_profile_get_error_message( 'email' ) );
         }
-        update_user_meta($user_id, 'contact_phone', $data['contact_phone']);
-        update_user_meta($user_id, '_contact_phone', 'field_5bc3bcf7b0285');
 
-//        wp_new_user_notification( $user_id, $password );
+        return wp_insert_user(array(
+            'user_login'    => $email,
+            'user_email'    => $email,
+            'user_pass'     => wp_generate_password( 12, false ),
+            'first_name'    => pror_profile_get_send_param('first_name'),
+            'last_name'     => pror_profile_get_send_param('last_name'),
+            'nickname'      => pror_profile_get_send_param('first_name'),
+            'role'          => $role,
+        ));
     }
-
-    return $user_id;
 }
 
-function pror_profile_register_master( $email, $data ) {
-    $user_id = pror_profile_register_user($email, $data, 'master');
+add_filter('insert_user_meta', function($meta, $user, $update) {
+    $meta['_contact_phone'] = 'field_5bc3bcf7b0285';
+    $meta['contact_phone'] = pror_profile_get_send_param('tel');
 
-    if (!is_wp_error($user_id)) {
-        $errors = new WP_Error();
+    if (pror_user_has_role('master', $user->ID)) {
+        $meta['_master_title'] = 'field_59ebc9689376d';
+        $meta['master_title'] = pror_profile_get_send_param('user_title');
 
-        if (empty( $data['user_title'])) {
-            $errors->add( 'user_title', pror_profile_get_error_message( 'user_title' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_title', $data['user_title']);
-        update_user_meta($user_id, '_master_title', 'field_59ebc9689376d');
+        $meta['_master_type'] = 'field_59ebc3fa7f3e5';
+        $meta['master_type'] = pror_profile_get_send_param('user_type');
 
-        if (empty( $data['user_type'])) {
-            $errors->add( 'user_type', pror_profile_get_error_message( 'user_type' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_type', $data['user_type']);
-        update_user_meta($user_id, '_master_type', 'field_59ebc3fa7f3e5');
+        $meta['_master_url_slug'] = 'field_5ab185c6ed95e';
+        $meta['master_url_slug'] = sanitize_title('user_title');
 
-        update_user_meta($user_id, 'master_url_slug', $data['user_url']);
-        update_user_meta($user_id, '_master_url_slug', 'field_5ab185c6ed95e');
+        $meta['_master_phone'] = 'field_5bb9dffd3c5c8';
+        $meta['master_phone'] = pror_profile_get_send_param('user_tel');
 
-        if (empty( $data['user_tel'])) {
-            $errors->add( 'user_tel', pror_profile_get_error_message( 'user_tel' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_phone', $data['user_tel']);
-        update_user_meta($user_id, '_master_phone', 'field_5bb9dffd3c5c8');
+        $meta['_master_location'] = 'field_59ebd9a8748a5';
+        $meta['master_location'] = pror_profile_get_send_param('user_city');
 
-        if (empty( $data['user_city'])) {
-            $errors->add( 'user_city', pror_profile_get_error_message( 'user_city' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_location', $data['user_city']);
-        update_user_meta($user_id, '_master_location', 'field_59ebd9a8748a5');
+        $meta['_master_website'] = 'field_59ebc3fa7f426';
+        $meta['master_website'] = pror_profile_get_send_param('user_website');
 
-        update_user_meta($user_id, 'master_website', $data['user_website']);
-        update_user_meta($user_id, '_master_website', 'field_59ebc3fa7f426');
+        $meta['_master_text'] = 'field_59ebc99b9376f';
+        $meta['master_text'] = pror_profile_get_send_param('user_description');
 
-        if (empty( $data['user_description'])) {
-            $errors->add( 'user_description', pror_profile_get_error_message( 'user_description' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_text', $data['user_description']);
-        update_user_meta($user_id, '_master_text', 'field_59ebc99b9376f');
+        $meta['_master_catalog'] = 'field_59ebda792dfb3';
+        $meta['master_catalog'] = pror_profile_get_send_param('user_catalog_master');
 
-        if (empty( $data['user_catalog_master'])) {
-            $errors->add( 'user_catalog_master', pror_profile_get_error_message( 'user_catalog_master' ) );
-            return $errors;
-        }
-        update_user_meta($user_id, 'master_catalog', $data['user_catalog_master']);
-        update_user_meta($user_id, '_master_catalog', 'field_59ebda792dfb3');
+        $meta['_master_gallery'] = 'field_59ebc3fa7f436';
+        $meta['master_gallery'] = pror_profile_get_send_param('user_images');
 
-        update_user_meta($user_id, 'master_gallery', serialize([]));
-        update_user_meta($user_id, '_master_gallery', 'field_59ebc3fa7f436');
-
-        update_user_meta($user_id, 'master_logo', '');
-        update_user_meta($user_id, '_master_logo', 'field_59ebc8f130c58');
+        $meta['_master_logo'] = 'field_59ebc8f130c58';
+        $meta['master_logo'] = pror_profile_get_send_param('');
     }
 
-    return $user_id;
-}
+    return $meta;
+}, 10, 3);
 
-function pror_profile_sanitize_url($title) {
-    return sanitize_title($title);
+function pror_profile_get_send_param($param) {
+    switch ($param) {
+        case 'first_name':
+        case 'last_name':
+        case 'tel':
+        case 'user_title':
+        case 'user_type':
+        case 'user_tel':
+        case 'user_city':
+        case 'user_website':
+            return sanitize_text_field($_POST[$param]);
+
+        case 'user_description':
+        case 'user_catalog_master':
+        case 'user_images':
+        case 'logo_id':
+        default:
+            return $_POST[$param] ? $_POST[$param] : '';
+    }
 }
 
 add_action( 'login_form_register', function() {
     if ( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
-        if ($_POST['account_type'] == 'master') {
+        if ($_POST['user_role'] == 'master') {
             $redirect_url = pror_get_permalink_by_slug('register-master');
         } else {
             $redirect_url = pror_get_permalink_by_slug('register');
@@ -339,37 +289,14 @@ add_action( 'login_form_register', function() {
         if ( ! get_option( 'users_can_register' ) ) {
             $redirect_url = add_query_arg( 'register-errors', 'closed', $redirect_url );
         } else {
-            $email = $_POST['email'];
-
-            $data = [
-                'first_name' => sanitize_text_field($_POST['first_name']),
-                'last_name' => sanitize_text_field($_POST['last_name']),
-                'contact_phone' => sanitize_text_field($_POST['tel']),
-            ];
-
-            if ($_POST['account_type'] == 'master') {
-                $data = array_merge($data, [
-                    'user_title' => sanitize_text_field($_POST['user_title']),
-                    'user_type' => sanitize_text_field($_POST['user_type']),
-                    'user_tel' => sanitize_text_field($_POST['user_tel']),
-                    'user_city' => sanitize_text_field($_POST['user_city']),
-                    'user_website' => sanitize_text_field($_POST['user_website']),
-                    'user_description' => $_POST['user_description'],
-                    'user_catalog_master' => $_POST['user_catalog_master'],
-                    'user_url' => pror_profile_sanitize_url($_POST['user_title']),
-                ]);
-
-                $result = pror_profile_register_master($email, $data);
-            } else {
-                $result = pror_profile_register_user($email, $data);
-            }
+            $result = pror_profile_register_user($_POST['email'], $_POST['user_role']);
 
             if ( is_wp_error( $result ) ) {
                 $errors = join( ',', $result->get_error_codes() );
                 $redirect_url = add_query_arg( 'register-errors', $errors, $redirect_url );
             } else {
                 $redirect_url = pror_get_permalink_by_slug( 'login' );
-                $redirect_url = add_query_arg( 'registered', $email, $redirect_url );
+                $redirect_url = add_query_arg( 'registered', $_POST['email'], $redirect_url );
             }
         }
 
@@ -407,18 +334,6 @@ add_action( 'login_form_lostpassword', function() {
         exit;
     }
 } );
-
-add_filter( 'retrieve_password_message', function($message, $key, $user_login, $user_data ) {
-    // Create new message
-    $msg  = __( 'Hello!', 'common' ) . "\r\n\r\n";
-    $msg .= sprintf( __( 'You asked us to reset your password for your account using the email address %s.', 'common' ), $user_login ) . "\r\n\r\n";
-    $msg .= __( "If this was a mistake, or you didn't ask for a password reset, just ignore this email and nothing will happen.", 'common' ) . "\r\n\r\n";
-    $msg .= __( 'To reset your password, visit the following address:', 'common' ) . "\r\n\r\n";
-    $msg .= site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . "\r\n\r\n";
-    $msg .= __( 'Thanks!', 'common' ) . "\r\n";
-
-    return $msg;
-}, 10, 4 );
 
 add_action( 'login_form_rp', 'pror_profile_redirect_to_custom_password_reset' );
 add_action( 'login_form_resetpass', 'pror_profile_redirect_to_custom_password_reset' );

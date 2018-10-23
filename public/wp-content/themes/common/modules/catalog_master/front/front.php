@@ -8,10 +8,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('catalog-master-common', get_module_js('catalog_master/common.js'), array('jquery'), dlv_get_ver(), true);
 });
 
-add_filter('get_catalog_master', function($term, $taxonomy) {
-    return pror_catalog_localize_term($term);
-}, 10, 2);
-
 add_filter('term_link', function($termlink, $term, $taxonomy) {
     if ($taxonomy == 'catalog_master') {
         if (pll_default_language() != pll_current_language() && strpos('/' . pll_current_language() . '/', $termlink) === false) {
@@ -21,6 +17,10 @@ add_filter('term_link', function($termlink, $term, $taxonomy) {
     }
     return $termlink;
 }, 10, 3);
+
+add_filter('get_catalog_master', function($term, $taxonomy) {
+    return pror_catalog_localize_term($term);
+}, 10, 2);
 
 add_filter('get_terms', function($terms, $taxonomy, $query_vars, $term_query) {
     if (in_array('catalog_master', $taxonomy)) {

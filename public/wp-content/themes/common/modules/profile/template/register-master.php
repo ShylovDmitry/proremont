@@ -21,7 +21,7 @@
             </div>
 
             <form action="<?php echo wp_registration_url(); ?>" method="post" class="form-container from-validation-advanced">
-                <input type="hidden" name="account_type" value="master" />
+                <input type="hidden" name="user_role" value="master" />
 
 
                 <h3 class="mb-3"><?php _e('Личные данные', 'common'); ?></h3>
