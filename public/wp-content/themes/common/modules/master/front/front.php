@@ -155,8 +155,8 @@ function pror_format_phones($phone) {
 
     $tel = $phone;
     if (strlen($phone) == 13) {
-        if (preg_match('/\+(\d{2})(\d{3})(\d{3})(\d{4})/', $phone, $matches)) {
-            $phone = sprintf('(%s) %s %s', $matches[2], $matches[3], $matches[4]);
+        if (preg_match('/\+(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/', $phone, $matches)) {
+            $phone = sprintf('(%s) %s %s %s', $matches[2], $matches[3], $matches[4], $matches[5]);
         }
     }
 
@@ -228,18 +228,6 @@ function pror_get_master_img_alt() {
 
     return sprintf('%s - %s - %s', implode(', ', $catalogs), end(pror_get_master_location()), get_the_title());
 }
-
-add_filter('comment_form_submit_button', function($submit_button, $args) {
-    $submit_button = sprintf('<a href="%1$s" class="cancel-form">Отмена</a> ',
-            wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) )
-        ). $submit_button;
-    return $submit_button;
-}, 10, 2);
-
-add_filter('get_comment_author_link', function($return, $author, $comment_ID) {
-    return str_replace(' rel=', 'target="_blank" rel=', $return);
-}, 10, 3);
-
 
 function pror_get_query_pro_master_ids() {
     $query = new WP_User_Query(array(

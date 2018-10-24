@@ -10,6 +10,10 @@ add_action('wp_print_styles', function () {
     wp_enqueue_style('open-iconic', get_module_css('theme/open-iconic/css/open-iconic-bootstrap.min.css'), array(), '1.1.1');
     wp_enqueue_style('slick-lightbox', get_module_css('theme/slick-lightbox.css'), array(), dlv_get_ver());
     wp_enqueue_style('theme-common', get_module_css('theme/common.css'), array(), dlv_get_ver());
+
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
+	}
 });
 
 add_action('wp_enqueue_scripts', function () {
@@ -61,20 +65,6 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect' 		=> false
 	));
 }
-
-add_filter('comment_form_default_fields', function($fields) {
-    unset($fields['url']);
-    unset($fields['author']);
-    unset($fields['email']);
-
-    return $fields;
-});
-
-add_filter('comment_form_defaults', function($defaults) {
-    $defaults['must_log_in'] = '<p class="must-log-in">Только авторизированый пользователь может здесь писать.</p>';
-
-    return $defaults;
-}, 1, 5);
 
 add_shortcode('clearfix', function() {
     return '<div class="clearfix"></div>';

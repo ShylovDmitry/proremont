@@ -8,7 +8,7 @@
 
         <span class="stub">
             <?php foreach ($master_phones as $pos => $phone): ?>
-                <?php echo sprintf('%s xxx xxxx', substr($phone['text'], 0, 5)); ?><?php if ($pos != $master_phones_count): ?><span class="delimiter">,</span><?php endif; ?>
+                <?php echo sprintf('%s xxx xx xx', substr($phone['text'], 0, 5)); ?><?php if ($pos != $master_phones_count): ?><span class="delimiter">,</span><?php endif; ?>
             <?php endforeach; ?>
             <a href="#" class="show-number"><?php _e('Показать', 'common'); ?></a>
         </span>

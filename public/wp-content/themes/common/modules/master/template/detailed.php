@@ -101,11 +101,7 @@
     <div class="colored-box mt-3 p-3">
         <div class="content">
             <h4 class="header-underlined"><?php _e('Отзывы', 'common'); ?></h4>
-            <?php
-                if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif;
-            ?>
+            <?php comments_template(); ?>
         </div>
     </div>
 

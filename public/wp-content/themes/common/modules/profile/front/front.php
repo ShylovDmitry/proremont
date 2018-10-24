@@ -1,5 +1,9 @@
 <?php
 
+if ( ! current_user_can( 'manage_options' ) ) {
+    show_admin_bar( false );
+}
+
 function pror_profile_is_profile_pages() {
     return is_page('login') || is_page('register') || is_page('register-master') || is_page('profile') || is_page('password-lost') || is_page('password-reset');
 }

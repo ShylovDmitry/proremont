@@ -466,35 +466,19 @@ a.btn.btn-pror-primary {
   font-family: "Roboto", sans-serif;
 }
 
-.comments-area .leave-review-button {
-  color: #E67E22;
-}
-.comments-area .leave-review-button .oi {
-  font-size: 0.75rem;
-}
 .comments-area .comment {
-  overflow: hidden;
   padding-bottom: 20px;
-  border-bottom: 1px solid #dfdfdf;
   margin-bottom: 20px;
-  min-height: 110px;
+  border-bottom: 1px solid #dfdfdf;
 }
 .comments-area .comment .fn {
-  font-size: 16px;
   font-weight: 600;
 }
 .comments-area .comment .says {
   display: none;
 }
-.comments-area .comment article {
-  padding-left: 110px;
-}
 .comments-area .comment .comment-author {
   float: left;
-}
-.comments-area .comment .comment-author img {
-  margin-left: -110px;
-  position: absolute;
 }
 .comments-area .comment .comment-meta {
   overflow: hidden;
@@ -508,7 +492,6 @@ a.btn.btn-pror-primary {
 }
 .comments-area .comment .rating-container {
   float: none;
-  margin-top: 10px;
 }
 .comments-area .comment .crfp-rating-breakdown {
   font-size: 0.85rem;
@@ -516,10 +499,9 @@ a.btn.btn-pror-primary {
 }
 @media (min-width: 768px) {
   .comments-area .comment .crfp-rating-breakdown {
-    float: left;
-    width: 33%;
-    clear: none;
     margin-top: 0;
+    width: auto;
+    display: inline-block;
   }
 }
 .comments-area .comment .comment-reply-login, .comments-area .comment .comment-reply-link {
@@ -527,13 +509,21 @@ a.btn.btn-pror-primary {
   color: #E67E22;
   font-style: italic;
 }
+.comments-area .comment .children {
+  list-style: none;
+  margin-top: 20px;
+}
+.comments-area .comment .children .comment {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
 .comments-area .comment-respond {
-  padding: 15px;
   margin-top: 20px;
   box-shadow: 0 3px 5px 0 rgba(174, 174, 174, 0.5);
 }
 .comments-area .comment-respond .comment-reply-title {
-  margin: -15px -15px 15px;
+  margin-bottom: 0;
   padding: 12px 15px;
   background: #E67E22;
   color: #fff;
@@ -541,6 +531,7 @@ a.btn.btn-pror-primary {
   font-weight: 300;
 }
 .comments-area .comment-respond .form-submit {
+  margin-bottom: 0;
   text-align: right;
 }
 .comments-area .comment-respond .submit {
@@ -555,47 +546,45 @@ a.btn.btn-pror-primary {
 .comments-area .comment-respond .submit:hover {
   background-color: #bf6516;
 }
-.comments-area .comment-respond strong {
-  font-size: 16px;
-}
-.comments-area .comment-respond i {
-  font-size: 0.75rem;
-}
-.comments-area .comment-respond i a {
-  color: #E67E22;
-}
-.comments-area .comment-respond .crfp-field label {
-  float: left;
-  width: 80px;
-}
 .comments-area .comment-respond textarea {
   width: 100%;
-}
-.comments-area .comment-respond .cancel-form {
-  color: #424949;
-}
-@media (min-width: 576px) {
-  .comments-area .comment-respond .comment-form {
-    padding-left: 110px;
-  }
-}
-.comments-area .comment-respond .comment-form .logged-in-as {
-  height: 110px;
-  padding-left: 110px;
-}
-@media (min-width: 576px) {
-  .comments-area .comment-respond .comment-form .logged-in-as {
-    height: 75px;
-    padding-left: 0;
-  }
-}
-.comments-area .comment-respond .comment-form .avatar {
-  margin-left: -110px;
-  position: absolute;
-}
-.comments-area .comment-respond .comment-form textarea {
   height: 100px;
   border: 1px solid #E67E22;
+}
+.comments-area .comment-respond .logged-in-as {
+  margin-bottom: 10px;
+}
+.comments-area .comment-respond .logged-in-as strong {
+  font-weight: 600;
+}
+.comments-area .comment-respond .logged-in-as i {
+  font-size: 0.75rem;
+}
+.comments-area .comment-respond .logged-in-as i a {
+  color: #E67E22;
+}
+.comments-area .comment-respond #cancel-comment-reply-link {
+  margin-left: 10px;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+.comments-area .comment-respond .comment-form {
+  padding: 15px;
+}
+.comments-area .comment-respond .comment-form .crfp-field {
+  display: inline-block;
+  float: none;
+  width: auto;
+  color: #b3bcc5;
+  margin-right: 15px;
+}
+.comments-area .comment-respond .comment-form .crfp-field label {
+  margin-right: 5px;
+  font-size: 0.85rem;
+}
+.comments-area .comment-respond .comment-form .star-rating {
+  float: none;
+  display: inline-block;
 }
 
 .homepage-content a {
