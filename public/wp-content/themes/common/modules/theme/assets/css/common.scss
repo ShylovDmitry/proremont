@@ -645,6 +645,14 @@ a.btn.btn-pror-primary {
             }
         }
 
+        .must-log-in {
+            padding: 15px;
+
+            a {
+                color: $color-primary;
+            }
+        }
+
         #cancel-comment-reply-link {
             margin-left: 10px;
             text-decoration: underline;

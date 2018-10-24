@@ -20,7 +20,7 @@
 
                 <div class="text-right">
                     <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>">
-                        <?php _e( 'Регистрация для исполнителей &raquo;', 'common' ); ?>
+                        <?php _e( 'Регистрация для исполнителей', 'common' ); ?> &raquo;
                     </a>
                 </div>
 

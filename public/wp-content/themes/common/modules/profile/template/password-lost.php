@@ -2,7 +2,7 @@
     <?php if (is_user_logged_in()): ?>
         <?php _e( 'Вы уже зарегистрированы.', 'common' ); ?>
     <?php else: ?>
-        <h2 class="mb-4"><?php _e( 'Забыл пароль?', 'common' ); ?></h2>
+        <h2 class="mb-4"><?php _e( 'Забыли пароль?', 'common' ); ?></h2>
 
         <?php module_template('profile/errors', ['param_key' => 'errors']) ?>
 

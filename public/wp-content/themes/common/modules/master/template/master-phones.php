@@ -22,6 +22,9 @@
     </div>
 
     <?php if (!is_user_logged_in()): ?>
-        <div class="registration-required-message alert alert-danger mt-3 d-none">Для просмотра телефона необходимо <a href="<?php echo pror_get_permalink_by_slug('login'); ?>?redirect_to=<?php echo urlencode($redirect_to); ?>">войти</a> или <a href="<?php echo pror_get_permalink_by_slug('register'); ?>">зарегестрироваться</a>.</div>
+        <div class="registration-required-message alert alert-danger mt-3 d-none">
+            <?php printf(__('Для просмотра телефона необходимо <a href="%s">авторизироваться</a>.', 'common'),
+                pror_get_permalink_by_slug('login') . '?redirect_to=' . urlencode($redirect_to) ); ?>
+        </div>
     <?php endif; ?>
 </div>

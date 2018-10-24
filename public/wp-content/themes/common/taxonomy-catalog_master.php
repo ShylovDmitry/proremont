@@ -7,7 +7,7 @@
         <div class="col">
             <div class="colored-box p-3">
                 <div class="switch-catalog-block">
-                    <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> Другие услуги</a>
+                    <a class="button" data-toggle="collapse" href="#catalogBlock" aria-expanded="false" aria-controls="catalogBlock"><span class="oi oi-grid-two-up"></span> <?php _e('Другие услуги', 'common'); ?></a>
 
                     <div class="collapse" id="catalogBlock">
                         <?php module_template('catalog_master/list'); ?>

@@ -563,6 +563,12 @@ a.btn.btn-pror-primary {
 .comments-area .comment-respond .logged-in-as i a {
   color: #E67E22;
 }
+.comments-area .comment-respond .must-log-in {
+  padding: 15px;
+}
+.comments-area .comment-respond .must-log-in a {
+  color: #E67E22;
+}
 .comments-area .comment-respond #cancel-comment-reply-link {
   margin-left: 10px;
   text-decoration: underline;

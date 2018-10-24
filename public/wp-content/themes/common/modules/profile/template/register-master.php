@@ -16,7 +16,7 @@
         <div class="mb-3">
             <div class="text-right">
                 <a href="<?php echo pror_get_permalink_by_slug('register'); ?>">
-                    <?php _e( 'Регистрация для пользователей &raquo;', 'common' ); ?>
+                    <?php _e( 'Регистрация для пользователей', 'common' ); ?> &raquo;
                 </a>
             </div>
 

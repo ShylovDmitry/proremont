@@ -38,7 +38,7 @@ ob_start();
                     </div>
                 </div>
                 <div class="col-6 text-right">
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link"><?php _e('Подробнее &raquo;', 'common'); ?></a>
+                    <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link"><?php _e('Подробнее', 'common'); ?> &raquo;</a>
                 </div>
             </div>
         </article>

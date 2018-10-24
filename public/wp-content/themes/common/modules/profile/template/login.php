@@ -69,7 +69,7 @@
                         <button type="submit" class="btn btn-pror-primary"><?php _e( 'Войти', 'common' ); ?></button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a class="forgot-password" href="<?php echo wp_lostpassword_url(); ?>">
-                            <?php _e( 'Забыл пароль?', 'common' ); ?>
+                            <?php _e( 'Забыли пароль?', 'common' ); ?>
                         </a>
                     </div>
                 </form>
@@ -77,7 +77,7 @@
         </div>
 
         <a href="<?php echo wp_registration_url(); ?>">
-            <?php _e( 'Зарегистрироваться &raquo;', 'common' ); ?>
+            <?php _e( 'Зарегистрироваться', 'common' ); ?> &raquo;
         </a>
     <?php endif; ?>
 </div>
