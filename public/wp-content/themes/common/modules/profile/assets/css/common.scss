@@ -116,7 +116,7 @@ html .select2-container {
         padding: 0 5px;
 
         &.loading {
-            background: red;
+            opacity: .65;
         }
 
         .image-col {

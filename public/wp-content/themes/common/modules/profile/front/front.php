@@ -230,11 +230,19 @@ function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
     }
 }
 
-add_filter('insert_user_meta', function($meta, $user, $update) {
+add_filter('user_register', 'pror_profile_update_user_meta');
+add_filter('profile_update', 'pror_profile_update_user_meta');
+function pror_profile_update_user_meta($user_id) {
+    if (is_admin()) {
+        return;
+    }
+
+    $meta = [];
+
     $meta['_contact_phone'] = 'field_5bc3bcf7b0285';
     $meta['contact_phone'] = pror_profile_get_send_param('tel');
 
-    if (pror_user_has_role('master', $user->ID)) {
+    if (pror_user_has_role('master', $user_id)) {
         $meta['_master_title'] = 'field_59ebc9689376d';
         $meta['master_title'] = pror_profile_get_send_param('user_title');
 
@@ -242,7 +250,7 @@ add_filter('insert_user_meta', function($meta, $user, $update) {
         $meta['master_type'] = pror_profile_get_send_param('user_type');
 
         $meta['_master_url_slug'] = 'field_5ab185c6ed95e';
-        $meta['master_url_slug'] = sanitize_title('user_title');
+        $meta['master_url_slug'] = sanitize_title(pror_profile_get_send_param('user_title'));
 
         $meta['_master_phone'] = 'field_5bb9dffd3c5c8';
         $meta['master_phone'] = pror_profile_get_send_param('user_tel');
@@ -263,11 +271,13 @@ add_filter('insert_user_meta', function($meta, $user, $update) {
         $meta['master_gallery'] = pror_profile_get_send_param('user_images');
 
         $meta['_master_logo'] = 'field_59ebc8f130c58';
-        $meta['master_logo'] = pror_profile_get_send_param('');
+        $meta['master_logo'] = pror_profile_get_send_param('logo_id');
     }
 
-    return $meta;
-}, 10, 3);
+    foreach ($meta as $key => $value) {
+        update_user_meta($user_id, $key, $value);
+    }
+}
 
 function pror_profile_get_send_param($param) {
     switch ($param) {

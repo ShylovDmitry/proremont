@@ -37,7 +37,7 @@ add_action('user_register', function($user_id) {
             }
         }
     }
-}, 11);
+}, 100);
 
 add_action('profile_update', function($user_id, $old_user_data) {
     $old_user = $old_user_data;
@@ -69,7 +69,7 @@ add_action('profile_update', function($user_id, $old_user_data) {
             pror_esputnik_queue_action('EVENT_POST', $data);
         }
     }
-}, 11, 2);
+}, 100, 2);
 
 add_action('delete_user', function($user_id, $reassign) {
     $contact = pror_esputnik_create_contact($user_id);
@@ -152,7 +152,7 @@ function pror_esputnik_create_contact($user_id) {
             }
             $contact['fields'][] = [
                 'id' => $CUSTOM_FIELDS['MASTER_CATALOG'],
-                'value' => '|' . implode('|', $catalogs) . '|',
+                'value' => ':' . implode(':', $catalogs) . ':',
             ];
 
 

@@ -3,7 +3,7 @@ $menu = [
     'settings' => [
         'name' => __('Настройки', 'common'),
         'icon' => 'person',
-        'template' => 'profile/subscriber/saved',
+        'template' => 'profile/master/settings',
     ],
 ];
 ?>

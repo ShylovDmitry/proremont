@@ -77,7 +77,6 @@ function pror_find_term_by($field, $value, $from_lang, $to_lang) {
     }
 
     $terms = get_terms($args);
-
     if (!$terms || !isset($terms[0])) {
         return false;
     }

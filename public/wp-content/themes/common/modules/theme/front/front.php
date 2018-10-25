@@ -74,7 +74,6 @@ add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
 
-
 function pror_user_has_role($roles, $user_id = null) {
     $user = $user_id ? get_user_by('id', $user_id) : wp_get_current_user();
 

@@ -76,13 +76,6 @@ jQuery(function ($) {
         }
     });
 
-    function enableFiles() {
-        $("#files").removeClass('loading').sortable('enable');
-    }
-
-    function disableFiles() {
-        $("#files").addClass('loading').sortable('disable');
-    }
 
     $('#fileupload').fileupload({
         url: ProRemontObj.ajaxurl,
@@ -91,10 +84,12 @@ jQuery(function ($) {
             action: 'pror_profile_image_upload'
         },
         start: function (e) {
-            disableFiles();
+            $("#files").addClass('loading').sortable('disable');
+            $('.upload-gallery').attr('disabled', true);
         },
         stop: function (e) {
-            enableFiles();
+            $("#files").removeClass('loading').sortable('enable');
+            $('.upload-gallery').attr('disabled', false);
         },
         add: function(e, data) {
             data.submit();
@@ -142,10 +137,10 @@ jQuery(function ($) {
             action: 'pror_profile_image_upload'
         },
         start: function (e) {
-            // disableFiles();
+            $('.upload-logo').attr('disabled', true);
         },
         stop: function (e) {
-            // enableFiles();
+            $('.upload-logo').attr('disabled', false)
         },
         add: function(e, data) {
             data.submit();

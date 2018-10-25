@@ -21,7 +21,7 @@ $acf_key = 'user_' . get_current_user_id();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="">+380</span>
                 </div>
-                <input type="tel" name="tel" id="tel" class="form-control" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
+                <input type="tel" name="tel" id="tel" class="form-control" value="<?php the_field('contact_phone', 'user_' . $userdata->ID); ?>" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
             </div>
         </div>
 
@@ -103,7 +103,7 @@ $acf_key = 'user_' . get_current_user_id();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="">+380</span>
                 </div>
-                <input type="tel" name="user_tel" id="user_tel" class="form-control" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
+                <input type="tel" name="user_tel" id="user_tel" class="form-control" value="<?php the_field('master_phone', 'user_' . $userdata->ID); ?>" minlength="9" maxlength="9" required="required" data-rule-digits="true" />
             </div>
         </div>
 

@@ -90,7 +90,7 @@ html .select2-container .select2-selection .select2-selection__rendered {
   padding: 0 5px;
 }
 .image-container .files.loading {
-  background: red;
+  opacity: 0.65;
 }
 .image-container .files .image-col {
   width: 20%;

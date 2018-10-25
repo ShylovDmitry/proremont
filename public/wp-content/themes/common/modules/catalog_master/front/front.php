@@ -30,6 +30,16 @@ add_filter('get_catalog_master', function($term, $taxonomy) {
     return pror_catalog_localize_term($term);
 }, 10, 2);
 
+add_filter('catalog_master_description', function($value, $term_id, $context) {
+    if (!is_admin() && pll_current_language() != pll_default_language()) {
+        $term = get_term($term_id);
+        $term = pror_catalog_localize_term($term, pll_current_language());
+        return $term->description;
+    }
+
+    return $value;
+}, 10, 3);
+
 add_filter('get_terms', function($terms, $taxonomy, $query_vars, $term_query) {
     if (is_admin()) {
         return $terms;
@@ -55,6 +65,7 @@ function pror_catalog_localize_term($term, $to_lang = null) {
     if ($to_lang != pll_default_language()) {
         $term->name = get_field("name_{$to_lang}", "term_{$term->term_id}");
         $term->slug = get_field("slug_{$to_lang}", "term_{$term->term_id}");
+        $term->description = get_field("description_{$to_lang}", "term_{$term->term_id}");
     }
 
     return $term;

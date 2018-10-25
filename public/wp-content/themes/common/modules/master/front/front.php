@@ -99,14 +99,6 @@ add_action('wpseo_register_extra_replacements', function() {
 });
 
 
-add_filter('excerpt_length', function( $length ) {
-    return 20;
-}, 999);
-
-function pror_is_master_published($user_id = null) {
-    return pror_get_master_post_id($user_id);
-}
-
 function pror_get_master_types() {
     return array(
         '' => __('Все', 'common'),
@@ -121,7 +113,9 @@ function pror_get_master_phones($user_id) {
 
     $phones = array();
     foreach ($master_phones as $master_phone) {
-        $phones[] = pror_format_phones($master_phone['tel']);
+        if ($master_phone['tel']) {
+            $phones[] = pror_format_phones($master_phone['tel']);
+        }
     }
 
     $phone = get_field('master_phone', "user_{$user_id}");
@@ -203,7 +197,7 @@ function pror_get_master_catalogs($master_post_id = null) {
     }
 
     $parent_terms = get_terms(array(
-        'term_id' => array_keys($sub_terms),
+        'include' => array_keys($sub_terms),
         'hierarchical' => false,
         'taxonomy' => 'catalog_master',
         'hide_empty' => false,
