@@ -22,3 +22,7 @@ add_action('acf/update_value', function($value, $post_id, $field) {
 
     return $value;
 }, 10, 3);
+
+add_action('profile_update', function() {
+    pror_cache_delete_wildcard('pror:theme:header');
+});
