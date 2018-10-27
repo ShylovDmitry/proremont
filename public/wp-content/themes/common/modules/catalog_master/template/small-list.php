@@ -5,6 +5,6 @@
 ?>
 <div class="catalog-mater-small-list">
     <?php foreach ($terms as $term): $i++ ?>
-        <span><a href="<?php echo esc_url( get_term_link($term) ); ?>" title="<?php echo esc_attr($term->name); ?>" ><?php echo $term->name; ?></a><?php if ($terms_count != $i): ?>, <?php endif; ?></span>
+        <span><a href="<?php echo esc_url( get_term_link($term) ); ?>" title="<?php echo esc_attr($term->name); ?>" ><?php echo $term->name; ?></a><?php if ($terms_count != $i): ?> &bull; <?php endif; ?></span>
     <?php endforeach; ?>
 </div>

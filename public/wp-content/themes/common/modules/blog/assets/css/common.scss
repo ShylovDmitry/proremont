@@ -33,6 +33,7 @@
 
         .post-catalogs {
             font-size: .85rem;
+            color: $color-primary;
 
             a {
                 color: $color-primary;
@@ -70,6 +71,7 @@
             font-size: .85rem;
             margin-top: 15px;
             text-align: center;
+            color: $color-primary;
 
             @media (min-width: $screen-width-xl) {
                 width: 80%;

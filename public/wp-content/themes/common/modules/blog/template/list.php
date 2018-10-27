@@ -32,12 +32,12 @@ ob_start();
                 <?php the_excerpt(); ?>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-7 col-md-9">
                     <div class="post-catalogs">
-                        <?php the_terms(get_the_ID(), 'catalog_master'); ?>
+                        <?php module_template('blog/catalog_master'); ?>
                     </div>
                 </div>
-                <div class="col-6 text-right">
+                <div class="col-5 col-md-3 text-right">
                     <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>" class="post-more-link"><?php _e('Подробнее', 'common'); ?> &raquo;</a>
                 </div>
             </div>

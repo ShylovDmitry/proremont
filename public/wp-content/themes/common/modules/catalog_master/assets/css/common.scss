@@ -14,13 +14,16 @@
 }
 
 .catalog-mater-small-list {
-    a {
-        color: #6b7886;
+    color: #6b7886;
+    .pro & {
+        color: $color-primary;
     }
 
-    span {
-        display: inline-block;
-        padding-right: 2px;
+    a {
+        color: #6b7886;
+        .pro & {
+            color: $color-primary;
+        }
     }
 }
 
