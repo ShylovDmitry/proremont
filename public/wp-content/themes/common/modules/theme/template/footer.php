@@ -47,7 +47,7 @@ ob_start();
                 <p><strong><?php _e('Блог', 'common'); ?></strong></p>
 
                 <div class="blog-list">
-                    <?php module_template('blog/latest-posts-list', array('limit' => 4)); ?>
+                    <?php module_template('blog/list-categories'); ?>
                 </div>
             </div>
 
