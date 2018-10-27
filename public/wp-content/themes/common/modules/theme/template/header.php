@@ -1,6 +1,6 @@
 <?php
 $cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key(null, 'section');
+$cache_key = pror_cache_key(null, 'section,user_id');
 $cache_group = 'pror:theme:header';
 
 $cache = wp_cache_get($cache_key, $cache_group);
@@ -56,7 +56,7 @@ ob_start();
             <ul class="navbar-nav">
                 <?php if (is_user_logged_in()): ?>
                     <?php $current_user = wp_get_current_user(); ?>
-                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $current_user->display_name; ?></a></li>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $current_user->first_name; ?> <?php echo $current_user->last_name; ?></a></li>
                 <?php else: ?>
                     <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
                 <?php endif; ?>

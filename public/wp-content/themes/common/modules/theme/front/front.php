@@ -105,6 +105,10 @@ function pror_cache_key($key = null, $depends_str = '') {
     if (in_array('lang', $depends)) {
         $key .= '-' . pll_current_language();
     }
+    if (in_array('user_id', $depends)) {
+        $user = wp_get_current_user();
+        $key .= '-' . $user->ID;
+    }
 
     foreach ($_COOKIE as $name => $value) {
         if (strpos($name, 'wordpress_logged_in_') === 0) {
