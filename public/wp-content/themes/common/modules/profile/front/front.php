@@ -500,3 +500,15 @@ remove_action('register_new_user', 'wp_send_new_user_notifications');
 add_action('user_register', function($user_id) {
     wp_send_new_user_notifications($user_id, 'admin');
 });
+
+add_filter('wp_new_user_notification_email_admin', function($wp_new_user_notification_email_admin, $user, $blogname) {
+    $phone = pror_format_phones( get_field('contact_phone', "user_{$user->ID}") );
+
+    $message = "\r\n";
+    $message .= sprintf( __( 'Телефон: %s', 'common' ),  $phone['text']) . "\r\n\r\n";
+    $message .= sprintf( __( 'Роль: %s', 'common' ), implode(', ', $user->roles) ) . "\r\n\r\n";
+
+    $wp_new_user_notification_email_admin["message"] .= $message;
+
+    return $wp_new_user_notification_email_admin;
+}, 10, 3);
