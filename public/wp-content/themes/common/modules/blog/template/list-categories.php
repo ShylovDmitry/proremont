@@ -13,7 +13,6 @@ ob_start();
 <ul class="list-unstyled">
     <?php wp_list_categories([
         'title_li' => false,
-        'hide_empty' => false,
     ]); ?>
 </ul>
 
