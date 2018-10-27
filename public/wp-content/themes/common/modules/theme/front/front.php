@@ -70,6 +70,10 @@ add_shortcode('clearfix', function() {
     return '<div class="clearfix"></div>';
 });
 
+add_filter('excerpt_length', function( $length ) {
+    return 20;
+}, 999);
+
 add_action('wp_footer', function() {
     echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
 }, 1000);
