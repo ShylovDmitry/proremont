@@ -49,6 +49,16 @@ add_action('pre_get_posts', function($query) {
     return $query;
 });
 
+add_action('pre_get_posts', function($query) {
+    if (is_admin() || !$query->is_main_query() || !$query->is_category()) {
+        return;
+    }
+
+    $query->set('lang', '');
+
+    return $query;
+});
+
 add_filter('get_terms_args', function($args, $taxonomies) {
     if (!isset($args['lang'])) {
         $args['lang'] = '';

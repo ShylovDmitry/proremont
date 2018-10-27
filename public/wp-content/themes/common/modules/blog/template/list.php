@@ -25,7 +25,7 @@ ob_start();
 
             <div class="header-underlined mb-3">
                 <div class="post-date"><?php echo get_the_date(); ?></div>
-                <div class="post-categories"><?php the_terms(get_the_ID(), 'category'); ?></div>
+                <div class="post-categories"><?php module_template('blog/categories'); ?></div>
             </div>
 
             <div class="excerpt">
