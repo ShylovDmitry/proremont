@@ -196,6 +196,7 @@
 }
 .master-detailed .content {
   font-size: 18px;
+  word-break: break-word;
 }
 .master-detailed.pro .main-content {
   background: #FEF8E9;
