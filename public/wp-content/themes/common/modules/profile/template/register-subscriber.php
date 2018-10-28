@@ -1,6 +1,9 @@
 <div class="profile-register">
     <?php if (is_user_logged_in()): ?>
-        <?php _e( 'Вы уже зарегистрированы.', 'common' ); ?>
+        <?php printf(
+            __( 'Вы уже зарегистрированы. Перейдите в свой <a href="%s">профиль</a>.', 'common' ),
+            pror_get_permalink_by_slug('profile')
+        ); ?>
     <?php elseif (!get_option('users_can_register')): ?>
         <?php _e( 'Регистрация для новых пользователей временно закрыта.', 'common' ); ?>
     <?php else: ?>
@@ -8,7 +11,7 @@
 
         <p>
             <?php printf(
-                __('Уже зарегистрированы? <a href="%s">Войти</a> на сайт.', 'common'),
+                __('Уже зарегистрированы? <a href="%s">Войти &raquo;</a>', 'common'),
                 wp_login_url()
             ); ?>
         </p>
@@ -16,13 +19,16 @@
         <?php module_template('profile/errors', ['param_key' => 'register-errors']) ?>
 
         <div class="row mb-3">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
 
-                <div class="text-right">
-                    <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>">
-                        <?php _e( 'Регистрация для исполнителей', 'common' ); ?> &raquo;
-                    </a>
-                </div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?php echo wp_registration_url(); ?>">Посетитель</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo pror_get_permalink_by_slug('register-master'); ?>"><?php _e( 'Регистрация для Исполнителя', 'common' ); ?> &raquo;</a>
+                    </li>
+                </ul>
 
                 <form action="<?php echo wp_registration_url(); ?>" method="post" class="form-container from-validation-simple">
                     <input type="hidden" name="user_role" value="subscriber" />

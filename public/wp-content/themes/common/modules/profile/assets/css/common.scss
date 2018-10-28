@@ -36,6 +36,27 @@
         margin-top: 20px;
         display: block;
     }
+
+    .nav-tabs {
+        margin-bottom: -1px;
+        border-color: $color-primary;
+
+
+        .nav-link.active {
+            background: #fde7d3;
+            border-color: #d8ab76 #d8ab76 #fde7d3;
+        }
+        .nav-link:hover {
+            border-color: #d8ab76 #d8ab76 #fde7d3;
+        }
+    }
+
+    .register-links {
+        text-align: center;
+        border: 1px solid #dee0e0;
+        padding: 20px 10px;
+        background: #f6f7f7;
+    }
 }
 
 .profile-menu {
@@ -99,8 +120,6 @@ html .select2-container {
         height: 100%;
     }
 }
-
-
 
 
 .image-container {

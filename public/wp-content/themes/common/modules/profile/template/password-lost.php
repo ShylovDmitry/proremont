@@ -1,10 +1,18 @@
 <div class="profile-login">
     <?php if (is_user_logged_in()): ?>
-        <?php _e( 'Вы уже зарегистрированы.', 'common' ); ?>
+        <p><?php printf(
+                __('Уже зарегистрированы? <a href="%s">Войти &raquo;</a>', 'common'),
+                wp_login_url()
+            ); ?></p>
     <?php else: ?>
         <h2 class="mb-4"><?php _e( 'Забыли пароль?', 'common' ); ?></h2>
 
         <?php module_template('profile/errors', ['param_key' => 'errors']) ?>
+
+        <p><?php printf(
+                __('Уже зарегистрированы? <a href="%s">Войти &raquo;</a>', 'common'),
+                wp_login_url()
+            ); ?></p>
 
         <p><?php _e("Введите email и мы отправим ссылку для востановления пароля.", 'common'); ?></p>
 
@@ -20,10 +28,5 @@
                 </form>
             </div>
         </div>
-
-        <p><?php printf(
-            __('<a href="%s">Войти</a> на сайт.', 'common'),
-            wp_login_url()
-        ); ?></p>
     <?php endif; ?>
 </div>

@@ -27,6 +27,23 @@
   margin-top: 20px;
   display: block;
 }
+.profile-login .nav-tabs, .profile-register .nav-tabs, .profile-settings .nav-tabs {
+  margin-bottom: -1px;
+  border-color: #E67E22;
+}
+.profile-login .nav-tabs .nav-link.active, .profile-register .nav-tabs .nav-link.active, .profile-settings .nav-tabs .nav-link.active {
+  background: #fde7d3;
+  border-color: #d8ab76 #d8ab76 #fde7d3;
+}
+.profile-login .nav-tabs .nav-link:hover, .profile-register .nav-tabs .nav-link:hover, .profile-settings .nav-tabs .nav-link:hover {
+  border-color: #d8ab76 #d8ab76 #fde7d3;
+}
+.profile-login .register-links, .profile-register .register-links, .profile-settings .register-links {
+  text-align: center;
+  border: 1px solid #dee0e0;
+  padding: 20px 10px;
+  background: #f6f7f7;
+}
 
 .profile-menu .oi {
   font-size: 12px;

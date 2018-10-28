@@ -34,6 +34,4 @@
 
         <button type="submit" class="btn btn-pror-primary"><?php _e( 'Обновить', 'common' ); ?></button>
     </form>
-
-    <a href="<?php echo wp_logout_url(); ?>" class="logout-url">Выйти</a>
 </div>

@@ -212,6 +212,7 @@ function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
             'first_name'    => pror_profile_get_send_param('first_name'),
             'last_name'     => pror_profile_get_send_param('last_name'),
             'nickname'      => pror_profile_get_send_param('first_name'),
+            'role'          => $role,
         ));
     } else {
         if ( ! is_email( $email ) ) {
@@ -311,11 +312,21 @@ add_action( 'login_form_register', function() {
         if ( ! get_option( 'users_can_register' ) ) {
             $redirect_url = add_query_arg( 'register-errors', 'closed', $redirect_url );
         } else {
-            $result = pror_profile_register_user($_POST['email'], $_POST['user_role']);
+            $email = $_POST['email'];
+
+            $is_migrate_subscriber = is_user_logged_in() && pror_user_has_role('subscriber') && $_POST['user_role'] == 'master';
+            if ($is_migrate_subscriber) {
+                $userdata = get_userdata(get_current_user_id());
+                $email = $userdata->user_email;
+            }
+
+            $result = pror_profile_register_user($email, $_POST['user_role']);
 
             if ( is_wp_error( $result ) ) {
                 $errors = join( ',', $result->get_error_codes() );
                 $redirect_url = add_query_arg( 'register-errors', $errors, $redirect_url );
+            } else if ($is_migrate_subscriber) {
+                $redirect_url = pror_get_permalink_by_slug( 'profile' );
             } else {
                 $redirect_url = pror_get_permalink_by_slug( 'login' );
                 $redirect_url = add_query_arg( 'registered', $_POST['email'], $redirect_url );
