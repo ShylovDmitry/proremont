@@ -14,4 +14,4 @@
     <?php endforeach; ?>
 </ul>
 
-<a href="<?php echo wp_logout_url(); ?>" class="logout-url">Выйти</a>
+<a href="<?php echo wp_logout_url(); ?>" class="logout-url"><?php _e('Выйти', 'common'); ?></a>

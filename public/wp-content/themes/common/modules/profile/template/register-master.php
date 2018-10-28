@@ -25,7 +25,7 @@ $userdata = get_userdata(get_current_user_id());
 
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo pror_get_permalink_by_slug('register-master'); ?>">Исполнитель</a>
+                        <a class="nav-link active" href="<?php echo pror_get_permalink_by_slug('register-master'); ?>"><?php _e('Исполнитель', 'common'); ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo wp_registration_url(); ?>"><?php _e( 'Регистрация для Посетителя', 'common' ); ?> &raquo;</a>

@@ -23,7 +23,7 @@
 
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo wp_registration_url(); ?>">Посетитель</a>
+                        <a class="nav-link active" href="<?php echo wp_registration_url(); ?>"><?php _e('Посетитель', 'common'); ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo pror_get_permalink_by_slug('register-master'); ?>"><?php _e( 'Регистрация для Исполнителя', 'common' ); ?> &raquo;</a>
