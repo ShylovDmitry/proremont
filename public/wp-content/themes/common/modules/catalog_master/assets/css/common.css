@@ -22,9 +22,6 @@
 .pro .catalog-mater-small-list a {
   color: #E67E22;
 }
-.catalog-mater-small-list span {
-  display: inline-block;
-}
 
 .catalog-mater-3col a, .catalog-mater-3col a:hover {
   color: #424949;

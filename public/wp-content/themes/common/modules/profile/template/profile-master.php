@@ -5,6 +5,11 @@ $menu = [
         'icon' => 'person',
         'template' => 'profile/master/settings',
     ],
+    'pro' => [
+        'name' => __('PRO-аккаунт', 'common'),
+        'icon' => 'dollar',
+        'link' => pror_get_permalink_by_slug('pro-akkaunt-dlya-masterov'),
+    ],
 ];
 ?>
 
