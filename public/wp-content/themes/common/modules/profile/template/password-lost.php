@@ -14,7 +14,7 @@
                 wp_login_url()
             ); ?></p>
 
-        <p><?php _e("Введите email и мы отправим ссылку для востановления пароля.", 'common'); ?></p>
+        <p><?php _e("Введите Email и мы отправим ссылку для восстановления пароля.", 'common'); ?></p>
 
         <div class="row mb-3">
             <div class="col-sm-6">
@@ -24,7 +24,7 @@
                         <input type="email" name="user_login" id="user_login" class="form-control" required="required" />
                     </div>
 
-                    <button type="submit" class="btn btn-pror-primary"><?php _e( 'Востановить пароль', 'common' ); ?></button>
+                    <button type="submit" class="btn btn-pror-primary"><?php _e( 'Восстановить пароль', 'common' ); ?></button>
                 </form>
             </div>
         </div>

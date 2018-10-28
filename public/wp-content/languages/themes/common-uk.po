@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2018-10-28T22:32:15+01:00\n"
-"PO-Revision-Date: 2018-10-28 23:33+0200\n"
+"POT-Creation-Date: 2018-10-28T23:31:34+01:00\n"
+"PO-Revision-Date: 2018-10-29 00:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -22,11 +22,11 @@ msgid "404"
 msgstr "404"
 
 #: comments.php:61
-msgid "Коментарии закрыты."
+msgid "Комментарии закрыты."
 msgstr "Коментарі закриті."
 
 #: comments.php:76
-msgid "Оставить коментарий"
+msgid "Оставить комментарий"
 msgstr "Залишити коментар"
 
 #: comments.php:76
@@ -48,7 +48,7 @@ msgstr "Реклама на ProRemont.co"
 
 #: modules/prom/template/sidebar-col.php:4
 msgid "Экономьте на ремонте!"
-msgstr "Економ на ремонті!"
+msgstr "Економте на ремонті!"
 
 #: modules/prom/template/sidebar-col.php:5
 msgid "знает как"
@@ -64,8 +64,8 @@ msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
 msgstr "<a href=\"%s#comments\"><span>Відгуки (</span>"
 
 #: modules/catalog_master/template/list.php:33
-msgid "Смотреть все"
-msgstr "Дивитись все"
+msgid "Смотреть всех"
+msgstr "Дивитись усіх"
 
 #: modules/catalog_master/template/list.php:33
 msgid "из раздела"
@@ -91,7 +91,7 @@ msgid "Похожие статьи"
 msgstr "Схожі статті"
 
 #: modules/blog/template/detailed.php:51
-msgid "Коментарии"
+msgid "Комментарии"
 msgstr "Коментарі"
 
 #: modules/blog/template/list.php:41 modules/blog/template/small.php:11
@@ -157,23 +157,23 @@ msgstr "Ви вийшли."
 
 #: modules/profile/template/login.php:25
 msgid ""
-"Вы успешно зарегестрировались на ProRemont. Мы отправили письм с паролем на "
+"Вы успешно зарегистрировались на ProRemont. Мы отправили письмо с паролем на "
 "<strong>%s</strong>."
 msgstr ""
-"Ви успішно зареєструвались на  ProRemont. Ми відправили лист з паролем на "
+"Ви успішно зареєструвались на ProRemont. Ми відправили лист з паролем на "
 "<strong>%s</strong>."
 
 #: modules/profile/template/login.php:34
-msgid "Проверьте вашу почту для востановления пароля."
+msgid "Проверьте вашу почту для восстановления пароля."
 msgstr "Перевірте вашу пошту для відновлення пароля."
 
 #: modules/profile/template/login.php:40
-msgid "Ваш пароль был изменен. Теперь можете ввойти на сайт."
+msgid "Ваш пароль был изменен. Теперь можете войти на сайт."
 msgstr "Ваш пароль було змінено. Тепер можете увійти на сайт."
 
 #: modules/profile/template/login.php:45
-msgid "Используйте социальные сети что бы войти:"
-msgstr "Використайте соціальні мережі щоб увійти:"
+msgid "Используйте социальные сети, чтобы войти:"
+msgstr "Використайте соціальні мережі, щоб увійти:"
 
 #: modules/profile/template/login.php:50
 msgid "Или введите свой Email и пароль:"
@@ -226,7 +226,7 @@ msgstr "Ви - відвідувач?"
 
 #: modules/profile/template/login.php:88
 msgid ""
-"Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, что бы получить "
+"Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить "
 "полный доступ к сайту."
 msgstr ""
 "Шукаєте майстрів, дизайнерів, будівельників? Реєструйтесь, щоб отримати "
@@ -256,7 +256,7 @@ msgstr "Увага!"
 
 #: modules/profile/template/profile-master.php:30
 msgid ""
-"Ваш аккаунт не подтверджен. Что бы подтвердить аккаунт, позвоните нашому "
+"Ваш аккаунт не подтверджен. Чтобы подтвердить аккаунт, позвоните нашому "
 "менеджеру <nobr>(063) 199 63 04</nobr>."
 msgstr ""
 "Ваш аккаунт не підтверджено. Щоб підтвердити аккаунт, подзвоніть нашому "
@@ -351,8 +351,9 @@ msgid "Основные категории"
 msgstr "Основні категорії"
 
 #: modules/profile/template/master/settings.php:126
+#: modules/profile/template/register-master.php:122
 msgid "Выбирете категории"
-msgstr "Виберіть категорії"
+msgstr "Оберіть категорії"
 
 #: modules/profile/template/master/settings.php:141
 #: modules/profile/template/register-master.php:135
@@ -426,11 +427,11 @@ msgstr ""
 "конфіденційності</a>."
 
 #: modules/profile/template/password-lost.php:17
-msgid "Введите email и мы отправим ссылку для востановления пароля."
-msgstr "Введіть email і ми відправимо ссилку для відновлення пароля."
+msgid "Введите Email и мы отправим ссылку для восстановления пароля."
+msgstr "Введіть Email і ми відправимо ссилку для відновлення пароля."
 
 #: modules/profile/template/password-lost.php:27
-msgid "Востановить пароль"
+msgid "Восстановить пароль"
 msgstr "Відновити пароль"
 
 #: modules/profile/front/front.php:86
@@ -443,7 +444,7 @@ msgstr "Необхідно ввести пароль."
 
 #: modules/profile/front/front.php:88
 msgid ""
-"Пользователь с таким Email не зарегестрирован. Возможно вы использовали "
+"Пользователь с таким Email не зарегистрирован. Возможно вы использовали "
 "другой Email при регистрации"
 msgstr ""
 "Користувач з таким Email не зареєстрований. Можливо ви використали інший "
@@ -451,7 +452,7 @@ msgstr ""
 
 #: modules/profile/front/front.php:89
 msgid ""
-"Пользователь с таким Email уже зарегестрирован. <a href='%s'>Войти</a> на "
+"Пользователь с таким Email уже зарегистрирован. <a href='%s'>Войти</a> на "
 "сайт."
 msgstr ""
 "Користувач з таким Email вже зареєстрований. <a href='%s'>Увійти</a> на сайт."
@@ -466,14 +467,14 @@ msgstr "Ви ввели невірний Email."
 
 #: modules/profile/front/front.php:92
 msgid "Пользователь с таким Email уже зарегистрирован."
-msgstr "Користувач з таким Email вже усніжє."
+msgstr "Користувач з таким Email вже зареєстрований."
 
 #: modules/profile/front/front.php:94 modules/profile/front/front.php:95
 msgid "Пользователь с таким Email не найден."
 msgstr "Користувач з таким Email не знайдений."
 
 #: modules/profile/front/front.php:96 modules/profile/front/front.php:97
-msgid "Ссылка для востановления пароля устарела."
+msgid "Ссылка для восстановления пароля устарела."
 msgstr "Ссилка для відновлення пароль застаріла."
 
 #: modules/profile/front/front.php:98
@@ -486,7 +487,7 @@ msgstr "Пробачте, ви не можете використовувати 
 
 #: modules/profile/front/front.php:100
 msgid "Неправильное Имя."
-msgstr "Неправильние Ім'я."
+msgstr "Неправильне Ім'я."
 
 #: modules/profile/front/front.php:101
 msgid "Неправильное Фамилия."
@@ -509,7 +510,7 @@ msgid "Неправильный Тип."
 msgstr "Невірний Тип."
 
 #: modules/profile/front/front.php:106
-msgid "Неправильный Робочий телефон."
+msgid "Неправильный Рабочий телефон."
 msgstr "Невірний Робочий телефон."
 
 #: modules/profile/front/front.php:107
@@ -564,11 +565,15 @@ msgstr "Показати"
 
 #: modules/master/template/master-phones.php:26
 msgid "Для просмотра телефона необходимо <a href=\"%s\">авторизироваться</a>."
-msgstr "Для перегляду телефона необхідно <a href=\"%s\">авторизуватись</a>."
+msgstr "Для перегляду телефону необхідно <a href=\"%s\">авторизуватись</a>."
 
 #: modules/master/template/detailed.php:33
 msgid "Проверено"
 msgstr "Перевірено"
+
+#: modules/master/template/detailed.php:52
+msgid "Пожаловаться"
+msgstr "Поскаржитись"
 
 #: modules/master/template/detailed.php:103
 msgid "Отзывы (%s)"
@@ -576,7 +581,7 @@ msgstr "Відгуки (%s)"
 
 #: modules/master/template/detailed.php:129
 msgid "Пожаловаться на исполнителя"
-msgstr "Пожалітись на виконавця"
+msgstr "Поскаржитись на виконавця"
 
 #: modules/master/front/front.php:114
 msgid "Все"
@@ -591,8 +596,8 @@ msgid "Компании"
 msgstr "Компанії"
 
 #: modules/theme/template/gallery.php:32
-msgid "Недавно добавленые фотографии"
-msgstr "Недавно додані фотографії"
+msgid "Недавно добавленные фотографии"
+msgstr "Нещодавно додані фотографії"
 
 #: modules/theme/template/header.php:63
 msgid "Найти мастера"
@@ -691,9 +696,6 @@ msgstr "Common"
 
 #~ msgid "Регистрация для исполнителей &raquo;"
 #~ msgstr "Реєстрація для виконавців  &raquo;"
-
-#~ msgid "Пожаловаться"
-#~ msgstr "Пожалітись"
 
 #~ msgid "Оценки"
 #~ msgstr "Оцінки"

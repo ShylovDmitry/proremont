@@ -30,7 +30,7 @@ ob_start();
             <div class="item item-<?php echo $p%3 + 1; ?> py-3 px-3 mt-4 d-none" id="catalogSubcategory_<?php echo $main_catalog->term_id; ?>">
                 <div class="arrow"></div>
 
-                <a class="all" title="<?php echo esc_attr($main_catalog->name); ?>" href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php _e('Смотреть все', 'common'); ?></a> <span class="help-text"><?php _e('из раздела', 'common'); ?> <?php echo $main_catalog->name; ?></span>
+                <a class="all" title="<?php echo esc_attr($main_catalog->name); ?>" href="<?php echo esc_url( get_term_link($main_catalog) ); ?>"><?php _e('Смотреть всех', 'common'); ?></a> <span class="help-text"><?php _e('из раздела', 'common'); ?> <?php echo $main_catalog->name; ?></span>
                 <hr />
 
                 <div class="row">

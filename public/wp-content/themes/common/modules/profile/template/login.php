@@ -22,7 +22,7 @@
                 <div class="alert alert-success" role="alert">
                     <?php
                         printf(
-                            __( 'Вы успешно зарегестрировались на ProRemont. Мы отправили письм с паролем на <strong>%s</strong>.', 'common' ),
+                            __( 'Вы успешно зарегистрировались на ProRemont. Мы отправили письмо с паролем на <strong>%s</strong>.', 'common' ),
                             $_REQUEST['registered']
                         );
                     ?>
@@ -31,18 +31,18 @@
 
             <?php if ( isset($_REQUEST['checkemail']) && $_REQUEST['checkemail'] == 'confirm' ) : ?>
                 <div class="alert alert-warning" role="alert">
-                    <?php _e( 'Проверьте вашу почту для востановления пароля.', 'common' ); ?>
+                    <?php _e( 'Проверьте вашу почту для восстановления пароля.', 'common' ); ?>
                 </div>
             <?php endif; ?>
 
             <?php if ( isset( $_REQUEST['password'] ) && $_REQUEST['password'] == 'changed' ) : ?>
                 <div class="alert alert-success" role="alert">
-                    <?php _e( 'Ваш пароль был изменен. Теперь можете ввойти на сайт.', 'common' ); ?>
+                    <?php _e( 'Ваш пароль был изменен. Теперь можете войти на сайт.', 'common' ); ?>
                 </div>
             <?php endif; ?>
 
 
-            <div class="mb-1"><?php _e('Используйте социальные сети что бы войти:', 'common'); ?></div>
+            <div class="mb-1"><?php _e('Используйте социальные сети, чтобы войти:', 'common'); ?></div>
             <?php echo oa_social_login_render_login_form ('custom', ['callback_uri' => $_GET['redirect_to'] ? $_GET['redirect_to'] : pror_get_permalink_by_slug('profile')]); ?>
 
             <hr />
@@ -85,7 +85,7 @@
                 <hr class="my-4" style="width: 70%"/>
 
                 <h5><?php _e( 'Вы - посетитель?', 'common' ); ?></h5>
-                <p><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, что бы получить полный доступ к сайту.', 'common'); ?></p>
+                <p><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный доступ к сайту.', 'common'); ?></p>
                 <a href="<?php echo wp_registration_url(); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Посетитель</b>', 'common' ); ?></a>
             </div>
         </div>

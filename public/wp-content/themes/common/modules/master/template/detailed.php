@@ -49,7 +49,7 @@
                     <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
 
                     <div class="phone"><?php module_template('master/master-phones'); ?></div>
-<!--                    <div class="report mt-2 text-right"><a href="#" data-toggle="modal" data-target="#reportModal">--><?php //_e('Пожаловаться', 'common'); ?><!--</a></div>-->
+                    <div class="report mt-1"><a href="#" data-toggle="modal" data-target="#reportModal"><?php _e('Пожаловаться', 'common'); ?></a></div>
                 </div>
             </div>
             <div class="clearfix"></div>

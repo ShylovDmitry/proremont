@@ -58,7 +58,7 @@ if ( post_password_required() ) {
 	endif;
 
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments"><?php _e( 'Коментарии закрыты.', 'common' ); ?></p>
+		<p class="no-comments"><?php _e( 'Комментарии закрыты.', 'common' ); ?></p>
 	<?php
 	endif;
 	?>
@@ -73,7 +73,7 @@ if ( post_password_required() ) {
         global $wp;
         $logged_user = wp_get_current_user();
 
-        $title_text = (get_post_type() == 'post') ? __('Оставить коментарий', 'common') : __('Оставить отзыв', 'common');
+        $title_text = (get_post_type() == 'post') ? __('Оставить комментарий', 'common') : __('Оставить отзыв', 'common');
 
         comment_form(array(
             'logged_in_as' => '<div class="logged-in-as">' . sprintf('<strong>%1$s</strong> <i>(%2$s)</i>',
