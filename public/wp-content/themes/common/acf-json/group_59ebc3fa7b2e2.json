@@ -157,14 +157,14 @@
             "name": "master_phones",
             "type": "repeater",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "min": 1,
+            "min": 0,
             "max": 10,
             "layout": "table",
             "button_label": "Добавить телефон",
@@ -177,7 +177,7 @@
                     "name": "tel",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -233,26 +233,6 @@
             },
             "default_value": "",
             "placeholder": "",
-            "admin_only": 0
-        },
-        {
-            "key": "field_59ebc9769376e",
-            "label": "Короткое описание",
-            "name": "master_excerpt",
-            "type": "textarea",
-            "instructions": "Отображаться в результатах поиска. Ограничение 250 символов.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": 250,
-            "placeholder": "",
-            "rows": 4,
             "admin_only": 0
         },
         {
@@ -325,12 +305,12 @@
             "admin_only": 0
         },
         {
-            "key": "field_5a3276c4462a1",
-            "label": "",
-            "name": "",
-            "type": "message",
+            "key": "field_5bb9dffd3c5c8",
+            "label": "Телефон",
+            "name": "master_phone",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -338,29 +318,11 @@
                 "id": ""
             },
             "admin_only": 0,
-            "message": "<div class=\"message-to-master\">\r\n\r\n<h3>Команда ProRemont рада тебя приветствовать!<\/h3>\r\n\r\n<br \/>\r\n<p>По всем вопросам обращайся к <u>персональному менеджеру<\/u><br \/>\r\nАлександр, тел.: <a href=\"tel:+380631996304\">063 199 63 04<\/a>.<\/p>\r\n\r\n<h5>Подарок!<\/h5>\r\n<p>Получите <a href=\"https:\/\/proremont.co\/pro-akkaunt-dlya-masterov\/?utm_source=adminpanel&utm_medium=banner&utm_campaign=notice\" target=\"_blank\">PRO-аккаунт<\/a> совершенно бесплатно. <a href=\"https:\/\/proremont.co\/referalnaya-programma\/\" target=\"_blank\">Показать условия<\/a>.<\/p>\r\n\r\n<h5>P.S.<\/h5>\r\n<p>Поставь нам <a href=\"https:\/\/www.facebook.com\/pg\/ProRemont.Catalog\/reviews\/\" target=\"_blank\">оценку 5 баллов на Facebook<\/a>. Спасибо!<\/p>\r\n<\/div>",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5a967ee9592b1",
-            "label": "Рекомендация",
-            "name": "master_referral_tel",
-            "type": "text",
-            "instructions": "Напиши телефонный номер человека, который порекомендовал тебе наш сайт.<br \/><u>Мы подарим ему подарок.<\/u>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "063 xxx xx xx",
-            "prepend": "Мне вас порекомендовал этот человек",
+            "placeholder": "",
+            "prepend": "",
             "append": "",
-            "admin_only": 0
+            "maxlength": ""
         }
     ],
     "location": [
@@ -372,7 +334,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -380,5 +342,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1532344037
+    "modified": 1539554900
 }

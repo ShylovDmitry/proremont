@@ -1,35 +1,43 @@
 html .col-prom-sidebar {
   padding-left: 0;
   flex-basis: 315px;
-  max-width: 315px; }
+  max-width: 315px;
+}
 
 #prom_mobile1,
 #prom_mobile2 {
   margin-left: -15px;
   margin-right: -15px;
-  margin-bottom: 10px; }
-  #prom_mobile1 > div,
-  #prom_mobile2 > div {
-    margin: 0 auto; }
+  margin-bottom: 10px;
+}
+#prom_mobile1 > div,
+#prom_mobile2 > div {
+  margin: 0 auto;
+}
 
 #prom_sidebar .reklama-link {
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: #7c898b;
   text-decoration: none;
-  border-bottom: 1px dashed; }
-  #prom_sidebar .reklama-link:hover {
-    border-bottom-style: solid; }
+  border-bottom: 1px dashed;
+}
+#prom_sidebar .reklama-link:hover {
+  border-bottom-style: solid;
+}
 
 .prom-mobile .reklama-block {
   width: 300px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 .prom-mobile .reklama-link {
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: #7c898b;
   text-decoration: none;
-  border-bottom: 1px dashed; }
-  .prom-mobile .reklama-link:hover {
-    border-bottom-style: solid; }
+  border-bottom: 1px dashed;
+}
+.prom-mobile .reklama-link:hover {
+  border-bottom-style: solid;
+}
 
 .prom-card .btn {
   font-size: 1rem;
@@ -37,6 +45,7 @@ html .col-prom-sidebar {
   color: #fff;
   padding: 8px 12px;
   text-decoration: none;
-  display: inline-block; }
+  display: inline-block;
+}
 
 /*# sourceMappingURL=common.css.map */

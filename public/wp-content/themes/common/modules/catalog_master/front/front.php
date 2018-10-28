@@ -8,7 +8,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('catalog-master-common', get_module_js('catalog_master/common.js'), array('jquery'), dlv_get_ver(), true);
 });
 
-
 function pror_get_catalog($parent_id = 0, $hide_empty = true) {
     $terms = get_terms(array(
         'parent' => $parent_id,
@@ -17,7 +16,6 @@ function pror_get_catalog($parent_id = 0, $hide_empty = true) {
         'hide_empty' => false,
         'meta_key' => 'sort',
         'orderby' => 'meta_value',
-        'lang' => pll_current_language(),
     ));
     if (!$hide_empty) {
         return $terms;
@@ -30,7 +28,6 @@ function pror_get_catalog($parent_id = 0, $hide_empty = true) {
         }
     }
     return $non_empty_terms;
-
 }
 
 function pror_catalog_get_count($tax = null) {
@@ -48,7 +45,6 @@ function pror_catalog_get_count($tax = null) {
                 'taxonomy' => 'catalog_master',
                 'hide_empty' => false,
                 'fields' => 'ids',
-                'lang' => '',
             ));
             $cat = array_merge($cat, $sub_taxes);
         }
@@ -58,7 +54,6 @@ function pror_catalog_get_count($tax = null) {
             'taxonomy' => 'catalog_master',
             'hide_empty' => false,
             'fields' => 'ids',
-            'lang' => '',
         ));
     }
 

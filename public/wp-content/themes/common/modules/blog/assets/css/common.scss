@@ -33,6 +33,7 @@
 
         .post-catalogs {
             font-size: .85rem;
+            color: $color-primary;
 
             a {
                 color: $color-primary;
@@ -66,15 +67,11 @@
             float: right;
         }
 
-        .oneall_sharing_icons {
-            display: flex;
-            justify-content: center;
-        }
-
         .post-catalogs {
             font-size: .85rem;
             margin-top: 15px;
             text-align: center;
+            color: $color-primary;
 
             @media (min-width: $screen-width-xl) {
                 width: 80%;
@@ -84,6 +81,15 @@
 
             a {
                 color: $color-primary;
+            }
+        }
+
+        .post-sharing {
+            margin-top: 20px;
+
+            .oneall_sharing_icons {
+                display: flex;
+                justify-content: center;
             }
         }
     }
@@ -137,5 +143,13 @@ article.small-post {
             color: #fff;
         }
 
+    }
+}
+
+.latest-posts-list {
+    padding-left: 1rem;
+
+    li {
+        margin-bottom: .5rem;
     }
 }

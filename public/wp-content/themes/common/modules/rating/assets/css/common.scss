@@ -3,11 +3,18 @@
 div.rating-total {
     text-align: center;
 
-    &.comment-rating-field-pro-plugin a {
+    .pror-score {
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        font-weight: 900;
+    }
+
+    .comment-rating-field-pro-plugin a {
         font-size: 0;
 
         span {
-            color: $color-dark;
+            color: #85898e;
             font-size: 12px;
         }
         &:hover span {
@@ -29,6 +36,36 @@ div.rating-total {
     }
 }
 
+div.rating-total-inline {
+
+    .comment-rating-field-pro-plugin a {
+        font-size: 0;
+
+        span {
+            color: #85898e;
+            font-size: 12px;
+        }
+        &:hover span {
+            text-decoration: underline;
+        }
+    }
+
+    & span.rating-always-on {
+        margin-right: 0 !important;
+    }
+
+    //& .total {
+    //    display: block;
+    //    margin-top: 3px;
+    //}
+
+    & .rating-container {
+        margin: 0;
+        float: none;
+        clear: none;
+    }
+}
+
 .rating-breakdown {
     .rating-container {
         width: 33.3%;
@@ -46,10 +83,3 @@ div.rating-total {
     }
 }
 
-
-.pror-score {
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-    font-weight: 900;
-}

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2018-08-09T12:10:42+02:00\n"
-"PO-Revision-Date: 2018-08-09 13:13+0300\n"
+"POT-Creation-Date: 2018-10-28T14:48:19+01:00\n"
+"PO-Revision-Date: 2018-10-28 15:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: common\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -21,29 +21,25 @@ msgstr ""
 msgid "404"
 msgstr "404"
 
-#: comments.php:63
+#: comments.php:61
 msgid "Коментарии закрыты."
 msgstr "Коментарі закриті."
 
-#: comments.php:74
+#: comments.php:76
 msgid "Оставить коментарий"
 msgstr "Залишити коментар"
 
-#: comments.php:74
+#: comments.php:76
 msgid "Оставить отзыв"
 msgstr "Залишити відгук"
 
-#: comments.php:75
-msgid "Написать новый коментарий"
-msgstr "Написати новий коментар"
+#: comments.php:81
+msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>"
+msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>"
 
-#: comments.php:75
-msgid "Написать новый отзыв"
-msgstr "Написати новий відгук"
-
-#: comments.php:85
-msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>."
-msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>."
+#: taxonomy-catalog_master.php:10
+msgid "Другие услуги"
+msgstr "Інші послуги"
 
 #: modules/prom/template/mobile1.php:15
 #: modules/prom/template/sidebar-col.php:24
@@ -63,14 +59,15 @@ msgid "Сэкономить <strong>до $3,000</strong>"
 msgstr "Зекономити <strong>до $3,000</strong>"
 
 #: modules/rating/template/total.php:19
+#: modules/rating/template/total-inline.php:17
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
 msgstr "<a href=\"%s#comments\"><span>Відгуки (</span>"
 
-#: modules/catalog_master/template/list.php:50
+#: modules/catalog_master/template/list.php:33
 msgid "Смотреть все"
 msgstr "Дивитись все"
 
-#: modules/catalog_master/template/list.php:50
+#: modules/catalog_master/template/list.php:33
 msgid "из раздела"
 msgstr "з розділу"
 
@@ -84,6 +81,8 @@ msgstr "Останні статті"
 
 #: modules/blog/template/latest-posts.php:44
 #: modules/blog/template/related-posts.php:54
+#: modules/blog/template/list-categories.php:19
+#: modules/blog/template/latest-posts-list.php:32
 msgid "Смотреть все статьи"
 msgstr "Дивитись всі статті"
 
@@ -91,14 +90,13 @@ msgstr "Дивитись всі статті"
 msgid "Похожие статьи"
 msgstr "Схожі статті"
 
-#: modules/blog/template/detailed.php:47
+#: modules/blog/template/detailed.php:51
 msgid "Коментарии"
 msgstr "Коментарі"
 
 #: modules/blog/template/list.php:41 modules/blog/template/small.php:11
-#: modules/master/template/item.php:45
-msgid "Подробнее &raquo;"
-msgstr "Детальнійше &raquo;"
+msgid "Подробнее"
+msgstr "Детальнійше"
 
 #: modules/partner/template/front-list.php:36
 msgid "Партнеры"
@@ -116,6 +114,411 @@ msgstr "Інформація відсутня."
 #: modules/partner/template/list.php:35 modules/master/template/list.php:94
 msgid "Ничего не найдено. Проверьте этот раздел позже."
 msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
+
+#: modules/profile/template/password-reset.php:4
+#: modules/profile/template/password-reset.php:13
+#: modules/profile/template/register-subscriber.php:14
+#: modules/profile/template/register-master.php:17
+#: modules/profile/template/password-lost.php:4
+#: modules/profile/template/password-lost.php:13
+msgid "Уже зарегистрированы? <a href=\"%s\">Войти &raquo;</a>"
+msgstr "Вже зареєстровані? <a href=\"%s\">Увійти &raquo;</a>"
+
+#: modules/profile/template/password-reset.php:8
+msgid "Неверная ссылка для возобновления пароля."
+msgstr "Невірна ссилка для відновлення паролю."
+
+#: modules/profile/template/password-reset.php:10
+#: modules/profile/template/password-reset.php:35
+msgid "Установить пароль"
+msgstr "Встановити пароль"
+
+#: modules/profile/template/password-reset.php:26
+msgid "Новый пароль"
+msgstr "Новий пароль"
+
+#: modules/profile/template/password-reset.php:31
+msgid "Повторите новый пароль"
+msgstr "Повторіть новий пароль"
+
+#: modules/profile/template/login.php:5
+#: modules/profile/template/register-subscriber.php:4
+#: modules/profile/template/register-master.php:8
+msgid "Вы уже зарегистрированы. Перейдите в свой <a href=\"%s\">профиль</a>."
+msgstr "Ви вже зареєстровані. Перейтіть в свій <a href=\"%s\">профіль</a>."
+
+#: modules/profile/template/login.php:11
+msgid "Вход"
+msgstr "Вхід"
+
+#: modules/profile/template/login.php:17
+msgid "Вы вышли."
+msgstr "Ви вийшли."
+
+#: modules/profile/template/login.php:25
+msgid ""
+"Вы успешно зарегестрировались на ProRemont. Мы отправили письм с паролем на "
+"<strong>%s</strong>."
+msgstr ""
+"Ви успішно зареєструвались на  ProRemont. Ми відправили лист з паролем на "
+"<strong>%s</strong>."
+
+#: modules/profile/template/login.php:34
+msgid "Проверьте вашу почту для востановления пароля."
+msgstr "Перевірте вашу пошту для відновлення пароля."
+
+#: modules/profile/template/login.php:40
+msgid "Ваш пароль был изменен. Теперь можете ввойти на сайт."
+msgstr "Ваш пароль було змінено. Тепер можете увійти на сайт."
+
+#: modules/profile/template/login.php:45
+msgid "Используйте социальные сети что бы войти:"
+msgstr "Використайте соціальні мережі щоб увійти:"
+
+#: modules/profile/template/login.php:50
+msgid "Или введите свой Email и пароль:"
+msgstr "Або введіть свій Email та пароль:"
+
+#: modules/profile/template/login.php:53
+#: modules/profile/template/register-subscriber.php:37
+#: modules/profile/template/register-master.php:41
+#: modules/profile/template/password-lost.php:23
+msgid "Email"
+msgstr "Email"
+
+#: modules/profile/template/login.php:57
+msgid "Пароль"
+msgstr "Пароль"
+
+#: modules/profile/template/login.php:63
+msgid "Запомнить меня"
+msgstr "Запам'ятати мене"
+
+#: modules/profile/template/login.php:68 modules/theme/template/header.php:61
+msgid "Войти"
+msgstr "Увійти"
+
+#: modules/profile/template/login.php:71
+#: modules/profile/template/password-lost.php:8
+msgid "Забыли пароль?"
+msgstr "Забули пароль?"
+
+#: modules/profile/template/login.php:78
+#: modules/profile/template/register-subscriber.php:10
+msgid "Регистрация"
+msgstr "Реєстрація"
+
+#: modules/profile/template/login.php:80
+msgid "Вы - исполнитель?"
+msgstr "Ви - виконавець?"
+
+#: modules/profile/template/login.php:82
+msgid ""
+"Вы предоставляете услуги? Регистрируйтесь и позвольте нашим посетителям "
+"найти вас."
+msgstr ""
+
+#: modules/profile/template/login.php:83
+msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
+msgstr "Зареєструватись як<br/><b>Виконавець</b>"
+
+#: modules/profile/template/login.php:87
+msgid "Вы - посетитель?"
+msgstr "Ви - відвідувач?"
+
+#: modules/profile/template/login.php:88
+msgid ""
+"Вы ищете мастеров, дизайнеров, строителей? Регистрируйтесь, что бы получить "
+"полный доступ к сайту."
+msgstr ""
+
+#: modules/profile/template/login.php:89
+msgid "Зарегистрироваться как<br/><b>Посетитель</b>"
+msgstr "Зареєструватись як<br/><b>Відвідувач</b>"
+
+#: modules/profile/template/profile-master.php:4
+#: modules/profile/template/profile-subscriber.php:4
+msgid "Настройки"
+msgstr "Налаштування"
+
+#: modules/profile/template/profile-master.php:13
+#: modules/profile/template/profile-subscriber.php:13
+msgid "Нет доступа. Необходимо <a href=\"%s\">войти</a> на сайт."
+msgstr "Немає доступу. Необхідно <a href=\"%s\">увійти</a> на сайт."
+
+#: modules/profile/template/menu.php:17
+msgid "Выйти"
+msgstr "Вийти"
+
+#: modules/profile/template/master/settings.php:9
+#: modules/profile/template/subscriber/settings.php:6
+msgid "Данные успешно обновлены."
+msgstr "Дані успішно оновлені."
+
+#: modules/profile/template/master/settings.php:19
+#: modules/profile/template/register-subscriber.php:42
+#: modules/profile/template/register-master.php:46
+#: modules/profile/template/subscriber/settings.php:16
+msgid "Телефон"
+msgstr "Телефон"
+
+#: modules/profile/template/master/settings.php:29
+#: modules/profile/template/register-subscriber.php:52
+#: modules/profile/template/register-master.php:56
+#: modules/profile/template/subscriber/settings.php:26
+msgid "Имя"
+msgstr "Ім'я"
+
+#: modules/profile/template/master/settings.php:34
+#: modules/profile/template/register-subscriber.php:57
+#: modules/profile/template/register-master.php:61
+#: modules/profile/template/subscriber/settings.php:31
+msgid "Фамилия"
+msgstr "Прізвище"
+
+#: modules/profile/template/master/settings.php:41
+#: modules/profile/template/register-master.php:67
+msgid "Информация"
+msgstr "Інформація"
+
+#: modules/profile/template/master/settings.php:44
+#: modules/profile/template/register-master.php:70
+msgid "Тип"
+msgstr "Тип"
+
+#: modules/profile/template/master/settings.php:50
+#: modules/profile/template/register-master.php:76
+msgid "Мастер"
+msgstr "Майстер"
+
+#: modules/profile/template/master/settings.php:56
+#: modules/profile/template/register-master.php:82
+msgid "Бригада"
+msgstr "Бригада"
+
+#: modules/profile/template/master/settings.php:62
+#: modules/profile/template/register-master.php:88
+msgid "Компания"
+msgstr "Компанія"
+
+#: modules/profile/template/master/settings.php:69
+#: modules/profile/template/register-master.php:95
+msgid "Название"
+msgstr "Назва"
+
+#: modules/profile/template/master/settings.php:74
+msgid "Лого"
+msgstr "Лого"
+
+#: modules/profile/template/master/settings.php:94
+msgid "Добавить лого"
+msgstr "Додати лого"
+
+#: modules/profile/template/master/settings.php:101
+#: modules/profile/template/register-master.php:100
+msgid "Рабочий телефон"
+msgstr "Робочий телефон"
+
+#: modules/profile/template/master/settings.php:111
+#: modules/profile/template/register-master.php:110
+msgid "Город"
+msgstr "Місто"
+
+#: modules/profile/template/master/settings.php:118
+#: modules/profile/template/register-master.php:115
+msgid "Сайт"
+msgstr "Сайт"
+
+#: modules/profile/template/master/settings.php:123
+#: modules/profile/template/register-master.php:120
+msgid "Основные категории"
+msgstr "Основні категорії"
+
+#: modules/profile/template/master/settings.php:126
+msgid "Выбирете категории"
+msgstr "Виберіть категорії"
+
+#: modules/profile/template/master/settings.php:141
+#: modules/profile/template/register-master.php:135
+msgid "Описание"
+msgstr "Опис"
+
+#: modules/profile/template/master/settings.php:159
+#: modules/master/template/detailed.php:73
+msgid "Галерея"
+msgstr "Галерея"
+
+#: modules/profile/template/master/settings.php:181
+msgid "Добавить файл"
+msgstr "Додати файл"
+
+#: modules/profile/template/master/settings.php:190
+#: modules/profile/template/subscriber/settings.php:35
+msgid "Обновить"
+msgstr "Оновити"
+
+#: modules/profile/template/register-subscriber.php:8
+#: modules/profile/template/register-master.php:12
+#: modules/profile/front/front.php:93
+msgid "Регистрация для новых пользователей временно закрыта."
+msgstr "Реєстрація для нових користувачів тимчасово закрита."
+
+#: modules/profile/template/register-subscriber.php:26
+msgid "Посетитель"
+msgstr "Відвідувач"
+
+#: modules/profile/template/register-subscriber.php:29
+msgid "Регистрация для Исполнителя"
+msgstr "Реєстрація для Виконавця"
+
+#: modules/profile/template/register-subscriber.php:63
+#: modules/profile/template/register-master.php:156
+msgid ""
+"<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и "
+"отправлен на ваш Email."
+msgstr ""
+"<strong>Замітка:</strong> Пароль буде згенеровано автоматично і відправлено "
+"на ваш Email."
+
+#: modules/profile/template/register-subscriber.php:67
+#: modules/profile/template/register-master.php:168
+msgid "Зарегистрироваться"
+msgstr "Зареєструватись"
+
+#: modules/profile/template/register-master.php:14
+msgid "Регистрация для исполнителей"
+msgstr "Реєстрація для виконавців"
+
+#: modules/profile/template/register-master.php:28
+msgid "Исполнитель"
+msgstr "Виконавець"
+
+#: modules/profile/template/register-master.php:31
+msgid "Регистрация для Посетителя"
+msgstr "Реєстрація для Відвідувача"
+
+#: modules/profile/template/register-master.php:38
+msgid "Личные данные"
+msgstr "Особисті данні"
+
+#: modules/profile/template/register-master.php:162
+msgid ""
+"Нажимая кнопку «Зарегистрироваться», вы принимаете <a href=\"%s\">политику "
+"конфиденциальности</a>."
+msgstr ""
+"Натискаючи кнопку «Зареєструватись», ви приймаєте <a href=\"%s\">політику "
+"конфіденційності</a>."
+
+#: modules/profile/template/password-lost.php:17
+msgid "Введите email и мы отправим ссылку для востановления пароля."
+msgstr "Введіть email і ми відправимо ссилку для відновлення пароля."
+
+#: modules/profile/template/password-lost.php:27
+msgid "Востановить пароль"
+msgstr "Відновити пароль"
+
+#: modules/profile/front/front.php:86
+msgid "Необходимо ввести Email."
+msgstr "Необхідно ввести Email."
+
+#: modules/profile/front/front.php:87
+msgid "Необходимо ввести пароль."
+msgstr "Необхідно ввести пароль."
+
+#: modules/profile/front/front.php:88
+msgid ""
+"Пользователь с таким Email не зарегестрирован. Возможно вы использовали "
+"другой Email при регистрации"
+msgstr ""
+"Користувач з таким Email не зареєстрований. Можливо ви використали інший "
+"Email для реєстрації"
+
+#: modules/profile/front/front.php:89
+msgid ""
+"Пользователь с таким Email уже зарегестрирован. <a href='%s'>Войти</a> на "
+"сайт."
+msgstr ""
+"Користувач з таким Email вже зареєстрований. <a href='%s'>Увійти</a> на сайт."
+
+#: modules/profile/front/front.php:90
+msgid "Неверний пароль. Вы <a href='%s'>забыли пароль</a>?"
+msgstr "Невірний пароль. Ви <a href='%s'>забули пароль</a>?"
+
+#: modules/profile/front/front.php:91
+msgid "Вы ввели неверний Email."
+msgstr "Ви ввели невірний Email."
+
+#: modules/profile/front/front.php:92
+msgid "Пользователь с таким Email уже зарегистрирован."
+msgstr "Користувач з таким Email вже усніжє."
+
+#: modules/profile/front/front.php:94 modules/profile/front/front.php:95
+msgid "Пользователь с таким Email не найден."
+msgstr "Користувач з таким Email не знайдений."
+
+#: modules/profile/front/front.php:96 modules/profile/front/front.php:97
+msgid "Ссылка для востановления пароля устарела."
+msgstr "Ссилка для відновлення пароль застаріла."
+
+#: modules/profile/front/front.php:98
+msgid "Пароли не совпадают."
+msgstr "Паролі не співпадають."
+
+#: modules/profile/front/front.php:99
+msgid "Извините, вы не можете использовать пустой пароль."
+msgstr "Пробачте, ви не можете використовувати пустий пароль."
+
+#: modules/profile/front/front.php:100
+msgid "Неправильное Имя."
+msgstr "Неправильние Ім'я."
+
+#: modules/profile/front/front.php:101
+msgid "Неправильное Фамилия."
+msgstr "Неправильне Прізвище."
+
+#: modules/profile/front/front.php:102
+msgid "Неправильный Контактный телефон."
+msgstr "Неправильний Контактний телефон."
+
+#: modules/profile/front/front.php:103
+msgid "Неверная Роль."
+msgstr "Невірна Роль."
+
+#: modules/profile/front/front.php:104
+msgid "Неправильное Название."
+msgstr "Невірна Назва."
+
+#: modules/profile/front/front.php:105
+msgid "Неправильный Тип."
+msgstr "Невірний Тип."
+
+#: modules/profile/front/front.php:106
+msgid "Неправильный Робочий телефон."
+msgstr "Невірний Робочий телефон."
+
+#: modules/profile/front/front.php:107
+msgid "Неправильный Город."
+msgstr "Невірне Місто."
+
+#: modules/profile/front/front.php:108
+msgid "Неправильное Описание."
+msgstr "Невірний Опис."
+
+#: modules/profile/front/front.php:109
+msgid "Неправильная Категория."
+msgstr "Невірна Категорія."
+
+#: modules/profile/front/front.php:111
+msgid "Ошибка. Попробуйте еще раз позже."
+msgstr "Помилка. Спробуйте ще раз пізнійше."
+
+#: modules/profile/front/front.php:519
+msgid "Телефон: %s"
+msgstr "Телефон: %s"
+
+#: modules/profile/front/front.php:520
+msgid "Роль: %s"
+msgstr "Роль: %s"
 
 #: modules/master/template/related-list.php:116
 msgid "Похожие мастера"
@@ -135,85 +538,39 @@ msgid "Поиск"
 msgstr "Пошук"
 
 #: modules/master/template/front-list.php:101
-#: modules/master/front/front.php:117
+#: modules/master/front/front.php:115
 msgid "Мастера"
 msgstr "Майстри"
 
-#: modules/master/template/master-phones.php:9
+#: modules/master/template/master-phones.php:13
 msgid "Показать"
 msgstr "Показати"
 
-#: modules/master/template/detailed.php:39
+#: modules/master/template/master-phones.php:26
+msgid "Для просмотра телефона необходимо <a href=\"%s\">авторизироваться</a>."
+msgstr "Для перегляду телефона необхідно <a href=\"%s\">авторизуватись</a>."
+
+#: modules/master/template/detailed.php:33
 msgid "Проверено"
 msgstr "Перевірено"
 
-#: modules/master/template/detailed.php:49
-msgid "Телефон:"
-msgstr "Телефон:"
+#: modules/master/template/detailed.php:103
+msgid "Отзывы (%s)"
+msgstr "Відгуки (%s)"
 
-#: modules/master/template/detailed.php:52
-msgid "Пожаловаться"
-msgstr "Пожалітись"
-
-#: modules/master/template/detailed.php:75
-msgid "Оценки"
-msgstr "Оцінки"
-
-#: modules/master/template/detailed.php:86
-msgid "Галерея"
-msgstr "Галерея"
-
-#: modules/master/template/detailed.php:105
-msgid "Услуги"
-msgstr "Послуги"
-
-#: modules/master/template/detailed.php:136
-msgid "Отзывы"
-msgstr "Відгуки"
-
-#: modules/master/template/detailed.php:168
+#: modules/master/template/detailed.php:129
 msgid "Пожаловаться на исполнителя"
 msgstr "Пожалітись на виконавця"
 
-#: modules/master/template/menu/top.php:3
-#: modules/master/template/menu/advanced.php:3
-msgid "Профиль"
-msgstr "Профіль"
-
-#: modules/master/template/menu/top.php:4
-#: modules/master/template/menu/advanced.php:4
-msgid "Выйти"
-msgstr "Вийти"
-
-#: modules/master/template/menu/advanced.php:6
-msgid "Войти"
-msgstr "Увійти"
-
-#: modules/master/template/menu/advanced.php:7
-msgid "Зарегистрироваться"
-msgstr "Зареєструватись"
-
-#: modules/master/front/front.php:3
-msgid "Мастер"
-msgstr "Майстер"
-
-#: modules/master/front/front.php:4
-msgid "Бригада"
-msgstr "Бригада"
-
-#: modules/master/front/front.php:5
-msgid "Компания"
-msgstr "Компанія"
-
-#: modules/master/front/front.php:116
+#: modules/master/front/front.php:114
 msgid "Все"
 msgstr "Всі"
 
-#: modules/master/front/front.php:118
+#: modules/master/front/front.php:116
 msgid "Бригады"
 msgstr "Бригади"
 
-#: modules/master/front/front.php:119
+#: modules/master/front/front.php:117
 msgid "Компании"
 msgstr "Компанії"
 
@@ -221,29 +578,29 @@ msgstr "Компанії"
 msgid "Недавно добавленые фотографии"
 msgstr "Недавно додані фотографії"
 
-#: modules/theme/template/header.php:70
-msgid "Блог"
-msgstr "Блог"
-
-#: modules/theme/template/header.php:71
+#: modules/theme/template/header.php:63
 msgid "Найти мастера"
 msgstr "Знайти майстра"
 
-#: modules/theme/template/header.php:72
+#: modules/theme/template/header.php:64
 msgid "Стать исполнителем"
 msgstr "Стати виконавцем"
 
-#: modules/theme/template/footer.php:33
+#: modules/theme/template/footer.php:18
+msgid "Язык"
+msgstr "Мова"
+
+#: modules/theme/template/footer.php:43
 msgid "&copy; ProRemont. Все права защищены."
 msgstr "&copy; ProRemont. Всі права захищені."
 
-#: modules/theme/template/footer.php:37
-msgid "ProRemont - Каталог Мастеров с рейтингами со всей Украины."
-msgstr "ProRemont - Каталог Майстрів з рейтингами зі всієї України."
+#: modules/theme/template/footer.php:47
+msgid "Блог"
+msgstr "Блог"
 
-#: modules/theme/template/footer.php:41
-msgid "Для мастеров:"
-msgstr "Для майстрів:"
+#: modules/theme/template/footer.php:55
+msgid "Для мастеров"
+msgstr "Для майстрів"
 
 #: front-page.php:7
 msgid ""
@@ -294,6 +651,45 @@ msgstr "<strong>безкоштовний</strong> каталог"
 #. Theme Name of the theme
 msgid "Common"
 msgstr "Common"
+
+#~ msgid "Вы уже зарегистрированы."
+#~ msgstr "Ви вже зареєстровані."
+
+#~ msgid "<a href=\"%s\">Войти</a> на сайт."
+#~ msgstr "<a href=\"%s\">Увійти</a> на сайт."
+
+#~ msgid "Регистрация для пользователей"
+#~ msgstr "Реєстрація для користувачів"
+
+#~ msgid "Написать новый коментарий"
+#~ msgstr "Написати новий коментар"
+
+#~ msgid "Написать новый отзыв"
+#~ msgstr "Написати новий відгук"
+
+#~ msgid "Смотреть все статьи &raquo;"
+#~ msgstr "Дивитись всі статті &raquo;"
+
+#~ msgid "Зарегистрироваться &raquo;"
+#~ msgstr "Зареєструватись &raquo;"
+
+#~ msgid "Регистрация для исполнителей &raquo;"
+#~ msgstr "Реєстрація для виконавців  &raquo;"
+
+#~ msgid "Пожаловаться"
+#~ msgstr "Пожалітись"
+
+#~ msgid "Оценки"
+#~ msgstr "Оцінки"
+
+#~ msgid "Услуги"
+#~ msgstr "Послуги"
+
+#~ msgid "Профиль"
+#~ msgstr "Профіль"
+
+#~ msgid "ProRemont - Каталог Мастеров с рейтингами со всей Украины."
+#~ msgstr "ProRemont - Каталог Майстрів з рейтингами зі всієї України."
 
 #~ msgid "Ищу специалиста"
 #~ msgstr "Шукаю спеціаліста"

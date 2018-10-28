@@ -13,6 +13,20 @@
     }
 }
 
+.catalog-mater-small-list {
+    color: #6b7886;
+    .pro & {
+        color: $color-primary;
+    }
+
+    a {
+        color: #6b7886;
+        .pro & {
+            color: $color-primary;
+        }
+    }
+}
+
 .catalog-mater-3col {
     a, a:hover {
         color: $color-dark;

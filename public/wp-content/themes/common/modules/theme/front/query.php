@@ -30,37 +30,19 @@ add_filter('posts_clauses', function($clauses, $query) {
     return $clauses;
 }, 10, 2);
 
-global $save_prev_section_value;
 add_action('pre_get_posts', function($query) {
-    if (is_admin() || !$query->is_main_query() || !$query->is_tax('catalog_master')) {
+    if (is_admin() || !$query->is_main_query()) {
         return;
     }
 
-    // Use default language slug
-    $tax = get_term_by('slug', $query->get('catalog_master'), 'catalog_master');
-    $default_tax = get_term(pll_get_term($tax->term_id, pll_default_language()));
-    $query->set('catalog_master', $default_tax->slug);
-
-    // Display records from specific region
-    $query->set('tax_query', array(
-        array(
-            'taxonomy' => 'location',
-            'terms' => get_field('locations', pror_get_section()),
-            'include_children' => false,
-            'operator' => 'IN',
-        )
-    ));
-
-    global $save_prev_section_value;
-    $save_prev_section_value = $query->get('section');
-    $query->set('section', null);
-});
-
-add_filter('the_posts', function($posts, $query) {
-    global $save_prev_section_value;
-    if ($save_prev_section_value) {
-        $query->set('section', $save_prev_section_value);
-        unset($save_prev_section_value);
+    if ($query->is_tax('catalog_master')) {
+        $query->set('tax_query', array(
+            array(
+                'taxonomy' => 'location',
+                'terms' => get_field('locations', pror_get_section()),
+                'include_children' => false,
+                'operator' => 'IN',
+            )
+        ));
     }
-    return $posts;
-}, 10 ,2);
+});

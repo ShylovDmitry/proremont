@@ -1,48 +1,35 @@
-<div class="master-item<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
-    <div class="media">
-        <div class="left">
+<div class="master-item<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>"
+     onclick="javascript:window.location='<?php echo esc_url( get_permalink() ); ?>';">
+    <?php if (has_post_thumbnail()): ?>
+        <div class="thumbnail">
             <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
                 <div class="avatar">
-                    <?php if (has_post_thumbnail()): ?>
-                        <?php the_post_thumbnail('pror-medium', array(
-                                'alt' => pror_get_master_img_alt(),
-                                'pror_no_scrset' => true,
-                        )); ?>
-                    <?php else: ?>
-                        <img src="<?php module_img('master/no-avatar.png'); ?>" />
-                    <?php endif; ?>
+                    <?php the_post_thumbnail('pror-medium', array(
+                            'alt' => pror_get_master_img_alt(),
+                            'pror_no_scrset' => true,
+                    )); ?>
                 </div>
             </a>
-            <div class="rating d-sm-none">
-                <?php module_template('rating/total'); ?>
-            </div>
+        </div>
+    <?php endif; ?>
+
+    <div class="master-body">
+        <h4 class="mt-0 mb-1">
+            <a class="title" href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a>
+            <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
+                <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
+            <?php endif; ?>
+        </h4>
+        <div class="subtitle">
+            <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
+            <span class="type"><?php _e(get_field('master_type', "user_" . get_the_author_meta('ID')), 'common'); ?>,</span>
+            <span class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></span>
+        </div>
+        <div class="rating d-none d-sm-block">
+            <?php module_template('rating/total-inline'); ?>
         </div>
 
-        <div class="media-body">
-            <div class="rating d-none d-sm-block">
-                <?php module_template('rating/total'); ?>
-            </div>
-
-            <h5 class="mt-0 mb-1">
-                <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php the_title(); ?></a>
-                <?php if (get_field('master_is_confirmed', "user_" . get_the_author_meta('ID'))): ?>
-                    <span class="oi oi-circle-check is-confirmed" data-toggle="tooltip" data-placement="top" title="Проверено"></span>
-                <?php endif; ?>
-            </h5>
-            <div class="type">
-                <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
-                <?php _e(the_field('master_type', "user_" . get_the_author_meta('ID')), 'common'); ?>
-            </div>
-            <div class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></div>
-            <div class="catalog"><?php module_template('catalog_master/icons'); ?></div>
-        </div>
+        <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
     </div>
-    <div class="line"></div>
-    <div class="excerpt">
-        <?php the_excerpt(); ?>
-
-        <div class="more">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr(get_the_title()); ?>"><?php _e('Подробнее &raquo;', 'common'); ?></a>
-        </div>
-    </div>
+    <div class="clearfix"></div>
 </div>

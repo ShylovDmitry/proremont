@@ -1,0 +1,153 @@
+.profile-login label, .profile-register label, .profile-settings label {
+  font-weight: bold;
+  color: #424949;
+  margin-bottom: 0;
+}
+.profile-login .form-check-label, .profile-register .form-check-label, .profile-settings .form-check-label {
+  font-weight: normal;
+}
+.profile-login a, .profile-login a:hover, .profile-register a, .profile-register a:hover, .profile-settings a, .profile-settings a:hover {
+  color: #E67E22;
+}
+.profile-login .form-container, .profile-register .form-container, .profile-settings .form-container {
+  padding: 20px;
+  background: #fde7d3;
+  border: 1px solid #d8ab76;
+}
+.profile-login .required, .profile-register .required, .profile-settings .required {
+  color: #dc3545;
+}
+.profile-login label.error, .profile-register label.error, .profile-settings label.error {
+  font-weight: 300;
+  color: red;
+  font-size: 0.9rem;
+  width: 100%;
+}
+.profile-login .logout-url, .profile-register .logout-url, .profile-settings .logout-url {
+  margin-top: 20px;
+  display: block;
+}
+.profile-login .nav-tabs, .profile-register .nav-tabs, .profile-settings .nav-tabs {
+  margin-bottom: -1px;
+  border-color: #E67E22;
+}
+.profile-login .nav-tabs .nav-link.active, .profile-register .nav-tabs .nav-link.active, .profile-settings .nav-tabs .nav-link.active {
+  background: #fde7d3;
+  border-color: #d8ab76 #d8ab76 #fde7d3;
+}
+.profile-login .nav-tabs .nav-link:hover, .profile-register .nav-tabs .nav-link:hover, .profile-settings .nav-tabs .nav-link:hover {
+  border-color: #d8ab76 #d8ab76 #fde7d3;
+}
+.profile-login .register-links, .profile-register .register-links, .profile-settings .register-links {
+  text-align: center;
+  border: 1px solid #dee0e0;
+  padding: 20px 10px;
+  background: #f6f7f7;
+}
+
+.profile-menu .oi {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+html .select2-container {
+  width: 100%;
+  display: block;
+}
+html .select2-container .select2-selection {
+  min-height: 36px;
+}
+html .select2-container .select2-selection .select2-selection__arrow {
+  min-height: 36px;
+}
+html .select2-container .select2-selection .select2-selection__rendered {
+  line-height: 36px;
+}
+
+.select2-results li > span {
+  font-size: 75%;
+  color: #B2BABB;
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: "alpha(opacity=0)";
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9  {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
+}
+.image-container .files {
+  background: #fff;
+  height: 350px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  overflow: scroll;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+.image-container .files.loading {
+  opacity: 0.65;
+}
+.image-container .files .image-col {
+  width: 20%;
+  height: auto;
+  padding: 5px;
+}
+.image-container .image-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.image-container .image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.image-container .image-wrapper .close {
+  display: none;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #000;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 26px;
+  height: 26px;
+  line-height: 16px;
+  font-size: 16px;
+  opacity: 0.8;
+  color: #fff;
+  text-shadow: none;
+  font-weight: 300;
+  cursor: pointer;
+}
+.image-container .image-wrapper:hover .close {
+  display: block;
+}
+
+#logo-block img {
+  width: 150px;
+  height: auto;
+}
+
+/*# sourceMappingURL=common.css.map */

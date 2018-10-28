@@ -53,8 +53,16 @@ jQuery(function ($) {
             ga('send', 'event', 'Master Page', 'phone click');
         }
 
-        var parent = $(this).parents('.master-phones');
-        $('.stub', parent).addClass('d-none');
-        $('.phones', parent).removeClass('d-none');
+        var parent = $(this).parents('.master-phones-container');
+        if ($('.registration-required-message', parent).length) {
+            $('.registration-required-message', parent).removeClass('d-none');
+        } else {
+            $('.stub', parent).addClass('d-none');
+            $('.phones', parent).removeClass('d-none');
+
+            if (typeof ga != 'undefined') {
+                ga('send', 'event', 'Master Page', 'phone shown');
+            }
+        }
     });
 });

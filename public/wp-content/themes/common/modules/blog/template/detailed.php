@@ -36,6 +36,10 @@
         <div class="post-catalogs">
             <?php module_template('blog/catalog_master'); ?>
         </div>
+
+        <div class="post-sharing">
+            <?php echo do_shortcode('[oa_social_sharing_icons]'); ?>
+        </div>
     </div>
 
     <?php

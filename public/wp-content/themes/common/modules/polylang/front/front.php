@@ -58,6 +58,8 @@ add_filter('pll_rewrite_rules', function($types) {
     $types[] = 'post';
     $types[] = 'master';
     $types[] = 'partner';
+    $types[] = 'catalog_master';
+    $types[] = 'category';
 
     return $types;
 });
@@ -97,6 +99,11 @@ add_filter('pll_get_post_types', function($post_types, $is_settings) {
     }
     return $post_types;
 }, 10, 2);
+
+add_filter('pll_get_taxonomies', function($taxonomies, $is_settings) {
+    unset($taxonomies['category']);
+    return $taxonomies;
+}, 10, 2 );
 
 
 add_action('pre_get_posts', function($query) {

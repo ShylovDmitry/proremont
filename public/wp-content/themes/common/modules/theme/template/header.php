@@ -1,6 +1,6 @@
 <?php
 $cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key(null, 'section');
+$cache_key = pror_cache_key(null, 'section,user_id');
 $cache_group = 'pror:theme:header';
 
 $cache = wp_cache_get($cache_key, $cache_group);
@@ -51,28 +51,18 @@ ob_start();
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <form class="form-inline my-2 my-lg-0 ml-5 mr-auto d-none d-md-block">
-<!--                <div class="input-group">-->
-<!--                    <input type="text" size="40" class="form-control form-control-sm" placeholder="Ремонт санузла">-->
-<!--                    <span class="input-group-btn">-->
-<!--                        <button class="btn btn-sm btn-outline-success" type="button">Поиск</button>-->
-<!--                    </span>-->
-<!--                </div>-->
-            </form>
+            <form class="form-inline my-2 my-lg-0 ml-5 mr-auto d-none d-md-block"></form>
 
             <ul class="navbar-nav">
-                <?php pll_the_languages([
-                        'hide_if_no_translation' => 0,
-                        'hide_if_empty' => 0,
-                        'show_flags' => 1,
-                        'show_names' => 0,
-                ]);?>
-                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('blog'); ?>" class="nav-link"><?php _e('Блог', 'common'); ?></a></li>
+                <?php if (is_user_logged_in()): ?>
+                    <?php $current_user = wp_get_current_user(); ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $current_user->first_name; ?> <?php echo $current_user->last_name; ?></a></li>
+                <?php else: ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
+                <?php endif; ?>
                 <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" class="nav-link find-master"><?php _e('Найти мастера', 'common'); ?></a></li>
                 <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('informacia-dlya-masterov'); ?>" class="nav-link iam-master"><?php _e('Стать исполнителем', 'common'); ?></a></li>
             </ul>
-
-            <?php module_template('master/menu/top'); ?>
         </div>
     </div>
 </nav>

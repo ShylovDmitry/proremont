@@ -20,9 +20,10 @@ function pror_stats_install() {
 	$charset_collate = $wpdb->get_charset_collate();
 
 	$sql = "CREATE TABLE $table_name (
-		id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+        id int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 		name varchar(255) NOT NULL,
+		user_id int(10) UNSIGNED NOT NULL,
 		post_id int(10) UNSIGNED NOT NULL,
 		PRIMARY KEY (id)
 	) $charset_collate;";
@@ -44,11 +45,13 @@ function pror_stats_track_event($type, $post_id) {
         array(
             'time' => current_time('mysql', true),
             'name' => $type,
+            'user_id' => get_current_user_id(),
             'post_id' => $post_id,
         ),
         array(
             '%s',
             '%s',
+            '%d',
             '%d',
         )
     );

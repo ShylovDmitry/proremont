@@ -3,87 +3,124 @@
   margin-right: -1rem !important;
   text-align: center;
   display: block;
-  background: #fff; }
+  background: #fff;
+}
 .blog article .post-categories, .category article .post-categories {
-  font-size: .85rem;
-  color: #B2BABB; }
-  .blog article .post-categories a, .category article .post-categories a {
-    color: #E67E22; }
-.blog article .post-date, .category article .post-date {
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: #B2BABB;
-  float: right; }
-.blog article .post-more-link, .category article .post-more-link {
-  font-size: .85rem;
+}
+.blog article .post-categories a, .category article .post-categories a {
   color: #E67E22;
-  font-weight: 400; }
+}
+.blog article .post-date, .category article .post-date {
+  font-size: 0.85rem;
+  color: #B2BABB;
+  float: right;
+}
+.blog article .post-more-link, .category article .post-more-link {
+  font-size: 0.85rem;
+  color: #E67E22;
+  font-weight: 400;
+}
 .blog article .post-catalogs, .category article .post-catalogs {
-  font-size: .85rem; }
-  .blog article .post-catalogs a, .category article .post-catalogs a {
-    color: #E67E22; }
+  font-size: 0.85rem;
+  color: #E67E22;
+}
+.blog article .post-catalogs a, .category article .post-catalogs a {
+  color: #E67E22;
+}
 
 .single .main-article .post-image {
   margin-left: -1rem !important;
   margin-right: -1rem !important;
   text-align: center;
   display: block;
-  background: #fff; }
+  background: #fff;
+}
 .single .main-article .post-categories {
-  font-size: .85rem;
-  color: #B2BABB; }
-  .single .main-article .post-categories a {
-    color: #E67E22; }
-.single .main-article .post-date {
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: #B2BABB;
-  float: right; }
-.single .main-article .oneall_sharing_icons {
-  display: flex;
-  justify-content: center; }
+}
+.single .main-article .post-categories a {
+  color: #E67E22;
+}
+.single .main-article .post-date {
+  font-size: 0.85rem;
+  color: #B2BABB;
+  float: right;
+}
 .single .main-article .post-catalogs {
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin-top: 15px;
-  text-align: center; }
-  @media (min-width: 1200px) {
-    .single .main-article .post-catalogs {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto; } }
-  .single .main-article .post-catalogs a {
-    color: #E67E22; }
+  text-align: center;
+  color: #E67E22;
+}
+@media (min-width: 1200px) {
+  .single .main-article .post-catalogs {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.single .main-article .post-catalogs a {
+  color: #E67E22;
+}
+.single .main-article .post-sharing {
+  margin-top: 20px;
+}
+.single .main-article .post-sharing .oneall_sharing_icons {
+  display: flex;
+  justify-content: center;
+}
 
 article.small-post .post-img-link {
   text-align: center;
   display: block;
-  background: #e8ebeb; }
+  background: #e8ebeb;
+}
 article.small-post .post-title {
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 article.small-post .post-categories {
-  font-size: .85rem;
-  color: #B2BABB; }
-  article.small-post .post-categories a {
-    color: #E67E22; }
-article.small-post .post-date {
-  font-size: .85rem;
-  color: #B2BABB; }
-article.small-post .post-more-link {
-  font-size: .85rem;
+  font-size: 0.85rem;
+  color: #B2BABB;
+}
+article.small-post .post-categories a {
   color: #E67E22;
-  font-weight: 400; }
+}
+article.small-post .post-date {
+  font-size: 0.85rem;
+  color: #B2BABB;
+}
+article.small-post .post-more-link {
+  font-size: 0.85rem;
+  color: #E67E22;
+  font-weight: 400;
+}
 
 .see-blog {
   border-top: 1px solid #e8ebeb;
   padding-top: 15px;
-  text-align: center; }
-  .see-blog a {
-    font-size: 1rem;
-    background: #E67E22;
-    color: #fff;
-    padding: 8px 12px;
-    text-decoration: none;
-    display: inline-block; }
-    .see-blog a:hover {
-      background-color: #bf6516;
-      color: #fff; }
+  text-align: center;
+}
+.see-blog a {
+  font-size: 1rem;
+  background: #E67E22;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+.see-blog a:hover {
+  background-color: #bf6516;
+  color: #fff;
+}
+
+.latest-posts-list {
+  padding-left: 1rem;
+}
+.latest-posts-list li {
+  margin-bottom: 0.5rem;
+}
 
 /*# sourceMappingURL=common.css.map */

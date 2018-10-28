@@ -37,12 +37,12 @@ if ( post_password_required() ) {
     ?>
 
 	<?php
-	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 		<ul class="list-unstyled comment-list">
 			<?php
 				wp_list_comments( array(
-					'avatar_size' => 100,
+//                    'reverse_top_level' => true,
+					'avatar_size' => 0,
 					'style' => 'ul',
                     'type' => 'comment',
 					'short_ping' => true,
@@ -55,11 +55,9 @@ if ( post_password_required() ) {
 			'next_text' => 'Next',
 		) );
 
-	endif; // Check for have_comments().
+	endif;
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
 		<p class="no-comments"><?php _e( 'Коментарии закрыты.', 'common' ); ?></p>
 	<?php
 	endif;
@@ -70,23 +68,21 @@ if ( post_password_required() ) {
     endif;
     ?>
 
-    <?php
-    $title_text = (get_post_type() == 'post') ? __('Оставить коментарий', 'common') : __('Оставить отзыв', 'common');
-    $new_text = (get_post_type() == 'post') ? __('Написать новый коментарий', 'common') : __('Написать новый отзыв', 'common');
-    ?>
-    <a class="leave-review-button" data-toggle="collapse" href="#leaveReview" role="button" aria-expanded="false" aria-controls="leaveReview"><?php echo $new_text; ?> <span class="oi oi-pencil"></span></a>
-    <div class="collapse" id="leaveReview">
+    <div id="leaveReview">
         <?php
+        global $wp;
         $logged_user = wp_get_current_user();
+
+        $title_text = (get_post_type() == 'post') ? __('Оставить коментарий', 'common') : __('Оставить отзыв', 'common');
+
         comment_form(array(
-            'logged_in_as' => '<div class="logged-in-as">' . sprintf('%1$s<strong>%2$s</strong><p><i>%3$s</i></p>',
-                                  get_avatar($logged_user ? $logged_user->ID : null),
+            'logged_in_as' => '<div class="logged-in-as">' . sprintf('<strong>%1$s</strong> <i>(%2$s)</i>',
                                   $user_identity,
-                                  sprintf(__('Если это не вы, нажмите <a href="%s">выйти</a>.', 'common'),
-                                        wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) )
+                                  sprintf(__('Если это не вы, нажмите <a href="%s">выйти</a>', 'common'),
+                                        wp_logout_url( home_url(trailingslashit($wp->request)) )
                                   )
                               ) . '</div>',
-            'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
+            'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea><span id="comment-error" class="comment-error text-danger"></span></p>',
             'title_reply' => $title_text,
             'label_submit' => $title_text,
         ));
