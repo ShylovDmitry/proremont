@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2018-10-28T14:48:19+01:00\n"
-"PO-Revision-Date: 2018-10-28 15:51+0200\n"
+"POT-Creation-Date: 2018-10-28T22:32:15+01:00\n"
+"PO-Revision-Date: 2018-10-28 23:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -213,10 +213,8 @@ msgid "Вы - исполнитель?"
 msgstr "Ви - виконавець?"
 
 #: modules/profile/template/login.php:82
-msgid ""
-"Вы предоставляете услуги? Регистрируйтесь и позвольте нашим посетителям "
-"найти вас."
-msgstr ""
+msgid "Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас."
+msgstr "Надаєте послуги? Реєструйтесь і наші відвідувачі дізнаються про вас."
 
 #: modules/profile/template/login.php:83
 msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
@@ -228,9 +226,11 @@ msgstr "Ви - відвідувач?"
 
 #: modules/profile/template/login.php:88
 msgid ""
-"Вы ищете мастеров, дизайнеров, строителей? Регистрируйтесь, что бы получить "
+"Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, что бы получить "
 "полный доступ к сайту."
 msgstr ""
+"Шукаєте майстрів, дизайнерів, будівельників? Реєструйтесь, щоб отримати "
+"повний доступ до сайту."
 
 #: modules/profile/template/login.php:89
 msgid "Зарегистрироваться как<br/><b>Посетитель</b>"
@@ -241,12 +241,28 @@ msgstr "Зареєструватись як<br/><b>Відвідувач</b>"
 msgid "Настройки"
 msgstr "Налаштування"
 
-#: modules/profile/template/profile-master.php:13
+#: modules/profile/template/profile-master.php:9
+msgid "PRO-аккаунт"
+msgstr "PRO-аккаунт"
+
+#: modules/profile/template/profile-master.php:18
 #: modules/profile/template/profile-subscriber.php:13
 msgid "Нет доступа. Необходимо <a href=\"%s\">войти</a> на сайт."
 msgstr "Немає доступу. Необхідно <a href=\"%s\">увійти</a> на сайт."
 
-#: modules/profile/template/menu.php:17
+#: modules/profile/template/profile-master.php:29
+msgid "Внимание!"
+msgstr "Увага!"
+
+#: modules/profile/template/profile-master.php:30
+msgid ""
+"Ваш аккаунт не подтверджен. Что бы подтвердить аккаунт, позвоните нашому "
+"менеджеру <nobr>(063) 199 63 04</nobr>."
+msgstr ""
+"Ваш аккаунт не підтверджено. Щоб підтвердити аккаунт, подзвоніть нашому "
+"менеджеру <nobr>(063) 199 63 04</nobr>."
+
+#: modules/profile/template/menu.php:15
 msgid "Выйти"
 msgstr "Вийти"
 

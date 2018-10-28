@@ -23,6 +23,15 @@ $menu = [
             </div>
             <div class="col-9">
                 <div class="colored-box p-3">
+                    <?php if (!get_field('master_is_confirmed', "user_" . get_current_user_id())): ?>
+                        <div class="mb-3">
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php _e('Внимание!', 'common'); ?></strong><br />
+                                <?php _e('Ваш аккаунт не подтверджен. Что бы подтвердить аккаунт, позвоните нашому менеджеру <nobr>(063) 199 63 04</nobr>.', 'common'); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
                     <?php $menu_item = isset($menu[$_GET['section']]) ? $menu[$_GET['section']] : reset($menu); ?>
                     <?php module_template($menu_item['template']); ?>
                 </div>
