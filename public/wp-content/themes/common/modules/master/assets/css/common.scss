@@ -63,6 +63,8 @@
     }
 
     .master-body {
+        word-break: break-word;
+
         .catalog {
             margin-top: 15px;
             margin-bottom: 5px;
@@ -233,6 +235,10 @@
                 padding-right: 5px;
             }
         }
+    }
+
+    .master-body {
+        word-break: break-word;
     }
 
     .content {

@@ -51,6 +51,9 @@
   height: auto;
   font-size: 0.75rem;
 }
+.master-item .master-body {
+  word-break: break-word;
+}
 .master-item .master-body .catalog {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -193,6 +196,9 @@
   display: inline-block;
   font-weight: 300;
   padding-right: 5px;
+}
+.master-detailed .master-body {
+  word-break: break-word;
 }
 .master-detailed .content {
   font-size: 18px;

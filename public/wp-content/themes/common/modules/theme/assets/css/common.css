@@ -470,6 +470,7 @@ a.btn.btn-pror-primary {
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #dfdfdf;
+  word-break: break-word;
 }
 .comments-area .comment .fn {
   font-weight: 600;
@@ -492,6 +493,7 @@ a.btn.btn-pror-primary {
 }
 .comments-area .comment .rating-container {
   float: none;
+  word-break: break-word;
 }
 .comments-area .comment .crfp-rating-breakdown {
   font-size: 0.85rem;
