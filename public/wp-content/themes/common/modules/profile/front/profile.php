@@ -21,7 +21,8 @@ add_action('wp', function() {
         $redirect_url = pror_get_permalink_by_slug('profile');
         $redirect_url = add_query_arg('section', $_GET['section'], $redirect_url);
 
-        $result = pror_profile_register_user();
+        $role = pror_user_has_role('master') ? 'master' : 'subscriber';
+        $result = pror_profile_register_user(null, $role);
 
         if (is_wp_error($result)) {
             $errors = join(',', $result->get_error_codes());
