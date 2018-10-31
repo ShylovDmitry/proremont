@@ -28,6 +28,14 @@ function pror_ajax_master_sanitize_title() {
     ));
 }
 
+add_action('show_user_profile', function($profileuser) {
+    module_template('master/admin/profile-top', ['profileuser' => $profileuser]);
+}, 5);
+
+add_action('edit_user_profile', function($profileuser) {
+    module_template('master/admin/profile-top', ['profileuser' => $profileuser]);
+}, 5);
+
 //add_filter('acf/load_value/key=field_5ab185c6ed95e', function($value, $post_id, $field) {
 //    if (empty($value)) {
 //        list($type, $user_id) = explode('_', $post_id);
