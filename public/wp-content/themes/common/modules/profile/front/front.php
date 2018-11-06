@@ -219,6 +219,12 @@ function pror_profile_register_user( $email = null, $role = 'subscriber' ) {
             return new WP_Error( 'email', pror_profile_get_error_message( 'email' ) );
         }
 
+        $errors = new WP_Error();
+        do_action( 'register_post', $email, $email, $errors );
+        if ($errors->get_error_code()) {
+            return $errors;
+        }
+
         return wp_insert_user(array(
             'user_login'    => $email,
             'user_email'    => $email,
