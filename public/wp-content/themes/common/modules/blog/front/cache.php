@@ -17,6 +17,12 @@ add_action('edited_catalog_master', 'pror_blog_clear_cache');
 add_action('delete_catalog_master', 'pror_blog_clear_cache');
 
 
+add_action('comment_post', function($comment_ID, $comment) {
+    if (get_post_type($comment->comment_post_ID) == 'post') {
+        pror_blog_clear_cache($comment->comment_post_ID);
+    }
+}, 10, 2);
+
 add_action('wp_insert_comment', function($comment_ID, $comment) {
     if (get_post_type($comment->comment_post_ID) == 'post') {
         pror_blog_clear_cache($comment->comment_post_ID);
