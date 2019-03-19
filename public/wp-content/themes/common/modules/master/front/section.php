@@ -8,16 +8,20 @@ function pror_get_section() {
         return $global_section;
     }
 
-    $section = pror_get_section_by_slug(get_query_var('section'));
+    $section = pror_get_section_by_slug($_GET['region']);
     if (!$section) {
 
-        $section = pror_get_section_by_slug(pror_get_section_cookie());
+        $section = pror_get_section_by_slug(get_query_var('section'));
         if (!$section) {
 
-            $section = pror_get_section_by_slug(pror_detect_section_by_ip());
+            $section = pror_get_section_by_slug(pror_get_section_cookie());
             if (!$section) {
 
-                $section = pror_get_section_by_slug('kiev');
+                $section = pror_get_section_by_slug(pror_detect_section_by_ip());
+                if (!$section) {
+
+                    $section = pror_get_section_by_slug('kiev');
+                }
             }
         }
     }

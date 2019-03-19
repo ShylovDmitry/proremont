@@ -7,13 +7,13 @@ add_filter('posts_clauses', function($clauses, $query) {
 
     global $wpdb;
 
-    if (isset($_GET['f_master_type']) && $_GET['f_master_type']) {
+    if ($query->is_tax('catalog_master') && isset($_GET['mtype']) && $_GET['mtype']) {
         $join = &$clauses['join'];
         if (!empty($join)) $join .= ' ';
         $join .= "JOIN {$wpdb->prefix}usermeta custom_um ON custom_um.user_id = {$wpdb->posts}.post_author AND custom_um.meta_key = 'master_type'";
 
         $where = &$clauses['where'];
-        $where .= " AND custom_um.meta_value = '" . esc_sql($_GET['f_master_type']) . "'";
+        $where .= " AND custom_um.meta_value = '" . esc_sql($_GET['mtype']) . "'";
     }
 
     if (isset($query->query['custom_query'])) {

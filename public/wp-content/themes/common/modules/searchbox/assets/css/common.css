@@ -1,0 +1,40 @@
+.twitter-typeahead {
+  display: block !important;
+}
+
+.tt-menu {
+  background: #fff;
+  width: 100%;
+  border: 1px solid #969696;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+.tt-suggestion {
+  padding: 1px 10px;
+  cursor: pointer;
+}
+.tt-suggestion:hover {
+  background: #d6d5d5;
+}
+
+.master-searchbox .form-control {
+  color: #000;
+}
+.master-searchbox .form-control::placeholder {
+  color: #a8a8a8;
+}
+.master-searchbox .form-text {
+  color: #B2BABB;
+  font-size: 14px;
+}
+.master-searchbox .advanced-options a {
+  text-decoration: none;
+  color: #E67E22;
+  border-bottom: 1px dashed #E67E22;
+}
+.master-searchbox .advanced-options a:hover {
+  border-bottom-style: solid;
+}
+
+/*# sourceMappingURL=common.css.map */

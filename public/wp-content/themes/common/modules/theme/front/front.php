@@ -26,6 +26,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('bootstrap', get_module_js('theme/bootstrap-4.0.0.js'), array('popper', 'jquery'), null, true);
     wp_enqueue_script('slick', get_module_js('theme/slick-1.6.0.min.js'), array('jquery'), null, true);
     wp_enqueue_script('select2', get_module_js('theme/select2-4.0.5.js'), array('jquery'), null, true);
+    wp_enqueue_script('typeahead', get_module_js('theme/typeahead.jquery-0.11.1.js'), array('jquery'), null, true);
     wp_enqueue_script('inputmask', get_module_js('theme/jquery.inputmask.bundle.js'), array('jquery'), null, true);
     if (pll_current_language() == 'uk') {
         wp_enqueue_script('select2.lang-uk', get_module_js('theme/i18n/uk.js'), array('jquery', 'select2'), dlv_get_ver(), true);
