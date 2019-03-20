@@ -11,7 +11,7 @@ add_action('edited_catalog_master', 'pror_catalog_master_clear_cache');
 add_action('delete_catalog_master', 'pror_catalog_master_clear_cache');
 
 add_action('acf/update_value', function($value, $post_id, $field) {
-    if ($field['name'] == 'frontpage_catalogs') {
+    if ($field['name'] == 'frontpage_catalog') {
         pror_cache_delete_wildcard('pror:catalog_master:frontpage');
     }
 

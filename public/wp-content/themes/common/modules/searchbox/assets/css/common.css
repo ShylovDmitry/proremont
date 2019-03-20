@@ -18,6 +18,11 @@
   background: #d6d5d5;
 }
 
+.tt-dataset {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
 .master-searchbox .form-control {
   color: #000;
 }

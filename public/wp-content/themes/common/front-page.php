@@ -3,8 +3,8 @@
 <div class="jumbotron jumbotron-fluid header">
     <div class="container">
         <div class="text-block">
-            <h1 class="mb-3">РОБИШ <span class="highlighted">РЕМОНТ</span>?</h1>
-            <span>Шукай майстрів, дизайнерів, будівельників в один клік.</span>
+            <h1 class="mb-3"><?php _e('ДЕЛАЕШЬ <span>РЕМОНТ</span>?', 'common'); ?></h1>
+            <span><?php _e('Найди мастеров, дизайнеров, строителей в один клик.', 'common'); ?></span>
         </div>
 
         <div class="mt-5 col-md-8 offset-md-2">

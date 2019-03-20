@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2018-10-28T23:31:34+01:00\n"
-"PO-Revision-Date: 2018-10-29 00:41+0200\n"
+"POT-Creation-Date: 2019-03-20T13:04:36+01:00\n"
+"PO-Revision-Date: 2019-03-20 14:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -13,9 +13,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: common\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. Theme Name of the theme
+msgid "Common"
+msgstr "Common"
 
 #: 404.php:3
 msgid "404"
@@ -37,31 +41,26 @@ msgstr "Залишити відгук"
 msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>"
 msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>"
 
-#: taxonomy-catalog_master.php:10
-msgid "Другие услуги"
-msgstr "Інші послуги"
-
 #: modules/prom/template/mobile1.php:15
 #: modules/prom/template/sidebar-col.php:24
 msgid "Реклама на ProRemont.co"
 msgstr "Реклама на ProRemont.co"
 
-#: modules/prom/template/sidebar-col.php:4
-msgid "Экономьте на ремонте!"
-msgstr "Економте на ремонті!"
-
-#: modules/prom/template/sidebar-col.php:5
-msgid "знает как"
-msgstr "знає як"
-
-#: modules/prom/template/sidebar-col.php:6
-msgid "Сэкономить <strong>до $3,000</strong>"
-msgstr "Зекономити <strong>до $3,000</strong>"
-
 #: modules/rating/template/total.php:19
 #: modules/rating/template/total-inline.php:17
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
 msgstr "<a href=\"%s#comments\"><span>Відгуки (</span>"
+
+#: modules/tender/template/detailed.php:47
+#: modules/partner/template/detailed.php:47
+#: modules/master/template/detailed.php:64
+msgid "Нет информации."
+msgstr "Інформація відсутня."
+
+#: modules/tender/template/list.php:35 modules/partner/template/list.php:35
+#: modules/master/template/list.php:73
+msgid "Ничего не найдено. Проверьте этот раздел позже."
+msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
 
 #: modules/catalog_master/template/list.php:33
 msgid "Смотреть всех"
@@ -70,6 +69,10 @@ msgstr "Дивитись усіх"
 #: modules/catalog_master/template/list.php:33
 msgid "из раздела"
 msgstr "з розділу"
+
+#: modules/catalog_master/template/frontpage-list.php:31
+msgid "Популярные категории"
+msgstr "Популярні категорії"
 
 #: modules/family/template/list.php:13
 msgid "скидка"
@@ -105,15 +108,6 @@ msgstr "Партнери"
 #: modules/partner/template/front-list.php:59
 msgid "Смотреть всех партнеров"
 msgstr "Дивитись всіх партнерів"
-
-#: modules/partner/template/detailed.php:47
-#: modules/master/template/detailed.php:64
-msgid "Нет информации."
-msgstr "Інформація відсутня."
-
-#: modules/partner/template/list.php:35 modules/master/template/list.php:94
-msgid "Ничего не найдено. Проверьте этот раздел позже."
-msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
 
 #: modules/profile/template/password-reset.php:4
 #: modules/profile/template/password-reset.php:13
@@ -194,7 +188,7 @@ msgstr "Пароль"
 msgid "Запомнить меня"
 msgstr "Запам'ятати мене"
 
-#: modules/profile/template/login.php:68 modules/theme/template/header.php:61
+#: modules/profile/template/login.php:68 modules/theme/template/header.php:38
 msgid "Войти"
 msgstr "Увійти"
 
@@ -529,11 +523,11 @@ msgstr "Невірна Категорія."
 msgid "Ошибка. Попробуйте еще раз позже."
 msgstr "Помилка. Спробуйте ще раз пізнійше."
 
-#: modules/profile/front/front.php:519
+#: modules/profile/front/front.php:525
 msgid "Телефон: %s"
 msgstr "Телефон: %s"
 
-#: modules/profile/front/front.php:520
+#: modules/profile/front/front.php:526
 msgid "Роль: %s"
 msgstr "Роль: %s"
 
@@ -545,14 +539,6 @@ msgstr "Схожі майстри"
 #: modules/master/template/front-list.php:165
 msgid "Смотреть всех мастеров"
 msgstr "Дивитись всіх майстрів"
-
-#: modules/master/template/searchbox.php:3
-msgid "Каталог"
-msgstr "Каталог"
-
-#: modules/master/template/searchbox.php:23
-msgid "Поиск"
-msgstr "Пошук"
 
 #: modules/master/template/front-list.php:101
 #: modules/master/front/front.php:115
@@ -599,11 +585,15 @@ msgstr "Компанії"
 msgid "Недавно добавленные фотографии"
 msgstr "Нещодавно додані фотографії"
 
-#: modules/theme/template/header.php:63
+#: modules/theme/template/header.php:33
+msgid "Профиль"
+msgstr "Профіль"
+
+#: modules/theme/template/header.php:40
 msgid "Найти мастера"
 msgstr "Знайти майстра"
 
-#: modules/theme/template/header.php:64
+#: modules/theme/template/header.php:41
 msgid "Стать исполнителем"
 msgstr "Стати виконавцем"
 
@@ -623,55 +613,85 @@ msgstr "Блог"
 msgid "Для мастеров"
 msgstr "Для майстрів"
 
+#: modules/searchbox/template/form.php:26
+msgid "Начните вводить вид работы"
+msgstr "Почніть вводити вид роботи"
+
+#: modules/searchbox/template/form.php:27
+msgid "Например: Ремонт под ключ, Отделка полов и тд."
+msgstr "Наприклад: Ремонт під ключ, Оздоблення підлог і тд."
+
+#: modules/searchbox/template/form.php:33
+msgid "Найти"
+msgstr "Знайти"
+
+#: modules/searchbox/template/form.php:37
+msgid "Расширенный поиск"
+msgstr "Розширений пошук"
+
+#: modules/searchbox/template/form.php:49
+msgid "Тип исполнителя"
+msgstr "Тип виконавця"
+
+#: front-page.php:6
+msgid "ДЕЛАЕШЬ <span>РЕМОНТ</span>?"
+msgstr "РОБИШ <span>РЕМОНТ</span>?"
+
 #: front-page.php:7
-msgid ""
-"<div class=\"first\">Всеукраинский бесплатный</div>\n"
-"                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАСТЕРОВ</"
-"span></h1>\n"
-"                <div class=\"last\">для ремонта квартир, домов<br />и "
-"офисных помещений</div>"
-msgstr ""
-"<div class=\"first\">Всеукраїнський безкоштовний</div>\n"
-"                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАЙСТРІВ</"
-"span></h1>\n"
-"                <div class=\"last\">для ремонту квартир, будинків<br />та "
-"офісних приміщень</div>"
+msgid "Найди мастеров, дизайнеров, строителей в один клик."
+msgstr "Знайди майстрів, дизайнерів, будівельників в один клік."
 
-#: front-page.php:14
-msgid "Ищу исполнителя"
-msgstr "Шукаю виконавця"
+#~ msgid "Другие услуги"
+#~ msgstr "Інші послуги"
 
-#: front-page.php:15
-msgid "Каталог №1 в Украине"
-msgstr "Каталог №1 в Україні"
+#~ msgid "Экономьте на ремонте!"
+#~ msgstr "Економте на ремонті!"
 
-#: front-page.php:19
-msgid "Я исполнитель"
-msgstr "Я виконавець"
+#~ msgid "знает как"
+#~ msgstr "знає як"
 
-#: front-page.php:20
-msgid "Бесплатное размещение"
-msgstr "Безкоштовне розміщення"
+#~ msgid "Сэкономить <strong>до $3,000</strong>"
+#~ msgstr "Зекономити <strong>до $3,000</strong>"
 
-#: front-page.php:25
-msgid "Реклама на сайте"
-msgstr "Реклама на сайті"
+#~ msgid "Каталог"
+#~ msgstr "Каталог"
 
-#: front-page.php:37
-msgid "<strong>%s</strong> мастеров"
-msgstr "<strong>%s</strong> майстрів"
+#~ msgid "Поиск"
+#~ msgstr "Пошук"
 
-#: front-page.php:45
-msgid "<strong>рейтинг</strong> и отзывы"
-msgstr "<strong>рейтинг</strong> та відгуки"
+#~ msgid ""
+#~ "<div class=\"first\">Всеукраинский бесплатный</div>\n"
+#~ "                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАСТЕРОВ</"
+#~ "span></h1>\n"
+#~ "                <div class=\"last\">для ремонта квартир, домов<br />и "
+#~ "офисных помещений</div>"
+#~ msgstr ""
+#~ "<div class=\"first\">Всеукраїнський безкоштовний</div>\n"
+#~ "                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАЙСТРІВ</"
+#~ "span></h1>\n"
+#~ "                <div class=\"last\">для ремонту квартир, будинків<br />та "
+#~ "офісних приміщень</div>"
 
-#: front-page.php:53
-msgid "<strong>бесплатный</strong> каталог"
-msgstr "<strong>безкоштовний</strong> каталог"
+#~ msgid "Ищу исполнителя"
+#~ msgstr "Шукаю виконавця"
 
-#. Theme Name of the theme
-msgid "Common"
-msgstr "Common"
+#~ msgid "Каталог №1 в Украине"
+#~ msgstr "Каталог №1 в Україні"
+
+#~ msgid "Бесплатное размещение"
+#~ msgstr "Безкоштовне розміщення"
+
+#~ msgid "Реклама на сайте"
+#~ msgstr "Реклама на сайті"
+
+#~ msgid "<strong>%s</strong> мастеров"
+#~ msgstr "<strong>%s</strong> майстрів"
+
+#~ msgid "<strong>рейтинг</strong> и отзывы"
+#~ msgstr "<strong>рейтинг</strong> та відгуки"
+
+#~ msgid "<strong>бесплатный</strong> каталог"
+#~ msgstr "<strong>безкоштовний</strong> каталог"
 
 #~ msgid "Вы уже зарегистрированы."
 #~ msgstr "Ви вже зареєстровані."
@@ -702,9 +722,6 @@ msgstr "Common"
 
 #~ msgid "Услуги"
 #~ msgstr "Послуги"
-
-#~ msgid "Профиль"
-#~ msgstr "Профіль"
 
 #~ msgid "ProRemont - Каталог Мастеров с рейтингами со всей Украины."
 #~ msgstr "ProRemont - Каталог Майстрів з рейтингами зі всієї України."

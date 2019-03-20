@@ -28,16 +28,18 @@ jQuery(function ($) {
         },
         {
             name: 'catalog',
+            limit: 10,
             source: substringMatcher(Object.keys(ProRemontSearchbox.catalogs))
         });
 
     $('#master-searchbox .section-input').typeahead({
             hint: true,
             highlight: true,
-            minLength: 1
+            minLength: 0
         },
         {
             name: 'section',
+            limit: 100,
             source: substringMatcher(Object.keys(ProRemontSearchbox.sections))
         });
 

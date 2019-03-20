@@ -1,4 +1,4 @@
-# Copyright (C) 2018 
+# Copyright (C) 2019 
 # This file is distributed under the .
 msgid ""
 msgstr ""
@@ -9,9 +9,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-10-28T23:31:34+01:00\n"
-"PO-Revision-Date: 2018-10-28T23:31:34+01:00\n"
+"POT-Creation-Date: 2019-03-20T13:04:36+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 1.5.1\n"
 "X-Domain: common\n"
+
+#. Theme Name of the theme
+msgid "Common"
+msgstr ""
 
 #: 404.php:3
 msgid "404"
@@ -33,30 +38,26 @@ msgstr ""
 msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>"
 msgstr ""
 
-#: taxonomy-catalog_master.php:10
-msgid "Другие услуги"
-msgstr ""
-
 #: modules/prom/template/mobile1.php:15
 #: modules/prom/template/sidebar-col.php:24
 msgid "Реклама на ProRemont.co"
 msgstr ""
 
-#: modules/prom/template/sidebar-col.php:4
-msgid "Экономьте на ремонте!"
-msgstr ""
-
-#: modules/prom/template/sidebar-col.php:5
-msgid "знает как"
-msgstr ""
-
-#: modules/prom/template/sidebar-col.php:6
-msgid "Сэкономить <strong>до $3,000</strong>"
-msgstr ""
-
 #: modules/rating/template/total.php:19
 #: modules/rating/template/total-inline.php:17
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
+msgstr ""
+
+#: modules/tender/template/detailed.php:47
+#: modules/partner/template/detailed.php:47
+#: modules/master/template/detailed.php:64
+msgid "Нет информации."
+msgstr ""
+
+#: modules/tender/template/list.php:35
+#: modules/partner/template/list.php:35
+#: modules/master/template/list.php:73
+msgid "Ничего не найдено. Проверьте этот раздел позже."
 msgstr ""
 
 #: modules/catalog_master/template/list.php:33
@@ -65,6 +66,10 @@ msgstr ""
 
 #: modules/catalog_master/template/list.php:33
 msgid "из раздела"
+msgstr ""
+
+#: modules/catalog_master/template/frontpage-list.php:31
+msgid "Популярные категории"
 msgstr ""
 
 #: modules/family/template/list.php:13
@@ -101,16 +106,6 @@ msgstr ""
 
 #: modules/partner/template/front-list.php:59
 msgid "Смотреть всех партнеров"
-msgstr ""
-
-#: modules/partner/template/detailed.php:47
-#: modules/master/template/detailed.php:64
-msgid "Нет информации."
-msgstr ""
-
-#: modules/partner/template/list.php:35
-#: modules/master/template/list.php:94
-msgid "Ничего не найдено. Проверьте этот раздел позже."
 msgstr ""
 
 #: modules/profile/template/password-reset.php:4
@@ -189,7 +184,7 @@ msgid "Запомнить меня"
 msgstr ""
 
 #: modules/profile/template/login.php:68
-#: modules/theme/template/header.php:61
+#: modules/theme/template/header.php:38
 msgid "Войти"
 msgstr ""
 
@@ -503,11 +498,11 @@ msgstr ""
 msgid "Ошибка. Попробуйте еще раз позже."
 msgstr ""
 
-#: modules/profile/front/front.php:519
+#: modules/profile/front/front.php:525
 msgid "Телефон: %s"
 msgstr ""
 
-#: modules/profile/front/front.php:520
+#: modules/profile/front/front.php:526
 msgid "Роль: %s"
 msgstr ""
 
@@ -518,14 +513,6 @@ msgstr ""
 #: modules/master/template/related-list.php:180
 #: modules/master/template/front-list.php:165
 msgid "Смотреть всех мастеров"
-msgstr ""
-
-#: modules/master/template/searchbox.php:3
-msgid "Каталог"
-msgstr ""
-
-#: modules/master/template/searchbox.php:23
-msgid "Поиск"
 msgstr ""
 
 #: modules/master/template/front-list.php:101
@@ -573,11 +560,15 @@ msgstr ""
 msgid "Недавно добавленные фотографии"
 msgstr ""
 
-#: modules/theme/template/header.php:63
+#: modules/theme/template/header.php:33
+msgid "Профиль"
+msgstr ""
+
+#: modules/theme/template/header.php:40
 msgid "Найти мастера"
 msgstr ""
 
-#: modules/theme/template/header.php:64
+#: modules/theme/template/header.php:41
 msgid "Стать исполнителем"
 msgstr ""
 
@@ -597,45 +588,30 @@ msgstr ""
 msgid "Для мастеров"
 msgstr ""
 
+#: modules/searchbox/template/form.php:26
+msgid "Начните вводить вид работы"
+msgstr ""
+
+#: modules/searchbox/template/form.php:27
+msgid "Например: Ремонт под ключ, Отделка полов и тд."
+msgstr ""
+
+#: modules/searchbox/template/form.php:33
+msgid "Найти"
+msgstr ""
+
+#: modules/searchbox/template/form.php:37
+msgid "Расширенный поиск"
+msgstr ""
+
+#: modules/searchbox/template/form.php:49
+msgid "Тип исполнителя"
+msgstr ""
+
+#: front-page.php:6
+msgid "ДЕЛАЕШЬ <span>РЕМОНТ</span>?"
+msgstr ""
+
 #: front-page.php:7
-msgid ""
-"<div class=\"first\">Всеукраинский бесплатный</div>\n"
-"                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАСТЕРОВ</span></h1>\n"
-"                <div class=\"last\">для ремонта квартир, домов<br />и офисных помещений</div>"
-msgstr ""
-
-#: front-page.php:14
-msgid "Ищу исполнителя"
-msgstr ""
-
-#: front-page.php:15
-msgid "Каталог №1 в Украине"
-msgstr ""
-
-#: front-page.php:19
-msgid "Я исполнитель"
-msgstr ""
-
-#: front-page.php:20
-msgid "Бесплатное размещение"
-msgstr ""
-
-#: front-page.php:25
-msgid "Реклама на сайте"
-msgstr ""
-
-#: front-page.php:37
-msgid "<strong>%s</strong> мастеров"
-msgstr ""
-
-#: front-page.php:45
-msgid "<strong>рейтинг</strong> и отзывы"
-msgstr ""
-
-#: front-page.php:53
-msgid "<strong>бесплатный</strong> каталог"
-msgstr ""
-
-#. Theme Name of the theme
-msgid "Common"
+msgid "Найди мастеров, дизайнеров, строителей в один клик."
 msgstr ""

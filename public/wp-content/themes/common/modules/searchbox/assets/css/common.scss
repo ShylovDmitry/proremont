@@ -21,6 +21,10 @@
     }
 }
 
+.tt-dataset {
+    max-height: 150px;
+    overflow-y: auto;
+}
 
 .master-searchbox {
     .form-control {

@@ -35,7 +35,7 @@ $terms = get_terms(array(
     <div class="row">
         <?php $pos = 0; ?>
         <?php foreach ($terms as $main_catalog): $pos++; ?>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <a href="<?php echo esc_url( get_term_link($main_catalog) ); ?>" title="<?php echo esc_attr($main_catalog->name); ?>" class="subcategory-link">
                     <?php echo $main_catalog->name; ?><i> <?php echo pror_catalog_get_count($main_catalog); ?></i>
                 </a>

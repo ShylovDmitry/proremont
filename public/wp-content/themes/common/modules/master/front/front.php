@@ -94,6 +94,10 @@ add_action('wpseo_register_extra_replacements', function() {
         return '';
     });
 
+    wpseo_register_var_replacement('%%section%%', function() {
+        return pror_get_section_name(pror_get_section());
+    });
+
     wpseo_register_var_replacement('%%catalogs%%', function() {
         $catalogs = array();
         if (get_post_type() == 'master') {

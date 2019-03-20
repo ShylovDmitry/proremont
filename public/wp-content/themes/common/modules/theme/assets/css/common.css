@@ -67,7 +67,7 @@ a, a:hover {
     font-size: 2.3rem;
   }
 }
-.jumbotron.header .text-block h1 .highlighted {
+.jumbotron.header .text-block h1 span {
   font-weight: 900;
   color: #E67E22;
 }

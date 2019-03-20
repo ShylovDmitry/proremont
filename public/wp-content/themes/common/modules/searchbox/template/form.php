@@ -34,7 +34,7 @@ ob_start();
             </div>
             <?php if (!$is_short_form): ?>
                 <div class="col-12 mt-2 mt-md-0 text-right advanced-options">
-                    <a href="#searchboxOptions" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchboxOptions"><?php _e('Расширений поиск', 'common'); ?></a>
+                    <a href="#searchboxOptions" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchboxOptions"><?php _e('Расширенный поиск', 'common'); ?></a>
                 </div>
             <?php endif; ?>
         </div>
