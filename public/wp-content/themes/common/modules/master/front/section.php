@@ -1,7 +1,7 @@
 <?php
 
 global $global_section;
-function pror_get_section() {
+function pror_detect_section() {
     global $global_section;
 
     if ($global_section) {
@@ -11,8 +11,10 @@ function pror_get_section() {
     $section = pror_get_section_by_slug($_GET['region']);
     if (!$section) {
 
+
         $section = pror_get_section_by_slug(get_query_var('section'));
         if (!$section) {
+
 
             $section = pror_get_section_by_slug(pror_get_section_cookie());
             if (!$section) {
@@ -31,7 +33,16 @@ function pror_get_section() {
 }
 
 function pror_get_section_by_slug($slug) {
-    $term = get_term_by('slug', $slug, 'section');
+    $term = null;
+
+    if (pll_current_language() != pll_default_language()) {
+        $term = get_term_by('slug_' . pll_current_language(), $slug, 'section');
+    }
+
+    if (!$term) {
+        $term = get_term_by('slug', $slug, 'section');
+    }
+
 
     if ($term && get_field('hidden', $term) == false) {
         return $term;
@@ -39,14 +50,53 @@ function pror_get_section_by_slug($slug) {
     return false;
 }
 
-function pror_get_section_name($section) {
+function pror_get_section_by_name($name) {
+    $term = null;
+
+    if (pll_current_language() != pll_default_language()) {
+        $term = get_term_by('name_' . pll_current_language(), $name, 'section');
+    }
+
+    if (!$term) {
+        $term = get_term_by('name', $name, 'section');
+    }
+
+    if ($term && get_field('hidden', $term) == false) {
+        return $term;
+    }
+    return false;
+}
+
+function pror_get_section_by_id($id) {
+    return get_term_by('id', $id, 'section');
+}
+
+function pror_get_section_localized_name($section) {
+    if (! $section instanceof WP_term) {
+        $section = pror_get_section_by_id($section);
+    }
+
     if (pll_default_language() != pll_current_language()) {
-        $langed_name = get_field('name_' . pll_current_language(), $section);
-        if ($langed_name) {
-            return $langed_name;
+        $localized = get_field('name_' . pll_current_language(), $section);
+        if ($localized) {
+            return $localized;
         }
     }
     return $section ? $section->name : '-';
+}
+
+function pror_get_section_localized_slug($section) {
+    if (! $section instanceof WP_term) {
+        $section = pror_get_section_by_id($section);
+    }
+
+    if (pll_default_language() != pll_current_language()) {
+        $localized = get_field('slug_' . pll_current_language(), $section);
+        if ($localized) {
+            return $localized;
+        }
+    }
+    return $section ? $section->slug : '-';
 }
 
 function pror_get_section_by_location_id($location_id) {
@@ -69,8 +119,6 @@ function pror_detect_section_by_ip() {
     if (preg_match("/{$botRegexPattern}/", $_SERVER['HTTP_USER_AGENT'])) {
         return false;
     }
-
-//    $_SERVER['REMOTE_ADDR'] = '93.77.137.79';
 
     $ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
     $geo = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $ip));

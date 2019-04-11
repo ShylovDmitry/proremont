@@ -1,5 +1,7 @@
+<?php $menu = isset($__data['menu']) ? $__data['menu'] : []; ?>
+
 <ul class="list-unstyled profile-menu">
-    <?php foreach ($__data['menu'] as $slug => $item): ?>
+    <?php foreach ($menu as $slug => $item): ?>
         <?php
             $link = $item['link'] ? $item['link'] : pror_get_permalink_by_slug('profile') . '?section=' . $slug;
             $class = (empty($_GET['section']) || $_GET['section'] == $slug) ? 'active' : '';

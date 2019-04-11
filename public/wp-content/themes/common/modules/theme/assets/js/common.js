@@ -11,6 +11,13 @@ jQuery(function ($) {
     });
 });
 
+function pror_track_action(action, type) {
+    $.post(ProRemontObj.ajaxurl, {action: action, type: type, post_id: ProRemontObj.postid}, function (response) {
+        // console.log(response);
+    });
+}
+
+
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

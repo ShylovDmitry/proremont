@@ -115,7 +115,7 @@
   font-size: 1rem;
   background: #E67E22;
   color: #fff;
-  padding: 8px 12px;
+  padding: 5px 12px;
   text-decoration: none;
   display: inline-block;
 }
@@ -124,17 +124,6 @@
   color: #fff;
 }
 
-.pagination .page-link, .pagination .page-link:hover {
-  color: #3e3e3e;
-}
-.pagination .page-item.active .page-link {
-  background-color: #E67E22;
-  border-color: #E67E22;
-}
-
-.master-detailed .registration-required-message a {
-  color: #E67E22;
-}
 .master-detailed .main-content {
   background: #f8f9f9;
   border: 1px solid #e7e8e8;
@@ -151,8 +140,8 @@
 }
 .master-detailed .thumbnail img {
   border: 1px solid #B2BABB;
-  width: 175px;
-  max-width: 175px;
+  width: 150px;
+  max-width: 150px;
   height: auto;
   font-size: 0.75rem;
 }
@@ -163,39 +152,6 @@
 .master-detailed .catalog {
   margin-top: 15px;
   margin-bottom: 5px;
-}
-.master-detailed .phone {
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-.master-detailed .phone .master-phones {
-  display: inline-block;
-  background: #E67E22;
-  color: #fff;
-  font-weight: 500;
-  font-size: 20px;
-  padding: 8px 15px;
-  border-radius: 8px;
-}
-.master-detailed .phone .master-phones .phone-icon {
-  font-size: 16px;
-  margin-right: 5px;
-}
-.master-detailed .phone .master-phones a {
-  color: #fff;
-}
-.master-detailed .phone .master-phones .show-number {
-  font-size: 12px;
-  font-weight: 300;
-  border-bottom: 1px dotted;
-  display: inline-block;
-  line-height: 12px;
-  text-decoration: none;
-}
-.master-detailed .phone .master-phones .delimiter {
-  display: inline-block;
-  font-weight: 300;
-  padding-right: 5px;
 }
 .master-detailed .master-body {
   word-break: break-word;
@@ -243,7 +199,7 @@
 .master-detailed .line {
   text-align: center;
   font-size: 0;
-  margin: 30px 25px;
+  margin: 22px 25px;
 }
 .master-detailed .line::after {
   content: "";
@@ -259,7 +215,7 @@
   padding: 0 5px;
 }
 .master-detailed .gallery .slick-slide img {
-  height: 200px;
+  height: 150px;
   width: auto;
 }
 .master-detailed .gallery .slick-dots li.slick-active button:before {
@@ -273,11 +229,6 @@
 @media (min-width: 992px) {
   .master-detailed .gallery .gallery-wrapper {
     width: 581px;
-  }
-}
-@media (min-width: 1200px) {
-  .master-detailed .gallery .gallery-wrapper {
-    width: 761px;
   }
 }
 

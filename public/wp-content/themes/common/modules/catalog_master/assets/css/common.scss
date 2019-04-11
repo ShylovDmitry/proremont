@@ -14,6 +14,7 @@
 }
 
 .catalog-mater-small-list {
+    font-size: 14px;
     color: #6b7886;
     .pro & {
         color: $color-primary;
@@ -36,8 +37,7 @@
         font-weight: 300;
         text-decoration: none;
         color: $color-dark;
-        font-size: 18px;
-        line-height: 30px;
+        line-height: 26px;
 
         i {
             font-weight: 200;
@@ -51,7 +51,7 @@
             height: 10px;
             border-radius: 50%;
             background-color: $color-primary;
-            margin-right: 10px;
+            margin-right: 5px;
         }
     }
 }
@@ -72,7 +72,7 @@
             height: 10px;
             border-radius: 50%;
             background-color: $color-primary;
-            margin-right: 10px;
+            margin-right: 5px;
         }
     }
 

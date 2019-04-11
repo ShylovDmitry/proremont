@@ -131,7 +131,6 @@ function module_svg($name) {
 /*
  * Template helper
  */
-
 function module_template($path, $data = array(), $require_once = false) {
     list($module, $file) = explode('/', $path, 2);
 

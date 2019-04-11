@@ -3,8 +3,8 @@
 <?php module_template('breadcrumbs/breadcrumbs'); ?>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
+    <div class="row">
+        <div class="col">
             <div class="colored-box p-3 content">
 
                 <?php if (have_posts()): the_post(); ?>
@@ -17,6 +17,8 @@
                 <?php endif; ?>
             </div>
         </div>
+
+        <?php module_template('prom/sidebar-col'); ?>
     </div>
 </div>
 

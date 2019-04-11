@@ -33,7 +33,7 @@ $query = new WP_Query(array(
         <div class="list">
             <div class="row">
                 <div class="col-12 mb-1">
-                    <h3 class="header-underlined"><?php _e('Партнеры', 'common'); ?></h3>
+                    <h4 class="header-underlined"><?php _e('Партнеры', 'common'); ?></h4>
                 </div>
             </div>
 

@@ -39,7 +39,7 @@
                             <?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?><span class="pro-label">PRO</span><?php endif; ?>
                             <?php _e(get_field('master_type', "user_" . get_the_author_meta('ID')), 'common'); ?>,
                         </span>
-                        <span class="location"><?php echo pror_get_section_name(pror_get_master_section()); ?></span>
+                        <span class="location"><?php echo pror_get_section_localized_name(pror_get_master_section()); ?></span>
                     </div>
 
                     <div class="rating d-none d-sm-block">
@@ -47,15 +47,22 @@
                     </div>
 
                     <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
-
-                    <div class="phone"><?php module_template('master/master-phones'); ?></div>
-                    <div class="report mt-1"><a href="#" data-toggle="modal" data-target="#reportModal"><?php _e('Пожаловаться', 'common'); ?></a></div>
+<!--                    <div class="report mt-1"><a href="#" data-toggle="modal" data-target="#reportModal">--><?php //_e('Пожаловаться', 'common'); ?><!--</a></div>-->
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="line"></div>
 
+            <div class="line"></div>
+            <div class="contacts">
+                <h5><?php _e('Контактная информация', 'common'); ?></h5>
+
+                <?php module_template('contact-info/contacts', ['phones' => pror_get_master_phones(get_the_author_meta('ID'))]); ?>
+            </div>
+
+            <div class="line"></div>
             <div class="content">
+                <h5><?php _e('Описание', 'common'); ?></h5>
+
                 <?php if(get_the_content()): ?>
                     <?php the_content(); ?>
                 <?php elseif(get_the_excerpt()): ?>
@@ -70,7 +77,7 @@
             if ($images): ?>
                 <div class="line"></div>
                 <div class="gallery">
-                    <h4><?php _e('Галерея', 'common'); ?></h4>
+                    <h5><?php _e('Галерея', 'common'); ?></h5>
 
                     <div class="gallery-wrapper">
                         <div class="gallery-carousel">

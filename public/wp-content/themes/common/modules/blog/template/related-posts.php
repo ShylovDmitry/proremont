@@ -36,7 +36,7 @@ $query = new WP_Query(array(
 <?php if ($query->have_posts()): ?>
     <div class="<?php echo $container_class; ?>">
         <div class="related-posts">
-            <h3 class="header-underlined"><?php _e('Похожие статьи', 'common'); ?></h3>
+            <h4 class="header-underlined"><?php _e('Похожие статьи', 'common'); ?></h4>
 
             <div class="row">
             <?php $pos = 0; ?>

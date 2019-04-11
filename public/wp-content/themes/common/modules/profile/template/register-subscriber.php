@@ -7,7 +7,7 @@
     <?php elseif (!get_option('users_can_register')): ?>
         <?php _e( 'Регистрация для новых пользователей временно закрыта.', 'common' ); ?>
     <?php else: ?>
-        <h2 class="mb-4"><?php _e( 'Регистрация', 'common' ); ?></h2>
+        <h1 class="mb-4"><?php _e( 'Регистрация', 'common' ); ?></h1>
 
         <p>
             <?php printf(
@@ -33,6 +33,8 @@
                 <form action="<?php echo wp_registration_url(); ?>" method="post" class="form-container from-validation-simple">
                     <input type="hidden" name="user_role" value="subscriber" />
 
+                    <h4 class="mb-3"><?php _e('Личные данные', 'common'); ?></h4>
+
                     <div class="form-group">
                         <label for="email" class="form-label"><?php _e( 'Email', 'common' ); ?> <span class="required">*</span></label>
                         <input type="email" name="email" id="email" class="form-control" required="required" />
@@ -57,6 +59,8 @@
                         <label for="last_name" class="form-label"><?php _e( 'Фамилия', 'common' ); ?> <span class="required">*</span></label>
                         <input type="text" name="last_name" id="last_name" class="form-control" required="required" />
                     </div>
+
+                    <hr>
 
                     <div class="form-group">
                         <small class="form-text text-muted">

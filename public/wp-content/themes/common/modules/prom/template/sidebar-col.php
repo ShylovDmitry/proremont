@@ -1,5 +1,5 @@
 <div class="col col-prom-sidebar d-none d-lg-block">
-<!--    --><?php //if (pror_get_section()->slug == 'lvov'): ?>
+<!--    --><?php //if (pror_detect_section()->slug == 'lvov'): ?>
 <!--        <div class="prom-card colored-box p-3 mb-3">-->
 <!--            <h4 class="text-center">--><?php //_e('Экономьте на ремонте!', 'common'); ?><!--</h4>-->
 <!--            <p class="text-center"><img src="--><?php //module_img('theme/logo-proremont-dark.png'); ?><!--" height="16" alt="ProRemont logo" /> --><?php //_e('знает как', 'common'); ?><!--.</p>-->

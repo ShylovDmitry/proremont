@@ -45,7 +45,7 @@ defined('WP_CONTENT_URL') or define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
  */
 $table_prefix = 'wp_';
 
-defined('DB_NAME') or define('DB_NAME', 'remont');
+defined('DB_NAME') or define('DB_NAME', 'proremont');
 defined('DB_USER') or define('DB_USER', 'root');
 defined('DB_PASSWORD') or define('DB_PASSWORD', 'admin');
 defined('DB_HOST') or define('DB_HOST', 'localhost');

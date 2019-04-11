@@ -21,6 +21,13 @@ body {
     }
 }
 
+
+.container {
+    @media (min-width: $screen-width-lg) {
+        max-width: 960px;
+    }
+}
+
 a, a:hover {
     color: $color-dark;
     outline: none;
@@ -435,6 +442,9 @@ a.btn.btn-pror-primary {
                 display: inline-block;
             }
         }
+        .reply {
+            text-align: right;
+        }
         .comment-reply-login, .comment-reply-link {
             font-size: 14px;
             color: $color-primary;
@@ -459,7 +469,7 @@ a.btn.btn-pror-primary {
 
         .comment-reply-title {
             margin-bottom: 0;
-            padding: 12px 15px;
+            padding: 7px 15px;
             background: $color-primary;
             color: #fff;
             font-size: 16px;
@@ -549,11 +559,6 @@ a.btn.btn-pror-primary {
 
 
 .post-content {
-    @media (min-width: $screen-width-xl) {
-        width: 80%;
-        margin: 0 auto;
-    }
-
     a {
         color: $color-primary;
     }
@@ -581,5 +586,21 @@ a.btn.btn-pror-primary {
 .wpcf7 {
     .form-row label {
         margin-bottom: 0;
+    }
+}
+
+.pagination {
+    .page-link, .page-link:hover {
+        color: #3e3e3e;
+    }
+    .page-item.active .page-link {
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}
+
+.pror-alert-info {
+    a {
+        color: red;
     }
 }

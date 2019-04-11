@@ -1,5 +1,9 @@
 <?php
 
+add_filter('wp', function() {
+    pror_set_section_cookie(pror_detect_section()->slug);
+}, 1);
+
 add_action('wp_print_styles', function () {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900|Roboto:100,300,400,500,700,900|Roboto+Condensed:700', array(), null);
     wp_enqueue_style('bootstrap', get_module_css('theme/bootstrap-4.0.0.css'), array(), null);
@@ -75,74 +79,9 @@ add_filter('excerpt_length', function( $length ) {
     return 20;
 }, 999);
 
-add_action('wp_footer', function() {
-    echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
-}, 1000);
-
-function pror_user_has_role($roles, $user_id = null) {
-    $user = $user_id ? get_user_by('id', $user_id) : wp_get_current_user();
-
-    if (!$user) {
-        return false;
-    }
-
-    foreach (explode(' ', $roles) as $role) {
-        if (in_array($role, (array)$user->roles)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function pror_cache_expire($expire = 0) {
-    return $expire ? $expire - time()%$expire : 0;
-}
-
-function pror_cache_key($key = null, $depends_str = '') {
-    if (empty($key)) {
-        $key = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-    }
-
-    $depends = explode(',', $depends_str);
-    if (in_array('section', $depends)) {
-        $key .= '-' . pror_get_section()->slug;
-    }
-    if (in_array('lang', $depends)) {
-        $key .= '-' . pll_current_language();
-    }
-    if (in_array('user_id', $depends)) {
-        $user = wp_get_current_user();
-        $key .= '-' . $user->ID;
-    }
-
-    foreach ($_COOKIE as $name => $value) {
-        if (strpos($name, 'wordpress_logged_in_') === 0) {
-            $user = wp_get_current_user();
-            $key .= '-loggedin=' . (isset($user->roles[0]) ? $user->roles[0] : '_');
-
-            break;
-        }
-    }
-
-    return $key;
-}
-
-function pror_cache_delete_wildcard($group) {
-    global $wp_object_cache;
-
-    if (method_exists($wp_object_cache, 'get_mc')) {
-        foreach ($wp_object_cache->get_mc('default')->getAllKeys() as $full_key) {
-            if (strpos($full_key, ':' . $group . ':') !== false) {
-                $key = end(explode(':', $full_key));
-
-                $correct_group = substr($full_key, strpos($full_key, $group));
-                $correct_group = str_replace(':' . $key, '', $correct_group);
-
-                wp_cache_delete($key, $correct_group);
-            }
-        }
-    }
-}
+//add_action('wp_footer', function() {
+//    echo '<!-- Page generated in ' . timer_stop() . ' seconds (' . get_num_queries() . ' queries). -->' . "\n";
+//}, 1000);
 
 add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $size) {
     if (isset($attr['pror_no_scrset']) && $attr['pror_no_scrset']) {
@@ -152,10 +91,6 @@ add_filter('wp_get_attachment_image_attributes', function($attr, $attachment, $s
     }
     return $attr;
 }, 11, 3);
-
-function pror_declension_words($n, $words){
-    return ($words[($n=($n=$n%100)>19?($n%10):$n)==1?0 : (($n>1&&$n<=4)?1:2)]);
-}
 
 function pror_get_permalink_by_slug($slug) {
     if (empty($slug) || $slug == '/') {

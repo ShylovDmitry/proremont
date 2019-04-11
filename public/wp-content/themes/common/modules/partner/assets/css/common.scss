@@ -7,9 +7,9 @@
     @media (min-width: $screen-width-lg) {
         width: 581px;
     }
-    @media (min-width: $screen-width-xl) {
-        width: 761px;
-    }
+    //@media (min-width: $screen-width-xl) {
+    //    width: 761px;
+    //}
 
     .slick-slide {
         padding: 0 15px;
@@ -95,7 +95,7 @@
     font-size: 1rem;
     background: $color-primary;
     color: #fff;
-    padding: 8px 12px;
+    padding: 5px 12px;
     text-decoration: none;
     display: inline-block;
 

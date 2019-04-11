@@ -23,9 +23,8 @@ ob_start();
             </div>
 
             <div class="catalog-subs row">
-                <?php foreach (pror_get_catalog($main_catalog->term_id) as $index => $sub_catalog): ?>
-                    <div class="col-12 col-md-6 my-1"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" title="<?php echo esc_attr($sub_catalog->name); ?>"><span><?php echo $sub_catalog->name; ?></span> <?php echo pror_catalog_get_count($sub_catalog); ?></a></div>
-                    <?php if (($index+1) % 2 == 0): ?><div class="w-100 d-lg-none"></div><?php endif; ?>
+                <?php foreach (pror_get_catalog($main_catalog->term_id) as $sub_catalog): ?>
+                    <div class="col-12"><a href="<?php echo esc_url( get_term_link($sub_catalog) ); ?>" title="<?php echo esc_attr($sub_catalog->name); ?>"><span><?php echo $sub_catalog->name; ?></span> <?php echo pror_catalog_get_count($sub_catalog); ?></a></div>
                 <?php endforeach; ?>
             </div>
         </div>

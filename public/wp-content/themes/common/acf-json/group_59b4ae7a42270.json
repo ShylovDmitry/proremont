@@ -3,13 +3,8 @@
     "title": "Section",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_5b3c13d5619e6",
-            "label": "Name UK",
+            "label": "Название UK",
             "name": "name_uk",
             "type": "text",
             "instructions": "",
@@ -20,17 +15,54 @@
                 "class": "",
                 "id": ""
             },
-            "admin_only": 0
+            "admin_only": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "taxonomy": "location",
-            "field_type": "checkbox",
-            "multiple": 0,
-            "allow_null": 0,
-            "return_format": "id",
-            "add_term": 0,
-            "load_terms": 0,
-            "save_terms": 0,
+            "key": "field_5c9aacd3a860b",
+            "label": "Ярлык UK",
+            "name": "slug_uk",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c9aad11a860c",
+            "label": "Описание UK",
+            "name": "description_uk",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_59b4ae8f39f22",
             "label": "Locations",
             "name": "locations",
@@ -42,16 +74,17 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "taxonomy": "location",
+            "field_type": "checkbox",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "id",
+            "add_term": 0,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "step": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_59b93050f4af4",
             "label": "Sort position",
             "name": "sort",
@@ -63,14 +96,16 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "default_value": 0,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
             "key": "field_59c58a948aa52",
             "label": "Hidden",
             "name": "hidden",
@@ -82,7 +117,12 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -102,5 +142,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530663928
+    "modified": 1553640763
 }

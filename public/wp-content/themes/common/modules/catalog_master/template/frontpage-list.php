@@ -28,7 +28,7 @@ $terms = get_terms(array(
 <div class="frontpage-catalog">
     <div class="row">
         <div class="col-12">
-            <h3 class="header-underlined"><?php _e('Популярные категории', 'common'); ?></h3>
+            <h4 class="header-underlined"><?php _e('Популярные категории', 'common'); ?></h4>
         </div>
     </div>
 

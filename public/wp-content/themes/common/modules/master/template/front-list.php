@@ -26,7 +26,7 @@ $pro_masters_query = new WP_Query(array(
     'tax_query' => array(
         array(
             'taxonomy' => 'location',
-            'terms' => get_field('locations', pror_get_section()),
+            'terms' => get_field('locations', pror_detect_section()),
             'include_children' => false,
             'operator' => 'IN',
         ),
@@ -53,7 +53,7 @@ if (count($unique_ids) < $number_of_masters) {
             ),
             array(
                 'taxonomy' => 'location',
-                'terms' => get_field('locations', pror_get_section()),
+                'terms' => get_field('locations', pror_detect_section()),
                 'include_children' => false,
                 'operator' => 'IN',
             ),
@@ -82,7 +82,7 @@ if ($rated_masters_query) {
                 ),
                 array(
                     'taxonomy' => 'location',
-                    'terms' => get_field('locations', pror_get_section()),
+                    'terms' => get_field('locations', pror_detect_section()),
                     'include_children' => false,
                     'operator' => 'IN',
                 ),
@@ -98,7 +98,7 @@ if ($rated_masters_query) {
         <div class="master-2columns">
             <div class="row">
                 <div class="col-12 mb-1">
-                    <h3 class="header-underlined"><?php _e('Мастера', 'common'); ?></h3>
+                    <h4 class="header-underlined"><?php _e('Мастера', 'common'); ?></h4>
                 </div>
             </div>
 

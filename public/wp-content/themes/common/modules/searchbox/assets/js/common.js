@@ -21,38 +21,37 @@ jQuery(function ($) {
         };
     };
 
-    $('#master-searchbox .catalog-input').typeahead({
+    $('.catalog-search-input').typeahead({
             hint: true,
             highlight: true,
             minLength: 1
-        },
-        {
+        }, {
             name: 'catalog',
             limit: 10,
             source: substringMatcher(Object.keys(ProRemontSearchbox.catalogs))
         });
 
-    $('#master-searchbox .section-input').typeahead({
+    $('.section-search-input').typeahead({
             hint: true,
             highlight: true,
             minLength: 0
-        },
-        {
+        }, {
             name: 'section',
             limit: 100,
             source: substringMatcher(Object.keys(ProRemontSearchbox.sections))
         });
 
 
+
     $('#master-searchbox form').submit(function(e) {
         e.preventDefault();
 
-        var catalog_val = $('#master-searchbox .catalog-input.tt-input').val();
+        var catalog_val = $('#master-searchbox .catalog-search-input.tt-input').val();
         var catalog = ProRemontSearchbox.catalogs[catalog_val];
         if (catalog) {
             var parts = [];
 
-            var section_val = $('#master-searchbox .section-input.tt-input').val();
+            var section_val = $('#master-searchbox .section-search-input.tt-input').val();
             var section = ProRemontSearchbox.sections[section_val];
             if (section) {
                 parts.push('region=' + section);

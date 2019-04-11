@@ -1,0 +1,19 @@
+@import "../../../theme/assets/css/variables";
+
+.contact-info {
+    dt {
+        font-weight: 300;
+    }
+
+    .show-contact-info {
+        color: $color-primary;
+        border-bottom: 1px dotted;
+        font-size: 14px;
+    }
+
+    .registration-required-message {
+        a {
+            color: red;
+        }
+    }
+}

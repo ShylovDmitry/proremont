@@ -1,5 +1,4 @@
 .profile-login label, .profile-register label, .profile-settings label {
-  font-weight: bold;
   color: #424949;
   margin-bottom: 0;
 }
@@ -39,7 +38,6 @@
   border-color: #d8ab76 #d8ab76 #fde7d3;
 }
 .profile-login .register-links, .profile-register .register-links, .profile-settings .register-links {
-  text-align: center;
   border: 1px solid #dee0e0;
   padding: 20px 10px;
   background: #f6f7f7;

@@ -1,5 +1,5 @@
 <?php
-$is_short_form = $__data['short_form'];
+$is_short_form = isset($__data['short_form']) ? $__data['short_form'] : false;
 
 $catalog = '';
 if (is_tax('catalog_master')) {
@@ -23,14 +23,14 @@ ob_start();
     <form action="#" method="GET" class="mb-3">
         <div class="form-row justify-content-center">
             <div class="col-md-6">
-                <input type="text" name="catalog" class="catalog-input form-control form-control-lg" value="<?php echo $catalog; ?>" placeholder="<?php _e('Начните вводить вид работы', 'common'); ?>" />
+                <input type="text" name="catalog" class="catalog-search-input form-control" value="<?php echo $catalog; ?>" placeholder="<?php _e('Начните вводить вид работы', 'common'); ?>" />
                 <small class="form-text"><?php _e('Например: Ремонт под ключ, Отделка полов и тд.', 'common'); ?></small>
             </div>
             <div class="col-md-4">
-                <input type="text" name="section" class="section-input form-control form-control-lg" value="<?php echo pror_get_section_name(pror_get_section()); ?>" />
+                <input type="text" name="section" class="section-search-input form-control" value="<?php echo pror_get_section_localized_name(pror_detect_section()); ?>" />
             </div>
             <div class="col-md-2 mt-2 mt-md-0">
-                <input type="submit" class="btn btn-pror-primary btn-block btn-lg" value="<?php _e('Найти', 'common'); ?>" />
+                <input type="submit" class="btn btn-pror-primary btn-block" value="<?php _e('Найти', 'common'); ?>" />
             </div>
             <?php if (!$is_short_form): ?>
                 <div class="col-12 mt-2 mt-md-0 text-right advanced-options">
@@ -45,7 +45,7 @@ ob_start();
             ?>
             <div class="mt-2 collapse<?php if (!$is_collapsed): ?> show<?php endif; ?>" id="searchboxOptions">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <?php _e('Тип исполнителя', 'common'); ?>:
                     </div>
                     <div class="col-auto">

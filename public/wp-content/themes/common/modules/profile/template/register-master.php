@@ -11,7 +11,7 @@ $userdata = get_userdata(get_current_user_id());
     <?php elseif (!get_option('users_can_register')): ?>
         <?php _e( 'Регистрация для новых пользователей временно закрыта.', 'common' ); ?>
     <?php else: ?>
-        <h2 class="mb-4"><?php _e( 'Регистрация для исполнителей', 'common' ); ?></h2>
+        <h1 class="mb-4"><?php _e( 'Регистрация для исполнителей', 'common' ); ?></h1>
 
         <p><?php printf(
                 __('Уже зарегистрированы? <a href="%s">Войти &raquo;</a>', 'common'),
@@ -35,7 +35,7 @@ $userdata = get_userdata(get_current_user_id());
                 <form action="<?php echo wp_registration_url(); ?>" method="post" class="form-container from-validation-advanced">
                     <input type="hidden" name="user_role" value="master" />
 
-                    <h3 class="mb-3"><?php _e('Личные данные', 'common'); ?></h3>
+                    <h4 class="mb-3"><?php _e('Личные данные', 'common'); ?></h4>
 
                     <div class="form-group">
                         <label for="email" class="form-label"><?php _e( 'Email', 'common' ); ?> <span class="required">*</span></label>
@@ -64,7 +64,7 @@ $userdata = get_userdata(get_current_user_id());
 
                     <hr class="mb-4 mt-4" />
 
-                    <h3 class="mb-3"><?php _e('Информация', 'common'); ?></h3>
+                    <h4 class="mb-3"><?php _e('Информация', 'common'); ?></h4>
 
                     <div class="form-group">
                         <label class="form-label"><?php _e( 'Тип', 'common' ); ?> <span class="required">*</span></label>
@@ -132,7 +132,7 @@ $userdata = get_userdata(get_current_user_id());
 
                     <hr class="mb-4 mt-4" />
 
-                    <h3 class="mb-3"><label for="user_description" class="form-label"><?php _e( 'Описание', 'common' ); ?> <span class="required">*</span></label></h3>
+                    <h4 class="mb-3"><label for="user_description" class="form-label"><?php _e( 'Описание', 'common' ); ?> <span class="required">*</span></label></h4>
 
                     <div class="form-group">
                         <?php wp_editor('', 'user_description', [

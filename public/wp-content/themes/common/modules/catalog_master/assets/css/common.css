@@ -11,6 +11,7 @@
 }
 
 .catalog-mater-small-list {
+  font-size: 14px;
   color: #6b7886;
 }
 .pro .catalog-mater-small-list {
@@ -30,8 +31,7 @@
   font-weight: 300;
   text-decoration: none;
   color: #424949;
-  font-size: 18px;
-  line-height: 30px;
+  line-height: 26px;
 }
 .frontpage-catalog a i {
   font-weight: 200;
@@ -44,7 +44,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: #E67E22;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .catalog-master-page .catalog-subs {
@@ -63,7 +63,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: #E67E22;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .catalog-master-page .catalog-title a {
   display: table;

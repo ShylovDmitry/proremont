@@ -10,45 +10,6 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
-add_action('comment_rating_field_pro_rating_input_updated_post_rating', function ($post_id, $totalRatings, $averageRatings, $commentsWithARating, $countRatings, $averageRating, $ratingSplit, $ratingSplitPercentages) {
-    $n = $commentsWithARating * 3 * 5;
-    $pos = is_array($totalRatings) ? array_sum($totalRatings) : 0;
-
-    if ($n == 0) return 0;
-
-    $z = 1.96;
-    $phat = 1.0 * $pos / $n;
-    $rating = ($phat + $z * $z / (2 * $n) - $z * sqrt(($phat * (1 - $phat) + $z * $z / (4 * $n)) / $n)) / (1 + $z * $z / $n);
-
-    update_post_meta($post_id, 'pror-crfp-lower-bound', $rating);
-
-    return true;
-}, 10, 8);
-
-add_action('pre_get_posts', function($query) {
-    if (is_admin() || !$query->is_main_query() || !$query->is_tax('catalog_master')) {
-        return;
-    }
-
-    $query->set('orderby', 'meta_value_num');
-    $query->set('order', 'DESC');
-    $query->set('meta_query', array(
-        'relation' => 'OR',
-        array(
-            'key' => 'pror-crfp-lower-bound',
-            'compare' => 'NOT EXISTS',
-        ),
-        array(
-            'key' => 'pror-crfp-lower-bound',
-            'compare' => 'EXISTS',
-        ),
-    ));
-
-    $query->set('lang', '');
-
-    return $query;
-});
-
 add_action('pre_get_posts', function($query) {
     if (is_admin() || !$query->is_main_query() || !$query->is_category()) {
         return;
@@ -95,7 +56,7 @@ add_action('wpseo_register_extra_replacements', function() {
     });
 
     wpseo_register_var_replacement('%%section%%', function() {
-        return pror_get_section_name(pror_get_section());
+        return pror_get_section_localized_name(pror_detect_section());
     });
 
     wpseo_register_var_replacement('%%catalogs%%', function() {
@@ -128,13 +89,8 @@ function pror_get_master_phones($user_id) {
     $phones = array();
     foreach ($master_phones as $master_phone) {
         if ($master_phone['tel']) {
-            $phones[] = pror_format_phones($master_phone['tel']);
+            $phones[] = $master_phone['tel'];
         }
-    }
-
-    $phone = get_field('master_phone', "user_{$user_id}");
-    if ($phone) {
-        $phones[] = pror_format_phones($phone);
     }
 
     return $phones;
@@ -168,7 +124,11 @@ function pror_format_phones($phone) {
         }
     }
 
-    return array('tel' => $tel, 'text' => $phone);
+    return array(
+        'tel' => $tel,
+        'text' => $phone,
+        'hidden' => sprintf('%s xxx xx xx', substr($phone, 0, 5))
+    );
 }
 
 function pror_get_master_location($master_post_id = null) {
@@ -244,7 +204,7 @@ function pror_get_query_pro_master_ids() {
         'meta_query' => array(
             array(
                 'key' => 'master_location',
-                'value' => get_field('locations', pror_get_section()),
+                'value' => get_field('locations', pror_detect_section()),
                 'compare' => 'IN',
             ),
             array(

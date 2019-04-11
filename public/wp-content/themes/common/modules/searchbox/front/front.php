@@ -38,7 +38,7 @@ add_action('wp_enqueue_scripts', function () {
         $sections = [];
         foreach ($menuitems as $menuitem) {
             $menu_post = get_term($menuitem->object_id);
-            $sections[pror_get_section_name($menu_post)] = $menu_post->slug;
+            $sections[pror_get_section_localized_name($menu_post)] = pror_get_section_localized_slug($menu_post);
         }
 
         wp_cache_add($cache_key, $sections, $cache_group, $cache_expire);

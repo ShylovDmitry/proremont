@@ -7,7 +7,7 @@
             <span><?php _e('Найди мастеров, дизайнеров, строителей в один клик.', 'common'); ?></span>
         </div>
 
-        <div class="mt-5 col-md-8 offset-md-2">
+        <div class="mt-5">
             <?php module_template('searchbox/form', ['short_form' => true]); ?>
         </div>
     </div>

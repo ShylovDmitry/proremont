@@ -24,6 +24,16 @@ add_filter('request', function($query_vars) {
     }
 
 
+    if (isset($query_vars['section']) && $query_vars['lang'] != pll_default_language()) {
+        $section = $query_vars['section'];
+
+        $term = pror_find_term_by('slug', $section, 'section', $query_vars['lang'], pll_default_language());
+        if ($term) {
+            $query_vars['section'] = $term->original_slug;
+        }
+    }
+
+
     if (isset($query_vars['category_name']) && $query_vars['lang'] != pll_default_language()) {
         $parts = explode('/', $query_vars['category_name']);
         $new_parts = [];
@@ -41,6 +51,7 @@ add_filter('request', function($query_vars) {
         $query_vars['category_name'] = implode('/', $new_parts);
     }
 
+
     return $query_vars;
 });
 
@@ -53,12 +64,14 @@ function pror_find_term_by($field, $value, $taxonomy, $from_lang, $to_lang) {
         $args = [
             'number' => 1,
             'suppress_filter' => true,
+            'hide_empty' => false,
             'include' => (array) $value,
         ];
     } else if ($from_lang == pll_default_language()) {
         $args = [
             'taxonomy' => $taxonomy,
             'number' => 1,
+            'hide_empty' => false,
             'suppress_filter' => true,
             "{$field}" => $value,
         ];
@@ -66,6 +79,7 @@ function pror_find_term_by($field, $value, $taxonomy, $from_lang, $to_lang) {
         $args = [
             'taxonomy' => $taxonomy,
             'number' => 1,
+            'hide_empty' => false,
             'suppress_filter' => true,
             'meta_query' => [
                 [

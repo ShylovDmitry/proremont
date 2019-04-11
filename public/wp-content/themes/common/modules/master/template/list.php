@@ -24,7 +24,7 @@ ob_start();
         'tax_query' => array(
             array(
                 'taxonomy' => 'location',
-                'terms' => get_field('locations', pror_get_section()),
+                'terms' => get_field('locations', pror_detect_section()),
                 'include_children' => false,
                 'operator' => 'IN',
             ),

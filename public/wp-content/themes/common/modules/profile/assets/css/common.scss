@@ -3,7 +3,6 @@
 
 .profile-login, .profile-register, .profile-settings {
     label {
-        font-weight: bold;
         color: $color-dark;
         margin-bottom: 0;
     }
@@ -52,7 +51,6 @@
     }
 
     .register-links {
-        text-align: center;
         border: 1px solid #dee0e0;
         padding: 20px 10px;
         background: #f6f7f7;

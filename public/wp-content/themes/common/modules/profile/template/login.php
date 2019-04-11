@@ -1,13 +1,13 @@
 <div class="row profile-login">
     <?php if (is_user_logged_in()): ?>
-        <div class="col-md-12">
+        <div class="col-12">
             <?php printf(
                 __( 'Вы уже зарегистрированы. Перейдите в свой <a href="%s">профиль</a>.', 'common' ),
                 pror_get_permalink_by_slug('profile')
             ); ?>
         </div>
     <?php else: ?>
-        <div class="col-md-6">
+        <div class="col-12">
             <h2 class="mb-4"><?php _e( 'Вход', 'common' ); ?></h2>
 
             <?php module_template('profile/errors', ['param_key' => 'login']) ?>
@@ -73,20 +73,24 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-6 mt-3 mt-md-0">
+        <div class="col-12 mt-3">
             <div class="register-links">
-                <h3 class="mb-5"><?php _e( 'Регистрация', 'common' ); ?></h3>
+                <h3 class="mb-4"><?php _e( 'Регистрация', 'common' ); ?></h3>
 
-                <h5><?php _e( 'Вы - исполнитель?', 'common' ); ?></h5>
+                <div class="row">
+                    <div class="col-6">
+                        <h5><?php _e( 'Вы - посетитель?', 'common' ); ?></h5>
 
-                <p><?php _e('Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас.', 'common'); ?></p>
-                <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Исполнитель</b>', 'common' ); ?></a>
+                        <p><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный доступ к сайту.', 'common'); ?></p>
+                        <a href="<?php echo wp_registration_url(); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Посетитель</b>', 'common' ); ?></a>
+                    </div>
+                    <div class="col-6">
+                        <h5><?php _e( 'Вы - исполнитель?', 'common' ); ?></h5>
 
-                <hr class="my-4" style="width: 70%"/>
-
-                <h5><?php _e( 'Вы - посетитель?', 'common' ); ?></h5>
-                <p><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный доступ к сайту.', 'common'); ?></p>
-                <a href="<?php echo wp_registration_url(); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Посетитель</b>', 'common' ); ?></a>
+                        <p><?php _e('Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас.', 'common'); ?></p>
+                        <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Исполнитель</b>', 'common' ); ?></a>
+                    </div>
+                </div>
             </div>
         </div>
     <?php endif; ?>

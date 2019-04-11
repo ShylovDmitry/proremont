@@ -20,7 +20,7 @@ add_filter('post_type_link', function($permalink, $post, $leavename) {
         return $permalink;
     }
 
-    $post_types = ['master', 'partner'];
+    $post_types = ['master', 'partner', 'tender'];
 
     if (in_array(get_post_type($post->ID), $post_types)) {
         return pror_fix_lang_link($permalink, pll_current_language());
@@ -42,10 +42,14 @@ add_filter('post_link', function($permalink, $post, $leavename) {
 }, 10, 3);
 
 add_filter('pll_pre_translation_url', function($url, $language, $queried_object_id) {
-    $post_types = ['master', 'partner', 'post'];
+    $post_types = ['master', 'partner', 'post', 'tender'];
 
     if (in_array(get_post_type($queried_object_id), $post_types)) {
         return pror_fix_lang_link(get_permalink($queried_object_id), $language->slug);
+//    } else if ($GLOBALS['wp_query']->is_page('tenders')) {
+//        var_dump(get_query_var('catalog_master'));
+//        return pror_fix_lang_link(get_permalink($queried_object_id), $language->slug) . pror_detect_section()->slug . '/';
+//        return pror_get_tender_permalink($language);
     }
     return $url;
 }, 10, 3);
@@ -57,6 +61,7 @@ add_filter('pll_hide_archive_translation_url', function($hide, $lang, $args) {
 add_filter('pll_rewrite_rules', function($types) {
     $types[] = 'post';
     $types[] = 'master';
+    $types[] = 'tender';
     $types[] = 'partner';
     $types[] = 'catalog_master';
     $types[] = 'category';
