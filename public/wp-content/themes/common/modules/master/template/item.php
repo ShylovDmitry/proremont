@@ -1,6 +1,7 @@
 <?php
-$excerpt = isset($__data['excerpt']) ? $__data['excerpt'] : '';
 $id = isset($__data['id']) ? $__data['id'] : false;
+$excerpt = isset($__data['excerpt']) ? $__data['excerpt'] : '';
+$datetime = isset($__data['datetime']) ? $__data['datetime'] : false;
 
 if ($id) {
 	query_posts(['p' => $id, 'post_type' => 'master']);
@@ -45,6 +46,9 @@ if ($id) {
                 <?php module_template('catalog_master/small-list'); ?>
             <?php endif; ?>
         </div>
+        <?php if ($datetime): ?>
+            <div class="datetime"><?php echo $datetime; ?></div>
+        <?php endif; ?>
     </div>
     <div class="clearfix"></div>
 </div>

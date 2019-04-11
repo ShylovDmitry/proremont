@@ -5,6 +5,11 @@ $menu = [
         'icon' => 'person',
         'template' => 'profile/subscriber/settings',
     ],
+    'tenders' => [
+        'name' => __('Мои заявки', 'common'),
+        'icon' => 'wrench',
+        'template' => 'tender/profile-list',
+    ],
 ];
 ?>
 

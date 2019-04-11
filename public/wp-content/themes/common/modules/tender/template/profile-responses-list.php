@@ -1,7 +1,7 @@
 <?php
 $cache_expire = pror_cache_expire(0);
 $cache_key = pror_cache_key(null, 'section');
-$cache_group = 'pror:tender:list:main';
+$cache_group = 'pror:tender:list:profile-responses';
 
 $cache = wp_cache_get($cache_key, $cache_group);
 if ($cache):
@@ -12,31 +12,29 @@ ob_start();
 
 <div class="tender-list">
     <?php
+    $a = new WP_Query([
+        'post_type' => 'tender_response',
+	    'post_status' => 'publish',
+	    'posts_per_page' => 24,
+	    'paged' => get_query_var('paged', 1),
+	    'meta_query' => array(
+		    array(
+			    'key' => 'author',
+			    'value' => get_current_user_id(),
+		    ),
+	    ),
+    ]);
+    $ids = array_map(function($tender_response) {
+        return get_field('tender', $tender_response->ID);
+    }, $a->posts);
+
     $params = array(
         'post_type' => 'tender',
         'post_status' => 'publish',
-        'posts_per_page' => 24,
-        'paged' => get_query_var('paged', 1),
-        'meta_query' => array(
-            array(
-                'key' => 'section',
-                'value' => pror_detect_section()->term_id,
-            ),
-        ),
+        'post__in' => $ids,
+        'orderby' => 'post__in',
+	    'posts_per_page' => -1,
     );
-
-    $path_catalog = get_query_var('catalog_master');
-    if ($path_catalog) {
-        $last_catalog = array_pop(explode('/', $path_catalog));
-        $term = get_term_by('slug', $last_catalog, 'catalog_master');
-
-        $params['tax_query'] = array(
-            array(
-                'taxonomy' => 'catalog_master',
-                'terms' => $term->term_id,
-            ),
-        );
-    }
 
     global $wp_query;
     $wp_query = new WP_Query($params);

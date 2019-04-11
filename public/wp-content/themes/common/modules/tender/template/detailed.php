@@ -2,6 +2,7 @@
 <div class="tender-detailed">
     <?php
         $is_user_master = pror_user_has_role('administrator master');
+        $customer_id = get_field('customer');
     ?>
 
     <?php
@@ -19,11 +20,10 @@
         <div class="colored-box p-3 main-content">
             <div class="header">
                 <div class="tender-body">
-                    <h1 class="mt-0 mb-1"><?php the_title(); ?></h1>
+                    <h1 class="mt-0 mb-1"><?php the_title(); ?>, <?php echo pror_tender_get_budgets()[get_field('budget')]; ?></h1>
 
                     <div class="subtitle">
                         <span class="location"><?php echo pror_get_section_localized_name(get_field('section')); ?></span>
-                        <div>Бюджет: <?php echo pror_tender_get_budgets()[get_field('budget')]; ?></div>
                     </div>
 
                     <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
@@ -36,10 +36,7 @@
                 <h5><?php _e('Контактная информация', 'common'); ?></h5>
 
                 <?php if ($is_user_master): ?>
-                    <?php
-                        $customer_id = get_field('customer');
-                        $customer = get_userdata($customer_id);
-                    ?>
+                    <?php $customer = get_userdata($customer_id); ?>
                     <?php if ($customer->first_name): ?>
                         <div class="customer-name"><?php echo $customer->first_name; ?></div>
                     <?php endif; ?>
@@ -81,7 +78,6 @@
     endif;
     ?>
 </div>
-<?php endif; ?>
 
 <div class="colored-box p-3 mt-3">
     <?php $query = pror_tender_query_tender_responses(get_the_ID()); ?>
@@ -96,9 +92,9 @@
                             $comment = get_field('comment', get_the_ID());
 
                             if ('client_only' == get_field('comment_visibility', get_the_ID())) {
-                                if (get_current_user_id() == $author_id) {
+                                if ($author_id == get_current_user_id()) {
                                     $comment .= sprintf('<i>%s</i>', __('(Только вы и клиент можете видеть этот коментарий)', 'common'));
-                                } else {
+                                } else if ($customer_id != get_current_user_id()) {
                                     $comment = sprintf('<i>%s</i>', __('Исполнитель предпочел скрыть свой комментарий.', 'common'));
                                 }
 
@@ -106,6 +102,7 @@
                         ?>
 				        <?php module_template('master/item', [
 				                'id' => $author_id,
+                                'datetime' => get_the_date(),
                                 'excerpt' => $comment,
                         ]); ?>
                     </div>
@@ -115,3 +112,5 @@
 
     <?php endif; ?>
 </div>
+<?php endif; ?>
+

@@ -5,6 +5,16 @@ $menu = [
         'icon' => 'person',
         'template' => 'profile/master/settings',
     ],
+	'tenders' => [
+		'name' => __('Мои заявки', 'common'),
+		'icon' => 'wrench',
+		'template' => 'tender/profile-list',
+	],
+	'tender_responses' => [
+		'name' => __('Мои отклики', 'common'),
+		'icon' => 'task',
+		'template' => 'tender/profile-responses-list',
+	],
     'pro' => [
         'name' => __('PRO-аккаунт', 'common'),
         'icon' => 'dollar',
