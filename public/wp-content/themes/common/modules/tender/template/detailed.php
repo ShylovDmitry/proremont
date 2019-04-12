@@ -68,9 +68,10 @@
 </div>
 
 <div class="colored-box p-3 mt-3">
+    Заинтересованих исполнителей: <?php echo pror_tender_query_tender_responses(get_the_ID())->post_count; ?>
+
     <?php $query = pror_tender_query_tender_responses(get_the_ID()); ?>
 	<?php if ($query->have_posts()): ?>
-        Заинтересованих исполнителей: <?php echo pror_tender_query_tender_responses(get_the_ID())->post_count; ?>
         <div class="master-2columns">
             <div class="row">
 		        <?php while ($query->have_posts()): $query->the_post(); ?>
@@ -97,14 +98,14 @@
 		        <?php endwhile; ?>
             </div>
         </div>
-
-		<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
-            <div class="text-center">
-                <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
-            </div>
-		<?php endif; ?>
-
 	<?php endif; ?>
+
+	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
+        <div class="text-center">
+            <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
+        </div>
+	<?php endif; ?>
+
 </div>
 
 
