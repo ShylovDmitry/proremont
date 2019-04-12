@@ -2,11 +2,8 @@
     <div class="master-detailed<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
 
         <?php
-        $cache_expire = pror_cache_expire(0);
-        $cache_key = pror_cache_key();
-        $cache_group = 'pror:master:post:id-' . get_the_ID();
-
-        $cache = wp_cache_get($cache_key, $cache_group);
+	    $cache_obj = pror_cache_obj(0, '', 'pror:master:post', get_the_ID());
+	    $cache = pror_cache_get($cache_obj);
         if ($cache):
             echo $cache;
         else:
@@ -100,7 +97,7 @@
         </div>
     </div>
     <?php
-    wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+    pror_cache_set($cache_obj, ob_get_flush());
     endif;
     ?>
 <?php endif; ?>

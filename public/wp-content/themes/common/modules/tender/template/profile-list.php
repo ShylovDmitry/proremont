@@ -1,9 +1,6 @@
 <?php
-$cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key(null, 'section');
-$cache_group = 'pror:tender:list:profile';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(0, 'section', 'pror:tender:list:profile', '');
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -43,6 +40,6 @@ ob_start();
 </div>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

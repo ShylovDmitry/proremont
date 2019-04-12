@@ -3,11 +3,8 @@ $container_class = isset($__data['container_class']) ? $__data['container_class'
 ?>
 
 <?php
-$cache_expire = pror_cache_expire(5*60);
-$cache_key = pror_cache_key(sprintf('block-%s', $container_class) , 'section,lang');
-$cache_group = 'pror:partners:list:front';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(5*60, 'section,lang', 'pror:partners:list:front', 'block', $container_class);
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -62,6 +59,6 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

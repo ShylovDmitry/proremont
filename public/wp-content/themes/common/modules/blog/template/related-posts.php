@@ -5,11 +5,8 @@ $limit = isset($__data['limit']) ? $__data['limit'] : 6;
 ?>
 
 <?php
-$cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key(sprintf('posts-%s-%s-%s', $main_post_id, $container_class, $limit) , 'section,lang');
-$cache_group = 'pror:blog:list:related';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(0, 'section,lang', 'pror:blog:list:related', 'posts', $main_post_id, $container_class, $limit);
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -57,6 +54,6 @@ $query = new WP_Query(array(
 <?php endif; ?>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

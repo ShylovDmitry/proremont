@@ -2,11 +2,8 @@
 <div class="partner-detailed">
 
     <?php
-    $cache_expire = pror_cache_expire(0);
-    $cache_key = pror_cache_key();
-    $cache_group = 'pror:partner:post:id-' . get_the_ID();
-
-    $cache = wp_cache_get($cache_key, $cache_group);
+    $cache_obj = pror_cache_obj(0, '', 'pror:partner:post', get_the_ID());
+    $cache = pror_cache_get($cache_obj);
     if ($cache):
         echo $cache;
     else:
@@ -58,7 +55,7 @@
     </div>
 
     <?php
-    wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+    pror_cache_set($cache_obj, ob_get_flush());
     endif;
     ?>
 </div>

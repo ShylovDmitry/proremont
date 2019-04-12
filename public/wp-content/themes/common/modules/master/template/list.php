@@ -3,11 +3,8 @@ $master_type = $_GET['mtype'];
 ?>
 
 <?php
-$cache_expire = pror_cache_expire(24*60*60);
-$cache_key = pror_cache_key(sprintf('block-%s-%s-%s', get_query_var('catalog_master'), $master_type, get_query_var('paged')) , 'section,lang');
-$cache_group = 'pror:master:list:main';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(24*60*60, 'section,lang', 'pror:master:list:main', 'block', get_query_var('catalog_master'), $master_type, get_query_var('paged'));
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -76,6 +73,6 @@ ob_start();
 </div>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

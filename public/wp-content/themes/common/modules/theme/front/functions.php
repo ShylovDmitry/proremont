@@ -34,8 +34,20 @@ function pror_get_section_cookie() {
 
 
 
-function pror_cache_expire($expire = 0) {
-    return $expire ? $expire - time()%$expire : 0;
+function pror_cache_obj($expire = 0, $key_deps = '', $group = 'pror:default', ...$key) {
+	return [
+		'expire' => $expire ? $expire - time()%$expire : 24 * 60 * 60,
+		'group' => $group,
+		'key' => pror_cache_key(implode('-', $key), $key_deps),
+	];
+}
+
+function pror_cache_get($cache_obj) {
+	return wp_cache_get($cache_obj['key'], $cache_obj['group']);
+}
+
+function pror_cache_set($cache_obj, $content) {
+	return wp_cache_set($cache_obj['key'], $content, $cache_obj['group'], $cache_obj['expire']);
 }
 
 function pror_cache_key($key = null, $depends_str = '') {

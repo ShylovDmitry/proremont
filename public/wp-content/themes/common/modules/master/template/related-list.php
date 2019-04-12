@@ -7,11 +7,8 @@ $display_mobile = isset($__data['display_mobile']) ? $__data['display_mobile'] :
 ?>
 
 <?php
-$cache_expire = pror_cache_expire(10*60);
-$cache_key = pror_cache_key(sprintf('block-%s-%s-%s-%s-%s', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile) , 'section,lang');
-$cache_group = 'pror:master:list:related';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(10*60, 'section,lang', 'pror:master:list:related', 'block', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile);
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -183,6 +180,6 @@ if ($rated_masters_query) {
 <?php endif; ?>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

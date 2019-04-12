@@ -1,9 +1,6 @@
 <?php
-$cache_expire = pror_cache_expire(0);
-$cache_key = pror_cache_key();
-$cache_group = 'pror:blog:list:main';
-
-$cache = wp_cache_get($cache_key, $cache_group);
+$cache_obj = pror_cache_obj(0, '', 'pror:blog:list:main', '');
+$cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
@@ -54,6 +51,6 @@ ob_start();
 <?php module_template('theme/pagination', array('container_class' => 'colored-box p-3')); ?>
 
 <?php
-wp_cache_add($cache_key, ob_get_flush(), $cache_group, $cache_expire);
+pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>

@@ -5,11 +5,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('searchbox-common', get_module_js('searchbox/common.js'), array('jquery'), null, true);
 
 
-    $cache_expire = pror_cache_expire(0);
-    $cache_key = pror_cache_key('catalogs', 'lang');
-    $cache_group = 'pror:searchbox:data';
-
-    $catalogs = wp_cache_get($cache_key, $cache_group);
+	$cache_obj = pror_cache_obj(0, 'lang', 'pror:searchbox:data', 'catalogs');
+	$catalogs = pror_cache_get($cache_obj);
     if (!$catalogs) {
         $catalogs = [];
         $terms = get_terms(array(
@@ -21,16 +18,13 @@ add_action('wp_enqueue_scripts', function () {
             $catalogs[$term->name] = get_term_link($term);
         }
 
-        wp_cache_add($cache_key, $catalogs, $cache_group, $cache_expire);
+	    pror_cache_set($cache_obj, ob_get_flush());
     }
 
 
-    $cache_expire = pror_cache_expire(0);
-    $cache_key = pror_cache_key('sections', 'lang');
-    $cache_group = 'pror:searchbox:data';
-
-    $sections = wp_cache_get($cache_key, $cache_group);
-    if (!$sections) {
+	$cache_obj = pror_cache_obj(0, 'lang', 'pror:searchbox:data', 'sections');
+	$sections = pror_cache_get($cache_obj);
+	if (!$sections) {
         $locations = get_nav_menu_locations();
         $menu = wp_get_nav_menu_object($locations['header_dropdown']);
         $menuitems = wp_get_nav_menu_items($menu->term_id, array('order' => 'DESC'));
@@ -41,7 +35,7 @@ add_action('wp_enqueue_scripts', function () {
             $sections[pror_get_section_localized_name($menu_post)] = pror_get_section_localized_slug($menu_post);
         }
 
-        wp_cache_add($cache_key, $sections, $cache_group, $cache_expire);
+		pror_cache_set($cache_obj, ob_get_flush());
     }
 
     wp_localize_script('searchbox-common', 'ProRemontSearchbox', array(
