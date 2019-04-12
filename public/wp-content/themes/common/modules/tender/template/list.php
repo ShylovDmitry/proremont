@@ -14,6 +14,7 @@ ob_start();
         'post_status' => 'publish',
         'posts_per_page' => 24,
         'paged' => get_query_var('paged', 1),
+        'orderby' => 'pror_tender_order',
         'meta_query' => array(
             array(
                 'key' => 'section',

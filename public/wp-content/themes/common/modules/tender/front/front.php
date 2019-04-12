@@ -67,6 +67,67 @@ function pror_tender_get_budgets() {
     ];
 }
 
+function pror_tender_get_expires() {
+    return [
+        '1w' => __('1 неделя', 'common'),
+        '2w' => __('2 недели', 'common'),
+        '3w' => __('3 недели', 'common'),
+        '4w' => __('4 недели', 'common'),
+    ];
+}
+
+function pror_tender_convert_expires_to_date($expires) {
+	$data = [
+		'1w' => '+1week +1day midnight',
+		'2w' => '+2weeks +1day midnight',
+		'3w' => '+3weeks +1day midnight',
+		'4w' => '+4weeks +1day midnight',
+	];
+	return strtotime($data[$expires]);
+}
+
+function pror_tender_is_expired() {
+	$expires = get_field('expires_date', false, false);
+	return date('Ymd') > $expires;
+}
+
+
+
+
+add_filter('posts_fields', function($fields, $query) {
+	if ($query->is_admin() || $query->is_main_query()) {
+		return $fields;
+	}
+
+	if ($query->query['orderby'] == 'pror_tender_order') {
+		$fields .= ', IF(DATE_FORMAT(wp_posts.post_date, "%Y%m%d") > wp_pm_tender_order.meta_value, 0, 1) as pror_tender_order';
+	}
+	return $fields;
+}, 10, 2);
+
+add_filter('posts_join', function($join, $query) {
+	if ($query->is_admin() || $query->is_main_query()) {
+		return $join;
+	}
+
+	if ($query->query['orderby'] == 'pror_tender_order') {
+		$join .= " INNER JOIN wp_postmeta wp_pm_tender_order ON ( wp_posts.ID = wp_pm_tender_order.post_id AND wp_pm_tender_order.meta_key = 'expires_date')";
+	}
+	return $join;
+}, 10, 2);
+
+add_filter('posts_orderby', function($orderby, $query) {
+	if ($query->is_admin() || $query->is_main_query()) {
+		return $orderby;
+	}
+
+	if ($query->query['orderby'] == 'pror_tender_order') {
+		$orderby = 'pror_tender_order DESC, ' . $orderby;
+	}
+	return $orderby;
+}, 10, 2);
+
+
 
 //function pror_get_tender_permalink($lang = null, $section = null, $catalog = null) {
 ////    '/:lang/tenders/:section/:catalog/';

@@ -97,6 +97,24 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5cb044ed9cb88",
+            "label": "Закінчуються",
+            "name": "expires_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
         }
     ],
     "location": [
@@ -116,5 +134,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1555020136
+    "modified": 1555056947
 }

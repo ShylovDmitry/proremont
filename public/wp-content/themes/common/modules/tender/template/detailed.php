@@ -1,5 +1,5 @@
 <?php if (have_posts()): the_post(); ?>
-<div class="tender-detailed">
+<div class="tender-detailed<?php if (pror_tender_is_expired()): ?> expired<?php endif; ?>">
     <?php
         $is_user_master = pror_user_has_role('administrator master');
         $customer_id = get_field('customer');

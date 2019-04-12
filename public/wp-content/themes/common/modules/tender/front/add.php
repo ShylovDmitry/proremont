@@ -28,6 +28,14 @@ add_action('wp', function() {
             update_post_meta($tender_id,'_description', 'field_5c9e19e48a738');
             update_post_meta($tender_id,'description', $_POST['description']);
 
+
+            $expires_keys = array_keys(pror_tender_get_expires());
+            $expires = in_array($_POST['expires'], $expires_keys) ? $_POST['expires'] : current($expires_keys);
+	        $expires_date = pror_tender_convert_expires_to_date($expires);
+
+            update_post_meta($tender_id,'_expires_date', 'field_5cb044ed9cb88');
+            update_post_meta($tender_id,'expires_date', date('Ymd', $expires_date));
+
             wp_redirect( get_permalink($tender_id) );
             exit;
         }

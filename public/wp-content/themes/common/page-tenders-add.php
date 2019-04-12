@@ -36,6 +36,21 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="form-label"><?php _e( 'Актуальность', 'common' ); ?> <span class="required">*</span></label>
+
+                        <div class="form-group">
+                            <?php foreach (pror_tender_get_expires() as $value => $text): ?>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="expires" value="<?php echo $value; ?>" />
+                                        <?php echo $text; ?>
+                                    </label>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <label for="description" class="form-label"><?php _e( 'Описание работ', 'common' ); ?> <span class="required">*</span></label>

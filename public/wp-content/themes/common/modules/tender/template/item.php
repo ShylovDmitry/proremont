@@ -1,4 +1,4 @@
-<div class="tender-item"
+<div class="tender-item<?php if (pror_tender_is_expired()): ?> expired<?php endif; ?>"
      onclick="javascript:window.open('<?php echo esc_url( get_permalink() ); ?>', '_blank');">
     <div class="tender-body">
         <h4 class="mt-0 mb-1">
@@ -9,7 +9,8 @@
         </div>
 
         <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
-        <div class="datetime"><?php echo get_the_date(); ?></div>
+        <div class="datetime">Создана: <?php echo get_the_date(); ?></div>
+        <div class="datetime">Заканчивается: <?php the_field('expires_date'); ?></div>
     </div>
     <div class="clearfix"></div>
 </div>
