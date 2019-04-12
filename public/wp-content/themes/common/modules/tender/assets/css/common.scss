@@ -78,3 +78,18 @@
         }
     }
 }
+
+.tender-create-new-alert {
+    a {
+        color: $color-primary;
+        &:hover, &:active {
+            color: $color-primary;
+        }
+    }
+}
+
+.tender-datetime {
+    span {
+        color: $color-light;
+    }
+}

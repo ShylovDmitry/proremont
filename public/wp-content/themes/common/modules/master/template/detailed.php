@@ -102,26 +102,26 @@
     ?>
 <?php endif; ?>
 
-    <div class="colored-box mt-3 p-3">
-        <div class="content">
-            <h4 class="header-underlined"><?php printf(__('Отзывы (%s)', 'common'), get_comments_number()); ?></h4>
-            <?php comments_template(); ?>
-        </div>
+<div class="colored-box mt-3 p-3">
+    <div class="content">
+        <h4 class="header-underlined"><?php printf(__('Отзывы (%s)', 'common'), get_comments_number()); ?></h4>
+        <?php comments_template(); ?>
     </div>
+</div>
 
-    <div class="colored-box mt-3 p-3">
-        <div class="content">
-            <?php
-            $catalog_ids = [];
-            foreach (pror_get_master_catalogs() as $parent) {
-                foreach ($parent->children as $child) {
-                    $catalog_ids[] = $child->term_id;
-                }
+<div class="colored-box mt-3 p-3">
+    <div class="content">
+        <?php
+        $catalog_ids = [];
+        foreach (pror_get_master_catalogs() as $parent) {
+            foreach ($parent->children as $child) {
+                $catalog_ids[] = $child->term_id;
             }
-            ?>
-            <?php module_template('master/related-list', ['exclude_master_id' => get_the_ID(), 'catalog_ids' => $catalog_ids, 'display_mobile' => 0]); ?>
-        </div>
+        }
+        ?>
+        <?php module_template('master/related-list', ['exclude_master_id' => get_the_ID(), 'catalog_ids' => $catalog_ids, 'display_mobile' => 0]); ?>
     </div>
+</div>
 
 
 

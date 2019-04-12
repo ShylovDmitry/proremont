@@ -62,4 +62,15 @@
   background: #e7e8e8;
 }
 
+.tender-create-new-alert a {
+  color: #E67E22;
+}
+.tender-create-new-alert a:hover, .tender-create-new-alert a:active {
+  color: #E67E22;
+}
+
+.tender-datetime span {
+  color: #B2BABB;
+}
+
 /*# sourceMappingURL=common.css.map */

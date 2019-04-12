@@ -7,6 +7,10 @@ else:
 ob_start();
 ?>
 
+<div class="tender-create-new-alert text-center mb-3">
+    Не нашли исполнителя? Пускай исполнитель ищет Вас! <a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>">Создать заяку &raquo;</a>
+</div>
+
 <div class="tender-list">
     <?php
     $params = array(

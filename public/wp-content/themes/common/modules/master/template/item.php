@@ -47,7 +47,14 @@ if ($id) {
             <?php endif; ?>
         </div>
         <?php if ($datetime): ?>
-            <div class="datetime"><?php echo $datetime; ?></div>
+            <div class="datetime text-right">
+                <?php
+                printf( _x( '%1$s назад', '%2$s = human-readable time difference', 'common' ), human_time_diff(
+	                $datetime,
+	                current_time( 'timestamp' )
+                ));
+                ?>
+            </div>
         <?php endif; ?>
     </div>
     <div class="clearfix"></div>

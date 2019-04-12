@@ -91,7 +91,19 @@ function pror_tender_is_expired() {
 	return date('Ymd') > $expires;
 }
 
+function pror_tender_get_title() {
+	$title = '';
+	if (pror_tender_is_expired()) {
+		$title .= __('[Выполнено] ', 'common');
+	}
+	$title .= sprintf('%s %s - %s',
+		get_the_title(),
+		pror_tender_get_budgets()[get_field('budget')],
+		pror_get_section_localized_name(get_field('section'))
+	);
 
+	return $title;
+}
 
 
 add_filter('posts_fields', function($fields, $query) {

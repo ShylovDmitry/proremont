@@ -17,13 +17,11 @@
         <div class="colored-box p-3 main-content">
             <div class="header">
                 <div class="tender-body">
-                    <h1 class="mt-0 mb-1"><?php the_title(); ?>, <?php echo pror_tender_get_budgets()[get_field('budget')]; ?></h1>
-
-                    <div class="subtitle">
-                        <span class="location"><?php echo pror_get_section_localized_name(get_field('section')); ?></span>
-                    </div>
+                    <h1 class="mt-0 mb-1"><?php echo pror_tender_get_title(); ?></h1>
 
                     <div class="catalog"><?php module_template('catalog_master/small-list'); ?></div>
+
+	                <?php module_template('tender/time'); ?>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -58,16 +56,9 @@
             </div>
 
             <?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
-                <form action="" id="create-tender-response">
-                    <input type="hidden" name="tender_id" value="<?php the_ID(); ?>" />
-                    <textarea name="comment" class="tender-response-comment"></textarea>
-
-                    <input type="radio" name="comment_visibility" value="all" checked="checked" /> Все
-                    <input type="radio" name="comment_visibility" value="client_only" /> Только клиент
-
-
-                    <button class="btn btn-pror-primary mt-3"><?php _e('Откликнуться на заявку', 'common'); ?></button>
-                </form>
+                <div class="text-right">
+                    <a href="#" class="btn btn-pror-primary mt-3" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
+                </div>
             <?php endif; ?>
         </div>
     <?php
@@ -99,7 +90,7 @@
                         ?>
 				        <?php module_template('master/item', [
 				                'id' => $author_id,
-                                'datetime' => get_the_date(),
+                                'datetime' => get_the_date('U'),
                                 'excerpt' => $comment,
                         ]); ?>
                     </div>
@@ -107,7 +98,16 @@
             </div>
         </div>
 
-    <?php endif; ?>
-</div>
-<?php endif; ?>
+		<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
+            <div class="text-center">
+                <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
+            </div>
+		<?php endif; ?>
 
+	<?php endif; ?>
+</div>
+
+
+<?php module_template('tender/add-modal', ['tender_id' => get_the_ID()]); ?>
+
+<?php endif; ?>
