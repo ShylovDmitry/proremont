@@ -11,7 +11,7 @@ $menu = [
 		'template' => 'tender/profile-list',
 	],
 	'tender_responses' => [
-		'name' => __('Мои отклики', 'common'),
+		'name' => __('Ответы на заявки', 'common'),
 		'icon' => 'task',
 		'template' => 'tender/profile-responses-list',
 	],

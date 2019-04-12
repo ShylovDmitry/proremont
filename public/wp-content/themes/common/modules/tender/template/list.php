@@ -8,7 +8,7 @@ ob_start();
 ?>
 
 <div class="tender-create-new-alert text-center mb-3">
-    Не нашли исполнителя? Пускай исполнитель ищет Вас! <a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>">Создать заяку &raquo;</a>
+	<?php printf(__('Не нашли исполнителя? Исполнитель найдет Вас! <a href="%s">Создать заяку &raquo;</a>', 'common'), pror_get_permalink_by_slug('tenders-add')); ?>
 </div>
 
 <div class="tender-list">
@@ -16,29 +16,29 @@ ob_start();
     $params = array(
         'post_type' => 'tender',
         'post_status' => 'publish',
-        'posts_per_page' => 24,
+        'posts_per_page' => get_option('posts_per_page'),
         'paged' => get_query_var('paged', 1),
         'orderby' => 'pror_tender_order',
-        'meta_query' => array(
-            array(
-                'key' => 'section',
-                'value' => pror_detect_section()->term_id,
-            ),
-        ),
+//        'meta_query' => array(
+//            array(
+//                'key' => 'section',
+//                'value' => pror_detect_section()->term_id,
+//            ),
+//        ),
     );
 
-    $path_catalog = get_query_var('catalog_master');
-    if ($path_catalog) {
-        $last_catalog = array_pop(explode('/', $path_catalog));
-        $term = get_term_by('slug', $last_catalog, 'catalog_master');
-
-        $params['tax_query'] = array(
-            array(
-                'taxonomy' => 'catalog_master',
-                'terms' => $term->term_id,
-            ),
-        );
-    }
+//    $path_catalog = get_query_var('catalog_master');
+//    if ($path_catalog) {
+//        $last_catalog = array_pop(explode('/', $path_catalog));
+//        $term = get_term_by('slug', $last_catalog, 'catalog_master');
+//
+//        $params['tax_query'] = array(
+//            array(
+//                'taxonomy' => 'catalog_master',
+//                'terms' => $term->term_id,
+//            ),
+//        );
+//    }
 
     global $wp_query;
     $wp_query = new WP_Query($params);

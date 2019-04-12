@@ -1,35 +1,38 @@
 <?php
 
 add_action('init', function() {
-    add_rewrite_rule('(uk)/(tenders)/([^/]+)/(.+?)/page/?([0-9]{1,})/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]&catalog_master=$matches[4]&paged=$matches[5]', 'top');
-    add_rewrite_rule('(tenders)/([^/]+)/(.+?)/page/?([0-9]{1,})/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]&catalog_master=$matches[3]&paged=$matches[4]', 'top');
-    add_rewrite_rule('(uk)/(tenders)/([^/]+)/(.+?)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]&catalog_master=$matches[4]', 'top');
-    add_rewrite_rule('(tenders)/([^/]+)/(.+?)/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]&catalog_master=$matches[3]', 'top');
-    add_rewrite_rule('(uk)/(tenders)/([^/]+)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]', 'top');
-    add_rewrite_rule('(tenders)/([^/]+)/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]', 'top');
+	add_rewrite_rule('(uk)/(tenders)/page/?([0-9]{1,})/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&paged=$matches[3]', 'top');
+	add_rewrite_rule('(tenders)/page/?([0-9]{1,})/?$', 'index.php?lang=ru&pagename=$matches[1]&paged=$matches[2]', 'top');
 
-    add_rewrite_rule('(uk)/(tenders)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&__tender_redirect=1', 'top');
-    add_rewrite_rule('(tenders)/?$', 'index.php?lang=ru&pagename=$matches[1]&__tender_redirect=1', 'top');
+//    add_rewrite_rule('(uk)/(tenders)/([^/]+)/(.+?)/page/?([0-9]{1,})/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]&catalog_master=$matches[4]&paged=$matches[5]', 'top');
+//    add_rewrite_rule('(tenders)/([^/]+)/(.+?)/page/?([0-9]{1,})/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]&catalog_master=$matches[3]&paged=$matches[4]', 'top');
+//    add_rewrite_rule('(uk)/(tenders)/([^/]+)/(.+?)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]&catalog_master=$matches[4]', 'top');
+//    add_rewrite_rule('(tenders)/([^/]+)/(.+?)/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]&catalog_master=$matches[3]', 'top');
+//    add_rewrite_rule('(uk)/(tenders)/([^/]+)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&section=$matches[3]', 'top');
+//    add_rewrite_rule('(tenders)/([^/]+)/?$', 'index.php?lang=ru&pagename=$matches[1]&section=$matches[2]', 'top');
+
+//    add_rewrite_rule('(uk)/(tenders)/?$', 'index.php?lang=$matches[1]&pagename=$matches[2]&__tender_redirect=1', 'top');
+//    add_rewrite_rule('(tenders)/?$', 'index.php?lang=ru&pagename=$matches[1]&__tender_redirect=1', 'top');
 });
 
-add_filter('query_vars', function($query_vars) {
-    $query_vars[] = '__tender_redirect';
-    return $query_vars;
-});
-
-add_action('template_redirect', function () {
-    if (get_query_var('__tender_redirect')) {
-        $url = [];
-        if (pll_default_language() != get_query_var('lang')) {
-            $url[] = get_query_var('lang');
-        }
-
-        $url[] = get_query_var('pagename');
-        $url[] = pror_detect_section()->slug;
-        wp_redirect('/' . implode('/', $url), 301);
-        exit;
-    }
-});
+//add_filter('query_vars', function($query_vars) {
+//    $query_vars[] = '__tender_redirect';
+//    return $query_vars;
+//});
+//
+//add_action('template_redirect', function () {
+//    if (get_query_var('__tender_redirect')) {
+//        $url = [];
+//        if (pll_default_language() != get_query_var('lang')) {
+//            $url[] = get_query_var('lang');
+//        }
+//
+//        $url[] = get_query_var('pagename');
+//        $url[] = pror_detect_section()->slug;
+//        wp_redirect('/' . implode('/', $url), 301);
+//        exit;
+//    }
+//});
 
 
 
@@ -141,28 +144,6 @@ add_filter('posts_orderby', function($orderby, $query) {
 
 
 
-//function pror_get_tender_permalink($lang = null, $section = null, $catalog = null) {
-////    '/:lang/tenders/:section/:catalog/';
-//
-//    $url = [];
-//    if ($lang && $url != pll_default_language()) {
-//        $url[] = $lang;
-//    }
-//    $url[] = ' tenders';
-//
-//
-//
-////    var_dump($url);exit;
-//    return $url;
-//}
-
-//add_filter('rewrite_rules_array', 'kill_feed_rewrites');
-//function kill_feed_rewrites($rules){
-//    print_r($rules);exit;
-//}
-
-
-
 add_action('wp_ajax_pror_tender_action', 'pror_ajax_tender_action');
 
 function pror_ajax_tender_action() {
@@ -176,7 +157,7 @@ function pror_ajax_tender_action() {
             wp_send_json_success($res);
             break;
         default:
-            wp_send_json_error(new WP_Error('wrong_param', 'Wrong "type" parameter.'));
+            wp_send_json_error(new WP_Error('wrong_param', __('Неверный параметр "type".', 'common')));
             break;
     }
 }
@@ -185,16 +166,16 @@ function pror_tender_create_response($data) {
 	$user = wp_get_current_user();
 	$master_post_id = pror_get_master_post_id($user->ID);
 	if (!$master_post_id) {
-		return new WP_Error('not_master', 'You are not master');
+		return new WP_Error('not_master', __('Необходимо авторизироваться как исполнитель.', 'common'));
 	}
 
 	$tender = get_post($data['tender_id']);
 	if (!$tender) {
-		return new WP_Error('tender_not_exist', 'Tender does not exist.');
+		return new WP_Error('tender_not_exist', __('Заявка не существует.', 'common'));
 	}
 
 	if (pror_tender_is_tender_assigned_to_user($data['tender_id'])) {
-		return new WP_Error('duplicated', 'Duplicated record.');
+		return new WP_Error('duplicated', __('Вы уже ответили на этот тендер.', 'common'));
 	}
 
 	$id = wp_insert_post([

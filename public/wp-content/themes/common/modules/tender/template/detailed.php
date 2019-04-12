@@ -55,9 +55,9 @@
                 <?php endif; ?>
             </div>
 
-            <?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
+	        <?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID()) && !pror_tender_is_expired()): ?>
                 <div class="text-right">
-                    <a href="#" class="btn btn-pror-primary mt-3" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
+                    <a href="#" class="btn btn-pror-primary mt-3" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на заявку', 'common'); ?></a>
                 </div>
             <?php endif; ?>
         </div>
@@ -68,7 +68,11 @@
 </div>
 
 <div class="colored-box p-3 mt-3">
-    Заинтересованих исполнителей: <?php echo pror_tender_query_tender_responses(get_the_ID())->post_count; ?>
+    <div class="row">
+        <div class="col-12 mb-1">
+            <h4 class="header-underlined"><?php printf(__('Ответы (%s)', 'common'), pror_tender_query_tender_responses(get_the_ID())->post_count); ?></h4>
+        </div>
+    </div>
 
     <?php $query = pror_tender_query_tender_responses(get_the_ID()); ?>
 	<?php if ($query->have_posts()): ?>
@@ -100,9 +104,9 @@
         </div>
 	<?php endif; ?>
 
-	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID())): ?>
+	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID()) && !pror_tender_is_expired()): ?>
         <div class="text-center">
-            <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Откликнуться на заявку', 'common'); ?></a>
+            <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на заявку', 'common'); ?></a>
         </div>
 	<?php endif; ?>
 

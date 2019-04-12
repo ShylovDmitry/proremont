@@ -9,7 +9,7 @@ ob_start();
 
 <div class="tender-list">
     <?php
-    $a = new WP_Query([
+    $tender_response_query = new WP_Query([
         'post_type' => 'tender_response',
 	    'post_status' => 'publish',
 	    'posts_per_page' => 24,
@@ -23,7 +23,7 @@ ob_start();
     ]);
     $ids = array_map(function($tender_response) {
         return get_field('tender', $tender_response->ID);
-    }, $a->posts);
+    }, $tender_response_query->posts);
 
     $params = array(
         'post_type' => 'tender',
