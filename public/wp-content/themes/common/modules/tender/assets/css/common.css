@@ -15,6 +15,9 @@
 .tender-item .tender-body {
   word-break: break-word;
 }
+.tender-item .tender-body .title {
+  color: #424949;
+}
 .tender-item .tender-body .catalog {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -60,13 +63,6 @@
   width: 100%;
   height: 1px;
   background: #e7e8e8;
-}
-
-.tender-create-new-alert a {
-  color: #E67E22;
-}
-.tender-create-new-alert a:hover, .tender-create-new-alert a:active {
-  color: #E67E22;
 }
 
 .tender-datetime span {

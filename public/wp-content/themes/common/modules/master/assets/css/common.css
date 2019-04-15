@@ -54,6 +54,9 @@
 .master-item .master-body {
   word-break: break-word;
 }
+.master-item .master-body .title {
+  color: #424949;
+}
 .master-item .master-body .catalog {
   margin-top: 15px;
   margin-bottom: 5px;
@@ -96,7 +99,7 @@
 .master-item.pro:hover {
   border-color: #b9a97f;
 }
-.master-item.pro a, .master-item.pro a:hover {
+.master-item.pro .title {
   color: #E67E22;
 }
 .master-item.pro .avatar img {
@@ -195,9 +198,6 @@
 }
 .master-detailed .report {
   font-size: 0.85rem;
-}
-.master-detailed .report a {
-  color: #E67E22;
 }
 .master-detailed .line {
   text-align: center;

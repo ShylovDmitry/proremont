@@ -19,6 +19,10 @@
     .tender-body {
         word-break: break-word;
 
+        .title {
+            color: $color-dark;
+        }
+
         .catalog {
             margin-top: 15px;
             margin-bottom: 5px;
@@ -75,15 +79,6 @@
                 height: 1px;
                 background: #e7e8e8;
             }
-        }
-    }
-}
-
-.tender-create-new-alert {
-    a {
-        color: $color-primary;
-        &:hover, &:active {
-            color: $color-primary;
         }
     }
 }

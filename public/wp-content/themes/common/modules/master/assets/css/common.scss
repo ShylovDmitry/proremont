@@ -65,6 +65,10 @@
     .master-body {
         word-break: break-word;
 
+        .title {
+            color: $color-dark;
+        }
+
         .catalog {
             margin-top: 15px;
             margin-bottom: 5px;
@@ -114,7 +118,7 @@
             border-color: #b9a97f;
         }
 
-        a, a:hover {
+        .title {
             color: $color-primary;
         }
 
@@ -236,9 +240,6 @@
 
     .report {
         font-size: .85rem;
-        a {
-            color: $color-primary;
-        }
     }
 
 

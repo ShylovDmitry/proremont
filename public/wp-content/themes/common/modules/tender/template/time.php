@@ -1,5 +1,5 @@
 <div class="row tender-datetime">
-    <div class="col-md-6"><span><?php _e('Создан', 'common'); ?></span>
+    <div class="col-md-6"><span><?php _e('Создано', 'common'); ?></span>
 		<?php
 		printf( _x( '%1$s назад', '%2$s = human-readable time difference', 'common' ), human_time_diff(
 			get_the_time( 'U' ),

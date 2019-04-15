@@ -29,7 +29,7 @@ body {
 }
 
 a, a:hover {
-    color: $color-dark;
+    color: $color-primary;
     outline: none;
 }
 
@@ -300,15 +300,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .page {
     .page-title {
-        color: $color-primary;
         margin-bottom: 20px;
         font-family: $title-font;
     }
 
     .content {
-        a {
-            color: $color-primary;
-        }
         strong {
             font-weight: 900;
         }
@@ -447,7 +443,6 @@ a.btn.btn-pror-primary {
         }
         .comment-reply-login, .comment-reply-link {
             font-size: 14px;
-            color: $color-primary;
             font-style: italic;
         }
         .children {
@@ -506,18 +501,11 @@ a.btn.btn-pror-primary {
             }
             i {
                 font-size: .75rem;
-                a {
-                    color: $color-primary;
-                }
             }
         }
 
         .must-log-in {
             padding: 15px;
-
-            a {
-                color: $color-primary;
-            }
         }
 
         #cancel-comment-reply-link {
@@ -549,9 +537,6 @@ a.btn.btn-pror-primary {
 }
 
 .homepage-content {
-    a {
-        color: $color-primary;
-    }
     strong {
         font-weight: 900;
     }
@@ -559,9 +544,6 @@ a.btn.btn-pror-primary {
 
 
 .post-content {
-    a {
-        color: $color-primary;
-    }
     strong {
         font-weight: 900;
     }

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["common.scss","../../../theme/assets/css/_variables.scss"],"names":[],"mappings":"AAGI;EACI;;AAGJ;EACI,OCGQ;EDFR;EACA;;AAIA;EACI","file":"common.css"}
+{"version":3,"sourceRoot":"","sources":["common.scss"],"names":[],"mappings":"AAGI;EACI;;AAGJ;EACI;EACA;;AAIA;EACI","file":"common.css"}

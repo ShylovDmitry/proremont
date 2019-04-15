@@ -15,7 +15,7 @@ $menu = [
 
 <div class="profile-account">
     <?php if (!is_user_logged_in()): ?>
-        <?php _e( 'Нет доступа. Необходимо <a href="%s">войти</a> на сайт.', 'common' ); ?>
+        <?php printf( __( 'Нет доступа. Необходимо <a href="%s">войти</a> на сайт.', 'common' ), wp_login_url()); ?>
     <?php else: ?>
         <div class="row">
             <div class="col-3">

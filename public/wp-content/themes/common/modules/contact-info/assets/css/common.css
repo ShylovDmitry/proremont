@@ -2,9 +2,11 @@
   font-weight: 300;
 }
 .contact-info .show-contact-info {
-  color: #E67E22;
   border-bottom: 1px dotted;
   font-size: 14px;
+}
+.contact-info .registration-required-message a {
+  color: red;
 }
 
 /*# sourceMappingURL=common.css.map */

@@ -10,10 +10,6 @@
         font-weight: normal;
     }
 
-    a, a:hover {
-        color: $color-primary;
-    }
-
     .form-container {
         padding: 20px;
         background: #fde7d3;
@@ -38,7 +34,6 @@
 
     .nav-tabs {
         margin-bottom: -1px;
-        border-color: $color-primary;
 
 
         .nav-link.active {
@@ -63,6 +58,10 @@
         margin-right: 5px;
         top: 0;
         width: 20px;
+    }
+
+    a, a:hover {
+        color: $color-dark;
     }
 }
 

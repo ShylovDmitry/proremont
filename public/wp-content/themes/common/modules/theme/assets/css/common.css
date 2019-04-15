@@ -26,7 +26,7 @@ body {
 }
 
 a, a:hover {
-  color: #424949;
+  color: #E67E22;
   outline: none;
 }
 
@@ -259,12 +259,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page .page-title {
-  color: #E67E22;
   margin-bottom: 20px;
   font-family: "Roboto Condensed", sans-serif;
-}
-.page .content a {
-  color: #E67E22;
 }
 .page .content strong {
   font-weight: 900;
@@ -383,7 +379,6 @@ a.btn.btn-pror-primary {
 }
 .comments-area .comment .comment-reply-login, .comments-area .comment .comment-reply-link {
   font-size: 14px;
-  color: #E67E22;
   font-style: italic;
 }
 .comments-area .comment .children {
@@ -437,14 +432,8 @@ a.btn.btn-pror-primary {
 .comments-area .comment-respond .logged-in-as i {
   font-size: 0.75rem;
 }
-.comments-area .comment-respond .logged-in-as i a {
-  color: #E67E22;
-}
 .comments-area .comment-respond .must-log-in {
   padding: 15px;
-}
-.comments-area .comment-respond .must-log-in a {
-  color: #E67E22;
 }
 .comments-area .comment-respond #cancel-comment-reply-link {
   margin-left: 10px;
@@ -470,16 +459,10 @@ a.btn.btn-pror-primary {
   display: inline-block;
 }
 
-.homepage-content a {
-  color: #E67E22;
-}
 .homepage-content strong {
   font-weight: 900;
 }
 
-.post-content a {
-  color: #E67E22;
-}
 .post-content strong {
   font-weight: 900;
 }

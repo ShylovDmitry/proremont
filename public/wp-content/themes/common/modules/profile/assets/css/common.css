@@ -5,9 +5,6 @@
 .profile-login .form-check-label, .profile-register .form-check-label, .profile-settings .form-check-label {
   font-weight: normal;
 }
-.profile-login a, .profile-login a:hover, .profile-register a, .profile-register a:hover, .profile-settings a, .profile-settings a:hover {
-  color: #E67E22;
-}
 .profile-login .form-container, .profile-register .form-container, .profile-settings .form-container {
   padding: 20px;
   background: #fde7d3;
@@ -28,7 +25,6 @@
 }
 .profile-login .nav-tabs, .profile-register .nav-tabs, .profile-settings .nav-tabs {
   margin-bottom: -1px;
-  border-color: #E67E22;
 }
 .profile-login .nav-tabs .nav-link.active, .profile-register .nav-tabs .nav-link.active, .profile-settings .nav-tabs .nav-link.active {
   background: #fde7d3;
@@ -48,6 +44,9 @@
   margin-right: 5px;
   top: 0;
   width: 20px;
+}
+.profile-menu a, .profile-menu a:hover {
+  color: #424949;
 }
 
 html .select2-container {
