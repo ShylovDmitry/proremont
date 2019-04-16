@@ -3,7 +3,7 @@ $limit = isset($__data['limit']) ? $__data['limit'] : 6;
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(0, 'section,lang', 'pror:blog:list:latest-list', 'posts', $limit);
+$cache_obj = pror_cache_obj(0, 'lang', 'pror:blog:list', 'latest-list', $limit);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

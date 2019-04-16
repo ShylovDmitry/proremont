@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, 'section', 'pror:tender:list:main', '');
+$cache_obj = pror_cache_obj(0, '', 'pror:tender:list', 'main');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
@@ -7,9 +7,7 @@ else:
 ob_start();
 ?>
 
-<div class="tender-create-new-alert text-center mb-3">
-	<?php printf(__('Не нашли исполнителя? Исполнитель найдет Вас! <a href="%s">Создать заяку &raquo;</a>', 'common'), pror_get_permalink_by_slug('tenders-add')); ?>
-</div>
+<?php module_template('tender/alert-line'); ?>
 
 <div class="tender-list">
     <?php

@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, 'section', 'pror:partner:list:main', '');
+$cache_obj = pror_cache_obj(0, '', 'pror:partner:list', 'main');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

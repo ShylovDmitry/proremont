@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, 'section', 'pror:tender:list:profile', '');
+$cache_obj = pror_cache_obj(0, 'lang,user', 'pror:tender:list', 'profile');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

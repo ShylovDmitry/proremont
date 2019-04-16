@@ -3,13 +3,15 @@ $master_type = $_GET['mtype'];
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(24*60*60, 'section,lang', 'pror:master:list:main', 'block', get_query_var('catalog_master'), $master_type, get_query_var('paged'));
+$cache_obj = pror_cache_obj(24*60*60, '', 'pror:master:list', 'main');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
 ob_start();
 ?>
+
+<?php module_template('tender/alert-line'); ?>
 
 <div class="master-list">
     <?php

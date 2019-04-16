@@ -7,7 +7,7 @@ $display_mobile = isset($__data['display_mobile']) ? $__data['display_mobile'] :
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(10*60, 'section,lang', 'pror:master:list:related', 'block', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile);
+$cache_obj = pror_cache_obj(10*60, 'section,lang', 'pror:master:list', 'related', $container_class, implode(',', $catalog_ids), $exclude_master_id, $display_native, $display_mobile);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

@@ -65,8 +65,15 @@
   background: #e7e8e8;
 }
 
+.tender-datetime {
+  font-size: 14px;
+}
 .tender-datetime span {
   color: #B2BABB;
+}
+
+.tender-create-new-alert {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=common.css.map */

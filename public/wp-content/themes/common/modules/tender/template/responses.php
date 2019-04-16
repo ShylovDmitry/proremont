@@ -1,6 +1,19 @@
 <?php
+$tender_id = isset($__data['tender_id']) ? $__data['tender_id'] : 0;
+?>
+
+<?php
 $is_user_master = pror_user_has_role('administrator master');
 $customer_id = get_field('customer');
+?>
+
+<?php
+$cache_obj = pror_cache_obj(0, 'lang,user', 'pror:tender:responses', $tender_id);
+$cache = pror_cache_get($cache_obj);
+if ($cache):
+	echo $cache;
+else:
+ob_start();
 ?>
 
 <div class="colored-box p-3 mt-3">
@@ -51,3 +64,8 @@ $customer_id = get_field('customer');
         </div>
 	<?php endif; ?>
 </div>
+
+<?php
+pror_cache_set($cache_obj, ob_get_flush());
+endif;
+?>

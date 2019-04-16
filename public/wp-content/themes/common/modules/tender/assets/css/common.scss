@@ -84,7 +84,13 @@
 }
 
 .tender-datetime {
+    font-size: 14px;
+
     span {
         color: $color-light;
     }
+}
+
+.tender-create-new-alert {
+    font-size: 14px;
 }

@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, 'user_id', 'pror:theme:header', '');
+$cache_obj = pror_cache_obj(0, 'lang,user', 'pror:theme:header', '');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
@@ -34,8 +34,7 @@ ob_start();
                 <?php else: ?>
                     <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
                 <?php endif; ?>
-                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('catalog'); ?>" class="nav-link find-master"><?php _e('Найти мастера', 'common'); ?></a></li>
-                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('informacia-dlya-masterov'); ?>" class="nav-link iam-master"><?php _e('Стать исполнителем', 'common'); ?></a></li>
+                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>" class="nav-link iam-master"><?php _e('Создать заявку', 'common'); ?></a></li>
             </ul>
         </div>
     </div>

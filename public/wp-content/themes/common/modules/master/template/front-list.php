@@ -4,7 +4,7 @@ $container_class = isset($__data['container_class']) ? $__data['container_class'
 
 <?php
 
-$cache_obj = pror_cache_obj(5*60, 'section,lang', 'pror:master:list:front', 'block', $container_class);
+$cache_obj = pror_cache_obj(5*60, 'section,lang', 'pror:master:list', 'front', $container_class);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

@@ -62,19 +62,23 @@ function pror_cache_key($key = null, $depends_str = '') {
     if (in_array('lang', $depends)) {
         $key .= '-' . pll_current_language();
     }
-    if (in_array('user_id', $depends)) {
+    if (in_array('user', $depends)) {
         $user = wp_get_current_user();
-        $key .= '-' . $user->ID;
+        $key .= '-' . ($user ? $user->ID : 'guest');
+    }
+    if (in_array('role', $depends)) {
+        $user = wp_get_current_user();
+	    $key .= '-' . ($user && isset($user->roles[0]) ? $user->roles[0] : 'norole');
     }
 
-    foreach ($_COOKIE as $name => $value) {
-        if (strpos($name, 'wordpress_logged_in_') === 0) {
-            $user = wp_get_current_user();
-            $key .= '-loggedin=' . (isset($user->roles[0]) ? $user->roles[0] : '_');
-
-            break;
-        }
-    }
+//    foreach ($_COOKIE as $name => $value) {
+//        if (strpos($name, 'wordpress_logged_in_') === 0) {
+//            $user = wp_get_current_user();
+//            $key .= '-loggedin=' . (isset($user->roles[0]) ? $user->roles[0] : '_');
+//
+//            break;
+//        }
+//    }
 
     return $key;
 }

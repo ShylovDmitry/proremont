@@ -51,14 +51,11 @@ add_action('wp_set_comment_status', function($comment_ID, $comment_status) {
 
 function pror_blog_clear_cache($post_ID = null) {
     if ($post_ID) {
-        pror_cache_delete_wildcard('pror:blog:post:id-' . $post_ID);
-        pror_cache_delete_wildcard('pror:comments:post:id-' . $post_ID);
+	    wp_cache_delete($post_ID, 'pror:blog:post');
+	    wp_cache_delete($post_ID, 'pror:comments:post');
     } else {
         pror_cache_delete_wildcard('pror:blog:post');
         pror_cache_delete_wildcard('pror:comments:post');
     }
-    pror_cache_delete_wildcard('pror:blog:list:related');
-    pror_cache_delete_wildcard('pror:blog:list:latest');
-    pror_cache_delete_wildcard('pror:blog:list:latest-list');
-    pror_cache_delete_wildcard('pror:blog:list:main');
+    pror_cache_delete_wildcard('pror:blog:list');
 }

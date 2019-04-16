@@ -10,7 +10,7 @@ $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
 else:
-    ob_start();
+ob_start();
 ?>
 
     <div class="tender-detailed<?php if (pror_tender_is_expired()): ?> expired<?php endif; ?>">
@@ -67,7 +67,7 @@ pror_cache_set($cache_obj, ob_get_flush());
 endif;
 ?>
 
-<?php module_template('tender/answer'); ?>
+<?php module_template('tender/responses', ['tender_id' => get_the_ID()]); ?>
 <?php module_template('tender/add-modal', ['tender_id' => get_the_ID()]); ?>
 
 <?php endif; ?>

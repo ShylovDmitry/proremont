@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, 'section,lang', 'pror:blog:list:categories', 'categories');
+$cache_obj = pror_cache_obj(0, 'lang', 'pror:blog:list:categories', 'block');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
