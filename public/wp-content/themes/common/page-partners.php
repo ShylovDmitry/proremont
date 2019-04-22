@@ -13,11 +13,13 @@
             </div>
 
             <?php wp_reset_query(); ?>
-            <div class="colored-box mt-3 p-3">
-                <div class="content">
-                    <?php the_content(); ?>
+	        <?php if (get_the_content() && get_query_var('paged') <= 1): ?>
+                <div class="colored-box mt-3 p-3">
+                    <div class="content">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
 
         </div>
 

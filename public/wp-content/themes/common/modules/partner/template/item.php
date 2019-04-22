@@ -1,4 +1,4 @@
-<div class="partner-item col-3 col-sm-3 col-md-2 mb-3">
+<div class="partner-item col-3 mb-3">
     <a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo esc_attr(get_the_title()); ?>">
         <div class="avatar">
             <?php if (has_post_thumbnail()): ?>

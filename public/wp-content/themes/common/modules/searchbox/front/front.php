@@ -18,7 +18,7 @@ add_action('wp_enqueue_scripts', function () {
             $catalogs[$term->name] = get_term_link($term);
         }
 
-	    pror_cache_set($cache_obj, ob_get_flush());
+	    pror_cache_set($cache_obj, $catalogs);
     }
 
 
@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', function () {
             $sections[pror_get_section_localized_name($menu_post)] = pror_get_section_localized_slug($menu_post);
         }
 
-		pror_cache_set($cache_obj, ob_get_flush());
+		pror_cache_set($cache_obj, $sections);
     }
 
     wp_localize_script('searchbox-common', 'ProRemontSearchbox', array(

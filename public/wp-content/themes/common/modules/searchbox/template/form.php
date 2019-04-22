@@ -8,7 +8,7 @@ if (is_tax('catalog_master')) {
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(0, 'section,lang', 'pror:searchbox:form', 'block', $is_short_form, $catalog);
+$cache_obj = pror_cache_obj(0, 'section,lang', 'pror:searchbox:form', 'block', $is_short_form, $catalog, $_GET['mtype']);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

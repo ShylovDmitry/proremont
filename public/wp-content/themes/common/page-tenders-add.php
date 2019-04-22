@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label"><?php _e( 'Актуальность', 'common' ); ?> <span class="required">*</span></label>
+                            <label class="form-label"><?php _e( 'Дейстителен', 'common' ); ?> <span class="required">*</span></label>
 
                             <div class="form-group">
                                 <?php foreach (pror_tender_get_expires() as $value => $text): ?>

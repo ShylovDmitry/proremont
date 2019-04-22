@@ -13,11 +13,13 @@
                     <?php module_template('catalog_master/page'); ?>
                 </div>
 
-                <div class="colored-box mt-3 p-3">
-                    <div class="content">
-                        <?php the_content(); ?>
+	            <?php if (get_the_content()): ?>
+                    <div class="colored-box mt-3 p-3">
+                        <div class="content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             <?php endif; ?>
 
         </div>

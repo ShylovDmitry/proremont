@@ -3,7 +3,7 @@ $master_type = $_GET['mtype'];
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(24*60*60, '', 'pror:master:list', 'main');
+$cache_obj = pror_cache_obj(24*60*60, '', 'pror:master:list');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

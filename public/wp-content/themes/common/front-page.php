@@ -38,11 +38,11 @@
 
                 <?php wp_reset_query(); ?>
                 <?php if (get_the_content()): ?>
-                <div class="col-12">
-                    <div class="colored-box p-3 homepage-content">
-                        <?php the_content(); ?>
+                    <div class="col-12">
+                        <div class="colored-box p-3 homepage-content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
-                </div>
                 <?php endif; ?>
 
             </div>
