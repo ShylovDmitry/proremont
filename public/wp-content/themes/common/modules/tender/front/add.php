@@ -19,6 +19,9 @@ add_action('wp', function() {
                 update_post_meta($tender_id,'section', $section->term_id);
             }
 
+            update_post_meta($tender_id, '_is_customer_registered', 'field_5cbdab93ac99b');
+            update_post_meta($tender_id, 'is_customer_registered', '1');
+
             update_post_meta($tender_id, '_customer', 'field_5c9cef2311417');
             update_post_meta($tender_id, 'customer', get_current_user_id());
 

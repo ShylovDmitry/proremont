@@ -1,11 +1,10 @@
 <?php if (have_posts()): the_post(); ?>
 <?php
 $is_user_master = pror_user_has_role('administrator master');
-$customer_id = get_field('customer');
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(0, '', 'pror:tender:post', get_the_ID());
+$cache_obj = pror_cache_obj(0, '', 'pror:tender:post', get_the_ID(), $is_user_master);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
@@ -31,11 +30,21 @@ ob_start();
                 <h5><?php _e('Контактная информация', 'common'); ?></h5>
 
                 <?php if ($is_user_master): ?>
-                    <?php $customer = get_userdata($customer_id); ?>
-                    <?php if ($customer->first_name): ?>
-                        <div class="customer-name"><?php echo $customer->first_name; ?></div>
+                    <?php
+	                    if (get_field('is_customer_registered')) {
+		                    $customer_id = get_field('customer');
+		                    $customer = get_userdata($customer_id);
+		                    $customer_name = $customer->first_name ? $customer->first_name : '';
+		                    $customer_phone = get_field('contact_phone', "user_{$customer_id}");
+                        } else {
+		                    $customer_name = get_field('customer_name');
+		                    $customer_phone = get_field('customer_phone');
+                        }
+                    ?>
+                    <?php if ($customer_name): ?>
+                        <strong class="customer-name"><?php echo $customer_name; ?></strong>
                     <?php endif; ?>
-                    <?php module_template('contact-info/contacts', ['phones' => get_field('contact_phone', "user_{$customer_id}")]); ?>
+                    <?php module_template('contact-info/contacts', ['phones' => $customer_phone]); ?>
                 <?php else: ?>
                     <div class="pror-alert-info alert alert-info">
                         <?php printf(__('Что бы просматривать контактную информацию, необходимо <a href="%s">войти как исполнитель</a>.', 'common'),

@@ -3,6 +3,112 @@
     "title": "Tender",
     "fields": [
         {
+            "key": "field_5cbdab93ac99b",
+            "label": "Заказчик зарегистрирован?",
+            "name": "is_customer_registered",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5c9cef2311417",
+            "label": "Заказчик",
+            "name": "customer",
+            "type": "user",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cbdab93ac99b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "role": [
+                "subscriber",
+                "master"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id"
+        },
+        {
+            "key": "field_5cbdb27cac99c",
+            "label": "Имя заказчика",
+            "name": "customer_name",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cbdab93ac99b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cbdb287ac99d",
+            "label": "Телефон заказчика",
+            "name": "customer_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5cbdab93ac99b",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c9a1444460ea",
             "label": "Section",
             "name": "section",
@@ -24,28 +130,6 @@
             "load_terms": 0,
             "return_format": "id",
             "multiple": 0
-        },
-        {
-            "key": "field_5c9cef2311417",
-            "label": "Заказчик",
-            "name": "customer",
-            "type": "user",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_only": 0,
-            "role": [
-                "subscriber",
-                "master"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id"
         },
         {
             "key": "field_5c9e193041f62",
@@ -100,7 +184,7 @@
         },
         {
             "key": "field_5cb044ed9cb88",
-            "label": "Закінчуються",
+            "label": "Окончание",
             "name": "expires_date",
             "type": "date_picker",
             "instructions": "",
@@ -134,5 +218,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1555071475
+    "modified": 1555936442
 }

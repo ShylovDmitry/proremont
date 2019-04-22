@@ -1,14 +1,11 @@
 <?php
 $tender_id = isset($__data['tender_id']) ? $__data['tender_id'] : 0;
-?>
 
-<?php
 $is_user_master = pror_user_has_role('administrator master');
-$customer_id = get_field('customer');
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(0, 'lang,user', 'pror:tender:responses', $tender_id);
+$cache_obj = pror_cache_obj(0, 'lang,user', 'pror:tender:responses', $tender_id, $is_user_master);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
 	echo $cache;
@@ -23,6 +20,7 @@ ob_start();
         </div>
     </div>
 
+	<?php $customer_id = get_field('customer'); ?>
 	<?php $query = pror_tender_query_tender_responses(get_the_ID()); ?>
 	<?php if ($query->have_posts()): ?>
         <div class="master-2columns">
