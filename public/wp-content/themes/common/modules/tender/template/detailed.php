@@ -1,10 +1,11 @@
 <?php if (have_posts()): the_post(); ?>
 <?php
 $is_user_master = pror_user_has_role('administrator master');
+$is_current_pro = get_field('master_is_pro', "user_" . get_current_user_id());
 ?>
 
 <?php
-$cache_obj = pror_cache_obj(0, '', 'pror:tender:post', get_the_ID(), $is_user_master);
+$cache_obj = pror_cache_obj(0, '', 'pror:tender:post', get_the_ID(), $is_user_master, $is_current_pro);
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;
@@ -29,7 +30,7 @@ ob_start();
             <div class="contacts">
                 <h5><?php _e('Контактная информация', 'common'); ?></h5>
 
-                <?php if ($is_user_master): ?>
+                <?php if ($is_user_master && $is_current_pro): ?>
                     <?php
 	                    if (get_field('is_customer_registered')) {
 		                    $customer_id = get_field('customer');
@@ -45,6 +46,11 @@ ob_start();
                         <strong class="customer-name"><?php echo $customer_name; ?></strong>
                     <?php endif; ?>
                     <?php module_template('contact-info/contacts', ['phones' => $customer_phone]); ?>
+                <?php elseif ($is_user_master): ?>
+                    <div class="pror-alert-info alert alert-info">
+		                <?php printf(__('Только исполнители PRO-уровня могуть просматривать контактную информацию. <a href="%s">Получить PRO-уровень</a>.', 'common'),
+			                pror_get_permalink_by_slug('login') . '?redirect_to=' . urlencode(home_url($_SERVER['REQUEST_URI'])) ); ?>
+                    </div>
                 <?php else: ?>
                     <div class="pror-alert-info alert alert-info">
                         <?php printf(__('Что бы просматривать контактную информацию, необходимо <a href="%s">войти как исполнитель</a>.', 'common'),
