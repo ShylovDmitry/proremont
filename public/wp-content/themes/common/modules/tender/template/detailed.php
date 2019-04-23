@@ -66,7 +66,7 @@ ob_start();
 
 	        <?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID()) && !pror_tender_is_expired()): ?>
                 <div class="text-right">
-                    <a href="#" class="btn btn-pror-primary mt-3" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на заявку', 'common'); ?></a>
+                    <a href="#" class="btn btn-pror-primary mt-3" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на тендер', 'common'); ?></a>
                 </div>
             <?php endif; ?>
         </div>

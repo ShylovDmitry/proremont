@@ -53,11 +53,11 @@ ob_start();
 
 	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID()) && !pror_tender_is_expired()): ?>
         <div class="text-center">
-            <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на заявку', 'common'); ?></a>
+            <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на тендер', 'common'); ?></a>
         </div>
 	<?php else: ?>
         <div class="pror-alert-info alert alert-info">
-			<?php printf(__('Что бы ответить на заявку, необходимо <a href="%s">зарегистрироваться на сайте как мастер</a>.', 'common'),
+			<?php printf(__('Что бы ответить на тендер, необходимо <a href="%s">зарегистрироваться на сайте как исполнитель</a>.', 'common'),
 				pror_get_permalink_by_slug('login') . '?redirect_to=' . urlencode(home_url($_SERVER['REQUEST_URI'])) ); ?>
         </div>
 	<?php endif; ?>

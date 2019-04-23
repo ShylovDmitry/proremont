@@ -6,7 +6,7 @@ $tender_id = isset($__data['tender_id']) ? $__data['tender_id'] : 0;
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createTenderResponseModal"><?php _e('Ответить на заявку', 'common'); ?></h5>
+                <h5 class="modal-title" id="createTenderResponseModal"><?php _e('Ответить на тендер', 'common'); ?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
                     <span aria-hidden="true">&times;</span>
                 </button>

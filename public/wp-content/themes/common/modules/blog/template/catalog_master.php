@@ -6,5 +6,5 @@ $terms = get_terms(array(
 $i = count($terms);
 ?>
 <?php foreach ($terms as $term): $i--; ?>
-    <a href="<?php echo get_term_link($term, 'category'); ?>" rel="tag"><?php echo $term->name; ?></a><?php if ($i > 0): ?> &bull; <?php endif; ?>
+    <a href="<?php echo get_term_link($term, 'category'); ?>" rel="tag" target="_blank"><?php echo $term->name; ?></a><?php if ($i > 0): ?> &bull; <?php endif; ?>
 <?php endforeach; ?>

@@ -6,7 +6,7 @@ $menu = [
         'template' => 'profile/subscriber/settings',
     ],
     'tenders' => [
-        'name' => __('Мои заявки', 'common'),
+        'name' => __('Мои тендеры', 'common'),
         'icon' => 'wrench',
         'template' => 'tender/profile-list',
     ],

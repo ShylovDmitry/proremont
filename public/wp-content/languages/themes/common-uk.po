@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2019-03-20T13:04:36+01:00\n"
-"PO-Revision-Date: 2019-03-20 14:05+0200\n"
+"POT-Creation-Date: 2019-04-23T20:30:36+02:00\n"
+"PO-Revision-Date: 2019-04-23 21:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -25,19 +25,50 @@ msgstr "Common"
 msgid "404"
 msgstr "404"
 
-#: comments.php:61
+#: page-tenders-add.php:13 modules/profile/template/profile-master.php:28
+#: modules/profile/template/profile-subscriber.php:18
+msgid "Нет доступа. Необходимо <a href=\"%s\">войти</a> на сайт."
+msgstr "Немає доступу. Необхідно <a href=\"%s\">увійти</a> на сайт."
+
+#: page-tenders-add.php:18 modules/profile/template/master/settings.php:69
+#: modules/profile/template/register-master.php:95
+msgid "Название"
+msgstr "Назва"
+
+#: page-tenders-add.php:23 modules/profile/template/master/settings.php:111
+#: modules/profile/template/register-master.php:110
+msgid "Город"
+msgstr "Місто"
+
+#: page-tenders-add.php:28
+msgid "Бюджет"
+msgstr "Бюджет"
+
+#: page-tenders-add.php:43
+msgid "Дейстителен"
+msgstr "Дійсний"
+
+#: page-tenders-add.php:59
+msgid "Описание работ"
+msgstr "Опис робіт"
+
+#: page-tenders-add.php:63 modules/theme/template/header.php:37
+msgid "Создать тендер"
+msgstr "Створити тендер"
+
+#: comments.php:58
 msgid "Комментарии закрыты."
 msgstr "Коментарі закриті."
 
-#: comments.php:76
+#: comments.php:73
 msgid "Оставить комментарий"
 msgstr "Залишити коментар"
 
-#: comments.php:76
+#: comments.php:73
 msgid "Оставить отзыв"
 msgstr "Залишити відгук"
 
-#: comments.php:81
+#: comments.php:78
 msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>"
 msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>"
 
@@ -51,26 +82,192 @@ msgstr "Реклама на ProRemont.co"
 msgid "<a href=\"%s#comments\"><span>Отзывы (</span>"
 msgstr "<a href=\"%s#comments\"><span>Відгуки (</span>"
 
-#: modules/tender/template/detailed.php:47
-#: modules/partner/template/detailed.php:47
-#: modules/master/template/detailed.php:64
+#: modules/tender/template/time.php:2
+msgid "Создано"
+msgstr "Створено"
+
+#: modules/tender/template/time.php:4 modules/master/template/item.php:52
+msgctxt "%2$s = human-readable time difference"
+msgid "%1$s назад"
+msgstr "%1$s тому"
+
+#: modules/tender/template/time.php:12
+msgid "Выполнено"
+msgstr "Виконано"
+
+#: modules/tender/template/time.php:14
+msgid "Действителен"
+msgstr "Дійсний"
+
+#: modules/tender/template/time.php:15
+msgctxt "%2$s = human-readable time difference"
+msgid "%1$s"
+msgstr "%1$s"
+
+#: modules/tender/template/add-modal.php:9
+#: modules/tender/template/detailed.php:69
+#: modules/tender/template/responses.php:56
+msgid "Ответить на тендер"
+msgstr "Відповісти на тендер"
+
+#: modules/tender/template/add-modal.php:19
+msgid "Комментарий"
+msgstr "Коментарій"
+
+#: modules/tender/template/add-modal.php:27
+msgid "Все будут видеть ваш комментарий."
+msgstr "Всі будуть бачити ваш коментарій."
+
+#: modules/tender/template/add-modal.php:33
+msgid "Только клиент будет видеть ваш комментарий."
+msgstr "Тільки клієнт буде бачити ваш коментарій."
+
+#: modules/tender/template/add-modal.php:41
+msgid "Закрыть"
+msgstr "Закрити"
+
+#: modules/tender/template/add-modal.php:42
+msgid "Ответить"
+msgstr "Відповісти"
+
+#: modules/tender/template/detailed.php:30
+#: modules/master/template/detailed.php:54
+msgid "Контактная информация"
+msgstr "Контактна інформація"
+
+#: modules/tender/template/detailed.php:50
+msgid ""
+"Что бы просматривать контактную информацию, необходимо <a href=\"%s\">войти "
+"как исполнитель</a>."
+msgstr ""
+"Щоб переглядати контактну інформація, необхідно <a href=“%s”>ввійти як "
+"виконавець</a>."
+
+#: modules/tender/template/detailed.php:58
+#: modules/profile/template/master/settings.php:141
+#: modules/profile/template/register-master.php:135
+#: modules/master/template/detailed.php:61
+msgid "Описание"
+msgstr "Опис"
+
+#: modules/tender/template/detailed.php:63
+#: modules/partner/template/detailed.php:44
+#: modules/master/template/detailed.php:68
 msgid "Нет информации."
 msgstr "Інформація відсутня."
 
-#: modules/tender/template/list.php:35 modules/partner/template/list.php:35
-#: modules/master/template/list.php:73
+#: modules/tender/template/list.php:54
+#: modules/tender/template/profile-responses-list.php:49
+#: modules/tender/template/profile-list.php:38
+#: modules/partner/template/list.php:32 modules/master/template/list.php:72
 msgid "Ничего не найдено. Проверьте этот раздел позже."
 msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
 
-#: modules/catalog_master/template/list.php:33
+#: modules/tender/template/alert-line.php:2
+msgid ""
+"Не нашли исполнителя? Исполнители сами Вас найдут! <a href=\"%s\">Создать "
+"заяку &raquo;</a>"
+msgstr ""
+"Не знайшли виконавця? Виконавці самі Вас знайдуть! <a href=“%s”>Створити "
+"тендер &raquo;</a>"
+
+#: modules/tender/template/responses.php:19
+msgid "Ответы (%s)"
+msgstr "Відгуки (%s)"
+
+#: modules/tender/template/responses.php:36
+msgid "(Только вы и клиент можете видеть этот коментарий)"
+msgstr "(Тільки ви і клієнт може бачити цей коментар)"
+
+#: modules/tender/template/responses.php:38
+msgid "Исполнитель предпочел скрыть свой комментарий."
+msgstr "Виконавець вирішив скрити свій коментар."
+
+#: modules/tender/template/responses.php:60
+msgid ""
+"Что бы ответить на тендер, необходимо <a href=\"%s\">зарегистрироваться на "
+"сайте как исполнитель</a>."
+msgstr ""
+"Щоб відповісти на тендер, необхідно <a href=“%s”>зареєструватись на сайті як "
+"виконавець</a>."
+
+#: modules/tender/front/front.php:62
+msgid "до 3,000 грн"
+msgstr "до 3,000 грн"
+
+#: modules/tender/front/front.php:63
+msgid "до 7,000 грн"
+msgstr "до 7,000 грн"
+
+#: modules/tender/front/front.php:64
+msgid "до 15,000 грн"
+msgstr "до 15,000 грн"
+
+#: modules/tender/front/front.php:65
+msgid "до 30,000 грн"
+msgstr "до 30,000 грн"
+
+#: modules/tender/front/front.php:66
+msgid "до 70,000 грн"
+msgstr "до 70,000 грн"
+
+#: modules/tender/front/front.php:67
+msgid "до 150,000 грн"
+msgstr "до 150,000 грн"
+
+#: modules/tender/front/front.php:68
+msgid "до 300,000 грн"
+msgstr "до 300,000 грн"
+
+#: modules/tender/front/front.php:69
+msgid "более 300,000 грн"
+msgstr "більше 300,000 грн"
+
+#: modules/tender/front/front.php:75
+msgid "1 неделя"
+msgstr "1 тиждень"
+
+#: modules/tender/front/front.php:76
+msgid "2 недели"
+msgstr "2 тижні"
+
+#: modules/tender/front/front.php:77
+msgid "3 недели"
+msgstr "3 тижні"
+
+#: modules/tender/front/front.php:78
+msgid "4 недели"
+msgstr "4 тижні"
+
+#: modules/tender/front/front.php:100
+msgid "[Выполнено]"
+msgstr "[Виконано]"
+
+#: modules/tender/front/front.php:160
+msgid "Неверный параметр \"type\"."
+msgstr "Невірний параметер “type”."
+
+#: modules/tender/front/front.php:169
+msgid "Необходимо авторизироваться как исполнитель."
+msgstr "Необхідно авторизуватись як виконавець."
+
+#: modules/tender/front/front.php:174
+msgid "Тендер не существует."
+msgstr "Тендер не існує."
+
+#: modules/tender/front/front.php:178
+msgid "Вы уже ответили на этот тендер."
+msgstr "Ви вже відповіли на цей тендер."
+
+#: modules/catalog_master/template/_list.php:30
 msgid "Смотреть всех"
 msgstr "Дивитись усіх"
 
-#: modules/catalog_master/template/list.php:33
+#: modules/catalog_master/template/_list.php:30
 msgid "из раздела"
 msgstr "з розділу"
 
-#: modules/catalog_master/template/frontpage-list.php:31
+#: modules/catalog_master/template/frontpage-list.php:28
 msgid "Популярные категории"
 msgstr "Популярні категорії"
 
@@ -78,34 +275,34 @@ msgstr "Популярні категорії"
 msgid "скидка"
 msgstr "знижка"
 
-#: modules/blog/template/latest-posts.php:29
+#: modules/blog/template/latest-posts.php:26
 msgid "Последние статьи"
 msgstr "Останні статті"
 
-#: modules/blog/template/latest-posts.php:44
-#: modules/blog/template/related-posts.php:54
-#: modules/blog/template/list-categories.php:19
-#: modules/blog/template/latest-posts-list.php:32
+#: modules/blog/template/latest-posts.php:41
+#: modules/blog/template/related-posts.php:51
+#: modules/blog/template/list-categories.php:16
+#: modules/blog/template/latest-posts-list.php:29
 msgid "Смотреть все статьи"
 msgstr "Дивитись всі статті"
 
-#: modules/blog/template/related-posts.php:39
+#: modules/blog/template/related-posts.php:36
 msgid "Похожие статьи"
 msgstr "Схожі статті"
 
-#: modules/blog/template/detailed.php:51
+#: modules/blog/template/detailed.php:48
 msgid "Комментарии"
 msgstr "Коментарі"
 
-#: modules/blog/template/list.php:41 modules/blog/template/small.php:11
+#: modules/blog/template/list.php:38 modules/blog/template/small.php:11
 msgid "Подробнее"
 msgstr "Детальнійше"
 
-#: modules/partner/template/front-list.php:36
+#: modules/partner/template/front-list.php:33
 msgid "Партнеры"
 msgstr "Партнери"
 
-#: modules/partner/template/front-list.php:59
+#: modules/partner/template/front-list.php:56
 msgid "Смотреть всех партнеров"
 msgstr "Дивитись всіх партнерів"
 
@@ -174,7 +371,7 @@ msgid "Или введите свой Email и пароль:"
 msgstr "Або введіть свій Email та пароль:"
 
 #: modules/profile/template/login.php:53
-#: modules/profile/template/register-subscriber.php:37
+#: modules/profile/template/register-subscriber.php:39
 #: modules/profile/template/register-master.php:41
 #: modules/profile/template/password-lost.php:23
 msgid "Email"
@@ -188,7 +385,7 @@ msgstr "Пароль"
 msgid "Запомнить меня"
 msgstr "Запам'ятати мене"
 
-#: modules/profile/template/login.php:68 modules/theme/template/header.php:38
+#: modules/profile/template/login.php:68 modules/theme/template/header.php:35
 msgid "Войти"
 msgstr "Увійти"
 
@@ -202,23 +399,11 @@ msgstr "Забули пароль?"
 msgid "Регистрация"
 msgstr "Реєстрація"
 
-#: modules/profile/template/login.php:80
-msgid "Вы - исполнитель?"
-msgstr "Ви - виконавець?"
-
 #: modules/profile/template/login.php:82
-msgid "Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас."
-msgstr "Надаєте послуги? Реєструйтесь і наші відвідувачі дізнаються про вас."
-
-#: modules/profile/template/login.php:83
-msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
-msgstr "Зареєструватись як<br/><b>Виконавець</b>"
-
-#: modules/profile/template/login.php:87
 msgid "Вы - посетитель?"
 msgstr "Ви - відвідувач?"
 
-#: modules/profile/template/login.php:88
+#: modules/profile/template/login.php:84
 msgid ""
 "Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить "
 "полный доступ к сайту."
@@ -226,9 +411,21 @@ msgstr ""
 "Шукаєте майстрів, дизайнерів, будівельників? Реєструйтесь, щоб отримати "
 "повний доступ до сайту."
 
-#: modules/profile/template/login.php:89
+#: modules/profile/template/login.php:85
 msgid "Зарегистрироваться как<br/><b>Посетитель</b>"
 msgstr "Зареєструватись як<br/><b>Відвідувач</b>"
+
+#: modules/profile/template/login.php:88
+msgid "Вы - исполнитель?"
+msgstr "Ви - виконавець?"
+
+#: modules/profile/template/login.php:90
+msgid "Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас."
+msgstr "Надаєте послуги? Реєструйтесь і наші відвідувачі дізнаються про вас."
+
+#: modules/profile/template/login.php:91
+msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
+msgstr "Зареєструватись як<br/><b>Виконавець</b>"
 
 #: modules/profile/template/profile-master.php:4
 #: modules/profile/template/profile-subscriber.php:4
@@ -236,19 +433,23 @@ msgid "Настройки"
 msgstr "Налаштування"
 
 #: modules/profile/template/profile-master.php:9
+#: modules/profile/template/profile-subscriber.php:9
+msgid "Мои тендеры"
+msgstr "Мои тендери"
+
+#: modules/profile/template/profile-master.php:14
+msgid "Ответы на тендеры"
+msgstr "Відповіді на тендери"
+
+#: modules/profile/template/profile-master.php:19
 msgid "PRO-аккаунт"
 msgstr "PRO-аккаунт"
 
-#: modules/profile/template/profile-master.php:18
-#: modules/profile/template/profile-subscriber.php:13
-msgid "Нет доступа. Необходимо <a href=\"%s\">войти</a> на сайт."
-msgstr "Немає доступу. Необхідно <a href=\"%s\">увійти</a> на сайт."
-
-#: modules/profile/template/profile-master.php:29
+#: modules/profile/template/profile-master.php:39
 msgid "Внимание!"
 msgstr "Увага!"
 
-#: modules/profile/template/profile-master.php:30
+#: modules/profile/template/profile-master.php:40
 msgid ""
 "Ваш аккаунт не подтверджен. Чтобы подтвердить аккаунт, позвоните нашому "
 "менеджеру <nobr>(063) 199 63 04</nobr>."
@@ -256,7 +457,7 @@ msgstr ""
 "Ваш аккаунт не підтверджено. Щоб підтвердити аккаунт, подзвоніть нашому "
 "менеджеру <nobr>(063) 199 63 04</nobr>."
 
-#: modules/profile/template/menu.php:15
+#: modules/profile/template/menu.php:17
 msgid "Выйти"
 msgstr "Вийти"
 
@@ -266,21 +467,21 @@ msgid "Данные успешно обновлены."
 msgstr "Дані успішно оновлені."
 
 #: modules/profile/template/master/settings.php:19
-#: modules/profile/template/register-subscriber.php:42
+#: modules/profile/template/register-subscriber.php:44
 #: modules/profile/template/register-master.php:46
 #: modules/profile/template/subscriber/settings.php:16
 msgid "Телефон"
 msgstr "Телефон"
 
 #: modules/profile/template/master/settings.php:29
-#: modules/profile/template/register-subscriber.php:52
+#: modules/profile/template/register-subscriber.php:54
 #: modules/profile/template/register-master.php:56
 #: modules/profile/template/subscriber/settings.php:26
 msgid "Имя"
 msgstr "Ім'я"
 
 #: modules/profile/template/master/settings.php:34
-#: modules/profile/template/register-subscriber.php:57
+#: modules/profile/template/register-subscriber.php:59
 #: modules/profile/template/register-master.php:61
 #: modules/profile/template/subscriber/settings.php:31
 msgid "Фамилия"
@@ -311,11 +512,6 @@ msgstr "Бригада"
 msgid "Компания"
 msgstr "Компанія"
 
-#: modules/profile/template/master/settings.php:69
-#: modules/profile/template/register-master.php:95
-msgid "Название"
-msgstr "Назва"
-
 #: modules/profile/template/master/settings.php:74
 msgid "Лого"
 msgstr "Лого"
@@ -328,11 +524,6 @@ msgstr "Додати лого"
 #: modules/profile/template/register-master.php:100
 msgid "Рабочий телефон"
 msgstr "Робочий телефон"
-
-#: modules/profile/template/master/settings.php:111
-#: modules/profile/template/register-master.php:110
-msgid "Город"
-msgstr "Місто"
 
 #: modules/profile/template/master/settings.php:118
 #: modules/profile/template/register-master.php:115
@@ -349,13 +540,8 @@ msgstr "Основні категорії"
 msgid "Выбирете категории"
 msgstr "Оберіть категорії"
 
-#: modules/profile/template/master/settings.php:141
-#: modules/profile/template/register-master.php:135
-msgid "Описание"
-msgstr "Опис"
-
 #: modules/profile/template/master/settings.php:159
-#: modules/master/template/detailed.php:73
+#: modules/master/template/detailed.php:77
 msgid "Галерея"
 msgstr "Галерея"
 
@@ -382,7 +568,12 @@ msgstr "Відвідувач"
 msgid "Регистрация для Исполнителя"
 msgstr "Реєстрація для Виконавця"
 
-#: modules/profile/template/register-subscriber.php:63
+#: modules/profile/template/register-subscriber.php:36
+#: modules/profile/template/register-master.php:38
+msgid "Личные данные"
+msgstr "Особисті данні"
+
+#: modules/profile/template/register-subscriber.php:67
 #: modules/profile/template/register-master.php:156
 msgid ""
 "<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и "
@@ -391,7 +582,7 @@ msgstr ""
 "<strong>Замітка:</strong> Пароль буде згенеровано автоматично і відправлено "
 "на ваш Email."
 
-#: modules/profile/template/register-subscriber.php:67
+#: modules/profile/template/register-subscriber.php:71
 #: modules/profile/template/register-master.php:168
 msgid "Зарегистрироваться"
 msgstr "Зареєструватись"
@@ -407,10 +598,6 @@ msgstr "Виконавець"
 #: modules/profile/template/register-master.php:31
 msgid "Регистрация для Посетителя"
 msgstr "Реєстрація для Відвідувача"
-
-#: modules/profile/template/register-master.php:38
-msgid "Личные данные"
-msgstr "Особисті данні"
 
 #: modules/profile/template/register-master.php:162
 msgid ""
@@ -531,105 +718,96 @@ msgstr "Телефон: %s"
 msgid "Роль: %s"
 msgstr "Роль: %s"
 
-#: modules/master/template/related-list.php:116
+#: modules/master/template/related-list.php:113
 msgid "Похожие мастера"
 msgstr "Схожі майстри"
 
-#: modules/master/template/related-list.php:180
-#: modules/master/template/front-list.php:165
+#: modules/master/template/related-list.php:177
+#: modules/master/template/front-list.php:163
 msgid "Смотреть всех мастеров"
 msgstr "Дивитись всіх майстрів"
 
-#: modules/master/template/front-list.php:101
-#: modules/master/front/front.php:115
+#: modules/master/template/front-list.php:99 modules/master/front/front.php:80
 msgid "Мастера"
 msgstr "Майстри"
 
-#: modules/master/template/master-phones.php:13
-msgid "Показать"
-msgstr "Показати"
-
-#: modules/master/template/master-phones.php:26
-msgid "Для просмотра телефона необходимо <a href=\"%s\">авторизироваться</a>."
-msgstr "Для перегляду телефону необхідно <a href=\"%s\">авторизуватись</a>."
-
-#: modules/master/template/detailed.php:33
+#: modules/master/template/detailed.php:30
 msgid "Проверено"
 msgstr "Перевірено"
 
-#: modules/master/template/detailed.php:52
-msgid "Пожаловаться"
-msgstr "Поскаржитись"
-
-#: modules/master/template/detailed.php:103
+#: modules/master/template/detailed.php:107
 msgid "Отзывы (%s)"
 msgstr "Відгуки (%s)"
 
-#: modules/master/template/detailed.php:129
+#: modules/master/template/detailed.php:133
 msgid "Пожаловаться на исполнителя"
 msgstr "Поскаржитись на виконавця"
 
-#: modules/master/front/front.php:114
+#: modules/master/front/front.php:79
 msgid "Все"
 msgstr "Всі"
 
-#: modules/master/front/front.php:116
+#: modules/master/front/front.php:81
 msgid "Бригады"
 msgstr "Бригади"
 
-#: modules/master/front/front.php:117
+#: modules/master/front/front.php:82
 msgid "Компании"
 msgstr "Компанії"
 
-#: modules/theme/template/gallery.php:32
+#: modules/theme/template/gallery.php:29
 msgid "Недавно добавленные фотографии"
 msgstr "Нещодавно додані фотографії"
 
-#: modules/theme/template/header.php:33
+#: modules/theme/template/header.php:30
 msgid "Профиль"
 msgstr "Профіль"
 
-#: modules/theme/template/header.php:40
-msgid "Найти мастера"
-msgstr "Знайти майстра"
-
-#: modules/theme/template/header.php:41
-msgid "Стать исполнителем"
-msgstr "Стати виконавцем"
-
-#: modules/theme/template/footer.php:18
+#: modules/theme/template/footer.php:15
 msgid "Язык"
 msgstr "Мова"
 
-#: modules/theme/template/footer.php:43
+#: modules/theme/template/footer.php:40
 msgid "&copy; ProRemont. Все права защищены."
 msgstr "&copy; ProRemont. Всі права захищені."
 
-#: modules/theme/template/footer.php:47
+#: modules/theme/template/footer.php:44
 msgid "Блог"
 msgstr "Блог"
 
-#: modules/theme/template/footer.php:55
+#: modules/theme/template/footer.php:52
 msgid "Для мастеров"
 msgstr "Для майстрів"
 
-#: modules/searchbox/template/form.php:26
+#: modules/contact-info/template/contacts.php:13
+msgid "Показать"
+msgstr "Показати"
+
+#: modules/contact-info/template/contacts.php:24
+msgid ""
+"Что бы просматривать контактную информацию, необходимо <a href=\"%s"
+"\">зарегистрироваться на сайте</a>."
+msgstr ""
+"Щоб переглядати контактну інформацію, необхідно <a href=“%s”>зареєструватись "
+"на сайті</a>."
+
+#: modules/searchbox/template/form.php:23
 msgid "Начните вводить вид работы"
 msgstr "Почніть вводити вид роботи"
 
-#: modules/searchbox/template/form.php:27
+#: modules/searchbox/template/form.php:24
 msgid "Например: Ремонт под ключ, Отделка полов и тд."
 msgstr "Наприклад: Ремонт під ключ, Оздоблення підлог і тд."
 
-#: modules/searchbox/template/form.php:33
+#: modules/searchbox/template/form.php:30
 msgid "Найти"
 msgstr "Знайти"
 
-#: modules/searchbox/template/form.php:37
+#: modules/searchbox/template/form.php:34
 msgid "Расширенный поиск"
 msgstr "Розширений пошук"
 
-#: modules/searchbox/template/form.php:49
+#: modules/searchbox/template/form.php:46
 msgid "Тип исполнителя"
 msgstr "Тип виконавця"
 
@@ -640,6 +818,22 @@ msgstr "РОБИШ <span>РЕМОНТ</span>?"
 #: front-page.php:7
 msgid "Найди мастеров, дизайнеров, строителей в один клик."
 msgstr "Знайди майстрів, дизайнерів, будівельників в один клік."
+
+#~ msgid "Окончание"
+#~ msgstr "Закінчення"
+
+#~ msgctxt "%2$s = human-readable time difference"
+#~ msgid "через %1$s"
+#~ msgstr "через %1$s"
+
+#~ msgid "Пожаловаться"
+#~ msgstr "Поскаржитись"
+
+#~ msgid "Найти мастера"
+#~ msgstr "Знайти майстра"
+
+#~ msgid "Стать исполнителем"
+#~ msgstr "Стати виконавцем"
 
 #~ msgid "Другие услуги"
 #~ msgstr "Інші послуги"

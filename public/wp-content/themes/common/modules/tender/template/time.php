@@ -11,8 +11,8 @@
 		<?php if (pror_tender_is_expired()): ?>
 			<?php _e('Выполнено', 'common'); ?>
 		<?php else: ?>
-            <span><?php _e('Окончание', 'common'); ?></span>
-            <?php printf(_x('через %1$s', '%2$s = human-readable time difference', 'common'), human_time_diff(
+            <span><?php _e('Действителен', 'common'); ?></span>
+            <?php printf(_x('%1$s', '%2$s = human-readable time difference', 'common'), human_time_diff(
 				get_field('expires_date'),
 				current_time('timestamp')
 			)); ?>

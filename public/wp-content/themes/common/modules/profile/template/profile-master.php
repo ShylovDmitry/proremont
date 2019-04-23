@@ -6,12 +6,12 @@ $menu = [
         'template' => 'profile/master/settings',
     ],
 	'tenders' => [
-		'name' => __('Мои заявки', 'common'),
+		'name' => __('Мои тендеры', 'common'),
 		'icon' => 'wrench',
 		'template' => 'tender/profile-list',
 	],
 	'tender_responses' => [
-		'name' => __('Ответы на заявки', 'common'),
+		'name' => __('Ответы на тендеры', 'common'),
 		'icon' => 'task',
 		'template' => 'tender/profile-responses-list',
 	],

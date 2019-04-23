@@ -97,7 +97,7 @@ function pror_tender_is_expired() {
 function pror_tender_get_title() {
 	$title = '';
 	if (pror_tender_is_expired()) {
-		$title .= __('[Выполнено] ', 'common');
+		$title .= __('[Выполнено]', 'common') . " ";
 	}
 	$title .= sprintf('%s %s - %s',
 		get_the_title(),
@@ -171,7 +171,7 @@ function pror_tender_create_response($data) {
 
 	$tender = get_post($data['tender_id']);
 	if (!$tender) {
-		return new WP_Error('tender_not_exist', __('Заявка не существует.', 'common'));
+		return new WP_Error('tender_not_exist', __('Тендер не существует.', 'common'));
 	}
 
 	if (pror_tender_is_tender_assigned_to_user($data['tender_id'])) {

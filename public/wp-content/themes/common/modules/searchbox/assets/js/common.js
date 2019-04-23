@@ -62,6 +62,8 @@ jQuery(function ($) {
                 parts.push('mtype=' + mtype_val);
             }
 
+            setCookie('pror_section', section, 365);
+
             window.location.href = catalog + (parts.length ? '?' + parts.join('&') : '');
         }
     });

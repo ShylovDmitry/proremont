@@ -60,7 +60,7 @@
                             <textarea name="description" id="description" class="form-control" rows="5" required="required"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-pror-primary"><?php _e( 'Создать заявку', 'common' ); ?></button>
+                        <button type="submit" class="btn btn-pror-primary"><?php _e( 'Создать тендер', 'common' ); ?></button>
                     </form>
 
                 <?php endif; ?>

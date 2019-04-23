@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, '', 'pror:blog:list', 'main');
+$cache_obj = pror_cache_obj(0, '', 'pror:blog:list');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

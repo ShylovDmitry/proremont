@@ -34,7 +34,7 @@ ob_start();
                 <?php else: ?>
                     <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
                 <?php endif; ?>
-                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>" class="nav-link iam-master"><?php _e('Создать заявку', 'common'); ?></a></li>
+                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>" class="nav-link iam-master"><?php _e('Создать тендер', 'common'); ?></a></li>
             </ul>
         </div>
     </div>

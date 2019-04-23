@@ -2,13 +2,6 @@ jQuery(function ($) {
     $('[data-toggle="tooltip"]').tooltip({html:true});
 
     $('.gallery-2columns-carousel').slickLightbox();
-
-
-    $('.navbar .section-list .dropdown-menu a').click(function(e) {
-        e.preventDefault();
-        setCookie('pror_section', $(this).data('slug'), 365);
-        window.location.reload(true);
-    });
 });
 
 function pror_track_action(action, type) {

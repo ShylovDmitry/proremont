@@ -16,15 +16,14 @@ function pror_user_has_role($roles, $user_id = null) {
 }
 
 
-
 function pror_set_section_cookie($section_slug) {
     if ($section_slug != pror_get_section_cookie()) {
-        setcookie('pror_section', $section_slug, strtotime('+1 year'), '/', $_SERVER['HTTP_HOST'], false, true);
+        setcookie('pror_section', $section_slug, strtotime('+1 year'), '/', '', false, false);
     }
 }
 
 function pror_remove_section_cookie() {
-    setcookie('pror_section', '', strtotime( '-1 year' ), '/', $_SERVER['HTTP_HOST'], false, true);
+    setcookie('pror_section', '', strtotime( '-1 year' ), '/', '', false, false);
 }
 
 function pror_get_section_cookie() {
