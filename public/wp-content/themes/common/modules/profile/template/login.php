@@ -78,17 +78,17 @@
                 <h3 class="mb-4"><?php _e( 'Регистрация', 'common' ); ?></h3>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         <h5><?php _e( 'Вы - посетитель?', 'common' ); ?></h5>
 
-                        <p><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный доступ к сайту.', 'common'); ?></p>
-                        <a href="<?php echo wp_registration_url(); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Посетитель</b>', 'common' ); ?></a>
+                        <div class="mb-2"><?php _e('Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный доступ к сайту.', 'common'); ?></div>
+                        <a href="<?php echo wp_registration_url(); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как <b>Посетитель</b>', 'common' ); ?></a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6 mt-4 mt-sm-0">
                         <h5><?php _e( 'Вы - исполнитель?', 'common' ); ?></h5>
 
-                        <p><?php _e('Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас.', 'common'); ?></p>
-                        <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как<br/><b>Исполнитель</b>', 'common' ); ?></a>
+                        <div class="mb-2"><?php _e('Предоставляете услуги? Регистрируйтесь и наши посетители узнают о вас.', 'common'); ?></div>
+                        <a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>" class="btn btn-pror-primary"><?php _e( 'Зарегистрироваться как <b>Исполнитель</b>', 'common' ); ?></a>
                     </div>
                 </div>
             </div>

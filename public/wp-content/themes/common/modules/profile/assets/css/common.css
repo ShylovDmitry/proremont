@@ -38,6 +38,9 @@
   padding: 20px 10px;
   background: #f6f7f7;
 }
+.profile-login .register-links .btn, .profile-register .register-links .btn, .profile-settings .register-links .btn {
+  white-space: normal;
+}
 
 .profile-menu .oi {
   font-size: 12px;
