@@ -7,7 +7,7 @@ fi
 
 SERVER_USER=ec2-user
 SERVER_HOST=$SERVER_USER@52.28.148.152
-SERVER_KEY="~/.ssh/proremont.pem"
+SERVER_KEY="~/.ssh/id_rsa"
 
 STACK=$1
 BASEDIR=$(dirname $0)
