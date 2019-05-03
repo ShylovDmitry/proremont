@@ -279,6 +279,10 @@ add_action('pror_tenders_email_notification_daily', function() {
 			'jsonParam' => json_encode(['tenders' => $tenders]),
 		];
 	}
+	$data[] = [
+		'locator' => 'info@proremont.co',
+		'jsonParam' => json_encode(['tenders' => $tenders]),
+	];
 
 	$eSputnikApi->postSmartSend(1820116, $data);
 });
