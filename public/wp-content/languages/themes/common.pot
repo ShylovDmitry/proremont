@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-04-23T20:30:36+02:00\n"
+"POT-Creation-Date: 2019-05-03T16:57:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 1.5.1\n"
 "X-Domain: common\n"
@@ -53,7 +53,7 @@ msgid "Описание работ"
 msgstr ""
 
 #: page-tenders-add.php:63
-#: modules/theme/template/header.php:37
+#: modules/theme/template/header.php:26
 msgid "Создать тендер"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgid "%1$s"
 msgstr ""
 
 #: modules/tender/template/add-modal.php:9
-#: modules/tender/template/detailed.php:69
+#: modules/tender/template/detailed.php:75
 #: modules/tender/template/responses.php:56
 msgid "Ответить на тендер"
 msgstr ""
@@ -132,23 +132,27 @@ msgstr ""
 msgid "Ответить"
 msgstr ""
 
-#: modules/tender/template/detailed.php:30
+#: modules/tender/template/detailed.php:31
 #: modules/master/template/detailed.php:54
 msgid "Контактная информация"
 msgstr ""
 
-#: modules/tender/template/detailed.php:50
+#: modules/tender/template/detailed.php:51
+msgid "Только исполнители PRO-уровня могуть просматривать контактную информацию. <a href=\"%s\">Получить PRO-уровень</a>."
+msgstr ""
+
+#: modules/tender/template/detailed.php:56
 msgid "Что бы просматривать контактную информацию, необходимо <a href=\"%s\">войти как исполнитель</a>."
 msgstr ""
 
-#: modules/tender/template/detailed.php:58
+#: modules/tender/template/detailed.php:64
 #: modules/profile/template/master/settings.php:141
 #: modules/profile/template/register-master.php:135
 #: modules/master/template/detailed.php:61
 msgid "Описание"
 msgstr ""
 
-#: modules/tender/template/detailed.php:63
+#: modules/tender/template/detailed.php:69
 #: modules/partner/template/detailed.php:44
 #: modules/master/template/detailed.php:68
 msgid "Нет информации."
@@ -163,7 +167,7 @@ msgid "Ничего не найдено. Проверьте этот разде�
 msgstr ""
 
 #: modules/tender/template/alert-line.php:2
-msgid "Не нашли исполнителя? Исполнители сами Вас найдут! <a href=\"%s\">Создать заяку &raquo;</a>"
+msgid "Не нашли исполнителя? Исполнители сами Вас найдут! <a href=\"%s\">Создать тендер &raquo;</a>"
 msgstr ""
 
 #: modules/tender/template/responses.php:19
@@ -374,7 +378,7 @@ msgid "Запомнить меня"
 msgstr ""
 
 #: modules/profile/template/login.php:68
-#: modules/theme/template/header.php:35
+#: modules/theme/template/header.php:37
 msgid "Войти"
 msgstr ""
 
@@ -397,7 +401,7 @@ msgid "Ищете мастеров, дизайнеров, строителей? 
 msgstr ""
 
 #: modules/profile/template/login.php:85
-msgid "Зарегистрироваться как<br/><b>Посетитель</b>"
+msgid "Зарегистрироваться как <b>Посетитель</b>"
 msgstr ""
 
 #: modules/profile/template/login.php:88
@@ -409,7 +413,7 @@ msgid "Предоставляете услуги? Регистрируйтесь
 msgstr ""
 
 #: modules/profile/template/login.php:91
-msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
+msgid "Зарегистрироваться как <b>Исполнитель</b>"
 msgstr ""
 
 #: modules/profile/template/profile-master.php:4
@@ -724,11 +728,11 @@ msgstr ""
 msgid "Компании"
 msgstr ""
 
-#: modules/theme/template/gallery.php:29
-msgid "Недавно добавленные фотографии"
+#: modules/theme/template/header.php:25
+msgid "Тендеры"
 msgstr ""
 
-#: modules/theme/template/header.php:30
+#: modules/theme/template/header.php:32
 msgid "Профиль"
 msgstr ""
 

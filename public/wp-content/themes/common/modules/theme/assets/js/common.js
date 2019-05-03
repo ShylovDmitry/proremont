@@ -1,7 +1,5 @@
 jQuery(function ($) {
     $('[data-toggle="tooltip"]').tooltip({html:true});
-
-    $('.gallery-2columns-carousel').slickLightbox();
 });
 
 function pror_track_action(action, type) {

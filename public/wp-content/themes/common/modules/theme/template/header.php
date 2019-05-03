@@ -22,19 +22,20 @@ ob_start();
             <form class="form-inline my-2 my-lg-0 ml-5 mr-auto d-none d-md-block"></form>
 
             <ul class="navbar-nav">
-                <?php if (is_user_logged_in()): ?>
-                    <?php
-                        $current_user = wp_get_current_user();
-                        $name = "{$current_user->first_name} {$current_user->last_name}";
-                        if (!trim($name)) {
-                            $name = __('Профиль', 'common');
-                        }
-                    ?>
-                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $name; ?></a></li>
-                <?php else: ?>
-                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
-                <?php endif; ?>
+                <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('tenders'); ?>" class="nav-link"><?php _e('Тендеры', 'common'); ?></a></li>
                 <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('tenders-add'); ?>" class="nav-link iam-master"><?php _e('Создать тендер', 'common'); ?></a></li>
+	            <?php if (is_user_logged_in()): ?>
+		            <?php
+		            $current_user = wp_get_current_user();
+		            $name = "{$current_user->first_name} {$current_user->last_name}";
+		            if (!trim($name)) {
+			            $name = __('Профиль', 'common');
+		            }
+		            ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('profile'); ?>" class="nav-link username"><?php echo $name; ?></a></li>
+	            <?php else: ?>
+                    <li class="nav-item"><a href="<?php echo pror_get_permalink_by_slug('login'); ?>" class="nav-link"><?php _e('Войти', 'common'); ?></a></li>
+	            <?php endif; ?>
             </ul>
         </div>
     </div>

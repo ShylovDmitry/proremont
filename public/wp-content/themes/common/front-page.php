@@ -25,11 +25,11 @@
                 </div>
 
                 <div class="col-12 mb-3">
-                    <?php module_template('partner/front-list', array('container_class' => 'colored-box p-3')); ?>
+                    <?php module_template('master/front-list', array('container_class' => 'colored-box p-3')); ?>
                 </div>
 
                 <div class="col-12 mb-3">
-                    <?php module_template('master/front-list', array('container_class' => 'colored-box p-3')); ?>
+		            <?php module_template('partner/front-list', array('container_class' => 'colored-box p-3')); ?>
                 </div>
 
                 <div class="col-12 mb-3">

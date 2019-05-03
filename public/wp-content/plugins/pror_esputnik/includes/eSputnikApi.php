@@ -67,4 +67,28 @@ class eSputnikApi {
         curl_close($ch);
         return true;
     }
+
+    public function postSmartSend($message_id, $recipients) {
+        $url = 'https://esputnik.com/api/v1/message/'.$message_id.'/smartsend';
+
+	    $json_value = new stdClass();
+	    $json_value->recipients = $recipients;
+
+	    $ch = curl_init();
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($json_value));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json;charset=UTF-8'));
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERPWD, $this->login.':'.$this->password);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+
+        if (curl_getinfo($ch, CURLINFO_HTTP_CODE) != 200) {
+            echo 'Curl error: ' . curl_getinfo($ch, CURLINFO_HTTP_CODE) . ' | ' . curl_error($ch) . ' | ' . $output;
+            return false;
+        }
+
+        curl_close($ch);
+        return true;
+    }
 }

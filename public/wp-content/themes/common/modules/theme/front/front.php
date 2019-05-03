@@ -65,8 +65,8 @@ add_theme_support( 'html5', array(
 
 if( function_exists('acf_add_options_page') ) {
     $parent = acf_add_options_page(array(
-		'page_title' 	=> 'Front Page Settings',
-		'menu_title' 	=> 'Front Page Settings',
+		'page_title' 	=> 'ProRemont Settings',
+		'menu_title' 	=> 'ProRemont Settings',
 		'redirect' 		=> false
 	));
 }

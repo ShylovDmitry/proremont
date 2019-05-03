@@ -323,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
         img, figure {
             max-width: 100%;
             height: auto;
+            width: auto !important;
         }
     }
 
@@ -362,12 +363,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .master-list-block h1 {
     font-size: 2.1rem;
-}
-
-.gallery-2columns {
-    img {
-        border: 1px solid $color-lighter;
-    }
 }
 
 .footer .social-icons {

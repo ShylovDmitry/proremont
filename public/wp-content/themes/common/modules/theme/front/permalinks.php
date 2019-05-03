@@ -5,8 +5,11 @@ add_filter('request', function($query_vars) {
         return $query_vars;
     }
 
+	if (defined('DOING_CRON')) {
+		$query_vars['lang'] = 'uk';
+	}
 
-    if (isset($query_vars['catalog_master']) && $query_vars['lang'] != pll_default_language()) {
+	if (isset($query_vars['catalog_master']) && $query_vars['lang'] != pll_default_language()) {
         $parts = explode('/', $query_vars['catalog_master']);
         $new_parts = [];
 

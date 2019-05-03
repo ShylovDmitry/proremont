@@ -185,17 +185,17 @@ function pror_tender_create_response($data) {
 
 	]);
 
-	update_field('_tender', 'field_5cab62cc28550', $id);
-	update_field('tender', $data['tender_id'], $id);
+	update_post_meta($id, '_tender', 'field_5cab62cc28550');
+	update_post_meta($id, 'tender', $data['tender_id']);
 
-	update_field('_author', 'field_5cab63ea254ea', $id);
-	update_field('author', get_current_user_id(), $id);
+	update_post_meta($id, '_author', 'field_5cab63ea254ea');
+	update_post_meta($id, 'author', pror_get_master_post_id());
 
-	update_field('_comment', 'field_5cab62f121f1c', $id);
-	update_field('comment', $data['comment'], $id);
+	update_post_meta($id, '_comment', 'field_5cab62f121f1c');
+	update_post_meta($id, 'comment', $data['comment']);
 
-	update_field('_comment_visibility', 'field_5cae11f10b687', $id);
-	update_field('comment_visibility', $data['comment_visibility'], $id);
+	update_post_meta($id, '_comment_visibility', 'field_5cae11f10b687');
+	update_post_meta($id, 'comment_visibility', $data['comment_visibility']);
 
 	return $id;
 }
@@ -228,3 +228,61 @@ function pror_tender_query_tender_responses($tender_id = null, $author_id = null
 		'meta_query' => empty($meta_query) ? false : $meta_query,
 	]);
 }
+
+
+add_action('acf/update_value', function($value, $post_id, $field) {
+	if ($field['name'] == 'tenders_email_time') {
+		wp_clear_scheduled_hook('pror_tenders_email_notification_daily');
+		wp_schedule_event(strtotime($value), 'daily', 'pror_tenders_email_notification_daily');
+	}
+
+	return $value;
+}, 10, 3);
+
+add_action('pror_tenders_email_notification_daily', function() {
+	global $eSputnikApi;
+
+	if (!WP_ENV_PROD) {
+		return;
+	}
+
+	$query = new WP_Query([
+		'post_type' => 'tender',
+		'post_status' => 'publish',
+		'posts_per_page' => 20,
+		'date_query' => array(
+			'after' => '24 hours ago',
+		)
+	]);
+	$tenders = [];
+	while ($query->have_posts()) {
+		$query->the_post();
+
+		$tenders[] = [
+			'title' => pror_tender_get_title(),
+			'url' => get_permalink(),
+		];
+	}
+
+	if (!$tenders) {
+		return;
+	}
+
+	$users = get_users([
+		'role' => 'master',
+		'fields' => ['user_email'],
+	]);
+	$data = [];
+	foreach ($users as $user) {
+		$data[] = [
+			'locator' => $user->user_email,
+			'jsonParam' => json_encode(['tenders' => $tenders]),
+		];
+	}
+
+	$eSputnikApi->postSmartSend(1820116, $data);
+});
+//add_action('wp', function() {
+//	do_action('pror_tenders_email_notification_daily');
+//	exit;
+//});

@@ -1,36 +1,10 @@
 {
     "key": "group_59e259cddbea6",
-    "title": "Front page",
+    "title": "ProRemont Settings",
     "fields": [
         {
-            "key": "field_59e259d3776a9",
-            "label": "Main Gallery",
-            "name": "frontpage_main_gallery",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "admin_only": 0,
-            "min": "",
-            "max": "",
-            "insert": "append",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5c90e0a7ed6ab",
-            "label": "Catalog",
+            "label": "Frontpage Catalog",
             "name": "frontpage_catalog",
             "type": "taxonomy",
             "instructions": "",
@@ -53,7 +27,7 @@
         },
         {
             "key": "field_5a9de50e2fc5e",
-            "label": "Partners",
+            "label": "Frontpage Partners",
             "name": "frontpage_partners",
             "type": "relationship",
             "instructions": "",
@@ -64,20 +38,37 @@
                 "class": "",
                 "id": ""
             },
+            "admin_only": 0,
             "post_type": [
                 "partner"
             ],
             "taxonomy": [],
-            "min": "",
-            "max": "",
             "filters": [
                 "search"
             ],
             "elements": [
                 "featured_image"
             ],
-            "return_format": "id",
-            "admin_only": 0
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5cca31188a0cc",
+            "label": "Tenders Email Time",
+            "name": "tenders_email_time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_only": 0,
+            "display_format": "H:i",
+            "return_format": "H:i"
         }
     ],
     "location": [
@@ -85,7 +76,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-front-page-settings"
+                "value": "acf-options-proremont-settings"
             }
         ]
     ],
@@ -97,5 +88,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1552999186
+    "modified": 1556754935
 }

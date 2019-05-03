@@ -176,14 +176,14 @@ add_action('pror_esputnik_sync', function() {
             break;
         }
 
-        $wpdb->query($wpdb->prepare("UPDATE $table_name SET in_progress = 1 WHERE id = {$record->id}"));
+        $wpdb->query($wpdb->prepare("UPDATE $table_name SET in_progress = 1 WHERE id = %d", $record->id));
 
         $res = pror_esputnik_process_action($record->action, json_decode($record->data, true));
         if ($res) {
-            $wpdb->query($wpdb->prepare("UPDATE $table_name SET done_time = %s WHERE id = {$record->id}", [current_time('mysql', true)]));
+            $wpdb->query($wpdb->prepare("UPDATE $table_name SET done_time = %s WHERE id = %d", [current_time('mysql', true), $record->id]));
         }
 
-        $wpdb->query($wpdb->prepare("UPDATE $table_name SET in_progress = 0 WHERE id = {$record->id}"));
+        $wpdb->query($wpdb->prepare("UPDATE $table_name SET in_progress = 0 WHERE id = %d", $record->id));
     }
 });
 

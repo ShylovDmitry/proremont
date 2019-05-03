@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2019-04-23T20:30:36+02:00\n"
-"PO-Revision-Date: 2019-04-24 02:06+0300\n"
+"POT-Creation-Date: 2019-05-03T16:57:44+00:00\n"
+"PO-Revision-Date: 2019-05-03 19:58+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -52,7 +52,7 @@ msgstr "Дійсний"
 msgid "Описание работ"
 msgstr "Опис робіт"
 
-#: page-tenders-add.php:63 modules/theme/template/header.php:37
+#: page-tenders-add.php:63 modules/theme/template/header.php:26
 msgid "Создать тендер"
 msgstr "Створити тендер"
 
@@ -72,7 +72,8 @@ msgstr "Залишити відгук"
 msgid "Если это не вы, нажмите <a href=\"%s\">выйти</a>"
 msgstr "Якщо це не ви, натисніть <a href=\"%s\">вийти</a>"
 
-#: modules/prom/template/mobile1.php:15 modules/prom/template/sidebar-col.php:24
+#: modules/prom/template/mobile1.php:15
+#: modules/prom/template/sidebar-col.php:24
 msgid "Реклама на ProRemont.co"
 msgstr "Реклама на ProRemont.co"
 
@@ -104,7 +105,7 @@ msgid "%1$s"
 msgstr "%1$s"
 
 #: modules/tender/template/add-modal.php:9
-#: modules/tender/template/detailed.php:69
+#: modules/tender/template/detailed.php:75
 #: modules/tender/template/responses.php:56
 msgid "Ответить на тендер"
 msgstr "Відповісти на тендер"
@@ -129,12 +130,20 @@ msgstr "Закрити"
 msgid "Ответить"
 msgstr "Відповісти"
 
-#: modules/tender/template/detailed.php:30
+#: modules/tender/template/detailed.php:31
 #: modules/master/template/detailed.php:54
 msgid "Контактная информация"
 msgstr "Контактна інформація"
 
-#: modules/tender/template/detailed.php:50
+#: modules/tender/template/detailed.php:51
+msgid ""
+"Только исполнители PRO-уровня могуть просматривать контактную информацию. <a "
+"href=\"%s\">Получить PRO-уровень</a>."
+msgstr ""
+"Тільки виконавці PRO-рівня можуть переглядати контактну інформацію. <a href="
+"\"%s\">Отримати PRO-рівень</a>."
+
+#: modules/tender/template/detailed.php:56
 msgid ""
 "Что бы просматривать контактную информацию, необходимо <a href=\"%s\">войти "
 "как исполнитель</a>."
@@ -142,14 +151,14 @@ msgstr ""
 "Щоб переглядати контактну інформація, необхідно <a href=\"%s\">ввійти як "
 "виконавець</a>."
 
-#: modules/tender/template/detailed.php:58
+#: modules/tender/template/detailed.php:64
 #: modules/profile/template/master/settings.php:141
 #: modules/profile/template/register-master.php:135
 #: modules/master/template/detailed.php:61
 msgid "Описание"
 msgstr "Опис"
 
-#: modules/tender/template/detailed.php:63
+#: modules/tender/template/detailed.php:69
 #: modules/partner/template/detailed.php:44
 #: modules/master/template/detailed.php:68
 msgid "Нет информации."
@@ -165,7 +174,7 @@ msgstr "Нічого не знайдено. Перевірте цей розді
 #: modules/tender/template/alert-line.php:2
 msgid ""
 "Не нашли исполнителя? Исполнители сами Вас найдут! <a href=\"%s\">Создать "
-"заяку &raquo;</a>"
+"тендер &raquo;</a>"
 msgstr ""
 "Не знайшли виконавця? Виконавці самі Вас знайдуть! <a href=\"%s\">Створити "
 "тендер &raquo;</a>"
@@ -187,8 +196,8 @@ msgid ""
 "Что бы ответить на тендер, необходимо <a href=\"%s\">зарегистрироваться на "
 "сайте как исполнитель</a>."
 msgstr ""
-"Щоб відповісти на тендер, необхідно <a href=\"%s\">зареєструватись на сайті як "
-"виконавець</a>."
+"Щоб відповісти на тендер, необхідно <a href=\"%s\">зареєструватись на сайті "
+"як виконавець</a>."
 
 #: modules/tender/front/front.php:62
 msgid "до 3,000 грн"
@@ -384,7 +393,7 @@ msgstr "Пароль"
 msgid "Запомнить меня"
 msgstr "Запам'ятати мене"
 
-#: modules/profile/template/login.php:68 modules/theme/template/header.php:35
+#: modules/profile/template/login.php:68 modules/theme/template/header.php:37
 msgid "Войти"
 msgstr "Увійти"
 
@@ -404,15 +413,15 @@ msgstr "Ви - відвідувач?"
 
 #: modules/profile/template/login.php:84
 msgid ""
-"Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить полный "
-"доступ к сайту."
+"Ищете мастеров, дизайнеров, строителей? Регистрируйтесь, чтобы получить "
+"полный доступ к сайту."
 msgstr ""
-"Шукаєте майстрів, дизайнерів, будівельників? Реєструйтесь, щоб отримати повний "
-"доступ до сайту."
+"Шукаєте майстрів, дизайнерів, будівельників? Реєструйтесь, щоб отримати "
+"повний доступ до сайту."
 
 #: modules/profile/template/login.php:85
-msgid "Зарегистрироваться как<br/><b>Посетитель</b>"
-msgstr "Зареєструватись як<br/><b>Відвідувач</b>"
+msgid "Зарегистрироваться как <b>Посетитель</b>"
+msgstr "Зареєструватись як <b>Відвідувач</b>"
 
 #: modules/profile/template/login.php:88
 msgid "Вы - исполнитель?"
@@ -423,8 +432,8 @@ msgid "Предоставляете услуги? Регистрируйтесь
 msgstr "Надаєте послуги? Реєструйтесь і наші відвідувачі дізнаються про вас."
 
 #: modules/profile/template/login.php:91
-msgid "Зарегистрироваться как<br/><b>Исполнитель</b>"
-msgstr "Зареєструватись як<br/><b>Виконавець</b>"
+msgid "Зарегистрироваться как <b>Исполнитель</b>"
+msgstr "Зареєструватись як <b>Виконавець</b>"
 
 #: modules/profile/template/profile-master.php:4
 #: modules/profile/template/profile-subscriber.php:4
@@ -575,11 +584,11 @@ msgstr "Особисті данні"
 #: modules/profile/template/register-subscriber.php:67
 #: modules/profile/template/register-master.php:156
 msgid ""
-"<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и отправлен "
-"на ваш Email."
+"<strong>Заметка:</strong> Пароль будет сгенерирован автоматически и "
+"отправлен на ваш Email."
 msgstr ""
-"<strong>Замітка:</strong> Пароль буде згенеровано автоматично і відправлено на "
-"ваш Email."
+"<strong>Замітка:</strong> Пароль буде згенеровано автоматично і відправлено "
+"на ваш Email."
 
 #: modules/profile/template/register-subscriber.php:71
 #: modules/profile/template/register-master.php:168
@@ -624,15 +633,16 @@ msgstr "Необхідно ввести пароль."
 
 #: modules/profile/front/front.php:88
 msgid ""
-"Пользователь с таким Email не зарегистрирован. Возможно вы использовали другой "
-"Email при регистрации"
+"Пользователь с таким Email не зарегистрирован. Возможно вы использовали "
+"другой Email при регистрации"
 msgstr ""
-"Користувач з таким Email не зареєстрований. Можливо ви використали інший Email "
-"для реєстрації"
+"Користувач з таким Email не зареєстрований. Можливо ви використали інший "
+"Email для реєстрації"
 
 #: modules/profile/front/front.php:89
 msgid ""
-"Пользователь с таким Email уже зарегистрирован. <a href='%s'>Войти</a> на сайт."
+"Пользователь с таким Email уже зарегистрирован. <a href='%s'>Войти</a> на "
+"сайт."
 msgstr ""
 "Користувач з таким Email вже зареєстрований. <a href='%s'>Увійти</a> на сайт."
 
@@ -753,11 +763,11 @@ msgstr "Бригади"
 msgid "Компании"
 msgstr "Компанії"
 
-#: modules/theme/template/gallery.php:29
-msgid "Недавно добавленные фотографии"
-msgstr "Нещодавно додані фотографії"
+#: modules/theme/template/header.php:25
+msgid "Тендеры"
+msgstr "Тендери"
 
-#: modules/theme/template/header.php:30
+#: modules/theme/template/header.php:32
 msgid "Профиль"
 msgstr "Профіль"
 
@@ -786,8 +796,8 @@ msgid ""
 "Что бы просматривать контактную информацию, необходимо <a href=\"%s"
 "\">зарегистрироваться на сайте</a>."
 msgstr ""
-"Щоб переглядати контактну інформацію, необхідно <a href=\"%s\">зареєструватись "
-"на сайті</a>."
+"Щоб переглядати контактну інформацію, необхідно <a href=\"%s"
+"\">зареєструватись на сайті</a>."
 
 #: modules/searchbox/template/form.php:23
 msgid "Начните вводить вид работы"
@@ -816,107 +826,3 @@ msgstr "РОБИШ <span>РЕМОНТ</span>?"
 #: front-page.php:7
 msgid "Найди мастеров, дизайнеров, строителей в один клик."
 msgstr "Знайди майстрів, дизайнерів, будівельників в один клік."
-
-#~ msgid "Окончание"
-#~ msgstr "Закінчення"
-
-#~ msgctxt "%2$s = human-readable time difference"
-#~ msgid "через %1$s"
-#~ msgstr "через %1$s"
-
-#~ msgid "Пожаловаться"
-#~ msgstr "Поскаржитись"
-
-#~ msgid "Найти мастера"
-#~ msgstr "Знайти майстра"
-
-#~ msgid "Стать исполнителем"
-#~ msgstr "Стати виконавцем"
-
-#~ msgid "Другие услуги"
-#~ msgstr "Інші послуги"
-
-#~ msgid "Экономьте на ремонте!"
-#~ msgstr "Економте на ремонті!"
-
-#~ msgid "знает как"
-#~ msgstr "знає як"
-
-#~ msgid "Сэкономить <strong>до $3,000</strong>"
-#~ msgstr "Зекономити <strong>до $3,000</strong>"
-
-#~ msgid "Каталог"
-#~ msgstr "Каталог"
-
-#~ msgid "Поиск"
-#~ msgstr "Пошук"
-
-#~ msgid ""
-#~ "<div class=\"first\">Всеукраинский бесплатный</div>\n"
-#~ "                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАСТЕРОВ</"
-#~ "span></h1>\n"
-#~ "                <div class=\"last\">для ремонта квартир, домов<br />и "
-#~ "офисных помещений</div>"
-#~ msgstr ""
-#~ "<div class=\"first\">Всеукраїнський безкоштовний</div>\n"
-#~ "                <h1>ОНЛАЙН-КАТАЛОГ<span class=\"highlighted\">МАЙСТРІВ</"
-#~ "span></h1>\n"
-#~ "                <div class=\"last\">для ремонту квартир, будинків<br />та "
-#~ "офісних приміщень</div>"
-
-#~ msgid "Ищу исполнителя"
-#~ msgstr "Шукаю виконавця"
-
-#~ msgid "Каталог №1 в Украине"
-#~ msgstr "Каталог №1 в Україні"
-
-#~ msgid "Бесплатное размещение"
-#~ msgstr "Безкоштовне розміщення"
-
-#~ msgid "Реклама на сайте"
-#~ msgstr "Реклама на сайті"
-
-#~ msgid "<strong>%s</strong> мастеров"
-#~ msgstr "<strong>%s</strong> майстрів"
-
-#~ msgid "<strong>рейтинг</strong> и отзывы"
-#~ msgstr "<strong>рейтинг</strong> та відгуки"
-
-#~ msgid "<strong>бесплатный</strong> каталог"
-#~ msgstr "<strong>безкоштовний</strong> каталог"
-
-#~ msgid "Вы уже зарегистрированы."
-#~ msgstr "Ви вже зареєстровані."
-
-#~ msgid "<a href=\"%s\">Войти</a> на сайт."
-#~ msgstr "<a href=\"%s\">Увійти</a> на сайт."
-
-#~ msgid "Регистрация для пользователей"
-#~ msgstr "Реєстрація для користувачів"
-
-#~ msgid "Написать новый коментарий"
-#~ msgstr "Написати новий коментар"
-
-#~ msgid "Написать новый отзыв"
-#~ msgstr "Написати новий відгук"
-
-#~ msgid "Смотреть все статьи &raquo;"
-#~ msgstr "Дивитись всі статті &raquo;"
-
-#~ msgid "Зарегистрироваться &raquo;"
-#~ msgstr "Зареєструватись &raquo;"
-
-#~ msgid "Регистрация для исполнителей &raquo;"
-#~ msgstr "Реєстрація для виконавців  &raquo;"
-
-#~ msgid "Оценки"
-#~ msgstr "Оцінки"
-
-#~ msgid "Услуги"
-#~ msgstr "Послуги"
-
-#~ msgid "ProRemont - Каталог Мастеров с рейтингами со всей Украины."
-#~ msgstr "ProRemont - Каталог Майстрів з рейтингами зі всієї України."
-
-#~ msgid "Ищу специалиста"
-#~ msgstr "Шукаю спеціаліста"
