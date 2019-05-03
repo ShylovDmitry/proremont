@@ -21,13 +21,7 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_filter('oa_social_login_filter_new_user_role', function($user_role) {
-    $oa_social_login_source = (!empty ($_REQUEST ['oa_social_login_source']) ? strtolower (trim ($_REQUEST ['oa_social_login_source'])) : '');
-    if ($oa_social_login_source == 'comments') {
-        return 'subscriber';
-    } else if ($oa_social_login_source) {
-        return 'master';
-    }
-    return $user_role;
+    return 'subscriber';
 });
 
 add_action('login_form_login', function() {

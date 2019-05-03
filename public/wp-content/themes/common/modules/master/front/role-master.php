@@ -6,12 +6,12 @@ add_action('init', function() {
     }
 });
 
-add_action('after_switch_theme', function() {
-    pror_create_master_role();
+add_action('switch_theme', function() {
+	remove_role('master');
 });
 
-add_action('switch_theme', function() {
-    remove_role('master');
+add_action('after_switch_theme', function() {
+    pror_create_master_role();
 });
 
 function pror_create_master_role() {

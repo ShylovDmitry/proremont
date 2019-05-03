@@ -14,4 +14,8 @@
     <?php endforeach; ?>
 </ul>
 
+<?php if (!pror_user_has_role('master')): ?>
+    <p><a href="<?php echo pror_get_permalink_by_slug('register-master'); ?>"><?php _e('Стать исполнителем', 'common'); ?></a></p>
+<?php endif; ?>
+
 <a href="<?php echo wp_logout_url(); ?>" class="logout-url"><?php _e('Выйти', 'common'); ?></a>
