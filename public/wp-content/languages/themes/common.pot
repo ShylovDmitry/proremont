@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-05-03T16:57:44+00:00\n"
+"POT-Creation-Date: 2019-05-03T21:45:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 1.5.1\n"
 "X-Domain: common\n"
@@ -442,7 +442,11 @@ msgstr ""
 msgid "Ваш аккаунт не подтверджен. Чтобы подтвердить аккаунт, позвоните нашому менеджеру <nobr>(063) 199 63 04</nobr>."
 msgstr ""
 
-#: modules/profile/template/menu.php:17
+#: modules/profile/template/menu.php:18
+msgid "Стать исполнителем"
+msgstr ""
+
+#: modules/profile/template/menu.php:21
 msgid "Выйти"
 msgstr ""
 
@@ -541,7 +545,7 @@ msgstr ""
 
 #: modules/profile/template/register-subscriber.php:8
 #: modules/profile/template/register-master.php:12
-#: modules/profile/front/front.php:93
+#: modules/profile/front/front.php:87
 msgid "Регистрация для новых пользователей временно закрыта."
 msgstr ""
 
@@ -592,101 +596,101 @@ msgstr ""
 msgid "Восстановить пароль"
 msgstr ""
 
-#: modules/profile/front/front.php:86
+#: modules/profile/front/front.php:80
 msgid "Необходимо ввести Email."
 msgstr ""
 
-#: modules/profile/front/front.php:87
+#: modules/profile/front/front.php:81
 msgid "Необходимо ввести пароль."
 msgstr ""
 
-#: modules/profile/front/front.php:88
+#: modules/profile/front/front.php:82
 msgid "Пользователь с таким Email не зарегистрирован. Возможно вы использовали другой Email при регистрации"
 msgstr ""
 
-#: modules/profile/front/front.php:89
+#: modules/profile/front/front.php:83
 msgid "Пользователь с таким Email уже зарегистрирован. <a href='%s'>Войти</a> на сайт."
 msgstr ""
 
-#: modules/profile/front/front.php:90
+#: modules/profile/front/front.php:84
 msgid "Неверний пароль. Вы <a href='%s'>забыли пароль</a>?"
 msgstr ""
 
-#: modules/profile/front/front.php:91
+#: modules/profile/front/front.php:85
 msgid "Вы ввели неверний Email."
 msgstr ""
 
-#: modules/profile/front/front.php:92
+#: modules/profile/front/front.php:86
 msgid "Пользователь с таким Email уже зарегистрирован."
 msgstr ""
 
-#: modules/profile/front/front.php:94
-#: modules/profile/front/front.php:95
+#: modules/profile/front/front.php:88
+#: modules/profile/front/front.php:89
 msgid "Пользователь с таким Email не найден."
 msgstr ""
 
-#: modules/profile/front/front.php:96
-#: modules/profile/front/front.php:97
+#: modules/profile/front/front.php:90
+#: modules/profile/front/front.php:91
 msgid "Ссылка для восстановления пароля устарела."
 msgstr ""
 
-#: modules/profile/front/front.php:98
+#: modules/profile/front/front.php:92
 msgid "Пароли не совпадают."
 msgstr ""
 
-#: modules/profile/front/front.php:99
+#: modules/profile/front/front.php:93
 msgid "Извините, вы не можете использовать пустой пароль."
 msgstr ""
 
-#: modules/profile/front/front.php:100
+#: modules/profile/front/front.php:94
 msgid "Неправильное Имя."
 msgstr ""
 
-#: modules/profile/front/front.php:101
+#: modules/profile/front/front.php:95
 msgid "Неправильное Фамилия."
 msgstr ""
 
-#: modules/profile/front/front.php:102
+#: modules/profile/front/front.php:96
 msgid "Неправильный Контактный телефон."
 msgstr ""
 
-#: modules/profile/front/front.php:103
+#: modules/profile/front/front.php:97
 msgid "Неверная Роль."
 msgstr ""
 
-#: modules/profile/front/front.php:104
+#: modules/profile/front/front.php:98
 msgid "Неправильное Название."
 msgstr ""
 
-#: modules/profile/front/front.php:105
+#: modules/profile/front/front.php:99
 msgid "Неправильный Тип."
 msgstr ""
 
-#: modules/profile/front/front.php:106
+#: modules/profile/front/front.php:100
 msgid "Неправильный Рабочий телефон."
 msgstr ""
 
-#: modules/profile/front/front.php:107
+#: modules/profile/front/front.php:101
 msgid "Неправильный Город."
 msgstr ""
 
-#: modules/profile/front/front.php:108
+#: modules/profile/front/front.php:102
 msgid "Неправильное Описание."
 msgstr ""
 
-#: modules/profile/front/front.php:109
+#: modules/profile/front/front.php:103
 msgid "Неправильная Категория."
 msgstr ""
 
-#: modules/profile/front/front.php:111
+#: modules/profile/front/front.php:105
 msgid "Ошибка. Попробуйте еще раз позже."
 msgstr ""
 
-#: modules/profile/front/front.php:525
+#: modules/profile/front/front.php:519
 msgid "Телефон: %s"
 msgstr ""
 
-#: modules/profile/front/front.php:526
+#: modules/profile/front/front.php:520
 msgid "Роль: %s"
 msgstr ""
 
