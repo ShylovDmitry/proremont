@@ -1,12 +1,14 @@
 User-Agent: *
 Disallow:
 Allow: /wp-content/uploads/
+Allow: /cover/*?*
 Disallow: /*?*
 Sitemap: https://proremont.co/sitemap_index.xml
 
 User-Agent: Yandex
 Disallow:
 Allow: /wp-content/uploads/
+Allow: /cover/*?*
 Disallow: /*?*
 Sitemap: https://proremont.co/sitemap_index.xml
 
