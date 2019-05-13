@@ -1,10 +1,5 @@
 <div class="profile-login">
-    <?php if (is_user_logged_in()): ?>
-        <p><?php printf(
-                __('Уже зарегистрированы? <a href="%s">Войти &raquo;</a>', 'common'),
-                wp_login_url()
-            ); ?></p>
-    <?php elseif (!isset( $_REQUEST['login'] ) || !isset( $_REQUEST['key'] )): ?>
+    <?php if (!isset( $_REQUEST['login'] ) || !isset( $_REQUEST['key'] )): ?>
         <?php _e( 'Неверная ссылка для возобновления пароля.', 'common' ); ?>
     <?php else: ?>
         <h2 class="mb-4"><?php _e( 'Установить пароль', 'common' ); ?></h2>
@@ -17,7 +12,7 @@
         <?php module_template('profile/errors', ['param_key' => 'error']) ?>
 
         <div class="row mb-3">
-            <div class="col-sm-6">
+            <div class="col-12">
                 <form action="<?php echo site_url( 'wp-login.php?action=resetpass' ); ?>" method="post" autocomplete="off" class="form-container from-validation-simple">
                     <input type="hidden" id="user_login" name="rp_login" value="<?php echo esc_attr( $_REQUEST['login'] ); ?>" />
                     <input type="hidden" name="rp_key" value="<?php echo esc_attr( $_REQUEST['key'] ); ?>" />

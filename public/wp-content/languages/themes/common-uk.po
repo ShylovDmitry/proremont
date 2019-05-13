@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
 "POT-Creation-Date: 2019-05-03T21:45:03+00:00\n"
-"PO-Revision-Date: 2019-05-04 00:45+0300\n"
+"PO-Revision-Date: 2019-05-04 01:30+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -169,7 +169,7 @@ msgstr "Інформація відсутня."
 #: modules/tender/template/profile-list.php:38
 #: modules/partner/template/list.php:32 modules/master/template/list.php:72
 msgid "Ничего не найдено. Проверьте этот раздел позже."
-msgstr "Нічого не знайдено. Перевірте цей розділ пізнійше."
+msgstr "Нічого не знайдено. Перевірте цей розділ пізніше."
 
 #: modules/tender/template/alert-line.php:2
 msgid ""
@@ -304,7 +304,7 @@ msgstr "Коментарі"
 
 #: modules/blog/template/list.php:38 modules/blog/template/small.php:11
 msgid "Подробнее"
-msgstr "Детальнійше"
+msgstr "Детальніше"
 
 #: modules/partner/template/front-list.php:33
 msgid "Партнеры"
@@ -720,7 +720,7 @@ msgstr "Невірна Категорія."
 
 #: modules/profile/front/front.php:105
 msgid "Ошибка. Попробуйте еще раз позже."
-msgstr "Помилка. Спробуйте ще раз пізнійше."
+msgstr "Помилка. Спробуйте ще раз пізніше."
 
 #: modules/profile/front/front.php:519
 msgid "Телефон: %s"
