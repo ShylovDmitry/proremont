@@ -89,20 +89,20 @@ function pror_tender_convert_expires_to_date($expires) {
 	return strtotime($data[$expires]);
 }
 
-function pror_tender_is_expired() {
-	$expires = get_field('expires_date', false, false);
+function pror_tender_is_expired($id = null) {
+	$expires = get_field('expires_date', $id, false);
 	return date('Ymd') > $expires;
 }
 
-function pror_tender_get_title() {
+function pror_tender_get_title($id = null) {
 	$title = '';
-	if (pror_tender_is_expired()) {
+	if (pror_tender_is_expired($id)) {
 		$title .= __('[Выполнено]', 'common') . " ";
 	}
 	$title .= sprintf('%s %s - %s',
-		get_the_title(),
-		pror_tender_get_budgets()[get_field('budget')],
-		pror_get_section_localized_name(get_field('section'))
+		get_the_title($id),
+		pror_tender_get_budgets()[get_field('budget', $id)],
+		pror_get_section_localized_name(get_field('section', $id))
 	);
 
 	return $title;

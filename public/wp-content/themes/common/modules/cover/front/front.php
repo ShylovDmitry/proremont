@@ -4,34 +4,56 @@ add_filter('wpseo_og_og_image', 'pror_cover_og_tag_image');
 add_filter('wpseo_og_og_image_secure_url', 'pror_cover_og_tag_image');
 
 add_filter('wpseo_og_og_image_width', function($content) {
-    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner'))) {
+    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner', 'tender'))) {
         return 1200;
     }
     return $content;
 });
 add_filter('wpseo_og_og_image_height', function($content) {
-    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner'))) {
+    if (in_array(get_post_type(), array('master', 'post', 'page', 'partner', 'tender'))) {
         return 630;
     }
     return $content;
 });
 
 function pror_cover_og_tag_image($content) {
-    if (get_post_type() == 'master') {
-        return home_url('/cover/m/' . get_the_author_meta('ID') . '/') . '?t=' . get_the_modified_date('U');
-    }
-    else if (in_array(get_post_type(), array('post', 'page', 'partner'))) {
-        return home_url('/cover/post/' . get_the_ID() . '/') . '?t=' . get_the_modified_date('U');
-    }
-    return $content;
+	switch (get_post_type()) {
+		case 'master':
+			return home_url('/cover/m/' . get_the_author_meta('ID') . '/') . '?t=' . get_the_modified_date('U');
+
+		case 'tender':
+			return home_url('/cover/tender/' . get_the_ID() . '/') . '?t=' . get_the_modified_date('U');
+
+		case 'post':
+		case 'page':
+		case 'partner':
+			return home_url('/cover/post/' . get_the_ID() . '/') . '?t=' . get_the_modified_date('U');
+
+		default:
+			return $content;
+	}
 }
 
 function pror_cover_generate_image($type, $id) {
-    if ($type == 'm') {
-        pror_cover_generate_master_image($id);
-    } elseif (in_array(get_post_type(), array('post', 'page', 'partner'))) {
-        pror_cover_generate_post_image($id);
-    }
+	switch ($type) {
+		case 'm':
+			pror_cover_generate_master_image($id);
+			break;
+
+		case 'tender':
+			$title = pror_tender_get_title($id);
+			pror_cover_generate_post_image($id, $title);
+			break;
+
+		case 'post':
+		case 'page':
+		case 'partner':
+			pror_cover_generate_post_image($id);
+			break;
+
+		default:
+			break;
+	}
 }
 
 function pror_cover_generate_master_image($user_id) {
@@ -69,8 +91,10 @@ function pror_cover_generate_master_image($user_id) {
     }
 }
 
-function pror_cover_generate_post_image($post_id) {
-    $title = get_the_title($post_id);
+function pror_cover_generate_post_image($post_id, $title = null) {
+	if (!$title) {
+		$title = get_the_title($post_id);
+	}
     $padding = 50;
 
     $imagine = new Imagine\Gd\Imagine();
