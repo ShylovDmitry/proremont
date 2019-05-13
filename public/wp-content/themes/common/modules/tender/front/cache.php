@@ -26,13 +26,13 @@ function pror_tender_clear_cache($post_ID = null) {
 
 
 add_action('save_post_tender_response', function($post_ID, $post, $update) {
-	$tender_id = get_field('tender_id', $post_ID);
+	$tender_id = get_field('tender', $post_ID);
 
 	pror_tender_responses_clear_cache($tender_id);
 }, 10, 3);
 
 function pror_tender_responses_clear_cache($post_ID = null) {
-	wp_cache_delete($post_ID, 'pror:tender:responses');
+	pror_cache_delete_wildcard('pror:tender:responses');
 }
 
 
