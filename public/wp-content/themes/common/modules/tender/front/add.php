@@ -39,6 +39,8 @@ add_action('wp', function() {
             update_post_meta($tender_id,'_expires_date', 'field_5cb044ed9cb88');
             update_post_meta($tender_id,'expires_date', date('Ymd', $expires_date));
 
+            do_action('pror_tender_created', $tender_id);
+
             wp_redirect( get_permalink($tender_id) );
             exit;
         }

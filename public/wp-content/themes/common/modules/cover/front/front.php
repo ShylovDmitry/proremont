@@ -2,6 +2,7 @@
 
 add_filter('wpseo_og_og_image', 'pror_cover_og_tag_image');
 add_filter('wpseo_og_og_image_secure_url', 'pror_cover_og_tag_image');
+add_filter('wpseo_twitter_image', 'pror_cover_og_tag_image');
 
 add_filter('wpseo_og_og_image_width', function($content) {
     if (in_array(get_post_type(), array('master', 'post', 'page', 'partner', 'tender'))) {

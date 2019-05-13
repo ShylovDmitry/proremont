@@ -16,12 +16,12 @@ ob_start();
 <div class="colored-box p-3 mt-3">
     <div class="row">
         <div class="col-12 mb-1">
-            <h4 class="header-underlined"><?php printf(__('Ответы (%s)', 'common'), pror_tender_query_tender_responses(get_the_ID())->post_count); ?></h4>
+            <h4 class="header-underlined"><?php printf(__('Ответы (%s)', 'common'), pror_tender_query_tender_responses($tender_id)->post_count); ?></h4>
         </div>
     </div>
 
 	<?php $customer_id = get_field('customer'); ?>
-	<?php $query = pror_tender_query_tender_responses(get_the_ID()); ?>
+	<?php $query = pror_tender_query_tender_responses($tender_id); ?>
 	<?php if ($query->have_posts()): ?>
         <div class="master-2columns">
             <div class="row">
@@ -47,11 +47,12 @@ ob_start();
 						]); ?>
                     </div>
 				<?php endwhile; ?>
+				<?php wp_reset_query(); ?>
             </div>
         </div>
 	<?php endif; ?>
 
-	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user(get_the_ID()) && !pror_tender_is_expired()): ?>
+	<?php if ($is_user_master && !pror_tender_is_tender_assigned_to_user($tender_id) && !pror_tender_is_expired()): ?>
         <div class="text-center">
             <a href="#" class="btn btn-pror-primary mt-2" data-toggle="modal" data-target="#createTenderResponseModal"><?php _e('Ответить на тендер', 'common'); ?></a>
         </div>
