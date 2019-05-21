@@ -51,7 +51,8 @@ add_action('wp_set_comment_status', function($comment_ID, $comment_status) {
 
 function pror_master_clear_cache($post_ID = null) {
     if ($post_ID) {
-	    wp_cache_delete($post_ID, 'pror:master:post');
+//	    wp_cache_delete($post_ID, 'pror:master:post');
+	    pror_cache_delete_wildcard('pror:master:post');
 	    wp_cache_delete($post_ID, 'pror:comments:post');
     } else {
         pror_cache_delete_wildcard('pror:master:post');

@@ -41,7 +41,7 @@ if ($id) {
 
         <div class="catalog">
             <?php if ($excerpt): ?>
-                <?php echo $excerpt; ?>
+                <?php echo do_shortcode($excerpt); ?>
             <?php else: ?>
                 <?php module_template('catalog_master/small-list'); ?>
             <?php endif; ?>

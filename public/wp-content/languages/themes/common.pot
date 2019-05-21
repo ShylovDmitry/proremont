@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-05-03T21:45:03+00:00\n"
+"POT-Creation-Date: 2019-05-17T13:57:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 1.5.1\n"
 "X-Domain: common\n"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: modules/tender/template/add-modal.php:9
 #: modules/tender/template/detailed.php:75
-#: modules/tender/template/responses.php:56
+#: modules/tender/template/responses.php:57
 msgid "Ответить на тендер"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Исполнитель предпочел скрыть свой комментарий."
 msgstr ""
 
-#: modules/tender/template/responses.php:60
+#: modules/tender/template/responses.php:61
 msgid "Что бы ответить на тендер, необходимо <a href=\"%s\">зарегистрироваться на сайте как исполнитель</a>."
 msgstr ""
 
@@ -302,8 +302,16 @@ msgstr ""
 msgid "Смотреть всех партнеров"
 msgstr ""
 
-#: modules/profile/template/password-reset.php:4
-#: modules/profile/template/password-reset.php:13
+#: modules/profile/template/password-reset.php:3
+msgid "Неверная ссылка для возобновления пароля."
+msgstr ""
+
+#: modules/profile/template/password-reset.php:5
+#: modules/profile/template/password-reset.php:30
+msgid "Установить пароль"
+msgstr ""
+
+#: modules/profile/template/password-reset.php:8
 #: modules/profile/template/register-subscriber.php:14
 #: modules/profile/template/register-master.php:17
 #: modules/profile/template/password-lost.php:4
@@ -311,20 +319,11 @@ msgstr ""
 msgid "Уже зарегистрированы? <a href=\"%s\">Войти &raquo;</a>"
 msgstr ""
 
-#: modules/profile/template/password-reset.php:8
-msgid "Неверная ссылка для возобновления пароля."
-msgstr ""
-
-#: modules/profile/template/password-reset.php:10
-#: modules/profile/template/password-reset.php:35
-msgid "Установить пароль"
-msgstr ""
-
-#: modules/profile/template/password-reset.php:26
+#: modules/profile/template/password-reset.php:21
 msgid "Новый пароль"
 msgstr ""
 
-#: modules/profile/template/password-reset.php:31
+#: modules/profile/template/password-reset.php:26
 msgid "Повторите новый пароль"
 msgstr ""
 
@@ -754,6 +753,10 @@ msgstr ""
 
 #: modules/theme/template/footer.php:52
 msgid "Для мастеров"
+msgstr ""
+
+#: modules/theme/front/front.php:108
+msgid "<span class=\"hidden-content\">[скрытый контент]</span>"
 msgstr ""
 
 #: modules/contact-info/template/contacts.php:13

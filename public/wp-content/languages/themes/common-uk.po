@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Common 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/common\n"
-"POT-Creation-Date: 2019-05-03T21:45:03+00:00\n"
-"PO-Revision-Date: 2019-05-04 01:30+0300\n"
+"POT-Creation-Date: 2019-05-17T13:57:08+00:00\n"
+"PO-Revision-Date: 2019-05-17 17:00+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
@@ -106,7 +106,7 @@ msgstr "%1$s"
 
 #: modules/tender/template/add-modal.php:9
 #: modules/tender/template/detailed.php:75
-#: modules/tender/template/responses.php:56
+#: modules/tender/template/responses.php:57
 msgid "Ответить на тендер"
 msgstr "Відповісти на тендер"
 
@@ -191,7 +191,7 @@ msgstr "(Тільки ви і клієнт може бачити цей коме
 msgid "Исполнитель предпочел скрыть свой комментарий."
 msgstr "Виконавець вирішив скрити свій коментар."
 
-#: modules/tender/template/responses.php:60
+#: modules/tender/template/responses.php:61
 msgid ""
 "Что бы ответить на тендер, необходимо <a href=\"%s\">зарегистрироваться на "
 "сайте как исполнитель</a>."
@@ -314,8 +314,16 @@ msgstr "Партнери"
 msgid "Смотреть всех партнеров"
 msgstr "Дивитись всіх партнерів"
 
-#: modules/profile/template/password-reset.php:4
-#: modules/profile/template/password-reset.php:13
+#: modules/profile/template/password-reset.php:3
+msgid "Неверная ссылка для возобновления пароля."
+msgstr "Невірна ссилка для відновлення паролю."
+
+#: modules/profile/template/password-reset.php:5
+#: modules/profile/template/password-reset.php:30
+msgid "Установить пароль"
+msgstr "Встановити пароль"
+
+#: modules/profile/template/password-reset.php:8
 #: modules/profile/template/register-subscriber.php:14
 #: modules/profile/template/register-master.php:17
 #: modules/profile/template/password-lost.php:4
@@ -323,20 +331,11 @@ msgstr "Дивитись всіх партнерів"
 msgid "Уже зарегистрированы? <a href=\"%s\">Войти &raquo;</a>"
 msgstr "Вже зареєстровані? <a href=\"%s\">Увійти &raquo;</a>"
 
-#: modules/profile/template/password-reset.php:8
-msgid "Неверная ссылка для возобновления пароля."
-msgstr "Невірна ссилка для відновлення паролю."
-
-#: modules/profile/template/password-reset.php:10
-#: modules/profile/template/password-reset.php:35
-msgid "Установить пароль"
-msgstr "Встановити пароль"
-
-#: modules/profile/template/password-reset.php:26
+#: modules/profile/template/password-reset.php:21
 msgid "Новый пароль"
 msgstr "Новий пароль"
 
-#: modules/profile/template/password-reset.php:31
+#: modules/profile/template/password-reset.php:26
 msgid "Повторите новый пароль"
 msgstr "Повторіть новий пароль"
 
@@ -790,6 +789,10 @@ msgstr "Блог"
 #: modules/theme/template/footer.php:52
 msgid "Для мастеров"
 msgstr "Для майстрів"
+
+#: modules/theme/front/front.php:108
+msgid "<span class=\"hidden-content\">[скрытый контент]</span>"
+msgstr "<span class=\"hidden-content\">[скритий контент]</span>"
 
 #: modules/contact-info/template/contacts.php:13
 msgid "Показать"

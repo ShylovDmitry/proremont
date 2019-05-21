@@ -2,7 +2,7 @@
     <div class="master-detailed<?php if (get_field('master_is_pro', "user_" . get_the_author_meta('ID'))): ?> pro<?php endif; ?>">
 
         <?php
-	    $cache_obj = pror_cache_obj(0, '', 'pror:master:post', get_the_ID());
+	    $cache_obj = pror_cache_obj(0, '', 'pror:master:post', get_the_ID(), is_user_logged_in());
 	    $cache = pror_cache_get($cache_obj);
         if ($cache):
             echo $cache;

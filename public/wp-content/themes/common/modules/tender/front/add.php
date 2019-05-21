@@ -29,7 +29,7 @@ add_action('wp', function() {
             update_post_meta($tender_id, 'budget', $_POST['budget']);
 
             update_post_meta($tender_id,'_description', 'field_5c9e19e48a738');
-            update_post_meta($tender_id,'description', $_POST['description']);
+            update_post_meta($tender_id,'description', pror_theme_add_hide_shortcode($_POST['description']));
 
 
             $expires_keys = array_keys(pror_tender_get_expires());

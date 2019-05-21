@@ -15,7 +15,7 @@ function pror_update_master_info($user_id) {
             'ID' => $master_post_id,
             'post_title' => $title,
             'post_name' => get_field('master_url_slug', "user_{$user_id}"),
-            'post_content' => get_field('master_text', "user_{$user_id}"),
+            'post_content' => pror_theme_add_hide_shortcode(get_field('master_text', "user_{$user_id}")),
             'comment_status' => 'open',
         ));
 

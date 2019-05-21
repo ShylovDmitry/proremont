@@ -64,7 +64,7 @@ ob_start();
                 <h5><?php _e('Описание', 'common'); ?></h5>
 
                 <?php if(get_field('description')): ?>
-                    <?php the_field('description'); ?>
+                    <?php do_shortcode(get_field('description')); ?>
                 <?php else: ?>
                     <i><?php _e('Нет информации.', 'common'); ?></i>
                 <?php endif; ?>

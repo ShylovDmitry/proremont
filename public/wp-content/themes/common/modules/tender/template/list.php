@@ -1,5 +1,5 @@
 <?php
-$cache_obj = pror_cache_obj(0, '', 'pror:tender:list');
+$cache_obj = pror_cache_obj(5*60, '', 'pror:tender:list');
 $cache = pror_cache_get($cache_obj);
 if ($cache):
     echo $cache;

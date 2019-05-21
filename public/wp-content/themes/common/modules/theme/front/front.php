@@ -101,3 +101,32 @@ function pror_get_permalink_by_slug($slug) {
 
     return get_the_permalink($lang_post ? $lang_post : $post);
 }
+
+
+add_filter('preprocess_comment', function($commentdata) {
+	$commentdata['comment_content'] = pror_theme_add_hide_shortcode($commentdata['comment_content']);
+	return $commentdata;
+});
+
+add_filter('comment_text', function($comment_text, $comment, $args) {
+	return do_shortcode($comment_text);
+}, 10, 3);
+
+
+add_shortcode('hide', function() {
+	return __('<span class="hidden-content">[скрытый контент]</span>', 'common');
+});
+
+function pror_theme_add_hide_shortcode($content) {
+	// https://mathiasbynens.be/demo/url-regex
+	$pattern_url = '#\b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))#i';
+	$content = preg_replace($pattern_url, '[hide]$0[/hide]', $content);
+
+	$pattern_phone = '/[0-9\(\)\/\+][0-9\-\(\)\/\+\s]{4,}[0-9]/i';
+	$content = preg_replace($pattern_phone, '[hide]$0[/hide]', $content);
+
+	$pattern_email = '/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i';
+	$content = preg_replace($pattern_email, '[hide]$0[/hide]', $content);
+
+	return $content;
+}

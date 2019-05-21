@@ -149,7 +149,7 @@ add_action('wp_ajax_pror_tender_action', 'pror_ajax_tender_action');
 function pror_ajax_tender_action() {
     switch ($_POST['type']) {
         case 'create_tender_response':
-        	$res = pror_tender_create_response($_POST);
+        	$res = pror_tender_response_create($_POST);
         	if ($res instanceof WP_Error) {
 		        wp_send_json_error($res);
 	        }
@@ -162,7 +162,7 @@ function pror_ajax_tender_action() {
     }
 }
 
-function pror_tender_create_response($data) {
+function pror_tender_response_create($data) {
 	$user = wp_get_current_user();
 	$master_post_id = pror_get_master_post_id($user->ID);
 	if (!$master_post_id) {
@@ -192,10 +192,12 @@ function pror_tender_create_response($data) {
 	update_post_meta($id, 'author', pror_get_master_post_id());
 
 	update_post_meta($id, '_comment', 'field_5cab62f121f1c');
-	update_post_meta($id, 'comment', $data['comment']);
+	update_post_meta($id, 'comment', pror_theme_add_hide_shortcode($data['comment']));
 
 	update_post_meta($id, '_comment_visibility', 'field_5cae11f10b687');
 	update_post_meta($id, 'comment_visibility', $data['comment_visibility']);
+
+	do_action('pror_tender_response_created', $id);
 
 	return $id;
 }
@@ -290,3 +292,4 @@ add_action('pror_tenders_email_notification_daily', function() {
 //	do_action('pror_tenders_email_notification_daily');
 //	exit;
 //});
+

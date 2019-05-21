@@ -496,4 +496,9 @@ a.btn.btn-pror-primary {
   color: red;
 }
 
+.hidden-content {
+  color: #E67E22;
+  border-bottom: 1px dotted;
+}
+
 /*# sourceMappingURL=common.css.map */
